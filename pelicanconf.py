@@ -20,7 +20,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Maemo Leste Github', 'https://github.com/maemo-leste'),)
+LINKS = (('Maemo Leste Github', 'https://github.com/maemo-leste'),
+         ('Maemo Leste Bugtracker', 'https://github.com/maemo-leste/bugtracker/issues'),
+        )
          #('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
          #('Jinja2', 'http://jinja.pocoo.org/'),
