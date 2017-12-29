@@ -1,0 +1,17 @@
+N900 Status
+###########
+
+:status: hidden
+
+TODO:
+
+* Where to get image, what works, what doesn't
+* Overview of what works
+* Related 'tutorials'? (E.g. maemo sd card?)
+
+
+WIP:
+
+* PowerVR on mainline
+* Pulseaudio audio filters
+* Modem (voice calls)

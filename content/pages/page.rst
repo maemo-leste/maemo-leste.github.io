@@ -26,6 +26,13 @@ Installation guides and open tasks/issues will appear here soon - but please do
 also check out the github issues:
 https://github.com/maemo-leste/bugtracker/issues.
 
+Devices:
+
+* `N900 <{filename}/pages/n900.rst>`_
+* `Droid 4 <{filename}/pages/droid4.rst>`_
+* `Generic AMD64 <{filename}/pages/amd64.rst>`_
+* `Allwinner A33 Tablet <{filename}/pages/allwinner_a33_tablet.rst>`_
+
 .. TODO:
 .. 
 .. * Overview page for each device (n900, droid4, generic amd64, allwinner a33 tablets)
