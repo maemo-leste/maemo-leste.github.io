@@ -7,7 +7,7 @@ Allwinner A20 LIME2 Status
 Images
 ======
 
-Pre-alpha N900 images are available here::
+Pre-alpha LIME2 images are available here (named sunxi)::
 
     http://maedevu.maemo.org/images/
 
@@ -18,7 +18,12 @@ is not (yet) visible.
 Installation
 ------------
 
-TODO PARAZYD: dd instructions
+This image is flashed to a microSD card in two parts: first the actual image
+with the kernel and root filesystem, followed by the u-boot bootloader.
+
+u-boot should be flashed using the following:
+
+    # dd if=A20-OLinuXino-Lime2_defconfig.bin of=/dev/yourmicrosd bs=1024 seek=8
 
 
 Status
