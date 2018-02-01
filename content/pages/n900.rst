@@ -3,15 +3,80 @@ N900 Status
 
 :status: hidden
 
-TODO:
+Images
+======
 
-* Where to get image, what works, what doesn't
-* Overview of what works
-* Related 'tutorials'? (E.g. maemo sd card?)
+Pre-alpha N900 images are available here::
 
+    http://maedevu.maemo.org/images/
+
+Installation
+------------
+
+`dd` the image to an sd card. Then boot from the sd card using either 0xFFFF/flasher-3.5 or u-boot/bootmenu: http://talk.maemo.org/showthread.php?t=81613
+
+Status
+======
+
+This is a status overview of the device specific drivers, for the general
+software status, see TODO.
+
+============= =================================
+ Feature       Status
+============= =================================
+ Kernel         4.15 [#]_
+ Serial         Maybe [#]_ [#]_
+ Charging       OK
+ USB            OK (slave, host untested)
+ Keyboard       OK
+ Screen         OK
+ X              OK [#]_
+ 3D             WIP
+ Touchscreen    OK
+ Wifi           OK (lacks UI)
+ 3G/4G          NO [#]_
+ Phone calls    NO [#]_
+============= =================================
+
+TODO
+----
 
 WIP:
 
-* PowerVR on mainline
+* PowerVR on mainline (works, but slow)
 * Pulseaudio audio filters
 * Modem (voice calls)
+
+
+Media
+=====
+
+.. image:: /images/maemo-leste-ascii-h-d-n900-1.jpg
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/maemo-leste-ascii-h-d-n900-3.jpg
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/maemo-leste-ascii-h-d-n900-4.jpg
+    :height: 324px
+    :width: 576px
+
+
+Footnotes
+=========
+
+.. [#] Mainline with PowerVR patches on top - https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip
+
+.. [#] http://n900.elektranox.org/serial-adapter.html
+
+.. [#] http://wiki.maemo.org/N900_Hardware_Hacking#Debug_ports
+
+.. [#] Forward ported DDX: https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx
+
+.. [#] Should work with Ofono (or even with maemo stack), but not a lot of time
+       has been put into testing this yet
+
+.. [#] We do plan to make this work in the near future
+
