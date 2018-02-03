@@ -11,10 +11,10 @@ Maemo Leste - Standing on the shoulders of giants
     :width: 250
     :height: 353
 
-We are happy to announce the immediate availability of Maemo `Leste`, a
-GNU+Linux distribution in spirit of `Maemo Fremantle <http://maemo.org>`_,
-originally developed by `Nokia` for their internet tablets and phones, like the
-famous `Nokia N900`.
+We are happy to announce the immediate availability of Maemo `Leste`
+(pre-alpha), a GNU+Linux distribution in spirit of `Maemo Fremantle
+<http://maemo.org>`_, originally developed by `Nokia` for their internet tablets
+and phones, like the famous `Nokia N900`.
 
 Maemo `Leste` aims to provide a similar experience to Maemo `Fremantle`, but
 based on a modern and free software stack. The initially targetted device is the
@@ -25,48 +25,125 @@ targets exist
 `Allwinner A20 LIME2 <{filename}/pages/allwinner_a20_lime2.rst>`_,
 `Allwinner A33 Tablet <{filename}/pages/allwinner_a33_tablet.rst>`_)
 
+In short, we aim to provide a free and open GNU+Linux based distribution for
+tablets and phones, based on proven and existing code.
+
 
 History
 =======
 
-(Explain what base we are building on, N770, N800, N810, N900, N9, N950, and
-make it very clear what we are -- based on latest stable DEVUAN/DEBIAN)
+The `Maemo <https://en.wikipedia.org/wiki/Maemo>`_ operating system was
+originally developed by Nokia for it's line of internet tablets, such as the
+`Nokia N770 <https://en.wikipedia.org/wiki/Nokia_770_Internet_Tablet>`_,
+`Nokia N800 <https://en.wikipedia.org/wiki/Nokia_800>`_,
+`Nokia N810 <https://en.wikipedia.org/wiki/Nokia_810>`_
+and the `Nokia N900 phone <https://en.wikipedia.org/wiki/Nokia_N900>`_.
+The `Maemo` version for the Nokia N900 was `Fremantle`.
+
+After Nokia stopped working on `Maemo` getting ready to transition to `Meego`,
+the community picked up maintainership of `Maemo`, resulting in the `Community
+SSU <http://wiki.maemo.org/Community_SSU>`_ effort that, to this day, provides
+updates for the Nokia N900.
+
+Additionally, the community has been working on upstreaming most of the kernel
+drivers for the Nokia, the current status can be seen on `elinux.org/N900
+<https://elinux.org/N900>`_, resulting in the N900 probably being the best
+supported phone by Linux mainline.
+
+Maemo `Leste` uses a modern base (in the form of Devuan/Debian) and aims to make
+most of the software from Maemo `Fremantle` available as a repository.  Maemo
+`Fremantle` was also based on Debian and uses the same package manager, making
+the transition a natural one.
+
+
+What have we done so far?
+=========================
+
+We have set up a Jenkins instance [*]_ that is used to build any packages that we
+have created, ported or imported from Fremantle and the Community SSU.
+Currently, this Jenkins instance still builds for both jessie and stretch, but
+we plan to turn off the jessie builds soon. All of the imported packages are
+hosted on our Github project space: https://github.com/maemo-leste/
+
+We have working [*]_ 3D acceleration on the N900 on the latest `Linux kernel
+<https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip>`_ (with minimal
+patches) and a `forward-ported X driver
+<https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx>`_, this does still
+require userspace blobs, which are packaged in the `n900` component of our
+repository.
+
+There is a meta package available called `hildon-meta` which installs most of
+the packages we have ported. For the `Nokia N900` and the `Allwinner A20 LIME2
+<{filename}/pages/allwinner_a20_lime2.rst>`_, we have images available that can
+be copied to a SD card. These images should boot directly to Maemo
+`hildon-desktop`.
+
+If you have neither of these devices, you can also install Maemo `Leste` in
+a 64 bit Intel/AMD virtual machine [*]_, or try to port Maemo `Leste` to another
+device. In general, any Linux supported device that has some GPU acceleration
+(or software rendering with llvmpipe) should be a viable target.
+
+We are also gradually phasing out old and unmaintained software (some of this
+has already been done by the Community SSU folks). Maemo `Fremantle` uses the
+now unmaintained `upstart`, which has been replaced with the actively maintained
+`OpenRC`. We have also replaced `hald` with `eudev` (udev) (and related packages
+such as `upower`), and adjusted the Maemo software to deal with these.
 
 
 
-Interested?
-===========
+* bugtracker https://github.com/maemo-leste/bugtracker
+* hildon-desktop running
+* builds on other devices, including virtual amd64
 
-Read more below :)
+.. [*] Albeit currently somewhat slower than we'd like, but it is usable
+.. [*] There is no directly usable image available yet, but we plan to add one
+       soon: https://github.com/maemo-leste/bugtracker/issues/45
+.. [*] Our package build infrastructure glue scripts can be found at
+       https://github.com/maemo-leste/jenkins-integration. Packages are (re)built on
+       demand, depending on whether new code is pushed. Package builds have a specific
+       workflow and versioning explained more in-depth here: <url to jenkins page>
 
 
-What we have now
-----------------
+What is in the current pre-alpha release?
+=========================================
 
-Our package repositories and some infrastructure glue is held on Github, at
-https://github.com/maemo-leste
+The current pre-alpha release should boot to hildon-desktop (the "main"
+component of the desktop environment) on the N900. It may take a few minutes due
+to an open issue in powervr that causes the startup in particular to be very
+slow. Wireless should work, once `wpa_supplicant.conf` entries are set; the
+keyboard should have sensible key mappings and the lock switch and other buttons
+should work. The Fremantle xterm application also works, as should the status
+area (with a single status applet - the 'profile' applet)
 
-The bugtracker can be found at https://github.com/maemo-leste/bugtracker/issues.
-This is where we have most of our roadmap and current bugs. besides this, there
-is `#maemo-leste` on Freenode IRC.
+.. image:: /images/maemo-leste-ascii-h-d-n900-3.jpg
+    :alt: Initial bringup of hildon-desktop on the Nokia N900
+    :height: 324px
+    :width: 576px
 
-We have successfully built and tested a microSD card image for the Nokia N900.
-To use it, simply `dd` it to a microSD card and boot it on your phone using
-`0xFFFF` or simbly using the `u-boot` bootloader if you have it installed on the
-phone.
+.. image:: /images/droid4-h-d-2.jpg
+    :alt: Initial bringup of hildon-desktop on the Motorola Droid 4
+    :height: 324px
+    :width: 576px
 
-Maemo Leste has chosen Devuan Ascii (https://devuan.org) as a base system we
-build upon on. Devuan Ascii has packages equivalent to the versions that can be
-found in Debian Stretch. The init system of choice in Maemo Leste is OpenRC plus
-sysvinit. This has proven to be a better and more stable choice than upstart
-which was chosen in Fremantle.
+.. image:: /images/lime2-h-d-2.jpg
+    :alt: Lime2 outputting a FullHD hildon-desktop to a monitor
+    :height: 324px
+    :width: 576px
 
-Our package build infrastructure is backed by the Jenkins CI, along with some
-glue scripts that can be found at
-https://github.com/maemo-leste/jenkins-integration. Packages are (re)built on
-demand, depending on whether new code is pushed. Package builds have a specific
-workflow and versioning explained more in-depth here: <url to jenkins page>
 
+What are the next steps?
+========================
+
+
+* Link to "Closed Packages" and "Free_Maemo".
+* Reverse engineering (parts)
+* More Maemo userland (connui, icd2, base 'apps', status applets -- translate
+  this into human text)
+* Phone stack on N900
+* Lime2 Mali
+* Droid4
+* Magic
+* Power saving
 
 What is coming
 --------------
@@ -79,35 +156,11 @@ Along with that we will also try to implement a working phone stack, along with
 2G/3G network.
 
 
-What people should expect now
------------------------------
-
-Our images currently provide a working base system, which developers can use to
-work on Maemo leste to port Fremantle packages, or improve existing things.
-
-Disclaimer: In no way should you expect a production-ready system yet.
-
-In general, what you can currently find working in the image(s) is the
-following:
-
-    * hildon-desktop
-    * Audio through ALSA
-    * Mainline Linux (4.14 and/or 4.15)
-    * Devuan Ascii
-    * OpenRC init
-    * Working WiFi stack
-    * 3D acceleration (PowerVR SGX)
-
-More detailed info can be found on the respective device's pages.
 
 
-What we need
-------------
+Interested?
+===========
 
-Developers! Developers! Developers! (insert Steve Ballmer meme here.)
-
-We need people who can work on hardware enablement, reverse engineering, and
-eventually - Linux mainlining.
 
 
 Set expectations

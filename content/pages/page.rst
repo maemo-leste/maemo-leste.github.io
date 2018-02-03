@@ -9,6 +9,9 @@ of `Maemo <http://maemo.org/>`_. We aim to provide a free Maemo experience on
 mobile phones and tablets like the Nokia N900, Morotola Droid 4, Allwinner
 Tablets and more.
 
+Feel free to join us on irc.freenode.net #maemo-leste ; we will try to set up
+(or find an appropriate) mailing list soon.
+
 Maemo Leste is based on Devuan Ascii (Debian Stretch) and all the "supported"
 devices ship with recent Linux (mainline-based) kernels.
 
@@ -25,8 +28,10 @@ closed bits by open software.
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
-A proper overview of the current (Maemo) software state will be provided
-soon. Check out our blog post (`here <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) for the current status on the Nokia N900
+A proper overview of the current (Maemo) software state will be provided soon.
+Check out our blog post (`here
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) for the current
+status on the Nokia N900
 
 
 Devices:
