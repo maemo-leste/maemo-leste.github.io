@@ -90,11 +90,6 @@ now unmaintained `upstart`, which has been replaced with the actively maintained
 such as `upower`), and adjusted the Maemo software to deal with these.
 
 
-
-* bugtracker https://github.com/maemo-leste/bugtracker
-* hildon-desktop running
-* builds on other devices, including virtual amd64
-
 .. [*] Albeit currently somewhat slower than we'd like, but it is usable
 .. [*] There is no directly usable image available yet, but we plan to add one
        soon: https://github.com/maemo-leste/bugtracker/issues/45
@@ -115,65 +110,64 @@ keyboard should have sensible key mappings and the lock switch and other buttons
 should work. The Fremantle xterm application also works, as should the status
 area (with a single status applet - the 'profile' applet)
 
+It is possible to install all the packages in devuan/debian, but do not expect
+them to work smoothly; Firefox can be installed, but it is not optimised for
+mobile usage, and scrolling using the touchscreen will not work either.
+
+
 .. image:: /images/maemo-leste-ascii-h-d-n900-3.jpg
     :alt: Initial bringup of hildon-desktop on the Nokia N900
     :height: 324px
     :width: 576px
+
+The Motorola Droid 4 and LIME2 images not yet ready, but here are some
+screenshots showing initial bringup of the environment anyway.
 
 .. image:: /images/droid4-h-d-2.jpg
     :alt: Initial bringup of hildon-desktop on the Motorola Droid 4
     :height: 324px
     :width: 576px
 
+Droid 4 running `hildon-desktop`.
+
 .. image:: /images/lime2-h-d-2.jpg
     :alt: Lime2 outputting a FullHD hildon-desktop to a monitor
     :height: 324px
     :width: 576px
 
+LIME2 outputting `hildon-desktop` to a 1920x1080 screen.
+
 
 What are the next steps?
 ========================
 
-
-* Link to "Closed Packages" and "Free_Maemo".
-* Reverse engineering (parts)
-* More Maemo userland (connui, icd2, base 'apps', status applets -- translate
-  this into human text)
-* Phone stack on N900
-* Lime2 Mali
-* Droid4
-* Magic
-* Power saving
-
-What is coming
---------------
-
 We are working on porting more Maemo (Fremantle) userland towards our Leste
 base, in order to provide a better and more familiar interface and experience
-for users and developers.
+for users and developers. More status applets, connectivity (wifi, 2g/3g) UI are
+on their way. Most packages need some sort of porting, and others are not even
+open yet, and will need to be replaced or opened up. The wiki pages `Free Maemo
+<https://wiki.maemo.org/Free_Maemo>`_ and `Fremantle closed packages
+<https://wiki.maemo.org/Fremantle_closed_packages>`_ lists these various
+packages.
 
-Along with that we will also try to implement a working phone stack, along with
-2G/3G network.
+We will also try to prepare working images for the Droid 4 and
+the LIME2, hopefully with some 3D acceleration.
 
+If you're interested in specifics, or helping our, or wish to have a specific
+package ported, please see our `bugtracker
+<https://github.com/maemo-leste/bugtracker>`_.
 
+Once more bits are in place, we will start looking at 2g/3g connectivity and
+phone calls. Power saving options might then also be something to look at.
 
 
 Interested?
 ===========
 
+Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help our reverse engineering,
+and debug driver issues.
 
-
-Set expectations
-----------------
-
-* Modern maemo-based OS for phones and tablets
-* Provide some backwards compatibility with maemo fremantle
-* Use open source components where possible, but fall back to closed
-  components temporarily while we bring up the OS
-* Limit supported devices to a few specific ones in order to avoid
-  spending a lot of time on hardware enablement / bringup
-* Replacing upstream-dead projects at some point is a good thing
-
-
-.. TODO:
-.. * Mention http://wiki.maemo.org/Community_SSU
+We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We monitor the github issues closely, but also aim to find an
+appropriate (or set up a) mailing list.
