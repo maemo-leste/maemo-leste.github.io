@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-02-01T12:00:00+01:00</updated><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;We are happy to announce the immediate availability of Maemo &lt;cite&gt;Leste&lt;/cite&gt;
+(pre-alpha), a GNU+Linux distribution in spirit of &lt;a class="reference external" href="http://maemo.org"&gt;Maemo Fremantle&lt;/a&gt;, originally developed by &lt;cite&gt;Nokia&lt;/cite&gt; for their internet tablets
+and phones, like the famous &lt;cite&gt;Nokia N900&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Maemo &lt;cite&gt;Leste&lt;/cite&gt; aims to provide a similar experience to Maemo &lt;cite&gt;Fremantle&lt;/cite&gt;, but
+based on …&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;We are happy to announce the immediate availability of Maemo &lt;cite&gt;Leste&lt;/cite&gt;
+(pre-alpha), a GNU+Linux distribution in spirit of &lt;a class="reference external" href="http://maemo.org"&gt;Maemo Fremantle&lt;/a&gt;, originally developed by &lt;cite&gt;Nokia&lt;/cite&gt; for their internet tablets
+and phones, like the famous &lt;cite&gt;Nokia N900&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Maemo &lt;cite&gt;Leste&lt;/cite&gt; aims to provide a similar experience to Maemo &lt;cite&gt;Fremantle&lt;/cite&gt;, but
+based on a modern and free software stack. The initially targetted device is the
+&lt;a class="reference external" href="https://maemo-leste.github.io/pages/n900-status.html"&gt;Nokia N900&lt;/a&gt;, but other (currently unsupported)
+targets exist
+(&lt;a class="reference external" href="https://maemo-leste.github.io/pages/droid-4-status.html"&gt;Motorola Droid 4&lt;/a&gt;,
+&lt;a class="reference external" href="https://maemo-leste.github.io/pages/generic-amd64-status.html"&gt;Generic AMD64&lt;/a&gt;,
+&lt;a class="reference external" href="https://maemo-leste.github.io/pages/allwinner-a20-lime2-status.html"&gt;Allwinner A20 LIME2&lt;/a&gt;,
+&lt;a class="reference external" href="https://maemo-leste.github.io/pages/allwinner-a33-tablet-status.html"&gt;Allwinner A33 Tablet&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;In short, we aim to provide a free and open GNU+Linux based distribution for
+tablets and phones, based on proven and existing code.&lt;/p&gt;
+&lt;div class="section" id="history"&gt;
+&lt;h2&gt;History&lt;/h2&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Maemo"&gt;Maemo&lt;/a&gt; operating system was
+originally developed by Nokia for it's line of internet tablets, such as the
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Nokia_770_Internet_Tablet"&gt;Nokia N770&lt;/a&gt;,
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Nokia_800"&gt;Nokia N800&lt;/a&gt;,
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Nokia_810"&gt;Nokia N810&lt;/a&gt;
+and the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Nokia_N900"&gt;Nokia N900 phone&lt;/a&gt;.
+The &lt;cite&gt;Maemo&lt;/cite&gt; version for the Nokia N900 was &lt;cite&gt;Fremantle&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;After Nokia stopped working on &lt;cite&gt;Maemo&lt;/cite&gt; getting ready to transition to &lt;cite&gt;Meego&lt;/cite&gt;,
+the community picked up maintainership of &lt;cite&gt;Maemo&lt;/cite&gt;, resulting in the &lt;a class="reference external" href="http://wiki.maemo.org/Community_SSU"&gt;Community
+SSU&lt;/a&gt; effort that, to this day, provides
+updates for the Nokia N900.&lt;/p&gt;
+&lt;p&gt;Additionally, the community has been working on upstreaming most of the kernel
+drivers for the Nokia, the current status can be seen on &lt;a class="reference external" href="https://elinux.org/N900"&gt;elinux.org/N900&lt;/a&gt;, resulting in the N900 probably being the best
+supported phone by Linux mainline.&lt;/p&gt;
+&lt;p&gt;Maemo &lt;cite&gt;Leste&lt;/cite&gt; uses a modern base (in the form of Devuan/Debian) and aims to make
+most of the software from Maemo &lt;cite&gt;Fremantle&lt;/cite&gt; available as a repository.  Maemo
+&lt;cite&gt;Fremantle&lt;/cite&gt; was also based on Debian and uses the same package manager, making
+the transition a natural one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-have-we-done-so-far"&gt;
+&lt;h2&gt;What have we done so far?&lt;/h2&gt;
+&lt;p&gt;We have set up a Jenkins instance &lt;a class="footnote-reference" href="#id5" id="id1"&gt;[*]&lt;/a&gt; that is used to build any packages that we
+have created, ported or imported from Fremantle and the Community SSU.
+Currently, this Jenkins instance still builds for both jessie and stretch, but
+we plan to turn off the jessie builds soon. All of the imported packages are
+hosted on our Github project space: &lt;a class="reference external" href="https://github.com/maemo-leste/"&gt;https://github.com/maemo-leste/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We have working &lt;a class="footnote-reference" href="#id6" id="id2"&gt;[†]&lt;/a&gt; 3D acceleration on the N900 on the latest &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip"&gt;Linux kernel&lt;/a&gt; (with minimal
+patches) and a &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx"&gt;forward-ported X driver&lt;/a&gt;, this does still
+require userspace blobs, which are packaged in the &lt;cite&gt;n900&lt;/cite&gt; component of our
+repository.&lt;/p&gt;
+&lt;p&gt;There is a meta package available called &lt;cite&gt;hildon-meta&lt;/cite&gt; which installs most of
+the packages we have ported. For the &lt;cite&gt;Nokia N900&lt;/cite&gt; and the &lt;a class="reference external" href="https://maemo-leste.github.io/pages/allwinner-a20-lime2-status.html"&gt;Allwinner A20 LIME2&lt;/a&gt;, we have images available that can
+be copied to a SD card. These images should boot directly to Maemo
+&lt;cite&gt;hildon-desktop&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;If you have neither of these devices, you can also install Maemo &lt;cite&gt;Leste&lt;/cite&gt; in
+a 64 bit Intel/AMD virtual machine &lt;a class="footnote-reference" href="#id7" id="id4"&gt;[‡]&lt;/a&gt;, or try to port Maemo &lt;cite&gt;Leste&lt;/cite&gt; to another
+device. In general, any Linux supported device that has some GPU acceleration
+(or software rendering with llvmpipe) should be a viable target.&lt;/p&gt;
+&lt;p&gt;We are also gradually phasing out old and unmaintained software (some of this
+has already been done by the Community SSU folks). Maemo &lt;cite&gt;Fremantle&lt;/cite&gt; uses the
+now unmaintained &lt;cite&gt;upstart&lt;/cite&gt;, which has been replaced with the actively maintained
+&lt;cite&gt;OpenRC&lt;/cite&gt;. We have also replaced &lt;cite&gt;hald&lt;/cite&gt; with &lt;cite&gt;eudev&lt;/cite&gt; (udev) (and related packages
+such as &lt;cite&gt;upower&lt;/cite&gt;), and adjusted the Maemo software to deal with these.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[*]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Albeit currently somewhat slower than we'd like, but it is usable&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[†]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;There is no directly usable image available yet, but we plan to add one
+soon: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/45"&gt;https://github.com/maemo-leste/bugtracker/issues/45&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id7" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id4"&gt;[‡]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Our package build infrastructure glue scripts can be found at
+&lt;a class="reference external" href="https://github.com/maemo-leste/jenkins-integration"&gt;https://github.com/maemo-leste/jenkins-integration&lt;/a&gt;. Packages are (re)built on
+demand, depending on whether new code is pushed. Package builds have a specific
+workflow and versioning explained more in-depth here: &amp;lt;url to jenkins page&amp;gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-in-the-current-pre-alpha-release"&gt;
+&lt;h2&gt;What is in the current pre-alpha release?&lt;/h2&gt;
+&lt;p&gt;The current pre-alpha release should boot to hildon-desktop (the &amp;quot;main&amp;quot;
+component of the desktop environment) on the N900. It may take a few minutes due
+to an open issue in powervr that causes the startup in particular to be very
+slow. Wireless should work, once &lt;cite&gt;wpa_supplicant.conf&lt;/cite&gt; entries are set; the
+keyboard should have sensible key mappings and the lock switch and other buttons
+should work. The Fremantle xterm application also works, as should the status
+area (with a single status applet - the 'profile' applet)&lt;/p&gt;
+&lt;p&gt;It is possible to install all the packages in devuan/debian, but do not expect
+them to work smoothly; Firefox can be installed, but it is not optimised for
+mobile usage, and scrolling using the touchscreen will not work either.&lt;/p&gt;
+&lt;img alt="Initial bringup of hildon-desktop on the Nokia N900" src="/images/maemo-leste-ascii-h-d-n900-3.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The Motorola Droid 4 and LIME2 images not yet ready, but here are some
+screenshots showing initial bringup of the environment anyway.&lt;/p&gt;
+&lt;img alt="Initial bringup of hildon-desktop on the Motorola Droid 4" src="/images/droid4-h-d-2.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Droid 4 running &lt;cite&gt;hildon-desktop&lt;/cite&gt;.&lt;/p&gt;
+&lt;img alt="Lime2 outputting a FullHD hildon-desktop to a monitor" src="/images/lime2-h-d-2.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;LIME2 outputting &lt;cite&gt;hildon-desktop&lt;/cite&gt; to a 1920x1080 screen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-are-the-next-steps"&gt;
+&lt;h2&gt;What are the next steps?&lt;/h2&gt;
+&lt;p&gt;We are working on porting more Maemo (Fremantle) userland towards our Leste
+base, in order to provide a better and more familiar interface and experience
+for users and developers. More status applets, connectivity (wifi, 2g/3g) UI are
+on their way. Most packages need some sort of porting, and others are not even
+open yet, and will need to be replaced or opened up. The wiki pages &lt;a class="reference external" href="https://wiki.maemo.org/Free_Maemo"&gt;Free Maemo&lt;/a&gt; and &lt;a class="reference external" href="https://wiki.maemo.org/Fremantle_closed_packages"&gt;Fremantle closed packages&lt;/a&gt; lists these various
+packages.&lt;/p&gt;
+&lt;p&gt;We will also try to prepare working images for the Droid 4 and
+the LIME2, hopefully with some 3D acceleration.&lt;/p&gt;
+&lt;p&gt;If you're interested in specifics, or helping our, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once more bits are in place, we will start looking at 2g/3g connectivity and
+phone calls. Power saving options might then also be something to look at.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help our reverse engineering,
+and debug driver issues.&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We monitor the github issues closely, but also aim to find an
+appropriate (or set up a) mailing list.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="n900"></category><category term="droid4"></category><category term="mainline"></category><category term="release"></category></entry></feed>
