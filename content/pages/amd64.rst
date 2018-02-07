@@ -6,7 +6,7 @@ Generic AMD64 Status
 Images
 ======
 
-Pre-alpha N900 images are available here::
+Pre-alpha images for generic AMD64 systems are available here::
 
     http://maedevu.maemo.org/images/
 
