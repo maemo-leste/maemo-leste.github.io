@@ -19,7 +19,7 @@ Status
 ======
 
 This is a status overview of the device specific drivers, for the general
-software status, see TODO.
+software status, please wait for us to bring up some status page on this.
 
 ============= =================================
  Feature       Status
