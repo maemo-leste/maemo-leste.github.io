@@ -79,7 +79,8 @@ be copied to a SD card. These images should boot directly to Maemo
 `hildon-desktop`.
 
 If you have neither of these devices, you can also install Maemo `Leste` in
-a 64 bit Intel/AMD virtual machine [*]_, or try to port Maemo `Leste` to another
+a `64 bit Intel/AMD virtual machine <{filename}/pages/amd64.rst>`_,
+or try to port Maemo `Leste` to another
 device. In general, any Linux supported device that has some GPU acceleration
 (or software rendering with llvmpipe) should be a viable target.
 
@@ -90,13 +91,11 @@ now unmaintained `upstart`, which has been replaced with the actively maintained
 such as `upower`), and adjusted the Maemo software to deal with these.
 
 
-.. [*] Albeit currently somewhat slower than we'd like, but it is usable
-.. [*] There is no directly usable image available yet, but we plan to add one
-       soon: https://github.com/maemo-leste/bugtracker/issues/45
 .. [*] Our package build infrastructure glue scripts can be found at
        https://github.com/maemo-leste/jenkins-integration. Packages are (re)built on
        demand, depending on whether new code is pushed. Package builds have a specific
        workflow and versioning explained more in-depth here: <url to jenkins page>
+.. [*] Albeit currently somewhat slower than we'd like, but it is usable
 
 
 What is in the current pre-alpha release?
