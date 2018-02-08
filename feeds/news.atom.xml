@@ -41,12 +41,12 @@ the transition a natural one.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-have-we-done-so-far"&gt;
 &lt;h2&gt;What have we done so far?&lt;/h2&gt;
-&lt;p&gt;We have set up a Jenkins instance &lt;a class="footnote-reference" href="#id5" id="id1"&gt;[*]&lt;/a&gt; that is used to build any packages that we
+&lt;p&gt;We have set up a Jenkins instance &lt;a class="footnote-reference" href="#id4" id="id1"&gt;[*]&lt;/a&gt; that is used to build any packages that we
 have created, ported or imported from Fremantle and the Community SSU.
 Currently, this Jenkins instance still builds for both jessie and stretch, but
 we plan to turn off the jessie builds soon. All of the imported packages are
 hosted on our Github project space: &lt;a class="reference external" href="https://github.com/maemo-leste/"&gt;https://github.com/maemo-leste/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We have working &lt;a class="footnote-reference" href="#id6" id="id2"&gt;[†]&lt;/a&gt; 3D acceleration on the N900 on the latest &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip"&gt;Linux kernel&lt;/a&gt; (with minimal
+&lt;p&gt;We have working &lt;a class="footnote-reference" href="#id5" id="id2"&gt;[†]&lt;/a&gt; 3D acceleration on the N900 on the latest &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip"&gt;Linux kernel&lt;/a&gt; (with minimal
 patches) and a &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx"&gt;forward-ported X driver&lt;/a&gt;, this does still
 require userspace blobs, which are packaged in the &lt;cite&gt;n900&lt;/cite&gt; component of our
 repository.&lt;/p&gt;
@@ -55,7 +55,8 @@ the packages we have ported. For the &lt;cite&gt;Nokia N900&lt;/cite&gt; and the
 be copied to a SD card. These images should boot directly to Maemo
 &lt;cite&gt;hildon-desktop&lt;/cite&gt;.&lt;/p&gt;
 &lt;p&gt;If you have neither of these devices, you can also install Maemo &lt;cite&gt;Leste&lt;/cite&gt; in
-a 64 bit Intel/AMD virtual machine &lt;a class="footnote-reference" href="#id7" id="id4"&gt;[‡]&lt;/a&gt;, or try to port Maemo &lt;cite&gt;Leste&lt;/cite&gt; to another
+a &lt;a class="reference external" href="https://maemo-leste.github.io/pages/generic-amd64-status.html"&gt;64 bit Intel/AMD virtual machine&lt;/a&gt;,
+or try to port Maemo &lt;cite&gt;Leste&lt;/cite&gt; to another
 device. In general, any Linux supported device that has some GPU acceleration
 (or software rendering with llvmpipe) should be a viable target.&lt;/p&gt;
 &lt;p&gt;We are also gradually phasing out old and unmaintained software (some of this
@@ -63,26 +64,19 @@ has already been done by the Community SSU folks). Maemo &lt;cite&gt;Fremantle&l
 now unmaintained &lt;cite&gt;upstart&lt;/cite&gt;, which has been replaced with the actively maintained
 &lt;cite&gt;OpenRC&lt;/cite&gt;. We have also replaced &lt;cite&gt;hald&lt;/cite&gt; with &lt;cite&gt;eudev&lt;/cite&gt; (udev) (and related packages
 such as &lt;cite&gt;upower&lt;/cite&gt;), and adjusted the Maemo software to deal with these.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[*]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Albeit currently somewhat slower than we'd like, but it is usable&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[†]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;There is no directly usable image available yet, but we plan to add one
-soon: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/45"&gt;https://github.com/maemo-leste/bugtracker/issues/45&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id7" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id4"&gt;[‡]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Our package build infrastructure glue scripts can be found at
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[*]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Our package build infrastructure glue scripts can be found at
 &lt;a class="reference external" href="https://github.com/maemo-leste/jenkins-integration"&gt;https://github.com/maemo-leste/jenkins-integration&lt;/a&gt;. Packages are (re)built on
 demand, depending on whether new code is pushed. Package builds have a specific
 workflow and versioning explained more in-depth here: &amp;lt;url to jenkins page&amp;gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[†]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Albeit currently somewhat slower than we'd like, but it is usable&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
@@ -124,8 +118,8 @@ phone calls. Power saving options might then also be something to look at.&lt;/p
 &lt;div class="section" id="interested"&gt;
 &lt;h2&gt;Interested?&lt;/h2&gt;
 &lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
-need developers who can work on porting packages, help our reverse engineering,
-and debug driver issues.&lt;/p&gt;
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.&lt;/p&gt;
 &lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
 #maemo. We monitor the github issues closely, but also aim to find an
 appropriate (or set up a) mailing list.&lt;/p&gt;

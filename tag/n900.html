@@ -70,12 +70,12 @@ the transition a natural one.</p>
 </div>
 <div class="section" id="what-have-we-done-so-far">
 <h2>What have we done so far?</h2>
-<p>We have set up a Jenkins instance <a class="footnote-reference" href="#id5" id="id1">[*]</a> that is used to build any packages that we
+<p>We have set up a Jenkins instance <a class="footnote-reference" href="#id4" id="id1">[*]</a> that is used to build any packages that we
 have created, ported or imported from Fremantle and the Community SSU.
 Currently, this Jenkins instance still builds for both jessie and stretch, but
 we plan to turn off the jessie builds soon. All of the imported packages are
 hosted on our Github project space: <a class="reference external" href="https://github.com/maemo-leste/">https://github.com/maemo-leste/</a></p>
-<p>We have working <a class="footnote-reference" href="#id6" id="id2">[†]</a> 3D acceleration on the N900 on the latest <a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip">Linux kernel</a> (with minimal
+<p>We have working <a class="footnote-reference" href="#id5" id="id2">[†]</a> 3D acceleration on the N900 on the latest <a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip">Linux kernel</a> (with minimal
 patches) and a <a class="reference external" href="https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx">forward-ported X driver</a>, this does still
 require userspace blobs, which are packaged in the <cite>n900</cite> component of our
 repository.</p>
@@ -84,7 +84,8 @@ the packages we have ported. For the <cite>Nokia N900</cite> and the <a class="r
 be copied to a SD card. These images should boot directly to Maemo
 <cite>hildon-desktop</cite>.</p>
 <p>If you have neither of these devices, you can also install Maemo <cite>Leste</cite> in
-a 64 bit Intel/AMD virtual machine <a class="footnote-reference" href="#id7" id="id4">[‡]</a>, or try to port Maemo <cite>Leste</cite> to another
+a <a class="reference external" href="https://maemo-leste.github.io/pages/generic-amd64-status.html">64 bit Intel/AMD virtual machine</a>,
+or try to port Maemo <cite>Leste</cite> to another
 device. In general, any Linux supported device that has some GPU acceleration
 (or software rendering with llvmpipe) should be a viable target.</p>
 <p>We are also gradually phasing out old and unmaintained software (some of this
@@ -92,26 +93,19 @@ has already been done by the Community SSU folks). Maemo <cite>Fremantle</cite> 
 now unmaintained <cite>upstart</cite>, which has been replaced with the actively maintained
 <cite>OpenRC</cite>. We have also replaced <cite>hald</cite> with <cite>eudev</cite> (udev) (and related packages
 such as <cite>upower</cite>), and adjusted the Maemo software to deal with these.</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>Albeit currently somewhat slower than we'd like, but it is usable</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[†]</a></td><td>There is no directly usable image available yet, but we plan to add one
-soon: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/45">https://github.com/maemo-leste/bugtracker/issues/45</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[‡]</a></td><td>Our package build infrastructure glue scripts can be found at
+<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>Our package build infrastructure glue scripts can be found at
 <a class="reference external" href="https://github.com/maemo-leste/jenkins-integration">https://github.com/maemo-leste/jenkins-integration</a>. Packages are (re)built on
 demand, depending on whether new code is pushed. Package builds have a specific
 workflow and versioning explained more in-depth here: &lt;url to jenkins page&gt;</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[†]</a></td><td>Albeit currently somewhat slower than we'd like, but it is usable</td></tr>
 </tbody>
 </table>
 </div>
@@ -153,8 +147,8 @@ phone calls. Power saving options might then also be something to look at.</p>
 <div class="section" id="interested">
 <h2>Interested?</h2>
 <p>Join us! We really need more people helping out. At this point, we specifically
-need developers who can work on porting packages, help our reverse engineering,
-and debug driver issues.</p>
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.</p>
 <p>We're currently on irc.freenode.net in #maemo-leste, but also hang out in
 #maemo. We monitor the github issues closely, but also aim to find an
 appropriate (or set up a) mailing list.</p>
