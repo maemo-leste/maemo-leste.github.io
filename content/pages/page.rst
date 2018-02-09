@@ -6,7 +6,7 @@ Maemo Leste
 
 Welcome to the Maemo Leste website; a project that aims to continue the legacy
 of `Maemo <http://maemo.org/>`_. We aim to provide a free Maemo experience on
-mobile phones and tablets like the Nokia N900, Morotola Droid 4, Allwinner
+mobile phones and tablets like the Nokia N900, Motorola Droid 4, Allwinner
 Tablets and more.
 
 Feel free to join us on irc.freenode.net #maemo-leste ; we will try to set up
