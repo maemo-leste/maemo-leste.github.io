@@ -4,7 +4,7 @@ Maemo Leste
 :URL:
 :save_as: index.html
 
-Welcome to the Maemo Leste website; a project that aims to continue the legacy
+Welcome to the Maemo Leste website; Maemo Leste continues the legacy
 of `Maemo <http://maemo.org/>`_. We aim to provide a free Maemo experience on
 mobile phones and tablets like the Nokia N900, Motorola Droid 4, Allwinner
 Tablets and more.
