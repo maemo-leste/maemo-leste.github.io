@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-02-01T12:00:00+01:00</updated><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-02-15T12:00:00+01:00</updated><entry><title>Maemo Leste - TODO UPDATEME First Update</title><link href="https://maemo-leste.github.io/maemo-leste-todo-updateme-first-update.html" rel="alternate"></link><published>2018-02-15T12:00:00+01:00</published><updated>2018-02-15T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-15:/maemo-leste-todo-updateme-first-update.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Wikipedia&lt;/li&gt;
+&lt;li&gt;mention devuan release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;battery applet (ported to UPower; for multiple devices)&lt;/li&gt;
+&lt;li&gt;connui&lt;/li&gt;
+&lt;li&gt;usb status applet (ported to udev, for multiple devices; configfs?)&lt;/li&gt;
+&lt;li&gt;kernel bugs fixed (battery charging state n900, vbus n900)&lt;/li&gt;
+&lt;li&gt;ofono bugs &amp;amp; status&lt;/li&gt;
+&lt;li&gt;lime2 images? (with mali?)&lt;/li&gt;
+&lt;li&gt;droid4 images?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you're …&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Wikipedia&lt;/li&gt;
+&lt;li&gt;mention devuan release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;battery applet (ported to UPower; for multiple devices)&lt;/li&gt;
+&lt;li&gt;connui&lt;/li&gt;
+&lt;li&gt;usb status applet (ported to udev, for multiple devices; configfs?)&lt;/li&gt;
+&lt;li&gt;kernel bugs fixed (battery charging state n900, vbus n900)&lt;/li&gt;
+&lt;li&gt;ofono bugs &amp;amp; status&lt;/li&gt;
+&lt;li&gt;lime2 images? (with mali?)&lt;/li&gt;
+&lt;li&gt;droid4 images?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We monitor the github issues closely, but also aim to find an
+appropriate (or set up a) mailing list.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="n900"></category><category term="droid4"></category><category term="mainline"></category><category term="release"></category></entry><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;We are happy to announce the immediate availability of Maemo &lt;cite&gt;Leste&lt;/cite&gt;
 (pre-alpha), a GNU+Linux distribution in spirit of &lt;a class="reference external" href="http://maemo.org"&gt;Maemo Fremantle&lt;/a&gt;, originally developed by &lt;cite&gt;Nokia&lt;/cite&gt; for their internet tablets
 and phones, like the famous &lt;cite&gt;Nokia N900&lt;/cite&gt;.&lt;/p&gt;
