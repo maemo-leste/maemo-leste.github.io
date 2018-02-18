@@ -2,26 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-02-15T12:00:00+01:00</updated><entry><title>Maemo Leste - TODO UPDATEME First Update</title><link href="https://maemo-leste.github.io/maemo-leste-todo-updateme-first-update.html" rel="alternate"></link><published>2018-02-15T12:00:00+01:00</published><updated>2018-02-15T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-15:/maemo-leste-todo-updateme-first-update.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Wikipedia&lt;/li&gt;
-&lt;li&gt;mention devuan release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;mention devuan ascii (near) release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;battery applet (ported to UPower; for multiple devices)&lt;/li&gt;
-&lt;li&gt;connui&lt;/li&gt;
+&lt;li&gt;mention battery bug, thank sre&lt;/li&gt;
+&lt;li&gt;connui, icd2&lt;/li&gt;
 &lt;li&gt;usb status applet (ported to udev, for multiple devices; configfs?)&lt;/li&gt;
 &lt;li&gt;kernel bugs fixed (battery charging state n900, vbus n900)&lt;/li&gt;
-&lt;li&gt;ofono bugs &amp;amp; status&lt;/li&gt;
-&lt;li&gt;lime2 images? (with mali?)&lt;/li&gt;
-&lt;li&gt;droid4 images?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you're …&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;li&gt;ofono bugs &amp;amp; status …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Wikipedia&lt;/li&gt;
-&lt;li&gt;mention devuan release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;mention devuan ascii (near) release &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;battery applet (ported to UPower; for multiple devices)&lt;/li&gt;
-&lt;li&gt;connui&lt;/li&gt;
+&lt;li&gt;mention battery bug, thank sre&lt;/li&gt;
+&lt;li&gt;connui, icd2&lt;/li&gt;
 &lt;li&gt;usb status applet (ported to udev, for multiple devices; configfs?)&lt;/li&gt;
 &lt;li&gt;kernel bugs fixed (battery charging state n900, vbus n900)&lt;/li&gt;
-&lt;li&gt;ofono bugs &amp;amp; status&lt;/li&gt;
+&lt;li&gt;ofono bugs &amp;amp; status (bug fixed; CLI data works, CLI sms works, CLI starting
+phone call works)&lt;/li&gt;
 &lt;li&gt;lime2 images? (with mali?)&lt;/li&gt;
 &lt;li&gt;droid4 images?&lt;/li&gt;
+&lt;li&gt;droid4 mce display works (fixed generic backend)&lt;/li&gt;
+&lt;li&gt;droid4 &amp;quot;lock button&amp;quot;.&lt;/li&gt;
+&lt;li&gt;maemo qt&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
 package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
