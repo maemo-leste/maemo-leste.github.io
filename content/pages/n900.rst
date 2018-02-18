@@ -8,7 +8,7 @@ Images
 
 Pre-alpha N900 images are available here::
 
-    http://maedevu.maemo.org/images/
+    http://maedevu.maemo.org/images/n900/
 
 Installation
 ------------
@@ -37,7 +37,7 @@ software status, please wait for us to bring up some status page on this.
  3D             WIP
  Touchscreen    OK
  Wifi           OK (lacks UI)
- 3G/4G          NO [#]_
+ 2G/3G          OK (lacks UI) [#]_
  Phone calls    NO [#]_
 ============= =================================
 
@@ -78,8 +78,7 @@ Footnotes
 
 .. [#] Forward ported DDX: https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx
 
-.. [#] Should work with Ofono (or even with maemo stack), but not a lot of time
-       has been put into testing this yet
+.. [#] Works with ofono; but no work has been done on any integration; see https://github.com/maemo-leste/bugtracker/issues/61 and https://github.com/maemo-leste/bugtracker/issues/76
 
 .. [#] We do plan to make this work in the near future
 

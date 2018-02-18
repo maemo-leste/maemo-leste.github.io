@@ -7,15 +7,20 @@ Droid 4 Status
 Images
 ======
 
-Pre-alpha images are not yet available, but will surface soon.
-We need to provide a proper ddroid.zip and create a repository with all the
-different kernel patches required.
+Pre-alpha images are available here::
+
+    http://maedevu.maemo.org/images/droid4/
+
+We still need to write instructions on how to install safestrap and then install
+the ddroid.zip file.
 
 Installation
 ------------
 
-Not yet.
+`dd` the image file to a microsd card and install the ddroid.zip in safestrap.
+When you boot the phone, it should boot to hildon-desktop in a minute or two.
 
+**NOTE: The UI will be slow, since the 3D is done entirely on the CPU for now.**
 
 Status
 ======
@@ -67,7 +72,5 @@ Footnotes
 .. [#] You need 4.14 or 4.15 with at least 10-15 patches. We will document
        this further and also create a repo with the patches applied.
        For now, see http://elektranox.org/droid4/
-.. [#] X works, but for hildon-desktop to work, the screen needs to be rotated
-       with xrandr, which then for some reason causes the screen to work fine, but the
-       display is no longer updated.
+.. [#] HDMI also works, but hildon-desktop does not deal with it too well
 .. [#] Also PowerVR, but llvmpipe works, so we'll stick to that for a bit.
