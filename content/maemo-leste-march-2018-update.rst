@@ -2,7 +2,7 @@ Maemo Leste - First update (March 2018)
 #######################################
 
 :category: news
-:tags: kernel, networking, battery, ofono n900, droid4
+:tags: kernel, networking, battery, ofono, n900, droid4
 :date: 2018-03-02 12:00
 :authors: Merlijn Wajer
 
@@ -13,7 +13,7 @@ Maemo Leste - First update (March 2018)
 
 
 It's been a month since our `first post
-<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) and there's a
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ and there's a
 lot of stuff to talk about!
 
 First of all, someone added us to `Wikipedia
@@ -151,6 +151,9 @@ applications and some sort of Android application support. We will try to cover
 what we're going to work on for the next month, to give you an indication on
 where we are, where we are going, and where you can help.
 
+Connectivity
+~~~~~~~~~~~~
+
 The first big thing that we want to attempt to get into a working state is
 `connui`, `icd2` and `wpa_supplicant` integration for `icd2`. In layman terms:
 we want wifi to work with the Maemo Fremantle UIs. To do this, we need to finish reverse
@@ -161,6 +164,43 @@ engineering the last bits of `connui`, and then we need to write a plugin for
 We will need someone to finish the `icd2` documentation in doxygen format: `#28
 <https://github.com/maemo-leste/bugtracker/issues/28>`_
 
+Similarly, we would also need someone to take a look at what the best way would
+be to integrate ofono into our networking stack. One method to do that would be
+to integrate it into icd2, but perhaps there are also alternatives, by using
+`NetworkManager` or `connui`, and somehow hooking those up to `icd2`.
+
+Having working phone calls with audio (even with perhaps not too great audio
+quality) would be a huge win and might not be too far out, we're hoping someone
+will pick this up, see `#27
+<https://github.com/maemo-leste/bugtracker/issues/27>`_.
+
+Android in a box
+~~~~~~~~~~~~~~~~
+
+The best way to run Android applications on GNU/Linux seems to be `Anbox
+<https://anbox.io/>`_, which is in the process in being packaged for Debian (and
+Devuan): https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884797
+We have a ticket for anbox support, `#9
+<https://github.com/maemo-leste/bugtracker/issues/9>`_.
+
+We do not yet know how much RAM anbox would use and if it is feasible for all
+our supported devices, but devices such as the LIME2 and the Motorola Droid 4
+might have enough RAM to spare to run Android applications using Anbox.
+
+Drivers and packaging
+~~~~~~~~~~~~~~~~~~~~~
+
+Having 3D acceleration work on the LIME2 devices would be quite nice, since they
+can output to high resolution screens, in which case 3D acceleration is really a
+must-have `#43 <https://github.com/maemo-leste/bugtracker/issues/43>`_.
+
+The Droid 4 also currently has no 3D acceleration. We hope that a more
+lightweight version of `hildon-desktop` can provide some solace here `#51
+<https://github.com/maemo-leste/bugtracker/issues/51>`_.
+
+Finishing the USB gadget code is definitely a short term goal, but that depends
+on how fast we can get the kernel bugs resolved.
+
 Another thing we want to wrap up soon is importing the Maemo Qt patches (
 `#53 <https://github.com/maemo-leste/bugtracker/issues/53>`_), since that will
 allow us (and hopefully, others) to import many more packages from Maemo
@@ -169,27 +209,25 @@ Fremantle. Examples of such packages are clockui (`#55
 <https://github.com/maemo-leste/bugtracker/issues/54>`_) and open media player
 (`#25 <https://github.com/maemo-leste/bugtracker/issues/25>`_).
 
+Packaging `pulseaudio` is also somewhere on the road map, which might be
+required for better call quality on the N900 and also to protect the N900
+speakers from being irrepairably damaged `#62
+<https://github.com/maemo-leste/bugtracker/issues/62>`_.
+
+Platform support
+~~~~~~~~~~~~~~~~
+
+We might look at supporting `arm64` in the near future, if we have a (virtual)
+device that we can test our builds on.
 
 
-Next:
-
-- lime mali
-- working ofono audio calls? (link to issue w/ pavel)
-- ofono 3g data integration (how? connman? connman with icd2? custom with icd2?
-  nm with icd2?)
-- more gadget/configfs stuff
-- hildon-desktop-light
-- xprot pulseaudio plugin
-- package pulseaudio (?)
-- anbox: https://github.com/maemo-leste/bugtracker/issues/9
-
+Interested?
+-----------
 
 If you're interested in specifics, or helping out, or wish to have a specific
 package ported, please see our `bugtracker
 <https://github.com/maemo-leste/bugtracker>`_.
 
-Interested?
-===========
 
 Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
