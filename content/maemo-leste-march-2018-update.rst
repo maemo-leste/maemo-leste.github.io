@@ -1,0 +1,172 @@
+Maemo Leste - First update (March 2018)
+#######################################
+
+:category: news
+:tags: kernel, networking, battery, ofono n900, droid4
+:date: 2018-03-02 12:00
+:authors: Merlijn Wajer
+
+
+.. image:: /images/logo.png
+    :width: 250
+    :height: 353
+
+
+It's been a month since our `first post
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) and there's a
+lot of stuff to talk about!
+
+First of all, someone added us to `Wikipedia
+<https://en.wikipedia.org/wiki/Maemo#Maemo-Leste>`_, cool!
+
+Devuan, the distrobution that Maemo Leste is based on, has releases a beta
+version of "Devuan ASCII" (Devuan 2.0): https://files.devuan.org/devuan_ascii_beta/README.txt
+Maemo Leste uses Devuan Ascii, so we're happy to see ASCII being close to
+a release.
+
+On the software side
+--------------------
+
+We have imported various new packages, added new device images, and have been
+working on fixing and enhancing existing packages.
+
+* We have ported the community-ssu battery applet from `hal` to `UPower`, and it
+  is now available as update (via apt) and installed by default in the new
+  images.  (See `#36 <https://github.com/maemo-leste/bugtracker/issues/36>`_)
+  There are still some open issues (
+  `#90 <https://github.com/maemo-leste/bugtracker/issues/90>`_,
+  `#67 <https://github.com/maemo-leste/bugtracker/issues/67>`_,
+  `#68 <https://github.com/maemo-leste/bugtracker/issues/68>`_,
+  `#70 <https://github.com/maemo-leste/bugtracker/issues/70>`_)
+* The battery applet work also uncovered some kernel bugs, the first one related
+  to the status of the battery not being correct. This bug was fixed shortly
+  after the bug was reported, with patches in this thread: `N900 battery status
+  fixes <https://marc.info/?l=linux-pm&m=151933105213158&w=2>`_.
+  Another issue was uncovered when the battery applet seemed to get charging
+  events with a very long delay (60s+), the patch is currently on the mailing
+  list, but will hopefully make its way into the kernel after it has gotten some
+  review: `[RFC PATCH] power: supply: bq27xxx: Call power_supply_changed on
+  status change <https://marc.info/?l=linux-kernel&m=151994358415447&w=2>`_.
+
+* The usb status bar has received some initial porting work from `hal` to
+  `udev`, and now the UI will pop up when the N900 (only supported device right
+  now) is connected to a PC.  Actually changing the USB gadgets does not yet
+  work, since we intend to switch to `configfs` and `libusbgx` instead of the
+  deprecated gadget modes, so that we can also provide more complex gadgets in
+  the near future.
+  `#39 <https://github.com/maemo-leste/bugtracker/issues/39>`_
+  While porting the applet, a few kernel bugs were uncovered. The first problem
+  was that reading the `vbus` status from sysfs caused kernel OOPSes, this
+  should be fixed with this patch: `[PATCH v2 1/1] usb: musb: call
+  pm_runtime_{get,put}_sync before reading vbus registers
+  <https://marc.info/?l=linux-omap&m=151977053826963&w=2>`_.
+  The second issue is that sometimes the `mode` file in the `musb-hdrc`
+  controller will return `(null)` rather than a sensible mode (e.g. `b_idle`,
+  `b_peripheral`, etc), this was been reported here: `usb: musb: "(null)" in
+  sysfs mode file after disabling a gadget (and at other times, system hangs)
+  <https://marc.info/?l=linux-kernel&m=151994805016878&w=2>`_. As the title
+  suggests, at other times the device would simply reboot when switching to
+  another gadget. So there's more work to be done in this area.
+
+* To be able to quickly get some of these kernel fixes to Maemo Leste, we have
+  git repositories with some device specific kernel patches. Now, at least for
+  the N900, we also have a package: `linux-image-n900 - Linux kernel package for
+  Nokia N900 (4.15)`. It currently already carries all of the fixes mentioned
+  above.
+
+* The `Mode Control Entity` (mce) can now control the backlight on the Droid4,
+  and likely on almost every other Linux mainline support out there.
+  `#65 <https://github.com/maemo-leste/bugtracker/issues/65>`_
+
+* `mce` can now read the battery status using `UPower`, profiting from earlier
+  work done on the battery applet.
+  `#87 <https://github.com/maemo-leste/bugtracker/issues/87>`_
+
+* `ofono` no longer crashes, as reported in
+  `#61 <https://github.com/maemo-leste/bugtracker/issues/61>`_. We have also
+  imported the latest ofono release, since the required version was not yet
+  present in Debian sid (nor in Devuan).
+
+* With some work, `ofono` can be used to set up a `2g/3g` data connection, as
+  described in `#61`_. It is also possible to send a text and start a phone
+  call, using dbus. The phone call is without audio. At present, there is no
+  integration or UI available in Maemo Leste for any of this.
+
+* `Motorola Droid4 images are now available
+  <http://maedevu.maemo.org/images/droid4/>`_, be mindful that you already need
+  to have rooted the device and need to have installed safestrap.
+  `#26 <https://github.com/maemo-leste/bugtracker/issues/26>`_
+  We hope that someone will volunteer to extend our current device pages with
+  installation instructions, or at least pointers to said instructions (see
+  `#75 <https://github.com/maemo-leste/bugtracker/issues/75>`_).
+
+* There are also `LIME2 images available
+  <http://maedevu.maemo.org/images/olimex-lime2/>`_. Like the Droid4 image, they
+  do not yet contain any hardware acceleration. At present, the LIME2 images
+  also require that a HDMI monitor is hooked up at boot time. (If someone tries
+  out the images, please document your experience and consider adding to our
+  devices pages). There is an open issue that contains the current state of the
+  images: `#43 <https://github.com/maemo-leste/bugtracker/issues/43>`_.
+
+* There are now also `armel` images available for the N900, but **they do not
+  yet work**, so please stick to `armhf` images for now.
+  See `#92 <https://github.com/maemo-leste/bugtracker/issues/92>`_.
+
+* Our repositories were missing source packages for many packages, so `apt-get
+  build-dep` and `apt-get source` often did not work. This is now resolved.
+  `#84 <https://github.com/maemo-leste/bugtracker/issues/84>`_
+
+  Several people have inquired about a "Scratchbox" like tool. Currently,
+  development is done on the device (or virtual machines) themselves. You can
+  simple use the standard debian development tools for all development and
+  packaging, so at this point there does not seem to be a reason to develop a
+  "Scratchbox" like environment.
+
+* A **lot** of work has gone into readying `connui` and `icd2` (the connectivity
+  UI, API, daemon and plugins) for Maemo Leste. Unfortunately, it is not in a
+  completed state yet, but it's getting quite close. More on that later on in
+  this post.
+
+More work has been done behind the scenes, so if you're excited, please do
+follow our github issue tracker and/or the IRC channel. We also have logs of the
+channel history now: http://maedevu.maemo.org/irc.txt
+
+
+- connui, icd2
+- droid4 "lock button" (wip, kinda)
+- https://github.com/maemo-leste/bugtracker/issues/37#issuecomment-366876879
+
+What is next?
+-------------
+
+Next:
+
+... https://github.com/maemo-leste/bugtracker/milestone/4
+
+- maemo qt (maybe skip if we can't manage)
+- wpa_supplicant icd2 plugin (based on older work - INSERT LINK)
+- lime mali
+- working ofono audio call? (link to issue w/ pavel)
+- ofono 3g data integration (how? connman? connman with icd2? custom with icd2?
+  nm with icd2?)
+- porting over qt applications
+- more gadget/configfs stuff
+- hildon-desktop-light
+- xprot pulseaudio plugin
+- package pulseaudio (?)
+- anbox: https://github.com/maemo-leste/bugtracker/issues/9
+
+
+If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our `bugtracker
+<https://github.com/maemo-leste/bugtracker>`_.
+
+Interested?
+===========
+
+Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.
+
+We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We also monitor the github issues closely.
