@@ -169,14 +169,6 @@ be to integrate ofono into our networking stack. One method to do that would be
 to integrate it into icd2, but perhaps there are also alternatives, by using
 `NetworkManager` or `connui`, and somehow hooking those up to `icd2`.
 
-Another thing we want to wrap up soon is importing the Maemo Qt patches (
-`#53 <https://github.com/maemo-leste/bugtracker/issues/53>`_), since that will
-allow us (and hopefully, others) to import many more packages from Maemo
-Fremantle. Examples of such packages are clockui (`#55
-<https://github.com/maemo-leste/bugtracker/issues/55>`_), osso-calculator (`#54
-<https://github.com/maemo-leste/bugtracker/issues/54>`_) and open media player
-(`#25 <https://github.com/maemo-leste/bugtracker/issues/25>`_).
-
 Having working phone calls with audio (even with perhaps not too great audio
 quality) would be a huge win and might not be too far out, we're hoping someone
 will pick this up, see `#27
@@ -195,8 +187,8 @@ We do not yet know how much RAM anbox would use and if it is feasible for all
 our supported devices, but devices such as the LIME2 and the Motorola Droid 4
 might have enough RAM to spare to run Android applications using Anbox.
 
-Drivers
-~~~~~~~
+Drivers and packaging
+~~~~~~~~~~~~~~~~~~~~~
 
 Having 3D acceleration work on the LIME2 devices would be quite nice, since they
 can output to high resolution screens, in which case 3D acceleration is really a
@@ -208,6 +200,14 @@ lightweight version of `hildon-desktop` can provide some solace here `#51
 
 Finishing the USB gadget code is definitely a short term goal, but that depends
 on how fast we can get the kernel bugs resolved.
+
+Another thing we want to wrap up soon is importing the Maemo Qt patches (
+`#53 <https://github.com/maemo-leste/bugtracker/issues/53>`_), since that will
+allow us (and hopefully, others) to import many more packages from Maemo
+Fremantle. Examples of such packages are clockui (`#55
+<https://github.com/maemo-leste/bugtracker/issues/55>`_), osso-calculator (`#54
+<https://github.com/maemo-leste/bugtracker/issues/54>`_) and open media player
+(`#25 <https://github.com/maemo-leste/bugtracker/issues/25>`_).
 
 Packaging `pulseaudio` is also somewhere on the road map, which might be
 required for better call quality on the N900 and also to protect the N900
