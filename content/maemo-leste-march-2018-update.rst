@@ -13,7 +13,7 @@ Maemo Leste - First update (March 2018)
 
 
 It's been a month since our `first post
-<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) and there's a
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ and there's a
 lot of stuff to talk about!
 
 First of all, someone added us to `Wikipedia
