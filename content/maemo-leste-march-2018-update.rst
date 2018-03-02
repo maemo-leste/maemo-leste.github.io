@@ -74,6 +74,10 @@ working on fixing and enhancing existing packages.
   Nokia N900 (4.15)`. It currently already carries all of the fixes mentioned
   above.
 
+- The orientation lock applet is also ported, but has yet to see any reasonable
+  testing.
+  `#37 <https://github.com/maemo-leste/bugtracker/issues/37>`_
+
 * The `Mode Control Entity` (mce) can now control the backlight on the Droid4,
   and likely on almost every other Linux mainline support out there.
   `#65 <https://github.com/maemo-leste/bugtracker/issues/65>`_
@@ -132,24 +136,47 @@ follow our github issue tracker and/or the IRC channel. We also have logs of the
 channel history now: http://maedevu.maemo.org/irc.txt
 
 
-- connui, icd2
-- droid4 "lock button" (wip, kinda)
-- https://github.com/maemo-leste/bugtracker/issues/37#issuecomment-366876879
-
 What is next?
 -------------
 
+We have started to use the Github 'Milestones' feature to sort tickets by order
+of importance and feasibility, and you can see the ticket that we deem necessary
+for an Alpha releases here: `Alpha release milestone
+<https://github.com/maemo-leste/bugtracker/milestone/4>`_.
+
+A lot of major things are still missing, a few obvious ones are phone calls, UI
+and daemons for conversations, integration for wifi connectivity, integration
+for 3g data, 3d acceleration for various supported platforms, support for Qt
+applications and some sort of Android application support. We will try to cover
+what we're going to work on for the next month, to give you an indication on
+where we are, where we are going, and where you can help.
+
+The first big thing that we want to attempt to get into a working state is
+`connui`, `icd2` and `wpa_supplicant` integration for `icd2`. In layman terms:
+we want wifi to work with the Maemo Fremantle UIs, we need to finish reverse
+engineering the last bits of `connui`, and then we need to write a plugin for
+`icd2` that communicates with `wpa_supplicant`, the de-facto wifi daemon. (See
+`#73 <https://github.com/maemo-leste/bugtracker/issues/73>`_ and `#42
+<https://github.com/maemo-leste/bugtracker/issues/42>`_)
+We will need someone to finish the `icd2` documentation in doxygen format: `#28
+<https://github.com/maemo-leste/bugtracker/issues/28>`_
+
+Another thing we want to wrap up soon is importing the Maemo Qt patches (
+`#53 <https://github.com/maemo-leste/bugtracker/issues/53>`_), since that will
+allow us (and hopefully, others) to import many more packages from Maemo
+Fremantle. Examples of such packages are clockui (`#55
+<https://github.com/maemo-leste/bugtracker/issues/55>`_), osso-calculator (`#54
+<https://github.com/maemo-leste/bugtracker/issues/54>`_) and open media player
+(`#25 <https://github.com/maemo-leste/bugtracker/issues/25>`_).
+
+
+
 Next:
 
-... https://github.com/maemo-leste/bugtracker/milestone/4
-
-- maemo qt (maybe skip if we can't manage)
-- wpa_supplicant icd2 plugin (based on older work - INSERT LINK)
 - lime mali
 - working ofono audio call? (link to issue w/ pavel)
 - ofono 3g data integration (how? connman? connman with icd2? custom with icd2?
   nm with icd2?)
-- porting over qt applications
 - more gadget/configfs stuff
 - hildon-desktop-light
 - xprot pulseaudio plugin
