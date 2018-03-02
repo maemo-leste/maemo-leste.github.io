@@ -2,7 +2,7 @@ Maemo Leste - First update (March 2018)
 #######################################
 
 :category: news
-:tags: kernel, networking, battery, ofono n900, droid4
+:tags: kernel, networking, battery, ofono, n900, droid4
 :date: 2018-03-02 12:00
 :authors: Merlijn Wajer
 
