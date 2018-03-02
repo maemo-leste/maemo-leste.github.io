@@ -19,7 +19,7 @@ lot of stuff to talk about!
 First of all, someone added us to `Wikipedia
 <https://en.wikipedia.org/wiki/Maemo#Maemo-Leste>`_, cool!
 
-Devuan, the distrobution that Maemo Leste is based on, has releases a beta
+Devuan, the distribution that Maemo Leste is based on, has released a beta
 version of "Devuan ASCII" (Devuan 2.0): https://files.devuan.org/devuan_ascii_beta/README.txt
 Maemo Leste uses Devuan Ascii, so we're happy to see ASCII being close to
 a release.
@@ -31,19 +31,19 @@ We have imported various new packages, added new device images, and have been
 working on fixing and enhancing existing packages.
 
 * We have ported the community-ssu battery applet from `hal` to `UPower`, and it
-  is now available as update (via apt) and installed by default in the new
+  is now available as an update (via apt) and installed by default in the new
   images.  (See `#36 <https://github.com/maemo-leste/bugtracker/issues/36>`_)
   There are still some open issues (
   `#90 <https://github.com/maemo-leste/bugtracker/issues/90>`_,
   `#67 <https://github.com/maemo-leste/bugtracker/issues/67>`_,
   `#68 <https://github.com/maemo-leste/bugtracker/issues/68>`_,
   `#70 <https://github.com/maemo-leste/bugtracker/issues/70>`_)
-* The battery applet work also uncovered some kernel bugs, the first one related
+* The battery applet work also uncovered some kernel bugs. The first one related
   to the status of the battery not being correct. This bug was fixed shortly
   after the bug was reported, with patches in this thread: `N900 battery status
   fixes <https://marc.info/?l=linux-pm&m=151933105213158&w=2>`_.
   Another issue was uncovered when the battery applet seemed to get charging
-  events with a very long delay (60s+), the patch is currently on the mailing
+  events with a very long delay (60s+). The patch is currently on the mailing
   list, but will hopefully make its way into the kernel after it has gotten some
   review: `[RFC PATCH] power: supply: bq27xxx: Call power_supply_changed on
   status change <https://marc.info/?l=linux-kernel&m=151994358415447&w=2>`_.
@@ -56,13 +56,13 @@ working on fixing and enhancing existing packages.
   the near future.
   `#39 <https://github.com/maemo-leste/bugtracker/issues/39>`_
   While porting the applet, a few kernel bugs were uncovered. The first problem
-  was that reading the `vbus` status from sysfs caused kernel OOPSes, this
+  was that reading the `vbus` status from sysfs caused kernel OOPSes. This
   should be fixed with this patch: `[PATCH v2 1/1] usb: musb: call
   pm_runtime_{get,put}_sync before reading vbus registers
   <https://marc.info/?l=linux-omap&m=151977053826963&w=2>`_.
   The second issue is that sometimes the `mode` file in the `musb-hdrc`
   controller will return `(null)` rather than a sensible mode (e.g. `b_idle`,
-  `b_peripheral`, etc), this was been reported here: `usb: musb: "(null)" in
+  `b_peripheral`, etc). This was been reported here: `usb: musb: "(null)" in
   sysfs mode file after disabling a gadget (and at other times, system hangs)
   <https://marc.info/?l=linux-kernel&m=151994805016878&w=2>`_. As the title
   suggests, at other times the device would simply reboot when switching to
@@ -79,7 +79,7 @@ working on fixing and enhancing existing packages.
   `#37 <https://github.com/maemo-leste/bugtracker/issues/37>`_
 
 * The `Mode Control Entity` (mce) can now control the backlight on the Droid4,
-  and likely on almost every other Linux mainline support out there.
+  and likely on almost every other device with Linux mainline support out there.
   `#65 <https://github.com/maemo-leste/bugtracker/issues/65>`_
 
 * `mce` can now read the battery status using `UPower`, profiting from earlier
@@ -97,8 +97,8 @@ working on fixing and enhancing existing packages.
   integration or UI available in Maemo Leste for any of this.
 
 * `Motorola Droid4 images are now available
-  <http://maedevu.maemo.org/images/droid4/>`_, be mindful that you already need
-  to have rooted the device and need to have installed safestrap.
+  <http://maedevu.maemo.org/images/droid4/>`_, but be mindful that you need
+  to have already rooted the device and to have installed safestrap.
   `#26 <https://github.com/maemo-leste/bugtracker/issues/26>`_
   We hope that someone will volunteer to extend our current device pages with
   installation instructions, or at least pointers to said instructions (see
@@ -121,10 +121,10 @@ working on fixing and enhancing existing packages.
   `#84 <https://github.com/maemo-leste/bugtracker/issues/84>`_
 
   Several people have inquired about a "Scratchbox" like tool. Currently,
-  development is done on the device (or virtual machines) themselves. You can
-  simple use the standard debian development tools for all development and
+  development is done on the devices themselves, or virtual machines. You can
+  simply use the standard Debian development tools for all development and
   packaging, so at this point there does not seem to be a reason to develop a
-  "Scratchbox" like environment.
+  Scratchbox-like environment.
 
 * A **lot** of work has gone into readying `connui` and `icd2` (the connectivity
   UI, API, daemon and plugins) for Maemo Leste. Unfortunately, it is not in a
@@ -144,7 +144,7 @@ of importance and feasibility, and you can see the ticket that we deem necessary
 for an Alpha releases here: `Alpha release milestone
 <https://github.com/maemo-leste/bugtracker/milestone/4>`_.
 
-A lot of major things are still missing, a few obvious ones are phone calls, UI
+A lot of major things are still missing. A few obvious ones are phone calls, UI
 and daemons for conversations, integration for wifi connectivity, integration
 for 3g data, 3d acceleration for various supported platforms, support for Qt
 applications and some sort of Android application support. We will try to cover
@@ -153,7 +153,7 @@ where we are, where we are going, and where you can help.
 
 The first big thing that we want to attempt to get into a working state is
 `connui`, `icd2` and `wpa_supplicant` integration for `icd2`. In layman terms:
-we want wifi to work with the Maemo Fremantle UIs, we need to finish reverse
+we want wifi to work with the Maemo Fremantle UIs. To do this, we need to finish reverse
 engineering the last bits of `connui`, and then we need to write a plugin for
 `icd2` that communicates with `wpa_supplicant`, the de-facto wifi daemon. (See
 `#73 <https://github.com/maemo-leste/bugtracker/issues/73>`_ and `#42
@@ -174,7 +174,7 @@ Fremantle. Examples of such packages are clockui (`#55
 Next:
 
 - lime mali
-- working ofono audio call? (link to issue w/ pavel)
+- working ofono audio calls? (link to issue w/ pavel)
 - ofono 3g data integration (how? connman? connman with icd2? custom with icd2?
   nm with icd2?)
 - more gadget/configfs stuff
