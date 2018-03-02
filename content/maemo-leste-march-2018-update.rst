@@ -122,7 +122,7 @@ working on fixing and enhancing existing packages.
 
   Several people have inquired about a "Scratchbox" like tool. Currently,
   development is done on the device (or virtual machines) themselves. You can
-  simple use the standard debian development tools for all development and
+  simply use the standard debian development tools for all development and
   packaging, so at this point there does not seem to be a reason to develop a
   "Scratchbox" like environment.
 
