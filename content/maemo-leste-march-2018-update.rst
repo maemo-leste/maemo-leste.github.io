@@ -57,8 +57,8 @@ working on fixing and enhancing existing packages.
   now) is connected to a PC.  Actually changing the USB gadgets does not yet
   work, since we intend to switch to `configfs` and `libusbgx` instead of the
   deprecated gadget modes, so that we can also provide more complex gadgets in
-  the near future.
-  `#39 <https://github.com/maemo-leste/bugtracker/issues/39>`_
+  the near future, see
+  `#39 <https://github.com/maemo-leste/bugtracker/issues/39>`_.
   While porting the applet, a few kernel bugs were uncovered. The first problem
   was that reading the `vbus` status from sysfs caused kernel OOPSes. This
   should be fixed with this patch: `[PATCH v2 1/1] usb: musb: call
@@ -66,7 +66,7 @@ working on fixing and enhancing existing packages.
   <https://marc.info/?l=linux-omap&m=151977053826963&w=2>`_.
   The second issue is that sometimes the `mode` file in the `musb-hdrc`
   controller will return `(null)` rather than a sensible mode (e.g. `b_idle`,
-  `b_peripheral`, etc). This was been reported here: `usb: musb: "(null)" in
+  `b_peripheral`, etc). This has been reported here: `usb: musb: "(null)" in
   sysfs mode file after disabling a gadget (and at other times, system hangs)
   <https://marc.info/?l=linux-kernel&m=151994805016878&w=2>`_. As the title
   suggests, at other times the device would simply reboot when switching to
@@ -99,16 +99,16 @@ working on fixing and enhancing existing packages.
   above.
 
 - The orientation lock applet is also ported, but has yet to see any reasonable
-  testing.
-  `#37 <https://github.com/maemo-leste/bugtracker/issues/37>`_
+  testing, see
+  `#37 <https://github.com/maemo-leste/bugtracker/issues/37>`_.
 
 * The `Mode Control Entity` (mce) can now control the backlight on the Droid4,
-  and likely on almost every other device with Linux mainline support out there.
-  `#65 <https://github.com/maemo-leste/bugtracker/issues/65>`_
+  and likely on almost every other device with Linux mainline support out there,
+  see `#65 <https://github.com/maemo-leste/bugtracker/issues/65>`_.
 
 * `mce` can now read the battery status using `UPower`, profiting from earlier
-  work done on the battery applet.
-  `#87 <https://github.com/maemo-leste/bugtracker/issues/87>`_
+  work done on the battery applet, see
+  `#87 <https://github.com/maemo-leste/bugtracker/issues/87>`_>
 
 * `ofono` no longer crashes, as reported in
   `#61 <https://github.com/maemo-leste/bugtracker/issues/61>`_. We have also
@@ -141,8 +141,8 @@ working on fixing and enhancing existing packages.
   See `#92 <https://github.com/maemo-leste/bugtracker/issues/92>`_.
 
 * Our repositories were missing source packages for many packages, so `apt-get
-  build-dep` and `apt-get source` often did not work. This is now resolved.
-  `#84 <https://github.com/maemo-leste/bugtracker/issues/84>`_
+  build-dep` and `apt-get source` often did not work. This is now resolved, see
+  `#84 <https://github.com/maemo-leste/bugtracker/issues/84>`_.
 
   Several people have inquired about a "Scratchbox" like tool. Currently,
   development is done on the devices themselves, or virtual machines. You can
