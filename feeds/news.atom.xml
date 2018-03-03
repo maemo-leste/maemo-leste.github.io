@@ -1,5 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-02-01T12:00:00+01:00</updated><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-03-02T12:00:00+01:00</updated><entry><title>Maemo Leste - First update (March 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html" rel="alternate"></link><published>2018-03-02T12:00:00+01:00</published><updated>2018-03-02T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-03-02:/maemo-leste-first-update-march-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html"&gt;first post&lt;/a&gt; and there's a
+lot of stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, someone added us to &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Maemo#Maemo-Leste"&gt;Wikipedia&lt;/a&gt;, cool!&lt;/p&gt;
+&lt;p&gt;Devuan, the distribution that Maemo Leste is based on, has released a beta
+version of &amp;quot;Devuan ASCII&amp;quot; (Devuan 2.0): &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html"&gt;first post&lt;/a&gt; and there's a
+lot of stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, someone added us to &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Maemo#Maemo-Leste"&gt;Wikipedia&lt;/a&gt;, cool!&lt;/p&gt;
+&lt;p&gt;Devuan, the distribution that Maemo Leste is based on, has released a beta
+version of &amp;quot;Devuan ASCII&amp;quot; (Devuan 2.0): &lt;a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt"&gt;https://files.devuan.org/devuan_ascii_beta/README.txt&lt;/a&gt;
+Maemo Leste uses Devuan Ascii, so we're happy to see ASCII being close to
+a release.&lt;/p&gt;
+&lt;div class="section" id="on-the-software-side"&gt;
+&lt;h2&gt;On the software side&lt;/h2&gt;
+&lt;p&gt;We have imported various new packages, added new device images, and have been
+working on fixing and enhancing existing packages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;We have ported the community-ssu battery applet from &lt;cite&gt;hal&lt;/cite&gt; to &lt;cite&gt;UPower&lt;/cite&gt;, and it
+is now available as an update (via apt) and installed by default in the new
+images.  (See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/36"&gt;#36&lt;/a&gt;)
+There are still some open issues (
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/90"&gt;#90&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/67"&gt;#67&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/68"&gt;#68&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/70"&gt;#70&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The battery applet work also uncovered some kernel bugs. The first one related
+to the status of the battery not being correct. This bug was fixed shortly
+after the bug was reported, with patches in this thread: &lt;a class="reference external" href="https://marc.info/?l=linux-pm&amp;amp;m=151933105213158&amp;amp;w=2"&gt;N900 battery status
+fixes&lt;/a&gt;.
+Another issue was uncovered when the battery applet seemed to get charging
+events with a very long delay (60s+). The patch is currently on the mailing
+list, but will hopefully make its way into the kernel after it has gotten some
+review: &lt;a class="reference external" href="https://marc.info/?l=linux-kernel&amp;amp;m=151994358415447&amp;amp;w=2"&gt;[RFC PATCH] power: supply: bq27xxx: Call power_supply_changed on
+status change&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/n900-charging-battery-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The usb status bar has received some initial porting work from &lt;cite&gt;hal&lt;/cite&gt; to
+&lt;cite&gt;udev&lt;/cite&gt;, and now the UI will pop up when the N900 (only supported device right
+now) is connected to a PC.  Actually changing the USB gadgets does not yet
+work, since we intend to switch to &lt;cite&gt;configfs&lt;/cite&gt; and &lt;cite&gt;libusbgx&lt;/cite&gt; instead of the
+deprecated gadget modes, so that we can also provide more complex gadgets in
+the near future.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/39"&gt;#39&lt;/a&gt;
+While porting the applet, a few kernel bugs were uncovered. The first problem
+was that reading the &lt;cite&gt;vbus&lt;/cite&gt; status from sysfs caused kernel OOPSes. This
+should be fixed with this patch: &lt;a class="reference external" href="https://marc.info/?l=linux-omap&amp;amp;m=151977053826963&amp;amp;w=2"&gt;[PATCH v2 1/1] usb: musb: call
+pm_runtime_{get,put}_sync before reading vbus registers&lt;/a&gt;.
+The second issue is that sometimes the &lt;cite&gt;mode&lt;/cite&gt; file in the &lt;cite&gt;musb-hdrc&lt;/cite&gt;
+controller will return &lt;cite&gt;(null)&lt;/cite&gt; rather than a sensible mode (e.g. &lt;cite&gt;b_idle&lt;/cite&gt;,
+&lt;cite&gt;b_peripheral&lt;/cite&gt;, etc). This was been reported here: &lt;a class="reference external" href="https://marc.info/?l=linux-kernel&amp;amp;m=151994805016878&amp;amp;w=2"&gt;usb: musb: &amp;quot;(null)&amp;quot; in
+sysfs mode file after disabling a gadget (and at other times, system hangs)&lt;/a&gt;. As the title
+suggests, at other times the device would simply reboot when switching to
+another gadget. So there's more work to be done in this area.&lt;/p&gt;
+&lt;img alt="" src="/images/leste-initial-usb-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The system menu and lock screen mostly works, but doesn't work directly from
+startup on the N900. This is likely a boot (race) condition triggered in part
+by the fact that &lt;cite&gt;hildon-desktop&lt;/cite&gt; currently starts slowly.  See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83"&gt;#83&lt;/a&gt;, and meanwhile, enjoy
+screenshots of working UI:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-lock-slider.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-system-menu.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;To be able to quickly get some of these kernel fixes to Maemo Leste, we have
+git repositories with some device specific kernel patches. Now, at least for
+the N900, we also have a package: &lt;cite&gt;linux-image-n900 - Linux kernel package for
+Nokia N900 (4.15)&lt;/cite&gt;. It currently already carries all of the fixes mentioned
+above.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The orientation lock applet is also ported, but has yet to see any reasonable
+testing.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/37"&gt;#37&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;The &lt;cite&gt;Mode Control Entity&lt;/cite&gt; (mce) can now control the backlight on the Droid4,
+and likely on almost every other device with Linux mainline support out there.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/65"&gt;#65&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;mce&lt;/cite&gt; can now read the battery status using &lt;cite&gt;UPower&lt;/cite&gt;, profiting from earlier
+work done on the battery applet.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87"&gt;#87&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;ofono&lt;/cite&gt; no longer crashes, as reported in
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61"&gt;#61&lt;/a&gt;. We have also
+imported the latest ofono release, since the required version was not yet
+present in Debian sid (nor in Devuan).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;With some work, &lt;cite&gt;ofono&lt;/cite&gt; can be used to set up a &lt;cite&gt;2g/3g&lt;/cite&gt; data connection, as
+described in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61"&gt;#61&lt;/a&gt;. It is also possible to send a text and start a phone
+call, using dbus. The phone call is without audio. At present, there is no
+integration or UI available in Maemo Leste for any of this.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;a class="reference external" href="http://maedevu.maemo.org/images/droid4/"&gt;Motorola Droid4 images are now available&lt;/a&gt;, but be mindful that you need
+to have already rooted the device and to have installed safestrap.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/26"&gt;#26&lt;/a&gt;
+We hope that someone will volunteer to extend our current device pages with
+installation instructions, or at least pointers to said instructions (see
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/75"&gt;#75&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;There are also &lt;a class="reference external" href="http://maedevu.maemo.org/images/olimex-lime2/"&gt;LIME2 images available&lt;/a&gt;. Like the Droid4 image, they
+do not yet contain any hardware acceleration. At present, the LIME2 images
+also require that a HDMI monitor is hooked up at boot time. (If someone tries
+out the images, please document your experience and consider adding to our
+devices pages). There is an open issue that contains the current state of the
+images: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/43"&gt;#43&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;There are now also &lt;cite&gt;armel&lt;/cite&gt; images available for the N900, but &lt;strong&gt;they do not
+yet work&lt;/strong&gt;, so please stick to &lt;cite&gt;armhf&lt;/cite&gt; images for now.
+See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/92"&gt;#92&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Our repositories were missing source packages for many packages, so &lt;cite&gt;apt-get
+build-dep&lt;/cite&gt; and &lt;cite&gt;apt-get source&lt;/cite&gt; often did not work. This is now resolved.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/84"&gt;#84&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Several people have inquired about a &amp;quot;Scratchbox&amp;quot; like tool. Currently,
+development is done on the devices themselves, or virtual machines. You can
+simply use the standard Debian development tools for all development and
+packaging, so at this point there does not seem to be a reason to develop a
+Scratchbox-like environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;A &lt;strong&gt;lot&lt;/strong&gt; of work has gone into readying &lt;cite&gt;connui&lt;/cite&gt; and &lt;cite&gt;icd2&lt;/cite&gt; (the connectivity
+UI, API, daemon and plugins) for Maemo Leste. Unfortunately, it is not in a
+completed state yet, but it's getting quite close. More on that later on in
+this post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More work has been done behind the scenes, so if you're excited, please do
+follow our github issue tracker and/or the IRC channel. We also have logs of the
+channel history now: &lt;a class="reference external" href="http://maedevu.maemo.org/irc.txt"&gt;http://maedevu.maemo.org/irc.txt&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;We have started to use the Github 'Milestones' feature to sort tickets by order
+of importance and feasibility, and you can see the ticket that we deem necessary
+for an Alpha releases here: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Alpha release milestone&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A lot of major things are still missing. A few obvious ones are phone calls, UI
+and daemons for conversations, integration for wifi connectivity, integration
+for 3g data, 3d acceleration for various supported platforms, support for Qt
+applications and some sort of Android application support. We will try to cover
+what we're going to work on for the next month, to give you an indication on
+where we are, where we are going, and where you can help.&lt;/p&gt;
+&lt;div class="section" id="connectivity"&gt;
+&lt;h3&gt;Connectivity&lt;/h3&gt;
+&lt;p&gt;The first big thing that we want to attempt to get into a working state is
+&lt;cite&gt;connui&lt;/cite&gt;, &lt;cite&gt;icd2&lt;/cite&gt; and &lt;cite&gt;wpa_supplicant&lt;/cite&gt; integration for &lt;cite&gt;icd2&lt;/cite&gt;. In layman terms:
+we want wifi to work with the Maemo Fremantle UIs. To do this, we need to finish reverse
+engineering the last bits of &lt;cite&gt;connui&lt;/cite&gt;, and then we need to write a plugin for
+&lt;cite&gt;icd2&lt;/cite&gt; that communicates with &lt;cite&gt;wpa_supplicant&lt;/cite&gt;, the de-facto wifi daemon. (See
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/73"&gt;#73&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/42"&gt;#42&lt;/a&gt;)
+We will need someone to finish the &lt;cite&gt;icd2&lt;/cite&gt; documentation in doxygen format: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/28"&gt;#28&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Similarly, we would also need someone to take a look at what the best way would
+be to integrate ofono into our networking stack. One method to do that would be
+to integrate it into icd2, but perhaps there are also alternatives, by using
+&lt;cite&gt;NetworkManager&lt;/cite&gt; or &lt;cite&gt;connui&lt;/cite&gt;, and somehow hooking those up to &lt;cite&gt;icd2&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;Having working phone calls with audio (even with perhaps not too great audio
+quality) would be a huge win and might not be too far out, we're hoping someone
+will pick this up, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/27"&gt;#27&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="android-in-a-box"&gt;
+&lt;h3&gt;Android in a box&lt;/h3&gt;
+&lt;p&gt;The best way to run Android applications on GNU/Linux seems to be &lt;a class="reference external" href="https://anbox.io/"&gt;Anbox&lt;/a&gt;, which is in the process in being packaged for Debian (and
+Devuan): &lt;a class="reference external" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884797"&gt;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884797&lt;/a&gt;
+We have a ticket for anbox support, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/9"&gt;#9&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We do not yet know how much RAM anbox would use and if it is feasible for all
+our supported devices, but devices such as the LIME2 and the Motorola Droid 4
+might have enough RAM to spare to run Android applications using Anbox.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="drivers-and-packaging"&gt;
+&lt;h3&gt;Drivers and packaging&lt;/h3&gt;
+&lt;p&gt;Having 3D acceleration work on the LIME2 devices would be quite nice, since they
+can output to high resolution screens, in which case 3D acceleration is really a
+must-have &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/43"&gt;#43&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Droid 4 also currently has no 3D acceleration. We hope that a more
+lightweight version of &lt;cite&gt;hildon-desktop&lt;/cite&gt; can provide some solace here &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/51"&gt;#51&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finishing the USB gadget code is definitely a short term goal, but that depends
+on how fast we can get the kernel bugs resolved.&lt;/p&gt;
+&lt;p&gt;Another thing we want to wrap up soon is importing the Maemo Qt patches (
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/53"&gt;#53&lt;/a&gt;), since that will
+allow us (and hopefully, others) to import many more packages from Maemo
+Fremantle. Examples of such packages are clockui (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/55"&gt;#55&lt;/a&gt;), osso-calculator (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/54"&gt;#54&lt;/a&gt;) and open media player
+(&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/25"&gt;#25&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Packaging &lt;cite&gt;pulseaudio&lt;/cite&gt; is also somewhere on the road map, which might be
+required for better call quality on the N900 and also to protect the N900
+speakers from being irrepairably damaged &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/62"&gt;#62&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="platform-support"&gt;
+&lt;h3&gt;Platform support&lt;/h3&gt;
+&lt;p&gt;We might look at supporting &lt;cite&gt;arm64&lt;/cite&gt; in the near future, if we have a (virtual)
+device that we can test our builds on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We also monitor the github issues closely.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="kernel"></category><category term="networking"></category><category term="battery"></category><category term="ofono"></category><category term="n900"></category><category term="droid4"></category></entry><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;We are happy to announce the immediate availability of Maemo &lt;cite&gt;Leste&lt;/cite&gt;
 (pre-alpha), a GNU+Linux distribution in spirit of &lt;a class="reference external" href="http://maemo.org"&gt;Maemo Fremantle&lt;/a&gt;, originally developed by &lt;cite&gt;Nokia&lt;/cite&gt; for their internet tablets
 and phones, like the famous &lt;cite&gt;Nokia N900&lt;/cite&gt;.&lt;/p&gt;
