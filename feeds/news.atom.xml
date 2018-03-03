@@ -82,7 +82,7 @@ see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtra
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;mce&lt;/cite&gt; can now read the battery status using &lt;cite&gt;UPower&lt;/cite&gt;, profiting from earlier
 work done on the battery applet, see
-&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87"&gt;#87&lt;/a&gt;&amp;gt;&lt;/p&gt;
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87"&gt;#87&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;ofono&lt;/cite&gt; no longer crashes, as reported in
 &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61"&gt;#61&lt;/a&gt;. We have also
