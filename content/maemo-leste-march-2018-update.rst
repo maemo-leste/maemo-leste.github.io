@@ -48,6 +48,10 @@ working on fixing and enhancing existing packages.
   review: `[RFC PATCH] power: supply: bq27xxx: Call power_supply_changed on
   status change <https://marc.info/?l=linux-kernel&m=151994358415447&w=2>`_.
 
+  .. image:: /images/n900-charging-battery-applet.png
+    :height: 324px
+    :width: 576px
+
 * The usb status bar has received some initial porting work from `hal` to
   `udev`, and now the UI will pop up when the N900 (only supported device right
   now) is connected to a PC.  Actually changing the USB gadgets does not yet
@@ -67,6 +71,26 @@ working on fixing and enhancing existing packages.
   <https://marc.info/?l=linux-kernel&m=151994805016878&w=2>`_. As the title
   suggests, at other times the device would simply reboot when switching to
   another gadget. So there's more work to be done in this area.
+
+  .. image:: /images/leste-initial-usb-applet.png
+    :height: 324px
+    :width: 576px
+
+* The system menu and lock screen mostly works, but doesn't work directly from
+  startup on the N900. This is likely a boot (race) condition triggered in part
+  by the fact that `hildon-desktop` currently starts slowly.  See `#83
+  <https://github.com/maemo-leste/bugtracker/issues/83>`_, and meanwhile, enjoy
+  screenshots of working UI:
+
+  .. image:: /images/n900-lock-slider.png
+    :height: 324px
+    :width: 576px
+
+  .. image:: /images/n900-system-menu.png
+    :height: 324px
+    :width: 576px
+
+
 
 * To be able to quickly get some of these kernel fixes to Maemo Leste, we have
   git repositories with some device specific kernel patches. Now, at least for

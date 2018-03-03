@@ -29,9 +29,10 @@ Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
 A proper overview of the current (Maemo) software state will be provided soon.
-Check out our blog post (`here
-<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) for the current
-status on the Nokia N900
+Check out our (`initial blog post
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) and the `March
+2018 update <{filename}/maemo-leste-march-2018-update.rst>`_ for the current
+status.
 
 
 Devices:
