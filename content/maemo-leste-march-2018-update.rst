@@ -108,7 +108,7 @@ working on fixing and enhancing existing packages.
 
 * `mce` can now read the battery status using `UPower`, profiting from earlier
   work done on the battery applet, see
-  `#87 <https://github.com/maemo-leste/bugtracker/issues/87>`_>
+  `#87 <https://github.com/maemo-leste/bugtracker/issues/87>`_
 
 * `ofono` no longer crashes, as reported in
   `#61 <https://github.com/maemo-leste/bugtracker/issues/61>`_. We have also
