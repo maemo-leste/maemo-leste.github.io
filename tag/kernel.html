@@ -71,15 +71,15 @@ status change</a>.</p>
 now) is connected to a PC.  Actually changing the USB gadgets does not yet
 work, since we intend to switch to <cite>configfs</cite> and <cite>libusbgx</cite> instead of the
 deprecated gadget modes, so that we can also provide more complex gadgets in
-the near future.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/39">#39</a>
+the near future, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/39">#39</a>.
 While porting the applet, a few kernel bugs were uncovered. The first problem
 was that reading the <cite>vbus</cite> status from sysfs caused kernel OOPSes. This
 should be fixed with this patch: <a class="reference external" href="https://marc.info/?l=linux-omap&amp;m=151977053826963&amp;w=2">[PATCH v2 1/1] usb: musb: call
 pm_runtime_{get,put}_sync before reading vbus registers</a>.
 The second issue is that sometimes the <cite>mode</cite> file in the <cite>musb-hdrc</cite>
 controller will return <cite>(null)</cite> rather than a sensible mode (e.g. <cite>b_idle</cite>,
-<cite>b_peripheral</cite>, etc). This was been reported here: <a class="reference external" href="https://marc.info/?l=linux-kernel&amp;m=151994805016878&amp;w=2">usb: musb: &quot;(null)&quot; in
+<cite>b_peripheral</cite>, etc). This has been reported here: <a class="reference external" href="https://marc.info/?l=linux-kernel&amp;m=151994805016878&amp;w=2">usb: musb: &quot;(null)&quot; in
 sysfs mode file after disabling a gadget (and at other times, system hangs)</a>. As the title
 suggests, at other times the device would simply reboot when switching to
 another gadget. So there's more work to be done in this area.</p>
@@ -101,17 +101,17 @@ above.</p>
 </ul>
 <ul class="simple">
 <li>The orientation lock applet is also ported, but has yet to see any reasonable
-testing.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/37">#37</a></li>
+testing, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/37">#37</a>.</li>
 </ul>
 <ul>
 <li><p class="first">The <cite>Mode Control Entity</cite> (mce) can now control the backlight on the Droid4,
-and likely on almost every other device with Linux mainline support out there.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/65">#65</a></p>
+and likely on almost every other device with Linux mainline support out there,
+see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/65">#65</a>.</p>
 </li>
 <li><p class="first"><cite>mce</cite> can now read the battery status using <cite>UPower</cite>, profiting from earlier
-work done on the battery applet.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87">#87</a></p>
+work done on the battery applet, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87">#87</a>&gt;</p>
 </li>
 <li><p class="first"><cite>ofono</cite> no longer crashes, as reported in
 <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61">#61</a>. We have also
@@ -142,8 +142,8 @@ yet work</strong>, so please stick to <cite>armhf</cite> images for now.
 See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/92">#92</a>.</p>
 </li>
 <li><p class="first">Our repositories were missing source packages for many packages, so <cite>apt-get
-build-dep</cite> and <cite>apt-get source</cite> often did not work. This is now resolved.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/84">#84</a></p>
+build-dep</cite> and <cite>apt-get source</cite> often did not work. This is now resolved, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/84">#84</a>.</p>
 <p>Several people have inquired about a &quot;Scratchbox&quot; like tool. Currently,
 development is done on the devices themselves, or virtual machines. You can
 simply use the standard Debian development tools for all development and
