@@ -26,9 +26,6 @@ Status
 This is a status overview of the device specific drivers, for the general
 software status, see TODO.
 
-For a more detailed overview, see: http://linux-sunxi.org
-
-
 ============= =================================
  Feature       Status
 ============= =================================
