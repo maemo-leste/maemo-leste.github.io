@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-04-25T00:00:00+02:00</updated><entry><title>Maemo Leste - Second update (April 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html" rel="alternate"></link><published>2018-04-25T00:00:00+02:00</published><updated>2018-04-25T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-04-25:/maemo-leste-second-update-april-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
-&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-march-2018-update.rst"&gt;first update&lt;/a&gt;
+&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html"&gt;first update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;div class="section" id="on-the-software-side"&gt;
 &lt;h2&gt;On the software side&lt;/h2&gt;
@@ -9,7 +9,7 @@ and there's quite some stuff to talk about!&lt;/p&gt;
 particularly impressive yet, but the device pages will be moved over shortly.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;We have added images for a new device …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
-&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-march-2018-update.rst"&gt;first update&lt;/a&gt;
+&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html"&gt;first update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;div class="section" id="on-the-software-side"&gt;
 &lt;h2&gt;On the software side&lt;/h2&gt;
@@ -55,7 +55,7 @@ Safestrap and just plain Linux desktops. We have now reverted these
 incompatible features, so new images should be compatible with relatively old
 kernels/systems.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;The musb problems mentioned in our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-march-2018-update.rst"&gt;first update&lt;/a&gt; have both been merged to
+&lt;li&gt;&lt;p class="first"&gt;The musb problems mentioned in our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html"&gt;first update&lt;/a&gt; have both been merged to
 Linux, in Linux 4.16. We are not yet shipping Linux 4.16 for all devices
 as we will have to rebase some of our other patches.
 The fixes have additionally been backported to the Linux 4.9 and Linux 4.14
