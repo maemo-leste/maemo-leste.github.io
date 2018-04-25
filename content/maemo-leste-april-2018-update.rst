@@ -13,7 +13,7 @@ Maemo Leste - Second update (April 2018)
 
 
 It's been over a month since our `first update
-<{filename}/maemo-leste.github.io/content/maemo-leste-march-2018-update.rst>`_
+<{filename}/maemo-leste-march-2018-update.rst>`_
 and there's quite some stuff to talk about!
 
 On the software side
