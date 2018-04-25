@@ -2,7 +2,7 @@ Maemo Leste - Second update (April 2018)
 ########################################
 
 :category: news
-:tags: kernel, networking, battery, ofono, n900, droid4
+:tags: kernel, networking, connectivity, n950, n9, raspberry pi, icd, n900, droid4
 :date: 2018-04-25 00:00
 :authors: Merlijn Wajer
 
