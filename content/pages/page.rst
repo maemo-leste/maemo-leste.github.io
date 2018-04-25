@@ -30,10 +30,9 @@ the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
 A proper overview of the current (Maemo) software state will be provided soon.
 Check out our (`initial blog post
-<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_) and the `March
-2018 update <{filename}/maemo-leste-march-2018-update.rst>`_ for the current
-status.
-
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_), the `March
+2018 update <{filename}/maemo-leste-march-2018-update.rst>`_ and `April 2018
+update <{filename}/maemo-leste-april-2018-update.rst>`_ for the current status.
 
 Devices:
 
@@ -42,3 +41,4 @@ Devices:
 * `Generic AMD64 <{filename}/pages/amd64.rst>`_
 * `Allwinner A20 LIME2 <{filename}/pages/allwinner_a20_lime2.rst>`_
 * `Allwinner A33 Tablet <{filename}/pages/allwinner_a33_tablet.rst>`_
+* `Raspberry 2 or 3 <{filename}/pages/raspi3.rst>`_
