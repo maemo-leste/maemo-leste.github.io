@@ -1,5 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-03-02T12:00:00+01:00</updated><entry><title>Maemo Leste - First update (March 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html" rel="alternate"></link><published>2018-03-02T12:00:00+01:00</published><updated>2018-03-02T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-03-02:/maemo-leste-first-update-march-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-04-25T00:00:00+02:00</updated><entry><title>Maemo Leste - First update (April 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-first-update-april-2018.html" rel="alternate"></link><published>2018-04-25T00:00:00+02:00</published><updated>2018-04-25T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-04-25:/maemo-leste-first-update-april-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-april-2018-update.rst"&gt;first update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="on-the-software-side"&gt;
+&lt;h2&gt;On the software side&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;We now also have a &lt;a class="reference external" href="https://leste.maemo.org"&gt;Wiki&lt;/a&gt; - which is not
+particularly impressive yet, but the device pages will be moved over shortly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;We have added images for a new device …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been over a month since our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-april-2018-update.rst"&gt;first update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="on-the-software-side"&gt;
+&lt;h2&gt;On the software side&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;We now also have a &lt;a class="reference external" href="https://leste.maemo.org"&gt;Wiki&lt;/a&gt; - which is not
+particularly impressive yet, but the device pages will be moved over shortly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;We have added images for a new device with decent mainline support - the
+&lt;a class="reference external" href="{filename}/pages/raspi3.rst"&gt;Raspberry Pi 3&lt;/a&gt; (Original and Raspi2 might
+work, but is not yet tested). On the Raspberry Pi 3 the 3D acceleration works
+nicely and hildon-desktop can run on a full HD screen. This makes for a nice
+native development platform.
+The image is armhf, not yet &lt;cite&gt;aarch64&lt;/cite&gt; (or, &lt;cite&gt;arm64&lt;/cite&gt;, if you wish). But since
+the Raspberry Pi 3 supports &lt;cite&gt;aarch64&lt;/cite&gt;, it will make for a nice testing ground
+when we decide to work on &lt;cite&gt;aarch64&lt;/cite&gt; support.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://maedevu.maemo.org/images/raspi2/"&gt;http://maedevu.maemo.org/images/raspi2/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The N950 port that &lt;cite&gt;wicket64&lt;/cite&gt; is working now has an initial image out. There
+is also an image for the N9, but this image is as of yet untested, see also
+issue &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/121"&gt;#121&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The images can be found here: &lt;a class="reference external" href="http://maedevu.maemo.org/images/n950/"&gt;http://maedevu.maemo.org/images/n950/&lt;/a&gt;
+The initial announcement of the ports is on &lt;a class="reference external" href="https://talk.maemo.org/showpost.php?p=1543077&amp;amp;postcount=67"&gt;this talk.maemo.org thread&lt;/a&gt;&lt;/p&gt;
+&lt;img alt="" src="/images/n950-initial-port.jpg" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The N900 wireless should be improved with the latest packages, as we have
+packaged &lt;cite&gt;wl1251-cal&lt;/cite&gt;. This will divert the &lt;cite&gt;ti-connectivity&lt;/cite&gt; firmware and
+instead use the firmware in &lt;cite&gt;cal&lt;/cite&gt; on the N900. It also makes it possible to
+use the mac address saved in cal. Left to implement would be using ofono to
+get the right regulatory settings for the region.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/102"&gt;https://github.com/maemo-leste/bugtracker/issues/102&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;maemo-security-certman&lt;/cite&gt; (required for connectivity) has been ported to
+OpenSSL 1.1.0, and &lt;cite&gt;maemo-security-certman-applet&lt;/cite&gt; seems to work now.
+Currently the certificate store used by &lt;cite&gt;maemo-security-certman&lt;/cite&gt; is not the
+(devuan) system one, but this will follow in due time, see
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/116"&gt;#116&lt;/a&gt; and
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/117"&gt;#117&lt;/a&gt;&lt;/p&gt;
+&lt;img alt="" src="/images/certman-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Our dd-able images shipped with new &lt;cite&gt;ext4&lt;/cite&gt; features that were not backwards
+compatible, causing issues mounting these filesystems from Maemo Fremantle,
+Safestrap and just plain Linux desktops. We have now reverted these
+incompatible features, so new images should be compatible with relatively old
+kernels/systems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The musb problems mentioned in our &lt;a class="reference external" href="{filename}/maemo-leste.github.io/content/maemo-leste-april-2018-update.rst"&gt;first update&lt;/a&gt; have both been merged to
+Linux, in Linux 4.16. We are not yet shipping Linux 4.16 for all devices
+as we will have to rebase some of our other patches.
+The fixes have additionally been backported to the Linux 4.9 and Linux 4.14
+stable trees.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;cite&gt;hildon-usb-status-bar&lt;/cite&gt; has not been finished up yet, the status is the same
+as in the March update, we hope to wrap this up in the next update.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;There are experimental SDL patches that have applied remaining maemo patches
+on top of the libsdl in devuan: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/18"&gt;https://github.com/maemo-leste/bugtracker/issues/18&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;There is a wish to have usbnet enabled on otg-capable devices by default. We
+haven't finished this yet, it might in part depend on &lt;cite&gt;hildon-usb-status-bar&lt;/cite&gt;
+work, but we hope to have finished this next month.
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107"&gt;https://github.com/maemo-leste/bugtracker/issues/107&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Audio patches for the &lt;a class="reference external" href="https://maemo-leste.github.io/pages/droid-4-status.html"&gt;Motorola Droid 4&lt;/a&gt; were
+posted to the &lt;cite&gt;linux-omap&lt;/cite&gt; mailing list and several people have been trying
+them out, including for basic phone calls!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;On the OMAP mailing list there are also several people making good progress on
+making phone calls with the modem in the &lt;a class="reference external" href="https://maemo-leste.github.io/pages/droid-4-status.html"&gt;Motorola Droid 4&lt;/a&gt;, which is super
+exciting!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Mouse cursor should now be visible if a non-touch input is used; this is
+useful on devices that do not (typically) have a touch screen such as the
+LIME2 or the Raspberry Pi 3, see
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/50"&gt;#50&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The reverse engineering process for ICd2 and connui is nearing completion,
+with most of the important bits now fully functional. Most importantly,
+&lt;cite&gt;icd2&lt;/cite&gt;, &lt;cite&gt;connui-common&lt;/cite&gt; and &lt;cite&gt;connui-internet&lt;/cite&gt; are all packaged now.&lt;/p&gt;
+&lt;p&gt;There's ongoing work to finish the
+&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-wpasupplicant"&gt;libicd-network-wpasupplicant module&lt;/a&gt; for icd2,
+which is taking slightly longer than expected, but when finished the wifi
+connectivity will work properly through the hildon UI.&lt;/p&gt;
+&lt;p&gt;Additionally, the &lt;cite&gt;libicd-network-dummy&lt;/cite&gt; and &lt;cite&gt;libicd-network-usb&lt;/cite&gt; modules are
+also available now.&lt;/p&gt;
+&lt;p&gt;Meanwhile, enjoy a screenshot of an empty network dialog on the Raspberry pi:&lt;/p&gt;
+&lt;img alt="" src="/images/raspi-conndlg.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Our Jenkins instance is now world-viewable - &lt;a class="reference external" href="https://phoenix.maemo.org/"&gt;https://phoenix.maemo.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;NotKit has done some work on making maemo-leste run on de Gemini PDA with
+Android kernel and libhybris, and he got it to work! The result can be seen
+here:&lt;/p&gt;
+&lt;img alt="" src="/images/gemini-pda.jpg" style="width: 426px; height: 320px;" /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;This &lt;a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl"&gt;DRI3WSEGL&lt;/a&gt; repository
+recently surfaced, which might make it possible to have OpenGLES accelerated
+2D and 3D on &lt;cite&gt;omapdrmfb&lt;/cite&gt; using the &lt;cite&gt;modesetting&lt;/cite&gt; driver - this would be a
+great step forward, although at least on the N900, we would still require the
+binary PowerVR userspace driver. Nevertheless, this might also make possible
+PowerVR acceleration on the Droid 4 easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;Connectivity is not wrapped up, so that still remains a big goal. Once that is
+done, the reverse engineering efforts will likely focus on a virtual keyboard,
+which is another big missing piece.&lt;/p&gt;
+&lt;p&gt;There's a good chance we'll soon patch together a newer Droid 4 kernel to test
+all the recent development, including phone calls.
+Phone calls are a big deal, and it would be great if we can soon start playing
+with that on the Droid 4, and later on also the N900.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We also monitor the github issues closely.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="kernel"></category><category term="networking"></category><category term="battery"></category><category term="ofono"></category><category term="n900"></category><category term="droid4"></category></entry><entry><title>Maemo Leste - First update (March 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html" rel="alternate"></link><published>2018-03-02T12:00:00+01:00</published><updated>2018-03-02T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-03-02:/maemo-leste-first-update-march-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;It's been a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html"&gt;first post&lt;/a&gt; and there's a
 lot of stuff to talk about!&lt;/p&gt;
 &lt;p&gt;First of all, someone added us to &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Maemo#Maemo-Leste"&gt;Wikipedia&lt;/a&gt;, cool!&lt;/p&gt;
