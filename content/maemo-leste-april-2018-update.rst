@@ -51,8 +51,11 @@ On the software side
   (devuan) system one, but this will follow in due time.
   https://github.com/maemo-leste/maemo-security-certman
   https://github.com/maemo-leste/maemo-security-certman-applet
+  https://github.com/maemo-leste/bugtracker/issues/116
+  https://github.com/maemo-leste/bugtracker/issues/117
   TODO: Link to issues
   TODO: Link to isse to have `maemo-security-certman` use system store
+  https://wizzup.org/certman-applet.png
 
 * Our dd-able images shipped with new `ext4` features that were not backwards
   compatible, causing issues mounting these filesystems from Maemo Fremantle,
@@ -65,6 +68,8 @@ On the software side
   as we will have to rebase some of our other patches.
 
 * TODO: hildon-usb-status-bar
+
+* TODO: Mention sdl patches, https://github.com/maemo-leste/bugtracker/issues/18
 
 * TODO: usbnet connectivity
 
@@ -82,6 +87,11 @@ On the software side
   https://github.com/maemo-leste/bugtracker/issues/50
 
 * icd2/connui (TODO: screenshots)
+
+* N9/N950 ports WIP:
+  https://github.com/maemo-leste/bugtracker/issues/121
+
+* Jenkins - https://phoenix.maemo.org/
 
 * More on connui
 
