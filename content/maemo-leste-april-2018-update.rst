@@ -16,11 +16,12 @@ It's been over a month since our `first update
 <{filename}/maemo-leste.github.io/content/maemo-leste-april-2018-update.rst>`_
 and there's quite some stuff to talk about!
 
-We now also have a `Wiki <https://leste.maemo.org>`_ - which is not particularly
-impressive yet, but the device pages will be moved over shortly.
-
 On the software side
 --------------------
+
+* We now also have a `Wiki <https://leste.maemo.org>`_ - which is not
+  particularly impressive yet, but the device pages will be moved over shortly.
+
 
 * We have added images for a new device with decent mainline support - the
   `Raspberry Pi 3 <{filename}/pages/raspi3.rst>`_ (Original and Raspi2 might
@@ -40,6 +41,8 @@ On the software side
   The images can be found here: http://maedevu.maemo.org/images/n950/
   The initial announcement of the ports is on `this talk.maemo.org thread
   <https://talk.maemo.org/showpost.php?p=1543077&postcount=67>`_
+
+  .. image:: /images/n950-initial-port.jpg
 
 * The N900 wireless should be improved with the latest packages, as we have
   packaged `wl1251-cal`. This will divert the `ti-connectivity` firmware and
@@ -103,7 +106,7 @@ On the software side
   There's ongoing work to finish the
   `libicd-network-wpasupplicant module
   <https://github.com/maemo-leste/libicd-network-wpasupplicant>`_ for icd2,
-  which is taking slightly longer than expect, but when finished the wifi
+  which is taking slightly longer than expected, but when finished the wifi
   connectivity will work properly through the hildon UI.
 
   Additionally, the `libicd-network-dummy` and `libicd-network-usb` modules are
@@ -119,11 +122,12 @@ On the software side
 * Our Jenkins instance is now world-viewable - https://phoenix.maemo.org/
 
 * NotKit has done some work on making maemo-leste run on de Gemini PDA with
-  Android kernel and libhybris, and he got to work! The result can be seen here:
+  Android kernel and libhybris, and he got it to work! The result can be seen
+  here:
 
   .. image:: /images/gemini-pda.jpg
-    :height: 324px
-    :width: 576px
+    :height: 320px
+    :width: 426px
 
 * This `DRI3WSEGL <https://github.com/TexasInstruments/dri3wsegl>`_ repository
   recently surfaced, which might make it possible to have OpenGLES accelerated
