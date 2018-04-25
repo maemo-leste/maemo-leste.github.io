@@ -20,7 +20,7 @@ We now also have a `Wiki <https://leste.maemo.org>`_ - TODO
 
 TODO: Mention Nexus 5 phone calls?
 
-TODO: Picture of maemo-leste on the android thing (ask notkit for picture)
+TODO: Picture of maemo-leste on the Gemini PDA (ask notkit for picture)
 https://i.imgur.com/mdg9RxJ.jpg
 
 On the software side
@@ -29,8 +29,7 @@ On the software side
 * We have added images for a new device with decent mainline support - the
   `Raspberry Pi 3 <{filename}/pages/raspi3.rst>`_ (Original and Raspi2 might
   work, but is not yet tested). On the Raspberry Pi 3 the 3D acceleration works
-  nicely and hildon-desktop can run on a full hd screen. The main thing lacking
-  right now is that the mouse cursor is currently always hidden.
+  nicely and hildon-desktop can run on a full HD screen.
   The image is armhf, not yet `aarch64` (or, `arm64`, if you wish). But since
   the Raspberry Pi 3 supports `aarch64`, it will make for a nice testing ground
   when we decide to work on `aarch64` support.
