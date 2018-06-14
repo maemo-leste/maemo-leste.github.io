@@ -3,5 +3,4 @@ Allwinner A33 Tablet Status
 
 :status: hidden
 
-A33 Inet compatible
-
+See https://leste.maemo.org/A33-TurboX-Twister
