@@ -1,9 +1,9 @@
-Maemo Leste - Third update (May + June) 2018)
-#############################################
+Maemo Leste - Third update (May + June) 2018
+############################################
 
 :Category: news
-:tags: kernel, networking, connectivity, n950, n9, raspberry pi, icd, n900, droid4
-:date: 2018-05-14 00:00
+:tags: kernel, networking, connectivity, raspberry pi, icd, n900, droid4, nexus5
+:date: 2018-05-15 00:00
 :authors: Merlijn Wajer
 
 
@@ -22,14 +22,14 @@ On the software side
 Networking
 ~~~~~~~~~~
 
-This release was focussed on connectivity. A lot of progress has been made in
+This month was focussed on connectivity. A lot of progress has been made in
 this area. Internet Connectivity Daemon (`icd`) is now quite functional and
 works together nicely with the new `libicd-network-wpasupplicant` plugin which
 adds wireless connectivity using `wpa_supplicant` as a backend. The `connui`
 (which provide network settings and network UI) packages are also mostly ready,
 which means that we have a network daemon with wireless plugin, and working UI.
 
-At this point, open wireless networks, WEP networks, WPA and RSN (WPA2 PSK and
+At this point, open wireless networks, WEP networks, WPA and RSN (WPA2) PSK and
 EAP networks should work. Not all EAP protocols are implemented yet, but it's
 enough to be able to connect to well known networks like `eduroam` or
 `spacenet`:
@@ -41,6 +41,9 @@ enough to be able to connect to well known networks like `eduroam` or
 Further required improvements are listed here, in this milestone:
 
   https://github.com/maemo-leste/bugtracker/milestone/7
+
+Here is a set of 13 screenshots showing off some of the current functionality on
+the Nokia N900...
 
 .. image:: /images/n900-net-1.png
     :height: 324px
@@ -98,7 +101,6 @@ Further required improvements are listed here, in this milestone:
 As of today, it is also possible to connect to a network directly from the
 normal network scanning dialog.
 
-
 **IPv6** is not yet implemented by us in `icd2`, but there is a milestone that
 details what should be done: https://github.com/maemo-leste/bugtracker/milestone/8
 
@@ -114,8 +116,8 @@ Accessibility
 There is quite a bit of progress on accessibility! Currently Maemo Leste is
 really only usable if the device has a keyboard, or a working USB OTG port to
 attach a USB keyboard; but this will change, since we hope to have an integrated
-virtual keyboard soon. Localisation (other keyboard layouts) should also work
-for the initial release.
+virtual keyboard soon. Localisation of the virtual keyboard layout should also
+work for the initial release.
 
 .. image:: /images/virtual-keyboard-vmware.png
     :height: 500px
@@ -147,23 +149,25 @@ The Motorola Droid 4 does not yet have any GPU acceleration, but we're hoping to
 change that in the coming months, at least get support similar to the Nokia N900
 acceleration. We're hoping to leverage previous drivers for the Pandaboard (same
 gpu, same OMAP soc) in combination with this DRI3 driver: https://github.com/TexasInstruments/dri3wsegl
+There is some documentation on the wiki: https://leste.maemo.org/Motorola_Droid_4/PowerVR
 
 The Motorola Droid 4 will also likely be used to do our first phone call (and
 other modem) tests, since support for phone calls on the droid seems to be
 furthest along.
 
-**Support for a tablet** our device list has long mentioned an A33 tablet, but
-nothing else was published/known, that changes now with this device page on our
-wiki: https://leste.maemo.org/A33-TurboX-Twister
+**Support for a tablet** our device list has long mentioned an Allwinner A33
+tablet, but nothing else was published/known, that changes now with this device
+page on our wiki: https://leste.maemo.org/A33-TurboX-Twister
 
 There are no tablet images available yet, and for the different Allwinner tablets we
 might need to make different images (or more complicated images that support
 multiple devices), but it's nice to see the software work on a tablet as well!
 
-* TODO: droid4 new kernel (audio, drm fixes, working modem, working calls?)
+.. image:: /images/a33-twister-prealpha.jpg
+    :height: 243px
+    :width: 430px
 
 * libcomapp
-
 
 
 Documentation/Community
@@ -177,6 +181,9 @@ Documentation/Community
 What is next?
 -------------
 
+TODO: large section on what to document, what is already documented, what we
+want documented, what we have now, how people can help.
+
 good progress on n900 alpha release: https://github.com/maemo-leste/bugtracker/milestone/4
 
 next:
@@ -186,10 +193,11 @@ next:
 * usb (slave/otg) support (usbnet, otg, ke-revc)
   >There is a wish to have usbnet enabled on otg-capable devices by default. We haven't finished this yet, it might in part depend on hildon-usb-status-bar work, but we hope to have finished this next month. https://github.com/maemo-leste/bugtracker/issues/107
 * PHONE CALLS
-* droid4 kernel
+* droid4 kernel (audio, drm fixes, working modem, working calls?)
 * nexus5 support
 
 
+https://leste.maemo.org/Category:Device
 
 
 Interested?
