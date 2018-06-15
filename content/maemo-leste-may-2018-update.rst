@@ -59,7 +59,7 @@ first add a network.
 details what should be done: https://github.com/maemo-leste/bugtracker/milestone/8
 
 In the previous April update, we have mentioned packaging `wl1251-cal` which
-should make wireless on the n900 more bearable - it does, but it somehow makes
+should make wireless on the N900 more bearable - it does, but it somehow makes
 it impossible (currently) to bring up the network interface upon startup, we're
 still trying to figure out why this is happening.
 
@@ -86,7 +86,7 @@ new ones in a few weeks from now, with the connectivity and virtual keyboard
 working.**
 
 On the **Nokia N900** side, not a lot of extra hardware enablement has been
-committed, but in an attempt to save some power, the kernel not supports
+committed, but in an attempt to save some power, the kernel now supports
 disabling the touchscreen entirely, instead of always keeping it powered, see
 `#118 <https://github.com/maemo-leste/bugtracker/issues/118>`_
 
@@ -100,16 +100,24 @@ On the **Motorola Droid 4** side:
   constantly: `#90 <https://github.com/maemo-leste/bugtracker/issues/90>`_
 
 The Motorola Droid 4 does not yet have any GPU acceleration, but we're hoping to
-change that in the coming months, at least get support similar to the Nokia N900
-acceleration. We're hoping to leverage previous drivers for the Pandaboard (same
-gpu, same OMAP soc) in combination with this DRI3 driver: https://github.com/TexasInstruments/dri3wsegl
-There is some documentation on the wiki: https://leste.maemo.org/Motorola_Droid_4/PowerVR
+change that in the coming months, by adding support similar to the
+Nokia N900 acceleration. We're hoping to leverage previous drivers for the
+Pandaboard (same gpu, same OMAP soc) in combination with this DRI3 driver:
+https://github.com/TexasInstruments/dri3wsegl There is some documentation on the
+wiki: https://leste.maemo.org/Motorola_Droid_4/PowerVR
 
 The Motorola Droid 4 will also likely be used to do our first phone call (and
 other modem) tests, since support for phone calls on the droid seems to be
 furthest along.
 
-**Support for a tablet** our device list has long mentioned an Allwinner A33
+Finally, a user tried our Droid 4 image on a very similar device: the Droid
+Bionic (thinking he had actually gotten a Droid 4), and it actually seemed to
+work:
+
+    * https://talk.maemo.org/showpost.php?p=1544793&postcount=102
+    * https://talk.maemo.org/showpost.php?p=1544808&postcount=104
+
+**Support for a tablet**: our device list has long mentioned an Allwinner A33
 tablet, but nothing else was published/known, that changes now with this device
 page on our wiki: https://leste.maemo.org/A33-TurboX-Twister
 
@@ -127,9 +135,9 @@ Documentation/Community
 
 The amount of people actively working on the project has increased slightly, but
 the amount of people writing code has been steady since the start. We hope that
-more people will get involved. There is a semi length thread at talk.maemo.org:
+more people will get involved. There is a semi lengthy thread at talk.maemo.org:
 
-    http://talk.maemo.org/showthread.php?t=100192&page=1
+    https://talk.maemo.org/showthread.php?t=100192&page=1
 
 And we now are actively working on wiki:
 
@@ -162,16 +170,16 @@ In the coming weeks, we are going to try to:
 * Get new pre-alpha images for developers ready
 
 After that, one of the developers will briefly look at supporting the Nexus 5,
-because it is a device that is pretty decently supported by mainline, has 3d
+because it is a device that is pretty decently supported by mainline, has 3D
 acceleration and there is some progress on calls using the modem as well.
 
 After this is done, there are several things that would make sense to focus on:
 
-* 2g/3g/4g ofono plugin for icd2, creating a UI for 2g and 3g connectivity for
+* 2G/3G/4G ofono plugin for icd2, creating a UI for 2G, 3G and 4G connectivity for
   devices with a supported modem;
 * Provide a port of Qt4 so that many other applications can be built;
 * Look into phone calls with (one of) the Nokia N900, Droid 4 and Nexus 5;
-* Finishing the usb slave/otg support widgets and daemons `#107
+* Finishing the USB slave/OTG support widgets and daemons `#107
   <https://github.com/maemo-leste/bugtracker/issues/107>`_;
 * Look at solving some of the parallel boot issues `#83
   <https://github.com/maemo-leste/bugtracker/issues/83>`_; when enabling OpenRC
