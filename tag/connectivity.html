@@ -22,131 +22,144 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">Maemo Leste - Second update (April 2018)</a></h1>
+                    <h1 class="entry-title"><a href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html">Maemo Leste - Third update (May + June) 2018</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-04-25T00:00:00+02:00">
-                Published: Wed 25 April 2018
+        <abbr class="published" title="2018-05-15T00:00:00+02:00">
+                Published: Tue 15 May 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
         </address>
 <p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
-<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> <a href="https://maemo-leste.github.io/tag/n950.html">n950</a> <a href="https://maemo-leste.github.io/tag/n9.html">n9</a> <a href="https://maemo-leste.github.io/tag/raspberry-pi.html">raspberry pi</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> </p>
+<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> <a href="https://maemo-leste.github.io/tag/raspberry-pi.html">raspberry pi</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> <a href="https://maemo-leste.github.io/tag/nexus5.html">nexus5</a> </p>
 </footer><!-- /.post-info --><img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
-<p>It's been over a month since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">first update</a>
+<p>It's been a while since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">second update</a>
 and there's quite some stuff to talk about!</p>
 <div class="section" id="on-the-software-side">
 <h2>On the software side</h2>
-<ul>
-<li><p class="first">We now also have a <a class="reference external" href="https://leste.maemo.org">Wiki</a> - which is not
-particularly impressive yet, but the device pages will be moved over shortly.</p>
-</li>
-<li><p class="first">We have added images for a new device with decent mainline support - the
-<a class="reference external" href="https://maemo-leste.github.io/pages/raspberry-pi-2-3-status.html">Raspberry Pi 3</a> (Original and Raspi2 might
-work, but is not yet tested). On the Raspberry Pi 3 the 3D acceleration works
-nicely and hildon-desktop can run on a full HD screen. This makes for a nice
-native development platform.
-The image is armhf, not yet <cite>aarch64</cite> (or, <cite>arm64</cite>, if you wish). But since
-the Raspberry Pi 3 supports <cite>aarch64</cite>, it will make for a nice testing ground
-when we decide to work on <cite>aarch64</cite> support.</p>
-<p><a class="reference external" href="http://maedevu.maemo.org/images/raspi2/">http://maedevu.maemo.org/images/raspi2/</a></p>
-</li>
-<li><p class="first">The N950 port that <cite>wicket64</cite> is working now has an initial image out. There
-is also an image for the N9, but this image is as of yet untested, see also
-issue <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/121">#121</a>.</p>
-<p>The images can be found here: <a class="reference external" href="http://maedevu.maemo.org/images/n950/">http://maedevu.maemo.org/images/n950/</a>
-The initial announcement of the ports is on <a class="reference external" href="https://talk.maemo.org/showpost.php?p=1543077&amp;postcount=67">this talk.maemo.org thread</a></p>
-<img alt="" src="/images/n950-initial-port.jpg" />
-</li>
-<li><p class="first">The N900 wireless should be improved with the latest packages, as we have
-packaged <cite>wl1251-cal</cite>. This will divert the <cite>ti-connectivity</cite> firmware and
-instead use the firmware in <cite>cal</cite> on the N900. It also makes it possible to
-use the mac address saved in cal. Left to implement would be using ofono to
-get the right regulatory settings for the region.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/102">https://github.com/maemo-leste/bugtracker/issues/102</a></p>
-</li>
-<li><p class="first"><cite>maemo-security-certman</cite> (required for connectivity) has been ported to
-OpenSSL 1.1.0, and <cite>maemo-security-certman-applet</cite> seems to work now.
-Currently the certificate store used by <cite>maemo-security-certman</cite> is not the
-(devuan) system one, but this will follow in due time, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/116">#116</a> and
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/117">#117</a></p>
-<img alt="" src="/images/certman-applet.png" style="width: 576px; height: 324px;" />
-</li>
-<li><p class="first">Our dd-able images shipped with new <cite>ext4</cite> features that were not backwards
-compatible, causing issues mounting these filesystems from Maemo Fremantle,
-Safestrap and just plain Linux desktops. We have now reverted these
-incompatible features, so new images should be compatible with relatively old
-kernels/systems.</p>
-</li>
-<li><p class="first">The musb problems mentioned in our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">first update</a> have both been merged to
-Linux, in Linux 4.16. We are not yet shipping Linux 4.16 for all devices
-as we will have to rebase some of our other patches.
-The fixes have additionally been backported to the Linux 4.9 and Linux 4.14
-stable trees.</p>
-</li>
-<li><p class="first"><cite>hildon-usb-status-bar</cite> has not been finished up yet, the status is the same
-as in the March update, we hope to wrap this up in the next update.</p>
-</li>
-<li><p class="first">There are experimental SDL patches that have applied remaining maemo patches
-on top of the libsdl in devuan: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/18">https://github.com/maemo-leste/bugtracker/issues/18</a></p>
-</li>
-<li><p class="first">There is a wish to have usbnet enabled on otg-capable devices by default. We
-haven't finished this yet, it might in part depend on <cite>hildon-usb-status-bar</cite>
-work, but we hope to have finished this next month.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107">https://github.com/maemo-leste/bugtracker/issues/107</a></p>
-</li>
-<li><p class="first">Audio patches for the <a class="reference external" href="https://maemo-leste.github.io/pages/droid-4-status.html">Motorola Droid 4</a> were
-posted to the <cite>linux-omap</cite> mailing list and several people have been trying
-them out, including for basic phone calls!</p>
-</li>
-<li><p class="first">On the OMAP mailing list there are also several people making good progress on
-making phone calls with the modem in the <a class="reference external" href="https://maemo-leste.github.io/pages/droid-4-status.html">Motorola Droid 4</a>, which is super
-exciting!</p>
-</li>
-<li><p class="first">Mouse cursor should now be visible if a non-touch input is used; this is
-useful on devices that do not (typically) have a touch screen such as the
-LIME2 or the Raspberry Pi 3, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/50">#50</a></p>
-</li>
-<li><p class="first">The reverse engineering process for ICd2 and connui is nearing completion,
-with most of the important bits now fully functional. Most importantly,
-<cite>icd2</cite>, <cite>connui-common</cite> and <cite>connui-internet</cite> are all packaged now.</p>
-<p>There's ongoing work to finish the
-<a class="reference external" href="https://github.com/maemo-leste/libicd-network-wpasupplicant">libicd-network-wpasupplicant module</a> for icd2,
-which is taking slightly longer than expected, but when finished the wifi
-connectivity will work properly through the hildon UI.</p>
-<p>Additionally, the <cite>libicd-network-dummy</cite> and <cite>libicd-network-usb</cite> modules are
-also available now.</p>
-<p>Meanwhile, enjoy a screenshot of an empty network dialog on the Raspberry pi:</p>
-<img alt="" src="/images/raspi-conndlg.png" style="width: 576px; height: 324px;" />
-</li>
-<li><p class="first">Our Jenkins instance is now world-viewable - <a class="reference external" href="https://phoenix.maemo.org/">https://phoenix.maemo.org/</a></p>
-</li>
-<li><p class="first">NotKit has done some work on making maemo-leste run on de Gemini PDA with
-Android kernel and libhybris, and he got it to work! The result can be seen
-here:</p>
-<img alt="" src="/images/gemini-pda.jpg" style="width: 426px; height: 320px;" />
-</li>
-<li><p class="first">This <a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl">DRI3WSEGL</a> repository
-recently surfaced, which might make it possible to have OpenGLES accelerated
-2D and 3D on <cite>omapdrmfb</cite> using the <cite>modesetting</cite> driver - this would be a
-great step forward, although at least on the N900, we would still require the
-binary PowerVR userspace driver. Nevertheless, this might also make possible
-PowerVR acceleration on the Droid 4 easier.</p>
-</li>
+<div class="section" id="networking">
+<h3>Networking</h3>
+<p>This month was focussed on connectivity. A lot of progress has been made in
+this area. Internet Connectivity Daemon (<cite>icd</cite>) is now quite functional and
+works together nicely with the new <cite>libicd-network-wpasupplicant</cite> plugin which
+adds wireless connectivity using <cite>wpa_supplicant</cite> as a backend. The <cite>connui</cite>
+(which provide network settings and network UI) packages are also mostly ready,
+which means that we have a network daemon with wireless plugin, and working UI.</p>
+<p>At this point, open wireless networks, WEP networks, WPA and RSN (WPA2) PSK and
+EAP networks should work. Not all EAP protocols are implemented yet, but it's
+enough to be able to connect to well known networks like <cite>eduroam</cite> or
+<cite>spacenet</cite>:</p>
+<img alt="" src="/images/n900-libicd-wpasupplicant-spacenet.png" style="width: 576px; height: 324px;" />
+<p>Further required improvements are listed here, in this milestone:</p>
+<blockquote>
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/7">https://github.com/maemo-leste/bugtracker/milestone/7</a></blockquote>
+<p>Some of these points are quite important, such as <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/137">verifying server side
+certificates</a>, others
+are more for completeness sake, like <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/145">supporting all EAP authentication
+mechanisms</a>.</p>
+<p>See section <a class="reference internal" href="#wireless-connectivity-screenshots-on-the-nokia-n900">Wireless Connectivity Screenshots on the Nokia N900</a>
+at the end of this update for 13 screenshots showing off some of the current
+wireless functionality on the Nokia N900.</p>
+<p>As of today, it is also possible to connect to a network directly from the
+normal network scanning dialog, instead of having to use the settings UI to
+first add a network.</p>
+<p><strong>IPv6</strong> is not yet implemented by us in <cite>icd2</cite>, but there is a milestone that
+details what should be done: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/8">https://github.com/maemo-leste/bugtracker/milestone/8</a></p>
+<p>In the previous April update, we have mentioned packaging <cite>wl1251-cal</cite> which
+should make wireless on the n900 more bearable - it does, but it somehow makes
+it impossible (currently) to bring up the network interface upon startup, we're
+still trying to figure out why this is happening.</p>
+</div>
+<div class="section" id="accessibility">
+<h3>Accessibility</h3>
+<p>There is quite a bit of progress on accessibility! Currently Maemo Leste is
+really only usable if the device has a keyboard, or a working USB OTG port to
+attach a USB keyboard; but this will change, since we hope to have an integrated
+virtual keyboard soon. Localisation of the virtual keyboard layout should also
+work for the initial release.</p>
+<img alt="" src="/images/virtual-keyboard-vmware.png" style="width: 670px; height: 500px;" />
+</div>
+<div class="section" id="devices">
+<h3>Devices</h3>
+<p><strong>There are no new images to go along with this update, but we hope to release
+new ones in a few weeks from now, with the connectivity and virtual keyboard
+working.</strong></p>
+<p>On the <strong>Nokia N900</strong> side, not a lot of extra hardware enablement has been
+committed, but in an attempt to save some power, the kernel not supports
+disabling the touchscreen entirely, instead of always keeping it powered, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/118">#118</a></p>
+<p>On the <strong>Motorola Droid 4</strong> side:</p>
+<ul class="simple">
+<li>The Motorola Droid 4 now properly locks/unlocks using the power key, this was
+fixed in mce in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/71">#71</a>.</li>
+<li>The Motorola Droid 4 battery applet no longer complains about an empty battery
+constantly: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/90">#90</a></li>
 </ul>
+<p>The Motorola Droid 4 does not yet have any GPU acceleration, but we're hoping to
+change that in the coming months, at least get support similar to the Nokia N900
+acceleration. We're hoping to leverage previous drivers for the Pandaboard (same
+gpu, same OMAP soc) in combination with this DRI3 driver: <a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl">https://github.com/TexasInstruments/dri3wsegl</a>
+There is some documentation on the wiki: <a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4/PowerVR">https://leste.maemo.org/Motorola_Droid_4/PowerVR</a></p>
+<p>The Motorola Droid 4 will also likely be used to do our first phone call (and
+other modem) tests, since support for phone calls on the droid seems to be
+furthest along.</p>
+<p><strong>Support for a tablet</strong> our device list has long mentioned an Allwinner A33
+tablet, but nothing else was published/known, that changes now with this device
+page on our wiki: <a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister">https://leste.maemo.org/A33-TurboX-Twister</a></p>
+<p>There are no tablet images available yet, and for the different Allwinner tablets we
+might need to make different images (or more complicated images that support
+multiple devices), but it's nice to see the software work on a tablet as well!</p>
+<img alt="" src="/images/a33-twister-prealpha.jpg" style="width: 430px; height: 243px;" />
+</div>
+</div>
+<div class="section" id="documentation-community">
+<h2>Documentation/Community</h2>
+<p>The amount of people actively working on the project has increased slightly, but
+the amount of people writing code has been steady since the start. We hope that
+more people will get involved. There is a semi length thread at talk.maemo.org:</p>
+<blockquote>
+<a class="reference external" href="http://talk.maemo.org/showthread.php?t=100192&amp;page=1">http://talk.maemo.org/showthread.php?t=100192&amp;page=1</a></blockquote>
+<p>And we now are actively working on wiki:</p>
+<blockquote>
+<a class="reference external" href="https://leste.maemo.org">https://leste.maemo.org</a></blockquote>
+<p>The device pages from maemo-leste.github.io are now migrated to the wiki:</p>
+<blockquote>
+<a class="reference external" href="https://leste.maemo.org/Category:Device">https://leste.maemo.org/Category:Device</a></blockquote>
+<p>Next we'll been trying to document the current state of Maemo Leste in a more
+clear manner, and we'll try to clearly document what could (easily) be picked up
+by new developers. Any help here is also required - so if anything is unclear,
+please join us in IRC or on the talk.maemo.org thread and ask away!</p>
 </div>
 <div class="section" id="what-is-next">
 <h2>What is next?</h2>
-<p>Connectivity is not wrapped up, so that still remains a big goal. Once that is
-done, the reverse engineering efforts will likely focus on a virtual keyboard,
-which is another big missing piece.</p>
-<p>There's a good chance we'll soon patch together a newer Droid 4 kernel to test
-all the recent development, including phone calls.
-Phone calls are a big deal, and it would be great if we can soon start playing
-with that on the Droid 4, and later on also the N900.</p>
+<p>We are making steady progress towards the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">Nokia N900 alpha release</a>. Most of the work done
+for this milestone also directly benefits other devices, but we are trying to
+get at least one device properly supported quickly.</p>
+<p>In the coming weeks, we are going to try to:</p>
+<ul class="simple">
+<li>Document more about the current state of the project and how people can help
+out;</li>
+<li>Stabilise the wireless plugin;</li>
+<li>Finish the virtual keyboard;</li>
+<li>Get new pre-alpha images for developers ready</li>
+</ul>
+<p>After that, one of the developers will briefly look at supporting the Nexus 5,
+because it is a device that is pretty decently supported by mainline, has 3d
+acceleration and there is some progress on calls using the modem as well.</p>
+<p>After this is done, there are several things that would make sense to focus on:</p>
+<ul class="simple">
+<li>2g/3g/4g ofono plugin for icd2, creating a UI for 2g and 3g connectivity for
+devices with a supported modem;</li>
+<li>Provide a port of Qt4 so that many other applications can be built;</li>
+<li>Look into phone calls with (one of) the Nokia N900, Droid 4 and Nexus 5;</li>
+<li>Finishing the usb slave/otg support widgets and daemons <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107">#107</a>;</li>
+<li>Look at solving some of the parallel boot issues <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83">#83</a>; when enabling OpenRC
+parallel boot, these issues actually go away, but for some reason the Nokia
+N900 specifically doesn't work with parallel boot yet.</li>
+</ul>
+<p>All in all, we're marching ahead and hopefully will be able to reach the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">Nokia
+N900 alpha release milestone</a>.</p>
 </div>
 <div class="section" id="interested">
 <h2>Interested?</h2>
@@ -158,8 +171,61 @@ engineering, and debug driver issues.</p>
 <p>We're currently on irc.freenode.net in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.</p>
 </div>
+<div class="section" id="wireless-connectivity-screenshots-on-the-nokia-n900">
+<h2>Wireless Connectivity Screenshots on the Nokia N900</h2>
+<img alt="" src="/images/n900-net-1.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-2.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-3.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-4.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-5.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-6.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-7.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-8.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-9.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-10.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-11.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-12.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/n900-net-13.png" style="width: 576px; height: 324px;" />
+</div>
                 </article>
             </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html" rel="bookmark"
+                           title="Permalink to Maemo Leste - Second update (April 2018)">Maemo Leste - Second update (April 2018)</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-04-25T00:00:00+02:00">
+                Published: Wed 25 April 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
+        </address>
+<p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
+<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> <a href="https://maemo-leste.github.io/tag/n950.html">n950</a> <a href="https://maemo-leste.github.io/tag/n9.html">n9</a> <a href="https://maemo-leste.github.io/tag/raspberry-pi.html">raspberry pi</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> </p>
+</footer><!-- /.post-info -->                <img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
+<p>It's been over a month since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">first update</a>
+and there's quite some stuff to talk about!</p>
+<div class="section" id="on-the-software-side">
+<h2>On the software side</h2>
+<ul>
+<li><p class="first">We now also have a <a class="reference external" href="https://leste.maemo.org">Wiki</a> - which is not
+particularly impressive yet, but the device pages will be moved over shortly.</p>
+</li>
+<li><p class="first">We have added images for a new device …</p></li></ul></div>
+                <a class="readmore" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

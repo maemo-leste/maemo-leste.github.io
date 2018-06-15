@@ -1,5 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-04-25T00:00:00+02:00</updated><entry><title>Maemo Leste - Second update (April 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html" rel="alternate"></link><published>2018-04-25T00:00:00+02:00</published><updated>2018-04-25T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-04-25:/maemo-leste-second-update-april-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-05-15T00:00:00+02:00</updated><entry><title>Maemo Leste - Third update (May + June) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html" rel="alternate"></link><published>2018-05-15T00:00:00+02:00</published><updated>2018-05-15T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-05-15:/maemo-leste-third-update-may-june-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html"&gt;second update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="on-the-software-side"&gt;
+&lt;h2&gt;On the software side&lt;/h2&gt;
+&lt;div class="section" id="networking"&gt;
+&lt;h3&gt;Networking&lt;/h3&gt;
+&lt;p&gt;This month was focussed on connectivity. A lot of progress has been made in
+this area. Internet Connectivity Daemon (&lt;cite&gt;icd&lt;/cite&gt;) is now quite functional and
+works together nicely with …&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html"&gt;second update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="on-the-software-side"&gt;
+&lt;h2&gt;On the software side&lt;/h2&gt;
+&lt;div class="section" id="networking"&gt;
+&lt;h3&gt;Networking&lt;/h3&gt;
+&lt;p&gt;This month was focussed on connectivity. A lot of progress has been made in
+this area. Internet Connectivity Daemon (&lt;cite&gt;icd&lt;/cite&gt;) is now quite functional and
+works together nicely with the new &lt;cite&gt;libicd-network-wpasupplicant&lt;/cite&gt; plugin which
+adds wireless connectivity using &lt;cite&gt;wpa_supplicant&lt;/cite&gt; as a backend. The &lt;cite&gt;connui&lt;/cite&gt;
+(which provide network settings and network UI) packages are also mostly ready,
+which means that we have a network daemon with wireless plugin, and working UI.&lt;/p&gt;
+&lt;p&gt;At this point, open wireless networks, WEP networks, WPA and RSN (WPA2) PSK and
+EAP networks should work. Not all EAP protocols are implemented yet, but it's
+enough to be able to connect to well known networks like &lt;cite&gt;eduroam&lt;/cite&gt; or
+&lt;cite&gt;spacenet&lt;/cite&gt;:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-libicd-wpasupplicant-spacenet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Further required improvements are listed here, in this milestone:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/7"&gt;https://github.com/maemo-leste/bugtracker/milestone/7&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Some of these points are quite important, such as &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/137"&gt;verifying server side
+certificates&lt;/a&gt;, others
+are more for completeness sake, like &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/145"&gt;supporting all EAP authentication
+mechanisms&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See section &lt;a class="reference internal" href="#wireless-connectivity-screenshots-on-the-nokia-n900"&gt;Wireless Connectivity Screenshots on the Nokia N900&lt;/a&gt;
+at the end of this update for 13 screenshots showing off some of the current
+wireless functionality on the Nokia N900.&lt;/p&gt;
+&lt;p&gt;As of today, it is also possible to connect to a network directly from the
+normal network scanning dialog, instead of having to use the settings UI to
+first add a network.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IPv6&lt;/strong&gt; is not yet implemented by us in &lt;cite&gt;icd2&lt;/cite&gt;, but there is a milestone that
+details what should be done: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/8"&gt;https://github.com/maemo-leste/bugtracker/milestone/8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the previous April update, we have mentioned packaging &lt;cite&gt;wl1251-cal&lt;/cite&gt; which
+should make wireless on the n900 more bearable - it does, but it somehow makes
+it impossible (currently) to bring up the network interface upon startup, we're
+still trying to figure out why this is happening.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="accessibility"&gt;
+&lt;h3&gt;Accessibility&lt;/h3&gt;
+&lt;p&gt;There is quite a bit of progress on accessibility! Currently Maemo Leste is
+really only usable if the device has a keyboard, or a working USB OTG port to
+attach a USB keyboard; but this will change, since we hope to have an integrated
+virtual keyboard soon. Localisation of the virtual keyboard layout should also
+work for the initial release.&lt;/p&gt;
+&lt;img alt="" src="/images/virtual-keyboard-vmware.png" style="width: 670px; height: 500px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="devices"&gt;
+&lt;h3&gt;Devices&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;There are no new images to go along with this update, but we hope to release
+new ones in a few weeks from now, with the connectivity and virtual keyboard
+working.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;On the &lt;strong&gt;Nokia N900&lt;/strong&gt; side, not a lot of extra hardware enablement has been
+committed, but in an attempt to save some power, the kernel not supports
+disabling the touchscreen entirely, instead of always keeping it powered, see
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/118"&gt;#118&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On the &lt;strong&gt;Motorola Droid 4&lt;/strong&gt; side:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The Motorola Droid 4 now properly locks/unlocks using the power key, this was
+fixed in mce in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/71"&gt;#71&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The Motorola Droid 4 battery applet no longer complains about an empty battery
+constantly: &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/90"&gt;#90&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Motorola Droid 4 does not yet have any GPU acceleration, but we're hoping to
+change that in the coming months, at least get support similar to the Nokia N900
+acceleration. We're hoping to leverage previous drivers for the Pandaboard (same
+gpu, same OMAP soc) in combination with this DRI3 driver: &lt;a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl"&gt;https://github.com/TexasInstruments/dri3wsegl&lt;/a&gt;
+There is some documentation on the wiki: &lt;a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4/PowerVR"&gt;https://leste.maemo.org/Motorola_Droid_4/PowerVR&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Motorola Droid 4 will also likely be used to do our first phone call (and
+other modem) tests, since support for phone calls on the droid seems to be
+furthest along.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Support for a tablet&lt;/strong&gt; our device list has long mentioned an Allwinner A33
+tablet, but nothing else was published/known, that changes now with this device
+page on our wiki: &lt;a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister"&gt;https://leste.maemo.org/A33-TurboX-Twister&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There are no tablet images available yet, and for the different Allwinner tablets we
+might need to make different images (or more complicated images that support
+multiple devices), but it's nice to see the software work on a tablet as well!&lt;/p&gt;
+&lt;img alt="" src="/images/a33-twister-prealpha.jpg" style="width: 430px; height: 243px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="documentation-community"&gt;
+&lt;h2&gt;Documentation/Community&lt;/h2&gt;
+&lt;p&gt;The amount of people actively working on the project has increased slightly, but
+the amount of people writing code has been steady since the start. We hope that
+more people will get involved. There is a semi length thread at talk.maemo.org:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="http://talk.maemo.org/showthread.php?t=100192&amp;amp;page=1"&gt;http://talk.maemo.org/showthread.php?t=100192&amp;amp;page=1&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;And we now are actively working on wiki:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://leste.maemo.org"&gt;https://leste.maemo.org&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;The device pages from maemo-leste.github.io are now migrated to the wiki:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://leste.maemo.org/Category:Device"&gt;https://leste.maemo.org/Category:Device&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Next we'll been trying to document the current state of Maemo Leste in a more
+clear manner, and we'll try to clearly document what could (easily) be picked up
+by new developers. Any help here is also required - so if anything is unclear,
+please join us in IRC or on the talk.maemo.org thread and ask away!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;We are making steady progress towards the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Nokia N900 alpha release&lt;/a&gt;. Most of the work done
+for this milestone also directly benefits other devices, but we are trying to
+get at least one device properly supported quickly.&lt;/p&gt;
+&lt;p&gt;In the coming weeks, we are going to try to:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Document more about the current state of the project and how people can help
+out;&lt;/li&gt;
+&lt;li&gt;Stabilise the wireless plugin;&lt;/li&gt;
+&lt;li&gt;Finish the virtual keyboard;&lt;/li&gt;
+&lt;li&gt;Get new pre-alpha images for developers ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, one of the developers will briefly look at supporting the Nexus 5,
+because it is a device that is pretty decently supported by mainline, has 3d
+acceleration and there is some progress on calls using the modem as well.&lt;/p&gt;
+&lt;p&gt;After this is done, there are several things that would make sense to focus on:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;2g/3g/4g ofono plugin for icd2, creating a UI for 2g and 3g connectivity for
+devices with a supported modem;&lt;/li&gt;
+&lt;li&gt;Provide a port of Qt4 so that many other applications can be built;&lt;/li&gt;
+&lt;li&gt;Look into phone calls with (one of) the Nokia N900, Droid 4 and Nexus 5;&lt;/li&gt;
+&lt;li&gt;Finishing the usb slave/otg support widgets and daemons &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107"&gt;#107&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Look at solving some of the parallel boot issues &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83"&gt;#83&lt;/a&gt;; when enabling OpenRC
+parallel boot, these issues actually go away, but for some reason the Nokia
+N900 specifically doesn't work with parallel boot yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All in all, we're marching ahead and hopefully will be able to reach the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Nokia
+N900 alpha release milestone&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
+need developers who can work on porting packages, help out with reverse
+engineering, and debug driver issues.&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We also monitor the github issues closely.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wireless-connectivity-screenshots-on-the-nokia-n900"&gt;
+&lt;h2&gt;Wireless Connectivity Screenshots on the Nokia N900&lt;/h2&gt;
+&lt;img alt="" src="/images/n900-net-1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-4.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-5.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-6.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-7.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-8.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-9.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-10.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-11.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-12.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-net-13.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+</content><category term="kernel"></category><category term="networking"></category><category term="connectivity"></category><category term="raspberry pi"></category><category term="icd"></category><category term="n900"></category><category term="droid4"></category><category term="nexus5"></category></entry><entry><title>Maemo Leste - Second update (April 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html" rel="alternate"></link><published>2018-04-25T00:00:00+02:00</published><updated>2018-04-25T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-04-25:/maemo-leste-second-update-april-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;It's been over a month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html"&gt;first update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;div class="section" id="on-the-software-side"&gt;
