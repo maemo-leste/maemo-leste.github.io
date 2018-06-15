@@ -42,64 +42,18 @@ Further required improvements are listed here, in this milestone:
 
   https://github.com/maemo-leste/bugtracker/milestone/7
 
-Here is a set of 13 screenshots showing off some of the current functionality on
-the Nokia N900...
+Some of these points are quite important, such as `verifying server side
+certificates <https://github.com/maemo-leste/bugtracker/issues/137>`_, others
+are more for completeness sake, like `supporting all EAP authentication
+mechanisms <https://github.com/maemo-leste/bugtracker/issues/145>`_.
 
-.. image:: /images/n900-net-1.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-2.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-3.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-4.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-5.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-6.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-7.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-8.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-9.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-10.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-11.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-12.png
-    :height: 324px
-    :width: 576px
-
-.. image:: /images/n900-net-13.png
-    :height: 324px
-    :width: 576px
-
+See section `Wireless Connectivity Screenshots on the Nokia N900`_
+at the end of this update for 13 screenshots showing off some of the current
+wireless functionality on the Nokia N900.
 
 As of today, it is also possible to connect to a network directly from the
-normal network scanning dialog.
+normal network scanning dialog, instead of having to use the settings UI to
+first add a network.
 
 **IPv6** is not yet implemented by us in `icd2`, but there is a milestone that
 details what should be done: https://github.com/maemo-leste/bugtracker/milestone/8
@@ -167,48 +121,73 @@ multiple devices), but it's nice to see the software work on a tablet as well!
     :height: 243px
     :width: 430px
 
-* libcomapp
-
 
 Documentation/Community
 -----------------------
 
-* device pages on the wiki, still need to port over our maemo-leste.github.io
-  pages; volunteers?
+The amount of people actively working on the project has increased slightly, but
+the amount of people writing code has been steady since the start. We hope that
+more people will get involved. There is a semi length thread at talk.maemo.org:
 
+    http://talk.maemo.org/showthread.php?t=100192&page=1
+
+And we now are actively working on wiki:
+
+    https://leste.maemo.org
+
+The device pages from maemo-leste.github.io are now migrated to the wiki:
+
+    https://leste.maemo.org/Category:Device
+
+Next we'll been trying to document the current state of Maemo Leste in a more
+clear manner, and we'll try to clearly document what could (easily) be picked up
+by new developers. Any help here is also required - so if anything is unclear,
+please join us in IRC or on the talk.maemo.org thread and ask away!
 
 
 What is next?
 -------------
 
-TODO: large section on what to document, what is already documented, what we
-want documented, what we have now, how people can help.
+We are making steady progress towards the `Nokia N900 alpha release
+<https://github.com/maemo-leste/bugtracker/milestone/4>`_. Most of the work done
+for this milestone also directly benefits other devices, but we are trying to
+get at least one device properly supported quickly.
 
-good progress on n900 alpha release: https://github.com/maemo-leste/bugtracker/milestone/4
+In the coming weeks, we are going to try to:
 
-next:
+* Document more about the current state of the project and how people can help
+  out;
+* Stabilise the wireless plugin;
+* Finish the virtual keyboard;
+* Get new pre-alpha images for developers ready
 
-* stability wifi (eap, general testing, wl1251-cal)
-* finish virtual keyboard
-* usb (slave/otg) support (usbnet, otg, ke-revc)
-  >There is a wish to have usbnet enabled on otg-capable devices by default. We haven't finished this yet, it might in part depend on hildon-usb-status-bar work, but we hope to have finished this next month. https://github.com/maemo-leste/bugtracker/issues/107
-* PHONE CALLS
-* droid4 kernel (audio, drm fixes, working modem, working calls?)
-* nexus5 support
+After that, one of the developers will briefly look at supporting the Nexus 5,
+because it is a device that is pretty decently supported by mainline, has 3d
+acceleration and there is some progress on calls using the modem as well.
 
+After this is done, there are several things that would make sense to focus on:
 
-https://leste.maemo.org/Category:Device
+* 2g/3g/4g ofono plugin for icd2, creating a UI for 2g and 3g connectivity for
+  devices with a supported modem;
+* Provide a port of Qt4 so that many other applications can be built;
+* Look into phone calls with (one of) the Nokia N900, Droid 4 and Nexus 5;
+* Finishing the usb slave/otg support widgets and daemons `#107
+  <https://github.com/maemo-leste/bugtracker/issues/107>`_;
+* Look at solving some of the parallel boot issues `#83
+  <https://github.com/maemo-leste/bugtracker/issues/83>`_; when enabling OpenRC
+  parallel boot, these issues actually go away, but for some reason the Nokia
+  N900 specifically doesn't work with parallel boot yet.
 
+All in all, we're marching ahead and hopefully will be able to reach the `Nokia
+N900 alpha release milestone
+<https://github.com/maemo-leste/bugtracker/milestone/4>`_.
 
 Interested?
 -----------
 
-**FIXME**
-
 If you're interested in specifics, or helping out, or wish to have a specific
 package ported, please see our `bugtracker
 <https://github.com/maemo-leste/bugtracker>`_.
-
 
 Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
@@ -216,3 +195,62 @@ engineering, and debug driver issues.
 
 We're currently on irc.freenode.net in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.
+
+
+
+Wireless Connectivity Screenshots on the Nokia N900
+---------------------------------------------------
+
+.. image:: /images/n900-net-1.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-2.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-3.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-4.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-5.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-6.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-7.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-8.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-9.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-10.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-11.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-12.png
+    :height: 324px
+    :width: 576px
+
+.. image:: /images/n900-net-13.png
+    :height: 324px
+    :width: 576px
+
+
