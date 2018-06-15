@@ -115,7 +115,7 @@ Bionic (thinking he had actually gotten a Droid 4), and it actually seemed to
 work:
 
     * https://talk.maemo.org/showpost.php?p=1544793&postcount=102
-    * https://talk.maemo.org/showpost.php?p=1544808&postcount=104
+    * https://talk.maemo.org/showpost.php?p=1544823&postcount=105
 
 **Support for a tablet**: our device list has long mentioned an Allwinner A33
 tablet, but nothing else was published/known, that changes now with this device
