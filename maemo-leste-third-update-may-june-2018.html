@@ -72,7 +72,7 @@ first add a network.</p>
 <p><strong>IPv6</strong> is not yet implemented by us in <cite>icd2</cite>, but there is a milestone that
 details what should be done: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/8">https://github.com/maemo-leste/bugtracker/milestone/8</a></p>
 <p>In the previous April update, we have mentioned packaging <cite>wl1251-cal</cite> which
-should make wireless on the n900 more bearable - it does, but it somehow makes
+should make wireless on the N900 more bearable - it does, but it somehow makes
 it impossible (currently) to bring up the network interface upon startup, we're
 still trying to figure out why this is happening.</p>
 </div>
@@ -91,7 +91,7 @@ work for the initial release.</p>
 new ones in a few weeks from now, with the connectivity and virtual keyboard
 working.</strong></p>
 <p>On the <strong>Nokia N900</strong> side, not a lot of extra hardware enablement has been
-committed, but in an attempt to save some power, the kernel not supports
+committed, but in an attempt to save some power, the kernel now supports
 disabling the touchscreen entirely, instead of always keeping it powered, see
 <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/118">#118</a></p>
 <p>On the <strong>Motorola Droid 4</strong> side:</p>
@@ -102,14 +102,24 @@ fixed in mce in <a class="reference external" href="https://github.com/maemo-les
 constantly: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/90">#90</a></li>
 </ul>
 <p>The Motorola Droid 4 does not yet have any GPU acceleration, but we're hoping to
-change that in the coming months, at least get support similar to the Nokia N900
-acceleration. We're hoping to leverage previous drivers for the Pandaboard (same
-gpu, same OMAP soc) in combination with this DRI3 driver: <a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl">https://github.com/TexasInstruments/dri3wsegl</a>
-There is some documentation on the wiki: <a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4/PowerVR">https://leste.maemo.org/Motorola_Droid_4/PowerVR</a></p>
+change that in the coming months, by adding support similar to the
+Nokia N900 acceleration. We're hoping to leverage previous drivers for the
+Pandaboard (same gpu, same OMAP soc) in combination with this DRI3 driver:
+<a class="reference external" href="https://github.com/TexasInstruments/dri3wsegl">https://github.com/TexasInstruments/dri3wsegl</a> There is some documentation on the
+wiki: <a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4/PowerVR">https://leste.maemo.org/Motorola_Droid_4/PowerVR</a></p>
 <p>The Motorola Droid 4 will also likely be used to do our first phone call (and
 other modem) tests, since support for phone calls on the droid seems to be
 furthest along.</p>
-<p><strong>Support for a tablet</strong> our device list has long mentioned an Allwinner A33
+<p>Finally, a user tried our Droid 4 image on a very similar device: the Droid
+Bionic (thinking he had actually gotten a Droid 4), and it actually seemed to
+work:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://talk.maemo.org/showpost.php?p=1544793&amp;postcount=102">https://talk.maemo.org/showpost.php?p=1544793&amp;postcount=102</a></li>
+<li><a class="reference external" href="https://talk.maemo.org/showpost.php?p=1544808&amp;postcount=104">https://talk.maemo.org/showpost.php?p=1544808&amp;postcount=104</a></li>
+</ul>
+</blockquote>
+<p><strong>Support for a tablet</strong>: our device list has long mentioned an Allwinner A33
 tablet, but nothing else was published/known, that changes now with this device
 page on our wiki: <a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister">https://leste.maemo.org/A33-TurboX-Twister</a></p>
 <p>There are no tablet images available yet, and for the different Allwinner tablets we
@@ -122,9 +132,9 @@ multiple devices), but it's nice to see the software work on a tablet as well!</
 <h2>Documentation/Community</h2>
 <p>The amount of people actively working on the project has increased slightly, but
 the amount of people writing code has been steady since the start. We hope that
-more people will get involved. There is a semi length thread at talk.maemo.org:</p>
+more people will get involved. There is a semi lengthy thread at talk.maemo.org:</p>
 <blockquote>
-<a class="reference external" href="http://talk.maemo.org/showthread.php?t=100192&amp;page=1">http://talk.maemo.org/showthread.php?t=100192&amp;page=1</a></blockquote>
+<a class="reference external" href="https://talk.maemo.org/showthread.php?t=100192&amp;page=1">https://talk.maemo.org/showthread.php?t=100192&amp;page=1</a></blockquote>
 <p>And we now are actively working on wiki:</p>
 <blockquote>
 <a class="reference external" href="https://leste.maemo.org">https://leste.maemo.org</a></blockquote>
@@ -150,15 +160,15 @@ out;</li>
 <li>Get new pre-alpha images for developers ready</li>
 </ul>
 <p>After that, one of the developers will briefly look at supporting the Nexus 5,
-because it is a device that is pretty decently supported by mainline, has 3d
+because it is a device that is pretty decently supported by mainline, has 3D
 acceleration and there is some progress on calls using the modem as well.</p>
 <p>After this is done, there are several things that would make sense to focus on:</p>
 <ul class="simple">
-<li>2g/3g/4g ofono plugin for icd2, creating a UI for 2g and 3g connectivity for
+<li>2G/3G/4G ofono plugin for icd2, creating a UI for 2G, 3G and 4G connectivity for
 devices with a supported modem;</li>
 <li>Provide a port of Qt4 so that many other applications can be built;</li>
 <li>Look into phone calls with (one of) the Nokia N900, Droid 4 and Nexus 5;</li>
-<li>Finishing the usb slave/otg support widgets and daemons <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107">#107</a>;</li>
+<li>Finishing the USB slave/OTG support widgets and daemons <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/107">#107</a>;</li>
 <li>Look at solving some of the parallel boot issues <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83">#83</a>; when enabling OpenRC
 parallel boot, these issues actually go away, but for some reason the Nokia
 N900 specifically doesn't work with parallel boot yet.</li>
