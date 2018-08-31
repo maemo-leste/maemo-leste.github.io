@@ -1,5 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-05-15T00:00:00+02:00</updated><entry><title>Maemo Leste - Third update (May + June) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html" rel="alternate"></link><published>2018-05-15T00:00:00+02:00</published><updated>2018-05-15T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-05-15:/maemo-leste-third-update-may-june-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-08-31T23:39:00+02:00</updated><entry><title>Maemo Leste - fourth update (July + August) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html" rel="alternate"></link><published>2018-08-31T23:39:00+02:00</published><updated>2018-08-31T23:39:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-08-31:/maemo-leste-fourth-update-july-august-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html"&gt;third update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, we now also have a &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. We hope to add a bit more
+structure to our development by not just relying …&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html"&gt;third update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, we now also have a &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. We hope to add a bit more
+structure to our development by not just relying on IRC, but also mailing lists,
+acknowledging that this is likely a more widely accepted method for coordinating
+development. We'll see how that pans out!&lt;/p&gt;
+&lt;div class="section" id="software-additions"&gt;
+&lt;h2&gt;Software additions&lt;/h2&gt;
+&lt;p&gt;The last two months were focussed mostly on wrapping on some projects and
+integration, we hope to close the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;N900 Alpha release milestone&lt;/a&gt; soon.&lt;/p&gt;
+&lt;div class="section" id="virtual-keyboard"&gt;
+&lt;h3&gt;Virtual keyboard&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;virtual keyboard implementation is now usable&lt;/strong&gt;, and works
+(almost!) out of the box on the latest Nokia N900 images. We've added the
+&lt;cite&gt;hildon-input-meta&lt;/cite&gt; package, which, together with some files from Fremantle,
+makes the virtual keyboard work:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e5f273a647098352c1ee8491cb42908ac686796f"&gt;https://github.com/maemo-leste/image-builder/commit/e5f273a647098352c1ee8491cb42908ac686796f&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want a virtual keyboard on the Nokia N900, take the latest image, boot
+it, then reboot it once it has fully booted. After that, go to &lt;cite&gt;Settings&lt;/cite&gt;, &lt;cite&gt;Text
+Input&lt;/cite&gt; and check the &lt;cite&gt;Use virtual keyboard&lt;/cite&gt; option. In future releases, this
+likely will not be required, and we should able to close &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/17"&gt;issue #17&lt;/a&gt; soon.&lt;/p&gt;
+&lt;p&gt;The special keys virtual keyboard (the one that complements a hardware keyboard,
+if present) does not yet show up when the keyboard slide is open, unless this
+gconf key is set:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+gconftool-2 -s /system/osso/af/slide-open -t bool true
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;osso-xterm&lt;/strong&gt; now also supports the virtual keyboard, before this didn't work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="networking"&gt;
+&lt;h3&gt;Networking&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Wifi integration in the images is now also completed&lt;/strong&gt;, when using the latest
+Nokia N900 image (or any device, really), wireless should work out of the box.
+See our previous update on what is supported or not, and also check out the
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Wifi+Connectivity+(improvements)%22"&gt;Wifi connectivity improvements&lt;/a&gt;
+milestone!&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/136"&gt;EAP PAP for TTLS is now shown by default&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="location"&gt;
+&lt;h3&gt;Location&lt;/h3&gt;
+&lt;p&gt;Some work has been done exploring our options for GPS, in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/57"&gt;issue #57&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="audio"&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Speakers are no longer muted by default&lt;/strong&gt; on the Nokia N900, see  &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/58"&gt;issue #58&lt;/a&gt;. Additionally, and
+largely because of fixing this issue, status-area-applet-battery will no longer
+warn about low battery levels if the battery is not (yet) calibrated (and thus
+no longer make sad &amp;quot;low battery&amp;quot; sounds every minute or so).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="touch-input"&gt;
+&lt;h3&gt;Touch input&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Support for capacitive touch devices&lt;/strong&gt; has been improved a lot, previously some
+buttons and menus simply did not respond to touch events on capacitive screens,
+notably the hildon application menu and the controls of hildon-home.&lt;/p&gt;
+&lt;p&gt;This has now been fixed, with changes to libmatchbox2 and hildon-desktop to
+support touch events:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libmatchbox2/commit/5c18fb8583f14feab404b45853149adb502f2fcc"&gt;https://github.com/maemo-leste/libmatchbox2/commit/5c18fb8583f14feab404b45853149adb502f2fcc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/bab369db0be57bca9366fe9e1a7cde0c40fffbb5"&gt;https://github.com/maemo-leste/hildon-desktop/commit/bab369db0be57bca9366fe9e1a7cde0c40fffbb5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/180c5069e1a3ccc0e3a31c86a997ac1bdbc82d22"&gt;https://github.com/maemo-leste/hildon-desktop/commit/180c5069e1a3ccc0e3a31c86a997ac1bdbc82d22&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="power-usage"&gt;
+&lt;h3&gt;Power usage&lt;/h3&gt;
+&lt;p&gt;Some initial research is being done on power usage/saving, &lt;strong&gt;it is reported
+that Maemo Leste currently uses about 90mA, versus the 10mA that Fremantle
+uses&lt;/strong&gt;.  We hope to bring down the power usage a lot while more hardware
+components get supported. See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/170"&gt;issue #170&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="images"&gt;
+&lt;h2&gt;Images&lt;/h2&gt;
+&lt;p&gt;There are now new (pre-alpha) images available for the Nokia
+N900:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+https://maedevu.maemo.org/images/n900/20180831/
+&lt;/pre&gt;
+&lt;div class="section" id="open-issues"&gt;
+&lt;h3&gt;Open issues&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Lock screen and related functionality does not work yet. The issue here is a
+race condition in our startup script and X session scripts. The issue is
+documented in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83"&gt;issue #83&lt;/a&gt;, and a temporary
+workaround is to issue these two commands after booting:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dbus-send --system --type=signal /com/nokia/startup/signal com.nokia.startup.signal.init_done
+dbus-send --system --type=signal /com/whatever com.nokia.HildonDesktop.ready
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;For virtual keyboard to work, you have to reboot once after booting the
+fresh/new image. Then the virtual keyboard can be enabled from the settings
+&lt;cite&gt;Text Input&lt;/cite&gt; applet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="documentation-community"&gt;
+&lt;h2&gt;Documentation/Community&lt;/h2&gt;
+&lt;p&gt;The amount of people actively contributing code is still only two. We need more
+testers and developers.&lt;/p&gt;
+&lt;p&gt;If you're interested, please join the &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;, check out this thread on
+maemo.org:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://talk.maemo.org/showthread.php?t=100192&amp;amp;page=1"&gt;https://talk.maemo.org/showthread.php?t=100192&amp;amp;page=1&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Additionally, more work has been done on our &lt;a class="reference external" href="https://leste.maemo.org/"&gt;Wiki&lt;/a&gt;,
+with device status tables per device, as well as some additional instructions.&lt;/p&gt;
+&lt;p&gt;Here is an example of the current Nokia N900 page: &lt;a class="reference external" href="https://leste.maemo.org/Nokia_N900"&gt;https://leste.maemo.org/Nokia_N900&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;The one big remaining item before we will reach the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;N900 Alpha release
+milestone&lt;/a&gt; is Qt. Previously, we anticiated we would port over Qt4, but for
+various reasons (gstreamer 0.10 vs 1.0 support being one of them) we will
+instead attempt to port the Maemo Qt4 work to Qt5. This means that in the future
+any software using Qt4 will have to be ported to Qt5.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83"&gt;issue #83&lt;/a&gt; causing the lockscreen not to work on boot will also need to be
+addressed, possibly by drastically changing our X session startup scripts.&lt;/p&gt;
+&lt;p&gt;Once the Alpha release milestone has been reached, we will focus our attention
+towards the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/3"&gt;Beta release for the N900&lt;/a&gt;, which should bring:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;2G/3G/4G(?) data support in &lt;cite&gt;icd2&lt;/cite&gt;&lt;/li&gt;
+&lt;li&gt;(Very) basic/rudimentary voice calls&lt;/li&gt;
+&lt;li&gt;A media player&lt;/li&gt;
+&lt;li&gt;Support for usb gadgets and general usb integration: porting &lt;cite&gt;hildon-status-bar-usb&lt;/cite&gt; and &lt;cite&gt;ke-recv&lt;/cite&gt;&lt;/li&gt;
+&lt;li&gt;Vibration, proximity sensor and accelerometer support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Maybe, if we need a distraction, we will look at &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/130"&gt;Wireguard integration&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see happen and continue, join us!&lt;/p&gt;
+&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+#maemo. We also monitor the mailing list and github issues closely.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="n900"></category><category term="keyboard"></category><category term="wifi"></category><category term="alpha"></category><category term="icd"></category><category term="networking"></category><category term="connectivity"></category></entry><entry><title>Maemo Leste - Third update (May + June) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html" rel="alternate"></link><published>2018-05-15T00:00:00+02:00</published><updated>2018-05-15T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-05-15:/maemo-leste-third-update-may-june-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html"&gt;second update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;div class="section" id="on-the-software-side"&gt;
