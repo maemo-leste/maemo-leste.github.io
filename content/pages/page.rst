@@ -32,9 +32,10 @@ A proper overview of the current (Maemo) software state will be provided soon.
 Check out our (`initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_), the `March
 2018 update <{filename}/maemo-leste-march-2018-update.rst>`_, `April 2018
-update <{filename}/maemo-leste-april-2018-update.rst>`_  and
-`May + June 2018 update <{filename}/maemo-leste-may-2018-update.rst>`_ for the
-current status.
+update <{filename}/maemo-leste-april-2018-update.rst>`_, `May + June 2018 update
+<{filename}/maemo-leste-may-2018-update.rst>`_ and
+`July + August 2018 update <{filename}/maemo-leste-july-2018-update.rst>`_ for
+the current status.
 
 Devices:
 
