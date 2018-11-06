@@ -194,7 +194,7 @@ With minimal changes (https://github.com/maemo-leste/wifi-signal-applet) compile
   :height: 324px
   :width: 576px
 
-This package is now available in our mail repository, as *wifi-signal-applet*.
+This package is now available in our main repository, as *wifi-signal-applet*.
 
 Going forward, we should probably have a separate repository (or repository
 component) for non-essential packages like the wifi-signal-applet. We'll have to
@@ -220,7 +220,7 @@ This screenshot shows Qt5 in action on Maemo Leste:
   :width: 400px
 
 In the process, he also ported several mafw components to gstreamer 1.0 and
-packages them for Leste:
+packaged them for Leste:
 
 * https://github.com/maemo-leste/?utf8=%E2%9C%93&q=mafw&type=&language=
 
