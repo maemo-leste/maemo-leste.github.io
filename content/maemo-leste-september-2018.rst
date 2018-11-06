@@ -252,7 +252,7 @@ various projects:
 Images
 ------
 
-*parazyd* has build new images for all the currently supported devices:
+*parazyd* has built new images for all the currently supported devices:
 
 * Virtual machine: https://maedevu.maemo.org/images/virtual-machines/20181102/
 * Nokia N900: https://maedevu.maemo.org/images/n900/20181103/
