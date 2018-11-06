@@ -35,9 +35,10 @@ Check out our (`initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_), the `March
 2018 update <{filename}/maemo-leste-march-2018-update.rst>`_, `April 2018
 update <{filename}/maemo-leste-april-2018-update.rst>`_, `May + June 2018 update
-<{filename}/maemo-leste-may-2018-update.rst>`_ and
-`July + August 2018 update <{filename}/maemo-leste-july-2018-update.rst>`_ for
-the current status.
+<{filename}/maemo-leste-may-2018-update.rst>`_,
+`July + August 2018 update <{filename}/maemo-leste-july-2018-update.rst>`_ and
+`September + October 2018 update <{filename}/maemo-leste-september-2018.rst>`_
+for the current status.
 
 Devices:
 
