@@ -144,9 +144,12 @@ New kernel and image for the A33 Twister tablet and the LIME2
 
 There is now a first image available for the `A33 Twister tablet
 <https://leste.maemo.org/A33-TurboX-Twister>`_. The image features working
-usb gadget/otg,  battery, charging, touchscreen and (unstable) wireless.
-Currently, backlight is not working, so the screen is not very bright,
-and there is no 3D acceleration yet, and also no accelerated video decoding yet.
+usb gadget/otg,  battery, charging, touchscreen and `(unstable) wireless
+<https://github.com/maemo-leste/bugtracker/issues/192>`_.
+Currently, `backlight is not working
+<https://github.com/maemo-leste/bugtracker/issues/191>`_, so the screen is not
+very bright, and there is no 3D acceleration yet, and also no accelerated video
+decoding yet.
 
 On the 3D front, we have managed to run the open source 3D driver on the LIME2
 (which will also work for other devices with Mali GPUs), the mesa gears demo
@@ -335,8 +338,9 @@ state of the keyboard (open or closed).
 Nexus 5?
 ~~~~~~~~
 
-Some time was also spent on working on the (upcoming!) Nexus 5 port, which isn't
-quite functional, as you can see:
+Some time was also spent on working on the (upcoming!) `Nexus 5 port
+<https://github.com/maemo-leste/bugtracker/issues/189>`_, which isn't quite
+functional, as you can see:
 
 .. image:: /images/leste-n5-initial.jpg
     :height: 400px
