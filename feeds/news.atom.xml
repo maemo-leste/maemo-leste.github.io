@@ -97,9 +97,10 @@ interface.Notify('Notification', 0, 'control_bluetooth_paired', 'Testing 123', '
 &lt;div class="section" id="new-kernel-and-image-for-the-a33-twister-tablet-and-the-lime2"&gt;
 &lt;h3&gt;New kernel and image for the A33 Twister tablet and the LIME2&lt;/h3&gt;
 &lt;p&gt;There is now a first image available for the &lt;a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister"&gt;A33 Twister tablet&lt;/a&gt;. The image features working
-usb gadget/otg,  battery, charging, touchscreen and (unstable) wireless.
-Currently, backlight is not working, so the screen is not very bright,
-and there is no 3D acceleration yet, and also no accelerated video decoding yet.&lt;/p&gt;
+usb gadget/otg,  battery, charging, touchscreen and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/192"&gt;(unstable) wireless&lt;/a&gt;.
+Currently, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/191"&gt;backlight is not working&lt;/a&gt;, so the screen is not
+very bright, and there is no 3D acceleration yet, and also no accelerated video
+decoding yet.&lt;/p&gt;
 &lt;p&gt;On the 3D front, we have managed to run the open source 3D driver on the LIME2
 (which will also work for other devices with Mali GPUs), the mesa gears demo
 program works:&lt;/p&gt;
@@ -251,8 +252,8 @@ Qt5 and one for the final pieces of the virtual keyboard - monitoring the slide
 state of the keyboard (open or closed).&lt;/p&gt;
 &lt;div class="section" id="nexus-5"&gt;
 &lt;h3&gt;Nexus 5?&lt;/h3&gt;
-&lt;p&gt;Some time was also spent on working on the (upcoming!) Nexus 5 port, which isn't
-quite functional, as you can see:&lt;/p&gt;
+&lt;p&gt;Some time was also spent on working on the (upcoming!) &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/189"&gt;Nexus 5 port&lt;/a&gt;, which isn't quite
+functional, as you can see:&lt;/p&gt;
 &lt;img alt="" src="/images/leste-n5-initial.jpg" style="width: 526px; height: 400px;" /&gt;
 &lt;p&gt;There is a work in progress status page on our wiki: &lt;a class="reference external" href="https://leste.maemo.org/Nexus_5"&gt;https://leste.maemo.org/Nexus_5&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
