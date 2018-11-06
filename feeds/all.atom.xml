@@ -1,5 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-08-31T23:39:00+02:00</updated><entry><title>Maemo Leste - fourth update (July + August) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html" rel="alternate"></link><published>2018-08-31T23:39:00+02:00</published><updated>2018-08-31T23:39:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-08-31:/maemo-leste-fourth-update-july-august-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-11-06T23:00:00+01:00</updated><entry><title>Maemo Leste - fifth update (September + October) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html" rel="alternate"></link><published>2018-11-06T23:00:00+01:00</published><updated>2018-11-06T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-11-06:/maemo-leste-fifth-update-september-october-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html"&gt;fourth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;Don't forget that we have a mailing list - &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. The mailing list archives
+are now also functional: &lt;a class="reference external" href="https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html"&gt;https://lists.dyne.org/lurker/mindex/maemo-leste …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html"&gt;fourth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;Don't forget that we have a mailing list - &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. The mailing list archives
+are now also functional: &lt;a class="reference external" href="https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html"&gt;https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="software-additions"&gt;
+&lt;h2&gt;Software additions&lt;/h2&gt;
+&lt;p&gt;There have been lots of changes all over the place, below follows an attempt to
+highlight some of those changes.&lt;/p&gt;
+&lt;div class="section" id="boot-issues-resolved"&gt;
+&lt;h3&gt;Boot issues resolved&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83"&gt;issue #83&lt;/a&gt; is now fixed and
+the lock screen now works properly on boot, without requiring parallel boot to
+be enabled (in fact, parallel boot is still buggy, so don't enable it).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="scrolling-in-osso-xterm"&gt;
+&lt;h3&gt;Scrolling in osso-xterm&lt;/h3&gt;
+&lt;p&gt;Spinal84 &lt;a class="reference external" href="https://github.com/maemo-leste/osso-xterm/pull/1"&gt;fixed scrolling in osso-xterm&lt;/a&gt;,
+which is a really welcome addition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="usb-gadget-host-otg-mode"&gt;
+&lt;h3&gt;USB Gadget/Host/OTG mode&lt;/h3&gt;
+&lt;p&gt;Maemo Leste uses the Linux &lt;a class="reference external" href="https://www.kernel.org/doc/Documentation/usb/gadget_configfs.txt"&gt;gadget configfs&lt;/a&gt;
+to configure USB gadgets. The userspace library used to interface
+with the kernel configfs is &lt;a class="reference external" href="https://github.com/maemo-leste/libusbgx"&gt;libusbgx&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The new &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-usb-gadgets"&gt;hildon-usb-gadgets&lt;/a&gt;
+package uses libusbgx to implement two simple gadgets: a network gadget and a
+mass storage gadget. The mass storage gadget needs significantly more work, so
+it's mostly a stub right now.&lt;/p&gt;
+&lt;p&gt;This is complemented by the initial udev-enabled (previous versions relied on
+the now deprecated hal) version of &lt;a class="reference external" href="https://github.com/maemo-leste/ke-recv"&gt;ke-recv&lt;/a&gt;,
+which received kernel events regarding usb cable plugging and managed the gadget
+mode of the phone. The branch &amp;quot;nextgen-usbhack&amp;quot; contains the udev work and
+hildon-usb-gadgets integration.&lt;/p&gt;
+&lt;p&gt;The same udev code was used to bring up &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-status-bar-usb"&gt;hildon-status-bar-usb&lt;/a&gt;, the lengthy path to
+getting this to work is documented in
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/39"&gt;issue #39&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The result of this work can be seen here:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-usb-pcsuite-3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-usb-pcsuite-1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/n900-usb-pcsuite-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;By default, ke-recv will always enter &amp;quot;PC Suite&amp;quot; mode for now, which really
+just means that any device that is capable of usb peripherals will have usb
+networking set up to ease debugging. The device will assign itself the static IP
+&lt;cite&gt;192.168.42.2&lt;/cite&gt;, so something like this on the host device should bring up
+communication: &lt;cite&gt;ifconfig usb0 up 192.168.42.1&lt;/cite&gt;.&lt;/p&gt;
+&lt;p&gt;More information on usb networking can be found on this page:
+&lt;a class="reference external" href="https://leste.maemo.org/Status/USB_Peripheral"&gt;https://leste.maemo.org/Status/USB_Peripheral&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This currently works on the Nokia N900, Motorola Droid 4, and Allwinner devices
+(like the LIME2 and A33 Twister Tablet).&lt;/p&gt;
+&lt;p&gt;To be able to detect whether a device is connected to a PC or just a &amp;quot;wall
+charger&amp;quot;, we have to rely on musb (and other similar drivers). Unfortunately,
+musb will only expose this state if a gadget is loaded. As a result, a usb
+gadget is always loaded, even when it's not in use.&lt;/p&gt;
+&lt;p&gt;The &lt;cite&gt;ke-recv&lt;/cite&gt; and &lt;cite&gt;hildon-status-bar-usb&lt;/cite&gt; code still requires some significant
+refactoring - they both share the same udev code, but right now this code is
+just duplicated amongst the two projects. The &lt;cite&gt;hildon-usb-gadgets&lt;/cite&gt; repository
+could also see some more love - both in terms of the descriptors of the gadgets
+and the actual code. So if you know some C - this might be a fun project to
+pick up!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900-led-control"&gt;
+&lt;h3&gt;Nokia N900 LED control&lt;/h3&gt;
+&lt;p&gt;It turns out that some control over the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/186"&gt;RGB led on the N900&lt;/a&gt; already works
+using mce.&lt;/p&gt;
+&lt;p&gt;Simply running the following command:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+echo 0 &amp;gt; /sys/class/power_supply/bq24150a-0/stat_pin_enable
+&lt;/pre&gt;
+&lt;p&gt;Will disable the LED override when the N900 is being charged, and then this dbus
+command will show the communication LED pattern:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_led_pattern_activate string:&amp;quot;PatternCommunicationIM&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;This command will disable the pattern:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_led_pattern_deactivate string:&amp;quot;PatternCommunicationIM&amp;quot;
+&lt;/pre&gt;
+&lt;p&gt;In fact, other Maemo.org examples also work on Leste already, &lt;a class="reference external" href="https://wiki.maemo.org/Phone_control#Make_an_.22Email_Style.22_notification_dialog"&gt;like this message dialog created using dbus and Python&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+import dbus
+bus = dbus.SessionBus()
+proxy = bus.get_object('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
+interface = dbus.Interface(proxy,dbus_interface='org.freedesktop.Notifications')
+interface.Notify('Notification', 0, 'control_bluetooth_paired', 'Testing 123', 'Hello World', [], {}, 0)
+&lt;/pre&gt;
+&lt;p&gt;Results in:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-message.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-kernel-and-image-for-the-a33-twister-tablet-and-the-lime2"&gt;
+&lt;h3&gt;New kernel and image for the A33 Twister tablet and the LIME2&lt;/h3&gt;
+&lt;p&gt;There is now a first image available for the &lt;a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister"&gt;A33 Twister tablet&lt;/a&gt;. The image features working
+usb gadget/otg,  battery, charging, touchscreen and (unstable) wireless.
+Currently, backlight is not working, so the screen is not very bright,
+and there is no 3D acceleration yet, and also no accelerated video decoding yet.&lt;/p&gt;
+&lt;p&gt;On the 3D front, we have managed to run the open source 3D driver on the LIME2
+(which will also work for other devices with Mali GPUs), the mesa gears demo
+program works:&lt;/p&gt;
+&lt;img alt="" src="/images/lima-lime2.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;However, the driver is not yet able to run the Hildon desktop UI - the kernel
+hangs.&lt;/p&gt;
+&lt;p&gt;The source code for this driver can be found here:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa"&gt;https://gitlab.freedesktop.org/lima/mesa&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/linux"&gt;https://gitlab.freedesktop.org/lima/linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The lima driver is currently enabled in our LIME2 and A33 Twister tablet kernel
+(4.18 based):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/lime2-linux/tree/lime2-and-twister"&gt;https://github.com/maemo-leste/lime2-linux/tree/lime2-and-twister&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, the userland required to actually run any 3D demos is lacking, since it
+requires a newer mesa (and other supporting packages), which are not currently
+available in Devuan ascii.&lt;/p&gt;
+&lt;p&gt;The LIME2 images expect a 4.3 inch touchscreen to be connected, but should also
+work over HDMI. &lt;em&gt;hildon-home&lt;/em&gt; doesn't look so bad at 480x272px, does it?&lt;/p&gt;
+&lt;img alt="" src="/images/lime2-home.png" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="porting-maemo-extras-packages"&gt;
+&lt;h3&gt;Porting Maemo Extras packages&lt;/h3&gt;
+&lt;p&gt;One of the advantages of being really close to Maemo Fremantle is that a lot of
+the existing Maemo applications require minimal work to run on Maemo Leste. Out
+of curiousity, we imported the wifi signal applet (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/185"&gt;issue #185&lt;/a&gt;). The maemo.org extras page for the package is here: &lt;a class="reference external" href="http://maemo.org/packages/view/wifi-signal-applet/"&gt;http://maemo.org/packages/view/wifi-signal-applet/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With minimal changes (&lt;a class="reference external" href="https://github.com/maemo-leste/wifi-signal-applet"&gt;https://github.com/maemo-leste/wifi-signal-applet&lt;/a&gt;) compiled and just works:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-wifi-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;This package is now available in our mail repository, as &lt;em&gt;wifi-signal-applet&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Going forward, we should probably have a separate repository (or repository
+component) for non-essential packages like the wifi-signal-applet. We'll have to
+set up in a such a way that it easy for others to also submit and build
+packages. &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/194"&gt;Feedback is welcome in ticket #194&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt5-and-gstreamer"&gt;
+&lt;h3&gt;Qt5 and gstreamer!&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;freemangordon&lt;/em&gt; has started the immense task of porting the Maemo style and
+widgets to Qt5, which is one of the last remaining big items for our N900 alpha
+image:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/qtstyleplugins"&gt;https://github.com/maemo-leste/qtstyleplugins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/qtmaemo5"&gt;https://github.com/maemo-leste/qtmaemo5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This screenshot shows Qt5 in action on Maemo Leste:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-qt5-widget-1.png" style="width: 400px; height: 340px;" /&gt;
+&lt;p&gt;In the process, he also ported several mafw components to gstreamer 1.0 and
+packages them for Leste:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/?utf8=%E2%9C%93&amp;amp;q=mafw&amp;amp;type=&amp;amp;language="&gt;https://github.com/maemo-leste/?utf8=%E2%9C%93&amp;amp;q=mafw&amp;amp;type=&amp;amp;language=&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once these components are in place, we could even look at porting &lt;a class="reference external" href="https://wiki.maemo.org/Open_Media_Player"&gt;Open Media
+Player&lt;/a&gt; from Fremantle!&lt;/p&gt;
+&lt;p&gt;Packages from Maemo Fremantle that rely on Qt 4.x will likely need to be ported
+to Qt 5 before they will run on Maemo Leste.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="documentation"&gt;
+&lt;h2&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;spinal84&lt;/em&gt; has been working on adding documentation to various repositories and
+he has also been working on generating the required doxygen documentation for
+various projects:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/1"&gt;https://github.com/maemo-leste/mce/pull/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/ke-recv/pull/1"&gt;https://github.com/maemo-leste/ke-recv/pull/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/ke-recv-extra/pull/1"&gt;https://github.com/maemo-leste/ke-recv-extra/pull/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/status-area-applet-battery/pull/1"&gt;https://github.com/maemo-leste/status-area-applet-battery/pull/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/3"&gt;https://github.com/maemo-leste/icd2/pull/3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/clockd/pull/3"&gt;https://github.com/maemo-leste/clockd/pull/3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/8"&gt;https://github.com/maemo-leste/icd2/pull/8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="images"&gt;
+&lt;h2&gt;Images&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;parazyd&lt;/em&gt; has build new images for all the currently supported devices:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Virtual machine: &lt;a class="reference external" href="https://maedevu.maemo.org/images/virtual-machines/20181102/"&gt;https://maedevu.maemo.org/images/virtual-machines/20181102/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nokia N900: &lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/20181103/"&gt;https://maedevu.maemo.org/images/n900/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Motorola Droid 4: &lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/20181103/"&gt;https://maedevu.maemo.org/images/droid4/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A33 Twister tablet: &lt;a class="reference external" href="https://maedevu.maemo.org/images/turbox-twister/20181103/"&gt;https://maedevu.maemo.org/images/turbox-twister/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Raspi 2/3: &lt;a class="reference external" href="https://maedevu.maemo.org/images/raspi2/20181103/"&gt;https://maedevu.maemo.org/images/raspi2/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;N9: &lt;a class="reference external" href="https://maedevu.maemo.org/images/n9/20181103/"&gt;https://maedevu.maemo.org/images/n9/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;N950: &lt;a class="reference external" href="https://maedevu.maemo.org/images/n950/20181103/"&gt;https://maedevu.maemo.org/images/n950/20181103/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have not been able to test all of them, so please do, and let us know if
+something is broken!&lt;/p&gt;
+&lt;div class="section" id="open-issues"&gt;
+&lt;h3&gt;Open issues&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For virtual keyboard to work, you have to reboot once after booting the
+fresh/new image. Then the virtual keyboard can be enabled from the settings
+&lt;cite&gt;Text Input&lt;/cite&gt; applet.&lt;/li&gt;
+&lt;li&gt;Several devices still lack 3D acceleration support, making the user experience
+particularly painful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community"&gt;
+&lt;h2&gt;Community&lt;/h2&gt;
+&lt;p&gt;We're slowly but steadily moving forward and we seem to be attracting more
+developers - which is fantastic news. Hopefully once we reach an Alpha state for
+the Nokia N900, we will be able to reach out to more developers and get even
+more people on board.&lt;/p&gt;
+&lt;div class="section" id="openfest-2018"&gt;
+&lt;h3&gt;OpenFest 2018&lt;/h3&gt;
+&lt;p&gt;Three of us got together at OpenFest 2018 in Sofia, Bulgaria.
+We also held a presentation at OpenFest, the official videos will be made
+available later, but the slides for the presentation can be downloaded here:
+&lt;a class="reference external" href="https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf"&gt;https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Someone from the community has additionally also recorded the talk (thanks for
+that), and you can find the recording here:
+&lt;a class="reference external" href="http://talk.maemo.org/showpost.php?p=1550095&amp;amp;postcount=152"&gt;http://talk.maemo.org/showpost.php?p=1550095&amp;amp;postcount=152&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fosdem-2019"&gt;
+&lt;h3&gt;FOSDEM 2019&lt;/h3&gt;
+&lt;p&gt;We've submitted a proposal for a talk about Maemo Leste at FOSDEM; we hope that
+it will be accepted. Additionally, we've submitted a request for a stand at
+FOSDEM, together with the people from &lt;a class="reference external" href="https://postmarketos.org"&gt;postmarketOS&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinetab-pinephone"&gt;
+&lt;h3&gt;PineTab, PinePhone?&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.pine64.org/"&gt;Pine64&lt;/a&gt; has announced that they are going to
+produce an Allwinner tablet and an Allwinner phone. They are planning to
+provide details before or at &lt;a class="reference internal" href="#fosdem-2019"&gt;FOSDEM 2019&lt;/a&gt; &lt;a class="footnote-reference" href="#id3" id="id1"&gt;[1]&lt;/a&gt; &lt;a class="footnote-reference" href="#id4" id="id2"&gt;[2]&lt;/a&gt;. An Allwinner phone will
+hopefully be quite well supported by mainline, since most of the components have
+drivers in mainline now - perhaps even the Lima driver will be usable on time.&lt;/p&gt;
+&lt;p&gt;We have reached out to Pine64, and they have kindly agreed to send development kits our way!&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://itsfoss.com/pinebook-kde-smartphone/"&gt;https://itsfoss.com/pinebook-kde-smartphone/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html"&gt;https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;Most of our attention has been focussed on reaching the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Alpha release&lt;/a&gt; and we're down to 4
+issues before we reach the alpha milestone.&lt;/p&gt;
+&lt;p&gt;Two issues pertain to reboot/poweroff not functioning as it should, one is for
+Qt5 and one for the final pieces of the virtual keyboard - monitoring the slide
+state of the keyboard (open or closed).&lt;/p&gt;
+&lt;div class="section" id="nexus-5"&gt;
+&lt;h3&gt;Nexus 5?&lt;/h3&gt;
+&lt;p&gt;Some time was also spent on working on the (upcoming!) Nexus 5 port, which isn't
+quite functional, as you can see:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-n5-initial.jpg" style="width: 526px; height: 400px;" /&gt;
+&lt;p&gt;There is a work in progress status page on our wiki: &lt;a class="reference external" href="https://leste.maemo.org/Nexus_5"&gt;https://leste.maemo.org/Nexus_5&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="n900"></category><category term="xterm"></category><category term="nexus 5"></category><category term="alpha"></category><category term="qt"></category><category term="usb"></category><category term="openfest"></category><category term="fosdem"></category><category term="pine64"></category><category term="pinephone"></category><category term="lima"></category></entry><entry><title>Maemo Leste - fourth update (July + August) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html" rel="alternate"></link><published>2018-08-31T23:39:00+02:00</published><updated>2018-08-31T23:39:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-08-31:/maemo-leste-fourth-update-july-august-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html"&gt;third update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;p&gt;First of all, we now also have a &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
