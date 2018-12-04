@@ -1,274 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>Maemo Leste - icd</title>
-        <link rel="stylesheet" href="https://maemo-leste.github.io/theme/css/main.css" />
-        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Atom Feed" />
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=" icd">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <title> icd - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://maemo-leste.github.io/">Maemo Leste </a></h1>
-                <nav><ul>
-                    <li><a href="https://maemo-leste.github.io/">Maemo Leste</a></li>
-                    <li><a href="https://maemo-leste.github.io/category/news.html">news</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html">Maemo Leste - fourth update (July + August) 2018</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-08-31T23:39:00+02:00">
-                Published: Fri 31 August 2018
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
-        </address>
-<p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
-<p>tags: <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/keyboard.html">keyboard</a> <a href="https://maemo-leste.github.io/tag/wifi.html">wifi</a> <a href="https://maemo-leste.github.io/tag/alpha.html">alpha</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> </p>
-</footer><!-- /.post-info --><img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
-<p>It's been a while since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html">third update</a>
-and there's quite some stuff to talk about!</p>
-<p>First of all, we now also have a <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a>. Be sure
-to subscribe for updates, questions and development. We hope to add a bit more
-structure to our development by not just relying on IRC, but also mailing lists,
-acknowledging that this is likely a more widely accepted method for coordinating
-development. We'll see how that pans out!</p>
-<div class="section" id="software-additions">
-<h2>Software additions</h2>
-<p>The last two months were focussed mostly on wrapping on some projects and
-integration, we hope to close the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">N900 Alpha release milestone</a> soon.</p>
-<div class="section" id="virtual-keyboard">
-<h3>Virtual keyboard</h3>
-<p>The <strong>virtual keyboard implementation is now usable</strong>, and works
-(almost!) out of the box on the latest Nokia N900 images. We've added the
-<cite>hildon-input-meta</cite> package, which, together with some files from Fremantle,
-makes the virtual keyboard work:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e5f273a647098352c1ee8491cb42908ac686796f">https://github.com/maemo-leste/image-builder/commit/e5f273a647098352c1ee8491cb42908ac686796f</a></li>
-</ul>
-<p>If you want a virtual keyboard on the Nokia N900, take the latest image, boot
-it, then reboot it once it has fully booted. After that, go to <cite>Settings</cite>, <cite>Text
-Input</cite> and check the <cite>Use virtual keyboard</cite> option. In future releases, this
-likely will not be required, and we should able to close <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/17">issue #17</a> soon.</p>
-<p>The special keys virtual keyboard (the one that complements a hardware keyboard,
-if present) does not yet show up when the keyboard slide is open, unless this
-gconf key is set:</p>
-<pre class="literal-block">
-gconftool-2 -s /system/osso/af/slide-open -t bool true
-</pre>
-<p><strong>osso-xterm</strong> now also supports the virtual keyboard, before this didn't work.</p>
-</div>
-<div class="section" id="networking">
-<h3>Networking</h3>
-<p><strong>Wifi integration in the images is now also completed</strong>, when using the latest
-Nokia N900 image (or any device, really), wireless should work out of the box.
-See our previous update on what is supported or not, and also check out the
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Wifi+Connectivity+(improvements)%22">Wifi connectivity improvements</a>
-milestone!</p>
-<p><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/136">EAP PAP for TTLS is now shown by default</a></p>
-</div>
-<div class="section" id="location">
-<h3>Location</h3>
-<p>Some work has been done exploring our options for GPS, in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/57">issue #57</a>.</p>
-</div>
-<div class="section" id="audio">
-<h3>Audio</h3>
-<p><strong>Speakers are no longer muted by default</strong> on the Nokia N900, see  <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/58">issue #58</a>. Additionally, and
-largely because of fixing this issue, status-area-applet-battery will no longer
-warn about low battery levels if the battery is not (yet) calibrated (and thus
-no longer make sad &quot;low battery&quot; sounds every minute or so).</p>
-</div>
-<div class="section" id="touch-input">
-<h3>Touch input</h3>
-<p><strong>Support for capacitive touch devices</strong> has been improved a lot, previously some
-buttons and menus simply did not respond to touch events on capacitive screens,
-notably the hildon application menu and the controls of hildon-home.</p>
-<p>This has now been fixed, with changes to libmatchbox2 and hildon-desktop to
-support touch events:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/maemo-leste/libmatchbox2/commit/5c18fb8583f14feab404b45853149adb502f2fcc">https://github.com/maemo-leste/libmatchbox2/commit/5c18fb8583f14feab404b45853149adb502f2fcc</a></li>
-<li><a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/bab369db0be57bca9366fe9e1a7cde0c40fffbb5">https://github.com/maemo-leste/hildon-desktop/commit/bab369db0be57bca9366fe9e1a7cde0c40fffbb5</a></li>
-<li><a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/180c5069e1a3ccc0e3a31c86a997ac1bdbc82d22">https://github.com/maemo-leste/hildon-desktop/commit/180c5069e1a3ccc0e3a31c86a997ac1bdbc82d22</a></li>
-</ul>
-</div>
-<div class="section" id="power-usage">
-<h3>Power usage</h3>
-<p>Some initial research is being done on power usage/saving, <strong>it is reported
-that Maemo Leste currently uses about 90mA, versus the 10mA that Fremantle
-uses</strong>.  We hope to bring down the power usage a lot while more hardware
-components get supported. See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/170">issue #170</a></p>
-</div>
-</div>
-<div class="section" id="images">
-<h2>Images</h2>
-<p>There are now new (pre-alpha) images available for the Nokia
-N900:</p>
-<pre class="literal-block">
-https://maedevu.maemo.org/images/n900/20180831/
-</pre>
-<div class="section" id="open-issues">
-<h3>Open issues</h3>
-<ul>
-<li><p class="first">Lock screen and related functionality does not work yet. The issue here is a
-race condition in our startup script and X session scripts. The issue is
-documented in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83">issue #83</a>, and a temporary
-workaround is to issue these two commands after booting:</p>
-<pre class="literal-block">
-dbus-send --system --type=signal /com/nokia/startup/signal com.nokia.startup.signal.init_done
-dbus-send --system --type=signal /com/whatever com.nokia.HildonDesktop.ready
-</pre>
-</li>
-<li><p class="first">For virtual keyboard to work, you have to reboot once after booting the
-fresh/new image. Then the virtual keyboard can be enabled from the settings
-<cite>Text Input</cite> applet.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="documentation-community">
-<h2>Documentation/Community</h2>
-<p>The amount of people actively contributing code is still only two. We need more
-testers and developers.</p>
-<p>If you're interested, please join the <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a>, check out this thread on
-maemo.org:</p>
-<blockquote>
-<a class="reference external" href="https://talk.maemo.org/showthread.php?t=100192&amp;page=1">https://talk.maemo.org/showthread.php?t=100192&amp;page=1</a></blockquote>
-<p>Additionally, more work has been done on our <a class="reference external" href="https://leste.maemo.org/">Wiki</a>,
-with device status tables per device, as well as some additional instructions.</p>
-<p>Here is an example of the current Nokia N900 page: <a class="reference external" href="https://leste.maemo.org/Nokia_N900">https://leste.maemo.org/Nokia_N900</a></p>
-</div>
-<div class="section" id="what-is-next">
-<h2>What is next?</h2>
-<p>The one big remaining item before we will reach the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">N900 Alpha release
-milestone</a> is Qt. Previously, we anticiated we would port over Qt4, but for
-various reasons (gstreamer 0.10 vs 1.0 support being one of them) we will
-instead attempt to port the Maemo Qt4 work to Qt5. This means that in the future
-any software using Qt4 will have to be ported to Qt5.</p>
-<p><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83">issue #83</a> causing the lockscreen not to work on boot will also need to be
-addressed, possibly by drastically changing our X session startup scripts.</p>
-<p>Once the Alpha release milestone has been reached, we will focus our attention
-towards the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/3">Beta release for the N900</a>, which should bring:</p>
-<ul class="simple">
-<li>2G/3G/4G(?) data support in <cite>icd2</cite></li>
-<li>(Very) basic/rudimentary voice calls</li>
-<li>A media player</li>
-<li>Support for usb gadgets and general usb integration: porting <cite>hildon-status-bar-usb</cite> and <cite>ke-recv</cite></li>
-<li>Vibration, proximity sensor and accelerometer support</li>
-</ul>
-<p>Maybe, if we need a distraction, we will look at <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/130">Wireguard integration</a>.</p>
-</div>
-<div class="section" id="interested">
-<h2>Interested?</h2>
-<p>If you're interested in specifics, or helping out, or wish to have a specific
-package ported, please see our <a class="reference external" href="https://github.com/maemo-leste/bugtracker">bugtracker</a>.</p>
-<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay up to date, ask questions and/or
-help out.</p>
-<p>If you like our work and want to see happen and continue, join us!</p>
-<p>We're currently on irc.freenode.net in #maemo-leste, but also hang out in
-#maemo. We also monitor the mailing list and github issues closely.</p>
-</div>
-                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+    </head>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html" rel="bookmark"
-                           title="Permalink to Maemo Leste - Third update (May + June) 2018">Maemo Leste - Third update (May + June) 2018</a></h1>
-                </header>
+    <body>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-05-15T00:00:00+02:00">
-                Published: Tue 15 May 2018
-        </abbr>
+        <!-- Header -->
+    <div class="header-container gradient">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
-        </address>
-<p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
-<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> <a href="https://maemo-leste.github.io/tag/raspberry-pi.html">raspberry pi</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> <a href="https://maemo-leste.github.io/tag/nexus5.html">nexus5</a> </p>
-</footer><!-- /.post-info -->                <img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
-<p>It's been a while since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">second update</a>
-and there's quite some stuff to talk about!</p>
-<div class="section" id="on-the-software-side">
-<h2>On the software side</h2>
-<div class="section" id="networking">
-<h3>Networking</h3>
-<p>This month was focussed on connectivity. A lot of progress has been made in
-this area. Internet Connectivity Daemon (<cite>icd</cite>) is now quite functional and
-works together nicely with …</p></div></div>
-                <a class="readmore" href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.ioimages/logo_small.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html" rel="bookmark"
-                           title="Permalink to Maemo Leste - Second update (April 2018)">Maemo Leste - Second update (April 2018)</a></h1>
-                </header>
+            <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title text-uppercase"> : #icd</h1>
+                      <div class="header-underline"></div>
+                      <p class="header-subtitle header-subtitle-homepage"> #icd</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+            <!-- /Header -->
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-04-25T00:00:00+02:00">
-                Published: Wed 25 April 2018
-        </abbr>
+        </div>
+        <!-- /Header -->
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
-        </address>
-<p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
-<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/connectivity.html">connectivity</a> <a href="https://maemo-leste.github.io/tag/n950.html">n950</a> <a href="https://maemo-leste.github.io/tag/n9.html">n9</a> <a href="https://maemo-leste.github.io/tag/raspberry-pi.html">raspberry pi</a> <a href="https://maemo-leste.github.io/tag/icd.html">icd</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> </p>
-</footer><!-- /.post-info -->                <img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
-<p>It's been over a month since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">first update</a>
-and there's quite some stuff to talk about!</p>
-<div class="section" id="on-the-software-side">
-<h2>On the software side</h2>
-<ul>
-<li><p class="first">We now also have a <a class="reference external" href="https://leste.maemo.org">Wiki</a> - which is not
-particularly impressive yet, but the device pages will be moved over shortly.</p>
-</li>
-<li><p class="first">We have added images for a new device …</p></li></ul></div>
-                <a class="readmore" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://github.com/maemo-leste">Maemo Leste Github</a></li>
-                            <li><a href="https://github.com/maemo-leste/bugtracker/issues">Maemo Leste Bugtracker</a></li>
+
+        <!-- Content -->
+    <div class="archive-container">
+        <div class="container content archive">
+            <h2><a href="https://maemo-leste.github.io/tag/icd.html">icd</a></h2>
+            <dl class="dl-horizontal">
+            	<dt>Fri 31 August 2018</dt>
+            	<dd><a href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html">Maemo Leste - fourth update (July + August) 2018</a></dd>
+            	<dt>Tue 15 May 2018</dt>
+            	<dd><a href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html">Maemo Leste - Third update (May + June) 2018</a></dd>
+            	<dt>Wed 25 April 2018</dt>
+            	<dd><a href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">Maemo Leste - Second update (April 2018)</a></dd>
+            </dl>
+        </div>
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
                         </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
                         </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
 </html>

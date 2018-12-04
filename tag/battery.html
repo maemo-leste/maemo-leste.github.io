@@ -1,262 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>Maemo Leste - battery</title>
-        <link rel="stylesheet" href="https://maemo-leste.github.io/theme/css/main.css" />
-        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Atom Feed" />
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=" battery">
+        <meta name="keywords" content="">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <title> battery - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://maemo-leste.github.io/">Maemo Leste </a></h1>
-                <nav><ul>
-                    <li><a href="https://maemo-leste.github.io/">Maemo Leste</a></li>
-                    <li><a href="https://maemo-leste.github.io/category/news.html">news</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">Maemo Leste - First update (March 2018)</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-03-02T12:00:00+01:00">
-                Published: Fri 02 March 2018
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>
-        </address>
-<p>In <a href="https://maemo-leste.github.io/category/news.html">news</a>.</p>
-<p>tags: <a href="https://maemo-leste.github.io/tag/kernel.html">kernel</a> <a href="https://maemo-leste.github.io/tag/networking.html">networking</a> <a href="https://maemo-leste.github.io/tag/battery.html">battery</a> <a href="https://maemo-leste.github.io/tag/ofono.html">ofono</a> <a href="https://maemo-leste.github.io/tag/n900.html">n900</a> <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a> </p>
-</footer><!-- /.post-info --><img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" />
-<p>It's been a month since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html">first post</a> and there's a
-lot of stuff to talk about!</p>
-<p>First of all, someone added us to <a class="reference external" href="https://en.wikipedia.org/wiki/Maemo#Maemo-Leste">Wikipedia</a>, cool!</p>
-<p>Devuan, the distribution that Maemo Leste is based on, has released a beta
-version of &quot;Devuan ASCII&quot; (Devuan 2.0): <a class="reference external" href="https://files.devuan.org/devuan_ascii_beta/README.txt">https://files.devuan.org/devuan_ascii_beta/README.txt</a>
-Maemo Leste uses Devuan Ascii, so we're happy to see ASCII being close to
-a release.</p>
-<div class="section" id="on-the-software-side">
-<h2>On the software side</h2>
-<p>We have imported various new packages, added new device images, and have been
-working on fixing and enhancing existing packages.</p>
-<ul>
-<li><p class="first">We have ported the community-ssu battery applet from <cite>hal</cite> to <cite>UPower</cite>, and it
-is now available as an update (via apt) and installed by default in the new
-images.  (See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/36">#36</a>)
-There are still some open issues (
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/90">#90</a>,
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/67">#67</a>,
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/68">#68</a>,
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/70">#70</a>)</p>
-</li>
-<li><p class="first">The battery applet work also uncovered some kernel bugs. The first one related
-to the status of the battery not being correct. This bug was fixed shortly
-after the bug was reported, with patches in this thread: <a class="reference external" href="https://marc.info/?l=linux-pm&amp;m=151933105213158&amp;w=2">N900 battery status
-fixes</a>.
-Another issue was uncovered when the battery applet seemed to get charging
-events with a very long delay (60s+). The patch is currently on the mailing
-list, but will hopefully make its way into the kernel after it has gotten some
-review: <a class="reference external" href="https://marc.info/?l=linux-kernel&amp;m=151994358415447&amp;w=2">[RFC PATCH] power: supply: bq27xxx: Call power_supply_changed on
-status change</a>.</p>
-<img alt="" src="/images/n900-charging-battery-applet.png" style="width: 576px; height: 324px;" />
-</li>
-<li><p class="first">The usb status bar has received some initial porting work from <cite>hal</cite> to
-<cite>udev</cite>, and now the UI will pop up when the N900 (only supported device right
-now) is connected to a PC.  Actually changing the USB gadgets does not yet
-work, since we intend to switch to <cite>configfs</cite> and <cite>libusbgx</cite> instead of the
-deprecated gadget modes, so that we can also provide more complex gadgets in
-the near future, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/39">#39</a>.
-While porting the applet, a few kernel bugs were uncovered. The first problem
-was that reading the <cite>vbus</cite> status from sysfs caused kernel OOPSes. This
-should be fixed with this patch: <a class="reference external" href="https://marc.info/?l=linux-omap&amp;m=151977053826963&amp;w=2">[PATCH v2 1/1] usb: musb: call
-pm_runtime_{get,put}_sync before reading vbus registers</a>.
-The second issue is that sometimes the <cite>mode</cite> file in the <cite>musb-hdrc</cite>
-controller will return <cite>(null)</cite> rather than a sensible mode (e.g. <cite>b_idle</cite>,
-<cite>b_peripheral</cite>, etc). This has been reported here: <a class="reference external" href="https://marc.info/?l=linux-kernel&amp;m=151994805016878&amp;w=2">usb: musb: &quot;(null)&quot; in
-sysfs mode file after disabling a gadget (and at other times, system hangs)</a>. As the title
-suggests, at other times the device would simply reboot when switching to
-another gadget. So there's more work to be done in this area.</p>
-<img alt="" src="/images/leste-initial-usb-applet.png" style="width: 576px; height: 324px;" />
-</li>
-<li><p class="first">The system menu and lock screen mostly works, but doesn't work directly from
-startup on the N900. This is likely a boot (race) condition triggered in part
-by the fact that <cite>hildon-desktop</cite> currently starts slowly.  See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/83">#83</a>, and meanwhile, enjoy
-screenshots of working UI:</p>
-<img alt="" src="/images/n900-lock-slider.png" style="width: 576px; height: 324px;" />
-<img alt="" src="/images/n900-system-menu.png" style="width: 576px; height: 324px;" />
-</li>
-<li><p class="first">To be able to quickly get some of these kernel fixes to Maemo Leste, we have
-git repositories with some device specific kernel patches. Now, at least for
-the N900, we also have a package: <cite>linux-image-n900 - Linux kernel package for
-Nokia N900 (4.15)</cite>. It currently already carries all of the fixes mentioned
-above.</p>
-</li>
-</ul>
-<ul class="simple">
-<li>The orientation lock applet is also ported, but has yet to see any reasonable
-testing, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/37">#37</a>.</li>
-</ul>
-<ul>
-<li><p class="first">The <cite>Mode Control Entity</cite> (mce) can now control the backlight on the Droid4,
-and likely on almost every other device with Linux mainline support out there,
-see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/65">#65</a>.</p>
-</li>
-<li><p class="first"><cite>mce</cite> can now read the battery status using <cite>UPower</cite>, profiting from earlier
-work done on the battery applet, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/87">#87</a></p>
-</li>
-<li><p class="first"><cite>ofono</cite> no longer crashes, as reported in
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61">#61</a>. We have also
-imported the latest ofono release, since the required version was not yet
-present in Debian sid (nor in Devuan).</p>
-</li>
-<li><p class="first">With some work, <cite>ofono</cite> can be used to set up a <cite>2g/3g</cite> data connection, as
-described in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/61">#61</a>. It is also possible to send a text and start a phone
-call, using dbus. The phone call is without audio. At present, there is no
-integration or UI available in Maemo Leste for any of this.</p>
-</li>
-<li><p class="first"><a class="reference external" href="http://maedevu.maemo.org/images/droid4/">Motorola Droid4 images are now available</a>, but be mindful that you need
-to have already rooted the device and to have installed safestrap.
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/26">#26</a>
-We hope that someone will volunteer to extend our current device pages with
-installation instructions, or at least pointers to said instructions (see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/75">#75</a>).</p>
-</li>
-<li><p class="first">There are also <a class="reference external" href="http://maedevu.maemo.org/images/olimex-lime2/">LIME2 images available</a>. Like the Droid4 image, they
-do not yet contain any hardware acceleration. At present, the LIME2 images
-also require that a HDMI monitor is hooked up at boot time. (If someone tries
-out the images, please document your experience and consider adding to our
-devices pages). There is an open issue that contains the current state of the
-images: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/43">#43</a>.</p>
-</li>
-<li><p class="first">There are now also <cite>armel</cite> images available for the N900, but <strong>they do not
-yet work</strong>, so please stick to <cite>armhf</cite> images for now.
-See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/92">#92</a>.</p>
-</li>
-<li><p class="first">Our repositories were missing source packages for many packages, so <cite>apt-get
-build-dep</cite> and <cite>apt-get source</cite> often did not work. This is now resolved, see
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/84">#84</a>.</p>
-<p>Several people have inquired about a &quot;Scratchbox&quot; like tool. Currently,
-development is done on the devices themselves, or virtual machines. You can
-simply use the standard Debian development tools for all development and
-packaging, so at this point there does not seem to be a reason to develop a
-Scratchbox-like environment.</p>
-</li>
-<li><p class="first">A <strong>lot</strong> of work has gone into readying <cite>connui</cite> and <cite>icd2</cite> (the connectivity
-UI, API, daemon and plugins) for Maemo Leste. Unfortunately, it is not in a
-completed state yet, but it's getting quite close. More on that later on in
-this post.</p>
-</li>
-</ul>
-<p>More work has been done behind the scenes, so if you're excited, please do
-follow our github issue tracker and/or the IRC channel. We also have logs of the
-channel history now: <a class="reference external" href="http://maedevu.maemo.org/irc.txt">http://maedevu.maemo.org/irc.txt</a></p>
-</div>
-<div class="section" id="what-is-next">
-<h2>What is next?</h2>
-<p>We have started to use the Github 'Milestones' feature to sort tickets by order
-of importance and feasibility, and you can see the ticket that we deem necessary
-for an Alpha releases here: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">Alpha release milestone</a>.</p>
-<p>A lot of major things are still missing. A few obvious ones are phone calls, UI
-and daemons for conversations, integration for wifi connectivity, integration
-for 3g data, 3d acceleration for various supported platforms, support for Qt
-applications and some sort of Android application support. We will try to cover
-what we're going to work on for the next month, to give you an indication on
-where we are, where we are going, and where you can help.</p>
-<div class="section" id="connectivity">
-<h3>Connectivity</h3>
-<p>The first big thing that we want to attempt to get into a working state is
-<cite>connui</cite>, <cite>icd2</cite> and <cite>wpa_supplicant</cite> integration for <cite>icd2</cite>. In layman terms:
-we want wifi to work with the Maemo Fremantle UIs. To do this, we need to finish reverse
-engineering the last bits of <cite>connui</cite>, and then we need to write a plugin for
-<cite>icd2</cite> that communicates with <cite>wpa_supplicant</cite>, the de-facto wifi daemon. (See
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/73">#73</a> and <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/42">#42</a>)
-We will need someone to finish the <cite>icd2</cite> documentation in doxygen format: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/28">#28</a></p>
-<p>Similarly, we would also need someone to take a look at what the best way would
-be to integrate ofono into our networking stack. One method to do that would be
-to integrate it into icd2, but perhaps there are also alternatives, by using
-<cite>NetworkManager</cite> or <cite>connui</cite>, and somehow hooking those up to <cite>icd2</cite>.</p>
-<p>Having working phone calls with audio (even with perhaps not too great audio
-quality) would be a huge win and might not be too far out, we're hoping someone
-will pick this up, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/27">#27</a>.</p>
-</div>
-<div class="section" id="android-in-a-box">
-<h3>Android in a box</h3>
-<p>The best way to run Android applications on GNU/Linux seems to be <a class="reference external" href="https://anbox.io/">Anbox</a>, which is in the process in being packaged for Debian (and
-Devuan): <a class="reference external" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884797">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=884797</a>
-We have a ticket for anbox support, <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/9">#9</a>.</p>
-<p>We do not yet know how much RAM anbox would use and if it is feasible for all
-our supported devices, but devices such as the LIME2 and the Motorola Droid 4
-might have enough RAM to spare to run Android applications using Anbox.</p>
-</div>
-<div class="section" id="drivers-and-packaging">
-<h3>Drivers and packaging</h3>
-<p>Having 3D acceleration work on the LIME2 devices would be quite nice, since they
-can output to high resolution screens, in which case 3D acceleration is really a
-must-have <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/43">#43</a>.</p>
-<p>The Droid 4 also currently has no 3D acceleration. We hope that a more
-lightweight version of <cite>hildon-desktop</cite> can provide some solace here <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/51">#51</a>.</p>
-<p>Finishing the USB gadget code is definitely a short term goal, but that depends
-on how fast we can get the kernel bugs resolved.</p>
-<p>Another thing we want to wrap up soon is importing the Maemo Qt patches (
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/53">#53</a>), since that will
-allow us (and hopefully, others) to import many more packages from Maemo
-Fremantle. Examples of such packages are clockui (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/55">#55</a>), osso-calculator (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/54">#54</a>) and open media player
-(<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/25">#25</a>).</p>
-<p>Packaging <cite>pulseaudio</cite> is also somewhere on the road map, which might be
-required for better call quality on the N900 and also to protect the N900
-speakers from being irrepairably damaged <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/62">#62</a>.</p>
-</div>
-<div class="section" id="platform-support">
-<h3>Platform support</h3>
-<p>We might look at supporting <cite>arm64</cite> in the near future, if we have a (virtual)
-device that we can test our builds on.</p>
-</div>
-</div>
-<div class="section" id="interested">
-<h2>Interested?</h2>
-<p>If you're interested in specifics, or helping out, or wish to have a specific
-package ported, please see our <a class="reference external" href="https://github.com/maemo-leste/bugtracker">bugtracker</a>.</p>
-<p>Join us! We really need more people helping out. At this point, we specifically
-need developers who can work on porting packages, help out with reverse
-engineering, and debug driver issues.</p>
-<p>We're currently on irc.freenode.net in #maemo-leste, but also hang out in
-#maemo. We also monitor the github issues closely.</p>
-</div>
-                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://github.com/maemo-leste">Maemo Leste Github</a></li>
-                            <li><a href="https://github.com/maemo-leste/bugtracker/issues">Maemo Leste Bugtracker</a></li>
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.ioimages/logo_small.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title text-uppercase"> : #battery</h1>
+                      <div class="header-underline"></div>
+                      <p class="header-subtitle header-subtitle-homepage"> #battery</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="archive-container">
+        <div class="container content archive">
+            <h2><a href="https://maemo-leste.github.io/tag/battery.html">battery</a></h2>
+            <dl class="dl-horizontal">
+            	<dt>Fri 02 March 2018</dt>
+            	<dd><a href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">Maemo Leste - First update (March 2018)</a></dd>
+            </dl>
+        </div>
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
                         </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
                         </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
 </html>
