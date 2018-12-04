@@ -47,7 +47,8 @@ following monthly updates:
 * `May + June 2018 <{filename}/maemo-leste-may-2018-update.rst>`_
 * `July + August 2018 <{filename}/maemo-leste-july-2018-update.rst>`_
 * `September + October 2018 <{filename}/maemo-leste-september-2018.rst>`_
-* `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
+
+.. * `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
 
 Software status is (partially) documented here: https://leste.maemo.org/Status
 
