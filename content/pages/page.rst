@@ -20,7 +20,8 @@ Feel free to join us on irc.freenode.net **#maemo-leste** and also join our
 interested.
 
 Maemo Leste is based on Devuan Ascii (Debian Stretch) and all the "supported"
-devices ship with recent Linux (mainline-based) kernels.
+devices ship with recent Linux (mainline-based) kernels. We are also already
+working towards supporting Devuan Beowulf (Debian Buster) as well.
 
 The project is not usable as a daily driver for your device, Maemo Leste is
 currently in development phase and we are actively searching for developers. For
@@ -35,7 +36,7 @@ on the Maemo community efforts to replace all closed bits by open software.
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
-**TODO: screenshots (or: screenshots subpage, either here or on wiki)**
+.. **TODO: screenshots (or: screenshots subpage, either here or on wiki)**
 
 For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
@@ -47,7 +48,6 @@ following monthly updates:
 * `July + August 2018 <{filename}/maemo-leste-july-2018-update.rst>`_
 * `September + October 2018 <{filename}/maemo-leste-september-2018.rst>`_
 * `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
-
 
 Software status is (partially) documented here: https://leste.maemo.org/Status
 
