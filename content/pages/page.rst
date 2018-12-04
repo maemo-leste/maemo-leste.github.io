@@ -14,7 +14,7 @@ of `Maemo <http://maemo.org/>`_. We aim to provide a free Maemo experience on
 mobile phones and tablets like the Nokia N900, Motorola Droid 4, Allwinner
 Tablets and more.
 
-Feel free to join us on irc.freenode.net #maemo-leste ; please also join our
+Feel free to join us on irc.freenode.net **#maemo-leste** and also join our
 `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ if you're
 interested.
