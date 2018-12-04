@@ -9,7 +9,7 @@ SITEURL = ''
 PATH = 'content'
 
 THEME = 'nest'
-NEST_HEADER_LOGO = 'images/logo_small.png'
+NEST_HEADER_LOGO = '/images/logo_small.png'
 MENUITEMS = [('News', '/categories.html')]
 STATIC_PATHS = ['images/favicon.ico']
 EXTRA_PATH_METADATA = {
