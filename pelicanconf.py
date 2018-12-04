@@ -11,7 +11,7 @@ PATH = 'content'
 THEME = 'nest'
 NEST_HEADER_LOGO = '/images/logo_small.png'
 MENUITEMS = [('News', '/categories.html')]
-STATIC_PATHS = ['images/favicon.ico']
+STATIC_PATHS = ['images',]
 EXTRA_PATH_METADATA = {
     'images/favicon.ico': {'path': 'favicon.ico'}
 }
