@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="It&#39;s been a while since our fifth update and there&#39;s quite some stuff to talk about! Media Our talk introducing Maemo Leste at OpenFest 2018 is now online (The slides are also available). We have...">
+        <meta name="keywords" content="aarch64, arm64, lima, openfest, pine64, qt">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+
+        <title>Maemo Leste - sixth update (November) 2018 - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/news.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                            <a  href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html">Maemo Leste Screenshots</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Maemo Leste - sixth update (November) 2018</h1>
+                      <p class="header-date"> <a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, Wed 05 December 2018,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/aarch64.html">aarch64</a>, <a href="https://maemo-leste.github.io/tag/arm64.html">arm64</a>, <a href="https://maemo-leste.github.io/tag/lima.html">lima</a>, <a href="https://maemo-leste.github.io/tag/openfest.html">openfest</a>, <a href="https://maemo-leste.github.io/tag/pine64.html">pine64</a>, <a href="https://maemo-leste.github.io/tag/qt.html">qt</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <p>It's been a while since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html">fifth update</a>
+and there's quite some stuff to talk about!</p>
+<div class="section" id="media">
+<h2>Media</h2>
+<p>Our talk introducing Maemo Leste at <a class="reference external" href="https://www.youtube.com/watch?v=WT1hwtEPt7o">OpenFest 2018</a> is now online (The <a class="reference external" href="https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf">slides are
+also available</a>).</p>
+<p>We have also switched to a more clear Pelican theme for our (this) website and
+added a <a class="reference external" href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html">Screenshots</a> page!</p>
+</div>
+<div class="section" id="software">
+<h2>Software</h2>
+<div class="section" id="aarch64">
+<h3>aarch64</h3>
+<p>Our <a class="reference external" href="https://phoenix.maemo.org/">Jenkins</a> instance now has <strong>aarch64</strong>
+(<strong>arm64</strong>) builds for almost all our packages and we have a working Raspberry
+Pi 3 with <strong>aarch64</strong> Maemo userland. Images for the Raspberry 3 (and other
+devices) will follow in December.</p>
+</div>
+<div class="section" id="qt5">
+<h3>Qt5</h3>
+<p>Work on porting the Maemo style and Maemo widgets to Qt5 is still progressing.
+There are still some issues to sort out - some widgets end up being too large or
+fullscreen when they should not be. Regardless, here is an example widget:</p>
+<img alt="" src="/images/n900-qt5.png" style="width: 576px; height: 324px;" />
+<p>Once the Qt5 port is in better shape, we'll work on supporting GStreamer 1.0 as
+well, so that we can build <a class="reference external" href="https://wiki.maemo.org/Open_Media_Player">Open Media Player</a>.</p>
+</div>
+<div class="section" id="lima-driver-for-mali-gpus-apitrace">
+<h3>lima driver for Mali GPUs, apitrace</h3>
+<p>The open source <a class="reference external" href="https://gitlab.freedesktop.org/lima/">lima</a> driver is a
+driver for Mali GPUs (see the <a class="reference external" href="https://www.youtube.com/watch?v=7z6xjIRXcp4">FOSDEM talk</a>).</p>
+<p>The lima driver is still under heavy development, and it is not yet merged into
+mesa yet. We <a class="reference external" href="https://phoenix.maemo.org/job/mesa-binaries/">use Jenkins to build a Lima enabled mesa for us</a>, which can be found in the
+<cite>lima</cite> component in our repositories: <a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/">https://maedevu.maemo.org/leste/pool/lima/</a>
+The lima driver also has a kernel component, which is already included in our
+latest Allwinner images.</p>
+<p>However, <a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/issues/70">lima cannot render hildon-desktop yet</a>; and while trying to
+submit a debug trace using apitrace <a class="reference external" href="https://github.com/apitrace/apitrace/issues/599">we ran into (and fixed) an apitrace issue</a>, and now a proper debug
+trace is also submitted to the Lima driver developers.</p>
+<p>Finally, we have a <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/181">tracking ticket for Lima support</a>.</p>
+</div>
+<div class="section" id="icd2-and-clockd-code-improvements-documentation">
+<h3>icd2 and clockd code improvements, documentation</h3>
+<p><em>spinal84</em> has been continuing his great work on cleaning up the <em>icd2</em> and
+<em>clockd</em> code, as well as documenting it (this list is not exhaustive):</p>
+<p><a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9">https://github.com/maemo-leste/icd2/pull/9</a>
+<a class="reference external" href="https://github.com/maemo-leste/clockd/pull/4">https://github.com/maemo-leste/clockd/pull/4</a></p>
+</div>
+<div class="section" id="hildon-application-manager-ham">
+<h3>Hildon Application Manager (HAM)</h3>
+<p>What is a mobile distribution without a GUI package manager?
+We took the source straight from Maemo Fremantle, fixed a few compilation
+errors, and behold, the package manager starts (and that's probably about it,
+nothing else was tested yet):</p>
+<img alt="" src="/images/raspi-ham.png" style="width: 576px; height: 324px;" />
+</div>
+<div class="section" id="shutdown-woes">
+<h3>Shutdown woes</h3>
+<p>One of the remaining alpha blocker bugs is that shutting down the device using
+the UI doesn't work the way it's supposed to work. We've now <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/125#issuecomment-443454882">figured out the
+problem</a>
+and will be able to move forward with both a temporary and more permanent
+solution. The reason is that the shutdown feature actually tries to bring the
+device into the so called <strong>act dead</strong> mode, in which mode the device acts like
+it's not powered on. Sounds scary? Perhaps, but this feature is for example
+essential for the phone to turn itself on on an alarm (and more, but we have to
+figure that out, the entire Maemo Fremantle boot process is documented here:
+<a class="reference external" href="http://wiki.maemo.org/Maemo_5_boot_process">http://wiki.maemo.org/Maemo_5_boot_process</a>).</p>
+</div>
+<div class="section" id="calendar-support">
+<h3>Calendar support</h3>
+<p>While no code has been written yet, we have a plan on how to move forward with
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/203">calendar support</a>.
+The various components (backend and GUI) are open source or have open source
+clones/implementations. Unfortunately, the GUI will (also) depend on Qt5 port
+being brought to a usable state.</p>
+</div>
+</div>
+<div class="section" id="devices">
+<h2>Devices</h2>
+<div class="section" id="pinetablet-pinephone-anakin-devkit">
+<h3>PineTablet/PinePhone &quot;Anakin&quot; devkit</h3>
+<p>The Pine64 folks are making a PineTablet and a PinePhone, and they were so kind
+as to provide us with <em>three</em> developer kits, more information on the developer
+kit can be found here:</p>
+<p><a class="reference external" href="http://wiki.pine64.org/index.php/Project_Anakin">http://wiki.pine64.org/index.php/Project_Anakin</a></p>
+<p>This developer kit is one of the main reasons that our packages are now
+available on <strong>aarch64</strong>. We'll share updates once more starts to work on the
+developer kit.</p>
+<img alt="" src="/images/Anakin_kit_1.jpg" style="width: 300px; height: 400px;" />
+<img alt="" src="/images/Anakin_kit_2.jpg" style="width: 300px; height: 400px;" />
+</div>
+</div>
+<div class="section" id="distribution">
+<h2>Distribution</h2>
+<p>Maemo Leste is based on Devuan, currently targetting <strong>Devuan Ascii</strong>, which
+closely tracks <strong>Debian Stretch</strong> (current stable version of Debian).</p>
+<div class="section" id="devuan-beowulf-debian-buster">
+<h3>Devuan Beowulf (Debian Buster)</h3>
+<p>We've making some progress towards porting and building the Maemo Leste packages
+on the next version of Devuan: Beowulf (which in turn is based on upcoming
+version of Debian: Buster). Jenkins now supports building our packages for this
+upcoming release. It will be a while before Beowulf is releases, but when it is,
+we will be ready!</p>
+</div>
+<div class="section" id="leste-devel-repository">
+<h3>leste-devel repository</h3>
+<p>We have introduced a <cite>leste-devel</cite> repository, which developers and users can
+use to test experimental code changes; see <a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9#issuecomment-443375660">this icd2 pull request</a>
+on how we currently use this repository.</p>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation</h2>
+<p>We've put some more effort into our
+<a class="reference external" href="https://leste.maemo.org/Status">Software Status</a> page - it now covers more
+software components and also (might) have some information on the status of each
+component.</p>
+</div>
+<div class="section" id="open-issues">
+<h2>Open issues</h2>
+<p><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues">https://github.com/maemo-leste/bugtracker/issues</a></p>
+<ul class="simple">
+<li>For virtual keyboard to work, you have to reboot once after booting the
+fresh/new image. Then the virtual keyboard can be enabled from the settings
+<cite>Text Input</cite> applet.</li>
+<li>Several devices still lack 3D acceleration support, making the user experience
+particularly painful.</li>
+</ul>
+</div>
+<div class="section" id="community">
+<h2>Community</h2>
+<div class="section" id="no-fosdem-stand">
+<h3>No FOSDEM stand</h3>
+<p>Together with postmarketOS we applied for a stand at FOSDEM 2019, which
+unfortunately was not accepted. However, both the postmarketOS and Maemo Leste
+people will attend FOSDEM regardlessly.</p>
+</div>
+</div>
+<div class="section" id="what-is-next">
+<h2>What is next?</h2>
+<p>Most of our attention has been focussed on reaching the <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4">Alpha release</a> and we're down to 4
+issues before we reach the alpha milestone.</p>
+<p>Two issues pertain to reboot/poweroff not functioning as it should, one is for
+Qt5 and one for the final pieces of the virtual keyboard - monitoring the slide
+state of the keyboard (open or closed).</p>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our <a class="reference external" href="https://github.com/maemo-leste/bugtracker">bugtracker</a>.</p>
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join us!</p>
+</div>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>

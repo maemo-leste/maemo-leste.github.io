@@ -1,5 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-11-06T23:00:00+01:00</updated><entry><title>Maemo Leste - fifth update (September + October) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html" rel="alternate"></link><published>2018-11-06T23:00:00+01:00</published><updated>2018-11-06T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-11-06:/maemo-leste-fifth-update-september-october-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-12-05T09:00:00+01:00</updated><entry><title>Maemo Leste - sixth update (November) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html" rel="alternate"></link><published>2018-12-05T09:00:00+01:00</published><updated>2018-12-05T09:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-05:/maemo-leste-sixth-update-november-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html"&gt;fifth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="media"&gt;
+&lt;h2&gt;Media&lt;/h2&gt;
+&lt;p&gt;Our talk introducing Maemo Leste at &lt;a class="reference external" href="https://www.youtube.com/watch?v=WT1hwtEPt7o"&gt;OpenFest 2018&lt;/a&gt; is now online (The &lt;a class="reference external" href="https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf"&gt;slides are
+also available&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;We have also switched to a more clear Pelican theme for our (this) website and
+added a …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html"&gt;fifth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;div class="section" id="media"&gt;
+&lt;h2&gt;Media&lt;/h2&gt;
+&lt;p&gt;Our talk introducing Maemo Leste at &lt;a class="reference external" href="https://www.youtube.com/watch?v=WT1hwtEPt7o"&gt;OpenFest 2018&lt;/a&gt; is now online (The &lt;a class="reference external" href="https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf"&gt;slides are
+also available&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;We have also switched to a more clear Pelican theme for our (this) website and
+added a &lt;a class="reference external" href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html"&gt;Screenshots&lt;/a&gt; page!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="software"&gt;
+&lt;h2&gt;Software&lt;/h2&gt;
+&lt;div class="section" id="aarch64"&gt;
+&lt;h3&gt;aarch64&lt;/h3&gt;
+&lt;p&gt;Our &lt;a class="reference external" href="https://phoenix.maemo.org/"&gt;Jenkins&lt;/a&gt; instance now has &lt;strong&gt;aarch64&lt;/strong&gt;
+(&lt;strong&gt;arm64&lt;/strong&gt;) builds for almost all our packages and we have a working Raspberry
+Pi 3 with &lt;strong&gt;aarch64&lt;/strong&gt; Maemo userland. Images for the Raspberry 3 (and other
+devices) will follow in December.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt5"&gt;
+&lt;h3&gt;Qt5&lt;/h3&gt;
+&lt;p&gt;Work on porting the Maemo style and Maemo widgets to Qt5 is still progressing.
+There are still some issues to sort out - some widgets end up being too large or
+fullscreen when they should not be. Regardless, here is an example widget:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-qt5.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Once the Qt5 port is in better shape, we'll work on supporting GStreamer 1.0 as
+well, so that we can build &lt;a class="reference external" href="https://wiki.maemo.org/Open_Media_Player"&gt;Open Media Player&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lima-driver-for-mali-gpus-apitrace"&gt;
+&lt;h3&gt;lima driver for Mali GPUs, apitrace&lt;/h3&gt;
+&lt;p&gt;The open source &lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/"&gt;lima&lt;/a&gt; driver is a
+driver for Mali GPUs (see the &lt;a class="reference external" href="https://www.youtube.com/watch?v=7z6xjIRXcp4"&gt;FOSDEM talk&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The lima driver is still under heavy development, and it is not yet merged into
+mesa yet. We &lt;a class="reference external" href="https://phoenix.maemo.org/job/mesa-binaries/"&gt;use Jenkins to build a Lima enabled mesa for us&lt;/a&gt;, which can be found in the
+&lt;cite&gt;lima&lt;/cite&gt; component in our repositories: &lt;a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/"&gt;https://maedevu.maemo.org/leste/pool/lima/&lt;/a&gt;
+The lima driver also has a kernel component, which is already included in our
+latest Allwinner images.&lt;/p&gt;
+&lt;p&gt;However, &lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/issues/70"&gt;lima cannot render hildon-desktop yet&lt;/a&gt;; and while trying to
+submit a debug trace using apitrace &lt;a class="reference external" href="https://github.com/apitrace/apitrace/issues/599"&gt;we ran into (and fixed) an apitrace issue&lt;/a&gt;, and now a proper debug
+trace is also submitted to the Lima driver developers.&lt;/p&gt;
+&lt;p&gt;Finally, we have a &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/181"&gt;tracking ticket for Lima support&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="icd2-and-clockd-code-improvements-documentation"&gt;
+&lt;h3&gt;icd2 and clockd code improvements, documentation&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;spinal84&lt;/em&gt; has been continuing his great work on cleaning up the &lt;em&gt;icd2&lt;/em&gt; and
+&lt;em&gt;clockd&lt;/em&gt; code, as well as documenting it (this list is not exhaustive):&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9"&gt;https://github.com/maemo-leste/icd2/pull/9&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/maemo-leste/clockd/pull/4"&gt;https://github.com/maemo-leste/clockd/pull/4&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-application-manager-ham"&gt;
+&lt;h3&gt;Hildon Application Manager (HAM)&lt;/h3&gt;
+&lt;p&gt;What is a mobile distribution without a GUI package manager?
+We took the source straight from Maemo Fremantle, fixed a few compilation
+errors, and behold, the package manager starts (and that's probably about it,
+nothing else was tested yet):&lt;/p&gt;
+&lt;img alt="" src="/images/raspi-ham.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="shutdown-woes"&gt;
+&lt;h3&gt;Shutdown woes&lt;/h3&gt;
+&lt;p&gt;One of the remaining alpha blocker bugs is that shutting down the device using
+the UI doesn't work the way it's supposed to work. We've now &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/125#issuecomment-443454882"&gt;figured out the
+problem&lt;/a&gt;
+and will be able to move forward with both a temporary and more permanent
+solution. The reason is that the shutdown feature actually tries to bring the
+device into the so called &lt;strong&gt;act dead&lt;/strong&gt; mode, in which mode the device acts like
+it's not powered on. Sounds scary? Perhaps, but this feature is for example
+essential for the phone to turn itself on on an alarm (and more, but we have to
+figure that out, the entire Maemo Fremantle boot process is documented here:
+&lt;a class="reference external" href="http://wiki.maemo.org/Maemo_5_boot_process"&gt;http://wiki.maemo.org/Maemo_5_boot_process&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="calendar-support"&gt;
+&lt;h3&gt;Calendar support&lt;/h3&gt;
+&lt;p&gt;While no code has been written yet, we have a plan on how to move forward with
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/203"&gt;calendar support&lt;/a&gt;.
+The various components (backend and GUI) are open source or have open source
+clones/implementations. Unfortunately, the GUI will (also) depend on Qt5 port
+being brought to a usable state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="devices"&gt;
+&lt;h2&gt;Devices&lt;/h2&gt;
+&lt;div class="section" id="pinetablet-pinephone-anakin-devkit"&gt;
+&lt;h3&gt;PineTablet/PinePhone &amp;quot;Anakin&amp;quot; devkit&lt;/h3&gt;
+&lt;p&gt;The Pine64 folks are making a PineTablet and a PinePhone, and they were so kind
+as to provide us with &lt;em&gt;three&lt;/em&gt; developer kits, more information on the developer
+kit can be found here:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://wiki.pine64.org/index.php/Project_Anakin"&gt;http://wiki.pine64.org/index.php/Project_Anakin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This developer kit is one of the main reasons that our packages are now
+available on &lt;strong&gt;aarch64&lt;/strong&gt;. We'll share updates once more starts to work on the
+developer kit.&lt;/p&gt;
+&lt;img alt="" src="/images/Anakin_kit_1.jpg" style="width: 300px; height: 400px;" /&gt;
+&lt;img alt="" src="/images/Anakin_kit_2.jpg" style="width: 300px; height: 400px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="distribution"&gt;
+&lt;h2&gt;Distribution&lt;/h2&gt;
+&lt;p&gt;Maemo Leste is based on Devuan, currently targetting &lt;strong&gt;Devuan Ascii&lt;/strong&gt;, which
+closely tracks &lt;strong&gt;Debian Stretch&lt;/strong&gt; (current stable version of Debian).&lt;/p&gt;
+&lt;div class="section" id="devuan-beowulf-debian-buster"&gt;
+&lt;h3&gt;Devuan Beowulf (Debian Buster)&lt;/h3&gt;
+&lt;p&gt;We've making some progress towards porting and building the Maemo Leste packages
+on the next version of Devuan: Beowulf (which in turn is based on upcoming
+version of Debian: Buster). Jenkins now supports building our packages for this
+upcoming release. It will be a while before Beowulf is releases, but when it is,
+we will be ready!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="leste-devel-repository"&gt;
+&lt;h3&gt;leste-devel repository&lt;/h3&gt;
+&lt;p&gt;We have introduced a &lt;cite&gt;leste-devel&lt;/cite&gt; repository, which developers and users can
+use to test experimental code changes; see &lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9#issuecomment-443375660"&gt;this icd2 pull request&lt;/a&gt;
+on how we currently use this repository.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="documentation"&gt;
+&lt;h2&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;We've put some more effort into our
+&lt;a class="reference external" href="https://leste.maemo.org/Status"&gt;Software Status&lt;/a&gt; page - it now covers more
+software components and also (might) have some information on the status of each
+component.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="open-issues"&gt;
+&lt;h2&gt;Open issues&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues"&gt;https://github.com/maemo-leste/bugtracker/issues&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;For virtual keyboard to work, you have to reboot once after booting the
+fresh/new image. Then the virtual keyboard can be enabled from the settings
+&lt;cite&gt;Text Input&lt;/cite&gt; applet.&lt;/li&gt;
+&lt;li&gt;Several devices still lack 3D acceleration support, making the user experience
+particularly painful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community"&gt;
+&lt;h2&gt;Community&lt;/h2&gt;
+&lt;div class="section" id="no-fosdem-stand"&gt;
+&lt;h3&gt;No FOSDEM stand&lt;/h3&gt;
+&lt;p&gt;Together with postmarketOS we applied for a stand at FOSDEM 2019, which
+unfortunately was not accepted. However, both the postmarketOS and Maemo Leste
+people will attend FOSDEM regardlessly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;Most of our attention has been focussed on reaching the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Alpha release&lt;/a&gt; and we're down to 4
+issues before we reach the alpha milestone.&lt;/p&gt;
+&lt;p&gt;Two issues pertain to reboot/poweroff not functioning as it should, one is for
+Qt5 and one for the final pieces of the virtual keyboard - monitoring the slide
+state of the keyboard (open or closed).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="arm64"></category><category term="aarch64"></category><category term="pine64"></category><category term="openfest"></category><category term="qt"></category><category term="lima"></category></entry><entry><title>Maemo Leste - fifth update (September + October) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html" rel="alternate"></link><published>2018-11-06T23:00:00+01:00</published><updated>2018-11-06T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-11-06:/maemo-leste-fifth-update-september-october-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
 &lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourth-update-july-august-2018.html"&gt;fourth update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;p&gt;Don't forget that we have a mailing list - &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
