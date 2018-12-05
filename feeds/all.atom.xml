@@ -51,8 +51,10 @@ trace is also submitted to the Lima driver developers.&lt;/p&gt;
 &lt;h3&gt;icd2 and clockd code improvements, documentation&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;spinal84&lt;/em&gt; has been continuing his great work on cleaning up the &lt;em&gt;icd2&lt;/em&gt; and
 &lt;em&gt;clockd&lt;/em&gt; code, as well as documenting it (this list is not exhaustive):&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9"&gt;https://github.com/maemo-leste/icd2/pull/9&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/clockd/pull/4"&gt;https://github.com/maemo-leste/clockd/pull/4&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/icd2/pull/9"&gt;https://github.com/maemo-leste/icd2/pull/9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/clockd/pull/4"&gt;https://github.com/maemo-leste/clockd/pull/4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="hildon-application-manager-ham"&gt;
 &lt;h3&gt;Hildon Application Manager (HAM)&lt;/h3&gt;
@@ -108,7 +110,7 @@ closely tracks &lt;strong&gt;Debian Stretch&lt;/strong&gt; (current stable versi
 &lt;p&gt;We've making some progress towards porting and building the Maemo Leste packages
 on the next version of Devuan: Beowulf (which in turn is based on upcoming
 version of Debian: Buster). Jenkins now supports building our packages for this
-upcoming release. It will be a while before Beowulf is releases, but when it is,
+upcoming release. It will be a while before Beowulf is released, but when it is,
 we will be ready!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="leste-devel-repository"&gt;
