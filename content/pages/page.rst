@@ -26,7 +26,8 @@ working towards supporting Devuan Beowulf (Debian Buster) as well.
 The project is not usable as a daily driver for your device, Maemo Leste is
 currently in development phase and we are actively searching for developers. For
 some devices, we have development images available - such as the `Nokia N900
-<https://leste.maemo.org/Nokia_N900>`_.
+<https://leste.maemo.org/Nokia_N900>`_; for an impression see
+`Screenshots <{filename}/pages/screenshots.rst>`_.
 
 So far we have set up devuan/debian repositories for our packages, with builds
 for `armel`, `armhf`, `amd64`, `aarch64`. We have FOSS replacements for some
@@ -36,7 +37,6 @@ on the Maemo community efforts to replace all closed bits by open software.
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
-.. **TODO: screenshots (or: screenshots subpage, either here or on wiki)**
 
 For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
@@ -47,8 +47,11 @@ following monthly updates:
 * `May + June 2018 <{filename}/maemo-leste-may-2018-update.rst>`_
 * `July + August 2018 <{filename}/maemo-leste-july-2018-update.rst>`_
 * `September + October 2018 <{filename}/maemo-leste-september-2018.rst>`_
+* `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
 
-.. * `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
+There is also an `OpenFest 2018 presentation about Maemo Leste
+<https://www.youtube.com/watch?v=WT1hwtEPt7o>`_ (The `slides are
+also available <https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf>`_).
 
 Software status is (partially) documented here: https://leste.maemo.org/Status
 
