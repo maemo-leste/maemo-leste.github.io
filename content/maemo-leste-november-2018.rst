@@ -82,8 +82,8 @@ icd2 and clockd code improvements, documentation
 *spinal84* has been continuing his great work on cleaning up the *icd2* and
 *clockd* code, as well as documenting it (this list is not exhaustive):
 
-https://github.com/maemo-leste/icd2/pull/9
-https://github.com/maemo-leste/clockd/pull/4
+* https://github.com/maemo-leste/icd2/pull/9
+* https://github.com/maemo-leste/clockd/pull/4
 
 
 Hildon Application Manager (HAM)
@@ -161,7 +161,7 @@ Devuan Beowulf (Debian Buster)
 We've making some progress towards porting and building the Maemo Leste packages
 on the next version of Devuan: Beowulf (which in turn is based on upcoming
 version of Debian: Buster). Jenkins now supports building our packages for this
-upcoming release. It will be a while before Beowulf is releases, but when it is,
+upcoming release. It will be a while before Beowulf is released, but when it is,
 we will be ready!
 
 
