@@ -56,9 +56,9 @@ showing it in action on our `A33 "TurboX Twister" tablet
 <https://github.com/maemo-leste/lime2-linux/tree/lime2-and-twister-4.19-rc4-20181207>`_)
 
 This is also great news for the Pine64 project, who are developing a `Pine64
-phone and Pine64 tablet <wiki.pine64.org/index.php/Project_Anakin>`_ (and have
-been so kind to send us a "Project Anakit" development kit as well) - because
-now their phone will have a free software driver!
+phone and Pine64 tablet <https://wiki.pine64.org/index.php/Project_Anakin>`_
+(and have been so kind to send us a "Project Anakit" development kit as well) -
+because now their phone will have a free software driver!
 
 To be clear, the experience is not entirely smooth, and we've had the driver
 crash on us a few times - but it's FOSS, so anyone can attempt to fix it (as
