@@ -27,7 +27,7 @@ also been &lt;a class="reference external" href="https://lists.freedesktop.org/a
 Linux kernel.&lt;/p&gt;
 &lt;p&gt;Excited (once again) at the prospect of having a FOSS Mali driver, we set up
 &lt;a class="reference external" href="https://phoenix.maemo.org/job/mesa-binaries/"&gt;(semi) automatic builds&lt;/a&gt; and
-ads it to the &lt;a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/m/mesa/"&gt;lima component of our Maemo Leste Devuan/Debian repository&lt;/a&gt; of
+added it to the &lt;a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/m/mesa/"&gt;lima component of our Maemo Leste Devuan/Debian repository&lt;/a&gt; of
 lima-mesa, the mesa code that supports lima. In our latest update, we stated
 that, unfortunately, &lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/issues/70"&gt;lima cannot render hildon-desktop yet&lt;/a&gt; (and that &lt;a class="reference external" href="https://github.com/apitrace/apitrace/issues/599"&gt;we ran into
 (and fixed) an apitrace issue&lt;/a&gt;), but this is no longer
