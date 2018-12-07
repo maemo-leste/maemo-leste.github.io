@@ -42,12 +42,13 @@ For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
 following monthly updates:
 
-* `March 2018 <{filename}/maemo-leste-march-2018-update.rst>`_
-* `April 2018 <{filename}/maemo-leste-april-2018-update.rst>`_
-* `May + June 2018 <{filename}/maemo-leste-may-2018-update.rst>`_
-* `July + August 2018 <{filename}/maemo-leste-july-2018-update.rst>`_
-* `September + October 2018 <{filename}/maemo-leste-september-2018.rst>`_
+* `Lima is alive! <{filename}/lima-alive-foss-mali-driver.rst>`_
 * `November 2018 <{filename}/maemo-leste-november-2018.rst>`_
+* `September + October 2018 <{filename}/maemo-leste-september-2018.rst>`_
+* `July + August 2018 <{filename}/maemo-leste-july-2018-update.rst>`_
+* `May + June 2018 <{filename}/maemo-leste-may-2018-update.rst>`_
+* `April 2018 <{filename}/maemo-leste-april-2018-update.rst>`_
+* `March 2018 <{filename}/maemo-leste-march-2018-update.rst>`_
 
 There is also an `OpenFest 2018 presentation about Maemo Leste
 <https://www.youtube.com/watch?v=WT1hwtEPt7o>`_ (The `slides are
