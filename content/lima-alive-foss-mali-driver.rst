@@ -33,7 +33,7 @@ Linux kernel.
 
 Excited (once again) at the prospect of having a FOSS Mali driver, we set up
 `(semi) automatic builds <https://phoenix.maemo.org/job/mesa-binaries/>`_ and
-ads it to the `lima component of our Maemo Leste Devuan/Debian repository
+added it to the `lima component of our Maemo Leste Devuan/Debian repository
 <https://maedevu.maemo.org/leste/pool/lima/m/mesa/>`_ of
 lima-mesa, the mesa code that supports lima. In our latest update, we stated
 that, unfortunately, `lima cannot render hildon-desktop yet
