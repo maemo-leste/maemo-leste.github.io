@@ -36,7 +36,8 @@ hildon-desktop (albeit some render artifacts remain), and we have made a video
 showing it in action on our &lt;a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister"&gt;A33 &amp;quot;TurboX Twister&amp;quot; tablet&lt;/a&gt;:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ihCVsaEMNzY"
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
-picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;This is also great news for the Pine64 project, who are developing a &lt;a class="reference external" href="wiki.pine64.org/index.php/Project_Anakin"&gt;Pine64
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;(&lt;a class="reference external" href="https://github.com/maemo-leste/lime2-linux/tree/lime2-and-twister-4.19-rc4-20181207"&gt;Kernel tree can be found here.&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;This is also great news for the Pine64 project, who are developing a &lt;a class="reference external" href="wiki.pine64.org/index.php/Project_Anakin"&gt;Pine64
 phone and Pine64 tablet&lt;/a&gt; (and have
 been so kind to send us a &amp;quot;Project Anakit&amp;quot; development kit as well) - because
 now their phone will have a free software driver!&lt;/p&gt;
