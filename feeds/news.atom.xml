@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-12-05T09:00:00+01:00</updated><entry><title>Maemo Leste - sixth update (November) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html" rel="alternate"></link><published>2018-12-05T09:00:00+01:00</published><updated>2018-12-05T09:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-05:/maemo-leste-sixth-update-november-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html"&gt;fifth update&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-12-07T23:50:00+01:00</updated><entry><title>Maemo Leste - Lima works!</title><link href="https://maemo-leste.github.io/maemo-leste-lima-works.html" rel="alternate"></link><published>2018-12-07T23:50:00+01:00</published><updated>2018-12-07T23:50:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-07:/maemo-leste-lima-works.html</id><summary type="html">&lt;p&gt;This update is relatively small - but it does contain something huge: Lima now
+renders hildon-desktop!&lt;/p&gt;
+&lt;div class="section" id="mali-gpus-and-the-lima-driver"&gt;
+&lt;h2&gt;Mali GPUs and the Lima Driver&lt;/h2&gt;
+&lt;p&gt;As we documented in our November 2018 update
+&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;November 2018 update&lt;/a&gt;, we were
+making progress trying to get the Lima driver to run on some Allwinner devices.&lt;/p&gt;
+&lt;p&gt;This is …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;This update is relatively small - but it does contain something huge: Lima now
+renders hildon-desktop!&lt;/p&gt;
+&lt;div class="section" id="mali-gpus-and-the-lima-driver"&gt;
+&lt;h2&gt;Mali GPUs and the Lima Driver&lt;/h2&gt;
+&lt;p&gt;As we documented in our November 2018 update
+&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;November 2018 update&lt;/a&gt;, we were
+making progress trying to get the Lima driver to run on some Allwinner devices.&lt;/p&gt;
+&lt;p&gt;This is important, as a lot of ARM devices have a Mali GPU. Not all of them have
+a Mali-400 or Mali-450, but a big chunk of them does - especially the Allwinner
+single board computers and tablets. However, ARM does not provide a free (as in
+freedom) driver for their GPUs. Back in 2014, &lt;a class="reference external" href="https://www.youtube.com/watch?v=7z6xjIRXcp4"&gt;Luc Verhaegen presented his (and
+others) work on freeing the Mali&lt;/a&gt;
+- a talk that I also personally attended and got me excited about the
+possibility of using a free driver on my Allwinner devices. Some time later,
+he &lt;a class="reference external" href="https://libv.livejournal.com/27461.html"&gt;documented why he had stopped working on the driver&lt;/a&gt; - but eventually others (in
+particular Qiang Yu) have picked up the work, &lt;a class="reference external" href="https://gitlab.freedesktop.org/lima"&gt;and the current code can be found
+here&lt;/a&gt; - the kernel side of this work has
+also been &lt;a class="reference external" href="https://lists.freedesktop.org/archives/dri-devel/2018-May/177314.html"&gt;submitted for review&lt;/a&gt; to the
+Linux kernel.&lt;/p&gt;
+&lt;p&gt;Excited (once again) at the prospect of having a FOSS Mali driver, we set up
+&lt;a class="reference external" href="https://phoenix.maemo.org/job/mesa-binaries/"&gt;(semi) automatic builds&lt;/a&gt; and
+ads it to the &lt;a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/m/mesa/"&gt;lima component of our Maemo Leste Devuan/Debian repository&lt;/a&gt; of
+lima-mesa, the mesa code that supports lima. In our latest update, we stated
+that, unfortunately, &lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/issues/70"&gt;lima cannot render hildon-desktop yet&lt;/a&gt; (and that &lt;a class="reference external" href="https://github.com/apitrace/apitrace/issues/599"&gt;we ran into
+(and fixed) an apitrace issue&lt;/a&gt;), but this is no longer
+true, with the last few commits to &lt;cite&gt;lima/mesa&lt;/cite&gt;, it is possible to run
+hildon-desktop (albeit some render artifacts remain), and we have made a video
+showing it in action on our &lt;a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister"&gt;A33 &amp;quot;TurboX Twister&amp;quot; tablet&lt;/a&gt;:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ihCVsaEMNzY"
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;This is also great news for the Pine64 project, who are developing a &lt;a class="reference external" href="wiki.pine64.org/index.php/Project_Anakin"&gt;Pine64
+phone and Pine64 tablet&lt;/a&gt; (and have
+been so kind to send us a &amp;quot;Project Anakit&amp;quot; development kit as well) - because
+now their phone will have a free software driver!&lt;/p&gt;
+&lt;p&gt;To be clear, the experience is not entirely smooth, and we've had the driver
+crash on us a few times - but it's FOSS, so anyone can attempt to fix it (as
+people are doing already). Onwards!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="arm64"></category><category term="aarch64"></category><category term="pine64"></category><category term="allwinner"></category><category term="mali"></category><category term="lima"></category><category term="mesa"></category></entry><entry><title>Maemo Leste - sixth update (November) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html" rel="alternate"></link><published>2018-12-05T09:00:00+01:00</published><updated>2018-12-05T09:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-05:/maemo-leste-sixth-update-november-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifth-update-september-october-2018.html"&gt;fifth update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;div class="section" id="media"&gt;
 &lt;h2&gt;Media&lt;/h2&gt;

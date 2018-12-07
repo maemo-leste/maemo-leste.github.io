@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="This update is relatively small - but it does contain something huge: Lima now renders hildon-desktop! Mali GPUs and the Lima Driver As we documented in our November 2018 update November 2018...">
+        <meta name="keywords" content="aarch64, allwinner, arm64, lima, mali, mesa, pine64">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+
+        <title>Maemo Leste - Lima works! - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/news.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small_w.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                            <a  href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html">Maemo Leste Screenshots</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Maemo Leste - Lima works!</h1>
+                      <p class="header-date"> <a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, Fri 07 December 2018,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/aarch64.html">aarch64</a>, <a href="https://maemo-leste.github.io/tag/allwinner.html">allwinner</a>, <a href="https://maemo-leste.github.io/tag/arm64.html">arm64</a>, <a href="https://maemo-leste.github.io/tag/lima.html">lima</a>, <a href="https://maemo-leste.github.io/tag/mali.html">mali</a>, <a href="https://maemo-leste.github.io/tag/mesa.html">mesa</a>, <a href="https://maemo-leste.github.io/tag/pine64.html">pine64</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <p>This update is relatively small - but it does contain something huge: Lima now
+renders hildon-desktop!</p>
+<div class="section" id="mali-gpus-and-the-lima-driver">
+<h2>Mali GPUs and the Lima Driver</h2>
+<p>As we documented in our November 2018 update
+<a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html">November 2018 update</a>, we were
+making progress trying to get the Lima driver to run on some Allwinner devices.</p>
+<p>This is important, as a lot of ARM devices have a Mali GPU. Not all of them have
+a Mali-400 or Mali-450, but a big chunk of them does - especially the Allwinner
+single board computers and tablets. However, ARM does not provide a free (as in
+freedom) driver for their GPUs. Back in 2014, <a class="reference external" href="https://www.youtube.com/watch?v=7z6xjIRXcp4">Luc Verhaegen presented his (and
+others) work on freeing the Mali</a>
+- a talk that I also personally attended and got me excited about the
+possibility of using a free driver on my Allwinner devices. Some time later,
+he <a class="reference external" href="https://libv.livejournal.com/27461.html">documented why he had stopped working on the driver</a> - but eventually others (in
+particular Qiang Yu) have picked up the work, <a class="reference external" href="https://gitlab.freedesktop.org/lima">and the current code can be found
+here</a> - the kernel side of this work has
+also been <a class="reference external" href="https://lists.freedesktop.org/archives/dri-devel/2018-May/177314.html">submitted for review</a> to the
+Linux kernel.</p>
+<p>Excited (once again) at the prospect of having a FOSS Mali driver, we set up
+<a class="reference external" href="https://phoenix.maemo.org/job/mesa-binaries/">(semi) automatic builds</a> and
+ads it to the <a class="reference external" href="https://maedevu.maemo.org/leste/pool/lima/m/mesa/">lima component of our Maemo Leste Devuan/Debian repository</a> of
+lima-mesa, the mesa code that supports lima. In our latest update, we stated
+that, unfortunately, <a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/issues/70">lima cannot render hildon-desktop yet</a> (and that <a class="reference external" href="https://github.com/apitrace/apitrace/issues/599">we ran into
+(and fixed) an apitrace issue</a>), but this is no longer
+true, with the last few commits to <cite>lima/mesa</cite>, it is possible to run
+hildon-desktop (albeit some render artifacts remain), and we have made a video
+showing it in action on our <a class="reference external" href="https://leste.maemo.org/A33-TurboX-Twister">A33 &quot;TurboX Twister&quot; tablet</a>:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihCVsaEMNzY"
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><p>This is also great news for the Pine64 project, who are developing a <a class="reference external" href="wiki.pine64.org/index.php/Project_Anakin">Pine64
+phone and Pine64 tablet</a> (and have
+been so kind to send us a &quot;Project Anakit&quot; development kit as well) - because
+now their phone will have a free software driver!</p>
+<p>To be clear, the experience is not entirely smooth, and we've had the driver
+crash on us a few times - but it's FOSS, so anyone can attempt to fix it (as
+people are doing already). Onwards!</p>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our <a class="reference external" href="https://github.com/maemo-leste/bugtracker">bugtracker</a>.</p>
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join us!</p>
+</div>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
