@@ -1,5 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2018-12-07T23:50:00+01:00</updated><entry><title>Maemo Leste - Lima works!</title><link href="https://maemo-leste.github.io/maemo-leste-lima-works.html" rel="alternate"></link><published>2018-12-07T23:50:00+01:00</published><updated>2018-12-07T23:50:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-07:/maemo-leste-lima-works.html</id><summary type="html">&lt;p&gt;This update is relatively small - but it does contain something huge: Lima now
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-01-17T20:00:00+01:00</updated><entry><title>Maemo Leste - seventh update (December) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html" rel="alternate"></link><published>2019-01-17T20:00:00+01:00</published><updated>2019-01-17T20:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-01-17:/maemo-leste-seventh-update-december-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;sixth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, sorry for the delay in the update, it's overdue by almost two
+weeks. Second of all, if you missed our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-lima-works.html"&gt;lima update&lt;/a&gt;, make sure to check that out!&lt;/p&gt;
+&lt;div class="section" id="fosdem"&gt;
+&lt;h2&gt;FOSDEM&lt;/h2&gt;
+&lt;p&gt;There will …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;sixth update&lt;/a&gt;
+and there's quite some stuff to talk about!&lt;/p&gt;
+&lt;p&gt;First of all, sorry for the delay in the update, it's overdue by almost two
+weeks. Second of all, if you missed our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-lima-works.html"&gt;lima update&lt;/a&gt;, make sure to check that out!&lt;/p&gt;
+&lt;div class="section" id="fosdem"&gt;
+&lt;h2&gt;FOSDEM&lt;/h2&gt;
+&lt;p&gt;There will be a lightning talk about &lt;a class="reference external" href="https://fosdem.org/2019/schedule/event/maemo_leste_mobile/"&gt;Maemo Leste at FOSDEM 2019&lt;/a&gt; - we will try our
+best to bring a couple of demo devices and show off Maemo Leste after the
+lightning talk!&lt;/p&gt;
+&lt;div class="section" id="pine64"&gt;
+&lt;h3&gt;Pine64&lt;/h3&gt;
+&lt;p&gt;The Pine64 community will have a stand at FOSDEM, where they will
+show their prototypes of the PineTablet and PinePhone - they might even be able
+to show off Maemo Leste running on their prototypes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="necunos-nc-1"&gt;
+&lt;h3&gt;Necunos NC_1&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://necunos.com/news/necunos-nc_1-and_ne_1-press-release/"&gt;Necunos NC_1 and NE_1&lt;/a&gt; has launched,
+and &lt;a class="reference external" href="https://necunos.com/shop/#!/Necunos-NC_1/p/127507133/category=0"&gt;can be ordered with Maemo Leste preinstalled&lt;/a&gt; - at least,
+if we manage to have a usable image by the time they plan to ship the devices -
+we don't have Maemo Leste running in their device yet.&lt;/p&gt;
+&lt;p&gt;Necunos has told us that we will probably get a Necunos development kit at FOSDEM.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="aarch64-images"&gt;
+&lt;h2&gt;Aarch64 images!&lt;/h2&gt;
+&lt;p&gt;The first aarch64 images are now available, for the raspberry pi 3. They still
+lack hardware acceleration, but almost all of the (essential) packages for Maemo
+Leste are now also working/built for 64 bit arm:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/raspi3-64bit/20181219/"&gt;https://maedevu.maemo.org/images/raspi3-64bit/20181219/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;And the aarch64 packages are confirmed to also work on other devices - like the
+Pine64 Anakin Devkit!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-4-improvements"&gt;
+&lt;h2&gt;Motorola Droid 4 improvements&lt;/h2&gt;
+&lt;p&gt;The Linux kernel developers^W^Wlittle elves have been working hard on improving
+&lt;a class="reference external" href="https://lkml.org/lkml/2018/12/16/231"&gt;modem support for the Motorola Droid 4&lt;/a&gt;, which should make ofono and/or
+modemmanager integration way easier, which is good news!
+We're tracking &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/150"&gt;ofono support for the Droid 4&lt;/a&gt; in this issue.&lt;/p&gt;
+&lt;p&gt;And they also report that during &lt;a class="reference external" href="https://lkml.org/lkml/2018/12/28/429"&gt;idle the phone battery life might be almost 5
+days&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We have contributed a patch that should make the charger events on the Droid 4
+fast, before the events were not send by the kernel, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206"&gt;Issue #206&lt;/a&gt;. (&lt;a class="reference external" href="https://patchwork.kernel.org/patch/10744035/"&gt;Patch here&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;PowerVR support for the Droid 4 should make the device quite usable, so that
+should perhaps soon become a priority. We have a couple of spare Droid 4 devices
+now, so if you're a capable developed and want to help out with kernel or
+userspace development but don't have a device, we can perhaps arrange to get you
+one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900-improvements"&gt;
+&lt;h2&gt;Nokia N900 improvements&lt;/h2&gt;
+&lt;p&gt;&lt;cite&gt;spinal84&lt;/cite&gt; and &lt;cite&gt;freemangordon&lt;/cite&gt; have made some great progress towards making Maemo
+Leste on the N900 feel more like Maemo Fremantle - in a good way. Graphics are
+more smooth, charging detection responds almost instantaneously now, and the RGB
+led works like you're used to in Fremantle.&lt;/p&gt;
+&lt;p&gt;There are newer images, even though those are likely already a bit outdated:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/20181222/"&gt;https://maedevu.maemo.org/images/n900/20181222/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;div class="section" id="battery-improvements"&gt;
+&lt;h3&gt;Battery improvements&lt;/h3&gt;
+&lt;p&gt;spinal84 has been working on fixing up the battery/power parts of the N900, and
+he has succeeded, with this &lt;a class="reference external" href="https://github.com/maemo-leste/status-area-applet-battery/pull/4"&gt;status-area-applet-battery pull request&lt;/a&gt; and this
+&lt;a class="reference external" href="https://github.com/maemo-leste/upower/pull/3"&gt;upower pull request&lt;/a&gt;, state
+changes in charging are now picked up instantly. (Fixes &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/67"&gt;#67&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/70"&gt;#70&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/167"&gt;#167&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rgb-led-support"&gt;
+&lt;h3&gt;RGB LED support&lt;/h3&gt;
+&lt;p&gt;This &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/2"&gt;mce pull request&lt;/a&gt; makes the
+RGB led on the N900 usable, and when the right patterns are enabled from
+the Settings, the LED patterns should start to work, soon we'll be able to close
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/186"&gt;issue #186&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rebooting-shutdown-watchdog"&gt;
+&lt;h3&gt;Rebooting, Shutdown, Watchdog&lt;/h3&gt;
+&lt;p&gt;We've been working hard on fixing two of the last few remaining alpha tickets:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/125"&gt;N900: Device Does Not Boot After Shutdown From System Menu Until Battery Removed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/85"&gt;Not possible to shutdown the system (N900)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Various fixes to dsme made a different, and in some setting now allow for clean
+shutdown and reboot. However, more work seems to be required to make it always
+work reliably. The PowerVR module for current kernel also has some bugs that
+prevent clean shutdown.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/dsme/commit/8831309eebb232fbd7d6e678f7803e3177cdd458"&gt;https://github.com/maemo-leste/dsme/commit/8831309eebb232fbd7d6e678f7803e3177cdd458&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/maemo-leste/dsme/commit/2d4db8f5e14bc0f131ee5402915188b01968f8e0"&gt;https://github.com/maemo-leste/dsme/commit/2d4db8f5e14bc0f131ee5402915188b01968f8e0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On the subject of PowerVR...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="powervr-gpu"&gt;
+&lt;h3&gt;PowerVR/GPU&lt;/h3&gt;
+&lt;p&gt;A lot of time has been spent trying to figure out why PowerVR hangs for minutes
+on startup. In this process, freemangordon wrote a patch to bring the PowerVR up
+to it's proper clock speed, which greatly improves the performance of PowerVR in
+general, but this unfortunately does not fix the slowness/hang on startup.&lt;/p&gt;
+&lt;p&gt;More investigation will be required to fix the temporary hang on start.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sms-and-voice-calls"&gt;
+&lt;h3&gt;SMS and Voice calls&lt;/h3&gt;
+&lt;p&gt;unicsy_demo, a tool to test and use various modem functionality (amongst other
+things) &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/174"&gt;has now been packaged (#174)&lt;/a&gt;, and success looks like
+this:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-ofone-initial.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Incoming SMS works (sending SMS works as well):&lt;/p&gt;
+&lt;img alt="" src="/images/n900-ofone-incoming-sms.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Working voice calls is still work in progress, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/77"&gt;Issue #77&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="g-3g-and-4g-data"&gt;
+&lt;h3&gt;2G, 3G and 4G data&lt;/h3&gt;
+&lt;p&gt;&lt;cite&gt;freemangordon&lt;/cite&gt; has been doing more work on connui, to make it feasible to
+implement the ofono/data plugin for icd2. Apart from a plugin icd2, there's more
+work required, as we'll have to implement or replace various dbus interfaces
+that Fremantle offers.&lt;/p&gt;
+&lt;p&gt;The current work can be found here:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/connui-cellular"&gt;https://github.com/maemo-leste/connui-cellular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/connui-common/commits/master"&gt;https://github.com/maemo-leste/connui-common/commits/master&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next step will be to make an overview of all the work that needs to be done,
+and then start picking up the tasks one by one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="flasher-u-boot-work"&gt;
+&lt;h3&gt;Flasher/u-boot work&lt;/h3&gt;
+&lt;p&gt;We're working on a way to make testing and installing Maemo Leste easier than
+the current procedure - which involves installing and update Maemo Fremantle
+before running Maemo Leste. &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/211"&gt;Issue 211&lt;/a&gt; covers this in more
+detail, but our hope is that we can make it so that users can flash u-boot to
+the device, and then be able to directly boot Fremantle or Leste, or another OS,
+like postmarketOS.&lt;/p&gt;
+&lt;p&gt;There is also some upstream churn going on regarding u-boot support for the
+Nokia N900, see:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://lists.denx.de/pipermail/u-boot/2018-December/353007.html"&gt;https://lists.denx.de/pipermail/u-boot/2018-December/353007.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://lists.denx.de/pipermail/u-boot/2018-December/353008.html"&gt;https://lists.denx.de/pipermail/u-boot/2018-December/353008.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lima"&gt;
+&lt;h2&gt;Lima&lt;/h2&gt;
+&lt;p&gt;As mentioned in our last &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-lima-works.html"&gt;lima update&lt;/a&gt;, the driver can now render
+&lt;cite&gt;hildon-desktop&lt;/cite&gt;. Not everything renders correctly, some borders are missing, as
+can be seen here, but otherwise - it's working quite fast and smooth:&lt;/p&gt;
+&lt;img alt="" src="/images/lima-twister-wifi.png" style="width: 512px; height: 300px;" /&gt;
+&lt;p&gt;The lima mesa package in our repository is still on Mesa 18.2, while upstream
+lima has moved to Mesa 18.3. We need to rebuild the latest 18.3 version and
+check if it still works.&lt;/p&gt;
+&lt;p&gt;We also tried to compile lima for aarch64, but ran into internal errors in &lt;cite&gt;ld&lt;/cite&gt;
+when linking the final drivers:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://web.archive.org/web/20190117070625/https://phoenix.maemo.org/job/mesa-binaries/architecture=arm64,label=arm64/1/console"&gt;https://web.archive.org/web/20190117070625/https://phoenix.maemo.org/job/mesa-binaries/architecture=arm64,label=arm64/1/console&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;This is slightly problematic, because we need the aarch64 version for the Pine64
+Anakin Devkit. But perhaps the issue will be gone with mesa 18.3.&lt;/p&gt;
+&lt;p&gt;If you want to follow lima activity, you can do so here:
+&lt;a class="reference external" href="https://gitlab.freedesktop.org/lima/mesa/activity"&gt;https://gitlab.freedesktop.org/lima/mesa/activity&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="maemo-leste-and-mer"&gt;
+&lt;h2&gt;Maemo Leste and Mer&lt;/h2&gt;
+&lt;p&gt;&lt;cite&gt;spiirion&lt;/cite&gt; has been working on making mer versions of some core software (like
+&lt;cite&gt;dsme&lt;/cite&gt; and &lt;cite&gt;mce&lt;/cite&gt; work on Maemo Leste), at this point he has some of it working
+here:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking"&gt;https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.merproject.org/spiiroin/libdsme/tree/maemo-leste-hacking"&gt;https://git.merproject.org/spiiroin/libdsme/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.merproject.org/spiiroin/libiphb/tree/maemo-leste-hacking"&gt;https://git.merproject.org/spiiroin/libiphb/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.merproject.org/spiiroin/dsme/tree/maemo-leste-hacking"&gt;https://git.merproject.org/spiiroin/dsme/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.merproject.org/spiiroin/mce/tree/maemo-leste-hacking"&gt;https://git.merproject.org/spiiroin/mce/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/spiiroin/mce-plugin-libhybris/tree/maemo-leste-hacking"&gt;https://github.com/spiiroin/mce-plugin-libhybris/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="samsung-s5pv210-support"&gt;
+&lt;h2&gt;Samsung S5PV210 support?&lt;/h2&gt;
+&lt;p&gt;Someone from the community named &lt;cite&gt;PabloPL&lt;/cite&gt; has made impressive progress with
+making an Exynos based phones work with mainline, &lt;a class="reference external" href="https://github.com/PabloPL/linux/wiki"&gt;see the current status of
+mainline plus patches here&lt;/a&gt;. The
+Samsung Galaxy S (i9000) also has a PowerVR GPU, just like the Droid4, so
+hopefully we can collaborate on making PowerVR better supported on mainline
+Linux (although the userspace will probably remain closed forever).&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt;PabloPL&lt;/cite&gt; also has an open issue for supporting PowerVR:
+&lt;a class="reference external" href="https://github.com/PabloPL/linux/issues/18"&gt;https://github.com/PabloPL/linux/issues/18&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community"&gt;
+&lt;h2&gt;Community&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;A lot has happened in the past month and a half, and it's been hard to focus on
+one specific issue, but nevertheless we've made a lot of progress.&lt;/p&gt;
+&lt;p&gt;Our current software/driver goals are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Fix reboot/poweroff issues&lt;/li&gt;
+&lt;li&gt;Make text and voice calls work on N900 and Droid4&lt;/li&gt;
+&lt;li&gt;Fix PowerVR issues on N900, make PowerVR work on the Droid4&lt;/li&gt;
+&lt;li&gt;Work on 2g/3g/4g data plugin for icd2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As for new hardware enablement/drivers, we plan to:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Build the lima driver for mesa 18.3 for aarch64 and armhf&lt;/li&gt;
+&lt;li&gt;Make Leste work properly on the Anakin kit, hopefully -before- FOSDEM&lt;/li&gt;
+&lt;li&gt;Make Leste work on Necunos NC_1 development kit when we get one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At that point, we're almost ready for the first alpha release. We might move the
+(large) &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/53"&gt;Qt task&lt;/a&gt; to a
+next alpha or beta release.  If you're experienced with Qt, we could definitely
+use the help!&lt;/p&gt;
+&lt;p&gt;Finally, if you have a spare device that we currently already support, there
+might be developers very happy to recieve it by post and make Maemo Leste work
+(even) better! We now have a couple of spare Motorola Droid 4 devices that we
+can give to developers who want to work on phone calls and/or powervr support.&lt;/p&gt;
+&lt;p&gt;If you have a spare Nexus 5 or Nokia N900, those might turn out to be quite
+helpful as well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="lima"></category><category term="powervr"></category><category term="exynos"></category><category term="pine64"></category><category term="necunos"></category><category term="fosdem"></category><category term="aarch64"></category><category term="droid4"></category><category term="n900"></category><category term="u-boot"></category><category term="voice calls"></category></entry><entry><title>Maemo Leste - Lima works!</title><link href="https://maemo-leste.github.io/maemo-leste-lima-works.html" rel="alternate"></link><published>2018-12-07T23:50:00+01:00</published><updated>2018-12-07T23:50:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-12-07:/maemo-leste-lima-works.html</id><summary type="html">&lt;p&gt;This update is relatively small - but it does contain something huge: Lima now
 renders hildon-desktop!&lt;/p&gt;
 &lt;div class="section" id="mali-gpus-and-the-lima-driver"&gt;
 &lt;h2&gt;Mali GPUs and the Lima Driver&lt;/h2&gt;
