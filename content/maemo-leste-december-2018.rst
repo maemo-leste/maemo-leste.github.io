@@ -2,18 +2,17 @@ Maemo Leste - seventh update (December) 2018
 ############################################
 
 :Category: news
-:tags: todo
-:date: 2018-12-31 23:50
+:tags: lima, powervr, exynos, pine64, necunos, fosdem, aarch64, droid4, n900, u-boot, voice calls
+:date: 2019-01-17 20:00
 :authors: Merlijn Wajer
 
-TODO: DATE
-
-TODO: TAGS
 
 It's been a while since our `sixth update
 <{filename}/maemo-leste-november-2018.rst>`_
 and there's quite some stuff to talk about!
-First of all, if you missed our `lima update
+
+First of all, sorry for the delay in the update, it's overdue by almost two
+weeks. Second of all, if you missed our `lima update
 <{filename}/lima-alive-foss-mali-driver.rst>`_, make sure to check that out!
 
 FOSDEM
@@ -43,14 +42,17 @@ we don't have Maemo Leste running in their device yet.
 
 Necunos has told us that we will probably get a Necunos development kit at FOSDEM.
 
-Aarch64 images
---------------
+Aarch64 images!
+---------------
 
 The first aarch64 images are now available, for the raspberry pi 3. They still
 lack hardware acceleration, but almost all of the (essential) packages for Maemo
 Leste are now also working/built for 64 bit arm:
 
     https://maedevu.maemo.org/images/raspi3-64bit/20181219/
+
+And the aarch64 packages are confirmed to also work on other devices - like the
+Pine64 Anakin Devkit!
 
 
 Motorola Droid 4 improvements
@@ -60,6 +62,8 @@ The Linux kernel developers^W^Wlittle elves have been working hard on improving
 `modem support for the Motorola Droid 4
 <https://lkml.org/lkml/2018/12/16/231>`_, which should make ofono and/or
 modemmanager integration way easier, which is good news!
+We're tracking `ofono support for the Droid 4
+<https://github.com/maemo-leste/bugtracker/issues/150>`_ in this issue.
 
 And they also report that during `idle the phone battery life might be almost 5
 days <https://lkml.org/lkml/2018/12/28/429>`_.
@@ -79,6 +83,15 @@ one.
 Nokia N900 improvements
 -----------------------
 
+`spinal84` and `freemangordon` have made some great progress towards making Maemo
+Leste on the N900 feel more like Maemo Fremantle - in a good way. Graphics are
+more smooth, charging detection responds almost instantaneously now, and the RGB
+led works like you're used to in Fremantle.
+
+There are newer images, even though those are likely already a bit outdated:
+
+    https://maedevu.maemo.org/images/n900/20181222/
+
 Battery improvements
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -94,15 +107,16 @@ changes in charging are now picked up instantly. (Fixes `#67
 RGB LED support
 ~~~~~~~~~~~~~~~
 
-This `mce pull request <https://github.com/maemo-leste/mce/pull/2>` makes the
-RGB led on the N900 also usable, and when the right patterns are enabled from
-the Settings, the LED patterns should start to work just like in Fremantle!
+This `mce pull request <https://github.com/maemo-leste/mce/pull/2>`_ makes the
+RGB led on the N900 usable, and when the right patterns are enabled from
+the Settings, the LED patterns should start to work, soon we'll be able to close
+`issue #186 <https://github.com/maemo-leste/bugtracker/issues/186>`_.
 
 
 Rebooting, Shutdown, Watchdog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We've been working hard on fixing two of the last remaining alpha tickets:
+We've been working hard on fixing two of the last few remaining alpha tickets:
 
 * `N900: Device Does Not Boot After Shutdown From System Menu Until Battery Removed <https://github.com/maemo-leste/bugtracker/issues/125>`_
 * `Not possible to shutdown the system (N900) <https://github.com/maemo-leste/bugtracker/issues/85>`_
@@ -132,7 +146,8 @@ More investigation will be required to fix the temporary hang on start.
 SMS and Voice calls
 ~~~~~~~~~~~~~~~~~~~
 
-`unicsy_demo has now been packaged (#174)
+unicsy_demo, a tool to test and use various modem functionality (amongst other
+things) `has now been packaged (#174)
 <https://github.com/maemo-leste/bugtracker/issues/174>`_, and success looks like
 this:
 
@@ -140,7 +155,7 @@ this:
   :height: 324px
   :width: 576px
 
-Incoming SMS works, sending SMS works as well:
+Incoming SMS works (sending SMS works as well):
 
 .. image:: /images/n900-ofone-incoming-sms.png
   :height: 324px
@@ -150,47 +165,131 @@ Working voice calls is still work in progress, see `Issue #77
 <https://github.com/maemo-leste/bugtracker/issues/77>`_.
 
 
-LEDs
-~~~~
+2G, 3G and 4G data
+~~~~~~~~~~~~~~~~~~
 
-* https://github.com/maemo-leste/bugtracker/issues/186
-* mce led patterns work properly now
+`freemangordon` has been doing more work on connui, to make it feasible to
+implement the ofono/data plugin for icd2. Apart from a plugin icd2, there's more
+work required, as we'll have to implement or replace various dbus interfaces
+that Fremantle offers.
+
+The current work can be found here:
+
+* https://github.com/maemo-leste/connui-cellular
+* https://github.com/maemo-leste/connui-common/commits/master
+
+The next step will be to make an overview of all the work that needs to be done,
+and then start picking up the tasks one by one.
 
 
 Flasher/u-boot work
 ~~~~~~~~~~~~~~~~~~~
 
-TODO
+We're working on a way to make testing and installing Maemo Leste easier than
+the current procedure - which involves installing and update Maemo Fremantle
+before running Maemo Leste. `Issue 211
+<https://github.com/maemo-leste/bugtracker/issues/211>`_ covers this in more
+detail, but our hope is that we can make it so that users can flash u-boot to
+the device, and then be able to directly boot Fremantle or Leste, or another OS,
+like postmarketOS.
+
+There is also some upstream churn going on regarding u-boot support for the
+Nokia N900, see:
 
 * https://lists.denx.de/pipermail/u-boot/2018-December/353007.html
-  https://lists.denx.de/pipermail/u-boot/2018-December/353008.html
+* https://lists.denx.de/pipermail/u-boot/2018-December/353008.html
 
 
+Lima
+----
+
+As mentioned in our last `lima update`_, the driver can now render
+`hildon-desktop`. Not everything renders correctly, some borders are missing, as
+can be seen here, but otherwise - it's working quite fast and smooth:
+
+.. image:: /images/lima-twister-wifi.png
+  :height: 300px
+  :width: 512px
+
+The lima mesa package in our repository is still on Mesa 18.2, while upstream
+lima has moved to Mesa 18.3. We need to rebuild the latest 18.3 version and
+check if it still works.
+
+We also tried to compile lima for aarch64, but ran into internal errors in `ld`
+when linking the final drivers:
+
+    https://web.archive.org/web/20190117070625/https://phoenix.maemo.org/job/mesa-binaries/architecture=arm64,label=arm64/1/console
+
+This is slightly problematic, because we need the aarch64 version for the Pine64
+Anakin Devkit. But perhaps the issue will be gone with mesa 18.3.
+
+If you want to follow lima activity, you can do so here:
+https://gitlab.freedesktop.org/lima/mesa/activity
 
 
-Mer mce, dsme, ...
-------------------
+Maemo Leste and Mer
+-------------------
 
-**TODO**
+`spiirion` has been working on making mer versions of some core software (like
+`dsme` and `mce` work on Maemo Leste), at this point he has some of it working
+here:
+
+* https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking
+* https://git.merproject.org/spiiroin/libdsme/tree/maemo-leste-hacking
+* https://git.merproject.org/spiiroin/libiphb/tree/maemo-leste-hacking
+* https://git.merproject.org/spiiroin/dsme/tree/maemo-leste-hacking
+* https://git.merproject.org/spiiroin/mce/tree/maemo-leste-hacking
+* https://github.com/spiiroin/mce-plugin-libhybris/tree/maemo-leste-hacking
+
+
+Samsung S5PV210 support?
+------------------------
+
+Someone from the community named `PabloPL` has made impressive progress with
+making an Exynos based phones work with mainline, `see the current status of
+mainline plus patches here <https://github.com/PabloPL/linux/wiki>`_. The
+Samsung Galaxy S (i9000) also has a PowerVR GPU, just like the Droid4, so
+hopefully we can collaborate on making PowerVR better supported on mainline
+Linux (although the userspace will probably remain closed forever).
+
+`PabloPL` also has an open issue for supporting PowerVR:
+https://github.com/PabloPL/linux/issues/18
+
 
 Community
 ---------
 
-
 What is next?
 -------------
 
-**TODO**
+A lot has happened in the past month and a half, and it's been hard to focus on
+one specific issue, but nevertheless we've made a lot of progress.
 
-**TODO: device donations?**
+Our current software/driver goals are:
 
-Most of our attention has been focussed on reaching the `Alpha release
-<https://github.com/maemo-leste/bugtracker/milestone/4>`_ and we're down to 4
-issues before we reach the alpha milestone.
+* Fix reboot/poweroff issues
+* Make text and voice calls work on N900 and Droid4
+* Fix PowerVR issues on N900, make PowerVR work on the Droid4
+* Work on 2g/3g/4g data plugin for icd2
 
-Two issues pertain to reboot/poweroff not functioning as it should, one is for
-Qt5 and one for the final pieces of the virtual keyboard - monitoring the slide
-state of the keyboard (open or closed).
+As for new hardware enablement/drivers, we plan to:
+
+* Build the lima driver for mesa 18.3 for aarch64 and armhf
+* Make Leste work properly on the Anakin kit, hopefully -before- FOSDEM
+* Make Leste work on Necunos NC_1 development kit when we get one.
+
+At that point, we're almost ready for the first alpha release. We might move the
+(large) `Qt task <https://github.com/maemo-leste/bugtracker/issues/53>`_ to a
+next alpha or beta release.  If you're experienced with Qt, we could definitely
+use the help!
+
+Finally, if you have a spare device that we currently already support, there
+might be developers very happy to recieve it by post and make Maemo Leste work
+(even) better! We now have a couple of spare Motorola Droid 4 devices that we
+can give to developers who want to work on phone calls and/or powervr support.
+
+If you have a spare Nexus 5 or Nokia N900, those might turn out to be quite
+helpful as well.
 
 
 Interested?
@@ -206,39 +305,3 @@ help out. Another great way to get in touch is to join the `IRC channel
 <https://leste.maemo.org/IRC_channel>`_.
 
 If you like our work and want to see it continue, join us!
-
-
-TODO
-----
-
-
-* https://maedevu.maemo.org/images/n900/20181222/
-* Aarch64 images?
-* connui/cellular updates
-
-
-TODO:
-* lima
-* qt
-
-* Link to lima post
-
-* Next steps for Droid 4 and N900
-
-* https://phoenix.maemo.org/job/osso-systemui-modechange-binaries/ (modechange
-  is new)
-
-* droid4 calls https://github.com/maemo-leste/bugtracker/issues/150#issuecomment-450674998
-  - calls milestone?
-
-
-* Willen graag meer devices
-
-* n900 u-boot
-
-* droid4 modem work
-* droid4 power saving
-
-* anakin devkit noemen
-
-* Could use some (more) test devices: droid4, nexus 5, ...
