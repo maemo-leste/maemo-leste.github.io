@@ -8,7 +8,7 @@
         <meta name="keywords" content="aarch64, droid4, exynos, fosdem, lima, n900, necunos, pine64, powervr, u-boot, voice calls">
         <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
 
-        <title>Maemo Leste - seventh update (December) 2018 - Maemo Leste</title>
+        <title>Maemo Leste - Seventh Update (December) 2018 - Maemo Leste</title>
 
         <!-- Stylesheets -->
         <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +58,7 @@
         <div class="row">
               <div class="col-lg-12">
                   <div class="header-content">
-                      <h1 class="header-title">Maemo Leste - seventh update (December) 2018</h1>
+                      <h1 class="header-title">Maemo Leste - Seventh Update (December) 2018</h1>
                       <p class="header-date"> <a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, Thu 17 January 2019,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
@@ -98,7 +98,7 @@ to show off Maemo Leste running on their prototypes.</p>
 <p><a class="reference external" href="https://necunos.com/news/necunos-nc_1-and_ne_1-press-release/">Necunos NC_1 and NE_1</a> has launched,
 and <a class="reference external" href="https://necunos.com/shop/#!/Necunos-NC_1/p/127507133/category=0">can be ordered with Maemo Leste preinstalled</a> - at least,
 if we manage to have a usable image by the time they plan to ship the devices -
-we don't have Maemo Leste running in their device yet.</p>
+we don't have Maemo Leste running on their device yet.</p>
 <p>Necunos has told us that we will probably get a Necunos development kit at FOSDEM.</p>
 </div>
 </div>
@@ -114,18 +114,18 @@ Pine64 Anakin Devkit!</p>
 </div>
 <div class="section" id="motorola-droid-4-improvements">
 <h2>Motorola Droid 4 improvements</h2>
-<p>The Linux kernel developers^W^Wlittle elves have been working hard on improving
+<p>The Linux kernel developers (little elves) have been working hard on improving
 <a class="reference external" href="https://lkml.org/lkml/2018/12/16/231">modem support for the Motorola Droid 4</a>, which should make ofono and/or
 modemmanager integration way easier, which is good news!
 We're tracking <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/150">ofono support for the Droid 4</a> in this issue.</p>
 <p>And they also report that during <a class="reference external" href="https://lkml.org/lkml/2018/12/28/429">idle the phone battery life might be almost 5
 days</a>.</p>
 <p>We have contributed a patch that should make the charger events on the Droid 4
-fast, before the events were not send by the kernel, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206">Issue #206</a>. (<a class="reference external" href="https://patchwork.kernel.org/patch/10744035/">Patch here</a>)</p>
+fast. Before, the events were not being sent by the kernel, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206">Issue #206</a>. (<a class="reference external" href="https://patchwork.kernel.org/patch/10744035/">Patch here</a>)</p>
 <p>PowerVR support for the Droid 4 should make the device quite usable, so that
 should perhaps soon become a priority. We have a couple of spare Droid 4 devices
-now, so if you're a capable developed and want to help out with kernel or
-userspace development but don't have a device, we can perhaps arrange to get you
+now, so if you're a capable developer and want to help out with kernel or
+userspace development, but don't have a device, we can perhaps arrange to get you
 one.</p>
 </div>
 <div class="section" id="nokia-n900-improvements">
@@ -140,7 +140,7 @@ led works like you're used to in Fremantle.</p>
 <div class="section" id="battery-improvements">
 <h3>Battery improvements</h3>
 <p>spinal84 has been working on fixing up the battery/power parts of the N900, and
-he has succeeded, with this <a class="reference external" href="https://github.com/maemo-leste/status-area-applet-battery/pull/4">status-area-applet-battery pull request</a> and this
+he has succeeded. With this <a class="reference external" href="https://github.com/maemo-leste/status-area-applet-battery/pull/4">status-area-applet-battery pull request</a> and this
 <a class="reference external" href="https://github.com/maemo-leste/upower/pull/3">upower pull request</a>, state
 changes in charging are now picked up instantly. (Fixes <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/67">#67</a> and <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/70">#70</a> and <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/167">#167</a>)</p>
 </div>
@@ -148,7 +148,7 @@ changes in charging are now picked up instantly. (Fixes <a class="reference exte
 <h3>RGB LED support</h3>
 <p>This <a class="reference external" href="https://github.com/maemo-leste/mce/pull/2">mce pull request</a> makes the
 RGB led on the N900 usable, and when the right patterns are enabled from
-the Settings, the LED patterns should start to work, soon we'll be able to close
+the Settings, the LED patterns should start to work. Soon we'll be able to close
 <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/186">issue #186</a>.</p>
 </div>
 <div class="section" id="rebooting-shutdown-watchdog">
@@ -158,9 +158,9 @@ the Settings, the LED patterns should start to work, soon we'll be able to close
 <li><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/125">N900: Device Does Not Boot After Shutdown From System Menu Until Battery Removed</a></li>
 <li><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/85">Not possible to shutdown the system (N900)</a></li>
 </ul>
-<p>Various fixes to dsme made a different, and in some setting now allow for clean
+<p>Various fixes to dsme made a difference, and in some cases, now allow for clean
 shutdown and reboot. However, more work seems to be required to make it always
-work reliably. The PowerVR module for current kernel also has some bugs that
+work reliably. The PowerVR module for the current kernel also has some bugs that
 prevent clean shutdown.</p>
 <p><a class="reference external" href="https://github.com/maemo-leste/dsme/commit/8831309eebb232fbd7d6e678f7803e3177cdd458">https://github.com/maemo-leste/dsme/commit/8831309eebb232fbd7d6e678f7803e3177cdd458</a>
 <a class="reference external" href="https://github.com/maemo-leste/dsme/commit/2d4db8f5e14bc0f131ee5402915188b01968f8e0">https://github.com/maemo-leste/dsme/commit/2d4db8f5e14bc0f131ee5402915188b01968f8e0</a></p>
@@ -169,8 +169,8 @@ prevent clean shutdown.</p>
 <div class="section" id="powervr-gpu">
 <h3>PowerVR/GPU</h3>
 <p>A lot of time has been spent trying to figure out why PowerVR hangs for minutes
-on startup. In this process, freemangordon wrote a patch to bring the PowerVR up
-to it's proper clock speed, which greatly improves the performance of PowerVR in
+on startup. In this process, <cite>freemangordon</cite> wrote a patch to bring the PowerVR up
+to its proper clock speed, which greatly improves the performance of PowerVR in
 general, but this unfortunately does not fix the slowness/hang on startup.</p>
 <p>More investigation will be required to fix the temporary hang on start.</p>
 </div>
@@ -201,7 +201,7 @@ and then start picking up the tasks one by one.</p>
 <div class="section" id="flasher-u-boot-work">
 <h3>Flasher/u-boot work</h3>
 <p>We're working on a way to make testing and installing Maemo Leste easier than
-the current procedure - which involves installing and update Maemo Fremantle
+the current procedure - which involves installing and updating Maemo Fremantle
 before running Maemo Leste. <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/211">Issue 211</a> covers this in more
 detail, but our hope is that we can make it so that users can flash u-boot to
 the device, and then be able to directly boot Fremantle or Leste, or another OS,
@@ -217,7 +217,7 @@ Nokia N900, see:</p>
 <div class="section" id="lima">
 <h2>Lima</h2>
 <p>As mentioned in our last <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-lima-works.html">lima update</a>, the driver can now render
-<cite>hildon-desktop</cite>. Not everything renders correctly, some borders are missing, as
+<cite>hildon-desktop</cite>. Not everything renders correctly. Some borders are missing, as
 can be seen here, but otherwise - it's working quite fast and smooth:</p>
 <img alt="" src="/images/lima-twister-wifi.png" style="width: 512px; height: 300px;" />
 <p>The lima mesa package in our repository is still on Mesa 18.2, while upstream
@@ -235,7 +235,7 @@ Anakin Devkit. But perhaps the issue will be gone with mesa 18.3.</p>
 <div class="section" id="maemo-leste-and-mer">
 <h2>Maemo Leste and Mer</h2>
 <p><cite>spiirion</cite> has been working on making mer versions of some core software (like
-<cite>dsme</cite> and <cite>mce</cite> work on Maemo Leste), at this point he has some of it working
+<cite>dsme</cite> and <cite>mce</cite>) work on Maemo Leste. At this point, he has some of it working
 here:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking">https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking</a></li>
@@ -249,7 +249,7 @@ here:</p>
 <div class="section" id="samsung-s5pv210-support">
 <h2>Samsung S5PV210 support?</h2>
 <p>Someone from the community named <cite>PabloPL</cite> has made impressive progress with
-making an Exynos based phones work with mainline, <a class="reference external" href="https://github.com/PabloPL/linux/wiki">see the current status of
+making an Exynos based phone work with mainline, <a class="reference external" href="https://github.com/PabloPL/linux/wiki">see the current status of
 mainline plus patches here</a>. The
 Samsung Galaxy S (i9000) also has a PowerVR GPU, just like the Droid4, so
 hopefully we can collaborate on making PowerVR better supported on mainline
@@ -279,12 +279,12 @@ one specific issue, but nevertheless we've made a lot of progress.</p>
 </ul>
 <p>At that point, we're almost ready for the first alpha release. We might move the
 (large) <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/53">Qt task</a> to a
-next alpha or beta release.  If you're experienced with Qt, we could definitely
+next alpha or beta release.  If you're experienced with Qt, we would definitely
 use the help!</p>
-<p>Finally, if you have a spare device that we currently already support, there
-might be developers very happy to recieve it by post and make Maemo Leste work
+<p>Finally, if you have a spare device that we already support, there may be
+developers who would be very happy to recieve it by post and make Maemo Leste work
 (even) better! We now have a couple of spare Motorola Droid 4 devices that we
-can give to developers who want to work on phone calls and/or powervr support.</p>
+can give to developers who want to work on phone calls and/or PowerVR support.</p>
 <p>If you have a spare Nexus 5 or Nokia N900, those might turn out to be quite
 helpful as well.</p>
 </div>
