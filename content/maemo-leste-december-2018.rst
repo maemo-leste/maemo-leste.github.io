@@ -1,4 +1,4 @@
-Maemo Leste - seventh update (December) 2018
+Maemo Leste - Seventh Update (December) 2018
 ############################################
 
 :Category: news
@@ -38,7 +38,7 @@ Necunos NC_1
 and `can be ordered with Maemo Leste preinstalled
 <https://necunos.com/shop/#!/Necunos-NC_1/p/127507133/category=0>`_ - at least,
 if we manage to have a usable image by the time they plan to ship the devices -
-we don't have Maemo Leste running in their device yet.
+we don't have Maemo Leste running on their device yet.
 
 Necunos has told us that we will probably get a Necunos development kit at FOSDEM.
 
@@ -58,7 +58,7 @@ Pine64 Anakin Devkit!
 Motorola Droid 4 improvements
 -----------------------------
 
-The Linux kernel developers^W^Wlittle elves have been working hard on improving
+The Linux kernel developers (little elves) have been working hard on improving
 `modem support for the Motorola Droid 4
 <https://lkml.org/lkml/2018/12/16/231>`_, which should make ofono and/or
 modemmanager integration way easier, which is good news!
@@ -69,14 +69,14 @@ And they also report that during `idle the phone battery life might be almost 5
 days <https://lkml.org/lkml/2018/12/28/429>`_.
 
 We have contributed a patch that should make the charger events on the Droid 4
-fast, before the events were not send by the kernel, see `Issue #206
+fast. Before, the events were not being sent by the kernel, see `Issue #206
 <https://github.com/maemo-leste/bugtracker/issues/206>`_. (`Patch here
 <https://patchwork.kernel.org/patch/10744035/>`_)
 
 PowerVR support for the Droid 4 should make the device quite usable, so that
 should perhaps soon become a priority. We have a couple of spare Droid 4 devices
-now, so if you're a capable developed and want to help out with kernel or
-userspace development but don't have a device, we can perhaps arrange to get you
+now, so if you're a capable developer and want to help out with kernel or
+userspace development, but don't have a device, we can perhaps arrange to get you
 one.
 
 
@@ -96,7 +96,7 @@ Battery improvements
 ~~~~~~~~~~~~~~~~~~~~
 
 spinal84 has been working on fixing up the battery/power parts of the N900, and
-he has succeeded, with this `status-area-applet-battery pull request
+he has succeeded. With this `status-area-applet-battery pull request
 <https://github.com/maemo-leste/status-area-applet-battery/pull/4>`_ and this
 `upower pull request <https://github.com/maemo-leste/upower/pull/3>`_, state
 changes in charging are now picked up instantly. (Fixes `#67
@@ -109,7 +109,7 @@ RGB LED support
 
 This `mce pull request <https://github.com/maemo-leste/mce/pull/2>`_ makes the
 RGB led on the N900 usable, and when the right patterns are enabled from
-the Settings, the LED patterns should start to work, soon we'll be able to close
+the Settings, the LED patterns should start to work. Soon we'll be able to close
 `issue #186 <https://github.com/maemo-leste/bugtracker/issues/186>`_.
 
 
@@ -121,9 +121,9 @@ We've been working hard on fixing two of the last few remaining alpha tickets:
 * `N900: Device Does Not Boot After Shutdown From System Menu Until Battery Removed <https://github.com/maemo-leste/bugtracker/issues/125>`_
 * `Not possible to shutdown the system (N900) <https://github.com/maemo-leste/bugtracker/issues/85>`_
 
-Various fixes to dsme made a different, and in some setting now allow for clean
+Various fixes to dsme made a difference, and in some cases, now allow for clean
 shutdown and reboot. However, more work seems to be required to make it always
-work reliably. The PowerVR module for current kernel also has some bugs that
+work reliably. The PowerVR module for the current kernel also has some bugs that
 prevent clean shutdown.
 
 https://github.com/maemo-leste/dsme/commit/8831309eebb232fbd7d6e678f7803e3177cdd458
@@ -136,8 +136,8 @@ PowerVR/GPU
 ~~~~~~~~~~~
 
 A lot of time has been spent trying to figure out why PowerVR hangs for minutes
-on startup. In this process, freemangordon wrote a patch to bring the PowerVR up
-to it's proper clock speed, which greatly improves the performance of PowerVR in
+on startup. In this process, `freemangordon` wrote a patch to bring the PowerVR up
+to its proper clock speed, which greatly improves the performance of PowerVR in
 general, but this unfortunately does not fix the slowness/hang on startup.
 
 More investigation will be required to fix the temporary hang on start.
@@ -186,7 +186,7 @@ Flasher/u-boot work
 ~~~~~~~~~~~~~~~~~~~
 
 We're working on a way to make testing and installing Maemo Leste easier than
-the current procedure - which involves installing and update Maemo Fremantle
+the current procedure - which involves installing and updating Maemo Fremantle
 before running Maemo Leste. `Issue 211
 <https://github.com/maemo-leste/bugtracker/issues/211>`_ covers this in more
 detail, but our hope is that we can make it so that users can flash u-boot to
@@ -204,7 +204,7 @@ Lima
 ----
 
 As mentioned in our last `lima update`_, the driver can now render
-`hildon-desktop`. Not everything renders correctly, some borders are missing, as
+`hildon-desktop`. Not everything renders correctly. Some borders are missing, as
 can be seen here, but otherwise - it's working quite fast and smooth:
 
 .. image:: /images/lima-twister-wifi.png
@@ -231,7 +231,7 @@ Maemo Leste and Mer
 -------------------
 
 `spiirion` has been working on making mer versions of some core software (like
-`dsme` and `mce` work on Maemo Leste), at this point he has some of it working
+`dsme` and `mce`) work on Maemo Leste. At this point, he has some of it working
 here:
 
 * https://git.merproject.org/spiiroin/mce-dev/tree/maemo-leste-hacking
@@ -246,7 +246,7 @@ Samsung S5PV210 support?
 ------------------------
 
 Someone from the community named `PabloPL` has made impressive progress with
-making an Exynos based phones work with mainline, `see the current status of
+making an Exynos based phone work with mainline, `see the current status of
 mainline plus patches here <https://github.com/PabloPL/linux/wiki>`_. The
 Samsung Galaxy S (i9000) also has a PowerVR GPU, just like the Droid4, so
 hopefully we can collaborate on making PowerVR better supported on mainline
@@ -280,13 +280,13 @@ As for new hardware enablement/drivers, we plan to:
 
 At that point, we're almost ready for the first alpha release. We might move the
 (large) `Qt task <https://github.com/maemo-leste/bugtracker/issues/53>`_ to a
-next alpha or beta release.  If you're experienced with Qt, we could definitely
+next alpha or beta release.  If you're experienced with Qt, we would definitely
 use the help!
 
-Finally, if you have a spare device that we currently already support, there
-might be developers very happy to recieve it by post and make Maemo Leste work
+Finally, if you have a spare device that we already support, there may be
+developers who would be very happy to recieve it by post and make Maemo Leste work
 (even) better! We now have a couple of spare Motorola Droid 4 devices that we
-can give to developers who want to work on phone calls and/or powervr support.
+can give to developers who want to work on phone calls and/or PowerVR support.
 
 If you have a spare Nexus 5 or Nokia N900, those might turn out to be quite
 helpful as well.
