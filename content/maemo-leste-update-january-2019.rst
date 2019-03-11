@@ -335,7 +335,14 @@ and offered to send it our way!
   :width: 688px
 
 
-**TODO: mimg**
+A loving fan has created this large reproduction of the Nokia N900,
+including `hildon-desktop`, the `osso-xterm` application, the status applets and
+even real backlight! The metal theme looks quite good, too.
+
+.. image:: /images/n900-giant-reproduction.jpg
+  :height: 400px
+  :width: 600px
+
 
 Some screenshots
 ~~~~~~~~~~~~~~~~
