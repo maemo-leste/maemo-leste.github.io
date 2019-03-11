@@ -45,7 +45,7 @@ PowerVR
 ~~~~~~~
 
 There has been a lot of movement on the PowerVR side (the 3D acceleration unit
-GPU that various of our supported devices - such as N900 and the Droid 4 - use). 
+GPU that various of our supported devices - such as N900 and the Droid 4 - use).
 
 Developers from various platforms and devices are now trying work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
@@ -152,6 +152,13 @@ on the Nokia N900 using Linux 5.0:
 .. image:: /images/leste-n900-linux-5.0.png
   :height: 324px
   :width: 576px
+
+Faster charging
+***************
+
+The N900 will now charge using up to 950mAh, instead of the previous 650mAh, see
+`this pull request for n9xx-linux
+<https://github.com/maemo-leste/n9xx-linux/pull>`_.
 
 
 rebooting, who does that anyway?
