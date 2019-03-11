@@ -30,7 +30,7 @@ are now also functional:
 &lt;div class="section" id="software-additions"&gt;
 &lt;h2&gt;Software additions&lt;/h2&gt;
 &lt;p&gt;There have been various additions to our userspace, although most of the work in
-the last two months has been on fixing bugs and driver/kernel support.&lt;/p&gt;
+the last two months has been on focussed fixing bugs and driver/kernel support.&lt;/p&gt;
 &lt;div class="section" id="connui-cellular"&gt;
 &lt;h3&gt;connui-cellular&lt;/h3&gt;
 &lt;p&gt;freemangordon is still steadily working on connui, which is one of the core
@@ -48,14 +48,14 @@ plugin, which will provide the actual connectivity part.&lt;/p&gt;
 &lt;h3&gt;PowerVR&lt;/h3&gt;
 &lt;p&gt;There has been a lot of movement on the PowerVR side (the 3D acceleration unit
 GPU that various of our supported devices - such as N900 and the Droid 4 - use).&lt;/p&gt;
-&lt;p&gt;Developers from various platforms and devices are now trying work on a single
+&lt;p&gt;Developers from various platforms and devices are now trying to work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
 eventually attempt to mainline various kernel components. Since a couple of
 weeks, there is now a Github repository that contains recent kernel sources with
 some form of PowerVR support: &lt;a class="reference external" href="https://github.com/openpvrsgx-devgroup"&gt;https://github.com/openpvrsgx-devgroup&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A mailing list for this effort is still being worked out, but the initial
-message (over a year ago) can be viewed here:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html"&gt;https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html&lt;/a&gt;&lt;/p&gt;
+message (over a year ago) can be viewed here:
+&lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html"&gt;https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And the recent continuation can be read here:
 &lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html"&gt;https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html&lt;/a&gt; (And in
 thread form
@@ -76,8 +76,8 @@ picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/205"&gt;#205&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/images/arm64-generic/"&gt;https://maedevu.maemo.org/images/arm64-generic/&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;This is useful for adding new support for an arm64 device. Previously we had to
-take the Raspberry Pi 3 image and strip it off device specific packages/drivers.
+&lt;p&gt;This is useful for adding support for a new arm64 device. Previously we had to
+take the Raspberry Pi 3 image and remove device specific packages/drivers.
 The PineTablet and PinePhone will probably make some use of this generic rootfs.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -118,8 +118,8 @@ can reinstall it with the same command.&lt;/p&gt;
 &lt;h4&gt;Linux 5.0&lt;/h4&gt;
 &lt;p&gt;Newer kernel images for the Nokia N900 are also available, but you will have to
 make sure that your &lt;cite&gt;/boot&lt;/cite&gt; partition is an &lt;cite&gt;ext2&lt;/cite&gt; filesystem, older Maemo Leste
-images shipped with &lt;cite&gt;/boot&lt;/cite&gt; as an &lt;cite&gt;vfat&lt;/cite&gt; partition. You can copy all the files
-in &lt;cite&gt;/boot&lt;/cite&gt; to a temporary location, and then called &lt;cite&gt;mkfs.ext2&lt;/cite&gt; on the boot
+images shipped with &lt;cite&gt;/boot&lt;/cite&gt; as a &lt;cite&gt;vfat&lt;/cite&gt; partition. You can copy all the files
+in &lt;cite&gt;/boot&lt;/cite&gt; to a temporary location, and then call &lt;cite&gt;mkfs.ext2&lt;/cite&gt; on the boot
 partition and finally copy the files back. Here is a screenshot of Maemo Leste
 on the Nokia N900 using Linux 5.0:&lt;/p&gt;
 &lt;img alt="" src="/images/leste-n900-linux-5.0.png" style="width: 576px; height: 324px;" /&gt;
@@ -164,7 +164,7 @@ documented on our wiki:&lt;/p&gt;
 well with kexecboot:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/"&gt;https://maedevu.maemo.org/images/droid4/&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;The latest images also contain a debian kernel package for the kernel (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220"&gt;see #220&lt;/a&gt;:
+&lt;p&gt;The latest images also contain a Debian kernel package for the kernel (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220"&gt;see #220&lt;/a&gt;:
 &lt;cite&gt;linux-image-droid4&lt;/cite&gt; (currently at version &lt;cite&gt;5.0.0+1m7.1_armhf.deb&lt;/cite&gt;), the source
 can be found here: &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux"&gt;https://github.com/maemo-leste/droid4-linux&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206"&gt;https://github.com/maemo-leste/bugtracker/issues/206&lt;/a&gt;&lt;/p&gt;
@@ -223,10 +223,10 @@ Amsterdam in April, so if you're around, it might be fun checking it out:
 &lt;/video&gt;&lt;p&gt;The slides can be found here:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf"&gt;https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf&lt;/a&gt;&lt;/blockquote&gt;
-&lt;p&gt;After the talk, we had chat for over an hour in the hall next to the Lightning
+&lt;p&gt;After the talk, we chatted for over an hour in the hall next to the Lightning
 Talks room, several postmarketOS developers showed up, as did old Nokia
-employees when actually worked on Maemo Fremantle! The people from Necunos also
-showed up an demonstrated their prototype NC_1 board.&lt;/p&gt;
+employees who actually worked on Maemo Fremantle! The people from Necunos also
+showed up and demonstrated their prototype NC_1 board.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mobile-humans-and-martians"&gt;
 &lt;h4&gt;Mobile humans and martians&lt;/h4&gt;
@@ -267,7 +267,7 @@ the default theme:&lt;/p&gt;
 &lt;p&gt;And this is wireshark with our (work in progress) Qt5 theme:&lt;/p&gt;
 &lt;img alt="" src="/images/wireshark-leste-style-wip.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;Wireshark is not particularly usable on such a small resolution regardless, but
-at least it looks nicer with this theme.&lt;/p&gt;
+at least the theme fits - usability aside.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="gtk"&gt;
 &lt;h4&gt;GTK&lt;/h4&gt;
@@ -280,7 +280,7 @@ necessary either):&lt;/p&gt;
 &lt;p&gt;And here are it's initial assistant dialogs:&lt;/p&gt;
 &lt;img alt="" src="/images/gmpc-assistant.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/gmpc-assistant-2.png" style="width: 576px; height: 324px;" /&gt;
-&lt;p&gt;In this case, the virtual keyboard is also integrated in standard debian gtk
+&lt;p&gt;In this case, the virtual keyboard is also integrated in standard Debian gtk
 applications, such as netsurf, a very lightweight browser:&lt;/p&gt;
 &lt;img alt="" src="/images/netsurf-vkb.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;And the resulting web page render:&lt;/p&gt;
@@ -290,7 +290,7 @@ applications, such as netsurf, a very lightweight browser:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-is-next"&gt;
 &lt;h2&gt;What is next?&lt;/h2&gt;
-&lt;p&gt;The last missing item before we release is an Alpha is to add support for
+&lt;p&gt;The last missing item before we release an Alpha is to add support for
 keyboard slide monitoring to either &lt;cite&gt;mce&lt;/cite&gt; or &lt;cite&gt;ke-recv-extra&lt;/cite&gt;, so that the slide
 value for the keyboard is set properly in gconf. This is required to have the
 virtual keyboard behave on phones with physical keyboards: if the keyboard is

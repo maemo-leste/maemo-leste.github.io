@@ -88,7 +88,7 @@ are now also functional:
 <div class="section" id="software-additions">
 <h2>Software additions</h2>
 <p>There have been various additions to our userspace, although most of the work in
-the last two months has been on fixing bugs and driver/kernel support.</p>
+the last two months has been on focussed fixing bugs and driver/kernel support.</p>
 <div class="section" id="connui-cellular">
 <h3>connui-cellular</h3>
 <p>freemangordon is still steadily working on connui, which is one of the core
@@ -106,14 +106,14 @@ plugin, which will provide the actual connectivity part.</p>
 <h3>PowerVR</h3>
 <p>There has been a lot of movement on the PowerVR side (the 3D acceleration unit
 GPU that various of our supported devices - such as N900 and the Droid 4 - use).</p>
-<p>Developers from various platforms and devices are now trying work on a single
+<p>Developers from various platforms and devices are now trying to work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
 eventually attempt to mainline various kernel components. Since a couple of
 weeks, there is now a Github repository that contains recent kernel sources with
 some form of PowerVR support: <a class="reference external" href="https://github.com/openpvrsgx-devgroup">https://github.com/openpvrsgx-devgroup</a></p>
 <p>A mailing list for this effort is still being worked out, but the initial
-message (over a year ago) can be viewed here:</p>
-<p><a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html">https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html</a></p>
+message (over a year ago) can be viewed here:
+<a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html">https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html</a></p>
 <p>And the recent continuation can be read here:
 <a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html">https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html</a> (And in
 thread form
@@ -134,8 +134,8 @@ picture-in-picture" allowfullscreen></iframe></div>
 see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/205">#205</a>:</p>
 <blockquote>
 <a class="reference external" href="https://maedevu.maemo.org/images/arm64-generic/">https://maedevu.maemo.org/images/arm64-generic/</a></blockquote>
-<p>This is useful for adding new support for an arm64 device. Previously we had to
-take the Raspberry Pi 3 image and strip it off device specific packages/drivers.
+<p>This is useful for adding support for a new arm64 device. Previously we had to
+take the Raspberry Pi 3 image and remove device specific packages/drivers.
 The PineTablet and PinePhone will probably make some use of this generic rootfs.</p>
 </div>
 </div>
@@ -176,8 +176,8 @@ can reinstall it with the same command.</p>
 <h4>Linux 5.0</h4>
 <p>Newer kernel images for the Nokia N900 are also available, but you will have to
 make sure that your <cite>/boot</cite> partition is an <cite>ext2</cite> filesystem, older Maemo Leste
-images shipped with <cite>/boot</cite> as an <cite>vfat</cite> partition. You can copy all the files
-in <cite>/boot</cite> to a temporary location, and then called <cite>mkfs.ext2</cite> on the boot
+images shipped with <cite>/boot</cite> as a <cite>vfat</cite> partition. You can copy all the files
+in <cite>/boot</cite> to a temporary location, and then call <cite>mkfs.ext2</cite> on the boot
 partition and finally copy the files back. Here is a screenshot of Maemo Leste
 on the Nokia N900 using Linux 5.0:</p>
 <img alt="" src="/images/leste-n900-linux-5.0.png" style="width: 576px; height: 324px;" />
@@ -222,7 +222,7 @@ documented on our wiki:</p>
 well with kexecboot:</p>
 <blockquote>
 <a class="reference external" href="https://maedevu.maemo.org/images/droid4/">https://maedevu.maemo.org/images/droid4/</a></blockquote>
-<p>The latest images also contain a debian kernel package for the kernel (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220">see #220</a>:
+<p>The latest images also contain a Debian kernel package for the kernel (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220">see #220</a>:
 <cite>linux-image-droid4</cite> (currently at version <cite>5.0.0+1m7.1_armhf.deb</cite>), the source
 can be found here: <a class="reference external" href="https://github.com/maemo-leste/droid4-linux">https://github.com/maemo-leste/droid4-linux</a></p>
 <p><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206">https://github.com/maemo-leste/bugtracker/issues/206</a></p>
@@ -281,10 +281,10 @@ Amsterdam in April, so if you're around, it might be fun checking it out:
 </video><p>The slides can be found here:</p>
 <blockquote>
 <a class="reference external" href="https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf">https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf</a></blockquote>
-<p>After the talk, we had chat for over an hour in the hall next to the Lightning
+<p>After the talk, we chatted for over an hour in the hall next to the Lightning
 Talks room, several postmarketOS developers showed up, as did old Nokia
-employees when actually worked on Maemo Fremantle! The people from Necunos also
-showed up an demonstrated their prototype NC_1 board.</p>
+employees who actually worked on Maemo Fremantle! The people from Necunos also
+showed up and demonstrated their prototype NC_1 board.</p>
 </div>
 <div class="section" id="mobile-humans-and-martians">
 <h4>Mobile humans and martians</h4>
@@ -325,7 +325,7 @@ the default theme:</p>
 <p>And this is wireshark with our (work in progress) Qt5 theme:</p>
 <img alt="" src="/images/wireshark-leste-style-wip.png" style="width: 576px; height: 324px;" />
 <p>Wireshark is not particularly usable on such a small resolution regardless, but
-at least it looks nicer with this theme.</p>
+at least the theme fits - usability aside.</p>
 </div>
 <div class="section" id="gtk">
 <h4>GTK</h4>
@@ -338,7 +338,7 @@ necessary either):</p>
 <p>And here are it's initial assistant dialogs:</p>
 <img alt="" src="/images/gmpc-assistant.png" style="width: 576px; height: 324px;" />
 <img alt="" src="/images/gmpc-assistant-2.png" style="width: 576px; height: 324px;" />
-<p>In this case, the virtual keyboard is also integrated in standard debian gtk
+<p>In this case, the virtual keyboard is also integrated in standard Debian gtk
 applications, such as netsurf, a very lightweight browser:</p>
 <img alt="" src="/images/netsurf-vkb.png" style="width: 576px; height: 324px;" />
 <p>And the resulting web page render:</p>
@@ -348,7 +348,7 @@ applications, such as netsurf, a very lightweight browser:</p>
 </div>
 <div class="section" id="what-is-next">
 <h2>What is next?</h2>
-<p>The last missing item before we release is an Alpha is to add support for
+<p>The last missing item before we release an Alpha is to add support for
 keyboard slide monitoring to either <cite>mce</cite> or <cite>ke-recv-extra</cite>, so that the slide
 value for the keyboard is set properly in gconf. This is required to have the
 virtual keyboard behave on phones with physical keyboards: if the keyboard is
