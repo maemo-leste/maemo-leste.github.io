@@ -1,5 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-01-17T20:00:00+01:00</updated><entry><title>Maemo Leste - Seventh Update (December) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html" rel="alternate"></link><published>2019-01-17T20:00:00+01:00</published><updated>2019-01-17T20:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-01-17:/maemo-leste-seventh-update-december-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;sixth update&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-12-31T00:00:00+01:00</updated><entry><title>Maemo Leste - Alpha Release 1</title><link href="https://maemo-leste.github.io/maemo-leste-alpha-release-1.html" rel="alternate"></link><published>2019-12-31T00:00:00+01:00</published><updated>2019-12-31T00:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-12-31:/maemo-leste-alpha-release-1.html</id><summary type="html">&lt;p&gt;TODO TAGS&lt;/p&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;TODO TAGS&lt;/p&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="todo"></category></entry><entry><title>Maemo Leste - Eight Update (January + February) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-eight-update-january-february-2019.html" rel="alternate"></link><published>2019-03-07T20:00:00+01:00</published><updated>2019-03-07T20:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-03-07:/maemo-leste-eight-update-january-february-2019.html</id><summary type="html">&lt;p&gt;It's been two months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html"&gt;seventh update&lt;/a&gt;
+and there's a lot to talk about!&lt;/p&gt;
+&lt;p&gt;Let's start of with a gentle reminder - don't forget that we have a mailing list -
+&lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. The mailing list archives
+are now also functional:
+&lt;a class="reference external" href="https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html"&gt;https …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been two months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html"&gt;seventh update&lt;/a&gt;
+and there's a lot to talk about!&lt;/p&gt;
+&lt;p&gt;Let's start of with a gentle reminder - don't forget that we have a mailing list -
+&lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
+to subscribe for updates, questions and development. The mailing list archives
+are now also functional:
+&lt;a class="reference external" href="https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html"&gt;https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="software-additions"&gt;
+&lt;h2&gt;Software additions&lt;/h2&gt;
+&lt;p&gt;There have been various additions to our userspace, although most of the work in
+the last two months has been on fixing bugs and driver/kernel support.&lt;/p&gt;
+&lt;div class="section" id="connui-cellular"&gt;
+&lt;h3&gt;connui-cellular&lt;/h3&gt;
+&lt;p&gt;freemangordon is still steadily working on connui, which is one of the core
+components of our modem support:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/connui-common"&gt;https://github.com/maemo-leste/connui-common&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/connui-cellular"&gt;https://github.com/maemo-leste/connui-cellular&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once a few other things are sorted (integration with &lt;a class="reference external" href="https://telepathy.freedesktop.org/"&gt;Telepathy&lt;/a&gt;) we will begin work on the &lt;cite&gt;icd2&lt;/cite&gt; oFono
+plugin, which will provide the actual connectivity part.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/196"&gt;https://github.com/maemo-leste/bugtracker/issues/196&lt;/a&gt;
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/195"&gt;https://github.com/maemo-leste/bugtracker/issues/195&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="powervr"&gt;
+&lt;h3&gt;PowerVR&lt;/h3&gt;
+&lt;p&gt;There has been a lot of movement on the PowerVR side (the 3D acceleration unit
+GPU that various of our supported devices - such as N900 and the Droid 4 - use).&lt;/p&gt;
+&lt;p&gt;Developers from various platforms and devices are now trying work on a single
+PowerVR patchset for mainline to make it easier to support new devices, and
+eventually attempt to mainline various kernel components. Since a couple of
+weeks, there is now a Github repository that contains recent kernel sources with
+some form of PowerVR support: &lt;a class="reference external" href="https://github.com/openpvrsgx-devgroup"&gt;https://github.com/openpvrsgx-devgroup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A mailing list for this effort is still being worked out, but the initial
+message (over a year ago) can be viewed here:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html"&gt;https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And the recent continuation can be read here:
+&lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html"&gt;https://www.pyra-handheld.com/pipermail/kernel/2019-February/003094.html&lt;/a&gt; (And in
+thread form
+&lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2019-February/thread.html#3094"&gt;https://www.pyra-handheld.com/pipermail/kernel/2019-February/thread.html#3094&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Hopefully there will soon be a base to support PowerVR on &lt;cite&gt;omap&lt;/cite&gt;, &lt;cite&gt;sunxi&lt;/cite&gt; and
+&lt;cite&gt;exynos&lt;/cite&gt; platforms.&lt;/p&gt;
+&lt;p&gt;Additionally, &lt;cite&gt;spinal84&lt;/cite&gt; has, through truly admirable perseverance figured out
+how to work around the PowerVR hangs and general slowness on Maemo Leste on the
+Nokia N900 and we've been working on &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/218"&gt;ensuring those fixes end up in the alpha
+(#218)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can see a video of PowerVR on Maemo Leste with better performance here:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/M28Ojvg9i9Q"
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class="section" id="generic-64-bit-arm-rootfs"&gt;
+&lt;h3&gt;Generic 64 bit ARM rootfs&lt;/h3&gt;
+&lt;p&gt;There is now a generic root filesystem image for 64 bit ARM devices available,
+see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/205"&gt;#205&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/arm64-generic/"&gt;https://maedevu.maemo.org/images/arm64-generic/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;This is useful for adding new support for an arm64 device. Previously we had to
+take the Raspberry Pi 3 image and strip it off device specific packages/drivers.
+The PineTablet and PinePhone will probably make some use of this generic rootfs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="device-support"&gt;
+&lt;h2&gt;Device support&lt;/h2&gt;
+&lt;p&gt;The last two months have been particularly exciting for device support. Both the
+Nokia N900 and the Motorola Droid 4 now ship with Linux 5.0 with some additional
+patches.&lt;/p&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;div class="section" id="easier-installation"&gt;
+&lt;h4&gt;Easier installation&lt;/h4&gt;
+&lt;p&gt;For the Nokia N900, a new (and easier) way to install Maemo Leste is available
+and &lt;a class="reference external" href="https://leste.maemo.org/Nokia_N900#If_you_don.27t_want_to_use.2Finstall_Fremantle.2C_or_want_to_install_quickly"&gt;documented on our wiki&lt;/a&gt; -
+it is aimed only for users who have no intention of running the old Maemo
+(Fremantle). Suggested improvements are welcome, please add them to this ticket:
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/211"&gt;Provide a way to flash leste (or u-boot) directly&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Newer images for the Nokia N900 are also available:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/"&gt;https://maedevu.maemo.org/images/n900/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="funroll-all-loops"&gt;
+&lt;h4&gt;-funroll-all-loops&lt;/h4&gt;
+&lt;p&gt;And a performance optimised clutter and hildon-desktop are (temporarily)
+available here, kindly provided by &lt;cite&gt;spinal84&lt;/cite&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/hd-temporary/"&gt;https://maedevu.maemo.org/images/n900/hd-temporary/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Before you install this optimised clutter and hildon-desktop, ensure that your
+installation is up to date, either by installing the latest image or by running
+a dist-upgrade!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can install these packages by downloading both, and then running:&lt;/p&gt;
+&lt;blockquote&gt;
+dpkg -i hildon-desktop_2.2.160_armhf.deb libclutter-0.8-0_0.8.2-0maemo68_armhf.deb&lt;/blockquote&gt;
+&lt;p&gt;Subsequent updates might replace your optimised hildon-desktop again, but you
+can reinstall it with the same command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="linux-5-0"&gt;
+&lt;h4&gt;Linux 5.0&lt;/h4&gt;
+&lt;p&gt;Newer kernel images for the Nokia N900 are also available, but you will have to
+make sure that your &lt;cite&gt;/boot&lt;/cite&gt; partition is an &lt;cite&gt;ext2&lt;/cite&gt; filesystem, older Maemo Leste
+images shipped with &lt;cite&gt;/boot&lt;/cite&gt; as an &lt;cite&gt;vfat&lt;/cite&gt; partition. You can copy all the files
+in &lt;cite&gt;/boot&lt;/cite&gt; to a temporary location, and then called &lt;cite&gt;mkfs.ext2&lt;/cite&gt; on the boot
+partition and finally copy the files back. Here is a screenshot of Maemo Leste
+on the Nokia N900 using Linux 5.0:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-n900-linux-5.0.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="faster-charging"&gt;
+&lt;h4&gt;Faster charging&lt;/h4&gt;
+&lt;p&gt;The N900 will now charge using up to 950mAh, instead of the previous 650mAh, see
+&lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/pull"&gt;this pull request for n9xx-linux&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rebooting-who-does-that-anyway"&gt;
+&lt;h4&gt;rebooting, who does that anyway?&lt;/h4&gt;
+&lt;p&gt;All known problems regarding device shutdown and reboot have been fixed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/125"&gt;N900: Device Does Not Boot After Shutdown From System Menu Until Battery Removed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/85"&gt;Not possible to shutdown the system (N900)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h4&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Blinkenlights"&gt;lookenpeepers&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The LED patterns on the Nokia N900 should now also work just like Fremantle, see
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/186"&gt;#186&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-4"&gt;
+&lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
+&lt;p&gt;The Motorola Droid has seen some love, the most significant changes are way
+better kernel and driver support. The device is still not particularly useful
+for day-to-day usage due to the lack of PowerVR acceleration (but we'll get
+there). Experimental modem support is now in place, as well as audio and GPS
+support. This is the result of years of hard work from various people in the
+FOSS community, and it's amazing how well supported the device has become.&lt;/p&gt;
+&lt;p&gt;The Droid 4 is now also on Linux 5.0:&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-linux-5.0.png" style="width: 613px; height: 360px;" /&gt;
+&lt;div class="section" id="giving-android-the-kexecboot"&gt;
+&lt;h4&gt;Giving Android the kexecboot&lt;/h4&gt;
+&lt;p&gt;It should now be a lot easier to install Maemo Leste, thanks to all the work
+done by Tony Lindgren on &lt;a class="reference external" href="https://github.com/tmlind/droid4-kexecboot"&gt;kexecboot&lt;/a&gt;, the installation process is
+documented on our wiki:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4#Installation_using_kexecboot"&gt;https://leste.maemo.org/Motorola_Droid_4#Installation_using_kexecboot&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;Make sure that you use the latest images, since they have been modified to work
+well with kexecboot:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/"&gt;https://maedevu.maemo.org/images/droid4/&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;The latest images also contain a debian kernel package for the kernel (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220"&gt;see #220&lt;/a&gt;:
+&lt;cite&gt;linux-image-droid4&lt;/cite&gt; (currently at version &lt;cite&gt;5.0.0+1m7.1_armhf.deb&lt;/cite&gt;), the source
+can be found here: &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux"&gt;https://github.com/maemo-leste/droid4-linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206"&gt;https://github.com/maemo-leste/bugtracker/issues/206&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="audio"&gt;
+&lt;h4&gt;Audio&lt;/h4&gt;
+&lt;p&gt;Audio works now too, including various switches to control the modem and echo
+cancellation:&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-alsamixer.png" style="width: 613px; height: 360px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ofono-support"&gt;
+&lt;h4&gt;oFono support&lt;/h4&gt;
+&lt;p&gt;Pavel Machek has been working on &lt;a class="reference external" href="https://github.com/pavelmachek/ofono/tree/d4"&gt;oFono support for the Droid 4&lt;/a&gt;, and we will attempt to package
+that work for the Droid 4 soon. Then we should hopefully have a working UI test
+voice calls.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="random-screenshot"&gt;
+&lt;h4&gt;Random screenshot&lt;/h4&gt;
+&lt;p&gt;The Droid4 is generally more responsive than the Nokia N900 when it comes to CPU
+and IO bound operations, but this is not yet visible due to everything being
+rendered through a 3D pipeline on the cpu. Regardless, here's a screenshot with
+various applications running on the Droid 4:&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-various-apps.png" style="width: 613px; height: 360px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone-anakin-devkit"&gt;
+&lt;h3&gt;PinePhone &amp;quot;Anakin&amp;quot; Devkit&lt;/h3&gt;
+&lt;p&gt;Pine64 PinePhone first development kit was sent to us some time before FOSDEM,
+and it took quite some time to test out various patch sets and fixes to these
+patch sets, but now the display works well, and the lima driver also works. The
+lima driver is still experimental, and hildon-desktop tends to crash under lima,
+but we'll get to solving those issues eventually.&lt;/p&gt;
+&lt;p&gt;At FOSDEM, the UBPorts people figured out how to make the touchscreen work as
+well, so we will probably release an image some time soon for the devkit, as it
+should quite closely match the upcoming PineTab.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community"&gt;
+&lt;h2&gt;Community&lt;/h2&gt;
+&lt;div class="section" id="devuan-conference"&gt;
+&lt;h3&gt;Devuan Conference&lt;/h3&gt;
+&lt;p&gt;There is a Devuan (the distribution that Maemo Leste is based on) conference in
+Amsterdam in April, so if you're around, it might be fun checking it out:
+&lt;a class="reference external" href="https://devuan.org/os/debian-fork/d1conf-announce-20190119"&gt;https://devuan.org/os/debian-fork/d1conf-announce-20190119&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fosdem"&gt;
+&lt;h3&gt;FOSDEM&lt;/h3&gt;
+&lt;p&gt;FOSDEM 2019 was a lot of fun, and &lt;a class="reference external" href="https://fosdem.org/2019/schedule/event/maemo_leste_mobile/"&gt;we gave a lightning talk:&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="this-video-is-optimised-for-800-480-on-firefox-3-5"&gt;
+&lt;h4&gt;This video is optimised for 800*480 on Firefox 3.5&lt;/h4&gt;
+&lt;video width="750" height="441" controls&gt;
+  &lt;source src="https://video.fosdem.org/2019/H.2215/maemo_leste_mobile.webm" type="video/webm"&gt;
+  &lt;p&gt;Your browser doesn't support HTML5 video. Here is a &lt;a
+  href="https://video.fosdem.org/2019/H.2215/maemo_leste_mobile.webm"&gt;link
+  to the video&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/video&gt;&lt;p&gt;The slides can be found here:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;a class="reference external" href="https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf"&gt;https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;After the talk, we had chat for over an hour in the hall next to the Lightning
+Talks room, several postmarketOS developers showed up, as did old Nokia
+employees when actually worked on Maemo Fremantle! The people from Necunos also
+showed up an demonstrated their prototype NC_1 board.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mobile-humans-and-martians"&gt;
+&lt;h4&gt;Mobile humans and martians&lt;/h4&gt;
+&lt;p&gt;Also present at FOSDEM were people from PostmarketOS, UBPorts and KDE Plasma,
+and we got together for a picture:&lt;/p&gt;
+&lt;img alt="" src="/images/fosdem-meetup.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Additionally, various community hardware vendors were also present. The Pine64
+community had a stand, where they presented their first phase &lt;a class="reference external" href="http://wiki.pine64.org/index.php/Project_Anakin"&gt;Anakin devkit&lt;/a&gt; and the &lt;a class="reference external" href="http://wiki.pine64.org/index.php/Project_Don%27t_be_evil"&gt;&amp;quot;Don't be evil&amp;quot;&lt;/a&gt; second phase
+devkit. Maemo Leste will receive several &amp;quot;Don't be evil&amp;quot; devkits somewhere this
+months, when they start shipping. In fact, there is already a placeholder for
+Maemo Leste OS releases:
+&lt;a class="reference external" href="http://wiki.pine64.org/index.php/Project_Don%27t_be_evil#Maemo_OS_build"&gt;http://wiki.pine64.org/index.php/Project_Don%27t_be_evil#Maemo_OS_build&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some of us also met with the Necunos team and discussed some more details of
+their upcoming device, of which Maemo Leste will also receive a devkit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="artwork"&gt;
+&lt;h3&gt;Artwork&lt;/h3&gt;
+&lt;p&gt;A member of &lt;a class="reference external" href="http://talk.maemo.org"&gt;talk.maemo.org&lt;/a&gt; created this &lt;a class="reference external" href="https://talk.maemo.org/showthread.php?t=100648&amp;amp;highlight=maemo+legend"&gt;Crest of
+Maemo&lt;/a&gt;
+and offered to send it our way!&lt;/p&gt;
+&lt;img alt="" src="/images/crestofmaemo.jpg" style="width: 688px; height: 866px;" /&gt;
+&lt;p&gt;A loving fan has created this large reproduction of the Nokia N900,
+including &lt;cite&gt;hildon-desktop&lt;/cite&gt;, the &lt;cite&gt;osso-xterm&lt;/cite&gt; application, the status applets and
+even real backlight! The metal theme looks quite good, too.&lt;/p&gt;
+&lt;img alt="" src="/images/n900-giant-reproduction.jpg" style="width: 600px; height: 400px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="some-screenshots"&gt;
+&lt;h3&gt;Some screenshots&lt;/h3&gt;
+&lt;p&gt;The next couple of updates will probably be accompanied with screenshots showing
+off some software straight from Debian repositories running on Maemo Leste, to
+show off how many applications are already available.&lt;/p&gt;
+&lt;div class="section" id="cute-theme"&gt;
+&lt;h4&gt;Cute theme?&lt;/h4&gt;
+&lt;p&gt;Qt5 applications can be started with different themes, this is Wireshark with
+the default theme:&lt;/p&gt;
+&lt;img alt="" src="/images/wireshark-leste.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;And this is wireshark with our (work in progress) Qt5 theme:&lt;/p&gt;
+&lt;img alt="" src="/images/wireshark-leste-style-wip.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Wireshark is not particularly usable on such a small resolution regardless, but
+at least it looks nicer with this theme.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gtk"&gt;
+&lt;h4&gt;GTK&lt;/h4&gt;
+&lt;p&gt;Other applications from Debian are also quite usable, without any recompilation
+whatsoever. This is GMPC, the Gnome frontend of MPD, the music player daemon.
+(These applications are not &amp;quot;hildonised&amp;quot;, that is, they are not optimised for
+Maemo Leste per se, but it does goes to show that this might not always be
+necessary either):&lt;/p&gt;
+&lt;img alt="" src="/images/gmpc.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;And here are it's initial assistant dialogs:&lt;/p&gt;
+&lt;img alt="" src="/images/gmpc-assistant.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/gmpc-assistant-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;In this case, the virtual keyboard is also integrated in standard debian gtk
+applications, such as netsurf, a very lightweight browser:&lt;/p&gt;
+&lt;img alt="" src="/images/netsurf-vkb.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;And the resulting web page render:&lt;/p&gt;
+&lt;img alt="" src="/images/netsurf-maemo-leste.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-next"&gt;
+&lt;h2&gt;What is next?&lt;/h2&gt;
+&lt;p&gt;The last missing item before we release is an Alpha is to add support for
+keyboard slide monitoring to either &lt;cite&gt;mce&lt;/cite&gt; or &lt;cite&gt;ke-recv-extra&lt;/cite&gt;, so that the slide
+value for the keyboard is set properly in gconf. This is required to have the
+virtual keyboard behave on phones with physical keyboards: if the keyboard is
+opened, then we only want to present special symbols not present on the
+keyboard, if the keyboard is closed, then we may want to present the full
+virtual keyboard instead.&lt;/p&gt;
+&lt;p&gt;Other than that, it seems like we've reached almost all of our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;Alpha goals&lt;/a&gt;,
+to the point that we might actually issue the first Alpha release soon!&lt;/p&gt;
+&lt;p&gt;We may end up switching to Devuan Beowulf (Debian Buster) before or after the
+Alpha, it depends on how time it takes to port to the newer release, as well as
+the amount of bugs introduced by doing so.&lt;/p&gt;
+&lt;p&gt;We will likely also have one or two days of downtime on our Jenkins build
+service while we migrate it to a more powerful server to speed up build times
+and ensure that we will not run out of storage any time soon.&lt;/p&gt;
+&lt;p&gt;Personally, I hope that we will be able to get decent support for modems in
+place soon: with &lt;cite&gt;connui-cellular&lt;/cite&gt; well on underway it may soon be time to start
+working on the &lt;cite&gt;oFono&lt;/cite&gt; plugin for &lt;cite&gt;icd2&lt;/cite&gt;. At least the Nokia N900 and Droid 4
+now also have a working modem and (mostly) working oFono support, so that should
+be promising.&lt;/p&gt;
+&lt;p&gt;Hopefully we'll also get PowerVR support for the Droid 4 hammered out soon, that
+will make the device a lot more usable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We have several Nokia N900 and Motorola Droid 4 units available to interested
+developers&lt;/strong&gt;, so if you are interested in helping out but have trouble acquiring
+a device, let us know.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="droid4"></category><category term="n900"></category><category term="linux"></category><category term="modem"></category><category term="powervr"></category><category term="lima"></category><category term="allwinner"></category><category term="fosdem"></category></entry><entry><title>Maemo Leste - Seventh Update (December) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html" rel="alternate"></link><published>2019-01-17T20:00:00+01:00</published><updated>2019-01-17T20:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-01-17:/maemo-leste-seventh-update-december-2018.html</id><summary type="html">&lt;p&gt;It's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-sixth-update-november-2018.html"&gt;sixth update&lt;/a&gt;
 and there's quite some stuff to talk about!&lt;/p&gt;
 &lt;p&gt;First of all, sorry for the delay in the update, it's overdue by almost two
 weeks. Second of all, if you missed our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-lima-works.html"&gt;lima update&lt;/a&gt;, make sure to check that out!&lt;/p&gt;
