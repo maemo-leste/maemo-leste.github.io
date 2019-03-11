@@ -10,7 +10,7 @@ It's been two months since our `seventh update
 <{filename}/maemo-leste-december-2018.rst>`_
 and there's a lot to talk about!
 
-Let's start of with a gentle reminder - don't forget that we have a mailing list -
+Let's start off with a gentle reminder - don't forget that we have a mailing list -
 `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_. Be sure
 to subscribe for updates, questions and development. The mailing list archives
@@ -22,7 +22,7 @@ Software additions
 ------------------
 
 There have been various additions to our userspace, although most of the work in
-the last two months has been on focussed fixing bugs and driver/kernel support.
+the last two months has been focused on fixing bugs and driver/kernel support.
 
 
 connui-cellular
@@ -44,8 +44,8 @@ https://github.com/maemo-leste/bugtracker/issues/195
 PowerVR
 ~~~~~~~
 
-There has been a lot of movement on the PowerVR side (the 3D acceleration unit
-GPU that various of our supported devices - such as N900 and the Droid 4 - use).
+There has been a lot of movement on the PowerVR side (the 3D acceleration unit/
+GPU that a number of our supported devices - such as N900 and the Droid 4 - use).
 
 Developers from various platforms and devices are now trying to work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
@@ -65,8 +65,8 @@ https://www.pyra-handheld.com/pipermail/kernel/2019-February/thread.html#3094)
 Hopefully there will soon be a base to support PowerVR on `omap`, `sunxi` and
 `exynos` platforms.
 
-Additionally, `spinal84` has, through truly admirable perseverance figured out
-how to work around the PowerVR hangs and general slowness on Maemo Leste on the
+Additionally, `spinal84` has, through truly admirable perseverance, figured out
+how to work around the PowerVR hangs and general slowness of Maemo Leste on the
 Nokia N900 and we've been working on `ensuring those fixes end up in the alpha
 (#218) <https://github.com/maemo-leste/bugtracker/issues/218>`_
 
@@ -179,7 +179,7 @@ The LED patterns on the Nokia N900 should now also work just like Fremantle, see
 Motorola Droid 4
 ~~~~~~~~~~~~~~~~
 
-The Motorola Droid has seen some love, the most significant changes are way
+The Motorola Droid has seen some love - the most significant changes are way
 better kernel and driver support. The device is still not particularly useful
 for day-to-day usage due to the lack of PowerVR acceleration (but we'll get
 there). Experimental modem support is now in place, as well as audio and GPS
@@ -197,7 +197,7 @@ Giving Android the kexecboot
 
 It should now be a lot easier to install Maemo Leste, thanks to all the work
 done by Tony Lindgren on `kexecboot
-<https://github.com/tmlind/droid4-kexecboot>`_, the installation process is
+<https://github.com/tmlind/droid4-kexecboot>`_. The installation process is
 documented on our wiki:
 
   https://leste.maemo.org/Motorola_Droid_4#Installation_using_kexecboot
@@ -209,7 +209,7 @@ well with kexecboot:
 
 The latest images also contain a Debian kernel package for the kernel (`see #220
 <https://github.com/maemo-leste/bugtracker/issues/220>`_:
-`linux-image-droid4` (currently at version `5.0.0+1m7.1_armhf.deb`), the source
+`linux-image-droid4` (currently at version `5.0.0+1m7.1_armhf.deb`), and the source
 can be found here: https://github.com/maemo-leste/droid4-linux
 
 https://github.com/maemo-leste/bugtracker/issues/206
@@ -295,7 +295,7 @@ The slides can be found here:
     https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf
 
 After the talk, we chatted for over an hour in the hall next to the Lightning
-Talks room, several postmarketOS developers showed up, as did old Nokia
+Talks room. Several postmarketOS developers showed up, as did old Nokia
 employees who actually worked on Maemo Fremantle! The people from Necunos also
 showed up and demonstrated their prototype NC_1 board.
 
