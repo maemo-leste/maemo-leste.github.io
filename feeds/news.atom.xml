@@ -16,13 +16,13 @@ help out. Another great way to get in touch is to join the &lt;a class="referenc
 &lt;/div&gt;
 </content><category term="todo"></category></entry><entry><title>Maemo Leste - Eight Update (January + February) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-eight-update-january-february-2019.html" rel="alternate"></link><published>2019-03-07T20:00:00+01:00</published><updated>2019-03-07T20:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-03-07:/maemo-leste-eight-update-january-february-2019.html</id><summary type="html">&lt;p&gt;It's been two months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html"&gt;seventh update&lt;/a&gt;
 and there's a lot to talk about!&lt;/p&gt;
-&lt;p&gt;Let's start of with a gentle reminder - don't forget that we have a mailing list -
+&lt;p&gt;Let's start off with a gentle reminder - don't forget that we have a mailing list -
 &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
 to subscribe for updates, questions and development. The mailing list archives
 are now also functional:
 &lt;a class="reference external" href="https://lists.dyne.org/lurker/mindex/maemo-leste&amp;#64;19700101.000000.00000000.en.html"&gt;https …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been two months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-seventh-update-december-2018.html"&gt;seventh update&lt;/a&gt;
 and there's a lot to talk about!&lt;/p&gt;
-&lt;p&gt;Let's start of with a gentle reminder - don't forget that we have a mailing list -
+&lt;p&gt;Let's start off with a gentle reminder - don't forget that we have a mailing list -
 &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;. Be sure
 to subscribe for updates, questions and development. The mailing list archives
 are now also functional:
@@ -30,7 +30,7 @@ are now also functional:
 &lt;div class="section" id="software-additions"&gt;
 &lt;h2&gt;Software additions&lt;/h2&gt;
 &lt;p&gt;There have been various additions to our userspace, although most of the work in
-the last two months has been on focussed fixing bugs and driver/kernel support.&lt;/p&gt;
+the last two months has been focused on fixing bugs and driver/kernel support.&lt;/p&gt;
 &lt;div class="section" id="connui-cellular"&gt;
 &lt;h3&gt;connui-cellular&lt;/h3&gt;
 &lt;p&gt;freemangordon is still steadily working on connui, which is one of the core
@@ -46,8 +46,8 @@ plugin, which will provide the actual connectivity part.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="powervr"&gt;
 &lt;h3&gt;PowerVR&lt;/h3&gt;
-&lt;p&gt;There has been a lot of movement on the PowerVR side (the 3D acceleration unit
-GPU that various of our supported devices - such as N900 and the Droid 4 - use).&lt;/p&gt;
+&lt;p&gt;There has been a lot of movement on the PowerVR side (the 3D acceleration unit/
+GPU that a number of our supported devices - such as N900 and the Droid 4 - use).&lt;/p&gt;
 &lt;p&gt;Developers from various platforms and devices are now trying to work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
 eventually attempt to mainline various kernel components. Since a couple of
@@ -62,8 +62,8 @@ thread form
 &lt;a class="reference external" href="https://www.pyra-handheld.com/pipermail/kernel/2019-February/thread.html#3094"&gt;https://www.pyra-handheld.com/pipermail/kernel/2019-February/thread.html#3094&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Hopefully there will soon be a base to support PowerVR on &lt;cite&gt;omap&lt;/cite&gt;, &lt;cite&gt;sunxi&lt;/cite&gt; and
 &lt;cite&gt;exynos&lt;/cite&gt; platforms.&lt;/p&gt;
-&lt;p&gt;Additionally, &lt;cite&gt;spinal84&lt;/cite&gt; has, through truly admirable perseverance figured out
-how to work around the PowerVR hangs and general slowness on Maemo Leste on the
+&lt;p&gt;Additionally, &lt;cite&gt;spinal84&lt;/cite&gt; has, through truly admirable perseverance, figured out
+how to work around the PowerVR hangs and general slowness of Maemo Leste on the
 Nokia N900 and we've been working on &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/218"&gt;ensuring those fixes end up in the alpha
 (#218)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can see a video of PowerVR on Maemo Leste with better performance here:&lt;/p&gt;
@@ -145,7 +145,7 @@ on the Nokia N900 using Linux 5.0:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="motorola-droid-4"&gt;
 &lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
-&lt;p&gt;The Motorola Droid has seen some love, the most significant changes are way
+&lt;p&gt;The Motorola Droid has seen some love - the most significant changes are way
 better kernel and driver support. The device is still not particularly useful
 for day-to-day usage due to the lack of PowerVR acceleration (but we'll get
 there). Experimental modem support is now in place, as well as audio and GPS
@@ -156,7 +156,7 @@ FOSS community, and it's amazing how well supported the device has become.&lt;/p
 &lt;div class="section" id="giving-android-the-kexecboot"&gt;
 &lt;h4&gt;Giving Android the kexecboot&lt;/h4&gt;
 &lt;p&gt;It should now be a lot easier to install Maemo Leste, thanks to all the work
-done by Tony Lindgren on &lt;a class="reference external" href="https://github.com/tmlind/droid4-kexecboot"&gt;kexecboot&lt;/a&gt;, the installation process is
+done by Tony Lindgren on &lt;a class="reference external" href="https://github.com/tmlind/droid4-kexecboot"&gt;kexecboot&lt;/a&gt;. The installation process is
 documented on our wiki:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4#Installation_using_kexecboot"&gt;https://leste.maemo.org/Motorola_Droid_4#Installation_using_kexecboot&lt;/a&gt;&lt;/blockquote&gt;
@@ -165,7 +165,7 @@ well with kexecboot:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/"&gt;https://maedevu.maemo.org/images/droid4/&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;The latest images also contain a Debian kernel package for the kernel (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/220"&gt;see #220&lt;/a&gt;:
-&lt;cite&gt;linux-image-droid4&lt;/cite&gt; (currently at version &lt;cite&gt;5.0.0+1m7.1_armhf.deb&lt;/cite&gt;), the source
+&lt;cite&gt;linux-image-droid4&lt;/cite&gt; (currently at version &lt;cite&gt;5.0.0+1m7.1_armhf.deb&lt;/cite&gt;), and the source
 can be found here: &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux"&gt;https://github.com/maemo-leste/droid4-linux&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/206"&gt;https://github.com/maemo-leste/bugtracker/issues/206&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -224,7 +224,7 @@ Amsterdam in April, so if you're around, it might be fun checking it out:
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf"&gt;https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;After the talk, we chatted for over an hour in the hall next to the Lightning
-Talks room, several postmarketOS developers showed up, as did old Nokia
+Talks room. Several postmarketOS developers showed up, as did old Nokia
 employees who actually worked on Maemo Fremantle! The people from Necunos also
 showed up and demonstrated their prototype NC_1 board.&lt;/p&gt;
 &lt;/div&gt;
