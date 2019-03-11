@@ -22,7 +22,7 @@ Software additions
 ------------------
 
 There have been various additions to our userspace, although most of the work in
-the last two months has been on fixing bugs and driver/kernel support.
+the last two months has been on focussed fixing bugs and driver/kernel support.
 
 
 connui-cellular
@@ -47,7 +47,7 @@ PowerVR
 There has been a lot of movement on the PowerVR side (the 3D acceleration unit
 GPU that various of our supported devices - such as N900 and the Droid 4 - use).
 
-Developers from various platforms and devices are now trying work on a single
+Developers from various platforms and devices are now trying to work on a single
 PowerVR patchset for mainline to make it easier to support new devices, and
 eventually attempt to mainline various kernel components. Since a couple of
 weeks, there is now a Github repository that contains recent kernel sources with
@@ -55,7 +55,6 @@ some form of PowerVR support: https://github.com/openpvrsgx-devgroup
 
 A mailing list for this effort is still being worked out, but the initial
 message (over a year ago) can be viewed here:
-
 https://www.pyra-handheld.com/pipermail/kernel/2018-January/002315.html
 
 And the recent continuation can be read here:
@@ -89,8 +88,8 @@ see `#205 <https://github.com/maemo-leste/bugtracker/issues/205>`_:
 
     https://maedevu.maemo.org/images/arm64-generic/
 
-This is useful for adding new support for an arm64 device. Previously we had to
-take the Raspberry Pi 3 image and strip it off device specific packages/drivers.
+This is useful for adding support for a new arm64 device. Previously we had to
+take the Raspberry Pi 3 image and remove device specific packages/drivers.
 The PineTablet and PinePhone will probably make some use of this generic rootfs.
 
 Device support
@@ -144,8 +143,8 @@ Linux 5.0
 
 Newer kernel images for the Nokia N900 are also available, but you will have to
 make sure that your `/boot` partition is an `ext2` filesystem, older Maemo Leste
-images shipped with `/boot` as an `vfat` partition. You can copy all the files
-in `/boot` to a temporary location, and then called `mkfs.ext2` on the boot
+images shipped with `/boot` as a `vfat` partition. You can copy all the files
+in `/boot` to a temporary location, and then call `mkfs.ext2` on the boot
 partition and finally copy the files back. Here is a screenshot of Maemo Leste
 on the Nokia N900 using Linux 5.0:
 
@@ -208,7 +207,7 @@ well with kexecboot:
 
     https://maedevu.maemo.org/images/droid4/
 
-The latest images also contain a debian kernel package for the kernel (`see #220
+The latest images also contain a Debian kernel package for the kernel (`see #220
 <https://github.com/maemo-leste/bugtracker/issues/220>`_:
 `linux-image-droid4` (currently at version `5.0.0+1m7.1_armhf.deb`), the source
 can be found here: https://github.com/maemo-leste/droid4-linux
@@ -295,10 +294,10 @@ The slides can be found here:
 
     https://maedevu.maemo.org/media/fosdem-2019-maemo-leste.pdf
 
-After the talk, we had chat for over an hour in the hall next to the Lightning
+After the talk, we chatted for over an hour in the hall next to the Lightning
 Talks room, several postmarketOS developers showed up, as did old Nokia
-employees when actually worked on Maemo Fremantle! The people from Necunos also
-showed up an demonstrated their prototype NC_1 board.
+employees who actually worked on Maemo Fremantle! The people from Necunos also
+showed up and demonstrated their prototype NC_1 board.
 
 
 Mobile humans and martians
@@ -368,7 +367,7 @@ And this is wireshark with our (work in progress) Qt5 theme:
   :width: 576px
 
 Wireshark is not particularly usable on such a small resolution regardless, but
-at least it looks nicer with this theme.
+at least the theme fits - usability aside.
 
 
 GTK
@@ -395,7 +394,7 @@ And here are it's initial assistant dialogs:
   :width: 576px
 
 
-In this case, the virtual keyboard is also integrated in standard debian gtk
+In this case, the virtual keyboard is also integrated in standard Debian gtk
 applications, such as netsurf, a very lightweight browser:
 
 .. image:: /images/netsurf-vkb.png
@@ -412,7 +411,7 @@ And the resulting web page render:
 What is next?
 -------------
 
-The last missing item before we release is an Alpha is to add support for
+The last missing item before we release an Alpha is to add support for
 keyboard slide monitoring to either `mce` or `ke-recv-extra`, so that the slide
 value for the keyboard is set properly in gconf. This is required to have the
 virtual keyboard behave on phones with physical keyboards: if the keyboard is
