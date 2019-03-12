@@ -157,7 +157,7 @@ Faster charging
 
 The N900 will now charge using up to 950mAh, instead of the previous 650mAh, see
 `this pull request for n9xx-linux
-<https://github.com/maemo-leste/n9xx-linux/pull>`_.
+<https://github.com/maemo-leste/n9xx-linux/pull/4>`_.
 
 
 rebooting, who does that anyway?
