@@ -1,5 +1,5 @@
-Maemo Leste - Eighth Update (January + February) 2019
-#####################################################
+Maemo Leste - Eight Update (January + February) 2019
+####################################################
 
 :Category: news
 :tags: droid4, n900, linux, modem, powervr, lima, allwinner, fosdem
