@@ -4,7 +4,7 @@ Maemo Leste - Eight Update (January + February) 2019
 :Category: news
 :tags: droid4, n900, linux, modem, powervr, lima, allwinner, fosdem
 :authors: Merlijn Wajer
-:date: 2019-03-07 20:00
+:date: 2019-03-11 20:00
 
 It's been two months since our `seventh update
 <{filename}/maemo-leste-december-2018.rst>`_
