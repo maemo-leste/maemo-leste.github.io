@@ -92,7 +92,7 @@ available here, kindly provided by &lt;cite&gt;spinal84&lt;/cite&gt;:&lt;/p&gt;
 &lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/hd-temporary/"&gt;https://maedevu.maemo.org/images/n900/hd-temporary/&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Before you install this optimised clutter and hildon-desktop, ensure that your
 installation is up to date, either by installing the latest image and upgrading
-or just running apt-update &amp;amp;&amp;amp; apt-upgrade!&lt;/strong&gt;&lt;/p&gt;
+or just running apt update &amp;amp;&amp;amp; apt upgrade!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You can install these packages by downloading both, and then running:&lt;/p&gt;
 &lt;blockquote&gt;
 dpkg -i hildon-desktop_2.2.160_armhf.deb libclutter-0.8-0_0.8.2-0maemo68_armhf.deb&lt;/blockquote&gt;
