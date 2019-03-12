@@ -127,8 +127,8 @@ available here, kindly provided by `spinal84`:
     https://maedevu.maemo.org/images/n900/hd-temporary/
 
 **Before you install this optimised clutter and hildon-desktop, ensure that your
-installation is up to date, either by installing the latest image or by running
-a dist-upgrade!**
+installation is up to date, either by installing the latest image and upgrading
+or just running apt-update && apt-upgrade!**
 
 You can install these packages by downloading both, and then running:
 
