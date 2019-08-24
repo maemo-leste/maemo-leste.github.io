@@ -17,9 +17,9 @@ General direction & Alpha status
 The last couple of months has been dominated by work on cellular support and the
 upcoming PinePhone and PineTablet devices. The Pine64 project plans to start
 shipping the PinePhone a couple months from now, and we hope to have a
-usable-enough image so that the PinePhone can ship the option of having Maemo
-Leste installed. This might also explain the focus on the modem/cellular work,
-which this article will discuss in greater detail later on.
+usable-enough image so that the PinePhone can ship with the option of having
+Maemo Leste installed. This might also explain the focus on the modem/cellular
+work, which this article will discuss in greater detail later on.
 
 The `N900 Alpha milestone
 <https://github.com/maemo-leste/bugtracker/milestone/4>`_ status is looking
