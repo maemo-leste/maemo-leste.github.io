@@ -220,13 +220,34 @@ The relevant issues are
 `#18 <https://github.com/maemo-leste/bugtracker/issues/18>`_ and
 `#238 <https://github.com/maemo-leste/bugtracker/issues/238>`_.
 
+Here are some screenshots showing off the work done so far for Mahjong and
+Marbles:
 
-Games & Emulation
-^^^^^^^^^^^^^^^^^
+.. image:: /images/mahjong-start-screen.png
+  :height: 300px
+  :width: 400px
 
-- pvr showoff
-  -> prboom / freedoom1
-  -> pokemon blue
+.. image:: /images/mahjong-score-screen.png
+  :height: 300px
+  :width: 400px
+
+.. image:: /images/mahjong-game-over-screen.png
+  :height: 300px
+  :width: 400px
+
+.. image:: /images/marbles-start-screen.png
+  :height: 300px
+  :width: 400px
+
+
+
+.. Games & Emulation
+.. ^^^^^^^^^^^^^^^^^
+.. 
+.. - pvr showoff
+..   -> prboom / freedoom1
+..   -> pokemon blue
+
 
 SMS & Calls
 ~~~~~~~~~~~
@@ -257,6 +278,19 @@ device:
   :height: 276px
   :width: 596px
 
+
+Python support
+~~~~~~~~~~~~~~
+
+Maemo had `pretty decent python support <http://wiki.maemo.org/PyMaemo>`_ and
+we're also planning to bring some of that over pretty soon too, so that we can
+port and import more packages from Maemo Fremantle. Maemo Fremantle uses Python
+2.5, so there's likely some porting work involved. Most of the Fremantle PyMaemo
+work is stored in this repository: https://vcs.maemo.org/svn/pymaemo/ (of which
+we also at least locally have a git-svn version).
+
+We're looking for someone to help us with this, see `issue #260 for more details
+<https://github.com/maemo-leste/bugtracker/issues/260>`_.
 
 
 Device support & Kernel work
@@ -394,12 +428,13 @@ here would be much appreciated <https://github.com/maemo-leste/bugtracker/issues
 Community & Documentation
 -------------------------
 
+We've been continually but slowly been documenting `device support status
+<https://leste.maemo.org/Category:Device>`_ and the `status of the various core
+components <https://leste.maemo.org/Status>`_. There
+is still a lot to be done to improve the wiki, though.
 
-
-Wiki
-~~~~
-
-- maemo wiki pages: veel nieuwe pages under Development/*
+Next on the list will be a tutorial on how to start developing with Maemo Leste,
+which has been requested several times.
 
 
 Closing notes / Direction
