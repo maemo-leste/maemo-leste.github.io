@@ -11,9 +11,9 @@ and we're still making steady progress.&lt;/p&gt;
 &lt;p&gt;The last couple of months has been dominated by work on cellular support and the
 upcoming PinePhone and PineTablet devices. The Pine64 project plans to start
 shipping the PinePhone a couple months from now, and we hope to have a
-usable-enough image so that the PinePhone can ship the option of having Maemo
-Leste installed. This might also explain the focus on the modem/cellular work,
-which this article will discuss in greater detail later on.&lt;/p&gt;
+usable-enough image so that the PinePhone can ship with the option of having
+Maemo Leste installed. This might also explain the focus on the modem/cellular
+work, which this article will discuss in greater detail later on.&lt;/p&gt;
 &lt;p&gt;The &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/4"&gt;N900 Alpha milestone&lt;/a&gt; status is looking
 quite good, with a couple of (relatively minor) changes remaining, the most
 prominent being &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/17"&gt;completion of the virtual keyboard package&lt;/a&gt;, we need to add
