@@ -1,5 +1,5 @@
-Maemo Leste - Ninth Update (March + till + August) 2019
-#######################################################
+Maemo Leste - Ninth Update (March till August) 2019
+###################################################
 
 :Category: news
 :tags: pinephone, pinetab, n900, droid4, powervr, lima, cellular, calls, sms, games
