@@ -191,7 +191,7 @@ Audio
 
 Currently, audio mostly just works on the devices that we support (Nokia N900,
 Motorola Droid 4, Pinephone devkit, Allwinner tablets...). However, for a phone
-to be particular usable we'll need to deal with audio policies certain or later.
+to be particular usable we'll need to deal with audio policies sooner or later.
 That is: if you plug in a headphone, you expect the output of programs to go to
 the headphone jack. And if you don't have a headphone jack plugged in, you
 expect audio to go over the speakers. Unless you're being called, in which case
@@ -448,7 +448,7 @@ FOSS-enthousiast) ready when the PinePhone is ready.
 
 What that means is that we will need the following in place:
 
-* 2G/3G/LTe data connections working
+* 2G/3G/LTE data connections working
 * Usable (ish) interface for SMS and calls.
 * Usable (ish) contacts interface
 * (Somewhat sane) audio routing - switching between headphone, earpiece and
