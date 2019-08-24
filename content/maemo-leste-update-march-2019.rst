@@ -2,9 +2,9 @@ Maemo Leste - Ninth Update (March + till + August) 2019
 #######################################################
 
 :Category: news
-:tags: TODO TAGS
+:tags: pinephone, pinetab, n900, droid4, powervr, lima, cellular, calls, sms, games
 :authors: Merlijn Wajer
-:date: 2019-05-21 20:00
+:date: 2019-08-24 15:00
 
 It's been way too long since our `eight update
 <{filename}/maemo-leste-update-january-2019.rst>`_. A lot of things happened
@@ -440,16 +440,24 @@ which has been requested several times.
 Closing notes / Direction
 --------------------------
 
+While we could soon make the N900 Alpha release, we've shifted gears a little
+more to get the cellular code and UI in place. One reason for this is that we
+hope to have a usable phone, SMS and contact application ready before the
+Pinephone goes on sale. We'd love for Maemo Leste to be developer (and maybe
+FOSS-enthousiast) ready when the PinePhone is ready.
 
-"Would be usable phone goals":
+What that means is that we will need the following in place:
 
-- qt5
-- gtk3 port (?)
-- phone/call/sms UI
-- contacts UI
-- some audio routing
-- data connections working
-- some usable browser (UI)
+* 2G/3G/LTe data connections working
+* Usable (ish) interface for SMS and calls.
+* Usable (ish) contacts interface
+* (Somewhat sane) audio routing - switching between headphone, earpiece and
+  speakers.
+* Some contacts UI
+
+It would be great if we could also have:
+
+* Qt5 and Gtk3 port ready
 
 
 Interested?
