@@ -2,9 +2,10 @@ Maemo Leste - Tenth Update (December) 2019
 ##########################################
 
 :Category: news
-:tags: TODO
+:tags: nlnet, openfest, pine64, pinephone, pinetab, droid4, powervr, fosdem,
+       brainparty, python
 :authors: Merlijn Wajer
-:date: 2019-12-31 22:00
+:date: 2019-12-31 17:45
 
 It's been a few month since our `ninth update
 <{filename}/maemo-leste-update-march-2019.rst>`_, and a lot has happened on a
