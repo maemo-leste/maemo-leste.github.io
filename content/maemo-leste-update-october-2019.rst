@@ -76,7 +76,7 @@ week:
       <iframe width="560" height="315" src="https://www.youtube.com/embed/t-DiJJkyYrk"
       ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
       picture-in-picture" allowfullscreen></iframe>
-* brainparty running a N900 running Maemo Leste:
+* brainparty running on a N900 running Maemo Leste:
 
   .. raw:: html
   
