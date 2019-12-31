@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-08-24T15:00:00+02:00</updated><entry><title>Maemo Leste - Ninth Update (March till August) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html" rel="alternate"></link><published>2019-08-24T15:00:00+02:00</published><updated>2019-08-24T15:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-08-24:/maemo-leste-ninth-update-march-till-august-2019.html</id><summary type="html">&lt;p&gt;It's been way too long since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-eight-update-january-february-2019.html"&gt;eight update&lt;/a&gt;. A lot of things happened
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-12-31T22:00:00+01:00</updated><entry><title>Maemo Leste - Tenth Update (December) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-tenth-update-december-2019.html" rel="alternate"></link><published>2019-12-31T22:00:00+01:00</published><updated>2019-12-31T22:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-12-31:/maemo-leste-tenth-update-december-2019.html</id><summary type="html">&lt;p&gt;It's been a few month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html"&gt;ninth update&lt;/a&gt;, and a lot has happened on a
+technical front. That will all be covered on an early January update. This
+update will mostly be about the non-technical part of Maemo Leste.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First of all - happy new year to everyone reading this …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a few month since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html"&gt;ninth update&lt;/a&gt;, and a lot has happened on a
+technical front. That will all be covered on an early January update. This
+update will mostly be about the non-technical part of Maemo Leste.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;First of all - happy new year to everyone reading this. I believe 2020 will be
+a very interesting and hopefully prosperous year for the project.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="section" id="openfest"&gt;
+&lt;h2&gt;OpenFest&lt;/h2&gt;
+&lt;p&gt;In early November, we gave a talk at OpenFest 2019. Several of the core Maemo
+Leste developers also met up at the event, and we also had interesting talks
+with the folks from &lt;cite&gt;Techno Ethical &amp;lt;https://tehnoetic.com/&amp;gt;_&lt;/cite&gt; - they left with
+a Droid 4 to run Maemo Leste on.&lt;/p&gt;
+&lt;p&gt;The official recording of the OpenFest 2019 is not yet uploaded to youtube, but
+you can find a video someone else made, here:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/UjzEd504_jY"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class="section" id="nlnet-funding"&gt;
+&lt;h2&gt;NLNet - funding!&lt;/h2&gt;
+&lt;p&gt;You read that right, we applied for funding and we received it.
+You can read the writeup here &lt;a class="reference external" href="https://nlnet.nl/project/MaemoLeste/"&gt;on the website of NLNet&lt;/a&gt;. We will share details in the coming
+weeks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fosdem-2020"&gt;
+&lt;h2&gt;FOSDEM 2020&lt;/h2&gt;
+&lt;p&gt;Maemo Leste will be present at FOSDEM in 2020 - with a talk. This time not a
+lightning talk, but a talk on Sunday, for the &lt;a class="reference external" href="https://fosdem.org/2020/schedule/track/freedom/"&gt;Freedom track&lt;/a&gt;, in the Janson room,
+together with someone from postmarketOS!&lt;/p&gt;
+&lt;p&gt;Once we finalise our talk abstract and description, the talk will show up on the
+FOSDEM website.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="talk-maemo-org-subforum"&gt;
+&lt;h2&gt;talk.maemo.org subforum&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://talk.maemo.org/forumdisplay.php?f=66"&gt;We now have a talk.maemo.org subforum&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="some-videos-with-some-technical-updates"&gt;
+&lt;h2&gt;Some videos with some technical updates&lt;/h2&gt;
+&lt;p&gt;Although the start of the update said there wouldn't be a lot of technical
+updates, here's a short summary of what to expect in the technical update next
+week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;hildon-desktop rotation bug is fixed!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Maemo Leste runs on the PinePhone and PineTab&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;hildon-application-manager is kind of working&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/t-DiJJkyYrk"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;brainparty running a N900 running Maemo Leste:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/IlweegA2ORQ"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;PowerVR  acceleration starts to work on the Motorola Droid 4&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6byvcCjEazE"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Cellular work continues steadily&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/BpJPTc8Q_4c"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&lt;a class="reference external" href="https://talk.maemo.org/showpost.php?p=1563667&amp;amp;postcount=330"&gt;Python gtk and hildon support is now in place&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h3&gt;Interested?&lt;/h3&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="TODO"></category></entry><entry><title>Maemo Leste - Ninth Update (March till August) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html" rel="alternate"></link><published>2019-08-24T15:00:00+02:00</published><updated>2019-08-24T15:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-08-24:/maemo-leste-ninth-update-march-till-august-2019.html</id><summary type="html">&lt;p&gt;It's been way too long since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-eight-update-january-february-2019.html"&gt;eight update&lt;/a&gt;. A lot of things happened
 and we're still making steady progress.&lt;/p&gt;
 &lt;div class="section" id="general-direction-alpha-status"&gt;
 &lt;h2&gt;General direction &amp;amp; Alpha status&lt;/h2&gt;
