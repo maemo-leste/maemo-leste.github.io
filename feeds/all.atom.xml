@@ -1,5 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2019-12-31T17:45:00+01:00</updated><entry><title>Maemo Leste - Tenth Update (December) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-tenth-update-december-2019.html" rel="alternate"></link><published>2019-12-31T17:45:00+01:00</published><updated>2019-12-31T17:45:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-12-31:/maemo-leste-tenth-update-december-2019.html</id><summary type="html">&lt;p&gt;It's been a few months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html"&gt;ninth update&lt;/a&gt;, and a lot has happened on a
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2020-01-13T01:00:00+01:00</updated><entry><title>Maemo Leste - Eleventh Update (January) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-eleventh-update-january-2020.html" rel="alternate"></link><published>2020-01-13T01:00:00+01:00</published><updated>2020-01-13T01:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-01-13:/maemo-leste-eleventh-update-january-2020.html</id><summary type="html">&lt;p&gt;It's been a few weeks since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-tenth-update-december-2019.html"&gt;end of 2019 update&lt;/a&gt;, and let's start with a few highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;We have a main track talk in the FOSDEM 2020 &lt;a class="reference external" href="https://fosdem.org/2020/schedule/event/smartphones/"&gt;Freedom Track&lt;/a&gt; - make sure to meet us
+there if you're attending FOSDEM.&lt;/li&gt;
+&lt;li&gt;New &lt;a class="reference internal" href="#virtual-machine"&gt;Virtual Machine&lt;/a&gt; images are available: &lt;a class="reference external" href="https://maedevu.maemo.org/images/virtual-machines/20200103/"&gt;https://maedevu.maemo.org …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;It's been a few weeks since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-tenth-update-december-2019.html"&gt;end of 2019 update&lt;/a&gt;, and let's start with a few highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;We have a main track talk in the FOSDEM 2020 &lt;a class="reference external" href="https://fosdem.org/2020/schedule/event/smartphones/"&gt;Freedom Track&lt;/a&gt; - make sure to meet us
+there if you're attending FOSDEM.&lt;/li&gt;
+&lt;li&gt;New &lt;a class="reference internal" href="#virtual-machine"&gt;Virtual Machine&lt;/a&gt; images are available: &lt;a class="reference external" href="https://maedevu.maemo.org/images/virtual-machines/20200103/"&gt;https://maedevu.maemo.org/images/virtual-machines/20200103/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;New &lt;a class="reference internal" href="#nokia-n900"&gt;Nokia N900&lt;/a&gt; images are available: &lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/20200112/"&gt;https://maedevu.maemo.org/images/n900/20200112/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;New &lt;a class="reference internal" href="#motorola-droid-4"&gt;Motorola Droid 4&lt;/a&gt; images are available: &lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/20200112/"&gt;https://maedevu.maemo.org/images/droid4/20200112/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Leste &lt;strong&gt;Extras&lt;/strong&gt; repository is now set up and usable.&lt;/li&gt;
+&lt;li&gt;An overview of various (important) development tasks is tracked on the wiki: &lt;a class="reference external" href="https://leste.maemo.org/Development/Tasks"&gt;https://leste.maemo.org/Development/Tasks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;There will be a separate post for the Pinephone in the next few days, along with
+images for the Pinephone.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="section" id="software-additions"&gt;
+&lt;h2&gt;Software additions&lt;/h2&gt;
+&lt;p&gt;There have been many additions, bugfixes and improvements, perhaps (or not) best
+illustrated by this screenshot of a Nokia N900 of a developer running Maemo Leste:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-swstate.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Screenshot shows the availability of python bindings (binary clock), importing
+Fremantle themes, the progress of connui-cellular (3G logo, signal bar, operator
+name 'KPN' on the home screen), and lots of applications that have been ported,
+or are being ported, including a package manager and PDF reader.&lt;/p&gt;
+&lt;div class="section" id="leste-extras-software-repository"&gt;
+&lt;h3&gt;Leste &amp;quot;Extras&amp;quot; software repository&lt;/h3&gt;
+&lt;p&gt;We now have a separate repository for non-core packages, similar to the &amp;quot;Maemo
+Extras&amp;quot; repository - &lt;a class="reference external" href="http://maemo.org/downloads/updated/Maemo5/"&gt;http://maemo.org/downloads/updated/Maemo5/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Currently &lt;cite&gt;leste-extras&lt;/cite&gt; contains a few games, emulators and status widgets.
+Eventually, it will be home to status widgets, home widgets, different browsers,
+map applications, games, and more.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste-extras"&gt;https://github.com/maemo-leste-extras&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="wishlist"&gt;
+&lt;h4&gt;Wishlist&lt;/h4&gt;
+&lt;p&gt;If there is a specific application you would like to see (ported), the wiki now
+contains an &lt;a class="reference external" href="https://leste.maemo.org/Wishlist"&gt;Application Wishlish&lt;/a&gt;. Feel
+free to add suggestions to the table.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="porting"&gt;
+&lt;h4&gt;Porting&lt;/h4&gt;
+&lt;p&gt;Porting applications from Maemo Fremantle (&amp;quot;Maemo 5&amp;quot;) is usually not very hard,
+and sometimes particularly simple, as outlined in this &lt;a class="reference external" href="https://talk.maemo.org/showpost.php?p=1563848&amp;amp;postcount=18"&gt;talk.maemo.org forum
+post&lt;/a&gt;.
+In general, if an application depends on libraries that are mostly available in
+Debian, and uses gtk, it should be not very hard to port. If it relies on Qt, it
+is not yet possible to properly port it, as we do not have a usable Qt5 Hildon
+port yet.&lt;/p&gt;
+&lt;p&gt;One application that was ported recently is the &lt;a class="reference internal" href="#pdf-reader"&gt;PDF Reader&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="python-support"&gt;
+&lt;h3&gt;Python support&lt;/h3&gt;
+&lt;p&gt;Maemo had pretty decent Python bindings -- and they were all for Python 2.5,
+which is beyond ancient. &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/260"&gt;Issue #260&lt;/a&gt;
+was created to port some of the python bindings to Maemo Leste, allow us to run
+port and build (new) python applications. Since a few weeks, &lt;a class="reference external" href="https://github.com/maemo-leste/pygtk"&gt;pygtk&lt;/a&gt; is available with
+hildon widget support, &lt;a class="reference external" href="https://github.com/maemo-leste/python-hildon"&gt;python-hildon&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/python-hildon"&gt;python-hildondesktop&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/python-osso"&gt;python-osso&lt;/a&gt; are all available. There are the
+main bindings to the Maemo mobile environment.  They have all been ported to
+Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to 3.x
+eventually, but 2.7 seemed like a good and useful intermediate goal.&lt;/p&gt;
+&lt;p&gt;And, surely enough, python applications like the binary clock applet now run:&lt;/p&gt;
+&lt;img alt="" src="/images/python-maemo-binaryclock.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Here one can see a home widget example:&lt;/p&gt;
+&lt;img alt="" src="/images/python-hildon-homewidget.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;And a status bar example:&lt;/p&gt;
+&lt;img alt="" src="/images/python-hildon-statuswidget.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Hildon-type stacked windows in Python:&lt;/p&gt;
+&lt;img alt="" src="/images/python-hildon-stack.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/python-hildon-stack-sub.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Hildon-type wizards:&lt;/p&gt;
+&lt;img alt="" src="/images/python-hildon-wizard1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/python-hildon-wizard2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/python-hildon-wizard3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Hildon menus:&lt;/p&gt;
+&lt;img alt="" src="/images/python-hildon-menu1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/python-hildon-menu2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pdf-reader"&gt;
+&lt;h3&gt;PDF reader&lt;/h3&gt;
+&lt;p&gt;Maemo 5 features a PDF reader, and now it has been ported to Maemo Leste, &lt;a class="reference external" href="https://github.com/maemo-leste/osso-pdf-viewer/commits/master"&gt;the
+osso-pdf-viewer source can be found here&lt;/a&gt;.
+Porting was slightly more involved that we hoped, but all in all it was maybe
+half a day of work. Porting did review that there is a bug in the underlying
+maemo file manager libraries, making it impossible for users to select a file to
+open if the enviroment variable &lt;cite&gt;MYDOCSDIR&lt;/cite&gt; is set, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/280"&gt;#280&lt;/a&gt;.
+This bug also effects the SNES emulator drnoksnes, so we'll hopefully get it
+resolved soon.&lt;/p&gt;
+&lt;p&gt;Even though it's currently hard to open PDFs, the application is available in
+the core Maemo Leste repository now, and part of the new images.&lt;/p&gt;
+&lt;img alt="" src="/images/leste-pdf-n900-1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-pdf-n900-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-pdf-n900-3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-pdf-n900-4.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-application-manager"&gt;
+&lt;h3&gt;Hildon Application Manager&lt;/h3&gt;
+&lt;p&gt;Another core component of Maemo is &amp;quot;HAM&amp;quot;, also known as the &amp;quot;Hildon Application
+Manager&amp;quot;. It's an user interface to the Debian package manager, &lt;cite&gt;apt&lt;/cite&gt;, allows
+users to discovery and install packages, uninstall packages, and it also
+notifies the users when updates are available (it won't check for updates on
+metered connections), and if the user agrees, update the system.&lt;/p&gt;
+&lt;p&gt;This was a relatively quick port, and there are like bugs, and there is probably
+more work to be done, nevertheless, it works.&lt;/p&gt;
+&lt;p&gt;This screenshot shows the device informing the user there are (important)
+updates to be installed (&lt;strong&gt;Yellow ! icon&lt;/strong&gt;).&lt;/p&gt;
+&lt;img alt="" src="/images/leste-update-notification-via-alarmd-and-status-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Clicking on the updates in the status menu will show the following dialogs:&lt;/p&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-4.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-5.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-6.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-7.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/leste-n900-ham-updates-8.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;As of today, the Hildon Application Manager will also automatically add and
+enable our &lt;a class="reference internal" href="#leste-extras-software-repository"&gt;Leste &amp;quot;Extras&amp;quot; software repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="portrait-mode"&gt;
+&lt;h3&gt;Portrait mode&lt;/h3&gt;
+&lt;p&gt;For a long time, our hildon-desktop completely did not work in so called
+&amp;quot;Portrait&amp;quot; mode -- where the screen is higher than it is wide. This is very
+common now in smart phones. As a result, many devices have &amp;quot;Portait&amp;quot; as the
+native orientation of this display. The Droid 4 and Pinephone are no exception.&lt;/p&gt;
+&lt;p&gt;Maemo Leste doesn't work very well yet in Portait mode (although the original
+Maemo Fremantle does mostly work really well in Portrait mode), but there were
+some real show stopping bugs, in particular &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/214"&gt;#214&lt;/a&gt;, which resulted in the
+entire desktop been drawn offscreen. Some bugs still remain, like &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/283"&gt;#283&lt;/a&gt; and these affect the
+Pinephone in a negative way.&lt;/p&gt;
+&lt;p&gt;Nevertheless, here's a photo of a Motorola Droid 4 in Portrait mode:&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-rot3.jpg" style="width: 324px; height: 575px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="games"&gt;
+&lt;h3&gt;Games&lt;/h3&gt;
+&lt;p&gt;Various games have been ported from Fremantle, and they work really well on the
+Nokia N900. Most games require some fixes to work on devices with other screen
+sizes and orientations still, however.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;brainparty:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/IlweegA2ORQ"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Latest ScummVM from git works on the N900:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/DHGaUI8wA7Q"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UAE4ALL is also in the &lt;cite&gt;leste-extras&lt;/cite&gt; repository, but could see some more
+testing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The marbles port is in the works, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/275"&gt;the mahjong port mostly works (#275)&lt;/a&gt;, and the chess port
+compiles, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/277"&gt;but is not yet functional (#277)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Relates issues:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/259"&gt;#259&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/273"&gt;#273&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;User Angel Vega also has UAE4ALL and milkytracker running on Maemo Leste:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/UGcQ4NV3jO8"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="upstream"&gt;
+&lt;h3&gt;Upstream&lt;/h3&gt;
+&lt;p&gt;Maemo and Mer (base system for Sailfis OS and Nemo Mobile) share a lot of core
+packages, even though those have diverged over time. &lt;cite&gt;spiiroin&lt;/cite&gt; has Maemo Leste
+running where various core packages are replaced with their (newer!) Mer equivalents:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking"&gt;https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.sailfishos.org/spiiroin/dsme/tree/maemo-leste-hacking"&gt;https://git.sailfishos.org/spiiroin/dsme/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We hope to make use of this work in the (near) future and use the same base
+software as Mer does. The evolved versions of MCE and DSME that are used in Mer
+also have some features that we will need, like being able to deal with the new
+(well, not so new anymore) kernel vibration interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="connui-cellular"&gt;
+&lt;h3&gt;connui-cellular&lt;/h3&gt;
+&lt;p&gt;connui-cellular is the piece of software that contains a lot of widgets and
+libraries used in cellular activities. The home widget that displays the
+operator name, the program that asks you for your PIN to unlock your SIM card,
+the status applet that shows the strength of your cellular signal, what
+technology is being used to connect to the network, the Phone settings applet.
+And more. This piece is being ported to ofono, but it's done ready for general
+use yet. You might see various screenshots in this blogpost already featuring
+various pieces of &lt;cite&gt;connui-cellular&lt;/cite&gt; - it is available in the &lt;cite&gt;leste-devel&lt;/cite&gt;
+repository, which contains unstable or testing versions of our software.&lt;/p&gt;
+&lt;p&gt;Hopefully in the next one or two weeks a first version will make it to the
+production &lt;cite&gt;leste&lt;/cite&gt; repository.&lt;/p&gt;
+&lt;p&gt;This video shows that unlocking your SIM using the pinentry dialog now works:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/BpJPTc8Q_4c"
+;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="osso-abook"&gt;
+&lt;h3&gt;osso-abook&lt;/h3&gt;
+&lt;p&gt;Maemo had a pretty good address book and presence (for Instant Messaging and SIP
+calling) system. Developer freemangordon is working on getting that in Maemo
+Leste as well. It's a rather big task, so it might take a while, but we will
+rely on this piece of software to integrate our various contact applications.
+Examples of this would be the &lt;cite&gt;modest&lt;/cite&gt; email client, and a not-yet-existing
+dialer and SMS application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="themes"&gt;
+&lt;h3&gt;Themes&lt;/h3&gt;
+&lt;p&gt;One of the cool things about being compatible with Maemo 5 &amp;quot;Fremantle&amp;quot; on
+various levels is that it's often really easy to cherry pick things we like.
+In this case, one can literally just download a theme from the maemo.org
+website and install it on Maemo Leste. For example, the &lt;a class="reference external" href="http://maemo.org/downloads/product/Maemo5/hildon-theme-marina/"&gt;Marina Theme&lt;/a&gt; can be
+installed with &lt;cite&gt;dpkg -i &amp;lt;debhere&amp;gt;&lt;/cite&gt;. Currently, the &lt;cite&gt;/usr/share/themes/default&lt;/cite&gt;
+symlink also needs to be updated, but after that, the themes from Maemo 5
+&amp;quot;Fremantle&amp;quot; are fully usable in Maemo Leste.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&amp;amp;org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&amp;amp;org_openpsa_products_search%5B1%5D%5Bvalue%5D=theme&amp;amp;org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&amp;amp;org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&amp;amp;org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&amp;amp;fetch=Search"&gt;There are a lot of themes available too&lt;/a&gt;,
+we are hoping to eventually have a default theme with a Maemo Leste logo, there
+was &lt;a class="reference external" href="https://talk.maemo.org/showthread.php?t=100905"&gt;some discussion about a default Maemo Leste theme on talk.maemo.org&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="devices-hardware"&gt;
+&lt;h2&gt;Devices / Hardware&lt;/h2&gt;
+&lt;div class="section" id="virtual-machine"&gt;
+&lt;h3&gt;Virtual Machine&lt;/h3&gt;
+&lt;p&gt;New Virtual Machine images are available:
+&lt;a class="reference external" href="https://maedevu.maemo.org/images/virtual-machines/20200103/"&gt;https://maedevu.maemo.org/images/virtual-machines/20200103/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/20200112/"&gt;New N900 images are available here&lt;/a&gt;, main changes include:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;There are now udev rules in place to allow using the modem with ofono. (Just
+&lt;cite&gt;apt install ofono mdbus; mdbus2 -s org.ofono&lt;/cite&gt; and you should see the modem)&lt;/li&gt;
+&lt;li&gt;&lt;cite&gt;hildon-application-manager&lt;/cite&gt; is now installed by default, as is the
+&lt;cite&gt;osso-pdf-reader&lt;/cite&gt; application. Users can install packages from Leste &amp;quot;Extras&amp;quot;
+directly from the &lt;cite&gt;hildon-application-manager&lt;/cite&gt;.&lt;/li&gt;
+&lt;li&gt;Specific rules in &lt;cite&gt;/etc/network/interfaces&lt;/cite&gt; for &lt;cite&gt;usb0&lt;/cite&gt; are removed because
+they confliced with &lt;cite&gt;ke-recv&lt;/cite&gt;, net result is that usb networking should be
+more smooth now.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-4"&gt;
+&lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/20200112/"&gt;New Motorola Droid 4 images are available here&lt;/a&gt;, main changes include:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;udev rules for the modem.&lt;/li&gt;
+&lt;li&gt;Much newer kernel (5.4.0 based) with a ton of fixes and improvements,
+including modem and audio support.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/286"&gt;A ofono fork with ridumentary support for the Motorola Droid 4 modem (#286)&lt;/a&gt;. It is
+not installed by default, but &lt;cite&gt;apt install ofono&lt;/cite&gt; will get you set up with
+the right version. It does not yet support the &lt;cite&gt;SimManager&lt;/cite&gt; interface, which
+&lt;cite&gt;connui-cellular&lt;/cite&gt; will need. If someone wants to implement this, that would
+be great.&lt;/li&gt;
+&lt;li&gt;Support for PowerVR testing and development. The current image will allow
+developers to build a PowerVR kernel module and test it, without having to
+recompile or patch the Linux kernel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="section" id="audio"&gt;
+&lt;h4&gt;Audio&lt;/h4&gt;
+&lt;p&gt;Sound works, but requires three manual steps every boot. Basically, you need to
+insert the modules. Inserting them at boot time will not work:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+modprobe snd-soc-cpcap
+modprobe snd-soc-motmdm
+modprobe snd-soc-audio-graph-card
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bluetooth"&gt;
+&lt;h4&gt;Bluetooth&lt;/h4&gt;
+&lt;p&gt;If you like bluetooth, installed &lt;a class="reference external" href="https://github.com/TI-ECS/bt-firmware/blob/master/TIInit_10.6.15.bts"&gt;this firmware file&lt;/a&gt;
+to &lt;cite&gt;/lib/firmware/ti-connectivity/TIInit_10.6.15.bts&lt;/cite&gt; will make it work after a
+reboot:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# hcitool scan
+Scanning ...
+    C0:38:F9:A6:29:BA       Nokia N900
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="powervr-3d-acceleration"&gt;
+&lt;h4&gt;PowerVR / 3D acceleration&lt;/h4&gt;
+&lt;p&gt;Detailed instructions on how to play with PowerVR using this image will follow, but you
+will need at least:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/tmlind/pvr-omap4-dkms/blob/testing-v5.4/README_DROID4"&gt;https://github.com/tmlind/pvr-omap4-dkms/blob/testing-v5.4/README_DROID4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;This package: &lt;a class="reference external" href="https://launchpad.net/ubuntu/artful/armhf/libdri2-1/1.0.0~git20120510+26fee2e-0ubuntu2"&gt;https://launchpad.net/ubuntu/artful/armhf/libdri2-1/1.0.0~git20120510+26fee2e-0ubuntu2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;cite&gt;apt install xserver-xorg-video-omap&lt;/cite&gt;&lt;/li&gt;
+&lt;li&gt;Rename &lt;cite&gt;/etc/X11/xorg.conf.d.pvr&lt;/cite&gt; to &lt;cite&gt;/etc/X11/xorg.conf.d&lt;/cite&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;DOING SO WILL BREAK HILDON-DESKTOP AND MAKE YOUR SYSTEM BOOT LOOP, SO CONTINUE
+AT YOUR OWN RISK&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h3&gt;Interested?&lt;/h3&gt;
+&lt;p&gt;If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker"&gt;bugtracker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We have several Nokia N900 and Motorola Droid 4 units available to interested
+developers&lt;/strong&gt;, so if you are interested in helping out but have trouble acquiring
+a device, let us know.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="n900"></category><category term="droid4"></category><category term="python"></category><category term="games"></category><category term="scummvm"></category><category term="brainparty"></category><category term="portait"></category><category term="pdf"></category><category term="pinephone"></category></entry><entry><title>Maemo Leste - Tenth Update (December) 2019</title><link href="https://maemo-leste.github.io/maemo-leste-tenth-update-december-2019.html" rel="alternate"></link><published>2019-12-31T17:45:00+01:00</published><updated>2019-12-31T17:45:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2019-12-31:/maemo-leste-tenth-update-december-2019.html</id><summary type="html">&lt;p&gt;It's been a few months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html"&gt;ninth update&lt;/a&gt;, and a lot has happened on a
 technical front. That will all be covered in an early January update. This
 update will mostly be about the non-technical part of Maemo Leste.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;First of all - happy new year to everyone reading this …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a few months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-ninth-update-march-till-august-2019.html"&gt;ninth update&lt;/a&gt;, and a lot has happened on a
