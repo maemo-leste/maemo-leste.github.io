@@ -180,7 +180,7 @@ Another core component of Maemo is "HAM", also known as the "Hildon Application
 Manager". It's an user interface to the Debian package manager, `apt`, allows
 users to discovery and install packages, uninstall packages, and it also
 notifies the users when updates are available (it won't check for updates on
-metered connections), and if the user agrees, update the system.
+metered connections), and if the user agrees, updates the system.
 
 This was a relatively quick port, and there are like bugs, and there is probably
 more work to be done, nevertheless, it works.
