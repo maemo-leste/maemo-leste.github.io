@@ -81,7 +81,7 @@ some of the python bindings to Maemo Leste, allow us to run port and build (new)
 python applications. Since a few weeks, `pygtk
 <https://github.com/maemo-leste/pygtk>`_ is available with hildon widget
 support, `python-hildon <https://github.com/maemo-leste/python-hildon>`_,
-`python-hildondesktop <https://github.com/maemo-leste/python-hildon>`_ and
+`python-hildondesktop <https://github.com/maemo-leste/python-hildondesktop>`_ and
 `python-osso <https://github.com/maemo-leste/python-osso>`_ are all available.
 There are the main bindings to the Maemo mobile environment.  They have all been
 ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
