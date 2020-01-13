@@ -92,21 +92,27 @@ there if you're attending FOSDEM.</li>
 images for the Pinephone.</em></p>
 <div class="section" id="software-additions">
 <h2>Software additions</h2>
-<p>There have been many additions, bugfixes and improvements, perhaps (or not) best
-illustrated by this screenshot of a Nokia N900 of a developer running Maemo Leste:</p>
+<p>There have been many additions, bugfixes and improvements, perhaps best
+illustrated by this screenshot of a Nokia N900 of a developer running Maemo
+Leste:</p>
 <img alt="" src="/images/leste-swstate.png" style="width: 576px; height: 324px;" />
-<p>Screenshot shows the availability of python bindings (binary clock), importing
-Fremantle themes, the progress of connui-cellular (3G logo, signal bar, operator
-name 'KPN' on the home screen), and lots of applications that have been ported,
-or are being ported, including a package manager and PDF reader.</p>
+<p>The above screenshot shows the availability of python bindings (binary clock),
+importing Fremantle themes, the progress of connui-cellular (status bar with 3G
+logo, signal bar, operator name 'KPN' on the home screen), and lots of
+applications that have been ported as shortcuts on the homescreen, including a
+package manager and PDF reader.</p>
 <div class="section" id="leste-extras-software-repository">
 <h3>Leste &quot;Extras&quot; software repository</h3>
-<p>We now have a separate repository for non-core packages, similar to the &quot;Maemo
-Extras&quot; repository - <a class="reference external" href="http://maemo.org/downloads/updated/Maemo5/">http://maemo.org/downloads/updated/Maemo5/</a></p>
+<p>We now have a separate repository called <cite>leste-extras</cite> for non-core packages,
+similar to the &quot;Maemo Extras&quot; repository -
+<a class="reference external" href="http://maemo.org/downloads/updated/Maemo5/">http://maemo.org/downloads/updated/Maemo5/</a></p>
 <p>Currently <cite>leste-extras</cite> contains a few games, emulators and status widgets.
 Eventually, it will be home to status widgets, home widgets, different browsers,
 map applications, games, and more.</p>
 <p><a class="reference external" href="https://github.com/maemo-leste-extras">https://github.com/maemo-leste-extras</a></p>
+<p>Keep in mind that in addition to the packages available in this repository,
+every package available in Debian can be installed using <cite>apt-get install</cite> -
+usability will vary.</p>
 <div class="section" id="wishlist">
 <h4>Wishlist</h4>
 <p>If there is a specific application you would like to see (ported), the wiki now
@@ -119,22 +125,21 @@ free to add suggestions to the table.</p>
 and sometimes particularly simple, as outlined in this <a class="reference external" href="https://talk.maemo.org/showpost.php?p=1563848&amp;postcount=18">talk.maemo.org forum
 post</a>.
 In general, if an application depends on libraries that are mostly available in
-Debian, and uses gtk, it should be not very hard to port. If it relies on Qt, it
+Debian, and uses gtk2, it should be not very hard to port. If it relies on Qt, it
 is not yet possible to properly port it, as we do not have a usable Qt5 Hildon
-port yet.</p>
+port yet. A <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/261">gtk3 port is in the works</a> -but help is needed.</p>
 <p>One application that was ported recently is the <a class="reference internal" href="#pdf-reader">PDF Reader</a>.</p>
 </div>
 </div>
 <div class="section" id="python-support">
 <h3>Python support</h3>
-<p><a class="reference external" href="http://wiki.maemo.org/PyMaemo">Maemo had pretty decent Python bindings and documentation for them</a> -- and they were all for Python 2.5, which is
-beyond ancient. <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/260">Issue #260</a> was created to port
-some of the python bindings to Maemo Leste, allow us to run port and build (new)
-python applications. Since a few weeks, <a class="reference external" href="https://github.com/maemo-leste/pygtk">pygtk</a> is available with hildon widget
-support, <a class="reference external" href="https://github.com/maemo-leste/python-hildon">python-hildon</a>,
-<a class="reference external" href="https://github.com/maemo-leste/python-hildondesktop">python-hildondesktop</a> and
-<a class="reference external" href="https://github.com/maemo-leste/python-osso">python-osso</a> are all available.
-There are the main bindings to the Maemo mobile environment.  They have all been
+<p><a class="reference external" href="http://wiki.maemo.org/PyMaemo">Maemo had pretty decent Python bindings and documentation for them</a> -- and they were only available for Python
+2.5, which is beyond ancient. <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/260">Issue #260</a> was created to
+modernise and port some of the python bindings to Maemo Leste, allowing us to
+run port and build (new) python applications.</p>
+<p>As of a few weeks, <a class="reference external" href="https://github.com/maemo-leste/pygtk">pygtk</a> is available
+with hildon widget support, <a class="reference external" href="https://github.com/maemo-leste/python-hildon">python-hildon</a>, <a class="reference external" href="https://github.com/maemo-leste/python-hildondesktop">python-hildondesktop</a> and <a class="reference external" href="https://github.com/maemo-leste/python-osso">python-osso</a> are all available as well.
+These are the main bindings to the Maemo mobile environment.  They have all been
 ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
 3.x eventually, but 2.7 seemed like a good and useful intermediate goal.</p>
 <p>And, surely enough, python applications like the binary clock applet now run:</p>
@@ -156,9 +161,9 @@ ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
 </div>
 <div class="section" id="pdf-reader">
 <h3>PDF reader</h3>
-<p>Maemo 5 features a PDF reader, and now it has been ported to Maemo Leste, <a class="reference external" href="https://github.com/maemo-leste/osso-pdf-viewer/commits/master">the
+<p>Maemo 5 features a PDF reader, and it has now been ported to Maemo Leste, <a class="reference external" href="https://github.com/maemo-leste/osso-pdf-viewer/commits/master">the
 osso-pdf-viewer source can be found here</a>.
-Porting was slightly more involved that we hoped, but all in all it was maybe
+Porting was slightly more involved than we hoped, but all in all it was maybe
 half a day of work. Porting did review that there is a bug in the underlying
 maemo file manager libraries, making it impossible for users to select a file to
 open if the enviroment variable <cite>MYDOCSDIR</cite> is set, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/280">#280</a>.
@@ -178,12 +183,13 @@ Manager&quot;. It's an user interface to the Debian package manager, <cite>apt</
 users to discovery and install packages, uninstall packages, and it also
 notifies the users when updates are available (it won't check for updates on
 metered connections), and if the user agrees, updates the system.</p>
-<p>This was a relatively quick port, and there are like bugs, and there is probably
-more work to be done, nevertheless, it works.</p>
+<p>This was a relatively quick port, and there are likely bugs, so there is more
+work to be done, nevertheless, it works.</p>
 <p>This screenshot shows the device informing the user there are (important)
-updates to be installed (<strong>Yellow ! icon</strong>).</p>
+updates to be installed (<strong>Yellow &quot;!&quot; icon</strong>).</p>
 <img alt="" src="/images/leste-update-notification-via-alarmd-and-status-applet.png" style="width: 576px; height: 324px;" />
-<p>Clicking on the updates in the status menu will show the following dialogs:</p>
+<p>Clicking on the updates button in the status menu will show the following
+sequence of dialogs:</p>
 <img alt="" src="/images/leste-n900-ham-updates.png" style="width: 576px; height: 324px;" />
 <img alt="" src="/images/leste-n900-ham-updates-2.png" style="width: 576px; height: 324px;" />
 <img alt="" src="/images/leste-n900-ham-updates-3.png" style="width: 576px; height: 324px;" />
@@ -197,13 +203,13 @@ enable our <a class="reference internal" href="#leste-extras-software-repository
 </div>
 <div class="section" id="portrait-mode">
 <h3>Portrait mode</h3>
-<p>For a long time, our hildon-desktop completely did not work in so called
-&quot;Portrait&quot; mode -- where the screen is higher than it is wide. This is very
-common now in smart phones. As a result, many devices have &quot;Portait&quot; as the
+<p>For a long time, our hildon-desktop environment completely did not work in so
+called &quot;Portrait&quot; mode -- where the screen is higher than it is wide. This is
+very common now in smart phones. As a result, many devices have &quot;Portait&quot; as the
 native orientation of this display. The Droid 4 and Pinephone are no exception.</p>
-<p>Maemo Leste doesn't work very well yet in Portait mode (although the original
-Maemo Fremantle does mostly work really well in Portrait mode), but there were
-some real show stopping bugs, in particular <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/214">#214</a>, which resulted in the
+<p>Maemo Leste still doesn't work very well yet in Portait mode (although the
+original Maemo Fremantle does mostly work really well in Portrait mode), but
+there were some real show stopping bugs, in particular <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/214">#214</a>, which resulted in the
 entire desktop been drawn offscreen. Some bugs still remain, like <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/283">#283</a> and these affect the
 Pinephone in a negative way.</p>
 <p>Nevertheless, here's a photo of a Motorola Droid 4 in Portrait mode:</p>
@@ -239,9 +245,10 @@ picture-in-picture" allowfullscreen></iframe></blockquote>
 </div>
 <div class="section" id="upstream">
 <h3>Upstream</h3>
-<p>Maemo and Mer (base system for Sailfis OS and Nemo Mobile) share a lot of core
+<p>Maemo and Mer (base system for Sailfish OS and Nemo Mobile) share a lot of core
 packages, even though those have diverged over time. <cite>spiiroin</cite> has Maemo Leste
-running where various core packages are replaced with their (newer!) Mer equivalents:</p>
+running with various core packages are replaced with their (newer!) Mer
+equivalents:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking">https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking</a></li>
 <li><a class="reference external" href="https://git.sailfishos.org/spiiroin/dsme/tree/maemo-leste-hacking">https://git.sailfishos.org/spiiroin/dsme/tree/maemo-leste-hacking</a></li>
@@ -282,12 +289,12 @@ dialer and SMS application.</p>
 <div class="section" id="themes">
 <h3>Themes</h3>
 <p>One of the cool things about being compatible with Maemo 5 &quot;Fremantle&quot; on
-various levels is that it's often really easy to cherry pick things we like.
-In this case, one can literally just download a theme from the maemo.org
+various levels is that it's often really easy to cherry pick things we like.</p>
+<p>In this case, one can literally just download a theme from the maemo.org
 website and install it on Maemo Leste. For example, the <a class="reference external" href="http://maemo.org/downloads/product/Maemo5/hildon-theme-marina/">Marina Theme</a> can be
 installed with <cite>dpkg -i &lt;debhere&gt;</cite>. Currently, the <cite>/usr/share/themes/default</cite>
 symlink also needs to be updated, but after that, the themes from Maemo 5
-&quot;Fremantle&quot; are fully usable in Maemo Leste.</p>
+&quot;Fremantle&quot; are fully usable on Maemo Leste.</p>
 <p><a class="reference external" href="http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&amp;org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&amp;org_openpsa_products_search%5B1%5D%5Bvalue%5D=theme&amp;org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&amp;org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&amp;org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&amp;fetch=Search">There are a lot of themes available too</a>,
 we are hoping to eventually have a default theme with a Maemo Leste logo, there
 was <a class="reference external" href="https://talk.maemo.org/showthread.php?t=100905">some discussion about a default Maemo Leste theme on talk.maemo.org</a></p>
@@ -361,8 +368,8 @@ will need at least:</p>
 <li><cite>apt install xserver-xorg-video-omap</cite></li>
 <li>Rename <cite>/etc/X11/xorg.conf.d.pvr</cite> to <cite>/etc/X11/xorg.conf.d</cite></li>
 </ol>
-<p><strong>DOING SO WILL BREAK HILDON-DESKTOP AND MAKE YOUR SYSTEM BOOT LOOP, SO CONTINUE
-AT YOUR OWN RISK</strong>.</p>
+<p><strong>DOING SO WILL BREAK HILDON-DESKTOP AND MIGHT MAKE YOUR SYSTEM BOOT LOOP, SO
+CONTINUE AT YOUR OWN RISK</strong>.</p>
 </div>
 </div>
 <div class="section" id="interested">
