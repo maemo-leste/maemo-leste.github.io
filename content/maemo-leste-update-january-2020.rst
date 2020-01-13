@@ -73,18 +73,19 @@ One application that was ported recently is the `PDF Reader`_.
 Python support
 --------------
 
-Maemo had pretty decent Python bindings -- and they were all for Python 2.5,
-which is beyond ancient. `Issue #260 <https://github.com/maemo-leste/bugtracker/issues/260>`_
-was created to port some of the python bindings to Maemo Leste, allow us to run
-port and build (new) python applications. Since a few weeks, `pygtk
-<https://github.com/maemo-leste/pygtk>`_ is available with
-hildon widget support, `python-hildon
-<https://github.com/maemo-leste/python-hildon>`_, `python-hildondesktop
-<https://github.com/maemo-leste/python-hildon>`_ and `python-osso
-<https://github.com/maemo-leste/python-osso>`_ are all available. There are the
-main bindings to the Maemo mobile environment.  They have all been ported to
-Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to 3.x
-eventually, but 2.7 seemed like a good and useful intermediate goal.
+`Maemo had pretty decent Python bindings and documentation for them
+<http://wiki.maemo.org/PyMaemo>`_ -- and they were all for Python 2.5, which is
+beyond ancient. `Issue #260
+<https://github.com/maemo-leste/bugtracker/issues/260>`_ was created to port
+some of the python bindings to Maemo Leste, allow us to run port and build (new)
+python applications. Since a few weeks, `pygtk
+<https://github.com/maemo-leste/pygtk>`_ is available with hildon widget
+support, `python-hildon <https://github.com/maemo-leste/python-hildon>`_,
+`python-hildondesktop <https://github.com/maemo-leste/python-hildon>`_ and
+`python-osso <https://github.com/maemo-leste/python-osso>`_ are all available.
+There are the main bindings to the Maemo mobile environment.  They have all been
+ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
+3.x eventually, but 2.7 seemed like a good and useful intermediate goal.
 
 And, surely enough, python applications like the binary clock applet now run:
 
