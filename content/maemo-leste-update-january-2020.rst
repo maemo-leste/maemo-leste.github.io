@@ -27,7 +27,7 @@ Software additions
 ==================
 
 There have been many additions, bugfixes and improvements, perhaps best
-illustrated by this screenshot of a Nokia N900 of a developer running Maemo
+illustrated by this screenshot of a developer's Nokia N900 running Maemo
 Leste:
 
 .. image:: /images/leste-swstate.png
@@ -36,9 +36,8 @@ Leste:
 
 The above screenshot shows the availability of python bindings (binary clock),
 importing Fremantle themes, the progress of connui-cellular (status bar with 3G
-logo, signal bar, operator name 'KPN' on the home screen), and lots of
-applications that have been ported as shortcuts on the homescreen, including a
-package manager and PDF reader.
+logo, signal bar, operator name 'KPN' on the home screen), and homescreen shortcuts of
+applications that have been ported, including a package manager and PDF reader.
 
 
 Leste "Extras" software repository
@@ -157,7 +156,7 @@ PDF reader
 Maemo 5 features a PDF reader, and it has now been ported to Maemo Leste, `the
 osso-pdf-viewer source can be found here <https://github.com/maemo-leste/osso-pdf-viewer/commits/master>`_.
 Porting was slightly more involved than we hoped, but all in all it was maybe
-half a day of work. Porting did review that there is a bug in the underlying
+half a day of work. Porting did reveal that there is a bug in the underlying
 maemo file manager libraries, making it impossible for users to select a file to
 open if the enviroment variable `MYDOCSDIR` is set, see `#280 <https://github.com/maemo-leste/bugtracker/issues/280>`_.
 This bug also effects the SNES emulator drnoksnes, so we'll hopefully get it
@@ -187,13 +186,13 @@ Hildon Application Manager
 --------------------------
 
 Another core component of Maemo is "HAM", also known as the "Hildon Application
-Manager". It's an user interface to the Debian package manager, `apt`, allows
-users to discovery and install packages, uninstall packages, and it also
-notifies the users when updates are available (it won't check for updates on
-metered connections), and if the user agrees, updates the system.
+Manager". It's an user interface to the Debian package manager, `apt`, which allows
+users to discover, install and uninstall packages, and it also notifies the user 
+when updates are available, and if the user agrees, updates the system. You can 
+adjust the frequency of update checks.
 
 This was a relatively quick port, and there are likely bugs, so there is more
-work to be done, nevertheless, it works.
+work to be done. Nevertheless, it works.
 
 This screenshot shows the device informing the user there are (important)
 updates to be installed (**Yellow "!" icon**).
@@ -247,12 +246,12 @@ Portrait mode
 
 For a long time, our hildon-desktop environment completely did not work in so
 called "Portrait" mode -- where the screen is higher than it is wide. This is
-very common now in smart phones. As a result, many devices have "Portait" as the
-native orientation of this display. The Droid 4 and Pinephone are no exception.
+very common now in smart phones. As a result, many devices have "Portrait" as the
+native orientation of the display. The Droid 4 and Pinephone are no exception.
 
-Maemo Leste still doesn't work very well yet in Portait mode (although the
-original Maemo Fremantle does mostly work really well in Portrait mode), but
-there were some real show stopping bugs, in particular `#214
+Maemo Leste still doesn't work very well yet in Portrait mode (although the
+original Maemo Fremantle does mostly work really well in Portrait mode).
+There were some real show stopping bugs, in particular `#214
 <https://github.com/maemo-leste/bugtracker/issues/214>`_, which resulted in the
 entire desktop been drawn offscreen. Some bugs still remain, like `#283
 <https://github.com/maemo-leste/bugtracker/issues/283>`_ and these affect the
@@ -269,8 +268,8 @@ Games
 -----
 
 Various games have been ported from Fremantle, and they work really well on the
-Nokia N900. Most games require some fixes to work on devices with other screen
-sizes and orientations still, however.
+Nokia N900. Most games still require some fixes to work on devices with other screen
+sizes and orientations.
 
 * brainparty:
 
@@ -296,7 +295,7 @@ The marbles port is in the works, `the mahjong port mostly works (#275)
 compiles, `but is not yet functional (#277)
 <https://github.com/maemo-leste/bugtracker/issues/277>`_
 
-Relates issues:
+Related issues:
 
 `#259 <https://github.com/maemo-leste/bugtracker/issues/259>`_, `#273
 <https://github.com/maemo-leste/bugtracker/issues/273>`_
@@ -314,7 +313,7 @@ Upstream
 
 Maemo and Mer (base system for Sailfish OS and Nemo Mobile) share a lot of core
 packages, even though those have diverged over time. `spiiroin` has Maemo Leste
-running with various core packages are replaced with their (newer!) Mer
+running with various core packages replaced with their (newer!) Mer
 equivalents:
 
 * https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking
@@ -334,7 +333,7 @@ libraries used in cellular activities. The home widget that displays the
 operator name, the program that asks you for your PIN to unlock your SIM card,
 the status applet that shows the strength of your cellular signal, what
 technology is being used to connect to the network, the Phone settings applet.
-And more. This piece is being ported to ofono, but it's done ready for general
+And more. This piece is being ported to ofono, but it's not ready for general
 use yet. You might see various screenshots in this blogpost already featuring
 various pieces of `connui-cellular` - it is available in the `leste-devel`
 repository, which contains unstable or testing versions of our software.
@@ -342,7 +341,7 @@ repository, which contains unstable or testing versions of our software.
 Hopefully in the next one or two weeks a first version will make it to the
 production `leste` repository.
 
-This video shows that unlocking your SIM using the pinentry dialog now works:
+This video shows that unlocking your SIM using the pin-entry dialog now works:
 
   .. raw:: html
   
@@ -415,7 +414,7 @@ Motorola Droid 4
 1. udev rules for the modem.
 2. Much newer kernel (5.4.0 based) with a ton of fixes and improvements,
    including modem and audio support.
-3. `A ofono fork with ridumentary support for the Motorola Droid 4 modem (#286)
+3. `An ofono fork with rudimentary support for the Motorola Droid 4 modem (#286)
    <https://github.com/maemo-leste/bugtracker/issues/286>`_. It is
    not installed by default, but `apt install ofono` will get you set up with
    the right version. It does not yet support the `SimManager` interface, which
@@ -438,7 +437,7 @@ insert the modules. Inserting them at boot time will not work::
 Bluetooth
 ~~~~~~~~~
 
-If you like bluetooth, installed `this firmware file
+If you like bluetooth, installing `this firmware file
 <https://github.com/TI-ECS/bt-firmware/blob/master/TIInit_10.6.15.bts>`_
 to `/lib/firmware/ti-connectivity/TIInit_10.6.15.bts` will make it work after a
 reboot::
