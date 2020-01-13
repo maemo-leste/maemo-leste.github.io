@@ -18,14 +18,13 @@ images for the Pinephone.&lt;/em&gt;&lt;/p&gt;
 &lt;div class="section" id="software-additions"&gt;
 &lt;h2&gt;Software additions&lt;/h2&gt;
 &lt;p&gt;There have been many additions, bugfixes and improvements, perhaps best
-illustrated by this screenshot of a Nokia N900 of a developer running Maemo
+illustrated by this screenshot of a developer's Nokia N900 running Maemo
 Leste:&lt;/p&gt;
 &lt;img alt="" src="/images/leste-swstate.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;The above screenshot shows the availability of python bindings (binary clock),
 importing Fremantle themes, the progress of connui-cellular (status bar with 3G
-logo, signal bar, operator name 'KPN' on the home screen), and lots of
-applications that have been ported as shortcuts on the homescreen, including a
-package manager and PDF reader.&lt;/p&gt;
+logo, signal bar, operator name 'KPN' on the home screen), and homescreen shortcuts of
+applications that have been ported, including a package manager and PDF reader.&lt;/p&gt;
 &lt;div class="section" id="leste-extras-software-repository"&gt;
 &lt;h3&gt;Leste &amp;quot;Extras&amp;quot; software repository&lt;/h3&gt;
 &lt;p&gt;We now have a separate repository called &lt;cite&gt;leste-extras&lt;/cite&gt; for non-core packages,
@@ -89,7 +88,7 @@ ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
 &lt;p&gt;Maemo 5 features a PDF reader, and it has now been ported to Maemo Leste, &lt;a class="reference external" href="https://github.com/maemo-leste/osso-pdf-viewer/commits/master"&gt;the
 osso-pdf-viewer source can be found here&lt;/a&gt;.
 Porting was slightly more involved than we hoped, but all in all it was maybe
-half a day of work. Porting did review that there is a bug in the underlying
+half a day of work. Porting did reveal that there is a bug in the underlying
 maemo file manager libraries, making it impossible for users to select a file to
 open if the enviroment variable &lt;cite&gt;MYDOCSDIR&lt;/cite&gt; is set, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/280"&gt;#280&lt;/a&gt;.
 This bug also effects the SNES emulator drnoksnes, so we'll hopefully get it
@@ -104,12 +103,12 @@ the core Maemo Leste repository now, and part of the new images.&lt;/p&gt;
 &lt;div class="section" id="hildon-application-manager"&gt;
 &lt;h3&gt;Hildon Application Manager&lt;/h3&gt;
 &lt;p&gt;Another core component of Maemo is &amp;quot;HAM&amp;quot;, also known as the &amp;quot;Hildon Application
-Manager&amp;quot;. It's an user interface to the Debian package manager, &lt;cite&gt;apt&lt;/cite&gt;, allows
-users to discovery and install packages, uninstall packages, and it also
-notifies the users when updates are available (it won't check for updates on
-metered connections), and if the user agrees, updates the system.&lt;/p&gt;
+Manager&amp;quot;. It's an user interface to the Debian package manager, &lt;cite&gt;apt&lt;/cite&gt;, which allows
+users to discover, install and uninstall packages, and it also notifies the user
+when updates are available, and if the user agrees, updates the system. You can
+adjust the frequency of update checks.&lt;/p&gt;
 &lt;p&gt;This was a relatively quick port, and there are likely bugs, so there is more
-work to be done, nevertheless, it works.&lt;/p&gt;
+work to be done. Nevertheless, it works.&lt;/p&gt;
 &lt;p&gt;This screenshot shows the device informing the user there are (important)
 updates to be installed (&lt;strong&gt;Yellow &amp;quot;!&amp;quot; icon&lt;/strong&gt;).&lt;/p&gt;
 &lt;img alt="" src="/images/leste-update-notification-via-alarmd-and-status-applet.png" style="width: 576px; height: 324px;" /&gt;
@@ -130,11 +129,11 @@ enable our &lt;a class="reference internal" href="#leste-extras-software-reposit
 &lt;h3&gt;Portrait mode&lt;/h3&gt;
 &lt;p&gt;For a long time, our hildon-desktop environment completely did not work in so
 called &amp;quot;Portrait&amp;quot; mode -- where the screen is higher than it is wide. This is
-very common now in smart phones. As a result, many devices have &amp;quot;Portait&amp;quot; as the
-native orientation of this display. The Droid 4 and Pinephone are no exception.&lt;/p&gt;
-&lt;p&gt;Maemo Leste still doesn't work very well yet in Portait mode (although the
-original Maemo Fremantle does mostly work really well in Portrait mode), but
-there were some real show stopping bugs, in particular &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/214"&gt;#214&lt;/a&gt;, which resulted in the
+very common now in smart phones. As a result, many devices have &amp;quot;Portrait&amp;quot; as the
+native orientation of the display. The Droid 4 and Pinephone are no exception.&lt;/p&gt;
+&lt;p&gt;Maemo Leste still doesn't work very well yet in Portrait mode (although the
+original Maemo Fremantle does mostly work really well in Portrait mode).
+There were some real show stopping bugs, in particular &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/214"&gt;#214&lt;/a&gt;, which resulted in the
 entire desktop been drawn offscreen. Some bugs still remain, like &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/283"&gt;#283&lt;/a&gt; and these affect the
 Pinephone in a negative way.&lt;/p&gt;
 &lt;p&gt;Nevertheless, here's a photo of a Motorola Droid 4 in Portrait mode:&lt;/p&gt;
@@ -143,8 +142,8 @@ Pinephone in a negative way.&lt;/p&gt;
 &lt;div class="section" id="games"&gt;
 &lt;h3&gt;Games&lt;/h3&gt;
 &lt;p&gt;Various games have been ported from Fremantle, and they work really well on the
-Nokia N900. Most games require some fixes to work on devices with other screen
-sizes and orientations still, however.&lt;/p&gt;
+Nokia N900. Most games still require some fixes to work on devices with other screen
+sizes and orientations.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p class="first"&gt;brainparty:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/IlweegA2ORQ"
@@ -160,7 +159,7 @@ testing.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;The marbles port is in the works, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/275"&gt;the mahjong port mostly works (#275)&lt;/a&gt;, and the chess port
 compiles, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/277"&gt;but is not yet functional (#277)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Relates issues:&lt;/p&gt;
+&lt;p&gt;Related issues:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/259"&gt;#259&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/273"&gt;#273&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;User Angel Vega also has UAE4ALL and milkytracker running on Maemo Leste:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -172,7 +171,7 @@ picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/blockquote&gt;
 &lt;h3&gt;Upstream&lt;/h3&gt;
 &lt;p&gt;Maemo and Mer (base system for Sailfish OS and Nemo Mobile) share a lot of core
 packages, even though those have diverged over time. &lt;cite&gt;spiiroin&lt;/cite&gt; has Maemo Leste
-running with various core packages are replaced with their (newer!) Mer
+running with various core packages replaced with their (newer!) Mer
 equivalents:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking"&gt;https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking&lt;/a&gt;&lt;/li&gt;
@@ -190,13 +189,13 @@ libraries used in cellular activities. The home widget that displays the
 operator name, the program that asks you for your PIN to unlock your SIM card,
 the status applet that shows the strength of your cellular signal, what
 technology is being used to connect to the network, the Phone settings applet.
-And more. This piece is being ported to ofono, but it's done ready for general
+And more. This piece is being ported to ofono, but it's not ready for general
 use yet. You might see various screenshots in this blogpost already featuring
 various pieces of &lt;cite&gt;connui-cellular&lt;/cite&gt; - it is available in the &lt;cite&gt;leste-devel&lt;/cite&gt;
 repository, which contains unstable or testing versions of our software.&lt;/p&gt;
 &lt;p&gt;Hopefully in the next one or two weeks a first version will make it to the
 production &lt;cite&gt;leste&lt;/cite&gt; repository.&lt;/p&gt;
-&lt;p&gt;This video shows that unlocking your SIM using the pinentry dialog now works:&lt;/p&gt;
+&lt;p&gt;This video shows that unlocking your SIM using the pin-entry dialog now works:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/BpJPTc8Q_4c"
 ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
@@ -253,7 +252,7 @@ more smooth now.&lt;/li&gt;
 &lt;li&gt;udev rules for the modem.&lt;/li&gt;
 &lt;li&gt;Much newer kernel (5.4.0 based) with a ton of fixes and improvements,
 including modem and audio support.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/286"&gt;A ofono fork with ridumentary support for the Motorola Droid 4 modem (#286)&lt;/a&gt;. It is
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/286"&gt;An ofono fork with rudimentary support for the Motorola Droid 4 modem (#286)&lt;/a&gt;. It is
 not installed by default, but &lt;cite&gt;apt install ofono&lt;/cite&gt; will get you set up with
 the right version. It does not yet support the &lt;cite&gt;SimManager&lt;/cite&gt; interface, which
 &lt;cite&gt;connui-cellular&lt;/cite&gt; will need. If someone wants to implement this, that would
@@ -274,7 +273,7 @@ modprobe snd-soc-audio-graph-card
 &lt;/div&gt;
 &lt;div class="section" id="bluetooth"&gt;
 &lt;h4&gt;Bluetooth&lt;/h4&gt;
-&lt;p&gt;If you like bluetooth, installed &lt;a class="reference external" href="https://github.com/TI-ECS/bt-firmware/blob/master/TIInit_10.6.15.bts"&gt;this firmware file&lt;/a&gt;
+&lt;p&gt;If you like bluetooth, installing &lt;a class="reference external" href="https://github.com/TI-ECS/bt-firmware/blob/master/TIInit_10.6.15.bts"&gt;this firmware file&lt;/a&gt;
 to &lt;cite&gt;/lib/firmware/ti-connectivity/TIInit_10.6.15.bts&lt;/cite&gt; will make it work after a
 reboot:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
