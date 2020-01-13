@@ -26,29 +26,37 @@ images for the Pinephone.*
 Software additions
 ==================
 
-There have been many additions, bugfixes and improvements, perhaps (or not) best
-illustrated by this screenshot of a Nokia N900 of a developer running Maemo Leste:
+There have been many additions, bugfixes and improvements, perhaps best
+illustrated by this screenshot of a Nokia N900 of a developer running Maemo
+Leste:
 
 .. image:: /images/leste-swstate.png
   :height: 324px
   :width: 576px
 
-Screenshot shows the availability of python bindings (binary clock), importing
-Fremantle themes, the progress of connui-cellular (3G logo, signal bar, operator
-name 'KPN' on the home screen), and lots of applications that have been ported,
-or are being ported, including a package manager and PDF reader.
+The above screenshot shows the availability of python bindings (binary clock),
+importing Fremantle themes, the progress of connui-cellular (status bar with 3G
+logo, signal bar, operator name 'KPN' on the home screen), and lots of
+applications that have been ported as shortcuts on the homescreen, including a
+package manager and PDF reader.
+
 
 Leste "Extras" software repository
 ----------------------------------
 
-We now have a separate repository for non-core packages, similar to the "Maemo
-Extras" repository - http://maemo.org/downloads/updated/Maemo5/
+We now have a separate repository called `leste-extras` for non-core packages,
+similar to the "Maemo Extras" repository -
+http://maemo.org/downloads/updated/Maemo5/
 
 Currently `leste-extras` contains a few games, emulators and status widgets.
 Eventually, it will be home to status widgets, home widgets, different browsers,
 map applications, games, and more.
 
 https://github.com/maemo-leste-extras
+
+Keep in mind that in addition to the packages available in this repository,
+every package available in Debian can be installed using `apt-get install` -
+usability will vary.
 
 Wishlist
 ~~~~~~~~
@@ -64,9 +72,10 @@ Porting applications from Maemo Fremantle ("Maemo 5") is usually not very hard,
 and sometimes particularly simple, as outlined in this `talk.maemo.org forum
 post <https://talk.maemo.org/showpost.php?p=1563848&postcount=18>`_.
 In general, if an application depends on libraries that are mostly available in
-Debian, and uses gtk, it should be not very hard to port. If it relies on Qt, it
+Debian, and uses gtk2, it should be not very hard to port. If it relies on Qt, it
 is not yet possible to properly port it, as we do not have a usable Qt5 Hildon
-port yet.
+port yet. A `gtk3 port is in the works
+<https://github.com/maemo-leste/bugtracker/issues/261>`_ -but help is needed.
 
 One application that was ported recently is the `PDF Reader`_.
 
@@ -74,16 +83,18 @@ Python support
 --------------
 
 `Maemo had pretty decent Python bindings and documentation for them
-<http://wiki.maemo.org/PyMaemo>`_ -- and they were all for Python 2.5, which is
-beyond ancient. `Issue #260
-<https://github.com/maemo-leste/bugtracker/issues/260>`_ was created to port
-some of the python bindings to Maemo Leste, allow us to run port and build (new)
-python applications. Since a few weeks, `pygtk
-<https://github.com/maemo-leste/pygtk>`_ is available with hildon widget
-support, `python-hildon <https://github.com/maemo-leste/python-hildon>`_,
-`python-hildondesktop <https://github.com/maemo-leste/python-hildondesktop>`_ and
-`python-osso <https://github.com/maemo-leste/python-osso>`_ are all available.
-There are the main bindings to the Maemo mobile environment.  They have all been
+<http://wiki.maemo.org/PyMaemo>`_ -- and they were only available for Python
+2.5, which is beyond ancient. `Issue #260
+<https://github.com/maemo-leste/bugtracker/issues/260>`_ was created to
+modernise and port some of the python bindings to Maemo Leste, allowing us to
+run port and build (new) python applications.
+
+As of a few weeks, `pygtk <https://github.com/maemo-leste/pygtk>`_ is available
+with hildon widget support, `python-hildon
+<https://github.com/maemo-leste/python-hildon>`_, `python-hildondesktop
+<https://github.com/maemo-leste/python-hildondesktop>`_ and `python-osso
+<https://github.com/maemo-leste/python-osso>`_ are all available as well.
+These are the main bindings to the Maemo mobile environment.  They have all been
 ported to Python 2.7. Python 2.7 is now end of life, so we'll have to migrate to
 3.x eventually, but 2.7 seemed like a good and useful intermediate goal.
 
@@ -143,9 +154,9 @@ Hildon menus:
 PDF reader
 ----------
 
-Maemo 5 features a PDF reader, and now it has been ported to Maemo Leste, `the
+Maemo 5 features a PDF reader, and it has now been ported to Maemo Leste, `the
 osso-pdf-viewer source can be found here <https://github.com/maemo-leste/osso-pdf-viewer/commits/master>`_.
-Porting was slightly more involved that we hoped, but all in all it was maybe
+Porting was slightly more involved than we hoped, but all in all it was maybe
 half a day of work. Porting did review that there is a bug in the underlying
 maemo file manager libraries, making it impossible for users to select a file to
 open if the enviroment variable `MYDOCSDIR` is set, see `#280 <https://github.com/maemo-leste/bugtracker/issues/280>`_.
@@ -158,7 +169,6 @@ the core Maemo Leste repository now, and part of the new images.
 .. image:: /images/leste-pdf-n900-1.png
   :height: 324px
   :width: 576px
-
 
 .. image:: /images/leste-pdf-n900-2.png
   :height: 324px
@@ -182,17 +192,18 @@ users to discovery and install packages, uninstall packages, and it also
 notifies the users when updates are available (it won't check for updates on
 metered connections), and if the user agrees, updates the system.
 
-This was a relatively quick port, and there are like bugs, and there is probably
-more work to be done, nevertheless, it works.
+This was a relatively quick port, and there are likely bugs, so there is more
+work to be done, nevertheless, it works.
 
 This screenshot shows the device informing the user there are (important)
-updates to be installed (**Yellow ! icon**).
+updates to be installed (**Yellow "!" icon**).
 
 .. image:: /images/leste-update-notification-via-alarmd-and-status-applet.png
   :height: 324px
   :width: 576px
 
-Clicking on the updates in the status menu will show the following dialogs:
+Clicking on the updates button in the status menu will show the following
+sequence of dialogs:
 
 .. image:: /images/leste-n900-ham-updates.png
   :height: 324px
@@ -234,14 +245,14 @@ enable our `Leste "Extras" software repository`_.
 Portrait mode
 -------------
 
-For a long time, our hildon-desktop completely did not work in so called
-"Portrait" mode -- where the screen is higher than it is wide. This is very
-common now in smart phones. As a result, many devices have "Portait" as the
+For a long time, our hildon-desktop environment completely did not work in so
+called "Portrait" mode -- where the screen is higher than it is wide. This is
+very common now in smart phones. As a result, many devices have "Portait" as the
 native orientation of this display. The Droid 4 and Pinephone are no exception.
 
-Maemo Leste doesn't work very well yet in Portait mode (although the original
-Maemo Fremantle does mostly work really well in Portrait mode), but there were
-some real show stopping bugs, in particular `#214
+Maemo Leste still doesn't work very well yet in Portait mode (although the
+original Maemo Fremantle does mostly work really well in Portrait mode), but
+there were some real show stopping bugs, in particular `#214
 <https://github.com/maemo-leste/bugtracker/issues/214>`_, which resulted in the
 entire desktop been drawn offscreen. Some bugs still remain, like `#283
 <https://github.com/maemo-leste/bugtracker/issues/283>`_ and these affect the
@@ -301,9 +312,10 @@ User Angel Vega also has UAE4ALL and milkytracker running on Maemo Leste:
 Upstream
 --------
 
-Maemo and Mer (base system for Sailfis OS and Nemo Mobile) share a lot of core
+Maemo and Mer (base system for Sailfish OS and Nemo Mobile) share a lot of core
 packages, even though those have diverged over time. `spiiroin` has Maemo Leste
-running where various core packages are replaced with their (newer!) Mer equivalents:
+running with various core packages are replaced with their (newer!) Mer
+equivalents:
 
 * https://git.sailfishos.org/spiiroin/mce/tree/maemo-leste-hacking
 * https://git.sailfishos.org/spiiroin/dsme/tree/maemo-leste-hacking
@@ -354,12 +366,13 @@ Themes
 
 One of the cool things about being compatible with Maemo 5 "Fremantle" on
 various levels is that it's often really easy to cherry pick things we like.
+
 In this case, one can literally just download a theme from the maemo.org
 website and install it on Maemo Leste. For example, the `Marina Theme
 <http://maemo.org/downloads/product/Maemo5/hildon-theme-marina/>`_ can be
 installed with `dpkg -i <debhere>`. Currently, the `/usr/share/themes/default`
 symlink also needs to be updated, but after that, the themes from Maemo 5
-"Fremantle" are fully usable in Maemo Leste.
+"Fremantle" are fully usable on Maemo Leste.
 
 `There are a lot of themes available too
 <http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B1%5D%5Bvalue%5D=theme&org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&fetch=Search>`_,
@@ -445,8 +458,8 @@ will need at least:
 3. `apt install xserver-xorg-video-omap`
 4. Rename `/etc/X11/xorg.conf.d.pvr` to `/etc/X11/xorg.conf.d`
 
-**DOING SO WILL BREAK HILDON-DESKTOP AND MAKE YOUR SYSTEM BOOT LOOP, SO CONTINUE
-AT YOUR OWN RISK**.
+**DOING SO WILL BREAK HILDON-DESKTOP AND MIGHT MAKE YOUR SYSTEM BOOT LOOP, SO
+CONTINUE AT YOUR OWN RISK**.
 
 
 Interested?
@@ -466,4 +479,3 @@ help out. Another great way to get in touch is to join the `IRC channel
 <https://leste.maemo.org/IRC_channel>`_.
 
 If you like our work and want to see it continue, join us!
-
