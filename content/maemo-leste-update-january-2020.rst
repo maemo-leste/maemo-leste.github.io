@@ -54,7 +54,7 @@ Wishlist
 ~~~~~~~~
 
 If there is a specific application you would like to see (ported), the wiki now
-contains an `Application Wishlish <https://leste.maemo.org/Wishlist>`_. Feel
+contains an `Application Wishlist <https://leste.maemo.org/Wishlist>`_. Feel
 free to add suggestions to the table.
 
 Porting
