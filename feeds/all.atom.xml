@@ -102,7 +102,7 @@ the core Maemo Leste repository now, and part of the new images.&lt;/p&gt;
 Manager&amp;quot;. It's an user interface to the Debian package manager, &lt;cite&gt;apt&lt;/cite&gt;, allows
 users to discovery and install packages, uninstall packages, and it also
 notifies the users when updates are available (it won't check for updates on
-metered connections), and if the user agrees, update the system.&lt;/p&gt;
+metered connections), and if the user agrees, updates the system.&lt;/p&gt;
 &lt;p&gt;This was a relatively quick port, and there are like bugs, and there is probably
 more work to be done, nevertheless, it works.&lt;/p&gt;
 &lt;p&gt;This screenshot shows the device informing the user there are (important)
