@@ -17,7 +17,9 @@ In short, we now have a single pool containing all the packages and their
 different versions, for all the different dists that we support. This is mainly
 a nice way to keep a simpler repository structure, but also helpful when
 building ``devel`` packages, so their versions can be automatically incremented
-in a correct manner.
+in a correct manner. Last, but not least, it allows us to easily support more
+than one ``dist``, so we will eventually be able to support both Devuan and
+Debian at the same time.
 
 Due to this, the repository entries in ``/etc/apt/sources.list`` require a small
 change - instead of the ``deb`` entries we've had:
