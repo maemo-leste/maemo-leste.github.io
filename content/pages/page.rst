@@ -42,6 +42,7 @@ For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
 following monthly updates:
 
+* `Repositories and community packages <{filename}/repo-restructuring.rst>`_
 * `January 2020 <{filename}/maemo-leste-update-january-2020.rst>`_
 * `End of 2019 update <{filename}/maemo-leste-update-october-2019.rst>`_
 * `March - August 2019 <{filename}/maemo-leste-update-march-2019.rst>`_
