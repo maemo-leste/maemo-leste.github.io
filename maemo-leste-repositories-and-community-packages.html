@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Maemo Leste, ">
-        <meta name="keywords" content="">
+        <meta name="description" content="In-between our technical updates, we have another short update on our repository organization. After the proposition and discussion we&#39;ve had on our IRC channel and our bugtracker, we&#39;ve...">
+        <meta name="keywords" content="apt, community, extras, repositories">
         <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
 
-        <title> - page 2 - Maemo Leste</title>
+        <title>Maemo Leste - Repositories and community packages - Maemo Leste</title>
 
         <!-- Stylesheets -->
         <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,7 @@
 
         <!-- RSS Feeds -->
         <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
         <!-- /RSS Feeds -->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -52,16 +53,23 @@
             <!-- /Static navbar -->
 
             <!-- Header -->
+    <!-- Header -->
     <div class="container header-wrapper">
         <div class="row">
               <div class="col-lg-12">
                   <div class="header-content">
-                      <h1 class="header-title"></h1>
+                      <h1 class="header-title">Maemo Leste - Repositories and community packages</h1>
+                      <p class="header-date"> <a href="https://maemo-leste.github.io/author/ivan-jelincic.html">Ivan Jelincic</a>, Tue 25 February 2020,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
                       <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/apt.html">apt</a>, <a href="https://maemo-leste.github.io/tag/community.html">community</a>, <a href="https://maemo-leste.github.io/tag/extras.html">extras</a>, <a href="https://maemo-leste.github.io/tag/repositories.html">repositories</a>                      </p>
                   </div>
               </div>
         </div>
     </div>
+    <!-- /Header -->
             <!-- /Header -->
 
         </div>
@@ -69,27 +77,53 @@
 
 
         <!-- Content -->
-    
-    <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="https://maemo-leste.github.io/index2.html"> <small>- page 2</small></a></h2>
-            <dl class="dl-horizontal">
-                <dt>Tue 15 May 2018</dt>
-                <dd><a href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html">Maemo Leste - Third update (May + June) 2018</a></dd>
-                <dt>Wed 25 April 2018</dt>
-                <dd><a href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">Maemo Leste - Second update (April 2018)</a></dd>
-                <dt>Fri 02 March 2018</dt>
-                <dd><a href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">Maemo Leste - First update (March 2018)</a></dd>
-                <dt>Thu 01 February 2018</dt>
-                <dd><a href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html">Maemo Leste - Standing on the shoulders of giants</a></dd>
-            </dl>
-        </div>
+    <div class="container content">
+        <p>In-between our technical updates, we have another short update on our repository
+organization.</p>
+<p>After the proposition and discussion we've had on our IRC channel and our
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/320">bugtracker</a>, we've
+reorganized our repositories into a nicer and cleaner structure.</p>
+<p>In short, we now have a single pool containing all the packages and their
+different versions, for all the different dists that we support. This is mainly
+a nice way to keep a simpler repository structure, but also helpful when
+building <tt class="docutils literal">devel</tt> packages, so their versions can be automatically incremented
+in a correct manner. Last, but not least, it allows us to easily support more
+than one <tt class="docutils literal">dist</tt>, so we will eventually be able to support both Devuan and
+Debian at the same time.</p>
+<p>Due to this, the repository entries in <tt class="docutils literal">/etc/apt/sources.list</tt> require a small
+change - instead of the <tt class="docutils literal">deb</tt> entries we've had:</p>
+<pre class="literal-block">
+deb http://maedevu.maemo.org/leste leste main
+deb http://maedevu.maemo.org/leste-extras leste-extras main
+</pre>
+<p>We now have</p>
+<pre class="literal-block">
+deb http://maedevu.maemo.org/leste ascii main
+deb http://maedevu.maemo.org/extras ascii main
+</pre>
+<p>With this, there is less ambiguity and it is easier for both users and
+developers to figure out which Devuan version Leste is currently based on, and
+will also allow easier upgrading when Maemo Leste rebases to a newer Devuan
+version.</p>
+<p>So, to switch your existing Maemo Leste installations, just use the latter two
+links in <tt class="docutils literal">/etc/apt/sources.list</tt>. Simple!</p>
+<p>As for the images containing these changes, we are working on finalizing them
+and they'll be ready for our next blog update.</p>
+<div class="section" id="community-packages">
+<h2>Community packages</h2>
+<p>We're close to finalizing our community infrastructure, and we'd love to invite
+you to maintain community packages for Maemo Leste. Like Fremantle, we call them
+Extras, and they reside in a separate <a class="reference external" href="https://github.com/maemo-leste-extras/">organization</a>.</p>
+<p>If you would like to maintain a community package, have a look at the bugtracker
+in Maemo Leste Extras and follow the <a class="reference external" href="https://github.com/maemo-leste-extras/bugtracker">README</a>.  We invite everyone to try
+out the procedure and provide feedback!</p>
+<p>See you there :)</p>
+</div>
+
+
+
+        
     </div>
-<!-- /Navigation -->
-<div class="container navigation">
-    	<a class="navigate pull-left" href="https://maemo-leste.github.io/index.html"><i class="fa fa-caret-left"></i> </a>
-</div>              
-<!-- /Navigation --> 
         <!-- /Content --> 
 
         <!-- Footer -->
