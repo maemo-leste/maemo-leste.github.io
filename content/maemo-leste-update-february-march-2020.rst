@@ -4,8 +4,8 @@ Maemo Leste - Twelfth Update (February and March) 2020
 :Category: news
 :tags: powervr, droid, n900, pinephone, theme, language, localisation, tv,
        extras
-:authors: Merlijn Wajer
-:date: 2020-03-23 01:00
+:authors: Merlijn Wajer, Ivan Jelincic
+:date: 2020-03-24 01:00
 
 .. TODO DATE
 
@@ -39,8 +39,8 @@ Reminder that our repositories changed
 
 `Please see the previous announcement <{filename}/repo-restructuring.rst>`_.
 
-Switched to Devuan Beowulf (Debian Buster)
-==========================================
+Base OS upgraded to Devuan Beowulf (Debian Buster)
+==================================================
 
 All of our core packages (way more than 100) are now ported to work on the latest
 Debian & Devuan stable. The `entire list is documented in issue #299
@@ -53,18 +53,20 @@ A few packages remain to be ported from ascii (oldstable) to beowulf, but those
 were not in use yet on ascii either.
 
 The suggested way to upgrade is to download the latest image for your device,
-and install the new image. If you're feeling adventurous, you can try to use
-change `/etc/apt/sources.list`, change `ascii` to `beowulf`, run `apt update &&
-apt dist-upgrade` and hope for the best.
+and install the new image. Otherwise, if you're feeling adventurous, you can try
+to use change `/etc/apt/sources.list`, change `ascii` to `beowulf`, and run `apt
+update && apt dist-upgrade`.
 
 
-Extras
-------
+Maemo Leste Extras
+------------------
 
-Now all extras packages have been ported yet: https://github.com/maemo-leste-extras/bugtracker/issues/4
+Not all extras packages have been ported yet: https://github.com/maemo-leste-extras/bugtracker/issues/4
 
-If you're willing to help out porting, or want to add new packages, check out
-the README here: https://github.com/maemo-leste-extras/bugtracker
+If you're interested in helping out in porting existing packages, or even
+maintaining your own packages for Maemo Leste, be sure to check out the
+README in the `ticket tracking repository for Maemo Leste Extras!
+<https://github.com/maemo-leste-extras/bugtracker>`_
 
 
 Device support
@@ -169,7 +171,7 @@ What is usable, is using the Nokia's composite out functionality, which kinda
 neat:
 
 .. raw:: html
-  
+
     <iframe width="560" height="315" src="https://www.youtube.com/embed/RNEJYYQyftI"
      ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
     picture-in-picture" allowfullscreen></iframe>
