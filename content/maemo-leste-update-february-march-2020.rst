@@ -341,14 +341,14 @@ Nokia N900
 
 New images are available for download:
 
-* https://maedevu.maemo.org/images/n900/20200324/
+* https://maedevu.maemo.org/images/n900/20200323/
 
 
 Motorola Droid 4
 ----------------
 
 New images are available for download:
-https://maedevu.maemo.org/images/droid4/20200324/
+https://maedevu.maemo.org/images/droid4/20200323/
 
 
 Audio
@@ -365,7 +365,7 @@ Pinephone/Pinetab
 
 New images are available for download:
 
-* https://maedevu.maemo.org/images/pinephone/20200324/
+* https://maedevu.maemo.org/images/pinephone/20200323/
 * https://maedevu.maemo.org/images/pinetab/20200324/
 
 These images are very usable, and have 3D acceleration with the open source Lima
