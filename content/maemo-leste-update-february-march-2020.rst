@@ -75,7 +75,7 @@ Motorola Droid 4
 
 Maemo Leste now runs on the Motorola Droid 4 with 3D acceleration. And not just
 3D acceleration, a lot more hardware support has improved. The end result, quite
-frankly, is stunned me: Maemo Leste runs fast and buttersmooth. The Motorola
+frankly, is stunning: Maemo Leste runs fast and buttersmooth. The Motorola
 Droid 4 truly feels like an upgrade to the Nokia N900 now. This has been a
 multi-year multi-man effort, and it's great to see it pay off.
 
@@ -207,9 +207,9 @@ Pinephone image on twitter a while back:
 Well, the beowulf image is here, and it's even better.
 
 Still, keep in mind that these are images for developers. Some things definitely
-do not work yet, and the lack of a keyboard makes using some parts of UI a bit
-of a challenge, at least the places where the virtual keyboard is not yet
-available.
+do not work yet, and the lack of a hardware keyboard makes using some parts of
+UI a bit of a challenge, at least the places where the virtual keyboard is not
+yet available.
 
 **TODO**
 
