@@ -328,15 +328,27 @@ Devices / Hardware
 Virtual Machine
 ---------------
 
-New Virtual Machine images are available:
-https://maedevu.maemo.org/images/virtual-machines/20200103/
+New Virtual Machine images are available for download:
+
+* https://maedevu.maemo.org/images/virtual-machines/20200324/
+
+We build qcow2 images usually used with QEMU, VirtualBox VDI images, and Vagrant
+images.
+
 
 Nokia N900
 ----------
 
+New images are available for download:
+
+* https://maedevu.maemo.org/images/n900/20200324/
+
 
 Motorola Droid 4
 ----------------
+
+New images are available for download:
+https://maedevu.maemo.org/images/droid4/20200324/
 
 
 Audio
@@ -347,6 +359,18 @@ Audio
 PowerVR / 3D acceleration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+Pinephone/Pinetab
+-----------------
+
+New images are available for download:
+
+* https://maedevu.maemo.org/images/pinephone/20200324/
+* https://maedevu.maemo.org/images/pinetab/20200324/
+
+These images are very usable, and have 3D acceleration with the open source Lima
+drivers. There is still some jittery performance, but hopefully it will be fixed
+with time as we go forward and the mesa driver gets improved.
 
 
 Interested?
