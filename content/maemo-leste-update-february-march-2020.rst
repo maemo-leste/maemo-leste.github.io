@@ -108,7 +108,7 @@ Wireless
 
 
 Additionally, we've mostly fixed the wireless stability issues (`see #296
-<https://github.com/maemo-leste/bugtracker/issues/296>`_. Apparently, the
+<https://github.com/maemo-leste/bugtracker/issues/296>`_). Apparently, the
 wireless firmware and bluetooth firmware need to be loaded in a specific order,
 and there currently is no way to do this properly in mainline Linux, so we've
 resorted to blacklisting the bluetooth module for now.
@@ -183,7 +183,7 @@ is not yet usable in the latest image.
 TV out
 ~~~~~~
 
-What is usable, is using the Nokia's composite out functionality, which kinda
+What is usable, is using the Nokia's composite out functionality, which is kinda
 neat:
 
 .. raw:: html
@@ -231,7 +231,7 @@ Wiki page: https://leste.maemo.org/PinePhone
 
 We've also uploaded a Pinephone image! We uploaded one before, which we didn't
 quite intend to share with the public yet, but Pine64 already shared our ascii
-Pinephone image on twitter a while back:
+Pinephone image on Twitter a while back:
 
     https://twitter.com/thepine64/status/1231702499305893891
 
