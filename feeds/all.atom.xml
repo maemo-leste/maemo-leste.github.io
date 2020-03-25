@@ -238,11 +238,11 @@ the virtual keyboard is enabled, it will work as expected.&lt;/p&gt;
 &lt;div class="section" id="modem-cellular-updates"&gt;
 &lt;h3&gt;Modem/cellular updates&lt;/h3&gt;
 &lt;p&gt;The &amp;quot;connui&amp;quot; userspace to interface with the modem is still being worked on, but
-more progress was made recently. The pin entry dialog now works, on start, like
+more progress was made recently. The PIN entry dialog now works, on start, like
 one would expect it to:&lt;/p&gt;
 &lt;img alt="" src="/images/pinentry-n900.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/pinentry-n900-2.png" style="width: 576px; height: 324px;" /&gt;
-&lt;p&gt;Once the pin is filled in (or skipped), the homescreen shows the operator name
+&lt;p&gt;Once the PIN is filled in (or skipped), the homescreen shows the operator name
 and the RAT (radio access technology) that is currently in use:&lt;/p&gt;
 &lt;img alt="" src="/images/homescreen-cellular-n900.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;This work is only available in the development repositories, as it's not stable
