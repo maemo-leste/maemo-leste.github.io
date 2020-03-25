@@ -446,7 +446,7 @@ months, if not weeks. It will take time for our userspace software to mature,
 but things are looking really bright for Maemo Leste.
 
 I think we're putting together a great versatile mobile Linux distribution, with
-it's own userspace, based on top of Debian, the universal operation system. It
+its own userspace, based on top of Debian, the universal operation system. It
 really is just Devuan/Debian at the core, and everything happens through the
 Debian package manager. There are no read-only images, specific partitions that
 you must have to install a new over the air update -- updates just work with
