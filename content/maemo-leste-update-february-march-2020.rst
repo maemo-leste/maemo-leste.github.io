@@ -5,7 +5,7 @@ Maemo Leste - Twelfth Update (February and March) 2020
 :tags: powervr, droid, n900, pinephone, theme, language, localisation, tv,
        extras
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-03-24 01:00
+:date: 2020-03-25 01:00
 
 .. TODO DATE
 
@@ -61,7 +61,7 @@ update && apt dist-upgrade`.
 Maemo Leste Extras
 ------------------
 
-Not all extras packages have been ported yet: https://github.com/maemo-leste-extras/bugtracker/issues/4
+Not all extras packages have been ported yet (this is not an exhaustive list): https://github.com/maemo-leste-extras/bugtracker/issues/4
 
 If you're interested in helping out in porting existing packages, or even
 maintaining your own packages for Maemo Leste, be sure to check out the
@@ -74,6 +74,12 @@ Device support
 
 Motorola Droid 4
 ----------------
+
+Wiki page: https://leste.maemo.org/Motorola_Droid_4
+
+
+PowerVR 3D
+~~~~~~~~~~
 
 Maemo Leste now runs on the Motorola Droid 4 with 3D acceleration. And not just
 3D acceleration, a lot more hardware support has improved. The end result, quite
@@ -99,6 +105,8 @@ Here's a random Droid 4 lockscreen:
 
 And the USB popup for usb networking and mass storage:
 
+**XXX TODO**: wrong image
+
 .. image:: /images/droid4-usbbar.png
   :height: 324px
   :width: 576px
@@ -121,19 +129,29 @@ Power management is looking very promising (`0.01A` or less at `4.4V` when
 idle). The package `droid4-powermanagement`
 (https://github.com/maemo-leste/droid4-pm) is now available on the latest image,
 and it should significantly improve battery life. Some work on MCE is pending,
-but once that is merged, you (as a user) too will be able to enjoy this power
+but once that is merged, users will be able to enjoy better power
 management (`#338 <https://github.com/maemo-leste/bugtracker/issues/338>`_,
-`#340 <https://github.com/maemo-leste/bugtracker/issues/340>`_)
+`#340 <https://github.com/maemo-leste/bugtracker/issues/340>`_).
 
 I would not be surprised if we can manage several days of battery time
 in the next month or two.
+
+
+Battery calibration
+~~~~~~~~~~~~~~~~~~~
+
+Battery calibration is still being worked on, and a percentage will only be
+shown once the battery has (almost fully) discharged and charged, and does not
+persist across reboots. This is being worked on.
+
 
 Audio
 ~~~~~
 
 Audio should work out of the box. You will find that the speaker and headphones
 are muted, but the wiki will contain instructions on setting up the audio
-mixers. **TODO**
+mixers.
+
 
 Modem and calls
 ~~~~~~~~~~~~~~~
@@ -142,6 +160,10 @@ The Motorola Droid 4 image is capable of performing calls, but they do not work
 via ofono yet. Pavel has been working on an ofono port for the Droid 4, and
 hopefully others will help him out soon and complete the initial port. Having
 ofono support in place will make the Droid 4 the ultimate developer device.
+
+Shortly from now, we hope to have instructions on how to perform a test phone
+call on the wiki.
+
 
 Custom bootup logo
 ~~~~~~~~~~~~~~~~~~
@@ -157,6 +179,8 @@ Instructions can be found here: https://github.com/xsetiadi/droid4-kexecboot/blo
 
 Nokia N900
 ----------
+
+Wiki page: https://leste.maemo.org/Nokia_N900
 
 The Nokia N900 has also seen some power management love, and we've been able to
 reach deep idle states, which we also shared on twitter
@@ -197,8 +221,21 @@ the archive here:
     https://lists.dyne.org/lurker/message/20200306.084252.32b5515a.en.html
 
 
+SW_MACHINE_COVER
+~~~~~~~~~~~~~~~~
+
+The Nokia N900 has a sensor for the backcover, and when it's removed, current
+mainline linux will refuse to recognize the microsd card, as it uses this sensor
+to detect the card. Hopefully this will be changed in the future, and the
+backcover will be exposed as an input device, with the key `SW_MACHINE_COVER`:
+
+    https://marc.info/?l=linux-omap&m=158168528609413&w=2
+
+
 Pinephone & Pinetab(let)
 ------------------------
+
+Wiki page: https://leste.maemo.org/PinePhone
 
 We've also uploaded a Pinephone image! We uploaded one before, which we didn't
 quite intend to share with the public yet, but Pine64 already shared our ascii
@@ -216,6 +253,15 @@ yet available.
 **TODO**
 
 
+Keyboard monitoring
+~~~~~~~~~~~~~~~~~~~
+
+The upcoming `Pine64 tablet <https://www.pine64.org/pinetab/>`_ has a removable
+keyboard, and the Maemo virtual keyboard should only show up when the keyboard
+is not attached to the tablet. Previously, removing the keyboard from the tablet
+caused MCE to crash, `but this has now been fixed <https://github.com/maemo-leste/mce/commit/0bec2e390e42f49bdbf01976a3b17609ddfd1483>`_, and together with the `keyboard attached monitoring <https://github.com/maemo-leste/ke-recv-extra/pull/3>`_, the Pinetab is in a much better shape.
+
+
 Software additions
 ==================
 
@@ -229,19 +275,32 @@ devices (but likely also on other devices), and the unwillingness of the clutter
 will likely have to go through a bit of pain to get our latest and fastest bits
 packaged (sorry!).
 
+
 Theme switching control panel applet
 -------------------------------------
 
-* https://github.com/maemo-leste/bugtracker/issues/306 -- yay
+For a long time, changing the default theme was not well documented, because
+Maemo Fremantle had a control panel applet for it, and `now we do too
+<https://github.com/maemo-leste/hildon-control-panel-personalisation>`_, which
+fixes `issue #306 <https://github.com/maemo-leste/bugtracker/issues/306>`.
+
+Try it out for yourself!
+
 
 Themes available in the extras repository
 -----------------------------------------
 
-* marina theme is present - https://github.com/maemo-leste-extras/hildon-theme-marina/blob/master/template/template.png
+We've imported our first community made theme from Maemo.org,
+`hildon-theme-marina
+<https://github.com/maemo-leste-extras/hildon-theme-marina/>`_. To achieve this,
+we also had to import `hildon-theme-layout
+<https://github.com/maemo-leste/hildon-theme-layout>`_ and `hildon-theme-tools
+<https://github.com/maemo-leste/hildon-theme-tools/>`_ (and fix it up in
+the process).
 
-hildon-theme-tools
+Relevant bug report: `#336
+<https://github.com/maemo-leste/bugtracker/issues/336>`_
 
-https://github.com/maemo-leste/bugtracker/issues/336
 
 Language and region switching control panel applet
 --------------------------------------------------
@@ -276,15 +335,26 @@ Confusing, right?
   :width: 576px
 
 
+Additionally, language names now resolve in the hildon input method control
+panel.
+
+
 Attached keyboard slider monitoring
 -----------------------------------
 
-**TODO** for virtual keyboard
+Maemo Leste now keeps track of the slide state of a keyboard, and the virtual
+keyboard will act accordingly. If the keyboard slide is opened, the virtual
+keyboard will not show up by default, but if the keyboard slide is closed, and
+the virtual keyboard is enabled, it will work as expected.
 
-* slide monitoring
+Relevant pull requests:
 
-Modem/cell updates
-------------------
+* https://github.com/maemo-leste/ke-recv/pull/2
+* https://github.com/maemo-leste/ke-recv-extra/pull/3
+
+
+Modem/cellular updates
+----------------------
 
 The "connui" userspace to interface with the modem is still being worked on, but
 more progress was made recently. The pin entry dialog now works, on start, like
@@ -309,18 +379,18 @@ This work is only available in the development repositories, as it's not stable
 enough to be used on a day to be day basis without being aware of all the bugs.
 Yours truly is working hard to get this piece finished.
 
+The package `libicd-network-ofono` is also still being worked, in particular, IP
+assignment for the data connections is not yet implemented. Once this works,
+it'll likely be possible to have data connections working on devices that
+have ofono support for their modem.
 
-Dialer
-------
-
-* https://wizzup.org/rhizo-dialer-test.png / https://github.com/DigitalHERMES/rhizo-dialer
 
 
 Desktop widgets & calendar support
 ----------------------------------
 
-https://github.com/maemo-leste/bugtracker/issues/326
-https://github.com/maemo-leste/bugtracker/issues/203
+Previously, desktop widgets would crash hildon-home (`#326 <https://github.com/maemo-leste/bugtracker/issues/326>`_), this has now been fixed. Sicelo has made some progress getting the calendar backend and widgets to run, but more work remains to be done, see `#203 <https://github.com/maemo-leste/bugtracker/issues/203>`_.
+
 
 Devices / Hardware
 ==================
@@ -334,6 +404,11 @@ New Virtual Machine images are available for download:
 
 We build qcow2 images usually used with QEMU, VirtualBox VDI images, and Vagrant
 images.
+
+Currently, the mouse cursor might not be visible, we're working on resolving
+this problem.
+
+https://leste.maemo.org/Virtual_Machine
 
 
 Nokia N900
@@ -349,15 +424,6 @@ Motorola Droid 4
 
 New images are available for download:
 https://maedevu.maemo.org/images/droid4/20200323/
-
-
-Audio
-~~~~~
-
-
-
-PowerVR / 3D acceleration
-~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Pinephone/Pinetab
@@ -400,7 +466,21 @@ To mention:
 
 * https://github.com/maemo-leste/bugtracker/issues/302
 * https://github.com/maemo-leste/bugtracker/issues/315
-* Language names now resolve: https://wizzup.org/leste-input-method-languages.png https://wizzup.org/leste-input-method-languages-2.png
 * pdf reader launcher fixes - https://github.com/maemo-leste/bugtracker/issues/280
 * https://github.com/maemo-leste/bugtracker/issues/326
 * https://github.com/maemo-leste/bugtracker/issues/330
+
+
+
+
+.. Dialer
+.. ------
+.. 
+.. Someone from the community is working on a hildon gtk dialer that can interface
+.. with telepathy (communication framework), and eventually establish calls using
+.. the ofono backend.
+.. 
+.. 
+.. TODO
+.. * https://wizzup.org/rhizo-dialer-test.png / https://github.com/DigitalHERMES/rhizo-dialer
+
