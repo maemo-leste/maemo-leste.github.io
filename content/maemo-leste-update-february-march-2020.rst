@@ -217,7 +217,7 @@ SW_MACHINE_COVER
 ~~~~~~~~~~~~~~~~
 
 The Nokia N900 has a sensor for the backcover, and when it's removed, current
-mainline linux will refuse to recognize the microsd card, as it uses this sensor
+mainline Linux will refuse to recognize the MicroSD card, as it uses this sensor
 to detect the card. Hopefully this will be changed in the future, and the
 backcover will be exposed as an input device, with the key `SW_MACHINE_COVER`:
 
