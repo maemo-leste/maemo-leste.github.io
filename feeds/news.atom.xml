@@ -69,7 +69,7 @@ are no longer present:&lt;/p&gt;
 picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;div class="section" id="wireless"&gt;
 &lt;h4&gt;Wireless&lt;/h4&gt;
-&lt;p&gt;Additionally, we've mostly fixed the wireless stability issues (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/296"&gt;see #296&lt;/a&gt;. Apparently, the
+&lt;p&gt;Additionally, we've mostly fixed the wireless stability issues (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/296"&gt;see #296&lt;/a&gt;). Apparently, the
 wireless firmware and bluetooth firmware need to be loaded in a specific order,
 and there currently is no way to do this properly in mainline Linux, so we've
 resorted to blacklisting the bluetooth module for now.&lt;/p&gt;
@@ -123,7 +123,7 @@ reach deep idle states, which we also shared on twitter
 is not yet usable in the latest image.&lt;/p&gt;
 &lt;div class="section" id="tv-out"&gt;
 &lt;h4&gt;TV out&lt;/h4&gt;
-&lt;p&gt;What is usable, is using the Nokia's composite out functionality, which kinda
+&lt;p&gt;What is usable, is using the Nokia's composite out functionality, which is kinda
 neat:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/RNEJYYQyftI"
  ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
@@ -148,7 +148,7 @@ the archive here:&lt;/p&gt;
 &lt;div class="section" id="sw-machine-cover"&gt;
 &lt;h4&gt;SW_MACHINE_COVER&lt;/h4&gt;
 &lt;p&gt;The Nokia N900 has a sensor for the backcover, and when it's removed, current
-mainline linux will refuse to recognize the microsd card, as it uses this sensor
+mainline Linux will refuse to recognize the MicroSD card, as it uses this sensor
 to detect the card. Hopefully this will be changed in the future, and the
 backcover will be exposed as an input device, with the key &lt;cite&gt;SW_MACHINE_COVER&lt;/cite&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -160,7 +160,7 @@ backcover will be exposed as an input device, with the key &lt;cite&gt;SW_MACHIN
 &lt;p&gt;Wiki page: &lt;a class="reference external" href="https://leste.maemo.org/PinePhone"&gt;https://leste.maemo.org/PinePhone&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We've also uploaded a Pinephone image! We uploaded one before, which we didn't
 quite intend to share with the public yet, but Pine64 already shared our ascii
-Pinephone image on twitter a while back:&lt;/p&gt;
+Pinephone image on Twitter a while back:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;a class="reference external" href="https://twitter.com/thepine64/status/1231702499305893891"&gt;https://twitter.com/thepine64/status/1231702499305893891&lt;/a&gt;&lt;/blockquote&gt;
 &lt;p&gt;Well, the beowulf image is here, and it's even better.&lt;/p&gt;
