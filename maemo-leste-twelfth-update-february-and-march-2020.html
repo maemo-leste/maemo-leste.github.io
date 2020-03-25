@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="It&#39;s been several weeks since our pre-FOSDEM 2020 update, and let&#39;s start with a few highlights: We&#39;ve been around for two years now! We switched from Devuan ascii (Debian stretch) to Devuan...">
+        <meta name="keywords" content="droid, extras, language, localisation, n900, pinephone, powervr, theme, tv">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+
+        <title>Maemo Leste - Twelfth Update (February and March) 2020 - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/%s.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small_w.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                            <a  href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html">Maemo Leste Screenshots</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Maemo Leste - Twelfth Update (February and March) 2020</h1>
+                      <p class="header-date"> <a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, <a href="https://maemo-leste.github.io/author/ivan-jelincic.html">Ivan Jelincic</a>, Wed 25 March 2020,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/droid.html">droid</a>, <a href="https://maemo-leste.github.io/tag/extras.html">extras</a>, <a href="https://maemo-leste.github.io/tag/language.html">language</a>, <a href="https://maemo-leste.github.io/tag/localisation.html">localisation</a>, <a href="https://maemo-leste.github.io/tag/n900.html">n900</a>, <a href="https://maemo-leste.github.io/tag/pinephone.html">pinephone</a>, <a href="https://maemo-leste.github.io/tag/powervr.html">powervr</a>, <a href="https://maemo-leste.github.io/tag/theme.html">theme</a>, <a href="https://maemo-leste.github.io/tag/tv.html">tv</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <p>It's been several weeks since our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-eleventh-update-january-2020.html">pre-FOSDEM 2020 update</a>, and let's start with a few highlights:</p>
+<ul class="simple">
+<li>We've been around for two years now!</li>
+<li>We switched from Devuan <strong>ascii</strong> (Debian stretch) to Devuan <strong>beowulf</strong> (Debian buster)</li>
+<li><a class="reference internal" href="#motorola-droid-4">Motorola Droid 4</a> images are available, with <strong>3D acceleration and decent to
+good power management</strong>.</li>
+<li><a class="reference internal" href="#pinephone-pinetab-images">Pinephone/Pinetab images</a> are now available.</li>
+<li>We gave a <strong>main track talk at FOSDEM</strong>:
+<a class="reference external" href="https://fosdem.org/2020/schedule/event/smartphones/">https://fosdem.org/2020/schedule/event/smartphones/</a></li>
+<li>N900 hardware support improvements such as TV-out, beginnings of camera
+support</li>
+<li><strong>Localisation support and theming</strong> is now available from the control panel, with
+many languages already supported.</li>
+</ul>
+<p><strong>And if you're in a rush</strong>, at least read the <a class="reference internal" href="#summarising">summarising</a> section.</p>
+<div class="section" id="fosdem-2020">
+<h2>FOSDEM 2020</h2>
+<p>We gave a main-track talk at FOSDEM 2020, you can read the summary on the FOSDEM
+website, or through the Maemo Leste FOSDEM application:</p>
+<img alt="" src="/images/droid4-sojourner-fosdem.png" style="width: 576px; height: 324px;" />
+<p><a class="reference external" href="https://fosdem.org/2020/schedule/event/smartphones/">The video is available here</a>.</p>
+</div>
+<div class="section" id="reminder-that-our-repositories-changed">
+<h2>Reminder that our repositories changed</h2>
+<p><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-repositories-and-community-packages.html">Please see the previous announcement</a>.</p>
+</div>
+<div class="section" id="base-os-upgraded-to-devuan-beowulf-debian-buster">
+<h2>Base OS upgraded to Devuan Beowulf (Debian Buster)</h2>
+<p>All of our core packages (way more than 100) are now ported to work on the latest
+Debian &amp; Devuan stable. The <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/299">entire list is documented in issue #299</a></p>
+<p>This was a multi-month effort involving everyone in the core
+team, and it marks a big step forward!</p>
+<p>A few packages remain to be ported from ascii (oldstable) to beowulf, but those
+were not in use yet on ascii either.</p>
+<p>The recommended way to upgrade is to download the latest image for your device,
+and install the new image. Otherwise, if you're feeling adventurous, you can try
+to use change <cite>/etc/apt/sources.list</cite>, change <cite>ascii</cite> to <cite>beowulf</cite>, and run <cite>apt
+update &amp;&amp; apt dist-upgrade</cite>.</p>
+<div class="section" id="maemo-leste-extras">
+<h3>Maemo Leste Extras</h3>
+<p>Not all extras packages have been ported yet (this is not an exhaustive list): <a class="reference external" href="https://github.com/maemo-leste-extras/bugtracker/issues/4">https://github.com/maemo-leste-extras/bugtracker/issues/4</a></p>
+<p>If you're interested in helping out in porting existing packages, or even
+maintaining your own packages for Maemo Leste, be sure to check out the
+README in the <a class="reference external" href="https://github.com/maemo-leste-extras/bugtracker">ticket tracking repository for Maemo Leste Extras!</a></p>
+</div>
+</div>
+<div class="section" id="device-support">
+<h2>Device support</h2>
+<div class="section" id="motorola-droid-4">
+<h3>Motorola Droid 4</h3>
+<p>Wiki page: <a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4">https://leste.maemo.org/Motorola_Droid_4</a></p>
+<div class="section" id="powervr-3d">
+<h4>PowerVR 3D</h4>
+<p>Maemo Leste now runs on the Motorola Droid 4 with 3D acceleration. And not just
+3D acceleration, a lot more hardware support has improved. The end result, quite
+frankly, is stunning: Maemo Leste runs fast and buttersmooth. The Motorola
+Droid 4 truly feels like an upgrade to the Nokia N900 now. This has been a
+multi-year multi-man effort, and it's great to see it pay off.</p>
+<p>Here's a video that was made a week ago or so, some of the rendering artifacts
+are no longer present:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XCnErJnkWQM"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="wireless">
+<h4>Wireless</h4>
+<p>Additionally, we've mostly fixed the wireless stability issues (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/296">see #296</a>. Apparently, the
+wireless firmware and bluetooth firmware need to be loaded in a specific order,
+and there currently is no way to do this properly in mainline Linux, so we've
+resorted to blacklisting the bluetooth module for now.</p>
+</div>
+<div class="section" id="power-management">
+<h4>Power management</h4>
+<p>Power management is looking very promising (<cite>0.01A</cite> or less at <cite>4.4V</cite> when
+idle). The package <cite>droid4-powermanagement</cite>
+(<a class="reference external" href="https://github.com/maemo-leste/droid4-pm">https://github.com/maemo-leste/droid4-pm</a>) is now available on the latest image,
+and it should significantly improve battery life. Some work on MCE is pending,
+but once that is merged, users will be able to enjoy better power
+management (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/338">#338</a>,
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/340">#340</a>).</p>
+<p>I would not be surprised if we can manage several days of battery time
+in the next month or two.</p>
+</div>
+<div class="section" id="battery-calibration">
+<h4>Battery calibration</h4>
+<p>Battery calibration is still being worked on, and a percentage will only be
+shown once the battery has (almost fully) discharged and charged, and does not
+persist across reboots. This is being worked on.</p>
+</div>
+<div class="section" id="audio">
+<h4>Audio</h4>
+<p>Audio should work out of the box. You will find that the speaker and headphones
+are muted, but the wiki will contain instructions on setting up the audio
+mixers.</p>
+</div>
+<div class="section" id="modem-and-calls">
+<h4>Modem and calls</h4>
+<p>The Motorola Droid 4 image is capable of performing calls, but they do not work
+via ofono yet. Pavel has been working on an ofono port for the Droid 4, and
+hopefully others will help him out soon and complete the initial port. Having
+ofono support in place will make the Droid 4 the ultimate developer device.</p>
+<p>Shortly from now, we hope to have instructions on how to perform a test phone
+call on the wiki.</p>
+</div>
+<div class="section" id="custom-bootup-logo">
+<h4>Custom bootup logo</h4>
+<p>You can replace the Motorola logo on boot with a sweet Maemo Leste logo:</p>
+<img alt="" src="/images/Droid4_leste_logo.jpg" style="width: 525px; height: 390px;" />
+<p>Instructions can be found here: <a class="reference external" href="https://github.com/xsetiadi/droid4-kexecboot/blob/master/LOGO">https://github.com/xsetiadi/droid4-kexecboot/blob/master/LOGO</a></p>
+</div>
+</div>
+<div class="section" id="nokia-n900">
+<h3>Nokia N900</h3>
+<p>Wiki page: <a class="reference external" href="https://leste.maemo.org/Nokia_N900">https://leste.maemo.org/Nokia_N900</a></p>
+<p>The Nokia N900 has also seen some power management love, and we've been able to
+reach deep idle states, which we also shared on twitter
+<a class="reference external" href="https://twitter.com/maemoleste/status/1226265997981646849">https://twitter.com/maemoleste/status/1226265997981646849</a> -- however, this work
+is not yet usable in the latest image.</p>
+<div class="section" id="tv-out">
+<h4>TV out</h4>
+<p>What is usable, is using the Nokia's composite out functionality, which kinda
+neat:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RNEJYYQyftI"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><p>Enabling it can be done like this:</p>
+<pre class="literal-block">
+02:57 &lt; Wizzup&gt; Had to change Jack Function in alsamixer to TV OUT, and use xrandr:
+xrandr --output TV --mode 800x480 --same-as LCD
+xrandr --output TV --set SignalProperties PAL
+xrandr --output TV --set TVScale 100
+</pre>
+</div>
+<div class="section" id="camera-support">
+<h4>Camera support</h4>
+<p>You read that right -- Pavel posted instructions on how to use the N900 camera
+and take photos with it. Some work remains before we'll have a stock application
+where taking photos just works, but it's great news. If you wanted to start
+hacking on it, the instructions were shared on the mailing list, and you can see
+the archive here:</p>
+<blockquote>
+<a class="reference external" href="https://lists.dyne.org/lurker/message/20200306.084252.32b5515a.en.html">https://lists.dyne.org/lurker/message/20200306.084252.32b5515a.en.html</a></blockquote>
+</div>
+<div class="section" id="sw-machine-cover">
+<h4>SW_MACHINE_COVER</h4>
+<p>The Nokia N900 has a sensor for the backcover, and when it's removed, current
+mainline linux will refuse to recognize the microsd card, as it uses this sensor
+to detect the card. Hopefully this will be changed in the future, and the
+backcover will be exposed as an input device, with the key <cite>SW_MACHINE_COVER</cite>:</p>
+<blockquote>
+<a class="reference external" href="https://marc.info/?l=linux-omap&amp;m=158168528609413&amp;w=2">https://marc.info/?l=linux-omap&amp;m=158168528609413&amp;w=2</a></blockquote>
+</div>
+</div>
+<div class="section" id="pinephone-pinetab-let">
+<h3>Pinephone &amp; Pinetab(let)</h3>
+<p>Wiki page: <a class="reference external" href="https://leste.maemo.org/PinePhone">https://leste.maemo.org/PinePhone</a></p>
+<p>We've also uploaded a Pinephone image! We uploaded one before, which we didn't
+quite intend to share with the public yet, but Pine64 already shared our ascii
+Pinephone image on twitter a while back:</p>
+<blockquote>
+<a class="reference external" href="https://twitter.com/thepine64/status/1231702499305893891">https://twitter.com/thepine64/status/1231702499305893891</a></blockquote>
+<p>Well, the beowulf image is here, and it's even better.</p>
+<div class="section" id="for-developers">
+<h4>For developers</h4>
+<p>Still, keep in mind that these are images for developers. Some things definitely
+do not work yet, and the lack of a hardware keyboard makes using some parts of
+UI a bit of a challenge, at least the places where the virtual keyboard is not
+yet available.</p>
+</div>
+<div class="section" id="keyboard-monitoring">
+<h4>Keyboard monitoring</h4>
+<p>The upcoming <a class="reference external" href="https://www.pine64.org/pinetab/">Pine64 tablet</a> has a removable
+keyboard, and the Maemo virtual keyboard should only show up when the keyboard
+is not attached to the tablet. Previously, removing the keyboard from the tablet
+caused MCE to crash, <a class="reference external" href="https://github.com/maemo-leste/mce/commit/0bec2e390e42f49bdbf01976a3b17609ddfd1483">but this has now been fixed</a>, and together with the <a class="reference external" href="https://github.com/maemo-leste/ke-recv-extra/pull/3">keyboard attached monitoring</a>, the Pinetab is in a much better shape.</p>
+</div>
+</div>
+</div>
+<div class="section" id="software-additions">
+<h2>Software additions</h2>
+<div class="section" id="hildon-desktop-improvements">
+<h3>hildon-desktop improvements</h3>
+<p>We have now switched hildon-desktop on all our devices to clutter 0.8, as
+opposed to clutter 1.2. The reason is poor performance, in particular on PowerVR
+devices (but likely also on other devices), and the unwillingness of the clutter
+1.2 maintainer to fix it. We package clutter 0.8, but downstream distributions
+will likely have to go through a bit of pain to get our latest and fastest bits
+packaged (sorry!).</p>
+</div>
+<div class="section" id="theme-switching-control-panel-applet">
+<h3>Theme switching control panel applet</h3>
+<p>For a long time, changing the default theme was not well documented, because
+Maemo Fremantle had a control panel applet for it, and <a class="reference external" href="https://github.com/maemo-leste/hildon-control-panel-personalisation">now we do too</a>, which
+fixes <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/306">issue #306</a>.</p>
+<p>Try it out for yourself!</p>
+</div>
+<div class="section" id="themes-available-in-the-extras-repository">
+<h3>Themes available in the extras repository</h3>
+<p>We've imported our first community made theme from Maemo.org,
+<a class="reference external" href="https://github.com/maemo-leste-extras/hildon-theme-marina/">hildon-theme-marina</a>. To achieve this,
+we also had to import <a class="reference external" href="https://github.com/maemo-leste/hildon-theme-layout">hildon-theme-layout</a> and <a class="reference external" href="https://github.com/maemo-leste/hildon-theme-tools/">hildon-theme-tools</a> (and fix it up in
+the process).</p>
+<p>Relevant bug report: <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/336">#336</a></p>
+</div>
+<div class="section" id="language-and-region-switching-control-panel-applet">
+<h3>Language and region switching control panel applet</h3>
+<p>Maemo Fremantle supported many languages, and since we implement the same base,
+the translations can be reused. There is now an application to switch between
+languages (source: <a class="reference external" href="https://github.com/maemo-leste/hildon-control-panel-personalisation">https://github.com/maemo-leste/hildon-control-panel-personalisation</a>), this was covered in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/304">issue #304</a></p>
+<p>This is what the language applet looks like:</p>
+<img alt="" src="/images/droid4-language-applet-english.png" style="width: 576px; height: 324px;" />
+<p>Here, the language is set to English and still makes sense:</p>
+<img alt="" src="/images/droid4-cp-english.png" style="width: 576px; height: 324px;" />
+<p>After changing the language to Dutch, and confirming that the device will indeed
+reboot, this is what the control panel looks like now:</p>
+<img alt="" src="/images/droid4-cp-dutch.png" style="width: 576px; height: 324px;" />
+<p>Confusing, right?</p>
+<img alt="" src="/images/droid4-status-dutch.png" style="width: 576px; height: 324px;" />
+<p>Additionally, language names now resolve in the hildon input method control
+panel.</p>
+</div>
+<div class="section" id="attached-keyboard-slider-monitoring">
+<h3>Attached keyboard slider monitoring</h3>
+<p>Maemo Leste now keeps track of the slide state of a keyboard, and the virtual
+keyboard will act accordingly. If the keyboard slide is opened, the virtual
+keyboard will not show up by default, but if the keyboard slide is closed, and
+the virtual keyboard is enabled, it will work as expected.</p>
+<p>Relevant pull requests:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/maemo-leste/ke-recv/pull/2">https://github.com/maemo-leste/ke-recv/pull/2</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/ke-recv-extra/pull/3">https://github.com/maemo-leste/ke-recv-extra/pull/3</a></li>
+</ul>
+</div>
+<div class="section" id="modem-cellular-updates">
+<h3>Modem/cellular updates</h3>
+<p>The &quot;connui&quot; userspace to interface with the modem is still being worked on, but
+more progress was made recently. The pin entry dialog now works, on start, like
+one would expect it to:</p>
+<img alt="" src="/images/pinentry-n900.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/pinentry-n900-2.png" style="width: 576px; height: 324px;" />
+<p>Once the pin is filled in (or skipped), the homescreen shows the operator name
+and the RAT (radio access technology) that is currently in use:</p>
+<img alt="" src="/images/homescreen-cellular-n900.png" style="width: 576px; height: 324px;" />
+<p>This work is only available in the development repositories, as it's not stable
+enough to be used on a day to be day basis without being aware of all the bugs.
+Yours truly is working hard to get this piece finished.</p>
+<p>The package <cite>libicd-network-ofono</cite> is also still being worked, in particular, IP
+assignment for the data connections is not yet implemented. Once this works,
+it'll likely be possible to have data connections working on devices that
+have ofono support for their modem.</p>
+</div>
+<div class="section" id="desktop-widgets-calendar-support">
+<h3>Desktop widgets &amp; calendar support</h3>
+<p>Previously, desktop widgets would crash hildon-home (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/326">#326</a>), this has now been fixed. Sicelo has made some progress getting the calendar backend and widgets to run, but more work remains to be done, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/203">#203</a>.</p>
+</div>
+</div>
+<div class="section" id="devices-hardware">
+<h2>Devices / Hardware</h2>
+<div class="section" id="virtual-machine-images">
+<h3>Virtual Machine images</h3>
+<p>New Virtual Machine images are available for download:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://maedevu.maemo.org/images/virtual-machines/20200324/">https://maedevu.maemo.org/images/virtual-machines/20200324/</a></li>
+</ul>
+<p>We build qcow2 images usually used with QEMU, VirtualBox VDI images, and Vagrant
+images.</p>
+<p>Currently, the mouse cursor might not be visible, we're working on resolving
+this problem.</p>
+<p><a class="reference external" href="https://leste.maemo.org/Virtual_Machine">https://leste.maemo.org/Virtual_Machine</a></p>
+</div>
+<div class="section" id="nokia-n900-images">
+<h3>Nokia N900 images</h3>
+<p>New images are available for download:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://maedevu.maemo.org/images/n900/20200323/">https://maedevu.maemo.org/images/n900/20200323/</a></li>
+</ul>
+</div>
+<div class="section" id="motorola-droid-4-images">
+<h3>Motorola Droid 4 images</h3>
+<p>New images are available for download:
+<a class="reference external" href="https://maedevu.maemo.org/images/droid4/20200323/">https://maedevu.maemo.org/images/droid4/20200323/</a></p>
+</div>
+<div class="section" id="pinephone-pinetab-images">
+<h3>Pinephone/Pinetab images</h3>
+<p>New images are available for download:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://maedevu.maemo.org/images/pinephone/20200323/">https://maedevu.maemo.org/images/pinephone/20200323/</a></li>
+<li><a class="reference external" href="https://maedevu.maemo.org/images/pinetab/20200324/">https://maedevu.maemo.org/images/pinetab/20200324/</a></li>
+</ul>
+<p>These images are very usable, and have 3D acceleration with the open source Lima
+drivers. There is still some jittery performance, but hopefully it will be fixed
+with time as we go forward and the mesa driver gets improved.</p>
+</div>
+</div>
+<div class="section" id="summarising">
+<h2>Summarising</h2>
+<p><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">It has been two years since our very first news post</a>, and we've come a long way.</p>
+<p>With 3D support now looking quite decent on the Droid 4, we now have a device
+that is easily obtainable, has great mainline support, very decent power
+management, and is able to make calls right now. By focussing on supporting the
+Nokia N900, Droid 4 and the Pinephone, and developing software with these
+devices in mind, we can expect to be able to perform phone calls in the next few
+months, if not weeks. It will take time for our userspace software to mature,
+but things are looking really bright for Maemo Leste.</p>
+<p>I think we're putting together a great versatile mobile Linux distribution, with
+it's own userspace, based on top of Debian, the universal operation system. It
+really is just Devuan/Debian at the core, and everything happens through the
+Debian package manager. There are no read-only images, specific partitions that
+you must have to install a new over the air update -- updates just work with
+<cite>apt upgrade</cite>.</p>
+<p>You will see that you can update from <cite>ascii</cite> to <cite>beowulf</cite> with
+<cite>dist-upgrade</cite>, and at the end of the upgrade, you will <strong>still</strong> have a
+functional <cite>ascii</cite> system. And when you reboot - you will have the new <cite>beowulf</cite>
+(buster) version. We think that's powerful.</p>
+<p>Additionally, some (old and new) members from the community have started
+contributed their packages to our <a class="reference external" href="https://github.com/maemo-leste-extras">&quot;Extras&quot; repository</a>. Make sure to check that out too, or
+even better: port and contribute packages that you would love to see!</p>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you're interested in specifics, or helping out, or wish to have a specific
+package ported, please see our <a class="reference external" href="https://github.com/maemo-leste/bugtracker">bugtracker</a>.</p>
+<p><strong>We have several Nokia N900 and Motorola Droid 4 units available to interested
+developers</strong>, so if you are interested in helping out but have trouble acquiring
+a device, let us know.</p>
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay up to date, ask questions and/or
+help out. Another great way to get in touch is to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join us!</p>
+</div>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
