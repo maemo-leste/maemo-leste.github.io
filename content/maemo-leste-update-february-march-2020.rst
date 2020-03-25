@@ -440,10 +440,10 @@ Summarising
 With 3D support now looking quite decent on the Droid 4, we now have a device
 that is easily obtainable, has great mainline support, very decent power
 management, and is able to make calls right now. By focussing on supporting the
-Nokia N900, Droid 4 and the Pinephone, and developing userspaces for these
-devices, we can expect to be able to perform phone calls in the next few months,
-if not weeks. It will take time for our userspace software to mature, but things
-are looking really bright for Maemo Leste.
+Nokia N900, Droid 4 and the Pinephone, and developing software with these
+devices in mind, we can expect to be able to perform phone calls in the next few
+months, if not weeks. It will take time for our userspace software to mature,
+but things are looking really bright for Maemo Leste.
 
 Additionally, some (old and new) members from the community have started
 contributed their packages to our `"Extras" repository
