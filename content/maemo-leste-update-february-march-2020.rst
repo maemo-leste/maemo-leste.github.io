@@ -350,7 +350,7 @@ Modem/cellular updates
 ----------------------
 
 The "connui" userspace to interface with the modem is still being worked on, but
-more progress was made recently. The pin entry dialog now works, on start, like
+more progress was made recently. The PIN entry dialog now works, on start, like
 one would expect it to:
 
 .. image:: /images/pinentry-n900.png
@@ -361,7 +361,7 @@ one would expect it to:
   :height: 324px
   :width: 576px
 
-Once the pin is filled in (or skipped), the homescreen shows the operator name
+Once the PIN is filled in (or skipped), the homescreen shows the operator name
 and the RAT (radio access technology) that is currently in use:
 
 .. image:: /images/homescreen-cellular-n900.png
