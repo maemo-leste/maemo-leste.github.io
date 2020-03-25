@@ -435,7 +435,7 @@ Summarising
 ===========
 
 `It has been two years since our very first news post
-<{filename}/maemo-leste-april-2018-update.rst>`_, and we've come a long way.
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_, and we've come a long way.
 
 With 3D support now looking quite decent on the Droid 4, we now have a device
 that is easily obtainable, has great mainline support, very decent power
