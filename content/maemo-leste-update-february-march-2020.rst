@@ -445,6 +445,18 @@ devices in mind, we can expect to be able to perform phone calls in the next few
 months, if not weeks. It will take time for our userspace software to mature,
 but things are looking really bright for Maemo Leste.
 
+I think we're putting together a great versatile mobile Linux distribution, with
+it's own userspace, based on top of Debian, the universal operation system. It
+really is just Devuan/Debian at the core, and everything happens through the
+Debian package manager. There are no read-only images, specific partitions that
+you must have to install a new over the air update -- updates just work with
+`apt upgrade`.
+
+You will see that you can update from `ascii` to `beowulf` with
+`dist-upgrade`, and at the end of the upgrade, you will **still** have a
+functional `ascii` system. And when you reboot - you will have the new `beowulf`
+(buster) version. We think that's powerful.
+
 Additionally, some (old and new) members from the community have started
 contributed their packages to our `"Extras" repository
 <https://github.com/maemo-leste-extras>`_. Make sure to check that out too, or
