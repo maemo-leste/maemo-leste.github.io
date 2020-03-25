@@ -5,17 +5,17 @@ Maemo Leste - Twelfth Update (February and March) 2020
 :tags: powervr, droid, n900, pinephone, theme, language, localisation, tv,
        extras
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-03-25 01:00
+:date: 2020-03-25 19:00
 
-.. TODO DATE
 
 It's been several weeks since our `pre-FOSDEM 2020 update
 <{filename}/maemo-leste-update-january-2020.rst>`_, and let's start with a few highlights:
 
+* We've been around for two years now!
 * We switched from Devuan **ascii** (Debian stretch) to Devuan **beowulf** (Debian buster)
-* Motorola Droid 4 images are available, with **3D acceleration and decent to
-  good power management**: TODO
-* **Pinephone images** are now available: TODO
+* `Motorola Droid 4`_ images are available, with **3D acceleration and decent to
+  good power management**.
+* `Pinephone/Pinetab images`_ are now available.
 * We gave a **main track talk at FOSDEM**:
   https://fosdem.org/2020/schedule/event/smartphones/
 * N900 hardware support improvements such as TV-out, beginnings of camera
@@ -23,16 +23,22 @@ It's been several weeks since our `pre-FOSDEM 2020 update
 * **Localisation support and theming** is now available from the control panel, with
   many languages already supported.
 
+**And if you're in a rush**, at least read the `summarising`_ section.
 
 
-FOSDEM
-======
 
-We gave a main-track talk at FOSDEM 2020. The video is available here:
+FOSDEM 2020
+===========
 
-    https://fosdem.org/2020/schedule/event/smartphones/
+We gave a main-track talk at FOSDEM 2020, you can read the summary on the FOSDEM
+website, or through the Maemo Leste FOSDEM application:
 
-**TODO**
+.. image:: /images/droid4-sojourner-fosdem.png
+  :height: 324px
+  :width: 576px
+
+`The video is available here <https://fosdem.org/2020/schedule/event/smartphones/>`_.
+
 
 Reminder that our repositories changed
 ======================================
@@ -52,7 +58,7 @@ team, and it marks a big step forward!
 A few packages remain to be ported from ascii (oldstable) to beowulf, but those
 were not in use yet on ascii either.
 
-The suggested way to upgrade is to download the latest image for your device,
+The recommended way to upgrade is to download the latest image for your device,
 and install the new image. Otherwise, if you're feeling adventurous, you can try
 to use change `/etc/apt/sources.list`, change `ascii` to `beowulf`, and run `apt
 update && apt dist-upgrade`.
@@ -96,20 +102,6 @@ are no longer present:
      ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
     picture-in-picture" allowfullscreen></iframe>
 
-
-Here's a random Droid 4 lockscreen:
-
-.. image:: /images/droid4-lockscreen.png
-  :height: 324px
-  :width: 576px
-
-And the USB popup for usb networking and mass storage:
-
-**XXX TODO**: wrong image
-
-.. image:: /images/droid4-usbbar.png
-  :height: 324px
-  :width: 576px
 
 Wireless
 ~~~~~~~~
@@ -245,12 +237,13 @@ Pinephone image on twitter a while back:
 
 Well, the beowulf image is here, and it's even better.
 
+For developers
+~~~~~~~~~~~~~~
+
 Still, keep in mind that these are images for developers. Some things definitely
 do not work yet, and the lack of a hardware keyboard makes using some parts of
 UI a bit of a challenge, at least the places where the virtual keyboard is not
 yet available.
-
-**TODO**
 
 
 Keyboard monitoring
@@ -282,7 +275,7 @@ Theme switching control panel applet
 For a long time, changing the default theme was not well documented, because
 Maemo Fremantle had a control panel applet for it, and `now we do too
 <https://github.com/maemo-leste/hildon-control-panel-personalisation>`_, which
-fixes `issue #306 <https://github.com/maemo-leste/bugtracker/issues/306>`.
+fixes `issue #306 <https://github.com/maemo-leste/bugtracker/issues/306>`_.
 
 Try it out for yourself!
 
@@ -395,8 +388,8 @@ Previously, desktop widgets would crash hildon-home (`#326 <https://github.com/m
 Devices / Hardware
 ==================
 
-Virtual Machine
----------------
+Virtual Machine images
+----------------------
 
 New Virtual Machine images are available for download:
 
@@ -411,23 +404,23 @@ this problem.
 https://leste.maemo.org/Virtual_Machine
 
 
-Nokia N900
-----------
+Nokia N900 images
+-----------------
 
 New images are available for download:
 
 * https://maedevu.maemo.org/images/n900/20200323/
 
 
-Motorola Droid 4
-----------------
+Motorola Droid 4 images
+-----------------------
 
 New images are available for download:
 https://maedevu.maemo.org/images/droid4/20200323/
 
 
-Pinephone/Pinetab
------------------
+Pinephone/Pinetab images
+------------------------
 
 New images are available for download:
 
@@ -438,9 +431,27 @@ These images are very usable, and have 3D acceleration with the open source Lima
 drivers. There is still some jittery performance, but hopefully it will be fixed
 with time as we go forward and the mesa driver gets improved.
 
+Summarising
+===========
+
+`It has been two years since our very first news post
+<{filename}/maemo-leste-april-2018-update.rst>`_, and we've come a long way.
+
+With 3D support now looking quite decent on the Droid 4, we now have a device
+that is easily obtainable, has great mainline support, very decent power
+management, and is able to make calls right now. By focussing on supporting the
+Nokia N900, Droid 4 and the Pinephone, and developing userspaces for these
+devices, we can expect to be able to perform phone calls in the next few months,
+if not weeks. It will take time for our userspace software to mature, but things
+are looking really bright for Maemo Leste.
+
+Additionally, some (old and new) members from the community have started
+contributed their packages to our `"Extras" repository
+<https://github.com/maemo-leste-extras>`_. Make sure to check that out too, or
+even better: port and contribute packages that you would love to see!
 
 Interested?
------------
+===========
 
 If you're interested in specifics, or helping out, or wish to have a specific
 package ported, please see our `bugtracker
@@ -456,31 +467,3 @@ help out. Another great way to get in touch is to join the `IRC channel
 <https://leste.maemo.org/IRC_channel>`_.
 
 If you like our work and want to see it continue, join us!
-
-
-
-
-
-
-To mention:
-
-* https://github.com/maemo-leste/bugtracker/issues/302
-* https://github.com/maemo-leste/bugtracker/issues/315
-* pdf reader launcher fixes - https://github.com/maemo-leste/bugtracker/issues/280
-* https://github.com/maemo-leste/bugtracker/issues/326
-* https://github.com/maemo-leste/bugtracker/issues/330
-
-
-
-
-.. Dialer
-.. ------
-.. 
-.. Someone from the community is working on a hildon gtk dialer that can interface
-.. with telepathy (communication framework), and eventually establish calls using
-.. the ofono backend.
-.. 
-.. 
-.. TODO
-.. * https://wizzup.org/rhizo-dialer-test.png / https://github.com/DigitalHERMES/rhizo-dialer
-
