@@ -300,7 +300,7 @@ Language and region switching control panel applet
 
 Maemo Fremantle supported many languages, and since we implement the same base,
 the translations can be reused. There is now an application to switch between
-languages (source: https://github.com/maemo-leste/hildon-control-panel-personalisation), this was covered in `issue #304 <https://github.com/maemo-leste/bugtracker/issues/304>`_
+languages (source: https://github.com/maemo-leste/osso-applet-languageregional), this was covered in `issue #304 <https://github.com/maemo-leste/bugtracker/issues/304>`_
 
 This is what the language applet looks like:
 
