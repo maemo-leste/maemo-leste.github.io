@@ -210,7 +210,7 @@ the process).&lt;/p&gt;
 &lt;h3&gt;Language and region switching control panel applet&lt;/h3&gt;
 &lt;p&gt;Maemo Fremantle supported many languages, and since we implement the same base,
 the translations can be reused. There is now an application to switch between
-languages (source: &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-control-panel-personalisation"&gt;https://github.com/maemo-leste/hildon-control-panel-personalisation&lt;/a&gt;), this was covered in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/304"&gt;issue #304&lt;/a&gt;&lt;/p&gt;
+languages (source: &lt;a class="reference external" href="https://github.com/maemo-leste/osso-applet-languageregional"&gt;https://github.com/maemo-leste/osso-applet-languageregional&lt;/a&gt;), this was covered in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/304"&gt;issue #304&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This is what the language applet looks like:&lt;/p&gt;
 &lt;img alt="" src="/images/droid4-language-applet-english.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;Here, the language is set to English and still makes sense:&lt;/p&gt;
