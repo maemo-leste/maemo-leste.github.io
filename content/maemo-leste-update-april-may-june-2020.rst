@@ -10,7 +10,8 @@ Maemo Leste - Thirteenth Update (April) 2020
 .. TODO DATE
 
 It's been several weeks since our `last update
-<{filename}/maemo-leste-update-february-and-march-2020.rst>`_, and let's start with a few highlights:
+<{filename}/maemo-leste-update-february-and-march-2020.rst>`_, and let's start
+with a few highlights:
 
 * We have improved power management on the Droid 4, and under current ideal
   conditions, the power draw is about 60mW, with the modem turned on. That
@@ -20,7 +21,7 @@ It's been several weeks since our `last update
 * A lot of kernel bugs/regressions have been chased and fixed.
 * Cellular support is improving, cellular data should now work
 * Maemo Leste Extras should contain quite a few more packages now
-* `leste-config-*` packages now exist to provide seamless configuration updates
+* ``leste-config-*`` packages now exist to provide seamless configuration updates
   and changes, so there should be less of a need to "reinstall" on every new
   image release.
 
@@ -51,6 +52,7 @@ https://github.com/maemo-leste/mce/pull/9
 * mce with vibration (!)
 
 * https://github.com/maemo-leste/bugtracker/issues/392
+
 
 Qt 5: Progress is being made
 ----------------------------
@@ -93,8 +95,16 @@ Wireless
 Themes
 ------
 
+More beautiful user interface themes are available in our ``extras`` repository:
+
 * https://github.com/maemo-leste-extras/miku-theme
 * https://github.com/maemo-leste-extras/hildon-theme-matrix
+
+https://parazyd.org/pub/tmp/screenshots/screenshot00140.png
+https://parazyd.org/pub/tmp/screenshots/screenshot00141.png
+https://parazyd.org/pub/tmp/screenshots/screenshot00142.png
+https://parazyd.org/pub/tmp/screenshots/screenshot00143.png
+https://parazyd.org/pub/tmp/screenshots/screenshot00144.png
 
 
 Xephyr / Nested Xorg servers
@@ -112,8 +122,19 @@ Input / Focus fixes
 OpenRC integration in Debian fixes
 ----------------------------------
 
-TODO
-* openrc support in insserv, no more 'warnings' about lsb headers, getting installed into proper runlevel
+We've successfully submitted a patch to SysVinit upstream which brings in better
+support for OpenRC and its internals on both Debian and Devuan. It has not yet
+propagated to Debian, but it is expected to happen, of course. In Maemo Leste we
+already provide the patched version and maintain it ourselves until it is
+available in Devuan. The patch itself brings in proper OpenRC support in the
+insserv tool, which means that LSB headers aren't necessary for OpenRC
+initscripts and they now get installed in the default runlevel without the need
+for manual interference.
+
+The patch was merged in ``6a65f4412a2d24d78741f49e64e1128993341e65``, and can be
+seen here:
+
+* http://git.savannah.nongnu.org/cgit/sysvinit/insserv.git/commit/?h=1.22.0&id=6a65f4412a2d24d78741f49e64e1128993341e65
 
 
 More languages added to virtual keyboard layouts
@@ -136,6 +157,9 @@ Steps towards calls and texts
 
 * osso-abook
 
+The addressbook interface is also underway and is being RE'd from the Fremantle
+binaries: https://github.com/maemo-leste/osso-abook/
+
 
 Calendar backend and frontend
 -----------------------------
@@ -153,6 +177,7 @@ https://github.com/maemo-leste/bugtracker/issues/253
 
 * https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41
 * https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba
+
 
 Device support
 ==============
@@ -207,6 +232,31 @@ Nokia N900
 ----------
 
 
+Pinephone
+---------
+
+Thanks to work from people in postmarketOS, we now also support the modem in the
+Pinephone. While we've mostly been working with cellular things on the Droid4,
+lots of can simply be reused on the Pinephone, and we plan to do so in the
+coming time. A package called ``pinephone-modem-config`` can be installed, and
+along with updating the kernel (latest available version is 5.6), it will bring
+in modem support. This is already automatically enabled in the latest images.
+
+
+Weekly builds
+=============
+
+From July, we will also implement and enable weekly image builds on our CI
+infrastructure. This means we won't be building images on demand anymore.
+Instead they shall be built each week, containg all the latest packages and
+goodies. Obviously, this will require more storage space, so we will be
+distributing device images up to five weeks of age.
+
+Hopefully this will also help us polish up our build frameworks and alert us
+about possible bugs that arise during development. It is also a very important
+step towards reproducible builds - which is one of our milestones we wish to
+fulfill.
+
 
 Community showcase
 ==================
@@ -222,6 +272,15 @@ Community showcase
 * https://imgur.com/a/t4yfBaI -- [redacted] proxmark3 ; notes https://paste.debian.net/plain/1149261
 
 
+Maemo Leste Extras
+==================
+
+More community packages are being maintained in the ``extras`` repository and
+we're very glad and excited about it. If you're interested in maintaing your own
+community package for Maemo Leste, there are instructions for you to do so on
+the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
+
+
 Interested?
 ===========
 
@@ -234,8 +293,8 @@ developers**, so if you are interested in helping out but have trouble acquiring
 a device, let us know.
 
 Please also join our `mailing list
-<https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay up to date, ask questions and/or
-help out. Another great way to get in touch is to join the `IRC channel
-<https://leste.maemo.org/IRC_channel>`_.
+<https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the `IRC channel <https://leste.maemo.org/IRC_channel>`_.
 
 If you like our work and want to see it continue, join us!
