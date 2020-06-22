@@ -45,7 +45,7 @@ applications while the device is locked. MCE will also close the file
 descriptors of any touchscreen devices to let the touchscreen driver idle
 properly. For more details, see `issue #340 <https://github.com/maemo-leste/bugtracker/issues/340>`_, `MCE PR 6 <https://github.com/maemo-leste/mce/pull/6>`_ and `MCE PR 7 <https://github.com/maemo-leste/mce/pull/7>`_.
 
-Furthermore, we've made a change to the default `/etc/mce/mce.ini` configuration
+Furthermore, we've made a change to the default ``/etc/mce/mce.ini`` configuration
 file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
 one has to press the power key to shutdown the device (issue #392)
 <https://github.com/maemo-leste/bugtracker/issues/392>`_.
@@ -53,7 +53,7 @@ one has to press the power key to shutdown the device (issue #392)
 ALS support has been extended, now also works on the `Motorola Droid 4`_, see
 `MCE PR 8 <https://github.com/maemo-leste/mce/pull/8/>`_.
 
-A module contributed by `uvos`, to support vibration on MCE, is also expected to
+A module contributed by ```uvos`, to support vibration on MCE, is also expected to
 land in the next few days. See `issue #132
 <https://github.com/maemo-leste/bugtracker/issues/132>`_ and `MCE PR 9
 <https://github.com/maemo-leste/mce/pull/9>`_.
@@ -71,7 +71,7 @@ bugs with regards to input focus
 `impossible to send keyboard events to vanilla Qt 5 applications
 <https://github.com/maemo-leste/bugtracker/issues/346>`_.
 
-`freemangordon` and `uvos` have been trying to get to the bottom of the problem.
+``freemangordon`` and ``uvos`` have been trying to get to the bottom of the problem.
 The result of that effort is that all known problematic input and focus issues
 are now fixed. xev happily receives events, es2gears responds to keyboard input
 events now, and Qt5 applications take input they way they are supposed to, now.
@@ -87,10 +87,10 @@ Qt 5: Progress is being made
 ----------------------------
 
 The Maemo Qt 5 port is not finished yet, but has seen various improvements.
-`Wizzup` has been doing work porting the "Hildon Input Method" virtual keyboard
+Merlijn has been doing work porting the "Hildon Input Method" virtual keyboard
 patches to Qt 5. Due to the more clear architecture of Qt 5, and our
 unwillingness to fork Qt 5 as a whole, and the fact that we're also porting from
-old `Xlib` code to `xcb`, the work is taking a little bit more
+old ``Xlib`` code to ``xcb``, the work is taking a little bit more
 time, but on the upside, all the Maemo Qt 5 bits will hopefully available via a
 `Qt 5 loadable platform module <https://doc.qt.io/qt-5/qpa.html>`_.
 
@@ -139,7 +139,6 @@ If you plan to use Qt designer on your device, you might want to look at `Xephyr
 In the next month, we hope to mostly finish the Qt5 port. Keep in mind that many
 Qt 5 applications are already usable on Maemo as is, also documented in
 `Community showcase`_!
-
 
 
 Xephyr (Nested Xorg server) on Maemo
@@ -202,12 +201,12 @@ was really annoying. See `issue #253
   mention integration
 
 
-
 Themes
 ------
 
 More beautiful user interface themes are available in our ``extras`` repository:
 
+* https://github.com/maemo-leste-extras/hildon-theme-okuda
 * https://github.com/maemo-leste-extras/miku-theme
 * https://github.com/maemo-leste-extras/hildon-theme-matrix
 
@@ -245,7 +244,46 @@ install fine now.
 More languages added to virtual keyboard layouts
 ------------------------------------------------
 
-https://github.com/maemo-leste/hildon-input-method-plugins/pull/2
+Many more virtual keyboard layouts have been added. If you were ever in need of
+a Belarusian or Bulgarian keyboard layout, now is your time to ``apt update &&
+apt upgrade``.
+
+See `hildon-input-method-plugins PR 2
+<https://github.com/maemo-leste/hildon-input-method-plugins/pull/2>`_.
+
+
+Audio changes
+-------------
+
+https://github.com/maemo-leste/maemo-statusmenu-volume
+
+
+
+
+Steps towards calls and texts
+-----------------------------
+
+With `Cellular data and ofono support`_ improving and other projects getting
+close to finished, it is soon time to turn out attention to usable calls and
+texts on Maemo. We will use many of the same components that Maemo Fremantle
+uses, just in their updated forms, like the Mer project does.
+
+`Issue #390 <https://github.com/maemo-leste/bugtracker/issues/390>`_ documents
+some of the steps will be taking. It will look something like:
+
+1. Perform further analysis on how this works on Fremantle
+2. Import all the FOSS components (there are quite some)
+3. Figure out audio (routing and) policies.
+4. Reimplement the non-FOSS ones: call and sms UI are the big ones.
+5. Use ``osso-abook`` in the alternative call and sms UIs.
+
+* towards proper telepathy integration https://github.com/maemo-leste/bugtracker/issues/390
+* https://github.com/maemo-leste/rtcom-eventlogger-plugins
+* https://github.com/maemo-leste/rtcom-eventlogger-ui
+
+The addressbook interface is also underway and is being RE'd from the Fremantle
+binaries: https://github.com/maemo-leste/osso-abook/
+
 
 maemo-input-sounds
 ------------------
@@ -253,25 +291,19 @@ maemo-input-sounds
 * maemo-input-sounds https://github.com/maemo-leste/bugtracker/issues/389
 
 
-Steps towards calls and texts
------------------------------
-
-* towards proper telepathy integration https://github.com/maemo-leste/bugtracker/issues/390
-* https://github.com/maemo-leste/rtcom-eventlogger-plugins
-* https://github.com/maemo-leste/rtcom-eventlogger-ui
-
-* osso-abook
-
-The addressbook interface is also underway and is being RE'd from the Fremantle
-binaries: https://github.com/maemo-leste/osso-abook/
-
 
 Calendar backend and frontend
 -----------------------------
 
+Some more work is being done to get the calendar software up and running.
+The backend, ``calendar-backend`` is already building fine, but the frontend
+(``qalendar``) is still blocking on the Qt 5 port:
+
 * https://github.com/buzztiaan/calendar-backend
 * https://github.com/buzztiaan/libgq
 * https://github.com/buzztiaan/qalendar
+
+We expect this to fold in rather quickly once ``osso-abook`` is mostly ready.
 
 
 hildon-home fixes
@@ -344,8 +376,18 @@ apply. It is also possible to add more patters by editing `/etc/mce/mce.ini`.
 Accelerometer
 ~~~~~~~~~~~~~
 
+The accelerometer driver is now turned on, meaning that things like the
+`droidsaber <https://github.com/buzztiaan/droidsaber>`_ are now possible:
 
-* droid4 compass/accelerometer
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DeCtO8WwaTc"
+     ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
+
+This will also be useful in automatically changing the screen orientation, based
+on the device orientation. The powervr driver might need a bit more work before
+that will be working smoothly and well, though.
 
 
 Power Management
@@ -373,6 +415,13 @@ Keyboard layout
   https://github.com/maemo-leste/xkb-data/commit/99343d77464299cdf1d56e461018bd7f974cee42
   https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2
   https://github.com/maemo-leste/xkb-data/commit/0bddeb2bdfcc0e44223f0e5a9667e13784028e8a
+
+
+Battery calibration
+~~~~~~~~~~~~~~~~~~~
+
+21:11 < uvos> btw can we commit the upower pr and droid4-battery-callibration to the repo
+21:11 < uvos> i have been using it for a long time now and can report it works absolutely as intended
 
 
 Modem integration

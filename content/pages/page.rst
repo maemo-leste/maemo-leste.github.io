@@ -19,20 +19,20 @@ Feel free to join us on irc.freenode.net **#maemo-leste** and also join our
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ if you're
 interested.
 
-Maemo Leste is based on Devuan Ascii (Debian Stretch) and all the "supported"
-devices ship with recent Linux (mainline-based) kernels. We are also already
-working towards supporting Devuan Beowulf (Debian Buster) as well.
+Maemo Leste is based on Devuan Beowulf(Debian Buster) and all the "supported"
+devices ship with recent Linux (mainline-based) kernels.
 
-The project is not usable as a daily driver for your device, Maemo Leste is
+The project is almost usable as a daily driver for your device, Maemo Leste is
 currently in development phase and we are actively searching for developers. For
 some devices, we have development images available - such as the `Nokia N900
 <https://leste.maemo.org/Nokia_N900>`_; for an impression see
 `Screenshots <{filename}/pages/screenshots.rst>`_.
 
 So far we have set up devuan/debian repositories for our packages, with builds
-for `armel`, `armhf`, `amd64`, `aarch64`. We have FOSS replacements for some
-closed maemo packages (and we have no closed packages in use), further building
-on the Maemo community efforts to replace all closed bits by open software.
+for `armhf`, `amd64`, `aarch64`. We have FOSS replacements for all included
+previously closed maemo packages (and we have no closed packages in use),
+further building on the Maemo community efforts to replace all closed bits by
+open software.
 
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
@@ -42,6 +42,7 @@ For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
 following monthly updates:
 
+* `April + May + June 2020 <{filename}/maemo-leste-update-april-may-june-2020.rst>`_
 * `February + March 2020 <{filename}/maemo-leste-update-february-march-2020.rst>`_
 * `Repositories and community packages <{filename}/repo-restructuring.rst>`_
 * `January 2020 <{filename}/maemo-leste-update-january-2020.rst>`_
