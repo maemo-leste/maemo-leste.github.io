@@ -83,16 +83,68 @@ Relevant pull requests:
 Qt 5: Progress is being made
 ----------------------------
 
-* https://github.com/maemo-leste/qt-platform-maemo
-* https://wizzup.org/leste-qt5-countdowntimer-0.1.png
-* https://wizzup.org/leste-designer-lol.png
-* https://wizzup.org/leste-qt5-designer-x11-forward.png
-* https://wizzup.org/countdowntimer-qt5-kinda-fixed.png
-* https://github.com/maemo-leste-extras/countdowntimer
+The Maemo Qt 5 port is not finished yet, but has seen various improvements.
+`Wizzup` has been doing work porting the "Hildon Input Method" virtual keyboard
+patches to Qt 5. Due to the more clear architecture of Qt 5, and our
+unwillingness to fork Qt 5 as a whole, and the fact that we're also porting from
+old `Xlib` code to `xcb`, the work is taking a little bit more
+time, but on the upside, all the Maemo Qt 5 bits will hopefully available via a
+`Qt 5 loadable platform module <https://doc.qt.io/qt-5/qpa.html>`_.
 
-Also cover designer, what's left to be done, vkb status
+Apart from the virtual keyboard, there are at least two important pieces
+missing:
+
+* QMenu support, to allow hildon-style menu items to show when the application
+  title is touched/pressed.
+* Hildon-style stacked windows.
 
 
+We've also ported over a sample application, `countdowntimer
+<https://github.com/maemo-leste-extras/countdowntimer>`_:
+
+.. image:: /images/countdowntimer.png
+  :height: 324px
+  :width: 576px
+
+To make it usable, we had to have the application respect desktop sizes other
+than the `800x480` that the Nokia N900 screen supports, to prevent it from
+looking like this:
+
+.. image:: /images/leste-qt5-countdowntimer-0.1.png
+  :height: 324px
+  :width: 576px
+
+
+Countdowntimer itself also makes use of the specialised QMenu and Hildon
+stackable windows, but is already quite usable even without those modifications.
+
+Developing can be done directly on the VM, using X11 forwarding:
+
+.. image:: /images/leste-qt5-designer-x11-forward.png
+  :height: 324px
+  :width: 576px
+
+You can also use Qt Designer with the native Maemo theme, but, well...:
+
+.. image:: /images/leste-designer-lol.png
+  :height: 324px
+  :width: 576px
+
+If you plan to use Qt designer on your device, you might want to look at `Xephyr
+(Nested Xorg server) on Maemo`_ instead.
+
+In the next month, we hope to mostly finish the Qt5 port. Keep in mind that many
+Qt 5 applications are already usable on Maemo as is, also documented in
+`Community showcase`_!
+
+
+
+Xephyr (Nested Xorg server) on Maemo
+------------------------------------
+
+ / Nested Xorg servers
+
+* Xephyr -- mention, show some use of it
 
 Cellular data and ofono support
 -------------------------------
@@ -133,10 +185,6 @@ https://parazyd.org/pub/tmp/screenshots/screenshot00143.png
 https://parazyd.org/pub/tmp/screenshots/screenshot00144.png
 
 
-Xephyr / Nested Xorg servers
-----------------------------
-
-* Xephyr -- mention, show some use of it
 
 
 OpenRC integration in Debian fixes
