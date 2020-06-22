@@ -142,9 +142,28 @@ Qt 5 applications are already usable on Maemo as is, also documented in
 Xephyr (Nested Xorg server) on Maemo
 ------------------------------------
 
- / Nested Xorg servers
+Xephyr is a nested X server, which can run in a window on Maemo Leste, allowing
+to run any ordinary desktop application on Maemo Leste, in a window. Installing
+it is as simple as::
 
-* Xephyr -- mention, show some use of it
+    sudo apt install xephyr
+
+And then start it as follows::
+
+    Xephyr :1 &
+
+And launch applications inside that server like so::
+
+    DISPLAY=:1 dwm &
+    DISPLAY=:1 xterm
+
+.. image:: /images/xephyr-droid4.png
+  :height: 324px
+  :width: 576px
+
+
+Enjoy!
+
 
 Cellular data and ofono support
 -------------------------------
