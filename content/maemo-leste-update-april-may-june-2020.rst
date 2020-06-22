@@ -59,6 +59,26 @@ Something else to look forward to is the execution of mode-change shell scripts,
 to allow certain programs or scripts to be executed when a device is locked,
 unlocked, or enters some other mce (sub)modes.
 
+Input and Focus fixes
+---------------------
+
+libmatchbox2 and hildon-desktop (the Maemo window manager) has had `long standing
+bugs with regards to input focus
+<https://bugs.maemo.org/show_bug.cgi?id=5987>`_, which was also making it
+`impossible to send keyboard events to vanilla Qt 5 applications
+<https://github.com/maemo-leste/bugtracker/issues/346>`_.
+
+`freemangordon` and `uvos` have been trying to get to the bottom of the problem.
+The result of that effort is that all known problematic input and focus issues
+are now fixed. xev happily receives events, es2gears responds to keyboard input
+events now, and Qt5 applications take input they way they are supposed to, now.
+
+Relevant pull requests:
+
+* `libmatchbox PR 3 <https://github.com/maemo-leste/libmatchbox2/pull/3>`_
+* `libmatchbox PR4 <https://github.com/maemo-leste/libmatchbox2/pull/4>`_
+* `hildon-desktop PR 4 <https://github.com/maemo-leste/hildon-desktop/pull/4>`_
+
 
 Qt 5: Progress is being made
 ----------------------------
@@ -117,12 +137,6 @@ Xephyr / Nested Xorg servers
 ----------------------------
 
 * Xephyr -- mention, show some use of it
-
-
-Input / Focus fixes
--------------------
-
-* focus fixes h-d and libmatchbox2
 
 
 OpenRC integration in Debian fixes
