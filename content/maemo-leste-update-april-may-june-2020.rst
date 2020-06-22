@@ -143,8 +143,11 @@ Xephyr (Nested Xorg server) on Maemo
 ------------------------------------
 
 Xephyr is a nested X server, which can run in a window on Maemo Leste, allowing
-to run any ordinary desktop application on Maemo Leste, in a window. Installing
-it is as simple as::
+to run any ordinary desktop application on Maemo Leste, in a window.
+
+It's especially useful for devices with physica keyboards.
+
+Installing it is as simple as::
 
     sudo apt install xephyr
 
@@ -184,7 +187,7 @@ Wireless
 --------
 
 Wireless is mostly just working, although the UI still has some rough edges. In
-particular, sometimes connection to a network fails if entering the password
+particular, sometimes connecting to a network fails if entering the password
 takes too long.
 
 One other bug was fixed: a problem where the networks could appear in the
