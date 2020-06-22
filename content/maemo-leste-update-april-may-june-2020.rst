@@ -50,6 +50,9 @@ file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
 one has to press the power key to shutdown the device (issue #392)
 <https://github.com/maemo-leste/bugtracker/issues/392>`_.
 
+ALS support has been extended, now also works on the `Motorola Droid 4`_, see
+`MCE PR 8 <https://github.com/maemo-leste/mce/pull/8/>`_.
+
 A module contributed by `uvos`, to support vibration on MCE, is also expected to
 land in the next few days. See `issue #132
 <https://github.com/maemo-leste/bugtracker/issues/132>`_ and `MCE PR 9
@@ -171,17 +174,15 @@ Enjoy!
 Cellular data and ofono support
 -------------------------------
 
-
+**TODO**
 - lots of work on ofono, droid4 kernel side
 
 * ofono-d4 for droid4 with Tony's work
 
 * libicd-network-ofono https://wizzup.org/droid4-cellular-0.1.png
 
-* https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
-  mention integration
-
 * https://github.com/maemo-leste/bugtracker/issues/372
+
 
 Wireless
 --------
@@ -195,6 +196,11 @@ network dialog, but would not be selectable until the next scan returned, which
 was really annoying. See `issue #253
 <https://github.com/maemo-leste/bugtracker/issues/253>`_ and `connui-internet PR
 <https://github.com/maemo-leste/connui-internet/pull/1>`_.
+
+
+* https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
+  mention integration
+
 
 
 Themes
@@ -230,6 +236,10 @@ The patch was merged in ``6a65f4412a2d24d78741f49e64e1128993341e65``, and can be
 seen here:
 
 * http://git.savannah.nongnu.org/cgit/sysvinit/insserv.git/commit/?h=1.22.0&id=6a65f4412a2d24d78741f49e64e1128993341e65
+
+If you found that some init scripts ended up in `/etc/runlevels` instead of
+`/etc/runlevels/default`, try reinstalling the affected packages; they should
+install fine now.
 
 
 More languages added to virtual keyboard layouts
@@ -267,8 +277,15 @@ Calendar backend and frontend
 hildon-home fixes
 -----------------
 
-Various ones to reduce wakeups, various plugin loading problems fixed
-https://github.com/maemo-leste/bugtracker/issues/253
+`hildon-home` would frequently try to monitor non existing directories for
+changes, but because the directories did not exist, kept retrying the monitor
+calls. This resulted in significantly higher power usage. This has been fixed
+now, see `issue #264 <https://github.com/maemo-leste/bugtracker/issues/264>`_
+for more details.
+
+Additionally, since our move to Beowulf, two plugins for hildon-home would no
+longer load (due to `hildon-home` loading them from a non existing path), but
+this too has been fixed now:
 
 * https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41
 * https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba
@@ -281,16 +298,51 @@ Device support
 Motorola Droid 4
 ----------------
 
+The Motorola Droid 4 has seen a bit set of improvements:
+
+* The `Ambient Light Sensor`_ is now used;
+* The `Vibration Motor`_ is now used;
+* A driver for the `Accelerometer`_ is available;
+* Advanced `keyboard layout`_;
+* Support for the `special keys virtual keyboard`_ is now available;
+* Basic `modem integration`_ in `beowulf-devel` branches;
+* Much improved battery life;
+
 Ambient Light Sensor
 ~~~~~~~~~~~~~~~~~~~~
 
-* droid4 ambient light sensor https://github.com/maemo-leste/mce/pull/8/
+Just like the Nokia N900, the Droid has an ambient light sensor, used to measure
+exactly that: ambient light levels. This can be used to adjust the screen
+brightness to the ambient light levels, based on the brightness profile
+selected. For observant users, this already worked on the Nokia N900, but now
+this also works on the Droid 4.
+
+This should make your device more pleasant to use in darker rooms, but also
+outside - in direct sunlight.
+
+Additionally, if the light level is low, the device is unlocked, and the
+keyboard is exposed, the keyboard backlight LEDs will be turned on, allow for
+optimal typing in the dark. :-) 
+
+See `MCE PR 8`_.
 
 Vibration Motor
 ~~~~~~~~~~~~~~~
 
-Compass / Accelerometer
-~~~~~~~~~~~~~~~~~~~~~~~
+Pending merging `MCE PR 9`_, the Motorola Droid 4 (and actually also the Nokia
+N900, and other device that supports the Linux `FF
+<https://www.kernel.org/doc/html/latest/input/ff.html>`_ interface).
+This allows for vibration the device to provide feedback to the user when the
+touchscreen is touched, but also when (in the near future) a SMS is received, or
+the device is being called.
+
+See also these notes on Maemo.org `on how to start and stop vibrations
+<https://wiki.maemo.org/Phone_control#Start_Vibrating_Incoming_Call>`_. Since we
+are compatible at least on the DBUS level, the original Maemo instructions just
+apply. It is also possible to add more patters by editing `/etc/mce/mce.ini`.
+
+Accelerometer
+~~~~~~~~~~~~~
 
 
 * droid4 compass/accelerometer
@@ -323,8 +375,28 @@ Keyboard layout
   https://github.com/maemo-leste/xkb-data/commit/0bddeb2bdfcc0e44223f0e5a9667e13784028e8a
 
 
+Modem integration
+~~~~~~~~~~~~~~~~~
+
+
+Special keys virtual keyboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+increasing font size in osso-xterm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**TODO**
+
+https://github.com/maemo-leste/bugtracker/issues/385
+
 Nokia N900
 ----------
+
+Powermanagement update
+~~~~~~~~~~~~~~~~~~~~~~
+
+TODO: Working on n900-pm script
+TODO: add photo of setup
 
 
 Pinephone
@@ -366,6 +438,8 @@ Community showcase
 * https://imgur.com/a/SPGe9ZM -- ui screenshots by [redacted]
 * https://imgur.com/a/t4yfBaI -- [redacted] proxmark3 ; notes https://paste.debian.net/plain/1149261
 
+https://www.youtube.com/watch?v=BmIAQby4ccM&feature=youtu.be
+
 
 Maemo Leste Extras
 ==================
@@ -375,6 +449,8 @@ we're very glad and excited about it. If you're interested in maintaing your own
 community package for Maemo Leste, there are instructions for you to do so on
 the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 
+
+https://wizzup.org/leste-okuda-vkb.png
 
 Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
 ===========================================================
