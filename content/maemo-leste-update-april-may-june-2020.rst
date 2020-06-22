@@ -15,7 +15,7 @@ with a few highlights:
 
 * We have improved power management on the Droid 4, and under current ideal
   conditions, the power draw is about 60mW, with the modem turned on. That
-  should last a decent battery for a few days.
+  should last a few days on a decent battery.
 * Various sensors and other hardware of the Motorola Droid 4 is now usable with
   Maemo Leste
 * A lot of kernel bugs/regressions have been chased and fixed.
@@ -36,22 +36,28 @@ mce
 
 The Mode Control Entity has seen significant changes.
 
-https://github.com/maemo-leste/bugtracker/issues/338
+MCE will now properly blank the screen, allowing the SoC to idle properly which
+in turns allows for for significant power saving (`see issue #338 <https://github.com/maemo-leste/bugtracker/issues/338>`_, `MCE PR 5 <https://github.com/maemo-leste/mce/pull/5>`_).
 
+With the newer versions, the touchscreen will also be properly disabled when the
+device is locked, this will prevent 'accidental' input events being sent to the
+applications while the device is locked. MCE will also close the file
+descriptors of any touchscreen devices to let the touchscreen driver idle
+properly. For more details, see `issue #340 <https://github.com/maemo-leste/bugtracker/issues/340>`_, `MCE PR 6 <https://github.com/maemo-leste/mce/pull/6>`_ and `MCE PR 7 <https://github.com/maemo-leste/mce/pull/7>`_.
 
-* https://github.com/maemo-leste/mce/pull/5
-* https://github.com/maemo-leste/mce/pull/6
-* https://github.com/maemo-leste/mce/pull/7
-* https://github.com/maemo-leste/bugtracker/issues/340
+Furthermore, we've made a change to the default `/etc/mce/mce.ini` configuration
+file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
+one has to press the power key to shutdown the device (issue #392)
+<https://github.com/maemo-leste/bugtracker/issues/392>`_.
 
+A module contributed by `uvos`, to support vibration on MCE, is also expected to
+land in the next few days. See `issue #132
+<https://github.com/maemo-leste/bugtracker/issues/132>`_ and `MCE PR 9
+<https://github.com/maemo-leste/mce/pull/9>`_.
 
-https://github.com/maemo-leste/bugtracker/issues/132
-https://github.com/maemo-leste/mce/pull/9
-
-
-* mce with vibration (!)
-
-* https://github.com/maemo-leste/bugtracker/issues/392
+Something else to look forward to is the execution of mode-change shell scripts,
+to allow certain programs or scripts to be executed when a device is locked,
+unlocked, or enters some other mce (sub)modes.
 
 
 Qt 5: Progress is being made
@@ -281,12 +287,19 @@ community package for Maemo Leste, there are instructions for you to do so on
 the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 
 
+Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
+===========================================================
+
+
+
+
+
+
 Interested?
 ===========
 
 If you're interested in specifics, or helping out, or wish to have a specific
-package ported, please see our `bugtracker
-<https://github.com/maemo-leste/bugtracker>`_.
+package ported, please see our `bugtracker`_
 
 **We have several Nokia N900 and Motorola Droid 4 units available to interested
 developers**, so if you are interested in helping out but have trouble acquiring
