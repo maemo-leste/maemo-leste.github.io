@@ -183,10 +183,15 @@ Cellular data and ofono support
 Wireless
 --------
 
-- bugfixes with scan list being disable at first
+Wireless is mostly just working, although the UI still has some rough edges. In
+particular, sometimes connection to a network fails if entering the password
+takes too long.
 
-* https://github.com/maemo-leste/connui-internet/pull/1
-* https://github.com/maemo-leste/bugtracker/issues/253
+One other bug was fixed: a problem where the networks could appear in the
+network dialog, but would not be selectable until the next scan returned, which
+was really annoying. See `issue #253
+<https://github.com/maemo-leste/bugtracker/issues/253>`_ and `connui-internet PR
+<https://github.com/maemo-leste/connui-internet/pull/1>`_.
 
 
 Themes
