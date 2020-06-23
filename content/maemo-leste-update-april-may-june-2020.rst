@@ -441,8 +441,9 @@ idle afterwards, requiring manually being kicked into idle mode):
 https://github.com/maemo-leste/bugtracker/issues/340
 
 
-NTPD
-^^^^
+NTPD and power management
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 The ``ntp`` daemon currently causes a lot of wake ups, and negatively impacts
 battery life. The current stop-gap is to stop it manually, after starting, by
@@ -451,8 +452,8 @@ issuing the following as root::
     /etc/init.d/ntp stop
 
 
-Cellular
-^^^^^^^^
+Cellular and power management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While the modem itself should idle pretty well, the modem reports on the signal
 strength very frequently, waking up the device even when the signal strength
@@ -461,8 +462,8 @@ should not be shown, the signal strength can be temporarily disabled like so::
     printf 'U1234AT+SCRN=0\r' > /dev/gsmtty1
 
 
-Graphing logs from the device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Graphing power logs from the device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The GNOME Power Manager can plot upower data, and it runs on Leste:
 
@@ -470,8 +471,9 @@ The GNOME Power Manager can plot upower data, and it runs on Leste:
   :height: 324px
   :width: 576px
 
-But the upower data is located in `/var/lib/upower` and not at all hard to plot
-yourself, which I think might actually be more insightful:
+But the upower data is located in ``/var/lib/upower`` and not at all hard to plot
+yourself, which might actually be more insightful (although this graph is very
+basic):
 
 .. image:: /images/capacity_over_time_from_upower.png
   :height: 324px
@@ -479,11 +481,9 @@ yourself, which I think might actually be more insightful:
 
 We're still figuring out how to properly plot all this data, but more
 information (including the source to generate the above graph) can be found in
-`issue #396 <https://github.com/maemo-leste/bugtracker/issues/396>`_
+`issue #396 <https://github.com/maemo-leste/bugtracker/issues/396>`_.
 
-
-* 13:31 <Wizzup> I also want to make some photos of my lab psu setup + power graphs + battery life
-
+Maybe we can take `one of these maemo.org applications <http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B1%5D%5Bvalue%5D=battery&org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&fetch=Search>`_ and port them.
 
 Battery calibration
 ~~~~~~~~~~~~~~~~~~~
@@ -496,28 +496,48 @@ https://github.com/maemo-leste/upower/pull/4
 21:11 < uvos> btw can we commit the upower pr and droid4-battery-callibration to the repo
 21:11 < uvos> i have been using it for a long time now and can report it works absolutely as intended
 
+
 Keyboard layout
 ~~~~~~~~~~~~~~~
 
+For a long time, it was not possible to `summon the special keys virtual keyboard
+on the Droid 4 <https://github.com/maemo-leste/bugtracker/issues/347>`_, which
+was particularly annoying since some `important keys were not available
+<https://github.com/maemo-leste/bugtracker/issues/122>`_.
 
-* buzz created geometry file
-  https://wizzup.org/droid4-keyboard.png
+By digging through the N900 keyboard files and learning a bunch about xkb, both
+of these issues have now been resolved by ``Merlijn``. ``buZz`` provided a nice
+`geometry file
+<https://github.com/maemo-leste/xkb-data/commit/99343d77464299cdf1d56e461018bd7f974cee42>`_, which allows us to visualise the keys on various keyboard levels:
 
+.. image:: /images/droid4-keyboard.png
+  :height: 224px
+  :width: 576px
 
-* https://github.com/maemo-leste/hildon-input-method-plugins/pull/3
+(Yes, the shift button on the Droid 4 is mapped to control, and the caps lock
+key is mapped to shift)
 
-* droid4 keyboard (n900 layout  = https://wizzup.org/n900-leste-layout.pdf )
-  create with xkbprint -color "${DISPLAY}" - |     ps2pdf - > current_keyboard_layout.pdf
-  TODO: mention keyboard pkg
-  https://github.com/maemo-leste/bugtracker/issues/122
-  https://github.com/maemo-leste/bugtracker/issues/347
-  https://github.com/maemo-leste/hildon-input-method-plugins/pull/3
-  https://github.com/maemo-leste/xkb-data/commit/99343d77464299cdf1d56e461018bd7f974cee42
-  https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2
-  https://github.com/maemo-leste/xkb-data/commit/0bddeb2bdfcc0e44223f0e5a9667e13784028e8a
+Compare that to the N900 layout:
 
+.. image:: /images/n900-keyboard.png
+  :height: 224px
+  :width: 576px
 
+Bringing up the special keys virtual keyboard is done by pressing the "OK"
+(``ISO_Level3_Shift``) key and the Control (``Shift``) key.
 
+Additional extra keys are also available when using the ``ISO_Level3_Shift``
+key, `see the actual xkb file for more details
+<https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36>`_.
+
+And finally, the virtual keyboard didn't look quite good on the Droid 4, since
+it has a larger resolution, but as of `hildon-input-method-plugins PR 3
+<https://github.com/maemo-leste/hildon-input-method-plugins/pull/3>`_, the
+keyboard will render properly regardless of the screen dimensions:
+
+.. image:: /images/droid4-special-vkb.png
+  :height: 324px
+  :width: 576px
 
 Modem integration
 ~~~~~~~~~~~~~~~~~
@@ -600,6 +620,10 @@ Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
 ===========================================================
 
 
+TODO
+====
+
+- cover web interface for packages https://github.com/maemo-leste/bugtracker/issues/395
 
 
 
