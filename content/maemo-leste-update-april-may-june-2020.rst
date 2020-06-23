@@ -53,7 +53,7 @@ one has to press the power key to shutdown the device (issue #392)
 ALS support has been extended, now also works on the `Motorola Droid 4`_, see
 `MCE PR 8 <https://github.com/maemo-leste/mce/pull/8/>`_.
 
-A module contributed by ```uvos`, to support vibration on MCE, is also expected to
+A module contributed by ``uvos``, to support vibration on MCE, is also expected to
 land in the next few days. See `issue #132
 <https://github.com/maemo-leste/bugtracker/issues/132>`_ and `MCE PR 9
 <https://github.com/maemo-leste/mce/pull/9>`_.
@@ -182,6 +182,10 @@ Cellular data and ofono support
 
 * https://github.com/maemo-leste/bugtracker/issues/372
 
+https://wizzup.org/droid4-tech.png
+https://wizzup.org/droid4-tech-2g.png
+
+
 
 Wireless
 --------
@@ -216,6 +220,8 @@ https://parazyd.org/pub/tmp/screenshots/screenshot00142.png
 https://parazyd.org/pub/tmp/screenshots/screenshot00143.png
 https://parazyd.org/pub/tmp/screenshots/screenshot00144.png
 
+
+https://wizzup.org/leste-okuda-desktop.png
 
 
 
@@ -338,7 +344,7 @@ The Motorola Droid 4 has seen a bit set of improvements:
 * Advanced `keyboard layout`_;
 * Support for the `special keys virtual keyboard`_ is now available;
 * Basic `modem integration`_ in `beowulf-devel` branches;
-* Much improved battery life;
+* Much improved battery life through better `Power Management`_;
 
 Ambient Light Sensor
 ~~~~~~~~~~~~~~~~~~~~
@@ -393,10 +399,102 @@ that will be working smoothly and well, though.
 Power Management
 ~~~~~~~~~~~~~~~~
 
+The power management on the Droid 4 should be in much better shape now. Under
+ideal cirsumstances, with the modem online, the device should idle at about
+``60mW``. This is made possible by incredible Linux kernel support, `droid4-pm
+<https://github.com/maemo-leste/droid4-pm>`_, our various `mce`_ improvements,
+and in general OMAP being well designed when it comes to power management. This
+should last most batteries for several days. Things might improve a little more
+if OMAP ``OFF`` mode ever starts to work on OMAP 4.
+
+``Merlijn`` recently acquired a few lab power supplies (`and after actually making it
+work with sigrok, working around insanely stupid firmware bugs
+<https://sourceforge.net/p/sigrok/mailman/message/37014835/>`_), was able to
+generate the following graph of power usage from a clean power-on, showing the
+~3 minutes it takes to fully boot and enter the promised ``60mW`` idle power
+usage:
+
+.. image:: /images/droid4-boot.png
+  :height: 350px
+  :width: 700px
+
+
+Here's what using the vibration motor does to the power management:
+
+.. image:: /images/droid4-rumble.png
+  :height: 324px
+  :width: 576px
+
+And the same for receiving an SMS (exposing a problem where the modem doesn't
+properly idle after sms receive - it stays around ``180mW`` as opposed to the
+``60mW`` - this is still being investigated, but it looks like the USB doesn't
+idle afterwards, requiring manually being kicked into idle mode):
+
+.. image:: /images/droid4-modem-power-recv-sms.png
+  :height: 324px
+  :width: 576px
+
+
+
+
+
 https://github.com/maemo-leste/bugtracker/issues/340
 
 
+NTPD
+^^^^
+
+The ``ntp`` daemon currently causes a lot of wake ups, and negatively impacts
+battery life. The current stop-gap is to stop it manually, after starting, by
+issuing the following as root::
+
+    /etc/init.d/ntp stop
+
+
+Cellular
+^^^^^^^^
+
+While the modem itself should idle pretty well, the modem reports on the signal
+strength very frequently, waking up the device even when the signal strength
+should not be shown, the signal strength can be temporarily disabled like so::
+
+    printf 'U1234AT+SCRN=0\r' > /dev/gsmtty1
+
+
+Graphing logs from the device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The GNOME Power Manager can plot upower data, and it runs on Leste:
+
+.. image:: /images/leste-droid4-gnome-power-manager.png
+  :height: 324px
+  :width: 576px
+
+But the upower data is located in `/var/lib/upower` and not at all hard to plot
+yourself, which I think might actually be more insightful:
+
+.. image:: /images/capacity_over_time_from_upower.png
+  :height: 324px
+  :width: 576px
+
+We're still figuring out how to properly plot all this data, but more
+information (including the source to generate the above graph) can be found in
+`issue #396 <https://github.com/maemo-leste/bugtracker/issues/396>`_
+
+
 * 13:31 <Wizzup> I also want to make some photos of my lab psu setup + power graphs + battery life
+
+
+Battery calibration
+~~~~~~~~~~~~~~~~~~~
+
+https://github.com/maemo-leste/bugtracker/issues/374
+
+
+https://github.com/maemo-leste/upower/pull/4
+
+21:11 < uvos> btw can we commit the upower pr and droid4-battery-callibration to the repo
+21:11 < uvos> i have been using it for a long time now and can report it works absolutely as intended
 
 Keyboard layout
 ~~~~~~~~~~~~~~~
@@ -405,6 +503,8 @@ Keyboard layout
 * buzz created geometry file
   https://wizzup.org/droid4-keyboard.png
 
+
+* https://github.com/maemo-leste/hildon-input-method-plugins/pull/3
 
 * droid4 keyboard (n900 layout  = https://wizzup.org/n900-leste-layout.pdf )
   create with xkbprint -color "${DISPLAY}" - |     ps2pdf - > current_keyboard_layout.pdf
@@ -417,11 +517,6 @@ Keyboard layout
   https://github.com/maemo-leste/xkb-data/commit/0bddeb2bdfcc0e44223f0e5a9667e13784028e8a
 
 
-Battery calibration
-~~~~~~~~~~~~~~~~~~~
-
-21:11 < uvos> btw can we commit the upower pr and droid4-battery-callibration to the repo
-21:11 < uvos> i have been using it for a long time now and can report it works absolutely as intended
 
 
 Modem integration
