@@ -779,6 +779,20 @@ Sneak peak of an alpha version of the interface:
 .. image:: /images/pkg.png
 
 
+More frequent updates?
+======================
+
+We often get the question if we can provide update posts more frequently. Often,
+we delay update posts because we want to **complete just one more package...** -
+and then another, and another... So if you'd like to free more frequent update
+posts, please volunteer to write them for us. If you hang out in the IRC
+channel, maybe follow the frequent updates and write about them, and we'll be
+able to post it here, on our website.
+
+That said, we're considering doing detailed write-ups of various core components
+of Maemo Leste every few weeks or so, so if that's your thing, you might be able
+to peek at to those, soon.
+
 
 Interested?
 ===========
