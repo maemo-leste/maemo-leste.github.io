@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="It&#39;s been several weeks since our last update, and let&#39;s start with a few highlights: We have improved power management on the Droid 4, and under current ideal conditions, the power draw is about...">
+        <meta name="keywords" content="cellular, cellular data, droid4, extras, keyboard layout, light sensor, n900, ofono, openrc, pinephone, power
+management, vibration">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+
+        <title>Maemo Leste - Thirteenth Update (April) 2020 - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/news.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small_w.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                            <a  href="https://maemo-leste.github.io/pages/maemo-leste-screenshots.html">Maemo Leste Screenshots</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Maemo Leste - Thirteenth Update (April) 2020</h1>
+                      <p class="header-date"><a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, <a href="https://maemo-leste.github.io/author/ivan-jelincic.html">Ivan Jelincic</a>, Wed 25 March 2020,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/cellular.html">cellular</a>, <a href="https://maemo-leste.github.io/tag/cellular-data.html">cellular data</a>, <a href="https://maemo-leste.github.io/tag/droid4.html">droid4</a>, <a href="https://maemo-leste.github.io/tag/extras.html">extras</a>, <a href="https://maemo-leste.github.io/tag/keyboard-layout.html">keyboard layout</a>, <a href="https://maemo-leste.github.io/tag/light-sensor.html">light sensor</a>, <a href="https://maemo-leste.github.io/tag/n900.html">n900</a>, <a href="https://maemo-leste.github.io/tag/ofono.html">ofono</a>, <a href="https://maemo-leste.github.io/tag/openrc.html">openrc</a>, <a href="https://maemo-leste.github.io/tag/pinephone.html">pinephone</a>, <a href="https://maemo-leste.github.io/tag/power-management.html">power
+management</a>, <a href="https://maemo-leste.github.io/tag/vibration.html">vibration</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <!-- TODO DATE -->
+<p>It's been several weeks since our <a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst">last update</a>, and let's start
+with a few highlights:</p>
+<ul class="simple">
+<li>We have improved power management on the Droid 4, and under current ideal
+conditions, the power draw is about <tt class="docutils literal">60mW</tt>, with the modem turned on. That
+should last a few days on a decent battery.</li>
+<li>Various sensors and other hardware of the Motorola Droid 4 is now usable with
+Maemo Leste</li>
+<li>A lot of kernel bugs/regressions have been chased and fixed.</li>
+<li>Cellular support is improving, cellular data should now work</li>
+<li>Maemo Leste Extras should contain quite a few more packages now</li>
+<li><tt class="docutils literal"><span class="pre">leste-config-*</span></tt> packages now exist to provide seamless configuration updates
+and changes, so there should be less of a need to &quot;reinstall&quot; on every new
+image release.</li>
+</ul>
+<div class="section" id="software-changes">
+<h2>Software changes</h2>
+<div class="section" id="mce">
+<h3>mce</h3>
+<p>The Mode Control Entity has seen significant changes.</p>
+<p>MCE will now properly blank the screen, allowing the SoC to idle properly which
+in turns allows for for significant power saving (<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/338">see issue #338</a>, <a class="reference external" href="https://github.com/maemo-leste/mce/pull/5">MCE PR 5</a>).</p>
+<p>With the newer versions, the touchscreen will also be properly disabled when the
+device is locked, this will prevent 'accidental' input events being sent to the
+applications while the device is locked. MCE will also close the file
+descriptors of any touchscreen devices and tell X11 to disable the touchscreens
+to let the touchscreen driver idle properly. For more details, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/340">issue #340</a>, <a class="reference external" href="https://github.com/maemo-leste/mce/pull/6">MCE PR 6</a> and <a class="reference external" href="https://github.com/maemo-leste/mce/pull/7">MCE PR 7</a>.</p>
+<p>Furthermore, we've made a change to the default <tt class="docutils literal">/etc/mce/mce.ini</tt> configuration
+file, to prevent accidental shutdowns on the Droid 4. We've <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/392">increased the time
+one has to press the power key to shutdown the device (issue #392)</a>.</p>
+<p>ALS (Ambient Light Sensor) support has been extended, now also works on the
+<a class="reference internal" href="#motorola-droid-4">Motorola Droid 4</a>, see <a class="reference external" href="https://github.com/maemo-leste/mce/pull/8/">MCE PR 8</a>.</p>
+<p>A module contributed by <tt class="docutils literal">uvos</tt>, to support vibration on MCE, is also expected to
+land in the next few days. See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/132">issue #132</a> and <a class="reference external" href="https://github.com/maemo-leste/mce/pull/9">MCE PR 9</a>.</p>
+<p>Something else to look forward to is the execution of mode-change shell scripts,
+to allow certain programs or scripts to be executed when a device is locked,
+unlocked, or enters some other mce (sub)modes.</p>
+</div>
+<div class="section" id="input-and-focus-fixes">
+<h3>Input and Focus fixes</h3>
+<p>libmatchbox2 and hildon-desktop (the Maemo window manager) have had <a class="reference external" href="https://bugs.maemo.org/show_bug.cgi?id=5987">long standing
+bugs with regards to input focus</a>, which was also making it
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/346">impossible to send keyboard events to vanilla Qt 5 applications</a>.</p>
+<p><tt class="docutils literal">freemangordon</tt> and <tt class="docutils literal">uvos</tt> have been trying to get to the bottom of the problem.
+The result of that effort is that all known problematic input and focus issues
+are now fixed. xev happily receives events, es2gears responds to keyboard input
+events now, and Qt 5 applications take input the way they are supposed to, now.</p>
+<p>Relevant pull requests:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/maemo-leste/libmatchbox2/pull/3">libmatchbox PR 3</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/libmatchbox2/pull/4">libmatchbox PR 4</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/4">hildon-desktop PR 4</a></li>
+</ul>
+</div>
+<div class="section" id="qt-5-progress-is-being-made">
+<h3>Qt 5: Progress is being made</h3>
+<p>The Maemo Qt 5 port is not finished yet, but has seen various improvements.
+Merlijn has been doing work porting the &quot;Hildon Input Method&quot; virtual keyboard
+patches to Qt 5. Due to the more clear architecture of Qt 5, and our
+unwillingness to fork Qt 5 as a whole, and the fact that we're also porting from
+old <tt class="docutils literal">Xlib</tt> code to <tt class="docutils literal">xcb</tt>, the work is taking a little bit more
+time, but on the upside, all the Maemo Qt 5 bits will hopefully available via a
+<a class="reference external" href="https://doc.qt.io/qt-5/qpa.html">Qt 5 loadable platform module</a>.</p>
+<p>Apart from the virtual keyboard, there are at least two important pieces
+missing:</p>
+<ul class="simple">
+<li>QMenu support, to allow hildon-style menu items to show when the application
+title is touched/pressed.</li>
+<li>Hildon-style stacked windows.</li>
+</ul>
+<p>We've also ported over a sample application, <a class="reference external" href="https://github.com/maemo-leste-extras/countdowntimer">countdowntimer</a>:</p>
+<img alt="" src="/images/countdowntimer.png" style="width: 576px; height: 324px;" />
+<p>To make it usable, we had to have the application respect desktop sizes other
+than the <cite>800x480</cite> that the Nokia N900 screen supports, to prevent it from
+looking like this:</p>
+<img alt="" src="/images/leste-qt5-countdowntimer-0.1.png" style="width: 576px; height: 324px;" />
+<p>Countdowntimer itself also makes use of the specialised QMenu and Hildon
+stackable windows, but is already quite usable even without those modifications.</p>
+<p>Developing can be done directly on the VM, using X11 forwarding:</p>
+<img alt="" src="/images/leste-qt5-designer-x11-forward.png" style="width: 576px; height: 324px;" />
+<p>You can also use Qt Designer with the native Maemo theme, but, well...:</p>
+<img alt="" src="/images/leste-designer-lol.png" style="width: 576px; height: 324px;" />
+<p>If you plan to use Qt designer on your device, you might want to look at <a class="reference internal" href="#xephyr-nested-xorg-server-on-maemo">Xephyr
+(Nested Xorg server) on Maemo</a> instead.</p>
+<p>In the next month, we hope to mostly finish the Qt 5 port. Keep in mind that many
+Qt 5 applications are already usable on Maemo as is, also documented in
+<a class="reference internal" href="#community-showcase">Community showcase</a>!</p>
+</div>
+<div class="section" id="xephyr-nested-xorg-server-on-maemo">
+<h3>Xephyr (Nested Xorg server) on Maemo</h3>
+<p>Xephyr is a nested X server, which can run in a window on Maemo Leste, allowing
+to run any ordinary desktop application on Maemo Leste, in a window.</p>
+<p>It's especially useful for devices with physica keyboards.</p>
+<p>Installing it is as simple as:</p>
+<pre class="literal-block">
+sudo apt install xephyr
+</pre>
+<p>And then start it as follows:</p>
+<pre class="literal-block">
+Xephyr :1 &amp;
+</pre>
+<p>And launch applications inside that server like so:</p>
+<pre class="literal-block">
+DISPLAY=:1 dwm &amp;
+DISPLAY=:1 xterm
+</pre>
+<img alt="" src="/images/xephyr-droid4.png" style="width: 576px; height: 324px;" />
+<p>Enjoy!</p>
+</div>
+<div class="section" id="cellular-data-and-ofono-support">
+<h3>Cellular data and ofono support</h3>
+<p>The <tt class="docutils literal"><span class="pre">beowulf-devel</span></tt> repository of Maemo Leste now has the
+<tt class="docutils literal"><span class="pre">libicd-network-ofono</span></tt> plugin for <tt class="docutils literal">icd2</tt> to allow making GPRS/UMTS/LTE data
+connections:</p>
+<img alt="" src="/images/droid4-libicd-network-ofono.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/droid4-libicd-network-ofono-2.png" style="width: 576px; height: 324px;" />
+<p>This should work on all of the supported devices, as long as their ofono version
+(and SIM) supports data connections.</p>
+<p>Additionally, there were some problems on Beowulf where user <tt class="docutils literal">user</tt> had no
+access to the ofono dbus interface, but this has been fixed in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/372">issue #372</a>.</p>
+<p>Finally, once this work has seen a bit more testing, we will create a meta
+package to automatically install all the cellular packages, and all the devices
+will automatically get the cellular support when they <tt class="docutils literal">apt update &amp;&amp; apt
+upgrade</tt>.</p>
+</div>
+<div class="section" id="wireless">
+<h3>Wireless</h3>
+<p>Wireless is mostly just working, although the UI still has some rough edges. In
+particular, sometimes connecting to a network fails if entering the password
+takes too long.</p>
+<p>One other bug was fixed: a problem where the networks could appear in the
+network dialog, but would not be selectable until the next scan returned, which
+was really annoying. See <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/253">issue #253</a> and <a class="reference external" href="https://github.com/maemo-leste/connui-internet/pull/1">connui-internet PR</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/374">https://github.com/maemo-leste/bugtracker/issues/374</a> - two packages, also
+mention integration</li>
+</ul>
+</div>
+<div class="section" id="themes">
+<h3>Themes</h3>
+<p>The retro <a class="reference external" href="https://github.com/maemo-leste-extras/hildon-theme-okuda">Okuda theme</a> is now available:</p>
+<img alt="" src="/images/leste-okuda-desktop.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/leste-okuda-vkb.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/leste-okuda-xterm.png" style="width: 576px; height: 324px;" />
+<p><a class="reference external" href="https://github.com/maemo-leste-extras/miku-theme">Miku theme</a>:</p>
+<img alt="" src="/images/leste-miku-settings.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/leste-miku-desktop.png" style="width: 576px; height: 324px;" />
+<p><a class="reference external" href="https://github.com/maemo-leste-extras/hildon-theme-matrix">Matrix theme</a>:</p>
+<img alt="" src="/images/leste-matrix-desktop.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/leste-matrix-lock.png" style="width: 576px; height: 324px;" />
+</div>
+<div class="section" id="openrc-integration-in-debian-fixes">
+<h3>OpenRC integration in Debian fixes</h3>
+<p>We've successfully submitted a patch to SysVinit upstream which brings in better
+support for OpenRC and its internals on both Debian and Devuan. It has not yet
+propagated to Debian, but it is expected to happen, of course. In Maemo Leste we
+already provide the patched version and maintain it ourselves until it is
+available in Devuan. The patch itself brings in proper OpenRC support in the
+insserv tool, which means that LSB headers aren't necessary for OpenRC
+initscripts and they now get installed in the default runlevel without the need
+for manual interference.</p>
+<p>The patch was merged in <tt class="docutils literal">6a65f4412a2d24d78741f49e64e1128993341e65</tt>, and can be
+seen here:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://git.savannah.nongnu.org/cgit/sysvinit/insserv.git/commit/?h=1.22.0&amp;id=6a65f4412a2d24d78741f49e64e1128993341e65">http://git.savannah.nongnu.org/cgit/sysvinit/insserv.git/commit/?h=1.22.0&amp;id=6a65f4412a2d24d78741f49e64e1128993341e65</a></li>
+</ul>
+<p>If you found that some init scripts ended up in <tt class="docutils literal">/etc/runlevels</tt> instead of
+<tt class="docutils literal">/etc/runlevels/default</tt>, try reinstalling the affected packages; they should
+install fine now.</p>
+</div>
+<div class="section" id="more-languages-added-to-virtual-keyboard-layouts">
+<h3>More languages added to virtual keyboard layouts</h3>
+<p>Many more virtual keyboard layouts have been added. If you were ever in need of
+a Belarusian or Bulgarian keyboard layout, now is your time to <tt class="docutils literal">apt update &amp;&amp;
+apt upgrade</tt>.</p>
+<p>See <a class="reference external" href="https://github.com/maemo-leste/hildon-input-method-plugins/pull/2">hildon-input-method-plugins PR 2</a>.</p>
+</div>
+<div class="section" id="steps-towards-calls-and-texts">
+<h3>Steps towards calls and texts</h3>
+<p>With <a class="reference internal" href="#cellular-data-and-ofono-support">Cellular data and ofono support</a> improving and other projects getting
+close to finished, it is soon time to turn out attention to usable calls and
+texts on Maemo. We will use many of the same components that Maemo Fremantle
+uses, just in their updated forms, like the Mer project does.</p>
+<p><a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/390">Issue #390</a> documents
+some of the steps will be taking. It will look something like:</p>
+<ol class="arabic simple">
+<li>Perform further analysis on how this works on Fremantle</li>
+<li>Import all the FOSS components (there are quite some)</li>
+<li>Figure out audio (routing and) policies.</li>
+<li>Reimplement the non-FOSS ones: call and sms UI are the big ones.</li>
+<li>Use <tt class="docutils literal"><span class="pre">osso-abook</span></tt> in the alternative call and sms UIs.</li>
+</ol>
+<ul class="simple">
+<li>towards proper telepathy integration <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/390">https://github.com/maemo-leste/bugtracker/issues/390</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/rtcom-eventlogger-plugins">https://github.com/maemo-leste/rtcom-eventlogger-plugins</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/rtcom-eventlogger-ui">https://github.com/maemo-leste/rtcom-eventlogger-ui</a></li>
+</ul>
+<p>The addressbook interface is also underway and is being RE'd from the Fremantle
+binaries: <a class="reference external" href="https://github.com/maemo-leste/osso-abook/">https://github.com/maemo-leste/osso-abook/</a></p>
+</div>
+<div class="section" id="maemo-input-sounds">
+<h3>maemo-input-sounds</h3>
+<p>To test the MCE vibration driver, work has been started on <a class="reference external" href="https://github.com/maemo-leste/maemo-input-sounds/tree/wip">maemo-input-sounds</a>, which uses the
+<cite>X11 Record</cite> extension to monitor for touchscreen presses and key presses in
+reaction to those either vibrate the device, or play a sound, or even both.</p>
+<p>The status can be tracked in <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/389">issue #389</a>. A fully functioning
+<tt class="docutils literal"><span class="pre">maemo-input-sounds</span></tt> probably depends on getting the audio set up completely
+(see <a class="reference internal" href="#next-up-audio-routing-pulseaudio-contacts-calls-sms-qt-5">Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5</a>).</p>
+</div>
+<div class="section" id="calendar-backend-and-frontend">
+<h3>Calendar backend and frontend</h3>
+<p>Some more work is being done to get the calendar software up and running.
+The backend, <tt class="docutils literal"><span class="pre">calendar-backend</span></tt> is already building fine, but the frontend
+(<tt class="docutils literal">qalendar</tt>) is still blocking on the Qt 5 port:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/buzztiaan/calendar-backend">https://github.com/buzztiaan/calendar-backend</a></li>
+<li><a class="reference external" href="https://github.com/buzztiaan/libgq">https://github.com/buzztiaan/libgq</a></li>
+<li><a class="reference external" href="https://github.com/buzztiaan/qalendar">https://github.com/buzztiaan/qalendar</a></li>
+</ul>
+<p>We expect this to fold in rather quickly once <tt class="docutils literal"><span class="pre">osso-abook</span></tt> is mostly ready.</p>
+</div>
+<div class="section" id="hildon-home-fixes">
+<h3>hildon-home fixes</h3>
+<p><tt class="docutils literal"><span class="pre">hildon-home</span></tt> would frequently try to monitor non existing directories for
+changes, but because the directories did not exist, kept retrying the monitor
+calls. This resulted in significantly higher power usage. This has been fixed
+now, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/264">issue #264</a>
+for more details.</p>
+<p>Additionally, since our move to Beowulf, two plugins for <tt class="docutils literal"><span class="pre">hildon-home</span></tt> would
+no longer load (due to <tt class="docutils literal"><span class="pre">hildon-home</span></tt> loading them from a non existing path),
+but this too has been fixed now:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41">https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41</a></li>
+<li><a class="reference external" href="https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba">https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="device-support">
+<h2>Device support</h2>
+<div class="section" id="motorola-droid-4">
+<h3>Motorola Droid 4</h3>
+<p>The Motorola Droid 4 has seen a bit set of improvements:</p>
+<ul class="simple">
+<li>The <a class="reference internal" href="#ambient-light-sensor">Ambient Light Sensor</a> is now used;</li>
+<li>The <a class="reference internal" href="#vibration-motor">Vibration Motor</a> is now used;</li>
+<li>A driver for the <a class="reference internal" href="#accelerometer">Accelerometer</a> is available;</li>
+<li>Advanced <a class="reference internal" href="#keyboard-layout">keyboard layout</a></li>
+<li>Basic <a class="reference internal" href="#modem-integration">modem integration</a> in <cite>beowulf-devel</cite> branches;</li>
+<li>Much improved battery life through better <a class="reference internal" href="#power-management">Power Management</a>;</li>
+</ul>
+<div class="section" id="ambient-light-sensor">
+<h4>Ambient Light Sensor</h4>
+<p>Just like the Nokia N900, the Droid has an ambient light sensor, used to measure
+exactly that: ambient light levels. This can be used to adjust the screen
+brightness to the ambient light levels, based on the brightness profile
+selected. For observant users, this already worked on the Nokia N900, but now
+this also works on the Droid 4.</p>
+<p>This should make your device more pleasant to use in darker rooms, but also
+outside - in direct sunlight.</p>
+<p>Additionally, if the light level is low, the device is unlocked, and the
+keyboard is exposed, the keyboard backlight LEDs will be turned on, to allow for
+optimal typing in the dark. :-)</p>
+<p>See <a class="reference external" href="https://github.com/maemo-leste/mce/pull/8/">MCE PR 8</a>.</p>
+</div>
+<div class="section" id="vibration-motor">
+<h4>Vibration Motor</h4>
+<p>Pending merging <a class="reference external" href="https://github.com/maemo-leste/mce/pull/9">MCE PR 9</a>, the Motorola Droid 4 (and actually also the Nokia
+N900, and other device that supports the Linux <a class="reference external" href="https://www.kernel.org/doc/html/latest/input/ff.html">FF</a> interface).
+This allows for vibration of the device to provide feedback to the user when the
+touchscreen is touched, but also when (in the near future) a SMS is received, or
+the device is being called.</p>
+<p>See also these notes on Maemo.org <a class="reference external" href="https://wiki.maemo.org/Phone_control#Start_Vibrating_Incoming_Call">on how to start and stop vibrations</a>. Since we
+are compatible at least on the DBUS level, the original Maemo instructions just
+apply. It is also possible to add more patterns by editing <tt class="docutils literal">/etc/mce/mce.ini</tt>.</p>
+</div>
+<div class="section" id="accelerometer">
+<h4>Accelerometer</h4>
+<p>The accelerometer driver is now turned on, meaning that things like the
+<a class="reference external" href="https://github.com/buzztiaan/droidsaber">droidsaber</a> are now possible:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DeCtO8WwaTc"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><p>This will also be useful in automatically changing the screen orientation, based
+on the device orientation. The powervr driver might need a bit more work before
+that will be working smoothly and well, though.</p>
+</div>
+<div class="section" id="power-management">
+<h4>Power Management</h4>
+<p>The power management on the Droid 4 should be in much better shape now. Under
+ideal cirsumstances, with the modem online, the device should idle at about
+<tt class="docutils literal">60mW</tt>. This is made possible by incredible Linux kernel support, <a class="reference external" href="https://github.com/maemo-leste/droid4-pm">droid4-pm</a>, our various <a class="reference internal" href="#mce">mce</a> improvements,
+and in general OMAP being well designed when it comes to power management. This
+should last most batteries for several days. Things might improve a little more
+if OMAP <tt class="docutils literal">OFF</tt> mode ever starts to work on OMAP 4.</p>
+<p><tt class="docutils literal">Merlijn</tt> recently acquired a few lab power supplies (<a class="reference external" href="https://sourceforge.net/p/sigrok/mailman/message/37014835/">and after actually making it
+work with sigrok, working around insanely stupid firmware bugs</a>), was able to
+generate the following graph of power usage from a clean power-on, showing the
+~3 minutes it takes to fully boot and enter the promised <tt class="docutils literal">60mW</tt> idle power
+usage:</p>
+<img alt="" src="/images/droid4-boot.png" style="width: 700px; height: 350px;" />
+<p>Here's what using the vibration motor does to the power draw:</p>
+<img alt="" src="/images/droid4-rumble.png" style="width: 576px; height: 324px;" />
+<p>And the same for receiving an SMS (exposing a problem where the modem doesn't
+properly idle after sms receive - it stays around <tt class="docutils literal">180mW</tt> as opposed to the
+<tt class="docutils literal">60mW</tt> - this is still being investigated, but it looks like the USB doesn't
+idle afterwards, requiring manually being kicked into idle mode):</p>
+<img alt="" src="/images/droid4-modem-power-recv-sms.png" style="width: 576px; height: 324px;" />
+</div>
+<div class="section" id="ntpd-and-power-management">
+<h4>NTPD and power management</h4>
+<p>The <tt class="docutils literal">ntp</tt> daemon currently causes a lot of wake ups, and negatively impacts
+battery life. The current stop-gap is to stop it manually, after starting, by
+issuing the following as root:</p>
+<pre class="literal-block">
+/etc/init.d/ntp stop
+</pre>
+</div>
+<div class="section" id="cellular-and-power-management">
+<h4>Cellular and power management</h4>
+<p>While the modem itself should idle pretty well, the modem reports on the signal
+strength very frequently, waking up the device even when the signal strength
+should not be shown, the signal strength can be temporarily disabled like so:</p>
+<pre class="literal-block">
+printf 'U1234AT+SCRN=0\r' &gt; /dev/gsmtty1
+</pre>
+</div>
+<div class="section" id="graphing-power-logs-from-the-device">
+<h4>Graphing power logs from the device</h4>
+<p>The GNOME Power Manager can plot upower data, and it runs on Leste:</p>
+<img alt="" src="/images/leste-droid4-gnome-power-manager.png" style="width: 576px; height: 324px;" />
+<p>But the upower data is located in <tt class="docutils literal">/var/lib/upower</tt> and not at all hard to plot
+yourself, which might actually be more insightful (although this graph is very
+basic):</p>
+<img alt="" src="/images/capacity_over_time_from_upower.png" style="width: 576px; height: 324px;" />
+<p>We're still figuring out how to properly plot all this data, but more
+information (including the source to generate the above graph) can be found in
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/396">issue #396</a>.</p>
+<p>Maybe we can take <a class="reference external" href="http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&amp;org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&amp;org_openpsa_products_search%5B1%5D%5Bvalue%5D=battery&amp;org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&amp;org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&amp;org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&amp;fetch=Search">one of these maemo.org applications</a> and port them.</p>
+</div>
+<div class="section" id="battery-calibration">
+<h4>Battery calibration</h4>
+<p><tt class="docutils literal">uvos</tt> has written an init script and tool to store the battery capacity when
+known, and restore it, using <tt class="docutils literal">spinal84</tt>'s experimental kernel patches, see
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/374">issue #374</a>.</p>
+<p>It will be added to the Droid 4 meta package imminently, and then eventually
+everyone should have a calibrated battery, hopefully.</p>
+<p>Also see <a class="reference external" href="https://github.com/maemo-leste/upower/pull/4">upower PR 4</a> for the
+UPower fix that was required for this to work properly.</p>
+</div>
+<div class="section" id="keyboard-layout">
+<h4>Keyboard layout</h4>
+<p>For a long time, it was not possible to <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/347">summon the special keys virtual keyboard
+on the Droid 4</a>, which
+was particularly annoying since some <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/122">important keys were not available</a>.</p>
+<p>By digging through the N900 keyboard files and learning a bunch about xkb, both
+of these issues have now been resolved by <tt class="docutils literal">Merlijn</tt>. <tt class="docutils literal">buZz</tt> provided a nice
+<a class="reference external" href="https://github.com/maemo-leste/xkb-data/commit/99343d77464299cdf1d56e461018bd7f974cee42">geometry file</a>, which allows us to visualise the keys on various keyboard levels:</p>
+<img alt="" src="/images/droid4-keyboard.png" style="width: 576px; height: 224px;" />
+<p>(Yes, the shift button on the Droid 4 is mapped to control, and the caps lock
+key is mapped to shift)</p>
+<p>Compare that to the N900 layout:</p>
+<img alt="" src="/images/n900-keyboard.png" style="width: 576px; height: 224px;" />
+<p>Bringing up the special keys virtual keyboard is done by pressing the &quot;OK&quot;
+(<tt class="docutils literal">ISO_Level3_Shift</tt>) key and the Control (<tt class="docutils literal">Shift</tt>) key.</p>
+<p>Additional extra keys are also available when using the <tt class="docutils literal">ISO_Level3_Shift</tt>
+key, <a class="reference external" href="https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36">see the actual xkb file for more details</a>.</p>
+<p>And finally, the virtual keyboard didn't look quite good on the Droid 4, since
+it has a larger resolution, but as of <a class="reference external" href="https://github.com/maemo-leste/hildon-input-method-plugins/pull/3">hildon-input-method-plugins PR 3</a>, the
+keyboard will render properly regardless of the screen dimensions:</p>
+<img alt="" src="/images/droid4-special-vkb.png" style="width: 576px; height: 324px;" />
+</div>
+<div class="section" id="modem-integration">
+<h4>Modem integration</h4>
+<p><tt class="docutils literal">tmlind</tt> and <tt class="docutils literal">Pavel Machek</tt> have been doing a lot of work on improving ofono
+on the Droid 4. The result of most of that work is currently packaged in the
+<tt class="docutils literal">droid4</tt> component, so any droid 4 will automatically get the latest/best
+ofono version. Additionally, the technology is now also being reported
+properly:</p>
+<img alt="" src="/images/droid4-tech.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/droid4-tech-2g.png" style="width: 576px; height: 324px;" />
+<p>More work remains, including upstreaming ofono and dealing with some power
+management regressions, but it's starting to look quite good indeed.</p>
+<p>Current work can be found here:
+<a class="reference external" href="https://github.com/maemo-leste/ofono-d4/tree/motmdm-serdev-ngsm">https://github.com/maemo-leste/ofono-d4/tree/motmdm-serdev-ngsm</a></p>
+</div>
+<div class="section" id="increasing-font-size-in-osso-xterm">
+<h4>increasing font size in osso-xterm</h4>
+<p>On the Nokia N900, the font size in osso-xterm can be changed using the volume
+buttons, but this doesn not work yet on the Droid 4. The reason is that
+osso-xterm expects specific (hardcoded) keys to be used to change the font, and
+the Droid 4 has different keys mapped to it's volume buttons, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385">issue #385</a></p>
+</div>
+</div>
+<div class="section" id="nokia-n900">
+<h3>Nokia N900</h3>
+<div class="section" id="powermanagement-update">
+<h4>Powermanagement update</h4>
+<p>A while ago we tweeted out a photo of a Nokia N900 using very little power,
+while in <tt class="docutils literal">OMAP OFF</tt> mode. We haven't yet brought this to our latest images,
+but it's still planned (it might be relatively simple, but also might be a lot
+of work). In addition, we will likely provide a <tt class="docutils literal"><span class="pre">n900-pm</span></tt> script, similar to
+the <tt class="docutils literal"><span class="pre">droid4-pm</span></tt> script.</p>
+</div>
+</div>
+<div class="section" id="pinephone">
+<h3>Pinephone</h3>
+<p>Thanks to the packaging work from people in postmarketOS, we now also support
+the modem in the Pinephone. While we've mostly been working with cellular things
+on the Droid4, lots of that work can simply be reused on the Pinephone, and we
+plan to do so in the coming time. A package called <tt class="docutils literal"><span class="pre">pinephone-modem-config</span></tt>
+can be installed, and along with updating the kernel (latest available version
+is 5.6), it will bring in modem support. This is already automatically enabled
+in the latest images.</p>
+</div>
+</div>
+<div class="section" id="weekly-builds">
+<h2>Weekly builds</h2>
+<p>From July, we will also implement and enable weekly image builds on our CI
+infrastructure. This means we won't be building images on demand anymore.
+Instead they shall be built each week, containg all the latest packages and
+goodies. Obviously, this will require more storage space, so we will be
+distributing device images up to five weeks of age.</p>
+<p>Hopefully this will also help us polish up our build frameworks and alert us
+about possible bugs that arise during development. It is also a very important
+step towards reproducible builds - which is one of our milestones we wish to
+fulfill.</p>
+</div>
+<div class="section" id="community-showcase">
+<h2>Community showcase</h2>
+<div class="section" id="ps-1-emulator">
+<h3>PS 1 emulator</h3>
+<p>PCSX-ReARMed runs quite nicely on the Droid 4:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BmIAQby4ccM"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><p>Unfortunately, the community hasn't yet packaged the program for Maemo Leste
+Extras, but we're confident someone will, at some point.</p>
+<div class="section" id="photo-light-meter">
+<h4>Photo Light meter</h4>
+<p>Written in Free Pascal, photolightmeter can be used calculate aperture and
+shutter values.</p>
+</div>
+<div class="section" id="telegram">
+<h4>Telegram</h4>
+<p>If you're a fan of Telegram, the desktop client just works on Maemo Leste:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://twitter.com/rfc1087/status/1271796014903635969">https://twitter.com/rfc1087/status/1271796014903635969</a></li>
+</ul>
+</div>
+<div class="section" id="proxmark3">
+<h4>Proxmark3</h4>
+<p>If you like toying with RFID cards, then you can (for example) use the bluetooth
+module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
+itself:</p>
+<img alt="" src="/images/proxmark3-1.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/proxmark3-2.png" style="width: 576px; height: 324px;" />
+<p>You can find specific installation notes here: <a class="reference external" href="http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276">http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276</a></p>
+</div>
+<div class="section" id="quicknote">
+<h4>Quicknote</h4>
+<p>A simple notes application written in Python is also available:
+<a class="reference external" href="https://github.com/maemo-leste-extras/quicknote">https://github.com/maemo-leste-extras/quicknote</a></p>
+</div>
+<div class="section" id="mihphoto">
+<h4>mihphoto</h4>
+<p>A Qt 5 photo viewer is available, and optionally supports multitouch, when
+supplied as startup argument:
+<a class="reference external" href="https://github.com/maemo-leste-extras/mihphoto">https://github.com/maemo-leste-extras/mihphoto</a></p>
+</div>
+<div class="section" id="personal-ip-address">
+<h4>personal-ip-address</h4>
+<p>The good old personal-ip-address has returned, this time to Leste:
+<a class="reference external" href="https://github.com/maemo-leste-extras/personal-ip-address">https://github.com/maemo-leste-extras/personal-ip-address</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="maemo-leste-extras">
+<h2>Maemo Leste Extras</h2>
+<p>More community packages are being maintained in the <tt class="docutils literal">extras</tt> repository and
+we're very glad and excited about it. If you're interested in maintaing your own
+community package for Maemo Leste, there are instructions for you to do so on
+the <a class="reference external" href="https://github.com/maemo-leste-extras/bugtracker">bugtracker</a> .</p>
+</div>
+<div class="section" id="next-up-audio-routing-pulseaudio-contacts-calls-sms-qt-5">
+<h2>Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5</h2>
+<p>So what can you expect next from future updates?</p>
+<p>The big things on our radar are still:</p>
+<ul>
+<li><p class="first">Audio: Currently most devices do not even ship with <tt class="docutils literal">pulseaudio</tt>, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the <a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume">volume applet</a>.</p>
+</li>
+<li><p class="first">Contacts (<tt class="docutils literal"><span class="pre">osso-abook</span></tt>), this will provide all of the Hildon contacts APIs
+with the evolution database as backend, definitely required for proper SMS and
+Call UI.</p>
+</li>
+<li><p class="first">Qt 5 updates: hopefully we will soon have the virtual keyboard integration
+ready, with the hildon menus and stacked windows following right after. That
+should be enough to make most applications work, and from there on we'll
+probably port things on an as-needed basis: like APIs for home and status
+widgets.</p>
+</li>
+<li><p class="first">Nokia's <tt class="docutils literal">rtcom</tt> packages and telepathy. <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/390">https://github.com/maemo-leste/bugtracker/issues/390</a>
+Some of this is covered in <a class="reference internal" href="#steps-towards-calls-and-texts">Steps towards calls and texts</a>, but to reiterate:
+the plan is to use <cite>telepathy-ring</cite> as an interface to <cite>ofono</cite>, and use
+<cite>rtcom-eventlogger</cite> and other libraries to read from and log to the same
+database format as used on Fremantle.
+This approach is particularly exciting because it allows loading many other
+telepathy plugins. There also exists a <a class="reference external" href="https://github.com/dylex/slack-libpurple/commits/master">telepathy-haze</a> plugin to load
+(any) Pidgin (<tt class="docutils literal">libpurple</tt>) plugin, allowing for potentially loading (for
+example) the <a class="reference external" href="https://github.com/dylex/slack-libpurple">slack-libpurple</a>
+slack plugin into telepathy, and being able to directly
+interface with Slack using the native hildon UI, potentially even with
+contacts, too. And of course, there are also SIP plugins for telepathy,
+allowing for VOIP calls from the same (native) UI.</p>
+</li>
+<li><p class="first">Speaking of UIs, once the backend (rtcom) is mostly there, the last thing
+we'll have to do is to bring up the call and text UIs. The Fremantle SMS UI
+relied on a html rendering engine, <a class="reference external" href="https://wiki.maemo.org/Conversation_Mods">allow for cool customisations</a> like these:</p>
+<img alt="" src="/images/fun-conversations-mod.png" style="width: 432px; height: 256px;" />
+</li>
+</ul>
+</div>
+<div class="section" id="web-interface-for-packages">
+<h2>Web interface for packages</h2>
+<p>We're considering creating a web interface to browse the core maemo packages,
+the development packages and also the extras packages, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/395">issue #395</a> for more details. And if you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.</p>
+<p>Sneak peak of an alpha version of the interface:</p>
+<img alt="" src="/images/pkg.png" />
+</div>
+<div class="section" id="more-frequent-updates">
+<h2>More frequent updates?</h2>
+<p>We often get the question if we can provide update posts more frequently. Often,
+we delay update posts because we want to <strong>complete just one more package...</strong> -
+and then another, and another... So if you'd like to free more frequent update
+posts, please volunteer to write them for us. If you hang out in the IRC
+channel, maybe follow the frequent updates and write about them, and we'll be
+able to post it here, on our website.</p>
+<p>That said, we're considering doing detailed write-ups of various core components
+of Maemo Leste every few weeks or so, so if that's your thing, you might be able
+to peek at to those, soon.</p>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you have questions, are interested in specifics, or helping out, or wish to have a specific
+package ported, please see our <a class="reference external" href="https://github.com/maemo-leste-extras/bugtracker">bugtracker</a></p>
+<p><strong>We have several Nokia N900 and Motorola Droid 4 units available to interested
+developers</strong>, so if you are interested in helping out but have trouble acquiring
+a device, let us know.</p>
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join us!</p>
+</div>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container ">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Maemo Leste Github</a></li>
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+                        </ul>
+                    </div> 
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <p class="pull-right text-right">
+                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
+                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
+                            <small></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>
