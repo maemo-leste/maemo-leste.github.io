@@ -42,8 +42,11 @@ in turns allows for for significant power saving (`see issue #338 <https://githu
 With the newer versions, the touchscreen will also be properly disabled when the
 device is locked, this will prevent 'accidental' input events being sent to the
 applications while the device is locked. MCE will also close the file
-descriptors of any touchscreen devices to let the touchscreen driver idle
-properly. For more details, see `issue #340 <https://github.com/maemo-leste/bugtracker/issues/340>`_, `MCE PR 6 <https://github.com/maemo-leste/mce/pull/6>`_ and `MCE PR 7 <https://github.com/maemo-leste/mce/pull/7>`_.
+descriptors of any touchscreen devices and tell X11 to disable the touchscreens
+to let the touchscreen driver idle properly. For more details, see `issue #340
+<https://github.com/maemo-leste/bugtracker/issues/340>`_, `MCE PR 6
+<https://github.com/maemo-leste/mce/pull/6>`_ and `MCE PR 7
+<https://github.com/maemo-leste/mce/pull/7>`_.
 
 Furthermore, we've made a change to the default ``/etc/mce/mce.ini`` configuration
 file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
@@ -173,18 +176,24 @@ Enjoy!
 Cellular data and ofono support
 -------------------------------
 
-**TODO**
-- lots of work on ofono, droid4 kernel side
+The ``beowulf-devel`` repository of Maemo Leste now has the
+``libicd-network-ofono`` plugin for ``icd2`` to allow making GPRS/UMTS/LTE data
+connections:
 
-* ofono-d4 for droid4 with Tony's work
+.. image:: /images/droid4-libicd-network-ofono.png
+  :height: 324px
+  :width: 576px
 
-* libicd-network-ofono https://wizzup.org/droid4-cellular-0.1.png
+.. image:: /images/droid4-libicd-network-ofono-2.png
+  :height: 324px
+  :width: 576px
 
-* https://github.com/maemo-leste/bugtracker/issues/372
+This should work on all of the supported devices, as long as their ofono version
+(and SIM) supports data connections.
 
-https://wizzup.org/droid4-tech.png
-https://wizzup.org/droid4-tech-2g.png
-
+Additionally, there were some problems on Beowulf where user ``user`` had no
+access to the ofono dbus interface, but this has been fixed in `issue #372
+<https://github.com/maemo-leste/bugtracker/issues/372>`_.
 
 
 Wireless
@@ -242,8 +251,8 @@ seen here:
 
 * http://git.savannah.nongnu.org/cgit/sysvinit/insserv.git/commit/?h=1.22.0&id=6a65f4412a2d24d78741f49e64e1128993341e65
 
-If you found that some init scripts ended up in `/etc/runlevels` instead of
-`/etc/runlevels/default`, try reinstalling the affected packages; they should
+If you found that some init scripts ended up in ``/etc/runlevels`` instead of
+``/etc/runlevels/default``, try reinstalling the affected packages; they should
 install fine now.
 
 
@@ -256,14 +265,6 @@ apt upgrade``.
 
 See `hildon-input-method-plugins PR 2
 <https://github.com/maemo-leste/hildon-input-method-plugins/pull/2>`_.
-
-
-Audio changes
--------------
-
-https://github.com/maemo-leste/maemo-statusmenu-volume
-
-
 
 
 Steps towards calls and texts
@@ -294,8 +295,15 @@ binaries: https://github.com/maemo-leste/osso-abook/
 maemo-input-sounds
 ------------------
 
-* maemo-input-sounds https://github.com/maemo-leste/bugtracker/issues/389
+To test the MCE vibration driver, work has been started on `maemo-input-sounds
+<https://github.com/maemo-leste/maemo-input-sounds/tree/wip>`_, which uses the
+`X11 Record` extension to monitor for touchscreen presses and key presses in
+reaction to those either vibrate the device, or play a sound, or even both.
 
+The status can be tracked in `issue #389
+<https://github.com/maemo-leste/bugtracker/issues/389>`_. A fully functioning
+``maemo-input-sounds`` probably depends on getting the audio set up completely
+(see `Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5`_).
 
 
 Calendar backend and frontend
@@ -315,15 +323,15 @@ We expect this to fold in rather quickly once ``osso-abook`` is mostly ready.
 hildon-home fixes
 -----------------
 
-`hildon-home` would frequently try to monitor non existing directories for
+``hildon-home`` would frequently try to monitor non existing directories for
 changes, but because the directories did not exist, kept retrying the monitor
 calls. This resulted in significantly higher power usage. This has been fixed
 now, see `issue #264 <https://github.com/maemo-leste/bugtracker/issues/264>`_
 for more details.
 
-Additionally, since our move to Beowulf, two plugins for hildon-home would no
-longer load (due to `hildon-home` loading them from a non existing path), but
-this too has been fixed now:
+Additionally, since our move to Beowulf, two plugins for ``hildon-home`` would
+no longer load (due to ``hildon-home`` loading them from a non existing path),
+but this too has been fixed now:
 
 * https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41
 * https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba
@@ -341,8 +349,7 @@ The Motorola Droid 4 has seen a bit set of improvements:
 * The `Ambient Light Sensor`_ is now used;
 * The `Vibration Motor`_ is now used;
 * A driver for the `Accelerometer`_ is available;
-* Advanced `keyboard layout`_;
-* Support for the `special keys virtual keyboard`_ is now available;
+* Advanced `keyboard layout`_
 * Basic `modem integration`_ in `beowulf-devel` branches;
 * Much improved battery life through better `Power Management`_;
 
@@ -360,7 +367,7 @@ outside - in direct sunlight.
 
 Additionally, if the light level is low, the device is unlocked, and the
 keyboard is exposed, the keyboard backlight LEDs will be turned on, allow for
-optimal typing in the dark. :-) 
+optimal typing in the dark. :-)
 
 See `MCE PR 8`_.
 
@@ -377,7 +384,8 @@ the device is being called.
 See also these notes on Maemo.org `on how to start and stop vibrations
 <https://wiki.maemo.org/Phone_control#Start_Vibrating_Incoming_Call>`_. Since we
 are compatible at least on the DBUS level, the original Maemo instructions just
-apply. It is also possible to add more patters by editing `/etc/mce/mce.ini`.
+apply. It is also possible to add more patterns by editing ``/etc/mce/mce.ini``.
+
 
 Accelerometer
 ~~~~~~~~~~~~~
@@ -419,7 +427,7 @@ usage:
   :width: 700px
 
 
-Here's what using the vibration motor does to the power management:
+Here's what using the vibration motor does to the power draw:
 
 .. image:: /images/droid4-rumble.png
   :height: 324px
@@ -433,12 +441,6 @@ idle afterwards, requiring manually being kicked into idle mode):
 .. image:: /images/droid4-modem-power-recv-sms.png
   :height: 324px
   :width: 576px
-
-
-
-
-
-https://github.com/maemo-leste/bugtracker/issues/340
 
 
 NTPD and power management
@@ -485,16 +487,19 @@ information (including the source to generate the above graph) can be found in
 
 Maybe we can take `one of these maemo.org applications <http://maemo.org/downloads/search/application.html?org_openpsa_products_search%5B1%5D%5Bproperty%5D=title&org_openpsa_products_search%5B1%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B1%5D%5Bvalue%5D=battery&org_openpsa_products_search%5B2%5D%5Bproperty%5D=os&org_openpsa_products_search%5B2%5D%5Bconstraint%5D=LIKE&org_openpsa_products_search%5B2%5D%5Bvalue%5D=Maemo5&fetch=Search>`_ and port them.
 
+
 Battery calibration
 ~~~~~~~~~~~~~~~~~~~
 
-https://github.com/maemo-leste/bugtracker/issues/374
+``uvos`` has written an init script and tool to store the battery capacity when
+known, and restore it, using ``spinal84``'s experimental kernel patches, see
+`issue #374 <https://github.com/maemo-leste/bugtracker/issues/374>`_.
 
+It will be added to the Droid 4 meta package imminently, and then eventually
+everyone should have a calibrated battery, hopefully.
 
-https://github.com/maemo-leste/upower/pull/4
-
-21:11 < uvos> btw can we commit the upower pr and droid4-battery-callibration to the repo
-21:11 < uvos> i have been using it for a long time now and can report it works absolutely as intended
+Also see `upower PR 4 <https://github.com/maemo-leste/upower/pull/4>`_ for the
+UPower fix that was required for this to work properly.
 
 
 Keyboard layout
@@ -542,9 +547,21 @@ keyboard will render properly regardless of the screen dimensions:
 Modem integration
 ~~~~~~~~~~~~~~~~~
 
+.. image:: /images/droid4-tech.png
+  :height: 324px
+  :width: 576px
 
-Special keys virtual keyboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /images/droid4-tech-2g.png
+  :height: 324px
+  :width: 576px
+
+
+**TODO**
+- lots of work on ofono, droid4 kernel side
+
+* ofono-d4 for droid4 with Tony's work
+
 
 increasing font size in osso-xterm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -602,8 +619,12 @@ Community showcase
 * https://imgur.com/a/SPGe9ZM -- ui screenshots by [redacted]
 * https://imgur.com/a/t4yfBaI -- [redacted] proxmark3 ; notes https://paste.debian.net/plain/1149261
 
-https://www.youtube.com/watch?v=BmIAQby4ccM&feature=youtu.be
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/BmIAQby4ccM"
+     ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
 
 Maemo Leste Extras
 ==================
