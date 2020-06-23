@@ -696,6 +696,8 @@ itself:
   :height: 324px
   :width: 576px
 
+You can find specific installation notes here: http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276
+
 
 Quicknote
 ~~~~~~~~~
