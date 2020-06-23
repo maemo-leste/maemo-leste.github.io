@@ -196,6 +196,11 @@ Additionally, there were some problems on Beowulf where user ``user`` had no
 access to the ofono dbus interface, but this has been fixed in `issue #372
 <https://github.com/maemo-leste/bugtracker/issues/372>`_.
 
+Finally, once this work has seen a bit more testing, we will create a meta
+package to automatically install all the cellular packages, and all the devices
+will automatically get the cellular support when they ``apt update && apt
+upgrade``.
+
 
 Wireless
 --------
@@ -229,11 +234,30 @@ The retro `Okuda theme
   :height: 324px
   :width: 576px
 
+.. image:: /images/leste-okuda-xterm.png
+  :height: 324px
+  :width: 576px
 
-Two more beautiful user interface themes are available in our ``extras`` repository:
+`Miku theme <https://github.com/maemo-leste-extras/miku-theme>`_:
 
-* https://github.com/maemo-leste-extras/miku-theme
-* https://github.com/maemo-leste-extras/hildon-theme-matrix
+.. image:: /images/leste-miku-settings.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/leste-miku-desktop.png
+  :height: 324px
+  :width: 576px
+
+
+`Matrix theme <https://github.com/maemo-leste-extras/hildon-theme-matrix>`_:
+
+.. image:: /images/leste-matrix-desktop.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/leste-matrix-lock.png
+  :height: 324px
+  :width: 576px
 
 
 OpenRC integration in Debian fixes
@@ -707,19 +731,59 @@ the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
 ===========================================================
 
+So what can you expect next from future updates?
 
-TODO
-====
+The big things on our radar are still:
 
-- cover web interface for packages https://github.com/maemo-leste/bugtracker/issues/395
+* Audio: Currently most devices do not even ship with ``pulseaudio``, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the `volume applet <https://github.com/maemo-leste/maemo-statusmenu-volume>`_.
+* Contacts (``osso-abook``), this will provide all of the Hildon contacts APIs
+  with the evolution database as backend, definitely required for proper SMS and
+  Call UI.
+* Qt 5 updates: hopefully we will soon have the virtual keyboard integration
+  ready, with the hildon menus and stacked windows following right after. That
+  should be enough to make most applications work, and from there on we'll
+  probably port things on an as-needed basis: like APIs for home and status
+  widgets.
+* Nokia's ``rtcom`` packages and telepathy. https://github.com/maemo-leste/bugtracker/issues/390
+  Some of this is covered in `Steps towards calls and texts`_, but to reiterate:
+  the plan is to use `telepathy-ring` as an interface to `ofono`, and use
+  `rtcom-eventlogger` and other libraries to read from and log to the same
+  database format as used on Fremantle.
+  This approach is particularly exciting because it allows loading many other
+  telepathy plugins. There also exists a `telepathy-haze
+  <https://github.com/dylex/slack-libpurple/commits/master>`_ plugin to load
+  (any) Pidgin (``libpurple``) plugin, allowing for potentially loading (for
+  example) the `slack-libpurple <https://github.com/dylex/slack-libpurple>`_
+  slack plugin into telepathy, and being able to directly
+  interface with Slack using the native hildon UI, potentially even with
+  contacts, too. And of course, there are also SIP plugins for telepathy,
+  allowing for VOIP calls from the same (native) UI.
+* Speaking of UIs, once the backend (rtcom) is mostly there, the last thing
+  we'll have to do is to bring up the call and text UIs. The Fremantle SMS UI
+  relied on a html rendering engine, `allow for cool customisations
+  <https://wiki.maemo.org/Conversation_Mods>`_ like these:
 
+  .. image:: /images/fun-conversations-mod.png
+    :height: 256px
+    :width: 432px
+
+
+Web interface for packages
+==========================
+
+We're considering creating a web interface to browse the core maemo packages,
+the development packages and also the extras packages, see `issue #395 <https://github.com/maemo-leste/bugtracker/issues/395>`_ for more details. And if you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.
+
+Sneak peak of an alpha version of the interface:
+
+.. image:: /images/pkg.png
 
 
 
 Interested?
 ===========
 
-If you're interested in specifics, or helping out, or wish to have a specific
+If you have questions, are interested in specifics, or helping out, or wish to have a specific
 package ported, please see our `bugtracker`_
 
 **We have several Nokia N900 and Motorola Droid 4 units available to interested
