@@ -14,7 +14,7 @@ It's been several weeks since our `last update
 with a few highlights:
 
 * We have improved power management on the Droid 4, and under current ideal
-  conditions, the power draw is about 60mW, with the modem turned on. That
+  conditions, the power draw is about ``60mW``, with the modem turned on. That
   should last a few days on a decent battery.
 * Various sensors and other hardware of the Motorola Droid 4 is now usable with
   Maemo Leste
@@ -53,8 +53,9 @@ file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
 one has to press the power key to shutdown the device (issue #392)
 <https://github.com/maemo-leste/bugtracker/issues/392>`_.
 
-ALS support has been extended, now also works on the `Motorola Droid 4`_, see
-`MCE PR 8 <https://github.com/maemo-leste/mce/pull/8/>`_.
+ALS (Ambient Light Sensor) support has been extended, now also works on the
+`Motorola Droid 4`_, see `MCE PR 8
+<https://github.com/maemo-leste/mce/pull/8/>`_.
 
 A module contributed by ``uvos``, to support vibration on MCE, is also expected to
 land in the next few days. See `issue #132
@@ -217,21 +218,22 @@ was really annoying. See `issue #253
 Themes
 ------
 
-More beautiful user interface themes are available in our ``extras`` repository:
+The retro `Okuda theme
+<https://github.com/maemo-leste-extras/hildon-theme-okuda>`_ is now available:
 
-* https://github.com/maemo-leste-extras/hildon-theme-okuda
+.. image:: /images/leste-okuda-desktop.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/leste-okuda-vkb.png
+  :height: 324px
+  :width: 576px
+
+
+Two more beautiful user interface themes are available in our ``extras`` repository:
+
 * https://github.com/maemo-leste-extras/miku-theme
 * https://github.com/maemo-leste-extras/hildon-theme-matrix
-
-https://parazyd.org/pub/tmp/screenshots/screenshot00140.png
-https://parazyd.org/pub/tmp/screenshots/screenshot00141.png
-https://parazyd.org/pub/tmp/screenshots/screenshot00142.png
-https://parazyd.org/pub/tmp/screenshots/screenshot00143.png
-https://parazyd.org/pub/tmp/screenshots/screenshot00144.png
-
-
-https://wizzup.org/leste-okuda-desktop.png
-
 
 
 OpenRC integration in Debian fixes
@@ -547,6 +549,12 @@ keyboard will render properly regardless of the screen dimensions:
 Modem integration
 ~~~~~~~~~~~~~~~~~
 
+``tmlind`` and ``Pavel Machek`` have been doing a lot of work on improving ofono
+on the Droid 4. The result of most of that work is currently packaged in the
+``droid4`` component, so any droid 4 will automatically get the latest/best
+ofono version. Additionally, the technology is now also being reported
+properly:
+
 .. image:: /images/droid4-tech.png
   :height: 324px
   :width: 576px
@@ -557,18 +565,22 @@ Modem integration
   :width: 576px
 
 
-**TODO**
-- lots of work on ofono, droid4 kernel side
+More work remains, including upstreaming ofono and dealing with some power
+management regressions, but it's starting to look quite good indeed.
 
-* ofono-d4 for droid4 with Tony's work
+Current work can be found here:
+https://github.com/maemo-leste/ofono-d4/tree/motmdm-serdev-ngsm
 
 
 increasing font size in osso-xterm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**TODO**
+On the Nokia N900, the font size in osso-xterm can be changed using the volume
+buttons, but this doesn not work yet on the Droid 4. The reason is that
+osso-xterm expects specific (hardcoded) keys to be used to change the font, and
+the Droid 4 has different keys mapped to it's volume buttons, see `issue #385
+<https://github.com/maemo-leste/bugtracker/issues/385>`_
 
-https://github.com/maemo-leste/bugtracker/issues/385
 
 Nokia N900
 ----------
@@ -576,19 +588,23 @@ Nokia N900
 Powermanagement update
 ~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: Working on n900-pm script
-TODO: add photo of setup
+A while ago we tweeted out a photo of a Nokia N900 using very little power,
+while in ``OMAP OFF`` mode. We haven't yet brought this to our latest images,
+but it's still planned (it might be relatively simple, but also might be a lot
+of work). In addition, we will likely provide a ``n900-pm`` script, similar to
+the ``droid4-pm`` script.
 
 
 Pinephone
 ---------
 
-Thanks to work from people in postmarketOS, we now also support the modem in the
-Pinephone. While we've mostly been working with cellular things on the Droid4,
-lots of can simply be reused on the Pinephone, and we plan to do so in the
-coming time. A package called ``pinephone-modem-config`` can be installed, and
-along with updating the kernel (latest available version is 5.6), it will bring
-in modem support. This is already automatically enabled in the latest images.
+Thanks to the packaging work from people in postmarketOS, we now also support
+the modem in the Pinephone. While we've mostly been working with cellular things
+on the Droid4, lots of that work can simply be reused on the Pinephone, and we
+plan to do so in the coming time. A package called ``pinephone-modem-config``
+can be installed, and along with updating the kernel (latest available version
+is 5.6), it will bring in modem support. This is already automatically enabled
+in the latest images.
 
 
 Weekly builds
@@ -610,21 +626,74 @@ Community showcase
 ==================
 
 
-* pascal, https://github.com/maemo-leste-extras/photolightmeter
+PS 1 emulator
+-------------
 
-
-* https://twitter.com/rfc1087/status/1271796014903635969
-
-
-* https://imgur.com/a/SPGe9ZM -- ui screenshots by [redacted]
-* https://imgur.com/a/t4yfBaI -- [redacted] proxmark3 ; notes https://paste.debian.net/plain/1149261
-
+PCSX-ReARMed runs quite nicely on the Droid 4:
 
 .. raw:: html
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/BmIAQby4ccM"
      ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
     picture-in-picture" allowfullscreen></iframe>
+
+Unfortunately, the community hasn't yet packaged the program for Maemo Leste
+Extras, but we're confident someone will, at some point.
+
+
+Photo Light meter
+~~~~~~~~~~~~~~~~~
+
+Written in Free Pascal, photolightmeter can be used calculate aperture and
+shutter values.
+
+
+Telegram
+~~~~~~~~
+
+If you're a fan of Telegram, the desktop client just works on Maemo Leste:
+
+* https://twitter.com/rfc1087/status/1271796014903635969
+
+
+Proxmark3
+~~~~~~~~~
+
+If you like toying with RFID cards, then you can (for example) use the bluetooth
+module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
+itself:
+
+.. image:: /images/proxmark3-1.png
+  :height: 324px
+  :width: 576px
+
+
+.. image:: /images/proxmark3-2.png
+  :height: 324px
+  :width: 576px
+
+
+Quicknote
+~~~~~~~~~
+
+A simple notes application written in Python is also available:
+https://github.com/maemo-leste-extras/quicknote
+
+
+mihphoto
+~~~~~~~~
+
+A Qt 5 photo viewer is available, and optionally supports multitouch, when
+supplied as startup argument:
+https://github.com/maemo-leste-extras/mihphoto
+
+
+personal-ip-address
+~~~~~~~~~~~~~~~~~~~
+
+The good old personal-ip-address has returned, this time to Leste:
+https://github.com/maemo-leste-extras/personal-ip-address
+
 
 Maemo Leste Extras
 ==================
@@ -634,8 +703,6 @@ we're very glad and excited about it. If you're interested in maintaing your own
 community package for Maemo Leste, there are instructions for you to do so on
 the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 
-
-https://wizzup.org/leste-okuda-vkb.png
 
 Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
 ===========================================================
