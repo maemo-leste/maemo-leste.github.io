@@ -69,7 +69,7 @@ unlocked, or enters some other mce (sub)modes.
 Input and Focus fixes
 ---------------------
 
-libmatchbox2 and hildon-desktop (the Maemo window manager) has had `long standing
+libmatchbox2 and hildon-desktop (the Maemo window manager) have had `long standing
 bugs with regards to input focus
 <https://bugs.maemo.org/show_bug.cgi?id=5987>`_, which was also making it
 `impossible to send keyboard events to vanilla Qt 5 applications
@@ -78,12 +78,12 @@ bugs with regards to input focus
 ``freemangordon`` and ``uvos`` have been trying to get to the bottom of the problem.
 The result of that effort is that all known problematic input and focus issues
 are now fixed. xev happily receives events, es2gears responds to keyboard input
-events now, and Qt5 applications take input they way they are supposed to, now.
+events now, and Qt 5 applications take input the way they are supposed to, now.
 
 Relevant pull requests:
 
 * `libmatchbox PR 3 <https://github.com/maemo-leste/libmatchbox2/pull/3>`_
-* `libmatchbox PR4 <https://github.com/maemo-leste/libmatchbox2/pull/4>`_
+* `libmatchbox PR 4 <https://github.com/maemo-leste/libmatchbox2/pull/4>`_
 * `hildon-desktop PR 4 <https://github.com/maemo-leste/hildon-desktop/pull/4>`_
 
 
@@ -140,7 +140,7 @@ You can also use Qt Designer with the native Maemo theme, but, well...:
 If you plan to use Qt designer on your device, you might want to look at `Xephyr
 (Nested Xorg server) on Maemo`_ instead.
 
-In the next month, we hope to mostly finish the Qt5 port. Keep in mind that many
+In the next month, we hope to mostly finish the Qt 5 port. Keep in mind that many
 Qt 5 applications are already usable on Maemo as is, also documented in
 `Community showcase`_!
 
@@ -329,7 +329,7 @@ reaction to those either vibrate the device, or play a sound, or even both.
 The status can be tracked in `issue #389
 <https://github.com/maemo-leste/bugtracker/issues/389>`_. A fully functioning
 ``maemo-input-sounds`` probably depends on getting the audio set up completely
-(see `Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5`_).
+(see `Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5`_).
 
 
 Calendar backend and frontend
@@ -392,7 +392,7 @@ This should make your device more pleasant to use in darker rooms, but also
 outside - in direct sunlight.
 
 Additionally, if the light level is low, the device is unlocked, and the
-keyboard is exposed, the keyboard backlight LEDs will be turned on, allow for
+keyboard is exposed, the keyboard backlight LEDs will be turned on, to allow for
 optimal typing in the dark. :-)
 
 See `MCE PR 8`_.
@@ -403,7 +403,7 @@ Vibration Motor
 Pending merging `MCE PR 9`_, the Motorola Droid 4 (and actually also the Nokia
 N900, and other device that supports the Linux `FF
 <https://www.kernel.org/doc/html/latest/input/ff.html>`_ interface).
-This allows for vibration the device to provide feedback to the user when the
+This allows for vibration of the device to provide feedback to the user when the
 touchscreen is touched, but also when (in the near future) a SMS is received, or
 the device is being called.
 
@@ -728,8 +728,8 @@ community package for Maemo Leste, there are instructions for you to do so on
 the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 
 
-Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt5
-===========================================================
+Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5
+============================================================
 
 So what can you expect next from future updates?
 

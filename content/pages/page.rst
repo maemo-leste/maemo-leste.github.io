@@ -37,12 +37,12 @@ open software.
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
+.. * `April + May + June 2020 <{filename}/maemo-leste-update-april-may-june-2020.rst>`_
 
 For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
 following monthly updates:
 
-* `April + May + June 2020 <{filename}/maemo-leste-update-april-may-june-2020.rst>`_
 * `February + March 2020 <{filename}/maemo-leste-update-february-march-2020.rst>`_
 * `Repositories and community packages <{filename}/repo-restructuring.rst>`_
 * `January 2020 <{filename}/maemo-leste-update-january-2020.rst>`_
