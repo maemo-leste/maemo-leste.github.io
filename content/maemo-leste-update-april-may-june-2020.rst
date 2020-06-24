@@ -469,7 +469,7 @@ NTPD and power management
 
 
 The ``ntp`` daemon currently causes a lot of wake ups, and negatively impacts
-battery life. The current stop-gap is to stop it manually, after starting, by
+battery life. The current stop-gap is to stop it manually, after booting, by
 issuing the following as root::
 
     /etc/init.d/ntp stop
@@ -598,7 +598,7 @@ On the Nokia N900, the font size in osso-xterm can be changed using the volume
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to it's volume buttons, see `issue #385
-<https://github.com/maemo-leste/bugtracker/issues/385>`_
+<https://github.com/maemo-leste/bugtracker/issues/385>`_.
 
 
 Nokia N900
@@ -661,14 +661,14 @@ Extras, but we're confident someone will, at some point.
 
 
 Photo Light meter
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Written in Free Pascal, photolightmeter can be used calculate aperture and
 shutter values.
 
 
 Telegram
-~~~~~~~~
+--------
 
 If you're a fan of Telegram, the desktop client just works on Maemo Leste:
 
@@ -676,7 +676,7 @@ If you're a fan of Telegram, the desktop client just works on Maemo Leste:
 
 
 Proxmark3
-~~~~~~~~~
+---------
 
 If you like toying with RFID cards, then you can (for example) use the bluetooth
 module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
@@ -695,14 +695,14 @@ You can find specific installation notes here: http://web.archive.org/web/202006
 
 
 Quicknote
-~~~~~~~~~
+---------
 
 A simple notes application written in Python is also available:
 https://github.com/maemo-leste-extras/quicknote
 
 
 mihphoto
-~~~~~~~~
+--------
 
 A Qt 5 photo viewer is available, and optionally supports multitouch, when
 supplied as startup argument:
@@ -710,7 +710,7 @@ https://github.com/maemo-leste-extras/mihphoto
 
 
 personal-ip-address
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 The good old personal-ip-address has returned, this time to Leste:
 https://github.com/maemo-leste-extras/personal-ip-address
