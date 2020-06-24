@@ -218,9 +218,9 @@ reaction to those, either vibrate the device, play a sound, or even both.&lt;/p&
 &lt;/div&gt;
 &lt;div class="section" id="calendar-backend-and-frontend"&gt;
 &lt;h3&gt;Calendar backend and frontend&lt;/h3&gt;
-&lt;p&gt;Some more work is being done to get the calendar software up and running.
-The backend, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-backend&lt;/span&gt;&lt;/tt&gt; is already building fine, but the frontend
-(&lt;tt class="docutils literal"&gt;qalendar&lt;/tt&gt;) is still blocking on the Qt 5 port:&lt;/p&gt;
+&lt;p&gt;Some more work is being done by &lt;tt class="docutils literal"&gt;buZz&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; to get the calendar
+software up and running.  The backend, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;calendar-backend&lt;/span&gt;&lt;/tt&gt; is already building
+fine, but the frontend (&lt;tt class="docutils literal"&gt;qalendar&lt;/tt&gt;) is still blocking on the Qt 5 port:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/buzztiaan/calendar-backend"&gt;https://github.com/buzztiaan/calendar-backend&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/buzztiaan/libgq"&gt;https://github.com/buzztiaan/libgq&lt;/a&gt;&lt;/li&gt;
@@ -256,6 +256,7 @@ but this too has now been fixed:&lt;/p&gt;
 &lt;li&gt;Advanced &lt;a class="reference internal" href="#keyboard-layout"&gt;keyboard layout&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Basic &lt;a class="reference internal" href="#modem-integration"&gt;modem integration&lt;/a&gt; in &lt;cite&gt;beowulf-devel&lt;/cite&gt; branches;&lt;/li&gt;
 &lt;li&gt;Much improved battery life through better &lt;a class="reference internal" href="#power-management"&gt;Power Management&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Latest Linux kernel&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="section" id="ambient-light-sensor"&gt;
 &lt;h4&gt;Ambient Light Sensor&lt;/h4&gt;
@@ -397,6 +398,15 @@ management regressions, but it's starting to look quite good indeed.&lt;/p&gt;
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to its volume buttons, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385"&gt;issue #385&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="latest-linux-kernel"&gt;
+&lt;h4&gt;Latest Linux kernel&lt;/h4&gt;
+&lt;p&gt;A month or so ago we have switched to Linux 5.7:
+&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7"&gt;https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After that, there were various regressions to figure out, the most painful ones
+being random resets, which took quite a while to pin down. &lt;tt class="docutils literal"&gt;tmlind&lt;/tt&gt; has been
+incredibly helpful in getting these problems resolved. Onto the next Linux
+version and set of regressions - and bugfixes, and features...&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nokia-n900"&gt;

@@ -293,9 +293,9 @@ reaction to those, either vibrate the device, play a sound, or even both.</p>
 </div>
 <div class="section" id="calendar-backend-and-frontend">
 <h3>Calendar backend and frontend</h3>
-<p>Some more work is being done to get the calendar software up and running.
-The backend, <tt class="docutils literal"><span class="pre">calendar-backend</span></tt> is already building fine, but the frontend
-(<tt class="docutils literal">qalendar</tt>) is still blocking on the Qt 5 port:</p>
+<p>Some more work is being done by <tt class="docutils literal">buZz</tt> and <tt class="docutils literal">sicelo</tt> to get the calendar
+software up and running.  The backend, <tt class="docutils literal"><span class="pre">calendar-backend</span></tt> is already building
+fine, but the frontend (<tt class="docutils literal">qalendar</tt>) is still blocking on the Qt 5 port:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/buzztiaan/calendar-backend">https://github.com/buzztiaan/calendar-backend</a></li>
 <li><a class="reference external" href="https://github.com/buzztiaan/libgq">https://github.com/buzztiaan/libgq</a></li>
@@ -331,6 +331,7 @@ but this too has now been fixed:</p>
 <li>Advanced <a class="reference internal" href="#keyboard-layout">keyboard layout</a></li>
 <li>Basic <a class="reference internal" href="#modem-integration">modem integration</a> in <cite>beowulf-devel</cite> branches;</li>
 <li>Much improved battery life through better <a class="reference internal" href="#power-management">Power Management</a>;</li>
+<li>Latest Linux kernel</li>
 </ul>
 <div class="section" id="ambient-light-sensor">
 <h4>Ambient Light Sensor</h4>
@@ -472,6 +473,15 @@ management regressions, but it's starting to look quite good indeed.</p>
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to its volume buttons, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385">issue #385</a></p>
+</div>
+<div class="section" id="latest-linux-kernel">
+<h4>Latest Linux kernel</h4>
+<p>A month or so ago we have switched to Linux 5.7:
+<a class="reference external" href="https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7">https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7</a></p>
+<p>After that, there were various regressions to figure out, the most painful ones
+being random resets, which took quite a while to pin down. <tt class="docutils literal">tmlind</tt> has been
+incredibly helpful in getting these problems resolved. Onto the next Linux
+version and set of regressions - and bugfixes, and features...</p>
 </div>
 </div>
 <div class="section" id="nokia-n900">
