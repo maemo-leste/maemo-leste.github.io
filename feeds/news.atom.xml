@@ -367,12 +367,13 @@ of these issues have now been resolved by &lt;tt class="docutils literal"&gt;Mer
 &lt;img alt="" src="/images/droid4-keyboard.png" style="width: 576px; height: 224px;" /&gt;
 &lt;p&gt;(Yes, the shift button on the Droid 4 is mapped to control, and the caps lock
 key is mapped to shift)&lt;/p&gt;
+&lt;p&gt;Additional extra keys are also available when using the &lt;tt class="docutils literal"&gt;ISO_Level3_Shift&lt;/tt&gt;
+key, &lt;a class="reference external" href="https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36"&gt;see the actual xkb file for more details&lt;/a&gt; and this image for a quick reference:&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-keyboard-2.png" style="width: 576px; height: 224px;" /&gt;
 &lt;p&gt;Compare that to the N900 layout:&lt;/p&gt;
 &lt;img alt="" src="/images/n900-keyboard.png" style="width: 576px; height: 224px;" /&gt;
 &lt;p&gt;Bringing up the special keys virtual keyboard is done by pressing the &amp;quot;OK&amp;quot;
 (&lt;tt class="docutils literal"&gt;ISO_Level3_Shift&lt;/tt&gt;) key and the Control (&lt;tt class="docutils literal"&gt;Shift&lt;/tt&gt;) key.&lt;/p&gt;
-&lt;p&gt;Additional extra keys are also available when using the &lt;tt class="docutils literal"&gt;ISO_Level3_Shift&lt;/tt&gt;
-key, &lt;a class="reference external" href="https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36"&gt;see the actual xkb file for more details&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And finally, the virtual keyboard didn't look quite good on the Droid 4, since
 it has a larger resolution, but as of &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-input-method-plugins/pull/3"&gt;hildon-input-method-plugins PR 3&lt;/a&gt;, the
 keyboard will render properly regardless of the screen dimensions:&lt;/p&gt;
