@@ -1,5 +1,5 @@
-Maemo Leste - Thirteenth Update (April, May, June) 2020
-#######################################################
+Maemo Leste - Thirteenth Update (April) 2020
+############################################
 
 :Category: news
 :tags: droid4, n900, pinephone, cellular, extras, light sensor, power
