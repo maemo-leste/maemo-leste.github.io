@@ -216,9 +216,10 @@ was really annoying. See `issue #253
 <https://github.com/maemo-leste/connui-internet/pull/1>`_.
 
 
-**TODO**
-* https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
-  mention integration
+.. **TODO**
+.. 
+.. * https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
+..   mention integration
 
 
 Themes
