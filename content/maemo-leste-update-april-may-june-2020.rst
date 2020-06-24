@@ -13,17 +13,17 @@ It's been several weeks since our `last update
 <{filename}/maemo-leste-update-february-and-march-2020.rst>`_, and let's start
 with a few highlights:
 
-* We have improved power management on the Droid 4, and under current ideal
+* We have improved power management on the Droid 4, and currently, under ideal
   conditions, the power draw is about ``60mW``, with the modem turned on. That
-  should last a few days on a decent battery.
-* Various sensors and other hardware of the Motorola Droid 4 is now usable with
+  should last a few days on a decent battery
+* Various sensors and other hardware of the Motorola Droid 4 are now usable with
   Maemo Leste
-* A lot of kernel bugs/regressions have been chased and fixed.
-* Cellular support is improving, cellular data should now work
+* A lot of kernel bugs/regressions have been chased and fixed
+* Cellular support is improving; cellular data should now work
 * Maemo Leste Extras should contain quite a few more packages now
 * ``leste-config-*`` packages now exist to provide seamless configuration updates
   and changes, so there should be less of a need to "reinstall" on every new
-  image release.
+  image release
 
 
 
@@ -36,11 +36,11 @@ mce
 
 The Mode Control Entity has seen significant changes.
 
-MCE will now properly blank the screen, allowing the SoC to idle properly which
-in turns allows for for significant power saving (`see issue #338 <https://github.com/maemo-leste/bugtracker/issues/338>`_, `MCE PR 5 <https://github.com/maemo-leste/mce/pull/5>`_).
+MCE will now properly blank the screen, allowing the SoC to idle, which
+in turns allows for significant power saving (`see issue #338 <https://github.com/maemo-leste/bugtracker/issues/338>`_, `MCE PR 5 <https://github.com/maemo-leste/mce/pull/5>`_).
 
 With the newer versions, the touchscreen will also be properly disabled when the
-device is locked, this will prevent 'accidental' input events being sent to the
+device is locked. This will prevent 'accidental' input events being sent to the
 applications while the device is locked. MCE will also close the file
 descriptors of any touchscreen devices and tell X11 to disable the touchscreens
 to let the touchscreen driver idle properly. For more details, see `issue #340
@@ -49,36 +49,36 @@ to let the touchscreen driver idle properly. For more details, see `issue #340
 <https://github.com/maemo-leste/mce/pull/7>`_.
 
 Furthermore, we've made a change to the default ``/etc/mce/mce.ini`` configuration
-file, to prevent accidental shutdowns on the Droid 4. We've `increased the time
+file to prevent accidental shutdowns on the Droid 4. We've `increased the time
 one has to press the power key to shutdown the device (issue #392)
 <https://github.com/maemo-leste/bugtracker/issues/392>`_.
 
-ALS (Ambient Light Sensor) support has been extended, now also works on the
-`Motorola Droid 4`_, see `MCE PR 8
+ALS (Ambient Light Sensor) support has been extended, and it now also works on the
+`Motorola Droid 4`_. See `MCE PR 8
 <https://github.com/maemo-leste/mce/pull/8/>`_.
 
-A module contributed by ``uvos``, to support vibration on MCE, is also expected to
+A module contributed by ``uvos`` to support vibration in MCE is also expected to
 land in the next few days. See `issue #132
 <https://github.com/maemo-leste/bugtracker/issues/132>`_ and `MCE PR 9
 <https://github.com/maemo-leste/mce/pull/9>`_.
 
 Something else to look forward to is the execution of mode-change shell scripts,
 to allow certain programs or scripts to be executed when a device is locked,
-unlocked, or enters some other mce (sub)modes.
+unlocked, or enters other mce (sub)modes.
 
 Input and Focus fixes
 ---------------------
 
 libmatchbox2 and hildon-desktop (the Maemo window manager) have had `long standing
 bugs with regards to input focus
-<https://bugs.maemo.org/show_bug.cgi?id=5987>`_, which was also making it
+<https://bugs.maemo.org/show_bug.cgi?id=5987>`_, which also made it
 `impossible to send keyboard events to vanilla Qt 5 applications
 <https://github.com/maemo-leste/bugtracker/issues/346>`_.
 
 ``freemangordon`` and ``uvos`` have been trying to get to the bottom of the problem.
 The result of that effort is that all known problematic input and focus issues
-are now fixed. xev happily receives events, es2gears responds to keyboard input
-events now, and Qt 5 applications take input the way they are supposed to, now.
+are now fixed. Now xev happily receives events, es2gears responds to keyboard input
+events, and Qt 5 applications take input the way they are supposed to.
 
 Relevant pull requests:
 
@@ -92,18 +92,18 @@ Qt 5: Progress is being made
 
 The Maemo Qt 5 port is not finished yet, but has seen various improvements.
 Merlijn has been doing work porting the "Hildon Input Method" virtual keyboard
-patches to Qt 5. Due to the more clear architecture of Qt 5, and our
+patches to Qt 5. Due to the more clear architecture of Qt 5, our
 unwillingness to fork Qt 5 as a whole, and the fact that we're also porting from
 old ``Xlib`` code to ``xcb``, the work is taking a little bit more
-time, but on the upside, all the Maemo Qt 5 bits will hopefully available via a
+time. On the upside, all the Maemo Qt 5 bits will hopefully available via a
 `Qt 5 loadable platform module <https://doc.qt.io/qt-5/qpa.html>`_.
 
 Apart from the virtual keyboard, there are at least two important pieces
 missing:
 
 * QMenu support, to allow hildon-style menu items to show when the application
-  title is touched/pressed.
-* Hildon-style stacked windows.
+  title is touched/pressed
+* Hildon-style stacked windows
 
 
 We've also ported over a sample application, `countdowntimer
@@ -125,7 +125,7 @@ looking like this:
 Countdowntimer itself also makes use of the specialised QMenu and Hildon
 stackable windows, but is already quite usable even without those modifications.
 
-Developing can be done directly on the VM, using X11 forwarding:
+Development can be done directly on the VM, using X11 forwarding:
 
 .. image:: /images/leste-qt5-designer-x11-forward.png
   :height: 324px
@@ -141,17 +141,17 @@ If you plan to use Qt designer on your device, you might want to look at `Xephyr
 (Nested Xorg server) on Maemo`_ instead.
 
 In the next month, we hope to mostly finish the Qt 5 port. Keep in mind that many
-Qt 5 applications are already usable on Maemo as is, also documented in
+Qt 5 applications are already usable on Maemo as is. This is also documented in
 `Community showcase`_!
 
 
 Xephyr (Nested Xorg server) on Maemo
 ------------------------------------
 
-Xephyr is a nested X server, which can run in a window on Maemo Leste, allowing
+Xephyr is a nested X server, which can run in a window on Maemo Leste, allowing you
 to run any ordinary desktop application on Maemo Leste, in a window.
 
-It's especially useful for devices with physica keyboards.
+It's especially useful for devices with physical keyboards.
 
 Installing it is as simple as::
 
@@ -178,7 +178,7 @@ Cellular data and ofono support
 -------------------------------
 
 The ``beowulf-devel`` repository of Maemo Leste now has the
-``libicd-network-ofono`` plugin for ``icd2`` to allow making GPRS/UMTS/LTE data
+``libicd-network-ofono`` plugin for ``icd2`` to allow for making GPRS/UMTS/LTE data
 connections:
 
 .. image:: /images/droid4-libicd-network-ofono.png
@@ -192,12 +192,12 @@ connections:
 This should work on all of the supported devices, as long as their ofono version
 (and SIM) supports data connections.
 
-Additionally, there were some problems on Beowulf where user ``user`` had no
-access to the ofono dbus interface, but this has been fixed in `issue #372
-<https://github.com/maemo-leste/bugtracker/issues/372>`_.
+Additionally, there were some problems on Beowulf where user ``user`` (the default 
+user in Maemo) had no access to the ofono dbus interface, but this has been fixed in
+`issue #372 <https://github.com/maemo-leste/bugtracker/issues/372>`_.
 
 Finally, once this work has seen a bit more testing, we will create a meta
-package to automatically install all the cellular packages, and all the devices
+package to automatically install all the cellular packages, and all devices
 will automatically get the cellular support when they ``apt update && apt
 upgrade``.
 
@@ -209,17 +209,15 @@ Wireless is mostly just working, although the UI still has some rough edges. In
 particular, sometimes connecting to a network fails if entering the password
 takes too long.
 
-One other bug was fixed: a problem where the networks could appear in the
+One other bug was fixed: a problem where the networks would appear in the
 network dialog, but would not be selectable until the next scan returned, which
 was really annoying. See `issue #253
 <https://github.com/maemo-leste/bugtracker/issues/253>`_ and `connui-internet PR
 <https://github.com/maemo-leste/connui-internet/pull/1>`_.
 
 
-.. **TODO**
-.. 
-.. * https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
-..   mention integration
+* https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
+  mention integration
 
 
 Themes
@@ -265,9 +263,9 @@ The retro `Okuda theme
 OpenRC integration in Debian fixes
 ----------------------------------
 
-We've successfully submitted a patch to SysVinit upstream which brings in better
+We've successfully submitted a patch to SysVinit upstream, which brings in better
 support for OpenRC and its internals on both Debian and Devuan. It has not yet
-propagated to Debian, but it is expected to happen, of course. In Maemo Leste we
+propagated to Devuan, but it is expected to happen, of course. In Maemo Leste we
 already provide the patched version and maintain it ourselves until it is
 available in Devuan. The patch itself brings in proper OpenRC support in the
 insserv tool, which means that LSB headers aren't necessary for OpenRC
@@ -299,7 +297,7 @@ Steps towards calls and texts
 -----------------------------
 
 With `Cellular data and ofono support`_ improving and other projects getting
-close to finished, it is soon time to turn out attention to usable calls and
+close to finished, it will soon be time to turn our attention to usable calls and
 texts on Maemo. We will use many of the same components that Maemo Fremantle
 uses, just in their updated forms, like the Mer project does.
 
@@ -307,10 +305,17 @@ uses, just in their updated forms, like the Mer project does.
 some of the steps will be taking. It will look something like:
 
 1. Perform further analysis on how this works on Fremantle
-2. Import all the FOSS components (there are quite some)
-3. Figure out audio (routing and) policies.
-4. Reimplement the non-FOSS ones: call and sms UI are the big ones.
-5. Use ``osso-abook`` in the alternative call and sms UIs.
+2. Import all the FOSS components (there are quite a number of them)
+3. Figure out audio (routing and) policies
+4. Reimplement the non-FOSS ones: call and sms UI are the big ones
+5. Use ``osso-abook`` in the alternative call and sms UIs
+
+* towards proper telepathy integration https://github.com/maemo-leste/bugtracker/issues/390
+* https://github.com/maemo-leste/rtcom-eventlogger-plugins
+* https://github.com/maemo-leste/rtcom-eventlogger-ui
+
+The addressbook interface is also underway and is being RE'd from the Fremantle
+binaries: https://github.com/maemo-leste/osso-abook/
 
 
 maemo-input-sounds
@@ -318,8 +323,8 @@ maemo-input-sounds
 
 To test the MCE vibration driver, work has been started on `maemo-input-sounds
 <https://github.com/maemo-leste/maemo-input-sounds/tree/wip>`_, which uses the
-`X11 Record` extension to monitor for touchscreen presses and key presses in
-reaction to those either vibrate the device, or play a sound, or even both.
+`X11 Record` extension to monitor for touchscreen and key presses, and in
+reaction to those, either vibrate the device, play a sound, or even both.
 
 The status can be tracked in `issue #389
 <https://github.com/maemo-leste/bugtracker/issues/389>`_. A fully functioning
@@ -351,8 +356,8 @@ now, see `issue #264 <https://github.com/maemo-leste/bugtracker/issues/264>`_
 for more details.
 
 Additionally, since our move to Beowulf, two plugins for ``hildon-home`` would
-no longer load (due to ``hildon-home`` loading them from a non existing path),
-but this too has been fixed now:
+no longer load (due to ``hildon-home`` loading them from a non-existing path),
+but this too has now been fixed:
 
 * https://github.com/maemo-leste/hildon-home/commit/13a8a03196a33e51396ceb61ce307d9655a4ea41
 * https://github.com/maemo-leste/hildon-home/commit/a505d58a6ae87cb032ec20a606d54d69f3582fba
@@ -365,7 +370,7 @@ Device support
 Motorola Droid 4
 ----------------
 
-The Motorola Droid 4 has seen a bit set of improvements:
+The Motorola Droid 4 has seen a big set of improvements:
 
 * The `Ambient Light Sensor`_ is now used;
 * The `Vibration Motor`_ is now used;
@@ -395,12 +400,12 @@ See `MCE PR 8`_.
 Vibration Motor
 ~~~~~~~~~~~~~~~
 
-Pending merging `MCE PR 9`_, the Motorola Droid 4 (and actually also the Nokia
-N900, and other device that supports the Linux `FF
-<https://www.kernel.org/doc/html/latest/input/ff.html>`_ interface).
-This allows for vibration of the device to provide feedback to the user when the
-touchscreen is touched, but also when (in the near future) a SMS is received, or
-the device is being called.
+Once `MCE PR 9`_ is merged, the vibration motor on the Motorola Droid 4 (and actually also the Nokia
+N900 and other devices that support the Linux `FF
+<https://www.kernel.org/doc/html/latest/input/ff.html>`_ interface) will work.
+This allows for vibration of the device to provide touchscreen haptic feedback to the user, 
+but also when (in the near future) an SMS is received, or
+the device receives a phone call.
 
 See also these notes on Maemo.org `on how to start and stop vibrations
 <https://wiki.maemo.org/Phone_control#Start_Vibrating_Incoming_Call>`_. Since we
@@ -411,7 +416,7 @@ apply. It is also possible to add more patterns by editing ``/etc/mce/mce.ini``.
 Accelerometer
 ~~~~~~~~~~~~~
 
-The accelerometer driver is now turned on, meaning that things like the
+The accelerometer driver is now enabled, meaning that things like the
 `droidsaber <https://github.com/buzztiaan/droidsaber>`_ are now possible:
 
 .. raw:: html
@@ -420,9 +425,9 @@ The accelerometer driver is now turned on, meaning that things like the
      ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
     picture-in-picture" allowfullscreen></iframe>
 
-This will also be useful in automatically changing the screen orientation, based
+This will also be useful for automatically changing the screen orientation, based
 on the device orientation. The powervr driver might need a bit more work before
-that will be working smoothly and well, though.
+that will work smoothly and well, though.
 
 
 Power Management
@@ -436,10 +441,10 @@ and in general OMAP being well designed when it comes to power management. This
 should last most batteries for several days. Things might improve a little more
 if OMAP ``OFF`` mode ever starts to work on OMAP 4.
 
-``Merlijn`` recently acquired a few lab power supplies (`and after actually making it
+``Merlijn`` recently acquired a few lab power supplies, and (`after actually making it
 work with sigrok, working around insanely stupid firmware bugs
-<https://sourceforge.net/p/sigrok/mailman/message/37014835/>`_), was able to
-generate the following graph of power usage from a clean power-on, showing the
+<https://sourceforge.net/p/sigrok/mailman/message/37014835/>`_) was able to
+generate the following graph of power usage from a clean power-up, showing the
 ~3 minutes it takes to fully boot and enter the promised ``60mW`` idle power
 usage:
 
@@ -457,7 +462,7 @@ Here's what using the vibration motor does to the power draw:
 And the same for receiving an SMS (exposing a problem where the modem doesn't
 properly idle after sms receive - it stays around ``180mW`` as opposed to the
 ``60mW`` - this is still being investigated, but it looks like the USB doesn't
-idle afterwards, requiring manually being kicked into idle mode):
+idle afterwards, requiring to be manually kicked into idle mode):
 
 .. image:: /images/droid4-modem-power-recv-sms.png
   :height: 324px
@@ -469,7 +474,7 @@ NTPD and power management
 
 
 The ``ntp`` daemon currently causes a lot of wake ups, and negatively impacts
-battery life. The current stop-gap is to stop it manually, after booting, by
+battery life. The current stop-gap is to stop it manually after booting, by
 issuing the following as root::
 
     /etc/init.d/ntp stop
@@ -480,7 +485,7 @@ Cellular and power management
 
 While the modem itself should idle pretty well, the modem reports on the signal
 strength very frequently, waking up the device even when the signal strength
-should not be shown, the signal strength can be temporarily disabled like so::
+should not be shown. The signal strength can be temporarily disabled like so::
 
     printf 'U1234AT+SCRN=0\r' > /dev/gsmtty1
 
@@ -597,8 +602,8 @@ increasing font size in osso-xterm
 On the Nokia N900, the font size in osso-xterm can be changed using the volume
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
-the Droid 4 has different keys mapped to it's volume buttons, see `issue #385
-<https://github.com/maemo-leste/bugtracker/issues/385>`_.
+the Droid 4 has different keys mapped to its volume buttons, see `issue #385
+<https://github.com/maemo-leste/bugtracker/issues/385>`_
 
 
 Nokia N900
@@ -620,7 +625,7 @@ Pinephone
 Thanks to the packaging work from people in postmarketOS, we now also support
 the modem in the Pinephone. While we've mostly been working with cellular things
 on the Droid4, lots of that work can simply be reused on the Pinephone, and we
-plan to do so in the coming time. A package called ``pinephone-modem-config``
+plan to do so in the near future. A package called ``pinephone-modem-config``
 can be installed, and along with updating the kernel (latest available version
 is 5.6), it will bring in modem support. This is already automatically enabled
 in the latest images.
@@ -633,7 +638,7 @@ From July, we will also implement and enable weekly image builds on our CI
 infrastructure. This means we won't be building images on demand anymore.
 Instead they shall be built each week, containg all the latest packages and
 goodies. Obviously, this will require more storage space, so we will be
-distributing device images up to five weeks of age.
+removing device images older than five weeks.
 
 Hopefully this will also help us polish up our build frameworks and alert us
 about possible bugs that arise during development. It is also a very important
@@ -732,15 +737,15 @@ So what can you expect next from future updates?
 
 The big things on our radar are still:
 
-* Audio: Currently most devices do not even ship with ``pulseaudio``, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the `volume applet <https://github.com/maemo-leste/maemo-statusmenu-volume>`_.
+* Audio: Currently most devices do not even ship with ``pulseaudio``, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the `volume applet <https://github.com/maemo-leste/maemo-statusmenu-volume>`_
 * Contacts (``osso-abook``), this will provide all of the Hildon contacts APIs
   with the evolution database as backend, definitely required for proper SMS and
-  Call UI.
+  Call UI
 * Qt 5 updates: hopefully we will soon have the virtual keyboard integration
   ready, with the hildon menus and stacked windows following right after. That
   should be enough to make most applications work, and from there on we'll
   probably port things on an as-needed basis: like APIs for home and status
-  widgets.
+  widgets
 * Nokia's ``rtcom`` packages and telepathy. https://github.com/maemo-leste/bugtracker/issues/390
   Some of this is covered in `Steps towards calls and texts`_, but to reiterate:
   the plan is to use `telepathy-ring` as an interface to `ofono`, and use
@@ -754,7 +759,7 @@ The big things on our radar are still:
   slack plugin into telepathy, and being able to directly
   interface with Slack using the native hildon UI, potentially even with
   contacts, too. And of course, there are also SIP plugins for telepathy,
-  allowing for VOIP calls from the same (native) UI.
+  allowing for VOIP calls from the same (native) UI
 * Speaking of UIs, once the backend (rtcom) is mostly there, the last thing
   we'll have to do is to bring up the call and text UIs. The Fremantle SMS UI
   relied on a html rendering engine, `allow for cool customisations
@@ -781,14 +786,14 @@ More frequent updates?
 
 We often get the question if we can provide update posts more frequently. Often,
 we delay update posts because we want to **complete just one more package...** -
-and then another, and another... So if you'd like to free more frequent update
+and then another, and another... So if you'd like to get more frequent update
 posts, please volunteer to write them for us. If you hang out in the IRC
 channel, maybe follow the frequent updates and write about them, and we'll be
 able to post it here, on our website.
 
 That said, we're considering doing detailed write-ups of various core components
 of Maemo Leste every few weeks or so, so if that's your thing, you might be able
-to peek at to those, soon.
+to peek at those too, soon.
 
 
 Interested?
