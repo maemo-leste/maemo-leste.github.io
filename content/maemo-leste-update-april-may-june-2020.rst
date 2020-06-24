@@ -786,7 +786,7 @@ More frequent updates?
 
 We often get the question if we can provide update posts more frequently. Often,
 we delay update posts because we want to **complete just one more package...** -
-and then another, and another... So if you'd like to free up time for more frequent update
+and then another, and another... So if you'd like to get more frequent update
 posts, please volunteer to write them for us. If you hang out in the IRC
 channel, maybe follow the frequent updates and write about them, and we'll be
 able to post it here, on our website.
