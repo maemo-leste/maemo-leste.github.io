@@ -665,7 +665,7 @@ fulfill.
 However, for this occasion, we built new images and they can be downloaded as
 usual. This time we've also built 64bit images for the Raspberry Pi 3 and 4.
 
-* 64bit VM: https://maedevu.maemo.org/images/virtual/20200622/
+* 64bit VM: https://maedevu.maemo.org/images/virtual-machines/20200622/
 * N900: https://maedevu.maemo.org/images/n900/20200623/
 * Droid4: https://maedevu.maemo.org/images/droid4/20200624/
 * Pinephone: https://maedevu.maemo.org/images/pinephone/20200624/
