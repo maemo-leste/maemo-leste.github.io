@@ -5,9 +5,7 @@ Maemo Leste - Thirteenth Update (April) 2020
 :tags: droid4, n900, pinephone, cellular, extras, light sensor, power
        management, ofono, openrc, keyboard layout, vibration, cellular data
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-03-25 19:00
-
-.. TODO DATE
+:date: 2020-06-24 18:00
 
 It's been several weeks since our `last update
 <{filename}/maemo-leste-update-february-and-march-2020.rst>`_, so let's start
@@ -643,7 +641,11 @@ on the Droid4, lots of that work can simply be reused on the Pinephone, and we
 plan to do so in the near future. A package called ``pinephone-modem-config``
 can be installed, and along with updating the kernel (latest available version
 is 5.6), it will bring in modem support. This is already automatically enabled
-in the latest images.
+in the latest images. A note to keep in mind: While the modem is off, combined
+with the latest kernels, the system outputs KEY_WAKEUP events which cause some
+trouble with the virtual keyboard. The current solution to this is to just have
+``pinephone-modem-config`` installed and after a reboot, things should be ok.
+We will see if it's possible to patch this in some proper way in the future.
 
 
 Weekly builds
@@ -659,6 +661,17 @@ Hopefully this will also help us polish up our build frameworks and alert us
 about possible bugs that arise during development. It is also a very important
 step towards reproducible builds - which is one of our milestones we wish to
 fulfill.
+
+However, for this occasion, we built new images and they can be downloaded as
+usual. This time we've also built 64bit images for the Raspberry Pi 3 and 4.
+
+* 64bit VM: https://maedevu.maemo.org/images/virtual/20200622/
+* N900: https://maedevu.maemo.org/images/n900/20200623/
+* Droid4: https://maedevu.maemo.org/images/droid4/20200624/
+* Pinephone: https://maedevu.maemo.org/images/pinephone/20200624/
+* Pinetab: https://maedevu.maemo.org/images/pinetab/20200624/
+* Pi3: https://maedevu.maemo.org/images/raspi3-64bit/20200623/
+* Pi4: https://maedevu.maemo.org/images/raspi4-64bit/20200623/
 
 
 Community showcase
