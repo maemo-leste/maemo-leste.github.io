@@ -216,6 +216,7 @@ was really annoying. See `issue #253
 <https://github.com/maemo-leste/connui-internet/pull/1>`_.
 
 
+**TODO**
 * https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also
   mention integration
 
@@ -309,13 +310,6 @@ some of the steps will be taking. It will look something like:
 3. Figure out audio (routing and) policies.
 4. Reimplement the non-FOSS ones: call and sms UI are the big ones.
 5. Use ``osso-abook`` in the alternative call and sms UIs.
-
-* towards proper telepathy integration https://github.com/maemo-leste/bugtracker/issues/390
-* https://github.com/maemo-leste/rtcom-eventlogger-plugins
-* https://github.com/maemo-leste/rtcom-eventlogger-ui
-
-The addressbook interface is also underway and is being RE'd from the Fremantle
-binaries: https://github.com/maemo-leste/osso-abook/
 
 
 maemo-input-sounds
