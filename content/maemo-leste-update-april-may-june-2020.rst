@@ -549,6 +549,15 @@ of these issues have now been resolved by ``Merlijn``. ``buZz`` provided a nice
 (Yes, the shift button on the Droid 4 is mapped to control, and the caps lock
 key is mapped to shift)
 
+Additional extra keys are also available when using the ``ISO_Level3_Shift``
+key, `see the actual xkb file for more details
+<https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36>`_ and this image for a quick reference:
+
+.. image:: /images/droid4-keyboard-2.png
+  :height: 224px
+  :width: 576px
+
+
 Compare that to the N900 layout:
 
 .. image:: /images/n900-keyboard.png
@@ -557,10 +566,6 @@ Compare that to the N900 layout:
 
 Bringing up the special keys virtual keyboard is done by pressing the "OK"
 (``ISO_Level3_Shift``) key and the Control (``Shift``) key.
-
-Additional extra keys are also available when using the ``ISO_Level3_Shift``
-key, `see the actual xkb file for more details
-<https://github.com/maemo-leste/xkb-data/commit/ccebc5ea6cc9c14c7822b53317640c8f2f6372b2#diff-5b7bd0a2cb0498ff38e4e466546d5fdcR36>`_.
 
 And finally, the virtual keyboard didn't look quite good on the Droid 4, since
 it has a larger resolution, but as of `hildon-input-method-plugins PR 3
