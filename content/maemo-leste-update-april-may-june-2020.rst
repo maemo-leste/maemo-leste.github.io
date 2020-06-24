@@ -335,9 +335,9 @@ The status can be tracked in `issue #389
 Calendar backend and frontend
 -----------------------------
 
-Some more work is being done to get the calendar software up and running.
-The backend, ``calendar-backend`` is already building fine, but the frontend
-(``qalendar``) is still blocking on the Qt 5 port:
+Some more work is being done by ``buZz`` and ``sicelo`` to get the calendar
+software up and running.  The backend, ``calendar-backend`` is already building
+fine, but the frontend (``qalendar``) is still blocking on the Qt 5 port:
 
 * https://github.com/buzztiaan/calendar-backend
 * https://github.com/buzztiaan/libgq
@@ -378,6 +378,7 @@ The Motorola Droid 4 has seen a big set of improvements:
 * Advanced `keyboard layout`_
 * Basic `modem integration`_ in `beowulf-devel` branches;
 * Much improved battery life through better `Power Management`_;
+* Latest Linux kernel
 
 Ambient Light Sensor
 ~~~~~~~~~~~~~~~~~~~~
@@ -605,6 +606,16 @@ osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to its volume buttons, see `issue #385
 <https://github.com/maemo-leste/bugtracker/issues/385>`_
 
+Latest Linux kernel
+~~~~~~~~~~~~~~~~~~~
+
+A month or so ago we have switched to Linux 5.7:
+https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7
+
+After that, there were various regressions to figure out, the most painful ones
+being random resets, which took quite a while to pin down. ``tmlind`` has been
+incredibly helpful in getting these problems resolved. Onto the next Linux
+version and set of regressions - and bugfixes, and features...
 
 Nokia N900
 ----------
