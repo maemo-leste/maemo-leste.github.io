@@ -10,11 +10,11 @@ Maemo Leste - Thirteenth Update (April) 2020
 .. TODO DATE
 
 It's been several weeks since our `last update
-<{filename}/maemo-leste-update-february-and-march-2020.rst>`_, and let's start
+<{filename}/maemo-leste-update-february-and-march-2020.rst>`_, so let's start
 with a few highlights:
 
 * We have improved power management on the Droid 4, and currently, under ideal
-  conditions, the power draw is about ``60mW``, with the modem turned on. That
+  conditions, the power draw is about ``60mW`` with the modem turned on. That
   should last a few days on a decent battery
 * Various sensors and other hardware of the Motorola Droid 4 are now usable with
   Maemo Leste
@@ -37,10 +37,10 @@ mce
 The Mode Control Entity has seen significant changes.
 
 MCE will now properly blank the screen, allowing the SoC to idle, which
-in turns allows for significant power saving (`see issue #338 <https://github.com/maemo-leste/bugtracker/issues/338>`_, `MCE PR 5 <https://github.com/maemo-leste/mce/pull/5>`_).
+in turn allows for significant power saving (`see issue #338 <https://github.com/maemo-leste/bugtracker/issues/338>`_, `MCE PR 5 <https://github.com/maemo-leste/mce/pull/5>`_).
 
 With the newer versions, the touchscreen will also be properly disabled when the
-device is locked. This will prevent 'accidental' input events being sent to the
+device is locked. This will prevent 'accidental' input events being sent to
 applications while the device is locked. MCE will also close the file
 descriptors of any touchscreen devices and tell X11 to disable the touchscreens
 to let the touchscreen driver idle properly. For more details, see `issue #340
@@ -141,7 +141,7 @@ If you plan to use Qt designer on your device, you might want to look at `Xephyr
 (Nested Xorg server) on Maemo`_ instead.
 
 In the next month, we hope to mostly finish the Qt 5 port. Keep in mind that many
-Qt 5 applications are already usable on Maemo as is. This is also documented in
+Qt 5 applications are already usable on Maemo Leste as is. This is also documented in
 `Community showcase`_!
 
 
@@ -264,7 +264,7 @@ OpenRC integration in Debian fixes
 ----------------------------------
 
 We've successfully submitted a patch to SysVinit upstream, which brings in better
-support for OpenRC and its internals on both Debian and Devuan. It has not yet
+support for OpenRC and its internals to both Debian and Devuan. It has not yet
 propagated to Devuan, but it is expected to happen, of course. In Maemo Leste we
 already provide the patched version and maintain it ourselves until it is
 available in Devuan. The patch itself brings in proper OpenRC support in the
@@ -302,9 +302,9 @@ texts on Maemo. We will use many of the same components that Maemo Fremantle
 uses, just in their updated forms, like the Mer project does.
 
 `Issue #390 <https://github.com/maemo-leste/bugtracker/issues/390>`_ documents
-some of the steps will be taking. It will look something like:
+some of the steps we will be taking. It will look something like:
 
-1. Perform further analysis on how this works on Fremantle
+1. Perform further analysis on how this works in Fremantle
 2. Import all the FOSS components (there are quite a number of them)
 3. Figure out audio (routing and) policies
 4. Reimplement the non-FOSS ones: call and sms UI are the big ones
@@ -428,15 +428,15 @@ The accelerometer driver is now enabled, meaning that things like the
 
 This will also be useful for automatically changing the screen orientation, based
 on the device orientation. The powervr driver might need a bit more work before
-that will work smoothly and well, though.
+that will work smoothly and well though.
 
 
 Power Management
 ~~~~~~~~~~~~~~~~
 
 The power management on the Droid 4 should be in much better shape now. Under
-ideal cirsumstances, with the modem online, the device should idle at about
-``60mW``. This is made possible by incredible Linux kernel support, `droid4-pm
+ideal circumstances, with the modem online, the device should idle at about
+``60mW``. This is made possible by the incredible Linux kernel support, `droid4-pm
 <https://github.com/maemo-leste/droid4-pm>`_, our various `mce`_ improvements,
 and in general OMAP being well designed when it comes to power management. This
 should last most batteries for several days. Things might improve a little more
@@ -582,8 +582,7 @@ Modem integration
 ``tmlind`` and ``Pavel Machek`` have been doing a lot of work on improving ofono
 on the Droid 4. The result of most of that work is currently packaged in the
 ``droid4`` component, so any droid 4 will automatically get the latest/best
-ofono version. Additionally, the technology is now also being reported
-properly:
+ofono version. Additionally, the technology is now also reported properly:
 
 .. image:: /images/droid4-tech.png
   :height: 324px
@@ -606,7 +605,7 @@ increasing font size in osso-xterm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the Nokia N900, the font size in osso-xterm can be changed using the volume
-buttons, but this doesn not work yet on the Droid 4. The reason is that
+buttons, but this does not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to its volume buttons, see `issue #385
 <https://github.com/maemo-leste/bugtracker/issues/385>`_
@@ -614,7 +613,7 @@ the Droid 4 has different keys mapped to its volume buttons, see `issue #385
 Latest Linux kernel
 ~~~~~~~~~~~~~~~~~~~
 
-A month or so ago we have switched to Linux 5.7:
+A month or so ago we switched to Linux 5.7:
 https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7
 
 After that, there were various regressions to figure out, the most painful ones
@@ -631,7 +630,7 @@ Powermanagement update
 A while ago we tweeted out a photo of a Nokia N900 using very little power,
 while in ``OMAP OFF`` mode. We haven't yet brought this to our latest images,
 but it's still planned (it might be relatively simple, but also might be a lot
-of work). In addition, we will likely provide a ``n900-pm`` script, similar to
+of work). In addition, we will likely provide an ``n900-pm`` script, similar to
 the ``droid4-pm`` script.
 
 
@@ -652,7 +651,7 @@ Weekly builds
 
 From July, we will also implement and enable weekly image builds on our CI
 infrastructure. This means we won't be building images on demand anymore.
-Instead they shall be built each week, containg all the latest packages and
+Instead they shall be built each week, containing all the latest packages and
 goodies. Obviously, this will require more storage space, so we will be
 removing device images older than five weeks.
 
@@ -725,8 +724,8 @@ https://github.com/maemo-leste-extras/quicknote
 mihphoto
 --------
 
-A Qt 5 photo viewer is available, and optionally supports multitouch, when
-supplied as startup argument:
+A Qt 5 photo viewer is available, and optionally supports multitouch when
+supplied as a startup argument:
 https://github.com/maemo-leste-extras/mihphoto
 
 
@@ -749,13 +748,13 @@ the `bugtracker <https://github.com/maemo-leste-extras/bugtracker>`_ .
 Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5
 ============================================================
 
-So what can you expect next from future updates?
+So what can you expect from future updates?
 
 The big things on our radar are still:
 
-* Audio: Currently most devices do not even ship with ``pulseaudio``, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the `volume applet <https://github.com/maemo-leste/maemo-statusmenu-volume>`_
+* Audio: Currently most devices do not even ship with ``pulseaudio``, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names for call routing, and so on. This is also a prerequisite for the `volume applet <https://github.com/maemo-leste/maemo-statusmenu-volume>`_
 * Contacts (``osso-abook``), this will provide all of the Hildon contacts APIs
-  with the evolution database as backend, definitely required for proper SMS and
+  with the evolution database as a abackend, definitely required for proper SMS and
   Call UI
 * Qt 5 updates: hopefully we will soon have the virtual keyboard integration
   ready, with the hildon menus and stacked windows following right after. That
@@ -778,7 +777,7 @@ The big things on our radar are still:
   allowing for VOIP calls from the same (native) UI
 * Speaking of UIs, once the backend (rtcom) is mostly there, the last thing
   we'll have to do is to bring up the call and text UIs. The Fremantle SMS UI
-  relied on a html rendering engine, `allow for cool customisations
+  relied on an html rendering engine, `allowing for cool customisations
   <https://wiki.maemo.org/Conversation_Mods>`_ like these:
 
   .. image:: /images/fun-conversations-mod.png
@@ -790,7 +789,7 @@ Web interface for packages
 ==========================
 
 We're considering creating a web interface to browse the core maemo packages,
-the development packages and also the extras packages, see `issue #395 <https://github.com/maemo-leste/bugtracker/issues/395>`_ for more details. And if you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.
+the development packages and also the extras packages. See `issue #395 <https://github.com/maemo-leste/bugtracker/issues/395>`_ for more details. If you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.
 
 Sneak peak of an alpha version of the interface:
 
