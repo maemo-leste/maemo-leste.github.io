@@ -309,7 +309,7 @@ idle afterwards, requiring manually being kicked into idle mode):&lt;/p&gt;
 &lt;div class="section" id="ntpd-and-power-management"&gt;
 &lt;h4&gt;NTPD and power management&lt;/h4&gt;
 &lt;p&gt;The &lt;tt class="docutils literal"&gt;ntp&lt;/tt&gt; daemon currently causes a lot of wake ups, and negatively impacts
-battery life. The current stop-gap is to stop it manually, after starting, by
+battery life. The current stop-gap is to stop it manually, after booting, by
 issuing the following as root:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /etc/init.d/ntp stop
@@ -388,7 +388,7 @@ management regressions, but it's starting to look quite good indeed.&lt;/p&gt;
 &lt;p&gt;On the Nokia N900, the font size in osso-xterm can be changed using the volume
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
-the Droid 4 has different keys mapped to it's volume buttons, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385"&gt;issue #385&lt;/a&gt;&lt;/p&gt;
+the Droid 4 has different keys mapped to it's volume buttons, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385"&gt;issue #385&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nokia-n900"&gt;
@@ -434,20 +434,21 @@ fulfill.&lt;/p&gt;
  ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;Unfortunately, the community hasn't yet packaged the program for Maemo Leste
 Extras, but we're confident someone will, at some point.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="section" id="photo-light-meter"&gt;
-&lt;h4&gt;Photo Light meter&lt;/h4&gt;
+&lt;h3&gt;Photo Light meter&lt;/h3&gt;
 &lt;p&gt;Written in Free Pascal, photolightmeter can be used calculate aperture and
 shutter values.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="telegram"&gt;
-&lt;h4&gt;Telegram&lt;/h4&gt;
+&lt;h3&gt;Telegram&lt;/h3&gt;
 &lt;p&gt;If you're a fan of Telegram, the desktop client just works on Maemo Leste:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://twitter.com/rfc1087/status/1271796014903635969"&gt;https://twitter.com/rfc1087/status/1271796014903635969&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="proxmark3"&gt;
-&lt;h4&gt;Proxmark3&lt;/h4&gt;
+&lt;h3&gt;Proxmark3&lt;/h3&gt;
 &lt;p&gt;If you like toying with RFID cards, then you can (for example) use the bluetooth
 module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
 itself:&lt;/p&gt;
@@ -456,21 +457,20 @@ itself:&lt;/p&gt;
 &lt;p&gt;You can find specific installation notes here: &lt;a class="reference external" href="http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276"&gt;http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="quicknote"&gt;
-&lt;h4&gt;Quicknote&lt;/h4&gt;
+&lt;h3&gt;Quicknote&lt;/h3&gt;
 &lt;p&gt;A simple notes application written in Python is also available:
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/quicknote"&gt;https://github.com/maemo-leste-extras/quicknote&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mihphoto"&gt;
-&lt;h4&gt;mihphoto&lt;/h4&gt;
+&lt;h3&gt;mihphoto&lt;/h3&gt;
 &lt;p&gt;A Qt 5 photo viewer is available, and optionally supports multitouch, when
 supplied as startup argument:
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/mihphoto"&gt;https://github.com/maemo-leste-extras/mihphoto&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="personal-ip-address"&gt;
-&lt;h4&gt;personal-ip-address&lt;/h4&gt;
+&lt;h3&gt;personal-ip-address&lt;/h3&gt;
 &lt;p&gt;The good old personal-ip-address has returned, this time to Leste:
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/personal-ip-address"&gt;https://github.com/maemo-leste-extras/personal-ip-address&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="maemo-leste-extras"&gt;

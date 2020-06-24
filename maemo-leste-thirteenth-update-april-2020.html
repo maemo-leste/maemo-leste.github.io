@@ -384,7 +384,7 @@ idle afterwards, requiring manually being kicked into idle mode):</p>
 <div class="section" id="ntpd-and-power-management">
 <h4>NTPD and power management</h4>
 <p>The <tt class="docutils literal">ntp</tt> daemon currently causes a lot of wake ups, and negatively impacts
-battery life. The current stop-gap is to stop it manually, after starting, by
+battery life. The current stop-gap is to stop it manually, after booting, by
 issuing the following as root:</p>
 <pre class="literal-block">
 /etc/init.d/ntp stop
@@ -463,7 +463,7 @@ management regressions, but it's starting to look quite good indeed.</p>
 <p>On the Nokia N900, the font size in osso-xterm can be changed using the volume
 buttons, but this doesn not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
-the Droid 4 has different keys mapped to it's volume buttons, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385">issue #385</a></p>
+the Droid 4 has different keys mapped to it's volume buttons, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385">issue #385</a>.</p>
 </div>
 </div>
 <div class="section" id="nokia-n900">
@@ -509,20 +509,21 @@ fulfill.</p>
  ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen></iframe><p>Unfortunately, the community hasn't yet packaged the program for Maemo Leste
 Extras, but we're confident someone will, at some point.</p>
+</div>
 <div class="section" id="photo-light-meter">
-<h4>Photo Light meter</h4>
+<h3>Photo Light meter</h3>
 <p>Written in Free Pascal, photolightmeter can be used calculate aperture and
 shutter values.</p>
 </div>
 <div class="section" id="telegram">
-<h4>Telegram</h4>
+<h3>Telegram</h3>
 <p>If you're a fan of Telegram, the desktop client just works on Maemo Leste:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://twitter.com/rfc1087/status/1271796014903635969">https://twitter.com/rfc1087/status/1271796014903635969</a></li>
 </ul>
 </div>
 <div class="section" id="proxmark3">
-<h4>Proxmark3</h4>
+<h3>Proxmark3</h3>
 <p>If you like toying with RFID cards, then you can (for example) use the bluetooth
 module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
 itself:</p>
@@ -531,21 +532,20 @@ itself:</p>
 <p>You can find specific installation notes here: <a class="reference external" href="http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276">http://web.archive.org/web/20200623220049/https://paste.debian.net/plainh/34a66276</a></p>
 </div>
 <div class="section" id="quicknote">
-<h4>Quicknote</h4>
+<h3>Quicknote</h3>
 <p>A simple notes application written in Python is also available:
 <a class="reference external" href="https://github.com/maemo-leste-extras/quicknote">https://github.com/maemo-leste-extras/quicknote</a></p>
 </div>
 <div class="section" id="mihphoto">
-<h4>mihphoto</h4>
+<h3>mihphoto</h3>
 <p>A Qt 5 photo viewer is available, and optionally supports multitouch, when
 supplied as startup argument:
 <a class="reference external" href="https://github.com/maemo-leste-extras/mihphoto">https://github.com/maemo-leste-extras/mihphoto</a></p>
 </div>
 <div class="section" id="personal-ip-address">
-<h4>personal-ip-address</h4>
+<h3>personal-ip-address</h3>
 <p>The good old personal-ip-address has returned, this time to Leste:
 <a class="reference external" href="https://github.com/maemo-leste-extras/personal-ip-address">https://github.com/maemo-leste-extras/personal-ip-address</a></p>
-</div>
 </div>
 </div>
 <div class="section" id="maemo-leste-extras">
