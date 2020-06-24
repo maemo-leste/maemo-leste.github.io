@@ -139,10 +139,10 @@ takes too long.&lt;/p&gt;
 &lt;p&gt;One other bug was fixed: a problem where the networks could appear in the
 network dialog, but would not be selectable until the next scan returned, which
 was really annoying. See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/253"&gt;issue #253&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/connui-internet/pull/1"&gt;connui-internet PR&lt;/a&gt;.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/374"&gt;https://github.com/maemo-leste/bugtracker/issues/374&lt;/a&gt; - two packages, also
-mention integration&lt;/li&gt;
-&lt;/ul&gt;
+&lt;!-- **TODO** --&gt;
+&lt;!--  --&gt;
+&lt;!-- * https://github.com/maemo-leste/bugtracker/issues/374 - two packages, also --&gt;
+&lt;!-- mention integration --&gt;
 &lt;/div&gt;
 &lt;div class="section" id="themes"&gt;
 &lt;h3&gt;Themes&lt;/h3&gt;
@@ -198,13 +198,6 @@ some of the steps will be taking. It will look something like:&lt;/p&gt;
 &lt;li&gt;Reimplement the non-FOSS ones: call and sms UI are the big ones.&lt;/li&gt;
 &lt;li&gt;Use &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;osso-abook&lt;/span&gt;&lt;/tt&gt; in the alternative call and sms UIs.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;towards proper telepathy integration &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/390"&gt;https://github.com/maemo-leste/bugtracker/issues/390&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/rtcom-eventlogger-plugins"&gt;https://github.com/maemo-leste/rtcom-eventlogger-plugins&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/rtcom-eventlogger-ui"&gt;https://github.com/maemo-leste/rtcom-eventlogger-ui&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The addressbook interface is also underway and is being RE'd from the Fremantle
-binaries: &lt;a class="reference external" href="https://github.com/maemo-leste/osso-abook/"&gt;https://github.com/maemo-leste/osso-abook/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="maemo-input-sounds"&gt;
 &lt;h3&gt;maemo-input-sounds&lt;/h3&gt;
