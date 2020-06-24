@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2020-03-25T19:00:00+01:00</updated><entry><title>Maemo Leste - Thirteenth Update (April) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-thirteenth-update-april-2020.html" rel="alternate"></link><published>2020-03-25T19:00:00+01:00</published><updated>2020-03-25T19:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-03-25:/maemo-leste-thirteenth-update-april-2020.html</id><summary type="html">&lt;!-- TODO DATE --&gt;
-&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, and let's start
+&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
 with a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;We have improved power management on the Droid 4, and currently, under ideal
-conditions, the power draw is about &lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt;, with the modem turned on. That
+conditions, the power draw is about &lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt; with the modem turned on. That
 should last a few days on a decent battery …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!-- TODO DATE --&gt;
-&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, and let's start
+&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
 with a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;We have improved power management on the Droid 4, and currently, under ideal
-conditions, the power draw is about &lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt;, with the modem turned on. That
+conditions, the power draw is about &lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt; with the modem turned on. That
 should last a few days on a decent battery&lt;/li&gt;
 &lt;li&gt;Various sensors and other hardware of the Motorola Droid 4 are now usable with
 Maemo Leste&lt;/li&gt;
@@ -27,9 +27,9 @@ image release&lt;/li&gt;
 &lt;h3&gt;mce&lt;/h3&gt;
 &lt;p&gt;The Mode Control Entity has seen significant changes.&lt;/p&gt;
 &lt;p&gt;MCE will now properly blank the screen, allowing the SoC to idle, which
-in turns allows for significant power saving (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/338"&gt;see issue #338&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/5"&gt;MCE PR 5&lt;/a&gt;).&lt;/p&gt;
+in turn allows for significant power saving (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/338"&gt;see issue #338&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/5"&gt;MCE PR 5&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;With the newer versions, the touchscreen will also be properly disabled when the
-device is locked. This will prevent 'accidental' input events being sent to the
+device is locked. This will prevent 'accidental' input events being sent to
 applications while the device is locked. MCE will also close the file
 descriptors of any touchscreen devices and tell X11 to disable the touchscreens
 to let the touchscreen driver idle properly. For more details, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/340"&gt;issue #340&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/6"&gt;MCE PR 6&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/7"&gt;MCE PR 7&lt;/a&gt;.&lt;/p&gt;
@@ -91,7 +91,7 @@ stackable windows, but is already quite usable even without those modifications.
 &lt;p&gt;If you plan to use Qt designer on your device, you might want to look at &lt;a class="reference internal" href="#xephyr-nested-xorg-server-on-maemo"&gt;Xephyr
 (Nested Xorg server) on Maemo&lt;/a&gt; instead.&lt;/p&gt;
 &lt;p&gt;In the next month, we hope to mostly finish the Qt 5 port. Keep in mind that many
-Qt 5 applications are already usable on Maemo as is. This is also documented in
+Qt 5 applications are already usable on Maemo Leste as is. This is also documented in
 &lt;a class="reference internal" href="#community-showcase"&gt;Community showcase&lt;/a&gt;!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="xephyr-nested-xorg-server-on-maemo"&gt;
@@ -161,7 +161,7 @@ mention integration&lt;/li&gt;
 &lt;div class="section" id="openrc-integration-in-debian-fixes"&gt;
 &lt;h3&gt;OpenRC integration in Debian fixes&lt;/h3&gt;
 &lt;p&gt;We've successfully submitted a patch to SysVinit upstream, which brings in better
-support for OpenRC and its internals on both Debian and Devuan. It has not yet
+support for OpenRC and its internals to both Debian and Devuan. It has not yet
 propagated to Devuan, but it is expected to happen, of course. In Maemo Leste we
 already provide the patched version and maintain it ourselves until it is
 available in Devuan. The patch itself brings in proper OpenRC support in the
@@ -191,9 +191,9 @@ close to finished, it will soon be time to turn our attention to usable calls an
 texts on Maemo. We will use many of the same components that Maemo Fremantle
 uses, just in their updated forms, like the Mer project does.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/390"&gt;Issue #390&lt;/a&gt; documents
-some of the steps will be taking. It will look something like:&lt;/p&gt;
+some of the steps we will be taking. It will look something like:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;Perform further analysis on how this works on Fremantle&lt;/li&gt;
+&lt;li&gt;Perform further analysis on how this works in Fremantle&lt;/li&gt;
 &lt;li&gt;Import all the FOSS components (there are quite a number of them)&lt;/li&gt;
 &lt;li&gt;Figure out audio (routing and) policies&lt;/li&gt;
 &lt;li&gt;Reimplement the non-FOSS ones: call and sms UI are the big ones&lt;/li&gt;
@@ -291,13 +291,13 @@ apply. It is also possible to add more patterns by editing &lt;tt class="docutil
  ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
 picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;p&gt;This will also be useful for automatically changing the screen orientation, based
 on the device orientation. The powervr driver might need a bit more work before
-that will work smoothly and well, though.&lt;/p&gt;
+that will work smoothly and well though.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="power-management"&gt;
 &lt;h4&gt;Power Management&lt;/h4&gt;
 &lt;p&gt;The power management on the Droid 4 should be in much better shape now. Under
-ideal cirsumstances, with the modem online, the device should idle at about
-&lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt;. This is made possible by incredible Linux kernel support, &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-pm"&gt;droid4-pm&lt;/a&gt;, our various &lt;a class="reference internal" href="#mce"&gt;mce&lt;/a&gt; improvements,
+ideal circumstances, with the modem online, the device should idle at about
+&lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt;. This is made possible by the incredible Linux kernel support, &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-pm"&gt;droid4-pm&lt;/a&gt;, our various &lt;a class="reference internal" href="#mce"&gt;mce&lt;/a&gt; improvements,
 and in general OMAP being well designed when it comes to power management. This
 should last most batteries for several days. Things might improve a little more
 if OMAP &lt;tt class="docutils literal"&gt;OFF&lt;/tt&gt; mode ever starts to work on OMAP 4.&lt;/p&gt;
@@ -384,8 +384,7 @@ keyboard will render properly regardless of the screen dimensions:&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;tmlind&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;Pavel Machek&lt;/tt&gt; have been doing a lot of work on improving ofono
 on the Droid 4. The result of most of that work is currently packaged in the
 &lt;tt class="docutils literal"&gt;droid4&lt;/tt&gt; component, so any droid 4 will automatically get the latest/best
-ofono version. Additionally, the technology is now also being reported
-properly:&lt;/p&gt;
+ofono version. Additionally, the technology is now also reported properly:&lt;/p&gt;
 &lt;img alt="" src="/images/droid4-tech.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/droid4-tech-2g.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;More work remains, including upstreaming ofono and dealing with some power
@@ -396,13 +395,13 @@ management regressions, but it's starting to look quite good indeed.&lt;/p&gt;
 &lt;div class="section" id="increasing-font-size-in-osso-xterm"&gt;
 &lt;h4&gt;increasing font size in osso-xterm&lt;/h4&gt;
 &lt;p&gt;On the Nokia N900, the font size in osso-xterm can be changed using the volume
-buttons, but this doesn not work yet on the Droid 4. The reason is that
+buttons, but this does not work yet on the Droid 4. The reason is that
 osso-xterm expects specific (hardcoded) keys to be used to change the font, and
 the Droid 4 has different keys mapped to its volume buttons, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385"&gt;issue #385&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="latest-linux-kernel"&gt;
 &lt;h4&gt;Latest Linux kernel&lt;/h4&gt;
-&lt;p&gt;A month or so ago we have switched to Linux 5.7:
+&lt;p&gt;A month or so ago we switched to Linux 5.7:
 &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7"&gt;https://github.com/maemo-leste/droid4-linux/tree/droid4-pending-v5.7&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;After that, there were various regressions to figure out, the most painful ones
 being random resets, which took quite a while to pin down. &lt;tt class="docutils literal"&gt;tmlind&lt;/tt&gt; has been
@@ -417,7 +416,7 @@ version and set of regressions - and bugfixes, and features...&lt;/p&gt;
 &lt;p&gt;A while ago we tweeted out a photo of a Nokia N900 using very little power,
 while in &lt;tt class="docutils literal"&gt;OMAP OFF&lt;/tt&gt; mode. We haven't yet brought this to our latest images,
 but it's still planned (it might be relatively simple, but also might be a lot
-of work). In addition, we will likely provide a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;n900-pm&lt;/span&gt;&lt;/tt&gt; script, similar to
+of work). In addition, we will likely provide an &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;n900-pm&lt;/span&gt;&lt;/tt&gt; script, similar to
 the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;droid4-pm&lt;/span&gt;&lt;/tt&gt; script.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -436,7 +435,7 @@ in the latest images.&lt;/p&gt;
 &lt;h2&gt;Weekly builds&lt;/h2&gt;
 &lt;p&gt;From July, we will also implement and enable weekly image builds on our CI
 infrastructure. This means we won't be building images on demand anymore.
-Instead they shall be built each week, containg all the latest packages and
+Instead they shall be built each week, containing all the latest packages and
 goodies. Obviously, this will require more storage space, so we will be
 removing device images older than five weeks.&lt;/p&gt;
 &lt;p&gt;Hopefully this will also help us polish up our build frameworks and alert us
@@ -482,8 +481,8 @@ itself:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mihphoto"&gt;
 &lt;h3&gt;mihphoto&lt;/h3&gt;
-&lt;p&gt;A Qt 5 photo viewer is available, and optionally supports multitouch, when
-supplied as startup argument:
+&lt;p&gt;A Qt 5 photo viewer is available, and optionally supports multitouch when
+supplied as a startup argument:
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/mihphoto"&gt;https://github.com/maemo-leste-extras/mihphoto&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="personal-ip-address"&gt;
@@ -501,13 +500,13 @@ the &lt;a class="reference external" href="https://github.com/maemo-leste-extras
 &lt;/div&gt;
 &lt;div class="section" id="next-up-audio-routing-pulseaudio-contacts-calls-sms-qt-5"&gt;
 &lt;h2&gt;Next up: Audio routing/Pulseaudio, Contacts, Calls/SMS, Qt 5&lt;/h2&gt;
-&lt;p&gt;So what can you expect next from future updates?&lt;/p&gt;
+&lt;p&gt;So what can you expect from future updates?&lt;/p&gt;
 &lt;p&gt;The big things on our radar are still:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p class="first"&gt;Audio: Currently most devices do not even ship with &lt;tt class="docutils literal"&gt;pulseaudio&lt;/tt&gt;, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names, for call routing, and so on. This is also a prerequisite for the &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume"&gt;volume applet&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p class="first"&gt;Audio: Currently most devices do not even ship with &lt;tt class="docutils literal"&gt;pulseaudio&lt;/tt&gt;, but we'll probably want to start using it, and create ALSA UCM files for our soundcards, provide proper pulseaudio sink names for call routing, and so on. This is also a prerequisite for the &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume"&gt;volume applet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Contacts (&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;osso-abook&lt;/span&gt;&lt;/tt&gt;), this will provide all of the Hildon contacts APIs
-with the evolution database as backend, definitely required for proper SMS and
+with the evolution database as a abackend, definitely required for proper SMS and
 Call UI&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Qt 5 updates: hopefully we will soon have the virtual keyboard integration
@@ -532,7 +531,7 @@ allowing for VOIP calls from the same (native) UI&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Speaking of UIs, once the backend (rtcom) is mostly there, the last thing
 we'll have to do is to bring up the call and text UIs. The Fremantle SMS UI
-relied on a html rendering engine, &lt;a class="reference external" href="https://wiki.maemo.org/Conversation_Mods"&gt;allow for cool customisations&lt;/a&gt; like these:&lt;/p&gt;
+relied on an html rendering engine, &lt;a class="reference external" href="https://wiki.maemo.org/Conversation_Mods"&gt;allowing for cool customisations&lt;/a&gt; like these:&lt;/p&gt;
 &lt;img alt="" src="/images/fun-conversations-mod.png" style="width: 432px; height: 256px;" /&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -540,7 +539,7 @@ relied on a html rendering engine, &lt;a class="reference external" href="https:
 &lt;div class="section" id="web-interface-for-packages"&gt;
 &lt;h2&gt;Web interface for packages&lt;/h2&gt;
 &lt;p&gt;We're considering creating a web interface to browse the core maemo packages,
-the development packages and also the extras packages, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/395"&gt;issue #395&lt;/a&gt; for more details. And if you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.&lt;/p&gt;
+the development packages and also the extras packages. See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/395"&gt;issue #395&lt;/a&gt; for more details. If you have suggestions, want to see specific features, or want to help out, please do let us know on the issue.&lt;/p&gt;
 &lt;p&gt;Sneak peak of an alpha version of the interface:&lt;/p&gt;
 &lt;img alt="" src="/images/pkg.png" /&gt;
 &lt;/div&gt;
