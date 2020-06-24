@@ -666,14 +666,14 @@ Extras, but we're confident someone will, at some point.
 
 
 Photo Light meter
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Written in Free Pascal, photolightmeter can be used calculate aperture and
 shutter values.
 
 
 Telegram
-~~~~~~~~
+--------
 
 If you're a fan of Telegram, the desktop client just works on Maemo Leste:
 
@@ -681,7 +681,7 @@ If you're a fan of Telegram, the desktop client just works on Maemo Leste:
 
 
 Proxmark3
-~~~~~~~~~
+---------
 
 If you like toying with RFID cards, then you can (for example) use the bluetooth
 module on the Droid 4 to connect a capable reader and run proxmark3 on the Droid
