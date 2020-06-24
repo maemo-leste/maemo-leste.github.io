@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2020-03-25T19:00:00+01:00</updated><entry><title>Maemo Leste - Thirteenth Update (April) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-thirteenth-update-april-2020.html" rel="alternate"></link><published>2020-03-25T19:00:00+01:00</published><updated>2020-03-25T19:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-03-25:/maemo-leste-thirteenth-update-april-2020.html</id><summary type="html">&lt;!-- TODO DATE --&gt;
-&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2020-06-24T18:00:00+02:00</updated><entry><title>Maemo Leste - Thirteenth Update (April) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-thirteenth-update-april-2020.html" rel="alternate"></link><published>2020-06-24T18:00:00+02:00</published><updated>2020-06-24T18:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-06-24:/maemo-leste-thirteenth-update-april-2020.html</id><summary type="html">&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
 with a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;We have improved power management on the Droid 4, and currently, under ideal
 conditions, the power draw is about &lt;tt class="docutils literal"&gt;60mW&lt;/tt&gt; with the modem turned on. That
-should last a few days on a decent battery …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;!-- TODO DATE --&gt;
-&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
+should last a few days on a decent battery …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;It's been several weeks since our &lt;a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst"&gt;last update&lt;/a&gt;, so let's start
 with a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;We have improved power management on the Droid 4, and currently, under ideal
@@ -428,7 +426,11 @@ on the Droid4, lots of that work can simply be reused on the Pinephone, and we
 plan to do so in the near future. A package called &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;pinephone-modem-config&lt;/span&gt;&lt;/tt&gt;
 can be installed, and along with updating the kernel (latest available version
 is 5.6), it will bring in modem support. This is already automatically enabled
-in the latest images.&lt;/p&gt;
+in the latest images. A note to keep in mind: While the modem is off, combined
+with the latest kernels, the system outputs KEY_WAKEUP events which cause some
+trouble with the virtual keyboard. The current solution to this is to just have
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;pinephone-modem-config&lt;/span&gt;&lt;/tt&gt; installed and after a reboot, things should be ok.
+We will see if it's possible to patch this in some proper way in the future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="weekly-builds"&gt;
@@ -442,6 +444,17 @@ removing device images older than five weeks.&lt;/p&gt;
 about possible bugs that arise during development. It is also a very important
 step towards reproducible builds - which is one of our milestones we wish to
 fulfill.&lt;/p&gt;
+&lt;p&gt;However, for this occasion, we built new images and they can be downloaded as
+usual. This time we've also built 64bit images for the Raspberry Pi 3 and 4.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;64bit VM: &lt;a class="reference external" href="https://maedevu.maemo.org/images/virtual/20200622/"&gt;https://maedevu.maemo.org/images/virtual/20200622/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;N900: &lt;a class="reference external" href="https://maedevu.maemo.org/images/n900/20200623/"&gt;https://maedevu.maemo.org/images/n900/20200623/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Droid4: &lt;a class="reference external" href="https://maedevu.maemo.org/images/droid4/20200624/"&gt;https://maedevu.maemo.org/images/droid4/20200624/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pinephone: &lt;a class="reference external" href="https://maedevu.maemo.org/images/pinephone/20200624/"&gt;https://maedevu.maemo.org/images/pinephone/20200624/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pinetab: &lt;a class="reference external" href="https://maedevu.maemo.org/images/pinetab/20200624/"&gt;https://maedevu.maemo.org/images/pinetab/20200624/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pi3: &lt;a class="reference external" href="https://maedevu.maemo.org/images/raspi3-64bit/20200623/"&gt;https://maedevu.maemo.org/images/raspi3-64bit/20200623/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pi4: &lt;a class="reference external" href="https://maedevu.maemo.org/images/raspi4-64bit/20200623/"&gt;https://maedevu.maemo.org/images/raspi4-64bit/20200623/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="community-showcase"&gt;
 &lt;h2&gt;Community showcase&lt;/h2&gt;

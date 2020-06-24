@@ -60,7 +60,7 @@ management, vibration">
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Maemo Leste - Thirteenth Update (April) 2020</h1>
-                      <p class="header-date"><a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, <a href="https://maemo-leste.github.io/author/ivan-jelincic.html">Ivan Jelincic</a>, Wed 25 March 2020,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <p class="header-date"><a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, <a href="https://maemo-leste.github.io/author/ivan-jelincic.html">Ivan Jelincic</a>, Wed 24 June 2020,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -80,8 +80,7 @@ management</a>, <a href="https://maemo-leste.github.io/tag/vibration.html">vibra
 
         <!-- Content -->
     <div class="container content">
-        <!-- TODO DATE -->
-<p>It's been several weeks since our <a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst">last update</a>, so let's start
+        <p>It's been several weeks since our <a class="reference external" href="{filename}/maemo-leste-update-february-and-march-2020.rst">last update</a>, so let's start
 with a few highlights:</p>
 <ul class="simple">
 <li>We have improved power management on the Droid 4, and currently, under ideal
@@ -503,7 +502,11 @@ on the Droid4, lots of that work can simply be reused on the Pinephone, and we
 plan to do so in the near future. A package called <tt class="docutils literal"><span class="pre">pinephone-modem-config</span></tt>
 can be installed, and along with updating the kernel (latest available version
 is 5.6), it will bring in modem support. This is already automatically enabled
-in the latest images.</p>
+in the latest images. A note to keep in mind: While the modem is off, combined
+with the latest kernels, the system outputs KEY_WAKEUP events which cause some
+trouble with the virtual keyboard. The current solution to this is to just have
+<tt class="docutils literal"><span class="pre">pinephone-modem-config</span></tt> installed and after a reboot, things should be ok.
+We will see if it's possible to patch this in some proper way in the future.</p>
 </div>
 </div>
 <div class="section" id="weekly-builds">
@@ -517,6 +520,17 @@ removing device images older than five weeks.</p>
 about possible bugs that arise during development. It is also a very important
 step towards reproducible builds - which is one of our milestones we wish to
 fulfill.</p>
+<p>However, for this occasion, we built new images and they can be downloaded as
+usual. This time we've also built 64bit images for the Raspberry Pi 3 and 4.</p>
+<ul class="simple">
+<li>64bit VM: <a class="reference external" href="https://maedevu.maemo.org/images/virtual/20200622/">https://maedevu.maemo.org/images/virtual/20200622/</a></li>
+<li>N900: <a class="reference external" href="https://maedevu.maemo.org/images/n900/20200623/">https://maedevu.maemo.org/images/n900/20200623/</a></li>
+<li>Droid4: <a class="reference external" href="https://maedevu.maemo.org/images/droid4/20200624/">https://maedevu.maemo.org/images/droid4/20200624/</a></li>
+<li>Pinephone: <a class="reference external" href="https://maedevu.maemo.org/images/pinephone/20200624/">https://maedevu.maemo.org/images/pinephone/20200624/</a></li>
+<li>Pinetab: <a class="reference external" href="https://maedevu.maemo.org/images/pinetab/20200624/">https://maedevu.maemo.org/images/pinetab/20200624/</a></li>
+<li>Pi3: <a class="reference external" href="https://maedevu.maemo.org/images/raspi3-64bit/20200623/">https://maedevu.maemo.org/images/raspi3-64bit/20200623/</a></li>
+<li>Pi4: <a class="reference external" href="https://maedevu.maemo.org/images/raspi4-64bit/20200623/">https://maedevu.maemo.org/images/raspi4-64bit/20200623/</a></li>
+</ul>
 </div>
 <div class="section" id="community-showcase">
 <h2>Community showcase</h2>
