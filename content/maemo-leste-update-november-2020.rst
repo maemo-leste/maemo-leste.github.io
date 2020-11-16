@@ -206,7 +206,9 @@ support (and fallbacks) in hildon-desktop that allow us to start .desktop
 entries that have `Terminal=true` set and are supposed to open a terminal and
 run the specific command. Now programs like `htop` can be can by touching the
 icon in the menu, or you could even write your own scripts and run them like
-this!
+this! For example, Evil_Bob has his sfeed_curses running from desktop:
+
+.. video:: /images/droid4-sfeed_curses.webm
 
 
 Snap to desktop
