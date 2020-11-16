@@ -2,13 +2,12 @@ Maemo Leste - Fourteenth Update (July, August, September, October, November) 202
 #################################################################################
 
 :Category: news
-:tags: droid4, n900, pinephone, cellular, mce, accelerometer, qt, qt5,
-       contacts, calculator, dorian, calendar, qalendar, clock, alarms,
-
-       extras, light sensor, power
-       management, ofono, openrc, keyboard layout, vibration, cellular data
+:tags: droid4, bionis, n900, pinephone, pinetab, cellular, mce, accelerometer,
+       qt, qt5, contacts, calculator, dorian, calendar, qalendar, clock, alarms,
+       extras, light sensor, power management, ofono, openrc, keyboard layout,
+       vibration, cellular data, gps, location
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-06-24 18:00
+:date: 2020-11-17 18:00
 
 .. TODO
 
@@ -28,6 +27,8 @@ with a few highlights:
   syncevolution.
 * Settings applet including timezone chooser is working
 * Hildon address book is nearing completion
+* Motorola Bionic is a new supported device
+* The GPS stack is working in userspace, and is almost finished
 
 
 Software changes
@@ -119,17 +120,26 @@ alarmd
 * python-alarm
   https://github.com/maemo-leste/bugtracker/issues/468
 
-* clockd init script
-* alarmd init script
-
+Also, alarmd and clockd initscripts were ported to OpenRC, so currently there
+are no more insserv/OpenRC runlevel warnings when running apt upgrade/install.
 
 
 Integration of Debian packages
 ------------------------------
 
-* https://github.com/maemo-leste/bugtracker/issues/82 +
-  https://github.com/maemo-leste/bugtracker/issues/360 - debian submenu
+The Hildon menu, where we can see all our installed applications that have their
+.desktop entries was expanded with a `submenu
+<https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7>_`
+that now also shows all "non-hildonized" packages that come from upstream. These
+can be found in the "Debian" submenu by touching the Debian icon.
 
+.. image:: /images/debian-menu-1.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/debian-menu-2.png
+  :height: 324px
+  :width: 576px
 
 
 osso-calculator
@@ -166,7 +176,23 @@ video of dorian being smooth?
 profilesx
 ---------
 
-* https://github.com/maemo-leste-extras/profilesx
+For managing sound profiles, like ringing/vibrating on notifications and phone
+calls, we have ported and packaged the open source `profilesx
+<https://github.com/maemo-leste-extras/profilesx>_` application that was also
+available on Fremantle. profilesx supports managing multiple (sound) profiles,
+along with enabling features like autoanswer and loudspeaker.
+
+.. image:: /images/profilesx-2.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/profilesx-2.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/profilesx-3.png
+  :height: 324px
+  :width: 576px
 
 
 hildon-desktop
@@ -175,9 +201,12 @@ hildon-desktop
 Support for terminal applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* hildon-desktop improvements for terminal-only applications:
-  https://github.com/maemo-leste/bugtracker/issues/415
-  https://github.com/maemo-leste/hildon-desktop/pull/9
+We `implemented <https://github.com/maemo-leste/hildon-desktop/pull/9>_` proper
+support (and fallbacks) in hildon-desktop that allow us to start .desktop
+entries that have `Terminal=true` set and are supposed to open a terminal and
+run the specific command. Now programs like `htop` can be can by touching the
+icon in the menu, or you could even write your own scripts and run them like
+this!
 
 
 Snap to desktop
@@ -199,7 +228,29 @@ Orientationlock Applet
 liblocation and location-control
 --------------------------------
 
-* location-control https://parazyd.org/pub/tmp/screenshots/screenshot00178.png
+`liblocation <https://github.com/maemo-leste/liblocation/>_`,
+`location-control <https://github.com/maemo-leste/liblocation/>_`, and a few
+other pieces of software comprise the GPS/Location stack on Maemo. We have
+successfully reverse-engineered these binaries from Fremantle and work is well
+underway on integrating them in the Maemo Leste userspace. Using liblocation, we
+can talk to gpsd and retrieve the current location info and provide it to
+applications like `maep <https://github.com/maemo-leste-extras/maep>_`  that use
+liblocation as their backend. This stack currently uses the DBus protocol to
+communicate, but liblocation will be modernized and ported to use gpsd's
+internal libgps library for more proper integration and better power management.
+
+.. image:: /images/location-control.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/maep-1.jpg
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/maep-2.jpg
+  :height: 324px
+  :width: 576px
+
 
 
 Major MCE improvements
@@ -246,10 +297,17 @@ Addressbook and contacts and account libraries
 Rotation support
 ----------------
 
-* touchscreen rotation, droid4, etc
-  hildon-desktop-rotation-support
+* TODO: Maybe add droid video?
 
-* Droid 4 rotation works: https://github.com/maemo-leste/hildon-desktop/pull/11
+Orientation and rotation support is now supported natively. Using the hardware
+accelerometers, mce, and iio-sensors we are able to physically rotate our
+devices and have the orientation change depending on the 3D position. Obviously,
+this means portrait and landscape orientation can be switched simply by
+positioning the device in its respective position. As we're using native kernel
+interfaces and according userspace, this is supported on all our phones which
+have working accelerometers.
+
+(TODO: state of N900? ^)
 
 
 UPower history
@@ -261,12 +319,18 @@ UPower history
 * https://wizzup.org/droid4-powerapplet.png + https://wizzup.org/droid4-upower-graph.png
   https://github.com/maemo-leste/bugtracker/issues/421 + -avg
 
-Audio
------
 
-* https://github.com/maemo-leste/bugtracker/issues/402
-  https://github.com/maemo-leste/maemo-audio
+Pulseaudio
+----------
 
+The audio stack was ported to `Pulseaudio
+<https://github.com/maemo-leste/bugtracker/issues/402>_`, as this will be
+necessary for further work on phone calls due to UCM and profiles. Pulseaudio
+seamlessly integrates and is configured for all our targets. The base
+configurations reside in our `maemo-audio
+<https://github.com/maemo-leste/maemo-audio>_` package and they're pulled in by
+our main metapackages, so a simple upgrade will configure everything as
+necessary.
 
 
 Hardware & Drivers
@@ -276,7 +340,7 @@ Hardware & Drivers
 Motorola Droid Bionic
 ---------------------
 
-
+* https://leste.maemo.org/Motorola_Droid_Bionic
 * https://github.com/IMbackK/bionic-clown-boot
 
 * Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
@@ -296,14 +360,39 @@ Nokia N900
 * u-boot mainline working again
 
 
-PinePhone
----------
+Pinephone and Pinetab
+---------------------
+
+The Pinephone and Pinetab devices are moving forward as well. Along with the
+already mentioned working things, most things you'd expect work on the Pine64
+devices. We have also implemented the `crust firmware
+<https://github.com/crust-firmware/crust>` in our images so power usage is
+minimal when the devices are suspended!
+
+As Maemo Leste is envisioned as an operating system to mainly be used on devices
+with a hardware keyboard, you can imagine our excitement when Pine64 announced
+they are looking into a hardware keyboard `addon
+<https://www.pine64.org/2020/07/29/invitation-to-play-along/>_` for the
+Pinephone. We'll be following this development, and hope for it to continue
+successfully :)
 
 
+Continuous Integration for device images
+----------------------------------------
 
-PineTab
--------
+On our Jenkins infrastructure, we have been successfully running `weekly builds
+<https://phoenix.maemo.org/view/Images/>_` for all our device targets. This is a
+great advantage as we don't have to manually build images whenever we find the
+free time to do it, but rather have fresh images be built every week so everyone
+can always download latest images with the most up to date packages installed.
 
+This has also encouraged us to improve our image building `software
+<https://github.com/parazyd/libdevuansdk>`_, clean it up, and make it more
+efficient and generally just better.
+
+At some point in the future, we also plan to look into automated testing of
+these images, because a successful build doesn't necessarily mean a perfectly
+working image. More later ;)
 
 
 SORTME
@@ -353,9 +442,9 @@ Interested?
 If you have questions, are interested in specifics, or helping out, or wish to have a specific
 package ported, please see our bugtracker.
 
-**We have several Nokia N900 and Motorola Droid 4 units available to interested
-developers**, so if you are interested in helping out but have trouble acquiring
-a device, let us know.
+**We have several Nokia N900 and Motorola Droid 4 and Bionic units available to
+interested developers**, so if you are interested in helping out but have
+trouble acquiring a device, let us know.
 
 Please also join our `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay
