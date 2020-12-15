@@ -1,5 +1,5 @@
-Maemo Leste - Fourteenth Update (July, August, September, October, November) 2020
-#################################################################################
+Maemo Leste - Fourteenth Update (July, August, September, October, November, December) 2020
+###########################################################################################
 
 :Category: news
 :tags: droid4, bionis, n900, pinephone, pinetab, cellular, mce, accelerometer,
@@ -7,13 +7,16 @@ Maemo Leste - Fourteenth Update (July, August, September, October, November) 202
        extras, light sensor, power management, ofono, openrc, keyboard layout,
        vibration, cellular data, gps, location
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-11-17 18:00
+:date: 2020-12-17 18:00
 
 .. TODO
 
 It's been several months since our `last update
-<{filename}/maemo-leste-update-april-may-june-2020.rst>`_, so let's start
-with a few highlights:
+<{filename}/maemo-leste-update-april-may-june-2020.rst>`_. We've been working
+hard, and it's been quite a year. Things are shaping up amazingly well, and
+we're looking forward to entering yet another year of our development efforts!
+
+Here are a few highlights:
 
 * The Maemo Qt5 port is usable now, unlocking many applications like the
   `Dorian`_ ereader `Qalendar`_ Calendar, `clock-ui` clock and alarm and
@@ -42,6 +45,14 @@ mce
 maemo-input-sounds
 ------------------
 
+We've (re)implemented `Maemo Input Sounds (MIS)
+<https://github.com/maemo-leste/maemo-input-sounds/>`_, which was a closed
+Fremantle package. When users interact with Maemo Leste devices, input events
+are generated for buttons, touchscreen or any other input device. MIS is a
+daemon that then listens to these events and acts accordingly by providing sound
+and/or vibration feedback.
+
+TODO: Mention xorg patch?
 
 * https://github.com/maemo-leste/maemo-input-sounds/
 * https://lists.x.org/archives/xorg-devel/2020-July/058582.html
@@ -69,15 +80,39 @@ Qt 5
 Qalendar
 --------
 
-* Qalendar
-  https://wizzup.org/qalendar-1.png
-  https://wizzup.org/qalendar-2.png
-  https://wizzup.org/qalendar-3.png
-  https://wizzup.org/qalendar-4.png
-  https://wizzup.org/qalendar-5.png
-  https://wizzup.org/qalendar-6.png
+We are now also providing `Qalendar <https://github.com/maemo-leste/qalendar>_`
+as a default Calendar application. It is a FOSS calendar interface written in Qt
+for Fremantle as an effort to replace the closed source stock calendar. For
+Maemo Leste, we've ported it to Qt5 and have it working well:
 
-  https://wiki.maemo.org/Sync
+.. image:: /images/qalendar-1.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qalendar-2.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qalendar-3.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qalendar-4.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qalendar-5.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qalendar-6.png
+  :height: 324px
+  :width: 576px
+
+
+TODO: Write a bit about the stuff below.
+
+https://wiki.maemo.org/Sync
 
   syncevolution-frontend
 
@@ -98,6 +133,18 @@ Qalendar
 applet-datetime
 ---------------
 
+An applet for datetime was implemented, and parts reverse engineered.
+`hildon-time-zone_chooser
+<https://github.com/maemo-leste/hildon-time-zone-chooser/>_` features a
+pannable map of the world, along with a button in its EditToolbar to allow you
+to input the name of a city directly. This is used for timezone selection in the
+settings menu, but can also be used separately by any other application that
+needs it.
+
+The datetime applet itself allows user to set the time, date, and timezone. This
+also sets the ground for alarms and similar things.
+
+TODO: Screenshots please
 
 * Time applet, world timezone chooser, etc
   https://github.com/maemo-leste/applet-datetime/
@@ -220,6 +267,7 @@ Snap to desktop
 * https://github.com/maemo-leste/hildon-desktop/pull/6 -- h-d snap grid size
   changes
 
+
 Orientationlock Applet
 ----------------------
 
@@ -333,6 +381,12 @@ configurations reside in our `maemo-audio
 <https://github.com/maemo-leste/maemo-audio>_` package and they're pulled in by
 our main metapackages, so a simple upgrade will configure everything as
 necessary.
+
+For `Droid4, Bionic <https://github.com/maemo-leste/leste-config/pull/13/>_`,
+and `Pinephone
+<https://github.com/maemo-leste/leste-config/commit/9693ab7dfff0b7068e2bbaa187a7f9af0ec229f6>_`,
+we already have UCM2 files in place and we will be utilizing these with our
+further efforts related to audio and phone calls.
 
 
 Hardware & Drivers
