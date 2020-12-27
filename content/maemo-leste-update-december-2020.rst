@@ -174,9 +174,30 @@ Relevant repositories:
 clock-ui
 --------
 
-* clock-ui / libgq-gconf
-  https://github.com/maemo-leste/libgq-gconf
-  https://github.com/maemo-leste/clock-ui
+An initial Qt5 port of `clock-ui <https://github.com/maemo-leste/clock-ui>`_ has
+been finished: this allows changing the time, timezones and manage alarms.
+
+For this compoment, the qt gconf library `libgq-gconf
+<https://github.com/maemo-leste/libgq-gconf>`_ has also been ported.
+
+The software is a core component and is now packaged, but some bugs remain.
+We'll pick those up in the coming days and weeks.
+
+.. image:: /images/clock-ui-1.png
+  :height: 360px
+  :width: 600px
+
+.. image:: /images/clock-ui-2.png
+  :height: 360px
+  :width: 600px
+
+.. image:: /images/clock-ui-3.png
+  :height: 360px
+  :width: 600px
+
+.. image:: /images/clock-ui-4.png
+  :height: 360px
+  :width: 600px
 
 alarmd
 ------
@@ -210,13 +231,14 @@ can be found in the "Debian" submenu by touching the Debian icon.
 osso-calculator
 ---------------
 
-* osso-calculator
-  https://wizzup.org/leste-qt-osso-calculator.png
-  ALSO NEED TO BUILD/FIX osso-calculator-engine
-  needs icon start to fix (maemo-launcher qt5?)
+The Qt calculator `osso-calculator
+<https://github.com/maemo-leste/osso-calculator>`_ has been packaged and ported
+to Qt5, along with it's backend, `osso-calculator-engine
+<https://github.com/maemo-leste/osso-calculator-engine>`_.
 
-* added osso-calculator-engine
-  osso-calculator-engine
+.. image:: /images/osso-calculator.png
+  :height: 324px
+  :width: 576px
 
 
 dorian
