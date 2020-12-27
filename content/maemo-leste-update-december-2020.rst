@@ -2,14 +2,12 @@ Maemo Leste - Fourteenth Update (July, August, September, October, November, Dec
 ###########################################################################################
 
 :Category: news
-:tags: droid4, bionis, n900, pinephone, pinetab, cellular, mce, accelerometer,
+:tags: droid4, bionic, n900, pinephone, pinetab, cellular, mce, accelerometer,
        qt, qt5, contacts, calculator, dorian, calendar, qalendar, clock, alarms,
        extras, light sensor, power management, ofono, openrc, keyboard layout,
        vibration, cellular data, gps, location
 :authors: Merlijn Wajer, Ivan Jelincic
-:date: 2020-12-17 18:00
-
-.. TODO
+:date: 2020-12-27 18:00
 
 It's been several months since our `last update
 <{filename}/maemo-leste-update-april-may-june-2020.rst>`_. We've been working
@@ -20,21 +18,21 @@ Here are a few highlights:
 
 * The Maemo Qt5 port is usable now, unlocking many applications like the
   `Dorian`_ ereader `Qalendar`_ Calendar, `clock-ui` clock and alarm and
-  `osso-calculator` applications.
+  `osso-calculator` applications;
 * `Rotation support`_ is now working for several devices, based on accelerometer
-  and application policies.
+  and application policies;
 * Major MCE changes, including a ambient light sensor based on the IIO
   subsystem, accelerometer IIO subsystem, led-control for other devices, user
-  configuration customisation, loads of clean ups and more.
-* maemo-input-sounds package finished, adding vibration and sounds
-* Stable powermanagement for the Droid 4 - lasting days without suspending
-* Application launcher "Debian" submenu to launch any application in Debian
+  configuration customisation, loads of clean ups and more;
+* maemo-input-sounds package finished, adding vibration and sounds;
+* Stable powermanagement for the Droid 4 - lasting days without suspending;
+* Application launcher "Debian" submenu to launch any application in Debian;
 * Calendar support is working, including home applet and synchronisation with
-  syncevolution.
-* Settings applet including timezone chooser is working
-* Hildon address book is nearing completion
-* Motorola Bionic is a new supported device
-* The GPS stack is working in userspace, and is almost finished
+  syncevolution;
+* Settings applet including timezone chooser is working;
+* Hildon address book is nearing completion;
+* Motorola Bionic is a new supported device;
+* The GPS stack is working in userspace, and is almost finished;
 * Better PowerVR support upcoming, with higher clock rates and the latest driver
   version, allowing the N900 to move to the latest kernel again and gain real
   power management.
@@ -42,7 +40,6 @@ Here are a few highlights:
 
 Software changes
 ================
-
 
 maemo-input-sounds
 ------------------
@@ -67,6 +64,8 @@ freedesktop.org <https://gitlab.freedesktop.org/xorg/xserver/-/issues/1046>`_, b
 Qt 5
 ----
 
+
+TODO
 
 * https://github.com/maemo-leste/qtstyleplugins/pull/1
 
@@ -608,7 +607,7 @@ Pinephone and Pinetab
 The Pinephone and Pinetab devices are moving forward as well. Along with the
 already mentioned working things, most things you'd expect work on the Pine64
 devices. We have also implemented the `crust firmware
-<https://github.com/crust-firmware/crust>` in our images so power usage is
+<https://github.com/crust-firmware/crust>`_ in our images so power usage is
 minimal when the devices are suspended!
 
 As Maemo Leste is envisioned as an operating system to mainly be used on devices
@@ -635,6 +634,23 @@ efficient and generally just better.
 At some point in the future, we also plan to look into automated testing of
 these images, because a successful build doesn't necessarily mean a perfectly
 working image. More later ;)
+
+
+
+Closing words
+=============
+
+TODO: On focus, and having more and more apps
+
+
+.. image:: /images/control-panel-filling-up.png
+  :height: 576px
+  :width: 324px
+
+.. image:: /images/leste-multi-tasking.png
+  :height: 576px
+  :width: 324px
+
 
 SORTME
 ======
