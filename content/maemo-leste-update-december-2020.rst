@@ -302,11 +302,14 @@ liblocation and location-control
 other pieces of software comprise the GPS/Location stack on Maemo. We have
 successfully reverse-engineered these binaries from Fremantle and work is well
 underway on integrating them in the Maemo Leste userspace. Using liblocation, we
-can talk to gpsd and retrieve the current location info and provide it to
-applications like `maep <https://github.com/maemo-leste-extras/maep>_`  that use
-liblocation as their backend. This stack currently uses the DBus protocol to
-communicate, but liblocation will be modernized and ported to use gpsd's
-internal libgps library for more proper integration and better power management.
+can talk to our location-daemon and retrieve the current location info and
+provide it to applications like `maep
+<https://github.com/maemo-leste-extras/maep>_`  that use liblocation as their
+backend. location-daemon serves as a central point of gps information on Maemo
+Leste, and it serves its info over the DBus Message API. Internally,
+location-daemon talks to gpsd using its internal libgps library. With this,
+programs using liblocation can simply gather info from dbus so you can integrate
+this gps information into your application.
 
 .. image:: /images/location-control.png
   :height: 296px
