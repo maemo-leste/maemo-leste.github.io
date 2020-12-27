@@ -215,7 +215,7 @@ Integration of Debian packages
 
 The Hildon menu, where we can see all our installed applications that have their
 .desktop entries was expanded with a `submenu
-<https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7>_`
+<https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7>`_
 that now also shows all "non-hildonized" packages that come from upstream. These
 can be found in the "Debian" submenu by touching the Debian icon.
 
@@ -265,7 +265,7 @@ profilesx
 
 For managing sound profiles, like ringing/vibrating on notifications and phone
 calls, we have ported and packaged the open source `profilesx
-<https://github.com/maemo-leste-extras/profilesx>_` application that was also
+<https://github.com/maemo-leste-extras/profilesx>`_ application that was also
 available on Fremantle. profilesx supports managing multiple (sound) profiles,
 along with enabling features like autoanswer and loudspeaker.
 
@@ -288,15 +288,18 @@ hildon-desktop
 Support for terminal applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We `implemented <https://github.com/maemo-leste/hildon-desktop/pull/9>_` proper
+We `implemented <https://github.com/maemo-leste/hildon-desktop/pull/9>`_ proper
 support (and fallbacks) in hildon-desktop that allow us to start .desktop
 entries that have `Terminal=true` set and are supposed to open a terminal and
 run the specific command. Now programs like `htop` can be can by touching the
 icon in the menu, or you could even write your own scripts and run them like
 this! For example, Evil_Bob has his sfeed_curses running from desktop:
 
-# TODO
-#.. video:: /images/droid4-sfeed_curses.webm
+.. raw:: html
+
+    <video controls height="324px" width="576px">
+    <source src="/images/droid4-sfeed_curses.webm" type="video/webm">
+    </video>
 
 
 Snap to desktop
@@ -312,21 +315,20 @@ Snap to desktop
 Orientationlock Applet
 ----------------------
 
-* https://github.com/maemo-leste/bugtracker/issues/419 -  status-area-orientationlock-applet installs into /usr/lib/hildon-desktop - not in /usr/lib/<arch>/hildon-desktop #419
-
-
+The orientation lock applet installed into the wrong path, causing it to not
+show up, this has been fixed, see `issue #419 <https://github.com/maemo-leste/bugtracker/issues/419>`_.
 
 liblocation and location-control
 --------------------------------
 
-`liblocation <https://github.com/maemo-leste/liblocation/>_`,
-`location-control <https://github.com/maemo-leste/liblocation/>_`, and a few
+`liblocation <https://github.com/maemo-leste/liblocation/>`_,
+`location-control <https://github.com/maemo-leste/liblocation/>`_, and a few
 other pieces of software comprise the GPS/Location stack on Maemo. We have
 successfully reverse-engineered these binaries from Fremantle and work is well
 underway on integrating them in the Maemo Leste userspace. Using liblocation, we
 can talk to our location-daemon and retrieve the current location info and
 provide it to applications like `maep
-<https://github.com/maemo-leste-extras/maep>_`  that use liblocation as their
+<https://github.com/maemo-leste-extras/maep>`_  that use liblocation as their
 backend. location-daemon serves as a central point of gps information on Maemo
 Leste, and it serves its info over the DBus Message API. Internally,
 location-daemon talks to gpsd using its internal libgps library. With this,
@@ -505,17 +507,17 @@ Pulseaudio
 ----------
 
 The audio stack was ported to `Pulseaudio
-<https://github.com/maemo-leste/bugtracker/issues/402>_`, as this will be
+<https://github.com/maemo-leste/bugtracker/issues/402>`_, as this will be
 necessary for further work on phone calls due to UCM and profiles. Pulseaudio
 seamlessly integrates and is configured for all our targets. The base
 configurations reside in our `maemo-audio
-<https://github.com/maemo-leste/maemo-audio>_` package and they're pulled in by
+<https://github.com/maemo-leste/maemo-audio>`_ package and they're pulled in by
 our main metapackages, so a simple upgrade will configure everything as
 necessary.
 
-For `Droid4, Bionic <https://github.com/maemo-leste/leste-config/pull/13/>_`,
+For `Droid4, Bionic <https://github.com/maemo-leste/leste-config/pull/13/>`_,
 and `Pinephone
-<https://github.com/maemo-leste/leste-config/commit/9693ab7dfff0b7068e2bbaa187a7f9af0ec229f6>_`,
+<https://github.com/maemo-leste/leste-config/commit/9693ab7dfff0b7068e2bbaa187a7f9af0ec229f6>`_,
 we already have UCM2 files in place and we will be utilizing these with our
 further efforts related to audio and phone calls.
 
@@ -612,7 +614,7 @@ minimal when the devices are suspended!
 As Maemo Leste is envisioned as an operating system to mainly be used on devices
 with a hardware keyboard, you can imagine our excitement when Pine64 announced
 they are looking into a hardware keyboard `addon
-<https://www.pine64.org/2020/07/29/invitation-to-play-along/>_` for the
+<https://www.pine64.org/2020/07/29/invitation-to-play-along/>`_ for the
 Pinephone. We'll be following this development, and hope for it to continue
 successfully :)
 
@@ -621,7 +623,7 @@ Continuous Integration for device images
 ----------------------------------------
 
 On our Jenkins infrastructure, we have been successfully running `weekly builds
-<https://phoenix.maemo.org/view/Images/>_` for all our device targets. This is a
+<https://phoenix.maemo.org/view/Images/>`_ for all our device targets. This is a
 great advantage as we don't have to manually build images whenever we find the
 free time to do it, but rather have fresh images be built every week so everyone
 can always download latest images with the most up to date packages installed.
