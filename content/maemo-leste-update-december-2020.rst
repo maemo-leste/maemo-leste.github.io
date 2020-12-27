@@ -23,6 +23,9 @@ Here are a few highlights:
   `osso-calculator` applications.
 * `Rotation support`_ is now working for several devices, based on accelerometer
   and application policies.
+* Major MCE changes, including a ambient light sensor based on the IIO
+  subsystem, accelerometer IIO subsystem, led-control for other devices, user
+  configuration customisation, loads of clean ups and more.
 * maemo-input-sounds package finished, adding vibration and sounds
 * Stable powermanagement for the Droid 4 - lasting days without suspending
 * Application launcher "Debian" submenu to launch any application in Debian
@@ -32,14 +35,13 @@ Here are a few highlights:
 * Hildon address book is nearing completion
 * Motorola Bionic is a new supported device
 * The GPS stack is working in userspace, and is almost finished
+* Better PowerVR support upcoming, with higher clock rates and the latest driver
+  version, allowing the N900 to move to the latest kernel again and gain real
+  power management.
 
 
 Software changes
 ================
-
-mce
----
-
 
 
 maemo-input-sounds
@@ -52,7 +54,10 @@ are generated for buttons, touchscreen or any other input device. MIS is a
 daemon that then listens to these events and acts accordingly by providing sound
 and/or vibration feedback.
 
-TODO: Mention xorg patch?
+We also surfaced problems in the Xorg server regarding their XRecord extension,
+`mailed the development list
+<https://lists.x.org/archives/xorg-devel/2020-July/058582.html>`_, and later on `filed a bug report with patch on
+freedesktop.org <https://gitlab.freedesktop.org/xorg/xserver/-/issues/1046>`_, but it looks like no maintainer is home, so we have shipped the patch with our Xorg server.
 
 * https://github.com/maemo-leste/maemo-input-sounds/
 * https://lists.x.org/archives/xorg-devel/2020-July/058582.html
@@ -80,7 +85,7 @@ Qt 5
 Qalendar
 --------
 
-We are now also providing `Qalendar <https://github.com/maemo-leste/qalendar>_`
+We are now also providing `Qalendar <https://github.com/maemo-leste/qalendar>`_
 as a default Calendar application. It is a FOSS calendar interface written in Qt
 for Fremantle as an effort to replace the closed source stock calendar. For
 Maemo Leste, we've ported it to Qt5 and have it working well:
@@ -105,52 +110,65 @@ Maemo Leste, we've ported it to Qt5 and have it working well:
   :height: 324px
   :width: 576px
 
-.. image:: /images/qalendar-6.png
-  :height: 324px
-  :width: 576px
+.. .. image:: /images/qalendar-6.png
+..   :height: 324px
+..   :width: 576px
 
 
-TODO: Write a bit about the stuff below.
+Synchronisation
+~~~~~~~~~~~~~~~
 
-https://wiki.maemo.org/Sync
+The calendar application can be synchronised to various calendar backends using
+`syncevolution`, see also https://wiki.maemo.org/Sync
 
-  syncevolution-frontend
+Building the latest syncevolution for Maemo Leste `revealed bugs
+in calendar-backend which code only ever worked on 32 bit 
+<https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
 
-* cal-home-widget
-  https://wizzup.org/leste-calendar-widget.png
-  https://github.com/maemo-leste-extras/cal-home-widget
+Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
 
-* https://github.com/maemo-leste-extras/qt-mobile-hotspot
-  https://github.com/maemo-leste/bugtracker/issues/430
+With that solved, the synchronisation now works, and you can read up on
+synchronisation on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
 
-* https://github.com/maemo-leste/bugtracker/issues/454
+There is also a GUI available to schedule sychronisation on set times, written
+custom for Maemo called `syncevolution-frontend
+<https://github.com/maemo-leste-extras/syncevolution-frontend>`_
 
-* syncevolution, calendar-backend fixes
-  https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/
-  https://leste.maemo.org/Calendar
+`The home widget has also been ported <https://github.com/maemo-leste-extras/cal-home-widget>`_, showing the upcoming events and current tasks:
+
+.. image:: /images/leste-calendar-widget.png
+  :height: 343px
+  :width: 572px
+
+**We could use someone's help to write a Dockerfile for syncevolution to
+automatically test the Maemo backend**,
+`see bug #492 <https://github.com/maemo-leste/bugtracker/issues/492>`_
+
 
 
 applet-datetime
 ---------------
 
 An applet for datetime was implemented, and parts reverse engineered.
-`hildon-time-zone_chooser
-<https://github.com/maemo-leste/hildon-time-zone-chooser/>_` features a
-pannable map of the world, along with a button in its EditToolbar to allow you
-to input the name of a city directly. This is used for timezone selection in the
-settings menu, but can also be used separately by any other application that
-needs it.
+`hildon-time-zone-chooser <https://github.com/maemo-leste/hildon-time-zone-chooser>`_
+features a pannable map of the world, along with a button in its EditToolbar to
+allow you to input the name of a city directly. This is used for timezone
+selection in the settings menu, but can also be used separately by any other
+application that needs it.
 
-The datetime applet itself allows user to set the time, date, and timezone. This
-also sets the ground for alarms and similar things.
+The datetime applet itself allows user to set the time, date, and timezone, and
+changing the clock to be a 24 hour clock. This also lays the groundwork for
+alarms and similar things.
 
-TODO: Screenshots please
+.. image:: /images/applet-amsterdam.png
+  :height: 343px
+  :width: 572px
 
-* Time applet, world timezone chooser, etc
-  https://github.com/maemo-leste/applet-datetime/
-  https://github.com/maemo-leste/hildon-time-zone-chooser/
-  https://github.com/maemo-leste/clock/
-  \o/
+Relevant repositories:
+
+* https://github.com/maemo-leste/applet-datetime/
+* https://github.com/maemo-leste/hildon-time-zone-chooser/
+* https://github.com/maemo-leste/clock/
 
 
 clock-ui
@@ -255,7 +273,8 @@ run the specific command. Now programs like `htop` can be can by touching the
 icon in the menu, or you could even write your own scripts and run them like
 this! For example, Evil_Bob has his sfeed_curses running from desktop:
 
-.. video:: /images/droid4-sfeed_curses.webm
+# TODO
+#.. video:: /images/droid4-sfeed_curses.webm
 
 
 Snap to desktop
@@ -290,17 +309,76 @@ communicate, but liblocation will be modernized and ported to use gpsd's
 internal libgps library for more proper integration and better power management.
 
 .. image:: /images/location-control.png
-  :height: 324px
-  :width: 576px
+  :height: 296px
+  :width: 479px
 
 .. image:: /images/maep-1.jpg
-  :height: 324px
-  :width: 576px
+  :height: 266px
+  :width: 527px
 
 .. image:: /images/maep-2.jpg
   :height: 324px
   :width: 576px
 
+.. image:: /images/maep-leste-ams.png
+  :height: 324px
+  :width: 576px
+
+Other relevant repositories:
+
+* https://github.com/maemo-leste/liblocation
+* https://github.com/maemo-leste/location-ui
+* https://github.com/maemo-leste/location-status (unfinished)
+* https://github.com/maemo-leste/location-daemon (work in progress)
+
+python-location
+~~~~~~~~~~~~~~~
+
+Work on the status applet and an improved dbus interface is still under way.
+`liblocation Python bindings <https://github.com/maemo-leste/python-location>`_
+are now also available, here is an example:
+
+.. code:: python
+
+    import location
+    import gobject
+
+    def on_error(control, error, data):
+        print "location error: %d... quitting" % error
+        data.quit()
+
+    def on_changed(device, data):
+        if not device:
+            return
+        if device.fix:
+            if device.fix[1] & location.GPS_DEVICE_LATLONG_SET:
+                print("lat = %f, long = %f" % device.fix[4:6])
+
+    def on_stop(control, data):
+        data.quit()
+
+    def start_location(data):
+        data.start()
+        return False
+
+    loop = gobject.MainLoop()
+    control = location.GPSDControl.get_default()
+    device = location.GPSDevice()
+    control.set_properties(preferred_method=location.METHOD_USER_SELECTED,
+                           preferred_interval=location.INTERVAL_DEFAULT)
+
+    control.connect("error-verbose", on_error, loop)
+    device.connect("changed", on_changed, control)
+    control.connect("gpsd-stopped", on_stop, loop)
+
+    gobject.idle_add(start_location, control)
+
+    loop.run()
+
+Documentation on the Python APIs can be found here:
+
+* http://wiki.maemo.org/PyMaemo/Using_Location_API
+* http://pymaemo.garage.maemo.org/python_location_manual/location.html
 
 
 Major MCE improvements
@@ -325,14 +403,34 @@ Major MCE improvements
   packaged
 
 
+* document new mce features, setup
+  https://github.com/maemo-leste/mce/pull/20
+  https://github.com/maemo-leste/mce/pull/36
+  https://github.com/maemo-leste/mce/pull/37
+  https://github.com/maemo-leste/mce/pull/38
+  https://github.com/maemo-leste/mce/pull/42
+
+* led-sw new patterns: screenshots from https://github.com/maemo-leste/bugtracker/issues/491
+
+
 openmediaplayer
 ---------------
 
-* OMP. https://github.com/maemo-leste/bugtracker/issues/25 -- progress on
-  openmediaplayer
-  https://wizzup.org/omp-initial-1.png
-  https://wizzup.org/omp-initial-2.png
+Open Media Player is a clone of the Maemo Fremantle media player, and with the
+Qt 5 port we've been making progress on bringing it to Maemo Leste `in issue #25 <https://github.com/maemo-leste/bugtracker/issues/25>`_.
 
+Currently the application builds with Qt5 and shows the main window and
+settings, but any playlists do not yet render.
+
+**If anyone feels like helping out, that would be much appreciated!**
+
+.. image:: /images/omp-initial-1.png
+  :height: 385px
+  :width: 716px
+
+.. image:: /images/omp-initial-2.png
+  :height: 385px
+  :width: 716px
 
 
 Addressbook and contacts and account libraries
@@ -343,11 +441,14 @@ Addressbook and contacts and account libraries
   https://wizzup.org/osso-abook-contacts.png (this is debug mode, maybe run in
   non-debug mode)
 
+https://github.com/maemo-leste/bugtracker/issues/454
+
+Almost in -devel repo
 
 Rotation support
 ----------------
 
-* TODO: Maybe add droid video?
+* XXX: TODO: add droid video of rotation
 
 Orientation and rotation support is now supported natively. Using the hardware
 accelerometers, mce, and iio-sensors we are able to physically rotate our
@@ -357,7 +458,12 @@ positioning the device in its respective position. As we're using native kernel
 interfaces and according userspace, this is supported on all our phones which
 have working accelerometers.
 
-(TODO: state of N900? ^)
+The package `hildon-desktop-rotation-support
+<https://github.com/maemo-leste/hildon-desktop-rotation-support>`_ implements
+this feature using `dbus-scripts` and the `xrandr` and `xinput` utilities.
+
+On the Nokia N900 this is not yet enabled, due to the rotation crashing the
+display server still.
 
 
 UPower history
@@ -388,6 +494,19 @@ and `Pinephone
 we already have UCM2 files in place and we will be utilizing these with our
 further efforts related to audio and phone calls.
 
+With the UCM files in place, `pavucontrol-qt` will show the proper controls and
+outputs - for multimedia (Hi Fi) and phone.
+
+.. image:: /images/pavucontrol-qt.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/pavucontrol-qt2.png
+  :height: 324px
+  :width: 576px
+
+Huge thanks for `uvos` for creating the UCM2 files for the Droid 4!
+
 
 Hardware & Drivers
 ==================
@@ -399,21 +518,61 @@ Motorola Droid Bionic
 * https://leste.maemo.org/Motorola_Droid_Bionic
 * https://github.com/IMbackK/bionic-clown-boot
 
-* Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
-* droid4 pm wrt SCRN=0 ; https://github.com/maemo-leste/dbus-scripts
-
 
 Droid4 and uptime
 -----------------
 
 * Note on random reset fixes (looks like it's fixed?!)
+* Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
+* droid4 pm wrt SCRN=0 ; https://github.com/maemo-leste/dbus-scripts
+
 
 
 
 Nokia N900
 ----------
 
-* u-boot mainline working again
+u-boot and serial
+~~~~~~~~~~~~~~~~~
+
+Pali has been doing a lot of work on mainline u-boot on the Nokia N900 again,
+and it has paid off. Now u-boot boots again (yes, it wasn't booting anymore!)
+and usbtty (serial communication over usb) now works. This might allow
+for scripted booting of the Nokia N900.
+
+The new u-boot binary can be found here:
+
+    https://maedevu.maemo.org/images/n900/tools/
+
+with filename `u-boot-2020.12-pali.bin`.
+
+If you flash this to your device with 0xFFFF and boot with the keyboard open and
+USB cable connected, you should see something similar to this in `dmesg`::
+
+    usb 3-1.1.3: new full-speed USB device number 95 using xhci_hcd
+    usb 3-1.1.3: New USB device found, idVendor=0421, idProduct=01c8, bcdDevice= 0.00
+    usb 3-1.1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+    usb 3-1.1.3: Product: N900 (U-Boot)
+    usb 3-1.1.3: Manufacturer: Nokia
+    usb 3-1.1.3: SerialNumber: 0000000
+    cdc_acm 3-1.1.3:1.0: ttyACM0: USB ACM device
+
+And to top it off, here is a video of the physical serial on the right, and the
+usb serial on the left. You can see they are in sync:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/tGGXvguyXWk"
+    ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
+
+
+PowerVR: DDK 1.17, Xorg Glamor and clock fixes
+----------------------------------------------
+
+gtk4 bug report with lima?
+
+dri3 met modesetting, egl
 
 
 Pinephone and Pinetab
@@ -449,7 +608,6 @@ efficient and generally just better.
 At some point in the future, we also plan to look into automated testing of
 these images, because a successful build doesn't necessarily mean a perfectly
 working image. More later ;)
-
 
 SORTME
 ======
@@ -490,6 +648,18 @@ SORTME
 * 17:44 <parazyd> https://github.com/maemo-leste/bugtracker/issues/447 -> "no more apt warnings about runlevels"
 
 * Link to this stuff: https://talk.maemo.org/showthread.php?t=101089&page=5
+
+* https://github.com/maemo-leste-extras/hildon-theme-maemo-org
+* https://github.com/maemo-leste/leste-config/pull/13
+
+* https://github.com/maemo-leste/bugtracker/issues/186#issuecomment-748610883
+
+
+* https://github.com/maemo-leste-extras/qt-mobile-hotspot
+  https://github.com/maemo-leste/bugtracker/issues/430
+* https://github.com/maemo-leste/bugtracker/issues/454
+
+
 
 
 Interested?
