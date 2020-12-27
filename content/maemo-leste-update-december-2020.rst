@@ -64,21 +64,35 @@ freedesktop.org <https://gitlab.freedesktop.org/xorg/xserver/-/issues/1046>`_, b
 Qt 5
 ----
 
+The Qt5 port is in a usable enough state that it is currently available in the
+main repositories; some of the users might even already have it on your device!
 
-TODO
+The main features:
 
-* https://github.com/maemo-leste/qtstyleplugins/pull/1
+* (Mostly) compatible theme/style;
+* Most Maemo widgets are available;
+* Maemo-style title-bar spinners to indicate progress;
+* Maemo-style menus work;
+* Maemo-style stacked windows work;
+* Maemo-style orientation changes work
 
-(also pyqt5)
+Missing features:
 
-* Qt5 porting: QMaemo5Style and maemo .spec file is now present
-  https://github.com/maemo-leste/bugtracker/issues/431
+* Virtual keyboard integration;
+* Some widgets;
+* Better APIs/examples for kinetic scrolling for widgets;
+* maemo-launcher caching
 
-* https://wizzup.org/leste-qt5-progress-qmenu.mp4
-  qt-platform-maemo
+Python's pyqt5 should also work.
 
-* https://github.com/maemo-leste/bugtracker/issues/432 -- qt hildon screenshot
-  atom
+Porting packages from Qt4 to Qt5 is various straightforward, and looking at the
+commit history of these repositories might help those that would like to attempt
+ports:
+
+* https://github.com/maemo-leste-extras/dorian/commits/master
+* https://github.com/maemo-leste/clock-ui/commits/master
+* https://github.com/maemo-leste/qalendar/commits/master
+* https://github.com/maemo-leste/osso-calculator/commits/master
 
 
 Qalendar
@@ -118,21 +132,16 @@ Synchronisation
 ~~~~~~~~~~~~~~~
 
 The calendar application can be synchronised to various calendar backends using
-`syncevolution`, see also https://wiki.maemo.org/Sync
-
+`syncevolution`, see also https://wiki.maemo.org/Sync.
 Building the latest syncevolution for Maemo Leste `revealed bugs
 in calendar-backend which code only ever worked on 32 bit 
 <https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
-
 Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
-
 With that solved, the synchronisation now works, and you can read up on
 synchronisation on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
-
 There is also a GUI available to schedule sychronisation on set times, written
 custom for Maemo called `syncevolution-frontend
-<https://github.com/maemo-leste-extras/syncevolution-frontend>`_
-
+<https://github.com/maemo-leste-extras/syncevolution-frontend>`_.
 `The home widget has also been ported <https://github.com/maemo-leste-extras/cal-home-widget>`_, showing the upcoming events and current tasks:
 
 .. image:: /images/leste-calendar-widget.png
@@ -141,8 +150,7 @@ custom for Maemo called `syncevolution-frontend
 
 **We could use someone's help to write a Dockerfile for syncevolution to
 automatically test the Maemo backend**,
-`see bug #492 <https://github.com/maemo-leste/bugtracker/issues/492>`_
-
+`see bug #492 <https://github.com/maemo-leste/bugtracker/issues/492>`_.
 
 
 applet-datetime
@@ -201,13 +209,21 @@ We'll pick those up in the coming days and weeks.
 alarmd
 ------
 
-* alarmd fix https://github.com/maemo-leste/alarmd/pull/1
-* python-alarm
-  https://github.com/maemo-leste/bugtracker/issues/468
+Alarmd, the alarm daemon received a `runtime fix <https://github.com/maemo-leste/alarmd/pull/1>`_
+and a `initscript dependency fix
+<https://github.com/maemo-leste/alarmd/commit/e7b77f2e912bb71cd879ba17a4bf0d24c13ba06f>`_.
 
-Also, alarmd and clockd initscripts were ported to OpenRC, so currently there
+The `python-alarm <https://github.com/maemo-leste/bugtracker/issues/468>`_
+package is now also packaged, so this kind of code should work::
+
+    >>> alarm.query_event(1501725750.729786, time.time(), 0, 0, '')
+    [15, 17, 18, 19, 20]
+    >>> alarm.get_event(15).appid
+    'worldclock_alarmd_id'
+
+
+The alarmd and clockd initscripts were ported to OpenRC, so currently there
 are no more insserv/OpenRC runlevel warnings when running apt upgrade/install.
-
 
 Integration of Debian packages
 ------------------------------
@@ -243,20 +259,37 @@ to Qt5, along with it's backend, `osso-calculator-engine
 dorian
 ------
 
-not finished yet: https://github.com/maemo-leste-extras/dorian/issues/1
+Dorian, a epub reader from Maemo Fremantle has also been ported, and works
+quiter well, including portrait mode. Scrolling is quite smooth, especially in
+fullscreen mode.
 
-https://github.com/maemo-leste-extras/dorian/pull/4
-https://github.com/maemo-leste-extras/dorian/pull/5
-https://github.com/maemo-leste-extras/dorian/pull/6
+.. image:: /images/dorian-1.png
+  :height: 324px
+  :width: 576px
 
-video of dorian being smooth?
+.. image:: /images/dorian-2.png
+  :height: 324px
+  :width: 576px
 
-* dorian
-  https://wizzup.org/dorian-qt5.png
-  https://wizzup.org/leste-dorian-almost-there.png
-  https://github.com/maemo-leste-extras/dorian
-  https://github.com/maemo-leste/bugtracker/issues/440
-  https://wizzup.org/dorian-fullscreen.png
+.. image:: /images/dorian-3.png
+  :height: 324px
+  :width: 576px
+
+Relevant repositories, issues and feature requests:
+
+* https://github.com/maemo-leste-extras/dorian
+* https://github.com/maemo-leste/bugtracker/issues/440
+
+User ``pere`` has also been very helpful, submitting many pull requests:
+
+* https://github.com/maemo-leste-extras/dorian/pull/4
+* https://github.com/maemo-leste-extras/dorian/pull/5
+* https://github.com/maemo-leste-extras/dorian/pull/6
+* https://github.com/maemo-leste-extras/dorian/pull/13
+* https://github.com/maemo-leste-extras/dorian/pull/14
+* https://github.com/maemo-leste-extras/dorian/pull/15
+* https://github.com/maemo-leste-extras/dorian/pull/16
+
 
 
 profilesx
@@ -321,7 +354,7 @@ liblocation and location-control
 --------------------------------
 
 `liblocation <https://github.com/maemo-leste/liblocation/>`_,
-`location-control <https://github.com/maemo-leste/liblocation/>`_, and a few
+`location-control <https://github.com/maemo-leste/location-control/>`_, and a few
 other pieces of software comprise the GPS/Location stack on Maemo. We have
 successfully reverse-engineered these binaries from Fremantle and work is well
 underway on integrating them in the Maemo Leste userspace. Using liblocation, we
@@ -356,6 +389,7 @@ Other relevant repositories:
 * https://github.com/maemo-leste/location-ui
 * https://github.com/maemo-leste/location-status (unfinished)
 * https://github.com/maemo-leste/location-daemon (work in progress)
+
 
 python-location
 ~~~~~~~~~~~~~~~
@@ -410,6 +444,8 @@ Documentation on the Python APIs can be found here:
 Major MCE improvements
 ----------------------
 
+TODO
+
 * https://github.com/maemo-leste/mce/pull/14 -- iio-als
   + https://github.com/maemo-leste/mce/pull/15
 
@@ -428,7 +464,6 @@ Major MCE improvements
 * https://github.com/maemo-leste/bugtracker/issues/429 -- iio-sensor-proxy
   packaged
 
-
 * document new mce features, setup
   https://github.com/maemo-leste/mce/pull/20
   https://github.com/maemo-leste/mce/pull/36
@@ -443,7 +478,8 @@ openmediaplayer
 ---------------
 
 Open Media Player is a clone of the Maemo Fremantle media player, and with the
-Qt 5 port we've been making progress on bringing it to Maemo Leste `in issue #25 <https://github.com/maemo-leste/bugtracker/issues/25>`_.
+Qt 5 port we've been making progress on bringing it to Maemo Leste `in issue #25
+<https://github.com/maemo-leste/bugtracker/issues/25>`_.
 
 Currently the application builds with Qt5 and shows the main window and
 settings, but any playlists do not yet render.
@@ -462,19 +498,21 @@ settings, but any playlists do not yet render.
 Addressbook and contacts and account libraries
 ----------------------------------------------
 
+Particular exciting is the fact that ``freemangordon`` has been working on
+bringing the Hildon address book framework (libraries and user interfaces) to
+Maemo Fremantle. This will allow telepathy and evolution to see and modify on
+the contact lists.
 
-* osso-abook http://46.249.74.23/leste/VirtualBox_leste-beowulf_17_09_2020_15_06_07.png
-  https://wizzup.org/osso-abook-contacts.png (this is debug mode, maybe run in
-  non-debug mode)
+The work is not yet finished, but quite close to be finishing.
+The current work is packaged, but not yet in the repositories.
 
-https://github.com/maemo-leste/bugtracker/issues/454
+.. image:: /images/VirtualBox_leste-beowulf_17_09_2020_15_06_07.png
+  :height: 358px
+  :width: 645px
 
-Almost in -devel repo
 
 Rotation support
 ----------------
-
-* XXX: TODO: add droid video of rotation
 
 Orientation and rotation support is now supported natively. Using the hardware
 accelerometers, mce, and iio-sensors we are able to physically rotate our
@@ -489,11 +527,14 @@ The package `hildon-desktop-rotation-support
 this feature using `dbus-scripts` and the `xrandr` and `xinput` utilities.
 
 On the Nokia N900 this is not yet enabled, due to the rotation crashing the
-display server still.
+display server still. This will likely be resolved in an upcoming update to the
+latest PowerVR driver.
 
 
 UPower history
 --------------
+
+TODO
 
 * https://github.com/maemo-leste/bugtracker/issues/421 -  upower: keep history data for more than 7 days #421
 
@@ -505,7 +546,7 @@ UPower history
 Pulseaudio
 ----------
 
-The audio stack was ported to `Pulseaudio
+The audio stack uses `Pulseaudio
 <https://github.com/maemo-leste/bugtracker/issues/402>`_, as this will be
 necessary for further work on phone calls due to UCM and profiles. Pulseaudio
 seamlessly integrates and is configured for all our targets. The base
@@ -531,7 +572,7 @@ outputs - for multimedia (Hi Fi) and phone.
   :height: 324px
   :width: 576px
 
-Huge thanks for `uvos` for creating the UCM2 files for the Droid 4!
+Huge thanks for ``uvos`` for creating the UCM2 files for the Droid 4!
 
 
 Hardware & Drivers
@@ -541,6 +582,8 @@ Hardware & Drivers
 Motorola Droid Bionic
 ---------------------
 
+TODO
+
 * https://leste.maemo.org/Motorola_Droid_Bionic
 * https://github.com/IMbackK/bionic-clown-boot
 
@@ -548,11 +591,11 @@ Motorola Droid Bionic
 Droid4 and uptime
 -----------------
 
+TODO: 5.10 now
+
 * Note on random reset fixes (looks like it's fixed?!)
 * Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
 * droid4 pm wrt SCRN=0 ; https://github.com/maemo-leste/dbus-scripts
-
-
 
 
 Nokia N900
