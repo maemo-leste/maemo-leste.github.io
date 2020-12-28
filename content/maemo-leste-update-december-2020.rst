@@ -378,8 +378,8 @@ was also decreased. See `hildon-desktop PR #6
 <https://github.com/maemo-leste/hildon-desktop/pull/6>`_
 
 
-Orientation-lock Applet
-----------------------
+Orientation-lock applet
+-----------------------
 
 The orientation lock applet installed into the wrong path, causing it to not
 show up, this has been fixed, see `issue #419 <https://github.com/maemo-leste/bugtracker/issues/419>`_.
