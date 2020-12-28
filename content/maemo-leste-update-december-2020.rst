@@ -23,7 +23,7 @@ Here are a few highlights:
   and application policies;
 * Major MCE changes, including ambient light sensor support based on the IIO
   subsystem, accelerometer IIO subsystem, led-control for other devices, user
-  configuration customisation, loads of clean ups and more;
+  configuration customization, loads of clean ups and more;
 * maemo-input-sounds package finished, adding vibration and sounds;
 * Stable power management for the Droid 4 - lasting days without suspending;
 * Application launcher "Debian" submenu to launch any Debian application;
@@ -46,7 +46,7 @@ Packages Interface
 
 We now have a web interface to our packages: https://maedevu.maemo.org/pkgweb/
 
-It is re-generated every time a package is built in our Jenkins CI instance, and
+It is regenerated every time a package is built in our Jenkins CI instance, and
 the source code can be found here: https://github.com/maemo-leste/mpi
 
 maemo-input-sounds
@@ -121,7 +121,7 @@ Missing features:
 The Python package ``PyQt5`` should also work.
 
 Porting packages from Qt4 to Qt5 is straightforward, and looking at the
-commit history of these repositories might help those that would like to attempt
+commit history of these repositories might help those who would like to attempt
 ports:
 
 * https://github.com/maemo-leste-extras/dorian/commits/master
@@ -172,7 +172,7 @@ in calendar-backend which code only ever worked on 32-bit architecture
 <https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
 Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
 With that solved, synchronization now works, and you can read about it
-on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
+on `our Calendar wiki page <https://leste.maemo.org/Calendar>`_.
 There is also a custom GUI written for Maemo to schedule sychronization at set times called `syncevolution-frontend
 <https://github.com/maemo-leste-extras/syncevolution-frontend>`_.
 `The home widget has also been ported
@@ -191,7 +191,7 @@ automatically test the Maemo backend**,
 applet-datetime
 ---------------
 
-An applet for datetime was implemented, and parts reverse engineered.
+An applet for datetime was implemented, and parts reverse-engineered.
 `hildon-time-zone-chooser <https://github.com/maemo-leste/hildon-time-zone-chooser>`_
 features a pannable map of the world, along with a button in its EditToolbar to
 allow you to input the name of a city directly. This is used for timezone
@@ -266,7 +266,7 @@ Integration of Debian packages
 The Hildon menu, where we can see all installed applications that have
 .desktop entries was expanded with a `submenu
 <https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7>`_
-that now also shows all "non-hildonized" packages that come from upstream. These
+that now also shows all "non-hildonized" packages which come from upstream. These
 can be found in the "Debian" submenu by touching the Debian icon.
 
 .. image:: /images/debian-menu-1.png
@@ -381,8 +381,8 @@ was also decreased. See `hildon-desktop PR #6
 Orientation-lock Applet
 ----------------------
 
-The orientation lock applet installed into the wrong path, causing it to not
-show up, this has been fixed, see `issue #419 <https://github.com/maemo-leste/bugtracker/issues/419>`_.
+The orientation lock applet previously installed into the wrong path, causing it to not
+show up. This has been fixed, see `issue #419 <https://github.com/maemo-leste/bugtracker/issues/419>`_.
 
 
 liblocation and location-control
@@ -723,7 +723,7 @@ PowerVR: DDK 1.17, Xorg Glamor and clock fixes
 ----------------------------------------------
 
 One of the more exciting things is that ``freemangordon``, ``uvos`` and
-``tmlind`` have been able to get the latest PowerVR (DDK 1.17) to run on both
+``tmlind`` have been able to get the latest PowerVR DDK 1.17 to run on both
 the Nokia N900 and the Motorola Droid 4. The work entails not just the kernel
 side and kernel display driver side, but also the Xorg side: having to bang
 X11 ``Glamor`` and ``xf86-video-modesetting`` into shape to conform more closely
@@ -736,8 +736,8 @@ X11.
 
 One of the problems here is that it looks like X11 is left without maintainers:
 there are many pending pull requests that contain fixes, and they're mostly just
-being ignored. Unfornately, that includes some pull requests we have send in, so
-we have had no choice to fork X11 for now and package our own versions.
+being ignored. Unfortunately, that includes some pull requests we have sent in, so
+we have had no choice but to fork X11 for now and package our own versions.
 
 That said, this driver work would also bring the Nokia N900 back to Linux 5.10
 or 5.11, which is great news, as that would likely also benefit the long-awaited
@@ -749,7 +749,7 @@ Corruption
 ~~~~~~~~~~
 
 ``uvos`` also found that the PowerVR SGX driver on the Motorola Droid 4 ran at a
-much lower clock frequency that is should, which sometimes causes the result
+much lower clock frequency than it should, which sometimes causes the result
 to be rendered too late to the display, resulting in the artifacts that we have
 gotten used to. With the GPU at the right frequency, the rendering artifacts are
 gone, and the 3D is smoother than ever before.
@@ -797,9 +797,9 @@ into place, we are attracting more contributors and things are becoming more
 stable and featureful. The project has received some funding which we have been
 using to ship devices to folks who want to help out.
 
-It's been almost three years the announcement of our project, and well over three
+It's been almost three years since the announcement of our project, and well over three
 years since we started working on Maemo Leste. And we have come far, and we will
-keep pushing until we have the secure, open, extendable and customisable mobile
+keep pushing until we have the secure, open, extendable and customizable mobile
 operating system that we envision. Built by the community, for the community.
 
 
@@ -838,13 +838,13 @@ Phone aspect
 ------------
 
 The OS might look barebones now, but there is a lot to look forward to
-when we land of some of the final missing pieces: contacts, text communications
+when we land some of the final missing pieces: contacts, text communications
 and phone calls.
 
-Lacking phone calls might seem ridiculous to some, **but there many aspects
+Lacking phone calls might seem ridiculous to some, **but there are many aspects
 that matter about a mobile operating system**, and working phone calls without
 any sense of power management or audio policy modules to automatically switch
-from/to headset, speakers also make a device hardly usable. We are now at the
+from/to headset and speakers also make a device hardly usable. We are now at the
 point where the Motorola Droid 4 lasts for several days on a battery while it
 is connected to the mobile network, performs quite well, almost all the hardware
 components work the way they should, and we have a strong (and expanding, to
