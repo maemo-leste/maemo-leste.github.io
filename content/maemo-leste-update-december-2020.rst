@@ -17,7 +17,7 @@ we're looking forward to entering yet another year of our development efforts!
 Here are a few highlights:
 
 * The Maemo Qt5 port is usable now, unlocking many applications like the
-  `Dorian`_ ereader `Qalendar`_ Calendar, `clock-ui`_ clock and alarm and
+  `Dorian`_ e-reader `Qalendar`_ Calendar, `clock-ui`_ clock and alarm and
   `osso-calculator`_ applications;
 * `Rotation support`_ is now working for several devices, based on accelerometer
   and application policies;
@@ -34,7 +34,7 @@ Here are a few highlights:
 * Motorola Bionic is a new supported device;
 * The GPS stack is working in userspace, and is almost finished;
 * Better PowerVR support upcoming, with higher clock rates and the latest driver
-  version, allowing the N900 to move to the latest kernel again and gain real
+  version, allowing the N900 to move to the latest kernel again and gain proper
   power management.
 
 
@@ -163,8 +163,8 @@ Building the latest syncevolution for Maemo Leste `revealed bugs
 in calendar-backend which code only ever worked on 32 bit
 <https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
 Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
-With that solved, the synchronisation now works, and you can read up on
-synchronisation on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
+With that solved, synchronisation now works, and you can read about it
+on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
 There is also a GUI available to schedule sychronisation on set times, written
 custom for Maemo called `syncevolution-frontend
 <https://github.com/maemo-leste-extras/syncevolution-frontend>`_.
@@ -287,8 +287,8 @@ to Qt5, along with it's backend, `osso-calculator-engine
 dorian
 ------
 
-Dorian, a epub reader from Maemo Fremantle has also been ported, and works
-quiter well, including portrait mode. Scrolling is quite smooth, especially in
+Dorian, an epub reader from Maemo Fremantle has also been ported, and works
+quite well, including portrait mode. Scrolling is quite smooth, especially in
 fullscreen mode.
 
 .. image:: /images/dorian-1.png
@@ -352,7 +352,7 @@ support (and fallbacks) in hildon-desktop that allow us to start .desktop
 entries that have ``Terminal=true`` set and are supposed to open a terminal and
 run the specific command. Now programs like ``htop`` can be can by touching the
 icon in the menu, or you could even write your own scripts and run them like
-this! For example, Evil_Bob has his sfeed_curses running from desktop:
+this! For example, ``Evil_Bob`` has his sfeed_curses running from desktop:
 
 .. raw:: html
 
@@ -377,22 +377,23 @@ Orientationlock Applet
 The orientation lock applet installed into the wrong path, causing it to not
 show up, this has been fixed, see `issue #419 <https://github.com/maemo-leste/bugtracker/issues/419>`_.
 
+
 liblocation and location-control
 --------------------------------
 
 `liblocation <https://github.com/maemo-leste/liblocation/>`_,
-`location-control <https://github.com/maemo-leste/location-control/>`_, and a few
+`location-control <https://github.com/maemo-leste/location-control/>`_,
+`location-daemon <https://github.com/maemo-leste/location-daemon/>`_, and a few
 other pieces of software comprise the GPS/Location stack on Maemo. We have
 successfully reverse-engineered these binaries from Fremantle and work is well
 underway on integrating them in the Maemo Leste userspace. Using liblocation, we
 can talk to our location-daemon and retrieve the current location info and
-provide it to applications like `maep
-<https://github.com/maemo-leste-extras/maep>`_  that use liblocation as their
-backend. location-daemon serves as a central point of gps information on Maemo
-Leste, and it serves its info over the DBus Message API. Internally,
-location-daemon talks to gpsd using its internal libgps library. With this,
-programs using liblocation can simply gather info from dbus so you can integrate
-this gps information into your application.
+provide it to applications like `maep <https://github.com/maemo-leste-extras/maep>`_ 
+that use liblocation as their backend. location-daemon serves as a central point
+of gps information on Maemo Leste, and it serves its info over the D-Bus Message
+API. Internally, location-daemon talks to gpsd using its internal libgps
+library. With this, programs using liblocation can simply gather info from dbus
+so you can integrate this gps information into your application.
 
 .. image:: /images/location-control.png
   :height: 296px
@@ -421,7 +422,7 @@ Other relevant repositories:
 python-location
 ~~~~~~~~~~~~~~~
 
-Work on the status applet and an improved dbus interface is still under way.
+Work on the status applet and an improved D-Bus interface is still under way.
 `liblocation Python bindings <https://github.com/maemo-leste/python-location>`_
 are now also available, here is an example:
 
@@ -471,8 +472,8 @@ Documentation on the Python APIs can be found here:
 Major MCE improvements
 ----------------------
 
-There have been a lot of MCE changes, ``uvos`` has done tremendous work and we will
-try our best to list all the changes here.
+There have been a lot of MCE changes, ``uvos`` has done tremendous work and we
+will try our best to list all the changes here.
 
 New modules:
 
@@ -514,7 +515,7 @@ Qt 5 port we've been making progress on bringing it to Maemo Leste `in issue #25
 Currently the application builds with Qt5 and shows the main window and
 settings, but any playlists do not yet render.
 
-**If anyone feels like helping out, that would be much appreciated!**
+**If anyone feels like helping out, it would be much appreciated!**
 
 .. image:: /images/omp-initial-1.png
   :height: 385px
@@ -528,12 +529,12 @@ settings, but any playlists do not yet render.
 Addressbook and contacts and account libraries
 ----------------------------------------------
 
-Particular exciting is the fact that ``freemangordon`` has been working on
+Particularly exciting is the fact that ``freemangordon`` has been working on
 bringing the Hildon address book framework (libraries and user interfaces) to
-Maemo Fremantle. This will allow telepathy and evolution to see and modify on
-the contact lists.
+Maemo Lest. This will allow telepathy and evolution to see and modify the
+contact lists.
 
-The work is not yet finished, but quite close to be finishing.
+The work is still not finished, but it's quite close.
 The current work is packaged, but not yet in the repositories.
 
 .. image:: /images/VirtualBox_leste-beowulf_17_09_2020_15_06_07.png
@@ -679,7 +680,7 @@ Nokia N900
 u-boot and serial
 ~~~~~~~~~~~~~~~~~
 
-Pali has been doing a lot of work on mainline u-boot on the Nokia N900 again,
+``Pali`` has been doing a lot of work on mainline u-boot on the Nokia N900 again,
 and it has paid off. Now u-boot boots again (yes, it wasn't booting anymore!)
 and usbtty (serial communication over usb) now works. This might allow
 for scripted booting of the Nokia N900.
@@ -781,7 +782,6 @@ these images, because a successful build doesn't necessarily mean a perfectly
 working image. More later ;)
 
 
-
 Closing words
 =============
 
@@ -790,10 +790,11 @@ into place, we are attracting more contributors and things are becoming more
 stable and featureful. The project has received some funding which we have been
 using to ship devices to folks who want to help out.
 
-It's been almost two years the announcement of our project, and well over two
+It's been almost three years the announcement of our project, and well over three
 years since we started working on Maemo Leste. And we have come far, and we will
 keep pushing until we have the secure, open, extendable and customisable mobile
 operating system that we envision. Built by the community, for the community.
+
 
 Ecosystem & Community
 ---------------------
@@ -881,8 +882,8 @@ application.
 Interested?
 ===========
 
-If you have questions, are interested in specifics, or helping out, or wish to have a specific
-package ported, please see our bugtracker.
+If you have questions, are interested in specifics, or helping out, or wish to
+have a specific package ported, please see our bugtracker.
 
 **We have several Nokia N900 and Motorola Droid 4 and Bionic units available to
 interested developers**, so if you are interested in helping out but have
