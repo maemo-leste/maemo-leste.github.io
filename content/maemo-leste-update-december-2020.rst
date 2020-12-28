@@ -539,7 +539,7 @@ Addressbook and contacts and account libraries
 
 Particularly exciting is the fact that ``freemangordon`` has been working on
 bringing the Hildon address book framework (libraries and user interfaces) to
-Maemo Lest. This will allow telepathy and evolution to see and modify the
+Maemo Leste. This will allow telepathy and evolution to see and modify the
 contact lists.
 
 The work is still not finished, but it's quite close.
