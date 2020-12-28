@@ -811,9 +811,6 @@ Our community keeps growing, our ecosystem expanding, but there is a lot to wish
 for too: more regular updates, a better structure for our wiki and an easier way
 for users to contribute.
 
-We are also working on a web interface to our packages, which should hopefully
-make it easier to explore our software ecosystem.
-
 Readers not familiar with this `Maemo Leste Playground thread
 <https://talk.maemo.org/showthread.php?t=101089&page=5>`_ might like to take a
 peek at some of the work our community has been doing to make various programs
