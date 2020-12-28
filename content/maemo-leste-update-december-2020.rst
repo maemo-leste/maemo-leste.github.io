@@ -788,57 +788,96 @@ working image. More later ;)
 Closing words
 =============
 
-TODO: On focus, phone/sms/contacts/chat and having more and more apps
+It's been a pretty good year for our project. A lot more core pieces are falling
+into place, we are attracting more contributors and things are becoming more
+stable and featureful. The project has received some funding which we have been
+using to ship devices to folks who want to help out.
+
+It's been almost two years the announcement of our project, and well over two
+years since we started working on Maemo Leste. And we have come far, and we will
+keep pushing until we have the secure, open, extendable and customisable mobile
+operating system that we envision. Built by the community, for the community.
+
+Ecosystem & Community
+---------------------
+
+Our community keeps growing, our ecosystem expanding, but there is a lot to wish
+for too: more regular updates, a better structure for our wiki and an easier way
+for users to contribute.
+
+We are also working on a web interface to our packages, which should hopefully
+make it easier to explore our software ecosystem.
+
+Readers not familiar with this `Maemo Leste Playground thread
+<https://talk.maemo.org/showthread.php?t=101089&page=5>`_ might like to take a
+peek at some of the work our community has been doing to make various programs
+and games run on Maemo Leste.
+
+The `Fremantle Maemo.org theme
+<http://maemo.org/downloads/product/Maemo5/maemo-org/>`_ is now `also available
+in Maemo Leste <https://github.com/maemo-leste-extras/hildon-theme-maemo-org>`_,
+and we might switch to using that (community developed) theme by default.
+
+.. We would have thought that our settings applications would contain so many
+.. applets?
+.. 
+.. .. image:: /images/control-panel-filling-up.png
+..   :height: 576px
+..   :width: 324px
+.. 
+.. Or that multi tasking on the Droid 4 would work so well?
+.. 
+.. .. image:: /images/leste-multi-tasking.png
+..   :height: 576px
+..   :width: 324px
 
 
-.. image:: /images/control-panel-filling-up.png
-  :height: 576px
-  :width: 324px
+Phone aspect
+------------
 
-.. image:: /images/leste-multi-tasking.png
-  :height: 576px
-  :width: 324px
+A part of the OS might look bare bone now, but there is a lot to look forward to
+when we land of some of the final missing pieces: contacts, text-communications
+and phone calls.
 
+Lacking phone calls might seem ridiculous to some, **but there many aspects
+that matter about a mobile operating system**, and working phone calls without
+any sense of power management or audio policy modules to automatically switch
+from/to headset, speakers also make a device hardly usable. We are now at the
+point where the Motorola Droid 4 lasts for several days on a battery, while it
+is connected to the mobile network, performs quite well, almost all the hardware
+components work the way they should, and we have a strong (and expanding, to
+other devices) base to build our phone OS upon.
 
-SORTME
-======
-
-
-* https://github.com/maemo-leste/bugtracker/issues/465
-
-* https://wizzup.org/update-notification-1.png
-  https://wizzup.org/update-notification-2.png
-  https://wizzup.org/update-notification-3.png
-  https://wizzup.org/update-notification-4.png
-  https://wizzup.org/update-notification-5.png
-  https://wizzup.org/update-notification-6.png
-  https://wizzup.org/update-notification-7.png
-
-* https://github.com/maemo-leste/bugtracker/issues/41 - screen calib applet
+Contacts, phone calls and text-conversations will be the main focus for us going
+into 2021. We will aim to mimic Fremantle where it makes sense: providing a
+unified conversations experience, regardless of the instant messaging protocol
+(leveraging telepathy and libpurple), combined with a featureful phone
+application.
 
 
-* mpd with GMPC works nice (make some screenshots), also fullscreen mode is cool
+.. SORTME
+.. ======
+
+.. * https://wizzup.org/update-notification-1.png
+..   https://wizzup.org/update-notification-2.png
+..   https://wizzup.org/update-notification-3.png
+..   https://wizzup.org/update-notification-4.png
+..   https://wizzup.org/update-notification-5.png
+..   https://wizzup.org/update-notification-6.png
+..   https://wizzup.org/update-notification-7.png
+
+.. * https://github.com/maemo-leste/bugtracker/issues/41 - screen calib applet
+.. * mpd with GMPC works nice (make some screenshots), also fullscreen mode is cool
 
 
-* https://github.com/maemo-leste/bugtracker/issues/390#issuecomment-657268449 -
-  progress on call ui libs
+.. * https://github.com/maemo-leste/bugtracker/issues/390#issuecomment-657268449 -
+..   progress on call ui libs
 
-* "Re: [maemo-leste] WIFI tethering"
+.. * "Re: [maemo-leste] WIFI tethering"
 
-* https://github.com/maemo-leste/osso-systemui-tklock/pull/2
+.. * https://github.com/maemo-leste/osso-systemui-tklock/pull/2
 
-* 17:44 <parazyd> https://github.com/maemo-leste/bugtracker/issues/447 -> "no more apt warnings about runlevels"
-
-* Link to this stuff: https://talk.maemo.org/showthread.php?t=101089&page=5
-
-* https://github.com/maemo-leste-extras/hildon-theme-maemo-org
-
-* https://github.com/maemo-leste/bugtracker/issues/186#issuecomment-748610883
-
-
-* https://github.com/maemo-leste-extras/qt-mobile-hotspot
-  https://github.com/maemo-leste/bugtracker/issues/430
-* https://github.com/maemo-leste/bugtracker/issues/454
+.. * 17:44 <parazyd> https://github.com/maemo-leste/bugtracker/issues/447 -> "no more apt warnings about runlevels"
 
 
 
