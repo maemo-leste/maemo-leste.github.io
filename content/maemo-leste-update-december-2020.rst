@@ -16,25 +16,25 @@ we're looking forward to entering yet another year of our development efforts!
 
 Here are a few highlights:
 
-* The Maemo Qt5 port is usable now, unlocking many applications like the
-  `Dorian`_ e-reader `Qalendar`_ Calendar, `clock-ui`_ clock and alarm and
+* The Maemo Qt5 port is usable now, unlocking many applications, like the
+  `Dorian`_ e-book reader `Qalendar`_ Calendar, `clock-ui`_ clock and alarm, and
   `osso-calculator`_ applications;
 * `Rotation support`_ is now working for several devices, based on accelerometer
   and application policies;
-* Major MCE changes, including a ambient light sensor based on the IIO
+* Major MCE changes, including ambient light sensor supporbased on the IIO
   subsystem, accelerometer IIO subsystem, led-control for other devices, user
   configuration customisation, loads of clean ups and more;
 * maemo-input-sounds package finished, adding vibration and sounds;
-* Stable powermanagement for the Droid 4 - lasting days without suspending;
-* Application launcher "Debian" submenu to launch any application in Debian;
-* Calendar support is working, including home applet and synchronisation using
+* Stable power management for the Droid 4 - lasting days without suspending;
+* Application launcher "Debian" submenu to launch any Debian application;
+* Calendar support is working, including home applet and synchronization using
   syncevolution;
 * Settings applet including timezone chooser is working;
 * Hildon address book is nearing completion;
 * Motorola Bionic is a new supported device;
 * The GPS stack is working in userspace, and is almost finished;
 * Better PowerVR support upcoming, with higher clock rates and the latest driver
-  version, allowing the N900 to move to the latest kernel again and gain proper
+  version, allowing the N900 to move to the latest kernel again, and gain proper
   power management.
 
 
@@ -71,16 +71,16 @@ dbus-scripts
 ------------
 
 dbus-scripts is a daemon that can execute a command when various events occur on
-D-Bus. Since most of Maemo Leste relies on D-Bus in some ways, this is a
+D-Bus. Since most of Maemo Leste relies on D-Bus in some way, this is a
 powerful tool. A non-exhaustive list of some things one can watch for: keyboard
 slide changing; screen turning on/off; connecting or disconnecting from a
-network; incoming sms or phone call; device rotated.
+network; incoming sms or phone call; device rotation.
 
 This program was a user package in Maemo Fremantle, but we have promoted it to
 be a core package, since we use it for `Rotation support`_ and to work around
-some power management quircks.
+some power management quirks.
 
-We also believe that customisability and extensibility is an important part of
+We also believe that customizability is an important part of
 our platform, and this should help making Maemo Leste more extensible.
 
 See the `maemo.org wiki page on dbus-scripts
@@ -96,11 +96,11 @@ And the command that the example script invokes:
 https://github.com/maemo-leste/hildon-desktop-rotation-support/blob/maemo/beowulf-devel/scripts/usr/bin/hildon-desktop-rotate-touchscreen.sh
 
 
-Qt 5
+Qt5
 ----
 
 The Qt5 port is in a usable enough state that it is currently available in the
-main repositories; some of the users might even already have it on your device!
+main repositories; some of the users might even already have it on their devices!
 
 The main features:
 
@@ -120,7 +120,7 @@ Missing features:
 
 The Python package ``PyQt5`` should also work.
 
-Porting packages from Qt4 to Qt5 is various straightforward, and looking at the
+Porting packages from Qt4 to Qt5 is straightforward, and looking at the
 commit history of these repositories might help those that would like to attempt
 ports:
 
@@ -165,16 +165,15 @@ known bugs.
 Synchronisation
 ~~~~~~~~~~~~~~~
 
-The calendar application can be synchronised to various calendar backends using
+The calendar application can be synchronized to various calendar backends using
 `syncevolution`, see also https://wiki.maemo.org/Sync.
 Building the latest syncevolution for Maemo Leste `revealed bugs
-in calendar-backend which code only ever worked on 32 bit
+in calendar-backend which code only ever worked on 32-bit architecture
 <https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
 Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
-With that solved, synchronisation now works, and you can read about it
+With that solved, synchronization now works, and you can read about it
 on the `wiki page on our Calendar <https://leste.maemo.org/Calendar>`_.
-There is also a GUI available to schedule sychronisation on set times, written
-custom for Maemo called `syncevolution-frontend
+There is also a custom GUI written for Maemo to schedule sychronization at set times called `syncevolution-frontend
 <https://github.com/maemo-leste-extras/syncevolution-frontend>`_.
 `The home widget has also been ported
 <https://github.com/maemo-leste-extras/cal-home-widget>`_, showing the upcoming
@@ -199,7 +198,7 @@ allow you to input the name of a city directly. This is used for timezone
 selection in the settings menu, but can also be used separately by any other
 application that needs it.
 
-The datetime applet itself allows user to set the time, date, and timezone, and
+The datetime applet itself allows the user to set the time, date, and timezone, and
 changing the clock to be a 24 hour clock. This also lays the groundwork for
 alarms and similar things.
 
@@ -246,7 +245,7 @@ alarmd
 ------
 
 Alarmd, the alarm daemon received a `runtime fix <https://github.com/maemo-leste/alarmd/pull/1>`_
-and a `initscript dependency fix
+and an `initscript dependency fix
 <https://github.com/maemo-leste/alarmd/commit/e7b77f2e912bb71cd879ba17a4bf0d24c13ba06f>`_.
 
 The `python-alarm <https://github.com/maemo-leste/bugtracker/issues/468>`_
@@ -258,13 +257,13 @@ package is now also packaged, so this kind of code should work::
     'worldclock_alarmd_id'
 
 
-The alarmd and clockd initscripts were ported to OpenRC, so currently there
+The alarmd and clockd initscripts were ported to OpenRC, so there
 are no more insserv/OpenRC runlevel warnings when running apt upgrade/install.
 
 Integration of Debian packages
 ------------------------------
 
-The Hildon menu, where we can see all our installed applications that have their
+The Hildon menu, where we can see all installed applications that have
 .desktop entries was expanded with a `submenu
 <https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7>`_
 that now also shows all "non-hildonized" packages that come from upstream. These
@@ -284,7 +283,7 @@ osso-calculator
 
 The Qt calculator `osso-calculator
 <https://github.com/maemo-leste/osso-calculator>`_ has been packaged and ported
-to Qt5, along with it's backend, `osso-calculator-engine
+to Qt5, along with its backend, `osso-calculator-engine
 <https://github.com/maemo-leste/osso-calculator-engine>`_.
 
 .. image:: /images/osso-calculator.png
@@ -358,7 +357,7 @@ Support for terminal applications
 We `implemented <https://github.com/maemo-leste/hildon-desktop/pull/9>`_ proper
 support (and fallbacks) in hildon-desktop that allow us to start .desktop
 entries that have ``Terminal=true`` set and are supposed to open a terminal and
-run the specific command. Now programs like ``htop`` can be can by touching the
+run the specific command. Now programs like ``htop`` can be run by touching the
 icon in the menu, or you could even write your own scripts and run them like
 this! For example, ``Evil_Bob`` has his sfeed_curses running from desktop:
 
@@ -375,11 +374,11 @@ Snap to desktop
 We have decreased the accuracy of 'snap to desktop' to make it easier to align
 icons on the home screen; previously it would be quite tedious to get them
 aligned. The time is takes to show a loading preview screen for an application
-is also decreased. See `hildon-desktop PR #6
+was also decreased. See `hildon-desktop PR #6
 <https://github.com/maemo-leste/hildon-desktop/pull/6>`_
 
 
-Orientationlock Applet
+Orientation-lock Applet
 ----------------------
 
 The orientation lock applet installed into the wrong path, causing it to not
@@ -498,7 +497,7 @@ New modules:
 
 Refactoring and fixes:
 
-* ``mce.ini.d`` support. This splits up the MCE configuration in a core
+* ``mce.ini.d`` support. This splits up the MCE configuration into a core
   configuration, device specific configuration, and user (customisable)
   configuration. See `MCE PR #18 <https://github.com/maemo-leste/mce/pull/18>`_,
   `MCE PR #42 <https://github.com/maemo-leste/mce/pull/42>`_, `leste-config PR
@@ -521,7 +520,7 @@ Qt 5 port we've been making progress on bringing it to Maemo Leste `in issue #25
 <https://github.com/maemo-leste/bugtracker/issues/25>`_.
 
 Currently the application builds with Qt5 and shows the main window and
-settings, but any playlists do not yet render.
+settings, but playlists do not yet render.
 
 **If anyone feels like helping out, it would be much appreciated!**
 
@@ -534,7 +533,7 @@ settings, but any playlists do not yet render.
   :width: 716px
 
 
-Addressbook and contacts and account libraries
+Address book, contacts and account libraries
 ----------------------------------------------
 
 Particularly exciting is the fact that ``freemangordon`` has been working on
@@ -750,8 +749,8 @@ Corruption
 ~~~~~~~~~~
 
 ``uvos`` also found that the PowerVR SGX driver on the Motorola Droid 4 ran at a
-much lower clock frequency that is should, which sometimes results in the result
-being rendered too late to the display, resulting in the artifacts that we have
+much lower clock frequency that is should, which sometimes causes the result
+to be rendered too late to the display, resulting in the artifacts that we have
 gotten used to. With the GPU at the right frequency, the rendering artifacts are
 gone, and the 3D is smoother than ever before.
 
@@ -838,15 +837,15 @@ and we might switch to using that (community developed) theme by default.
 Phone aspect
 ------------
 
-A part of the OS might look bare bone now, but there is a lot to look forward to
-when we land of some of the final missing pieces: contacts, text-communications
+The OS might look barebones now, but there is a lot to look forward to
+when we land of some of the final missing pieces: contacts, text communications
 and phone calls.
 
 Lacking phone calls might seem ridiculous to some, **but there many aspects
 that matter about a mobile operating system**, and working phone calls without
 any sense of power management or audio policy modules to automatically switch
 from/to headset, speakers also make a device hardly usable. We are now at the
-point where the Motorola Droid 4 lasts for several days on a battery, while it
+point where the Motorola Droid 4 lasts for several days on a battery while it
 is connected to the mobile network, performs quite well, almost all the hardware
 components work the way they should, and we have a strong (and expanding, to
 other devices) base to build our phone OS upon.
