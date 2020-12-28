@@ -91,7 +91,7 @@ we're looking forward to entering yet another year of our development efforts!</
 and application policies;</li>
 <li>Major MCE changes, including ambient light sensor support based on the IIO
 subsystem, accelerometer IIO subsystem, led-control for other devices, user
-configuration customisation, loads of clean ups and more;</li>
+configuration customization, loads of clean ups and more;</li>
 <li>maemo-input-sounds package finished, adding vibration and sounds;</li>
 <li>Stable power management for the Droid 4 - lasting days without suspending;</li>
 <li>Application launcher &quot;Debian&quot; submenu to launch any Debian application;</li>
@@ -110,7 +110,7 @@ power management.</li>
 <div class="section" id="packages-interface">
 <h3>Packages Interface</h3>
 <p>We now have a web interface to our packages: <a class="reference external" href="https://maedevu.maemo.org/pkgweb/">https://maedevu.maemo.org/pkgweb/</a></p>
-<p>It is re-generated every time a package is built in our Jenkins CI instance, and
+<p>It is regenerated every time a package is built in our Jenkins CI instance, and
 the source code can be found here: <a class="reference external" href="https://github.com/maemo-leste/mpi">https://github.com/maemo-leste/mpi</a></p>
 </div>
 <div class="section" id="maemo-input-sounds">
@@ -165,7 +165,7 @@ main repositories; some of the users might even already have it on their devices
 </ul>
 <p>The Python package <tt class="docutils literal">PyQt5</tt> should also work.</p>
 <p>Porting packages from Qt4 to Qt5 is straightforward, and looking at the
-commit history of these repositories might help those that would like to attempt
+commit history of these repositories might help those who would like to attempt
 ports:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/maemo-leste-extras/dorian/commits/master">https://github.com/maemo-leste-extras/dorian/commits/master</a></li>
@@ -195,7 +195,7 @@ Building the latest syncevolution for Maemo Leste <a class="reference external" 
 in calendar-backend which code only ever worked on 32-bit architecture</a>.
 Further details can be found <a class="reference external" href="https://lists.syncevolution.org/hyperkitty/list/syncevolution&#64;syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/">on this syncevolution email thread</a>.
 With that solved, synchronization now works, and you can read about it
-on the <a class="reference external" href="https://leste.maemo.org/Calendar">wiki page on our Calendar</a>.
+on <a class="reference external" href="https://leste.maemo.org/Calendar">our Calendar wiki page</a>.
 There is also a custom GUI written for Maemo to schedule sychronization at set times called <a class="reference external" href="https://github.com/maemo-leste-extras/syncevolution-frontend">syncevolution-frontend</a>.
 <a class="reference external" href="https://github.com/maemo-leste-extras/cal-home-widget">The home widget has also been ported</a>, showing the upcoming
 events and current tasks:</p>
@@ -207,7 +207,7 @@ automatically test the Maemo backend</strong>,
 </div>
 <div class="section" id="applet-datetime">
 <h3>applet-datetime</h3>
-<p>An applet for datetime was implemented, and parts reverse engineered.
+<p>An applet for datetime was implemented, and parts reverse-engineered.
 <a class="reference external" href="https://github.com/maemo-leste/hildon-time-zone-chooser">hildon-time-zone-chooser</a>
 features a pannable map of the world, along with a button in its EditToolbar to
 allow you to input the name of a city directly. This is used for timezone
@@ -255,7 +255,7 @@ are no more insserv/OpenRC runlevel warnings when running apt upgrade/install.</
 <h3>Integration of Debian packages</h3>
 <p>The Hildon menu, where we can see all installed applications that have
 .desktop entries was expanded with a <a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7">submenu</a>
-that now also shows all &quot;non-hildonized&quot; packages that come from upstream. These
+that now also shows all &quot;non-hildonized&quot; packages which come from upstream. These
 can be found in the &quot;Debian&quot; submenu by touching the Debian icon.</p>
 <img alt="" src="/images/debian-menu-1.png" style="width: 576px; height: 324px;" />
 <img alt="" src="/images/debian-menu-2.png" style="width: 576px; height: 324px;" />
@@ -323,8 +323,8 @@ was also decreased. See <a class="reference external" href="https://github.com/m
 </div>
 <div class="section" id="orientation-lock-applet">
 <h3>Orientation-lock applet</h3>
-<p>The orientation lock applet installed into the wrong path, causing it to not
-show up, this has been fixed, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/419">issue #419</a>.</p>
+<p>The orientation lock applet previously installed into the wrong path, causing it to not
+show up. This has been fixed, see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/419">issue #419</a>.</p>
 </div>
 <div class="section" id="liblocation-and-location-control">
 <h3>liblocation and location-control</h3>
@@ -578,7 +578,7 @@ picture-in-picture" allowfullscreen></iframe></div>
 <div class="section" id="powervr-ddk-1-17-xorg-glamor-and-clock-fixes">
 <h3>PowerVR: DDK 1.17, Xorg Glamor and clock fixes</h3>
 <p>One of the more exciting things is that <tt class="docutils literal">freemangordon</tt>, <tt class="docutils literal">uvos</tt> and
-<tt class="docutils literal">tmlind</tt> have been able to get the latest PowerVR (DDK 1.17) to run on both
+<tt class="docutils literal">tmlind</tt> have been able to get the latest PowerVR DDK 1.17 to run on both
 the Nokia N900 and the Motorola Droid 4. The work entails not just the kernel
 side and kernel display driver side, but also the Xorg side: having to bang
 X11 <tt class="docutils literal">Glamor</tt> and <tt class="docutils literal"><span class="pre">xf86-video-modesetting</span></tt> into shape to conform more closely
@@ -590,8 +590,8 @@ providing drivers for X11. The shim requires the DRI3 and PRESENT support from
 X11.</p>
 <p>One of the problems here is that it looks like X11 is left without maintainers:
 there are many pending pull requests that contain fixes, and they're mostly just
-being ignored. Unfornately, that includes some pull requests we have send in, so
-we have had no choice to fork X11 for now and package our own versions.</p>
+being ignored. Unfortunately, that includes some pull requests we have sent in, so
+we have had no choice but to fork X11 for now and package our own versions.</p>
 <p>That said, this driver work would also bring the Nokia N900 back to Linux 5.10
 or 5.11, which is great news, as that would likely also benefit the long-awaited
 <tt class="docutils literal">OFF</tt> mode for the phone (debugging issues on older kernels is no fun),
@@ -599,7 +599,7 @@ bringing much better power management.</p>
 <div class="section" id="corruption">
 <h4>Corruption</h4>
 <p><tt class="docutils literal">uvos</tt> also found that the PowerVR SGX driver on the Motorola Droid 4 ran at a
-much lower clock frequency that is should, which sometimes causes the result
+much lower clock frequency than it should, which sometimes causes the result
 to be rendered too late to the display, resulting in the artifacts that we have
 gotten used to. With the GPU at the right frequency, the rendering artifacts are
 gone, and the 3D is smoother than ever before.</p>
@@ -636,9 +636,9 @@ working image. More later ;)</p>
 into place, we are attracting more contributors and things are becoming more
 stable and featureful. The project has received some funding which we have been
 using to ship devices to folks who want to help out.</p>
-<p>It's been almost three years the announcement of our project, and well over three
+<p>It's been almost three years since the announcement of our project, and well over three
 years since we started working on Maemo Leste. And we have come far, and we will
-keep pushing until we have the secure, open, extendable and customisable mobile
+keep pushing until we have the secure, open, extendable and customizable mobile
 operating system that we envision. Built by the community, for the community.</p>
 <div class="section" id="ecosystem-community">
 <h3>Ecosystem &amp; Community</h3>
@@ -667,12 +667,12 @@ and we might switch to using that (community developed) theme by default.</p>
 <div class="section" id="phone-aspect">
 <h3>Phone aspect</h3>
 <p>The OS might look barebones now, but there is a lot to look forward to
-when we land of some of the final missing pieces: contacts, text communications
+when we land some of the final missing pieces: contacts, text communications
 and phone calls.</p>
-<p>Lacking phone calls might seem ridiculous to some, <strong>but there many aspects
+<p>Lacking phone calls might seem ridiculous to some, <strong>but there are many aspects
 that matter about a mobile operating system</strong>, and working phone calls without
 any sense of power management or audio policy modules to automatically switch
-from/to headset, speakers also make a device hardly usable. We are now at the
+from/to headset and speakers also make a device hardly usable. We are now at the
 point where the Motorola Droid 4 lasts for several days on a battery while it
 is connected to the mobile network, performs quite well, almost all the hardware
 components work the way they should, and we have a strong (and expanding, to
