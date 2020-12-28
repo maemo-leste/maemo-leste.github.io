@@ -564,14 +564,12 @@ latest PowerVR driver.
 UPower history
 --------------
 
-TODO
+Our devices now keep UPower history for more than 7 days, which was a hardcoded
+limit in UPower. We have changed this to 30 days now, to allow for power usage
+analytics going back further in time. See `issue #421 <https://github.com/maemo-leste/bugtracker/issues/421>`_
 
-* https://github.com/maemo-leste/bugtracker/issues/421 -  upower: keep history data for more than 7 days #421
-
-
-* https://wizzup.org/droid4-powerapplet.png + https://wizzup.org/droid4-upower-graph.png
-  + -avg
-
+.. * https://wizzup.org/droid4-powerapplet.png + https://wizzup.org/droid4-upower-graph.png
+..   + -avg
 
 Pulseaudio
 ----------
@@ -729,10 +727,9 @@ providing drivers for X11. The shim requires the DRI3 and PRESENT support from
 X11.
 
 One of the problems here is that it looks like X11 is left without maintainers:
-there are many pending pull requests that contains fixes, and it looks like
-they're mostly just being ignored. Unfornately, that includes some pull requests
-we have send in, so we have had no choice to fork X11 for now and package our
-own versions.
+there are many pending pull requests that contain fixes, and they're mostly just
+being ignored. Unfornately, that includes some pull requests we have send in, so
+we have had no choice to fork X11 for now and package our own versions.
 
 That said, this driver work would also bring the Nokia N900 back to Linux 5.10
 or 5.11, which is great news, as that would likely also benefit the long-awaited
