@@ -690,10 +690,10 @@ The new u-boot binary can be found here:
 
     https://maedevu.maemo.org/images/n900/tools/
 
-with filename `u-boot-2020.12-pali.bin`.
+with filename ``u-boot-2020.12-pali.bin``.
 
 If you flash this to your device with 0xFFFF and boot with the keyboard open and
-USB cable connected, you should see something similar to this in `dmesg`::
+USB cable connected, you should see something similar to this in ``dmesg``::
 
     usb 3-1.1.3: new full-speed USB device number 95 using xhci_hcd
     usb 3-1.1.3: New USB device found, idVendor=0421, idProduct=01c8, bcdDevice= 0.00
@@ -716,11 +716,38 @@ usb serial on the left. You can see they are in sync:
 PowerVR: DDK 1.17, Xorg Glamor and clock fixes
 ----------------------------------------------
 
+One of the more exciting things is that ``freemangordon``, ``uvos`` and
+``tmlind`` have been able to get the latest PowerVR (DDK 1.17) to run on both
+the Nokia N900 and the Motorola Droid 4. The work entails not just the kernel
+side and kernel display driver side, but also the Xorg side: having to bang
+X11 ``Glamor`` and ``xf86-video-modesetting`` into shape to conform more closely
+to the OpenGL(ES) specifications, and fix various bugs. ``freemangordon`` is
+also working on a shim library to expose graphics drivers that support GBM
+platform display to X11, even if the drivers lack the specific X11 windowing
+system, which could potentially benefit other drivers that are no longer
+providing drivers for X11. The shim requires the DRI3 and PRESENT support from
+X11.
 
-gtk4 bug report with lima?
+One of the problems here is that it looks like X11 is left without maintainers:
+there are many pending pull requests that contains fixes, and it looks like
+they're mostly just being ignored. Unfornately, that includes some pull requests
+we have send in, so we have had no choice to fork X11 for now and package our
+own versions.
 
-dri3 met modesetting, egl
+That said, this driver work would also bring the Nokia N900 back to Linux 5.10
+or 5.11, which is great news, as that would likely also benefit the long-awaited
+``OFF`` mode for the phone (debugging issues on older kernels is no fun),
+bringing much better power management.
 
+
+Corruption
+~~~~~~~~~~
+
+``uvos`` also found that the PowerVR SGX driver on the Motorola Droid 4 ran at a
+much lower clock frequency that is should, which sometimes results in the result
+being rendered too late to the display, resulting in the artifacts that we have
+gotten used to. With the GPU at the right frequency, the rendering artifacts are
+gone, and the 3D is smoother than ever before.
 
 Pinephone and Pinetab
 ---------------------
