@@ -17,8 +17,8 @@ we're looking forward to entering yet another year of our development efforts!
 Here are a few highlights:
 
 * The Maemo Qt5 port is usable now, unlocking many applications like the
-  `Dorian`_ ereader `Qalendar`_ Calendar, `clock-ui` clock and alarm and
-  `osso-calculator` applications;
+  `Dorian`_ ereader `Qalendar`_ Calendar, `clock-ui`_ clock and alarm and
+  `osso-calculator`_ applications;
 * `Rotation support`_ is now working for several devices, based on accelerometer
   and application policies;
 * Major MCE changes, including a ambient light sensor based on the IIO
@@ -27,7 +27,7 @@ Here are a few highlights:
 * maemo-input-sounds package finished, adding vibration and sounds;
 * Stable powermanagement for the Droid 4 - lasting days without suspending;
 * Application launcher "Debian" submenu to launch any application in Debian;
-* Calendar support is working, including home applet and synchronisation with
+* Calendar support is working, including home applet and synchronisation using
   syncevolution;
 * Settings applet including timezone chooser is working;
 * Hildon address book is nearing completion;
@@ -110,7 +110,7 @@ Missing features:
 * Better APIs/examples for kinetic scrolling for widgets;
 * maemo-launcher caching
 
-Python's pyqt5 should also work.
+The Python package ``PyQt5`` should also work.
 
 Porting packages from Qt4 to Qt5 is various straightforward, and looking at the
 commit history of these repositories might help those that would like to attempt
@@ -160,7 +160,7 @@ Synchronisation
 The calendar application can be synchronised to various calendar backends using
 `syncevolution`, see also https://wiki.maemo.org/Sync.
 Building the latest syncevolution for Maemo Leste `revealed bugs
-in calendar-backend which code only ever worked on 32 bit 
+in calendar-backend which code only ever worked on 32 bit
 <https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071>`_.
 Further details can be found `on this syncevolution email thread <https://lists.syncevolution.org/hyperkitty/list/syncevolution@syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/>`_.
 With that solved, the synchronisation now works, and you can read up on
@@ -168,7 +168,9 @@ synchronisation on the `wiki page on our Calendar <https://leste.maemo.org/Calen
 There is also a GUI available to schedule sychronisation on set times, written
 custom for Maemo called `syncevolution-frontend
 <https://github.com/maemo-leste-extras/syncevolution-frontend>`_.
-`The home widget has also been ported <https://github.com/maemo-leste-extras/cal-home-widget>`_, showing the upcoming events and current tasks:
+`The home widget has also been ported
+<https://github.com/maemo-leste-extras/cal-home-widget>`_, showing the upcoming
+events and current tasks:
 
 .. image:: /images/leste-calendar-widget.png
   :height: 343px
@@ -552,7 +554,7 @@ have working accelerometers.
 
 The package `hildon-desktop-rotation-support
 <https://github.com/maemo-leste/hildon-desktop-rotation-support>`_ implements
-this feature using `dbus-scripts`_ and the `xrandr` and `xinput` utilities.
+this feature using `dbus-scripts`_ and the ``xrandr`` and ``xinput`` utilities.
 
 On the Nokia N900 this is not yet enabled, due to the rotation crashing the
 display server still. This will likely be resolved in an upcoming update to the
@@ -589,7 +591,7 @@ and `Pinephone
 we already have UCM2 files in place and we will be utilizing these with our
 further efforts related to audio and phone calls.
 
-With the UCM files in place, `pavucontrol-qt` will show the proper controls and
+With the UCM files in place, ``pavucontrol-qt`` will show the proper controls and
 outputs - for multimedia (Hi Fi) and phone.
 
 .. image:: /images/pavucontrol-qt.png
@@ -606,27 +608,71 @@ Huge thanks for ``uvos`` for creating the UCM2 files for the Droid 4!
 Hardware & Drivers
 ==================
 
-
 Motorola Droid Bionic
 ---------------------
 
-TODO
+Maemo Leste now supports another device - the `Motorola Droid Bionic
+<https://leste.maemo.org/Motorola_Droid_Bionic>`_!
 
-* https://leste.maemo.org/Motorola_Droid_Bionic
-* https://github.com/IMbackK/bionic-clown-boot
+``uvos`` contributed this post and also created `bionic-clown-boot
+<https://github.com/IMbackK/bionic-clown-boot>`_ to allow booting non-Android
+kernels. Kernel patches are already being upstreamed.
 
+The Bionic was one of the `best selling smartphones in 2011
+<https://en.wikipedia.org/wiki/List_of_best-selling_mobile_phones#2011>`_,
+selling 13 million units that year. That is great news, because that means they
+should be relatively easy to source.
 
-Droid4 and uptime
------------------
+The Bionic is pretty similar to the Droid 4 in hardware but does not have a
+physical keyboard.
 
-TODO: 5.10 now
+Motorola Droid 4
+----------------
 
-* Note on random reset fixes (looks like it's fixed?!)
-* Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
-* droid4 pm wrt SCRN=0 ; https://github.com/maemo-leste/dbus-scripts
+On mainline
+~~~~~~~~~~~
 
-* 23:26 < uvos> tmlind: i just tryed the 100MHz sdcard hack with a UHS-3 sdcard
-  23:27 < uvos> tmlind: it works :) whats more i now have 41.4MB/s sd card write speed
+We have been following upstream kernels very closely with the Droid 4 (and now
+also Bionic), usually jumping to the newest kernel on the day of its release, at
+least in our ``beowulf-devel`` repository. This is great, because we find bugs
+early, but it also means we deal with bugs every few weeks. Linux 5.9 had been
+particularly painful with random resets, which we ultimately seem to have fixed
+(big thanks to ``tmlind`` and ``uvos``), but then 5.10 introduced similar
+problems, which as of yesterday also seem to be fixed. But it serves as a
+reminder that having mainline support for a device is not something you do once:
+it requires active maintenance.
+
+Additionally, the `Droid 4 RTC has seen some fixes
+<https://lkml.org/lkml/2020/6/29/1404>`_ and more work is pending to be
+mainlined. Some of that work can be seen here:
+https://github.com/tmlind/linux/commits/droid4-pending-v5.10
+
+Modem power management
+~~~~~~~~~~~~~~~~~~~~~~
+
+This week we will also merge a power management improvement for the Droid 4 with
+the modem on, to disable signal strength notifications when the screen is off.
+These notifications cause a lot of wake ups, so we don't want to receive them
+when we don't need them. We can fix this with `dbus-scripts`_::
+
+    # cat /etc/dbus-scripts.d/idle-modem
+    /root/test.sh * * com.nokia.mce.signal display_status_ind
+    # cat /root/test.sh
+    #!/bin/sh
+
+    if [ "$5" = "on" ]
+    then
+        printf 'U1234AT+SCRN=1\r' > /dev/gsmtty1
+    else
+        printf 'U1234AT+SCRN=0\r' > /dev/gsmtty1
+    fi
+
+SD card speed
+~~~~~~~~~~~~~
+
+``uvos`` tried to use a much higher clocking frequency (100Mhz) than standard
+with a UHS-3 sd card and managed to get a `41.4MB/s` sd card write speed. We'll
+have to investigate if this work is something we can use in our kernels.
 
 
 Nokia N900
@@ -669,6 +715,7 @@ usb serial on the left. You can see they are in sync:
 
 PowerVR: DDK 1.17, Xorg Glamor and clock fixes
 ----------------------------------------------
+
 
 gtk4 bug report with lima?
 
