@@ -9,25 +9,25 @@ hard, and it's been quite a year. Things are shaping up amazingly well, and
 we're looking forward to entering yet another year of our development efforts!&lt;/p&gt;
 &lt;p&gt;Here are a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;The Maemo Qt5 port is usable now, unlocking many applications like the
-&lt;a class="reference internal" href="#dorian"&gt;Dorian&lt;/a&gt; e-reader &lt;a class="reference external" href="https://github.com/maemo-leste/qalendar"&gt;Qalendar&lt;/a&gt; Calendar, &lt;a class="reference external" href="https://github.com/maemo-leste/clock-ui"&gt;clock-ui&lt;/a&gt; clock and alarm and
+&lt;li&gt;The Maemo Qt5 port is usable now, unlocking many applications, like the
+&lt;a class="reference internal" href="#dorian"&gt;Dorian&lt;/a&gt; e-book reader &lt;a class="reference external" href="https://github.com/maemo-leste/qalendar"&gt;Qalendar&lt;/a&gt; Calendar, &lt;a class="reference external" href="https://github.com/maemo-leste/clock-ui"&gt;clock-ui&lt;/a&gt; clock and alarm, and
 &lt;a class="reference external" href="https://github.com/maemo-leste/osso-calculator"&gt;osso-calculator&lt;/a&gt; applications;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#rotation-support"&gt;Rotation support&lt;/a&gt; is now working for several devices, based on accelerometer
 and application policies;&lt;/li&gt;
-&lt;li&gt;Major MCE changes, including a ambient light sensor based on the IIO
+&lt;li&gt;Major MCE changes, including ambient light sensor support based on the IIO
 subsystem, accelerometer IIO subsystem, led-control for other devices, user
 configuration customisation, loads of clean ups and more;&lt;/li&gt;
 &lt;li&gt;maemo-input-sounds package finished, adding vibration and sounds;&lt;/li&gt;
-&lt;li&gt;Stable powermanagement for the Droid 4 - lasting days without suspending;&lt;/li&gt;
-&lt;li&gt;Application launcher &amp;quot;Debian&amp;quot; submenu to launch any application in Debian;&lt;/li&gt;
-&lt;li&gt;Calendar support is working, including home applet and synchronisation using
+&lt;li&gt;Stable power management for the Droid 4 - lasting days without suspending;&lt;/li&gt;
+&lt;li&gt;Application launcher &amp;quot;Debian&amp;quot; submenu to launch any Debian application;&lt;/li&gt;
+&lt;li&gt;Calendar support is working, including home applet and synchronization using
 syncevolution;&lt;/li&gt;
 &lt;li&gt;Settings applet including timezone chooser is working;&lt;/li&gt;
 &lt;li&gt;Hildon address book is nearing completion;&lt;/li&gt;
 &lt;li&gt;Motorola Bionic is a new supported device;&lt;/li&gt;
 &lt;li&gt;The GPS stack is working in userspace, and is almost finished;&lt;/li&gt;
 &lt;li&gt;Better PowerVR support upcoming, with higher clock rates and the latest driver
-version, allowing the N900 to move to the latest kernel again and gain proper
+version, allowing the N900 to move to the latest kernel again, and gain proper
 power management.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="section" id="software-changes"&gt;
@@ -53,14 +53,14 @@ freedesktop.org&lt;/a&gt;, but it looks like no maintainer is home, so we have s
 &lt;div class="section" id="dbus-scripts"&gt;
 &lt;h3&gt;dbus-scripts&lt;/h3&gt;
 &lt;p&gt;dbus-scripts is a daemon that can execute a command when various events occur on
-D-Bus. Since most of Maemo Leste relies on D-Bus in some ways, this is a
+D-Bus. Since most of Maemo Leste relies on D-Bus in some way, this is a
 powerful tool. A non-exhaustive list of some things one can watch for: keyboard
 slide changing; screen turning on/off; connecting or disconnecting from a
-network; incoming sms or phone call; device rotated.&lt;/p&gt;
+network; incoming sms or phone call; device rotation.&lt;/p&gt;
 &lt;p&gt;This program was a user package in Maemo Fremantle, but we have promoted it to
 be a core package, since we use it for &lt;a class="reference internal" href="#rotation-support"&gt;Rotation support&lt;/a&gt; and to work around
-some power management quircks.&lt;/p&gt;
-&lt;p&gt;We also believe that customisability and extensibility is an important part of
+some power management quirks.&lt;/p&gt;
+&lt;p&gt;We also believe that customizability is an important part of
 our platform, and this should help making Maemo Leste more extensible.&lt;/p&gt;
 &lt;p&gt;See the &lt;a class="reference external" href="https://wiki.maemo.org/DbusScripts"&gt;maemo.org wiki page on dbus-scripts&lt;/a&gt; for more information, and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/405"&gt;bug #405&lt;/a&gt; for some background.&lt;/p&gt;
 &lt;p&gt;Here is an example dbus-scripts rule:&lt;/p&gt;
@@ -68,10 +68,10 @@ our platform, and this should help making Maemo Leste more extensible.&lt;/p&gt;
 &lt;p&gt;And the command that the example script invokes:&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop-rotation-support/blob/maemo/beowulf-devel/scripts/usr/bin/hildon-desktop-rotate-touchscreen.sh"&gt;https://github.com/maemo-leste/hildon-desktop-rotation-support/blob/maemo/beowulf-devel/scripts/usr/bin/hildon-desktop-rotate-touchscreen.sh&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="qt-5"&gt;
-&lt;h3&gt;Qt 5&lt;/h3&gt;
+&lt;div class="section" id="qt5"&gt;
+&lt;h3&gt;Qt5&lt;/h3&gt;
 &lt;p&gt;The Qt5 port is in a usable enough state that it is currently available in the
-main repositories; some of the users might even already have it on your device!&lt;/p&gt;
+main repositories; some of the users might even already have it on their devices!&lt;/p&gt;
 &lt;p&gt;The main features:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;(Mostly) compatible theme/style with Fremantle;&lt;/li&gt;
@@ -89,7 +89,7 @@ main repositories; some of the users might even already have it on your device!&
 &lt;li&gt;maemo-launcher caching&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The Python package &lt;tt class="docutils literal"&gt;PyQt5&lt;/tt&gt; should also work.&lt;/p&gt;
-&lt;p&gt;Porting packages from Qt4 to Qt5 is various straightforward, and looking at the
+&lt;p&gt;Porting packages from Qt4 to Qt5 is straightforward, and looking at the
 commit history of these repositories might help those that would like to attempt
 ports:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -114,15 +114,14 @@ Maemo Leste, we've ported it to Qt5 and have it working well:&lt;/p&gt;
 known bugs.&lt;/p&gt;
 &lt;div class="section" id="synchronisation"&gt;
 &lt;h4&gt;Synchronisation&lt;/h4&gt;
-&lt;p&gt;The calendar application can be synchronised to various calendar backends using
+&lt;p&gt;The calendar application can be synchronized to various calendar backends using
 &lt;cite&gt;syncevolution&lt;/cite&gt;, see also &lt;a class="reference external" href="https://wiki.maemo.org/Sync"&gt;https://wiki.maemo.org/Sync&lt;/a&gt;.
 Building the latest syncevolution for Maemo Leste &lt;a class="reference external" href="https://github.com/maemo-leste/calendar-backend/commit/c6e9ef0db493118d44a2958f71180ac70609b071"&gt;revealed bugs
-in calendar-backend which code only ever worked on 32 bit&lt;/a&gt;.
+in calendar-backend which code only ever worked on 32-bit architecture&lt;/a&gt;.
 Further details can be found &lt;a class="reference external" href="https://lists.syncevolution.org/hyperkitty/list/syncevolution&amp;#64;syncevolution.org/thread/ELDL7L37GJHD67OTJWVENURITZ4FV6DL/"&gt;on this syncevolution email thread&lt;/a&gt;.
-With that solved, synchronisation now works, and you can read about it
+With that solved, synchronization now works, and you can read about it
 on the &lt;a class="reference external" href="https://leste.maemo.org/Calendar"&gt;wiki page on our Calendar&lt;/a&gt;.
-There is also a GUI available to schedule sychronisation on set times, written
-custom for Maemo called &lt;a class="reference external" href="https://github.com/maemo-leste-extras/syncevolution-frontend"&gt;syncevolution-frontend&lt;/a&gt;.
+There is also a custom GUI written for Maemo to schedule sychronization at set times called &lt;a class="reference external" href="https://github.com/maemo-leste-extras/syncevolution-frontend"&gt;syncevolution-frontend&lt;/a&gt;.
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/cal-home-widget"&gt;The home widget has also been ported&lt;/a&gt;, showing the upcoming
 events and current tasks:&lt;/p&gt;
 &lt;img alt="" src="/images/leste-calendar-widget.png" style="width: 572px; height: 343px;" /&gt;
@@ -139,7 +138,7 @@ features a pannable map of the world, along with a button in its EditToolbar to
 allow you to input the name of a city directly. This is used for timezone
 selection in the settings menu, but can also be used separately by any other
 application that needs it.&lt;/p&gt;
-&lt;p&gt;The datetime applet itself allows user to set the time, date, and timezone, and
+&lt;p&gt;The datetime applet itself allows the user to set the time, date, and timezone, and
 changing the clock to be a 24 hour clock. This also lays the groundwork for
 alarms and similar things.&lt;/p&gt;
 &lt;img alt="" src="/images/applet-amsterdam.png" style="width: 572px; height: 343px;" /&gt;
@@ -165,7 +164,7 @@ We'll pick those up in the coming days and weeks.&lt;/p&gt;
 &lt;div class="section" id="alarmd"&gt;
 &lt;h3&gt;alarmd&lt;/h3&gt;
 &lt;p&gt;Alarmd, the alarm daemon received a &lt;a class="reference external" href="https://github.com/maemo-leste/alarmd/pull/1"&gt;runtime fix&lt;/a&gt;
-and a &lt;a class="reference external" href="https://github.com/maemo-leste/alarmd/commit/e7b77f2e912bb71cd879ba17a4bf0d24c13ba06f"&gt;initscript dependency fix&lt;/a&gt;.&lt;/p&gt;
+and an &lt;a class="reference external" href="https://github.com/maemo-leste/alarmd/commit/e7b77f2e912bb71cd879ba17a4bf0d24c13ba06f"&gt;initscript dependency fix&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/468"&gt;python-alarm&lt;/a&gt;
 package is now also packaged, so this kind of code should work:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -174,12 +173,12 @@ package is now also packaged, so this kind of code should work:&lt;/p&gt;
 &amp;gt;&amp;gt;&amp;gt; alarm.get_event(15).appid
 'worldclock_alarmd_id'
 &lt;/pre&gt;
-&lt;p&gt;The alarmd and clockd initscripts were ported to OpenRC, so currently there
+&lt;p&gt;The alarmd and clockd initscripts were ported to OpenRC, so there
 are no more insserv/OpenRC runlevel warnings when running apt upgrade/install.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="integration-of-debian-packages"&gt;
 &lt;h3&gt;Integration of Debian packages&lt;/h3&gt;
-&lt;p&gt;The Hildon menu, where we can see all our installed applications that have their
+&lt;p&gt;The Hildon menu, where we can see all installed applications that have
 .desktop entries was expanded with a &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/604d1167860d5750fffe097de121bd7a3e2885f7"&gt;submenu&lt;/a&gt;
 that now also shows all &amp;quot;non-hildonized&amp;quot; packages that come from upstream. These
 can be found in the &amp;quot;Debian&amp;quot; submenu by touching the Debian icon.&lt;/p&gt;
@@ -189,7 +188,7 @@ can be found in the &amp;quot;Debian&amp;quot; submenu by touching the Debian ic
 &lt;div class="section" id="osso-calculator"&gt;
 &lt;h3&gt;osso-calculator&lt;/h3&gt;
 &lt;p&gt;The Qt calculator &lt;a class="reference external" href="https://github.com/maemo-leste/osso-calculator"&gt;osso-calculator&lt;/a&gt; has been packaged and ported
-to Qt5, along with it's backend, &lt;a class="reference external" href="https://github.com/maemo-leste/osso-calculator-engine"&gt;osso-calculator-engine&lt;/a&gt;.&lt;/p&gt;
+to Qt5, along with its backend, &lt;a class="reference external" href="https://github.com/maemo-leste/osso-calculator-engine"&gt;osso-calculator-engine&lt;/a&gt;.&lt;/p&gt;
 &lt;img alt="" src="/images/osso-calculator.png" style="width: 576px; height: 324px;" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="dorian"&gt;
@@ -233,7 +232,7 @@ along with enabling features like autoanswer and loudspeaker.&lt;/p&gt;
 &lt;p&gt;We &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/9"&gt;implemented&lt;/a&gt; proper
 support (and fallbacks) in hildon-desktop that allow us to start .desktop
 entries that have &lt;tt class="docutils literal"&gt;Terminal=true&lt;/tt&gt; set and are supposed to open a terminal and
-run the specific command. Now programs like &lt;tt class="docutils literal"&gt;htop&lt;/tt&gt; can be can by touching the
+run the specific command. Now programs like &lt;tt class="docutils literal"&gt;htop&lt;/tt&gt; can be run by touching the
 icon in the menu, or you could even write your own scripts and run them like
 this! For example, &lt;tt class="docutils literal"&gt;Evil_Bob&lt;/tt&gt; has his sfeed_curses running from desktop:&lt;/p&gt;
 &lt;video controls height="324px" width="576px"&gt;
@@ -244,11 +243,11 @@ this! For example, &lt;tt class="docutils literal"&gt;Evil_Bob&lt;/tt&gt; has hi
 &lt;p&gt;We have decreased the accuracy of 'snap to desktop' to make it easier to align
 icons on the home screen; previously it would be quite tedious to get them
 aligned. The time is takes to show a loading preview screen for an application
-is also decreased. See &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/6"&gt;hildon-desktop PR #6&lt;/a&gt;&lt;/p&gt;
+was also decreased. See &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/6"&gt;hildon-desktop PR #6&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="orientationlock-applet"&gt;
-&lt;h3&gt;Orientationlock Applet&lt;/h3&gt;
+&lt;div class="section" id="orientation-lock-applet"&gt;
+&lt;h3&gt;Orientation-lock applet&lt;/h3&gt;
 &lt;p&gt;The orientation lock applet installed into the wrong path, causing it to not
 show up, this has been fixed, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/419"&gt;issue #419&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -341,7 +340,7 @@ PR #21&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Refactoring and fixes:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;tt class="docutils literal"&gt;mce.ini.d&lt;/tt&gt; support. This splits up the MCE configuration in a core
+&lt;li&gt;&lt;tt class="docutils literal"&gt;mce.ini.d&lt;/tt&gt; support. This splits up the MCE configuration into a core
 configuration, device specific configuration, and user (customisable)
 configuration. See &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/18"&gt;MCE PR #18&lt;/a&gt;,
 &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/42"&gt;MCE PR #42&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/pull/5"&gt;leste-config PR
@@ -358,16 +357,16 @@ configuration. See &lt;a class="reference external" href="https://github.com/mae
 &lt;p&gt;Open Media Player is a clone of the Maemo Fremantle media player, and with the
 Qt 5 port we've been making progress on bringing it to Maemo Leste &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/25"&gt;in issue #25&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Currently the application builds with Qt5 and shows the main window and
-settings, but any playlists do not yet render.&lt;/p&gt;
+settings, but playlists do not yet render.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;If anyone feels like helping out, it would be much appreciated!&lt;/strong&gt;&lt;/p&gt;
 &lt;img alt="" src="/images/omp-initial-1.png" style="width: 716px; height: 385px;" /&gt;
 &lt;img alt="" src="/images/omp-initial-2.png" style="width: 716px; height: 385px;" /&gt;
 &lt;/div&gt;
-&lt;div class="section" id="addressbook-and-contacts-and-account-libraries"&gt;
-&lt;h3&gt;Addressbook and contacts and account libraries&lt;/h3&gt;
+&lt;div class="section" id="address-book-contacts-and-account-libraries"&gt;
+&lt;h3&gt;Address book, contacts and account libraries&lt;/h3&gt;
 &lt;p&gt;Particularly exciting is the fact that &lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; has been working on
 bringing the Hildon address book framework (libraries and user interfaces) to
-Maemo Lest. This will allow telepathy and evolution to see and modify the
+Maemo Leste. This will allow telepathy and evolution to see and modify the
 contact lists.&lt;/p&gt;
 &lt;p&gt;The work is still not finished, but it's quite close.
 The current work is packaged, but not yet in the repositories.&lt;/p&gt;
@@ -525,8 +524,8 @@ bringing much better power management.&lt;/p&gt;
 &lt;div class="section" id="corruption"&gt;
 &lt;h4&gt;Corruption&lt;/h4&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;uvos&lt;/tt&gt; also found that the PowerVR SGX driver on the Motorola Droid 4 ran at a
-much lower clock frequency that is should, which sometimes results in the result
-being rendered too late to the display, resulting in the artifacts that we have
+much lower clock frequency that is should, which sometimes causes the result
+to be rendered too late to the display, resulting in the artifacts that we have
 gotten used to. With the GPU at the right frequency, the rendering artifacts are
 gone, and the 3D is smoother than ever before.&lt;/p&gt;
 &lt;/div&gt;
@@ -571,8 +570,6 @@ operating system that we envision. Built by the community, for the community.&lt
 &lt;p&gt;Our community keeps growing, our ecosystem expanding, but there is a lot to wish
 for too: more regular updates, a better structure for our wiki and an easier way
 for users to contribute.&lt;/p&gt;
-&lt;p&gt;We are also working on a web interface to our packages, which should hopefully
-make it easier to explore our software ecosystem.&lt;/p&gt;
 &lt;p&gt;Readers not familiar with this &lt;a class="reference external" href="https://talk.maemo.org/showthread.php?t=101089&amp;amp;page=5"&gt;Maemo Leste Playground thread&lt;/a&gt; might like to take a
 peek at some of the work our community has been doing to make various programs
 and games run on Maemo Leste.&lt;/p&gt;
@@ -594,14 +591,14 @@ and we might switch to using that (community developed) theme by default.&lt;/p&
 &lt;/div&gt;
 &lt;div class="section" id="phone-aspect"&gt;
 &lt;h3&gt;Phone aspect&lt;/h3&gt;
-&lt;p&gt;A part of the OS might look bare bone now, but there is a lot to look forward to
-when we land of some of the final missing pieces: contacts, text-communications
+&lt;p&gt;The OS might look barebones now, but there is a lot to look forward to
+when we land of some of the final missing pieces: contacts, text communications
 and phone calls.&lt;/p&gt;
 &lt;p&gt;Lacking phone calls might seem ridiculous to some, &lt;strong&gt;but there many aspects
 that matter about a mobile operating system&lt;/strong&gt;, and working phone calls without
 any sense of power management or audio policy modules to automatically switch
 from/to headset, speakers also make a device hardly usable. We are now at the
-point where the Motorola Droid 4 lasts for several days on a battery, while it
+point where the Motorola Droid 4 lasts for several days on a battery while it
 is connected to the mobile network, performs quite well, almost all the hardware
 components work the way they should, and we have a strong (and expanding, to
 other devices) base to build our phone OS upon.&lt;/p&gt;
