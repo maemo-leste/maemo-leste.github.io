@@ -56,9 +56,36 @@ We also surfaced problems in the Xorg server regarding their XRecord extension,
 <https://lists.x.org/archives/xorg-devel/2020-July/058582.html>`_, and later on `filed a bug report with patch on
 freedesktop.org <https://gitlab.freedesktop.org/xorg/xserver/-/issues/1046>`_, but it looks like no maintainer is home, so we have shipped the patch with our Xorg server.
 
-* https://github.com/maemo-leste/maemo-input-sounds/
-* https://lists.x.org/archives/xorg-devel/2020-July/058582.html
-* https://github.com/maemo-leste/bugtracker/issues/389 - maemo input sounds
+More information in `bug #389 <https://github.com/maemo-leste/bugtracker/issues/389>`_
+
+
+dbus-scripts
+------------
+
+dbus-scripts is a daemon that can execute a command when various events occur on
+D-Bus. Since most of Maemo Leste relies on D-Bus in some ways, this is a
+powerful tool. A non-exhaustive list of some things one can watch for: keyboard
+slide changing; screen turning on/off; connecting or disconnecting from a
+network; incoming sms or phone call; device rotated.
+
+This program was a user package in Maemo Fremantle, but we have promoted it to
+be a core package, since we use it for `Rotation support`_ and to work around
+some power management quircks.
+
+We also believe that customisability and extensibility is an important part of
+our platform, and this should help making Maemo Leste more extensible.
+
+See the `maemo.org wiki page on dbus-scripts
+<https://wiki.maemo.org/DbusScripts>`_ for more information, and `bug #405
+<https://github.com/maemo-leste/bugtracker/issues/405>`_ for some background.
+
+Here is an example dbus-scripts rule:
+
+https://github.com/maemo-leste/hildon-desktop-rotation-support/blob/maemo/beowulf-devel/scripts/etc/dbus-scripts.d/rotate-ts
+
+And the command that the example script invokes:
+
+https://github.com/maemo-leste/hildon-desktop-rotation-support/blob/maemo/beowulf-devel/scripts/usr/bin/hildon-desktop-rotate-touchscreen.sh
 
 
 Qt 5
@@ -69,7 +96,7 @@ main repositories; some of the users might even already have it on your device!
 
 The main features:
 
-* (Mostly) compatible theme/style;
+* (Mostly) compatible theme/style with Fremantle;
 * Most Maemo widgets are available;
 * Maemo-style title-bar spinners to indicate progress;
 * Maemo-style menus work;
@@ -123,9 +150,8 @@ Maemo Leste, we've ported it to Qt5 and have it working well:
   :height: 324px
   :width: 576px
 
-.. .. image:: /images/qalendar-6.png
-..   :height: 324px
-..   :width: 576px
+Some elements might not be finger-scrollable yet, but otherwise there are no
+known bugs.
 
 
 Synchronisation
@@ -291,7 +317,6 @@ User ``pere`` has also been very helpful, submitting many pull requests:
 * https://github.com/maemo-leste-extras/dorian/pull/16
 
 
-
 profilesx
 ---------
 
@@ -322,8 +347,8 @@ Support for terminal applications
 
 We `implemented <https://github.com/maemo-leste/hildon-desktop/pull/9>`_ proper
 support (and fallbacks) in hildon-desktop that allow us to start .desktop
-entries that have `Terminal=true` set and are supposed to open a terminal and
-run the specific command. Now programs like `htop` can be can by touching the
+entries that have ``Terminal=true`` set and are supposed to open a terminal and
+run the specific command. Now programs like ``htop`` can be can by touching the
 icon in the menu, or you could even write your own scripts and run them like
 this! For example, Evil_Bob has his sfeed_curses running from desktop:
 
@@ -337,11 +362,11 @@ this! For example, Evil_Bob has his sfeed_curses running from desktop:
 Snap to desktop
 ~~~~~~~~~~~~~~~
 
-* hildon-desktop improvements: changes to how long an app is 'loading', and how
-  icons snap on the desktop, as well as fixes for launching of many apps
-
-* https://github.com/maemo-leste/hildon-desktop/pull/6 -- h-d snap grid size
-  changes
+We have decreased the accuracy of 'snap to desktop' to make it easier to align
+icons on the home screen; previously it would be quite tedious to get them
+aligned. The time is takes to show a loading preview screen for an application
+is also decreased. See `hildon-desktop PR #6
+<https://github.com/maemo-leste/hildon-desktop/pull/6>`_
 
 
 Orientationlock Applet
@@ -444,34 +469,37 @@ Documentation on the Python APIs can be found here:
 Major MCE improvements
 ----------------------
 
-TODO
+There have been a lot of MCE changes, ``uvos`` has done tremendous work and we will
+try our best to list all the changes here.
 
-* https://github.com/maemo-leste/mce/pull/14 -- iio-als
-  + https://github.com/maemo-leste/mce/pull/15
+New modules:
 
-* https://github.com/maemo-leste/mce/pull/16 -- display inactivity refactor
+* ``iio-als``: This module allows for dynamically adjusting the screen
+  brightness and keyboard led brightness based on the ambient light (and the
+  brightness profile); see `MCE PR #14.
+  <https://github.com/maemo-leste/mce/pull/14>`_ and `MCE PR #15
+  <https://github.com/maemo-leste/mce/pull/15>`_.
 
-* https://github.com/maemo-leste/mce/pull/18 -- mce.ini.d split
-  + https://github.com/maemo-leste/leste-config/pull/5
-  + https://github.com/maemo-leste/leste-config/pull/6
+* ``led-sw`` + ``led-dbus``: This module supports simple LED patterns for devices that do not (yet) have support for programming LEDs through a dedicated chip. This way we can show notification patterns even if a dedicated chip is not available. Currently in use on the Droid 4 and PinePhone. See `MCE PR #22 <https://github.com/maemo-leste/mce/pull/22>`_.
 
-* https://github.com/maemo-leste/mce/pull/19 -- evdev vibrator fixes
+* ``x11-ctrl``: Some of the X11 specific code moved to its own module. See `MCE
+  PR #21 <https://github.com/maemo-leste/mce/pull/21>`_.
 
-* led-sw, led-dbus:
-  dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_led_pattern_activate string:"PatternCommunicationIM"
+Refactoring and fixes:
 
+* ``mce.ini.d`` support. This splits up the MCE configuration in a core
+  configuration, device specific configuration, and user (customisable)
+  configuration. See `MCE PR #18 <https://github.com/maemo-leste/mce/pull/18>`_,
+  `MCE PR #42 <https://github.com/maemo-leste/mce/pull/42>`_, `leste-config PR
+  #5 <https://github.com/maemo-leste/leste-config/pull/5>`_ and `leste-config PR
+  #6 <https://github.com/maemo-leste/leste-config/pull/6>`_.
+* Display inactivity refactoring, see `MCE PR #16 <https://github.com/maemo-leste/mce/pull/16>`_.
+* Some evdev vibration fixes, see `MCE PR #19 <https://github.com/maemo-leste/mce/pull/19>`_.
 
-* https://github.com/maemo-leste/bugtracker/issues/429 -- iio-sensor-proxy
-  packaged
+* Removal of ``mce-hal``, see `PR #20 <https://github.com/maemo-leste/mce/pull/20>`_.
 
-* document new mce features, setup
-  https://github.com/maemo-leste/mce/pull/20
-  https://github.com/maemo-leste/mce/pull/36
-  https://github.com/maemo-leste/mce/pull/37
-  https://github.com/maemo-leste/mce/pull/38
-  https://github.com/maemo-leste/mce/pull/42
-
-* led-sw new patterns: screenshots from https://github.com/maemo-leste/bugtracker/issues/491
+Additionally, `iio-sensor-proxy is now packaged
+<https://github.com/maemo-leste/bugtracker/issues/429>`_ since MCE relies on it.
 
 
 openmediaplayer
@@ -524,7 +552,7 @@ have working accelerometers.
 
 The package `hildon-desktop-rotation-support
 <https://github.com/maemo-leste/hildon-desktop-rotation-support>`_ implements
-this feature using `dbus-scripts` and the `xrandr` and `xinput` utilities.
+this feature using `dbus-scripts`_ and the `xrandr` and `xinput` utilities.
 
 On the Nokia N900 this is not yet enabled, due to the rotation crashing the
 display server still. This will likely be resolved in an upcoming update to the
@@ -540,7 +568,7 @@ TODO
 
 
 * https://wizzup.org/droid4-powerapplet.png + https://wizzup.org/droid4-upower-graph.png
-  https://github.com/maemo-leste/bugtracker/issues/421 + -avg
+  + -avg
 
 
 Pulseaudio
@@ -596,6 +624,9 @@ TODO: 5.10 now
 * Note on random reset fixes (looks like it's fixed?!)
 * Droid RTC fixed: ``[PATCH] rtc: cpcap: fix range``
 * droid4 pm wrt SCRN=0 ; https://github.com/maemo-leste/dbus-scripts
+
+* 23:26 < uvos> tmlind: i just tryed the 100MHz sdcard hack with a UHS-3 sdcard
+  23:27 < uvos> tmlind: it works :) whats more i now have 41.4MB/s sd card write speed
 
 
 Nokia N900
@@ -683,7 +714,7 @@ working image. More later ;)
 Closing words
 =============
 
-TODO: On focus, and having more and more apps
+TODO: On focus, phone/sms/contacts/chat and having more and more apps
 
 
 .. image:: /images/control-panel-filling-up.png
@@ -699,8 +730,6 @@ SORTME
 ======
 
 
-* https://github.com/maemo-leste/bugtracker/issues/405
-
 * https://github.com/maemo-leste/bugtracker/issues/465
 
 * https://wizzup.org/update-notification-1.png
@@ -710,9 +739,6 @@ SORTME
   https://wizzup.org/update-notification-5.png
   https://wizzup.org/update-notification-6.png
   https://wizzup.org/update-notification-7.png
-
-* 23:26 < uvos> tmlind: i just tryed the 100MHz sdcard hack with a UHS-3 sdcard
-  23:27 < uvos> tmlind: it works :) whats more i now have 41.4MB/s sd card write speed
 
 * https://github.com/maemo-leste/bugtracker/issues/41 - screen calib applet
 
@@ -727,16 +753,11 @@ SORTME
 
 * https://github.com/maemo-leste/osso-systemui-tklock/pull/2
 
-* ncurses rss reader 15:08 < Evil_Bob> https://codemadness.org/paste/droid4-sfeed_curses.avi higher fps, lower quality feel free to use it
-
-* 17:44 <parazyd> https://github.com/maemo-leste/bugtracker/issues/54
-
 * 17:44 <parazyd> https://github.com/maemo-leste/bugtracker/issues/447 -> "no more apt warnings about runlevels"
 
 * Link to this stuff: https://talk.maemo.org/showthread.php?t=101089&page=5
 
 * https://github.com/maemo-leste-extras/hildon-theme-maemo-org
-* https://github.com/maemo-leste/leste-config/pull/13
 
 * https://github.com/maemo-leste/bugtracker/issues/186#issuecomment-748610883
 
@@ -744,7 +765,6 @@ SORTME
 * https://github.com/maemo-leste-extras/qt-mobile-hotspot
   https://github.com/maemo-leste/bugtracker/issues/430
 * https://github.com/maemo-leste/bugtracker/issues/454
-
 
 
 
