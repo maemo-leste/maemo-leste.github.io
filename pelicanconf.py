@@ -10,7 +10,10 @@ PATH = 'content'
 
 THEME = 'nest'
 NEST_HEADER_LOGO = '/images/logo_small_w.png'
-MENUITEMS = [('News', '/categories.html')]
+MENUITEMS = [
+        ('News', '/categories.html'),
+        ('Packages', 'https://maedevu.maemo.org/pkgweb/'),
+        ]
 STATIC_PATHS = ['images',]
 EXTRA_PATH_METADATA = {
     'images/favicon.ico': {'path': 'favicon.ico'}
@@ -31,6 +34,7 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Maemo Leste Github', 'https://github.com/maemo-leste'),
          ('Maemo Leste Bugtracker', 'https://github.com/maemo-leste/bugtracker/issues'),
          ('Maemo Leste Wiki', 'https://leste.maemo.org'),
+         ('Maemo Leste Packages Interface', 'https://maedevu.maemo.org/pkgweb/'),
         )
          #('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
