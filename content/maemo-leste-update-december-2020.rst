@@ -41,6 +41,14 @@ Here are a few highlights:
 Software changes
 ================
 
+Packages Interface
+------------------
+
+We now have a web interface to our packages: https://maedevu.maemo.org/pkgweb/
+
+It is re-generated every time a package is built in our Jenkins CI instance, and
+the source code can be found here: https://github.com/maemo-leste/mpi
+
 maemo-input-sounds
 ------------------
 
