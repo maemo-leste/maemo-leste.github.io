@@ -21,7 +21,7 @@ Here are a few highlights:
   `osso-calculator`_ applications;
 * `Rotation support`_ is now working for several devices, based on accelerometer
   and application policies;
-* Major MCE changes, including ambient light sensor supporbased on the IIO
+* Major MCE changes, including ambient light sensor support based on the IIO
   subsystem, accelerometer IIO subsystem, led-control for other devices, user
   configuration customisation, loads of clean ups and more;
 * maemo-input-sounds package finished, adding vibration and sounds;
