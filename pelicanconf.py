@@ -13,6 +13,8 @@ NEST_HEADER_LOGO = '/images/logo_small_w.png'
 MENUITEMS = [
         ('News', '/categories.html'),
         ('Packages', 'https://maedevu.maemo.org/pkgweb/'),
+        ('Images', 'https://maedevu.maemo.org/images/'),
+        ('Wiki', 'https://leste.maemo.org'),
         ]
 STATIC_PATHS = ['images',]
 EXTRA_PATH_METADATA = {
