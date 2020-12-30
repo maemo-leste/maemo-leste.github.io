@@ -8,7 +8,7 @@ Maemo Leste - Thirteenth Update (April, May, June) 2020
 :date: 2020-06-24 18:00
 
 It's been several weeks since our `last update
-<{filename}/maemo-leste-update-february-and-march-2020.rst>`_, so let's start
+<{filename}/maemo-leste-update-february-march-2020.rst>`_, so let's start
 with a few highlights:
 
 * We have improved power management on the Droid 4, and currently, under ideal
