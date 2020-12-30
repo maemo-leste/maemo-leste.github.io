@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-THEME = 'nest'
+THEME = 'themes/nest'
 NEST_HEADER_LOGO = '/images/logo_small_w.png'
 MENUITEMS = [
         ('News', '/categories.html'),
