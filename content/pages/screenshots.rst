@@ -1,5 +1,5 @@
-Maemo Leste Screenshots
-#######################
+Screenshots
+###########
 
 
 For up to date software status, please look see https://leste.maemo.org/Status
