@@ -37,6 +37,8 @@ open software.
 Installation guides are provided per device. For open tasks/issues, please see
 the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
 
+It might also be useful to check out https://leste.maemo.org/Getting_Started
+
 
 For more information, check out our `initial blog post
 <{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
