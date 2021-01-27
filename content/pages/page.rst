@@ -8,41 +8,53 @@ Maemo Leste
     :width: 125
     :height: 177
 
+Welcome to the Maemo Leste website! Maemo Leste continues the legacy of
+`Maemo <http://maemo.org>`_. We aim to provide a free and open source
+Maemo experience on mobile phones and tablets like the Nokia N900,
+Motorola Droid 4, Motorola Bionic, Pinephone, Pinetab, Allwinner
+tablets and more!
 
-Welcome to the Maemo Leste website; Maemo Leste continues the legacy
-of `Maemo <http://maemo.org/>`_. We aim to provide a free Maemo experience on
-mobile phones and tablets like the Nokia N900, Motorola Droid 4, Allwinner
-Tablets and more.
+Feel free to join us on `chat.freenode.net
+<ircs://chat.freenode.net/#maemo-leste>`_
+**#maemo-leste** and also join our `mailing list
+<https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_
+if you are interested.
 
-Feel free to join us on irc.freenode.net **#maemo-leste** and also join our
-`mailing list
-<https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ if you're
-interested.
+We are also active on `Twitter <https://twitter.com/maemoleste>`_.
 
-Maemo Leste is based on Devuan Beowulf(Debian Buster) and all the "supported"
-devices ship with recent Linux (mainline-based) kernels.
+Maemo Leste is based on Devuan Beowulf (Debian Buster) and all the
+supported devices ship with recent mainline Linux kernels.
 
-The project is almost usable as a daily driver for your device, Maemo Leste is
-currently in development phase and we are actively searching for developers. For
-some devices, we have development images available - such as the `Nokia N900
-<https://leste.maemo.org/Nokia_N900>`_; for an impression see
-`Screenshots <{filename}/pages/screenshots.rst>`_.
+The project is almost usable as a daily driver for your device. We are
+currently in the development phase and we are actively searching for
+developers. For some devices, we have development images available
+- such as the `Nokia N900 <https://leste.maemo.org/Nokia_N900>`_,
+`Motorola Droid 4 <https://leste.maemo.org/Motorola_Droid_4>`_, and
+the `PinePhone <https://leste.maemo.org/PinePhone>`_. There is also
+a 64bit `virtual machine <https://leste.maemo.org/Virtual_Machine>`_
+you can use to try out Maemo Leste. For an impression, see some of our
+`screenshots <{filename}/pages/screenshots.rst>`_.
 
-So far we have set up devuan/debian repositories for our packages, with builds
-for `armhf`, `amd64`, `aarch64`. We have FOSS replacements for all included
-previously closed maemo packages (and we have no closed packages in use),
-further building on the Maemo community efforts to replace all closed bits by
-open software.
+So far we have set up repositories for our packages, which support
+`amd64`, `armhf`, and `arm64` architectures. We have FOSS replacements
+for all included and previously closed Maemo packages (and we have
+no closed packages in use), further building on the Maemo community
+efforts to replace all closed bits with open source software.
 
-Installation guides are provided per device. For open tasks/issues, please see
-the bugtracker: https://github.com/maemo-leste/bugtracker/issues.
+Installation guides are provided per device. For open
+tasks and issues, please see our Github bugtracker:
+https://github.com/maemo-leste/bugtracker/issues
 
-It might also be useful to check out https://leste.maemo.org/Getting_Started
+For a general usage introduction, it might be useful to check out
+https://leste.maemo.org/Getting_Started
 
+You can find wiki pages of our supported devices on
+https://leste.maemo.org/Category:Device
 
-For more information, check out our `initial blog post
-<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_ as well as the
-following monthly updates:
+After our `initial blog post
+<{filename}/maemo-leste-standing-on-shoulders-of-giants.rst>`_,
+we have posted (almost) monthly updates of our efforts and
+progress. Reverse-chronological, they are:
 
 * `July - December 2020 <{filename}/maemo-leste-update-december-2020.rst>`_
 * `April + May + June 2020 <{filename}/maemo-leste-update-april-may-june-2020.rst>`_
@@ -61,21 +73,13 @@ following monthly updates:
 * `April 2018 <{filename}/maemo-leste-april-2018-update.rst>`_
 * `March 2018 <{filename}/maemo-leste-march-2018-update.rst>`_
 
-There is also an `OpenFest 2018 presentation about Maemo Leste
-<https://www.youtube.com/watch?v=WT1hwtEPt7o>`_ (The `slides are
-also available <https://maedevu.maemo.org/media/openfest-2018-maemo-leste.pdf>`_).
+On various open source software conferences, we also did talks about
+Maemo Leste, and they're listed on https://leste.maemo.org/Talks
 
-Software status is (partially) documented here: https://leste.maemo.org/Status
+Software status is documented here: https://leste.maemo.org/Status .
+A proper overview of the current (Maemo) software state will be
+provided soon.
 
-A proper overview of the current (Maemo) software state will be provided soon.
+If you like our work and want to see it continue, join us!
 
-Here is an incomplete list of support (to varying degrees) devices:
-
-* `N900 <https://leste.maemo.org/Nokia_N900>`_
-* `Droid 4 <https://leste.maemo.org/Motorola_Droid_4>`_
-* `Generic AMD64 <https://leste.maemo.org/Virtual_Machine>`_
-* `Allwinner A20 LIME2 <https://leste.maemo.org/A20-OLinuXIno-LIME2>`_
-* `Allwinner A33 TurboX Twister Tablet <https://leste.maemo.org/A33-TurboX-Twister>`_
-* `Raspberry 2 or 3 <https://leste.maemo.org/Raspberry_Pi_2>`_ (32 bit)
-
-Complete list: https://leste.maemo.org/Category:Device
+❤️

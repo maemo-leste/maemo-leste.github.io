@@ -11,11 +11,11 @@ PATH = 'content'
 THEME = 'themes/nest'
 NEST_HEADER_LOGO = '/images/logo_small_w.png'
 MENUITEMS = [
-        ('News', '/categories.html'),
-        ('Packages', 'https://maedevu.maemo.org/pkgweb/'),
-        ('Images', 'https://maedevu.maemo.org/images/'),
-        ('Wiki', 'https://leste.maemo.org'),
-        ]
+    ('News', '/categories.html'),
+    ('Packages', 'https://maedevu.maemo.org/pkgweb/'),
+    ('Wiki', 'https://leste.maemo.org'),
+    ('Download', 'https://maedevu.maemo.org/images/'),
+]
 STATIC_PATHS = ['images',]
 EXTRA_PATH_METADATA = {
     'images/favicon.ico': {'path': 'favicon.ico'}
@@ -26,27 +26,25 @@ TIMEZONE = 'Europe/Amsterdam'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+FEED_ALL_ATOM = 'feeds/atom.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Maemo Leste Github', 'https://github.com/maemo-leste'),
-         ('Maemo Leste Bugtracker', 'https://github.com/maemo-leste/bugtracker/issues'),
-         ('Maemo Leste Wiki', 'https://leste.maemo.org'),
-         ('Maemo Leste Packages Interface', 'https://maedevu.maemo.org/pkgweb/'),
-        )
-         #('Pelican', 'http://getpelican.com/'),
-         #('Python.org', 'http://python.org/'),
-         #('Jinja2', 'http://jinja.pocoo.org/'),
-         #('You can modify those links in your config file', '#'),)
+LINKS = (
+    ('Maemo Leste Bugtracker', 'https://github.com/maemo-leste/bugtracker/issues'),
+    ('Maemo Leste Wiki', 'https://leste.maemo.org'),
+    ('Maemo Leste Packages', 'https://maedevu.maemo.org/pkgweb/'),
+)
 
 # Social widget
-SOCIAL = ()
-#('You can add links in your config file', '#'),
-# ('Another social link', '#'),)
+SOCIAL = (
+    ('Twitter', 'https://twitter.com/maemoleste'),
+    ('Github', 'https://github.com/maemo-leste'),
+    ('Atom Feed', 'https://maemo-leste.github.io/feeds/atom.xml'),
+)
 
 DEFAULT_PAGINATION = 10
 
