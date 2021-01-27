@@ -218,7 +218,7 @@ h4:after {
 .header-container {
     background: #f5f5f5;
     padding: 0;
-    min-height: 360px;
+    min-height: 200px;
 }
 .header-wrapper{
     padding-left: 40px;
