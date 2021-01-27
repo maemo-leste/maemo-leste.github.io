@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
 
 AUTHOR = 'Maemo Leste Developers'
 SITENAME = 'Maemo Leste'
@@ -44,7 +43,7 @@ LINKS = (
 SOCIAL = (
     ('Twitter', 'https://twitter.com/maemoleste'),
     ('Github', 'https://github.com/maemo-leste'),
-    ('Atom Feed', 'https://maemo-leste.github.io/feeds/all.atom.xml'),
+    ('Atom Feed', '/feeds/all.atom.xml'),
 )
 
 DEFAULT_PAGINATION = 10
