@@ -15,6 +15,7 @@ MENUITEMS = [
     ('Packages', 'https://maedevu.maemo.org/pkgweb/'),
     ('Wiki', 'https://leste.maemo.org'),
     ('Download', 'https://maedevu.maemo.org/images/'),
+    ('Screenshots', '/pages/screenshots.html'),
 ]
 STATIC_PATHS = ['images',]
 EXTRA_PATH_METADATA = {
