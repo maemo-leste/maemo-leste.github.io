@@ -33,9 +33,9 @@ Further on, we will also work on communication integration via the Telepathy
 framework. More concretely, in the scope of DAPSI, we will work on various interfaces:
 XMPP, GNU Jami, Matrix, and Signal messenger. These should all be
 able to work with Telepathy as the core, and give us a way to test
-and develop a generic graphical user interface to all these protocols in Mameo.
+and develop a generic graphical user interface to all these protocols in Maemo.
 
-Finally, we will develop a system library for interoprable sharing of
+Finally, we will develop a system library for interoperable sharing of
 files which will allow us to transfer and share files through various
 protocols that the system supports, e.g. the above-mentioned.
 
