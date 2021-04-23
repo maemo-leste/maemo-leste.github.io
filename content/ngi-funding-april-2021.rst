@@ -9,7 +9,7 @@ Funding from NGI EU
 A couple of months ago we were made aware of the `DAPSI
 <https://dapsi.ngi.eu>`_ project by our dear Michiel of `NLnet
 <https://nlnet.nl>`_. DAPSI is one of the projects in the scope of the
-European Union's `Next Generation Internet <https://www.ngi.eu>>`_
+European Union's `Next Generation Internet <https://www.ngi.eu>`_
 initiative and it offers funding for projects that research data
 portability and privacy solutions to give people better control over
 their personal data.
