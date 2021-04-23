@@ -15,25 +15,26 @@ portability and privacy solutions to give people better control over
 their personal data.
 
 Seeing this, we managed to think about a few ideas of how this
-context could fit in Maemo Leste, and in the end we managed :) We
-managed to write an application and apply to the open call just before
-the deadline. A month or so later, we were contacted from the DAPSI
-team to tell us that our application passed and that we are going to
-receive funding for the milestones we chose to apply with! Obviously,
-this is fantastic news for us and it helps us sustain Maemo Leste.
+context could fit in Maemo Leste. We managed to write an application and apply
+to the open call just before the deadline.
+
+A month or so later, we were contacted by the DAPSI team to tell us that our
+application passed and that we are going to receive funding for the milestones
+we chose to apply with! Obviously, this is fantastic news for us and it helps
+us make Maemo Leste sustainable and future proof.
 
 The research we are planning to do in the scope of this grant is
-very interesting and will bring some much needed things to the Maemo
-ecosystem.  We plan to develop various applets that will seamlessly
+very interesting and will bring some much needed features to the Maemo
+ecosystem. We plan to develop various applets that will seamlessly
 integrate Tor, Wireguard, and OpenVPN into the system and enable a new
-layer of security and privacy for our community and users. Further on,
-we will also work a lot on Telepathy integration which will help us
-a lot in learning and understanding the internals of Telepathy, and
-open a good path towards communication integration and interfaces. More
-concretely, in the scope of DAPSI, we will work on various interfaces:
+layer of security and privacy for our community and users.
+
+Further on, we will also work on communication integration via the Telepathy
+framework. More concretely, in the scope of DAPSI, we will work on various interfaces:
 XMPP, GNU Jami, Matrix, and Signal messenger. These should all be
 able to work with Telepathy as the core, and give us a way to test
-and develop graphical interfaces for communication protocols in Maemo.
+and develop a generic graphical user interface to all these protocols in Mameo.
+
 Finally, we will develop a system library for interoprable sharing of
 files which will allow us to transfer and share files through various
 protocols that the system supports, e.g. the above-mentioned.
