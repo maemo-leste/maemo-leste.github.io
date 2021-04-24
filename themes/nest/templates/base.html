@@ -164,6 +164,10 @@
             <div class="container footer-container ">
                 <div class="row">
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="76"></a>
+                        <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="76"></a>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div>
                         <ul class="list-unstyled">
                             {% for title, link in NEST_SITEMAP_MENU %}
@@ -197,14 +201,6 @@
                         </ul>
                         {% endif %}
                     </div> 
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <p class="pull-right text-right">
-                            <small><em>Proudly powered by <a href="http://docs.getpelican.com/" target="_blank">pelican</a></em></small><br/>
-                            <small><em>Theme and code by <a href="https://github.com/molivier" target="_blank">molivier</a></em></small><br/>
-                            <small>{{ NEST_COPYRIGHT }}</small>
-                            {% if NEST_FOOTER_HTML %}<small><em>{{ NEST_FOOTER_HTML }}</em></small>{% endif %}
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
