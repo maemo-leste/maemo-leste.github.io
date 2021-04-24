@@ -161,13 +161,11 @@
 
         <!-- Footer -->
         <div class="footer gradient-2">
-            <div class="container footer-container ">
-                <div class="row">
-                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                        <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="76"></a>
-                        <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="76"></a>
-                    </div>
-                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+            <div class="container footer-container">
+                <div class="row text-center">
+                        <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
+                        <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
+                        <a href="https://nlnet.nl"><img src="/images/nlnet.svg" width="80"></a>&nbsp;&nbsp;
                         <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div>
                         <ul class="list-unstyled">
                             {% for title, link in NEST_SITEMAP_MENU %}
@@ -180,8 +178,6 @@
                             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">{{ NEST_SITEMAP_RSS_LINK }}</a></li>
                             {% endif %}
                         </ul>
-                    </div>
-                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         {% if SOCIAL %}
                         <div class="footer-title">{{ NEST_SOCIAL_COLUMN_TITLE }}</div>
                         <ul class="list-unstyled">
@@ -190,8 +186,6 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                    </div>
-                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         {% if LINKS %}
                         <div class="footer-title">{{ NEST_LINKS_COLUMN_TITLE }}</div>
                         <ul class="list-unstyled">
@@ -200,7 +194,6 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                    </div> 
                 </div>
             </div>
         </div>
