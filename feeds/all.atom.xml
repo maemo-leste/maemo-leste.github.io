@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2020-12-27T18:00:00+01:00</updated><entry><title>Maemo Leste - Fourteenth Update (July, August, September, October, November, December) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html" rel="alternate"></link><published>2020-12-27T18:00:00+01:00</published><updated>2020-12-27T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-12-27:/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html</id><summary type="html">&lt;p&gt;It's been several months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-thirteenth-update-april-may-june-2020.html"&gt;last update&lt;/a&gt;. We've been working
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-04-24T12:00:00+02:00</updated><entry><title>Funding from NGI EU</title><link href="https://maemo-leste.github.io/funding-from-ngi-eu.html" rel="alternate"></link><published>2021-04-24T12:00:00+02:00</published><updated>2021-04-24T12:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-04-24:/funding-from-ngi-eu.html</id><summary type="html">&lt;p&gt;A couple of months ago we were made aware of the &lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project by our dear Michiel of &lt;a class="reference external" href="https://nlnet.nl"&gt;NLnet&lt;/a&gt;. DAPSI is one of the projects in the scope of the
+European Union's &lt;a class="reference external" href="https://www.ngi.eu"&gt;Next Generation Internet&lt;/a&gt;
+initiative and it offers funding for projects that research data
+portability and privacy solutions to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A couple of months ago we were made aware of the &lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project by our dear Michiel of &lt;a class="reference external" href="https://nlnet.nl"&gt;NLnet&lt;/a&gt;. DAPSI is one of the projects in the scope of the
+European Union's &lt;a class="reference external" href="https://www.ngi.eu"&gt;Next Generation Internet&lt;/a&gt;
+initiative and it offers funding for projects that research data
+portability and privacy solutions to give people better control over
+their personal data.&lt;/p&gt;
+&lt;p&gt;Seeing this, we realised that Maemo Leste could be a good fit. We managed to
+write an application and apply to the open call just before the deadline.&lt;/p&gt;
+&lt;p&gt;A month or so later, we were contacted by the DAPSI team to tell us that our
+application passed and that we are going to receive funding for the milestones
+we chose to apply with! Obviously, this is fantastic news for us and it helps
+us make Maemo Leste sustainable and future proof.&lt;/p&gt;
+&lt;p&gt;The research we are planning to do in the scope of this grant is
+very interesting and will bring some much needed features to the Maemo
+Leste ecosystem. We plan to develop various applets that will seamlessly
+integrate Tor, Wireguard, and OpenVPN into the system and enable a new
+layer of security and privacy for our community and users.&lt;/p&gt;
+&lt;p&gt;Also part of the grant is work on communication integration in via the Telepathy
+framework. More concretely, in the scope of DAPSI, we will work on supporting
+various interfaces in the Telepathy framework: XMPP, GNU Jami, Matrix, and
+Signal messenger.&lt;/p&gt;
+&lt;p&gt;These should all be able to work with Telepathy as the core, and give us a way
+to test and develop a generic graphical user interface to all these protocols in
+Maemo.&lt;/p&gt;
+&lt;p&gt;Finally, we will develop a system library for interoperable sharing of
+files which will allow us to transfer and share files through various
+protocols that the system supports, e.g. the above-mentioned.&lt;/p&gt;
+&lt;p&gt;We have to say we're very happy about this research we're going to
+do and hope that it will speed up some much-needed development that
+needs to happen.&lt;/p&gt;
+&lt;p&gt;Also, we've gathered enough news to write another update/status post
+of the current state of Maemo Leste, so you can expect that one soon
+as well!&lt;/p&gt;
+&lt;p&gt;As always, you can find us on our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt;
+and our &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+</content><category term="news"></category><category term="ngi"></category><category term="maemo"></category><category term="europe"></category><category term="funding"></category></entry><entry><title>Maemo Leste - Fourteenth Update (July, August, September, October, November, December) 2020</title><link href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html" rel="alternate"></link><published>2020-12-27T18:00:00+01:00</published><updated>2020-12-27T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2020-12-27:/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html</id><summary type="html">&lt;p&gt;It's been several months since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-thirteenth-update-april-may-june-2020.html"&gt;last update&lt;/a&gt;. We've been working
 hard, and it's been quite a year. Things are shaping up amazingly well, and
 we're looking forward to entering yet another year of our development efforts!&lt;/p&gt;
 &lt;p&gt;Here are a few highlights:&lt;/p&gt;
