@@ -162,5 +162,5 @@ Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
 engineering, and debug driver issues.
 
-We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.

@@ -14,8 +14,8 @@ Maemo experience on mobile phones and tablets like the Nokia N900,
 Motorola Droid 4, Motorola Bionic, Pinephone, Pinetab, Allwinner
 tablets and more!
 
-Feel free to join us on `chat.freenode.net
-<ircs://chat.freenode.net/#maemo-leste>`_
+Feel free to join us on `irc.libera.chat
+<ircs://irc.libera.chat/#maemo-leste>`_
 **#maemo-leste** and also join our `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_
 if you are interested.

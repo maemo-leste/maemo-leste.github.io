@@ -187,5 +187,5 @@ help out.
 
 If you like our work and want to see happen and continue, join us!
 
-We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the mailing list and github issues closely.
