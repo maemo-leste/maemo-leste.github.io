@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-04-24T12:00:00+02:00</updated><entry><title>Funding from NGI EU</title><link href="https://maemo-leste.github.io/funding-from-ngi-eu.html" rel="alternate"></link><published>2021-04-24T12:00:00+02:00</published><updated>2021-04-24T12:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-04-24:/funding-from-ngi-eu.html</id><summary type="html">&lt;p&gt;A couple of months ago we were made aware of the &lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project by our dear Michiel of &lt;a class="reference external" href="https://nlnet.nl"&gt;NLnet&lt;/a&gt;. DAPSI is one of the projects in the scope of the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-05-22T10:41:00+02:00</updated><entry><title>Maemo Leste - IRC channel migration</title><link href="https://maemo-leste.github.io/maemo-leste-irc-channel-migration.html" rel="alternate"></link><published>2021-05-22T10:41:00+02:00</published><updated>2021-05-22T10:41:00+02:00</updated><author><name>Ivan Jelincic</name></author><id>tag:maemo-leste.github.io,2021-05-22:/maemo-leste-irc-channel-migration.html</id><summary type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
+the Freenode IRC network, we've decided to move our channel to the new,
+community-maintained &lt;a class="reference external" href="https://libera.chat"&gt;Libera.chat IRC network&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We have hopefully updated all our previous writings, and wiki entries,
+but if you find any remains of Freenode, let …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
+the Freenode IRC network, we've decided to move our channel to the new,
+community-maintained &lt;a class="reference external" href="https://libera.chat"&gt;Libera.chat IRC network&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We have hopefully updated all our previous writings, and wiki entries,
+but if you find any remains of Freenode, let us know so we can change
+it.&lt;/p&gt;
+&lt;p&gt;See you on Libera IRC! :)&lt;/p&gt;
+</content><category term="news"></category><category term="community"></category><category term="irc"></category></entry><entry><title>Funding from NGI EU</title><link href="https://maemo-leste.github.io/funding-from-ngi-eu.html" rel="alternate"></link><published>2021-04-24T12:00:00+02:00</published><updated>2021-04-24T12:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-04-24:/funding-from-ngi-eu.html</id><summary type="html">&lt;p&gt;A couple of months ago we were made aware of the &lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project by our dear Michiel of &lt;a class="reference external" href="https://nlnet.nl"&gt;NLnet&lt;/a&gt;. DAPSI is one of the projects in the scope of the
 European Union's &lt;a class="reference external" href="https://www.ngi.eu"&gt;Next Generation Internet&lt;/a&gt;
 initiative and it offers funding for projects that research data
 portability and privacy solutions to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A couple of months ago we were made aware of the &lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project by our dear Michiel of &lt;a class="reference external" href="https://nlnet.nl"&gt;NLnet&lt;/a&gt;. DAPSI is one of the projects in the scope of the
@@ -4102,7 +4113,7 @@ package ported, please see our &lt;a class="reference external" href="https://gi
 &lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay up to date, ask questions and/or
 help out.&lt;/p&gt;
 &lt;p&gt;If you like our work and want to see happen and continue, join us!&lt;/p&gt;
-&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+&lt;p&gt;We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the mailing list and github issues closely.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="news"></category><category term="n900"></category><category term="keyboard"></category><category term="wifi"></category><category term="alpha"></category><category term="icd"></category><category term="networking"></category><category term="connectivity"></category></entry><entry><title>Maemo Leste - Third update (May + June) 2018</title><link href="https://maemo-leste.github.io/maemo-leste-third-update-may-june-2018.html" rel="alternate"></link><published>2018-05-15T00:00:00+02:00</published><updated>2018-05-15T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-05-15:/maemo-leste-third-update-may-june-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
@@ -4259,7 +4270,7 @@ package ported, please see our &lt;a class="reference external" href="https://gi
 &lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
 engineering, and debug driver issues.&lt;/p&gt;
-&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+&lt;p&gt;We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="wireless-connectivity-screenshots-on-the-nokia-n900"&gt;
@@ -4409,7 +4420,7 @@ package ported, please see our &lt;a class="reference external" href="https://gi
 &lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
 engineering, and debug driver issues.&lt;/p&gt;
-&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+&lt;p&gt;We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="news"></category><category term="kernel"></category><category term="networking"></category><category term="connectivity"></category><category term="n950"></category><category term="n9"></category><category term="raspberry pi"></category><category term="icd"></category><category term="n900"></category><category term="droid4"></category></entry><entry><title>Maemo Leste - First update (March 2018)</title><link href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html" rel="alternate"></link><published>2018-03-02T12:00:00+01:00</published><updated>2018-03-02T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-03-02:/maemo-leste-first-update-march-2018.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
@@ -4612,7 +4623,7 @@ package ported, please see our &lt;a class="reference external" href="https://gi
 &lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
 engineering, and debug driver issues.&lt;/p&gt;
-&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+&lt;p&gt;We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We also monitor the github issues closely.&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="news"></category><category term="kernel"></category><category term="networking"></category><category term="battery"></category><category term="ofono"></category><category term="n900"></category><category term="droid4"></category></entry><entry><title>Maemo Leste - Standing on the shoulders of giants</title><link href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html" rel="alternate"></link><published>2018-02-01T12:00:00+01:00</published><updated>2018-02-01T12:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2018-02-01:/maemo-leste-standing-on-the-shoulders-of-giants.html</id><summary type="html">&lt;img alt="" src="/images/logo.png" style="width: 250px; height: 353px;" /&gt;
@@ -4736,7 +4747,7 @@ phone calls. Power saving options might then also be something to look at.&lt;/p
 &lt;p&gt;Join us! We really need more people helping out. At this point, we specifically
 need developers who can work on porting packages, help out with reverse
 engineering, and debug driver issues.&lt;/p&gt;
-&lt;p&gt;We're currently on irc.freenode.net in #maemo-leste, but also hang out in
+&lt;p&gt;We're currently on irc.libera.chat in #maemo-leste, but also hang out in
 #maemo. We monitor the github issues closely, but also aim to find an
 appropriate (or set up a) mailing list.&lt;/p&gt;
 &lt;/div&gt;
