@@ -3,7 +3,7 @@ Maemo Leste - IRC channel migration
 
 :Category: news
 :tags: community, irc
-:date: 2021-05-22 12:00
+:date: 2021-05-22 10:41
 :authors: Ivan Jelincic
 
 Due to the recent events that have happened with FOSS communities and
