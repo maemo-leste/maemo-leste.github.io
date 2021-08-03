@@ -1,0 +1,101 @@
+# general
+
+ - charge-mode
+
+ - fbkeyboard
+
+
+ - dnsmasq in libicd-network-ipv4
+
+
+ - gps interfaces
+
+hildon-startup-progress:
+
+* https://github.com/maemo-leste/bugtracker/issues/494 (will probably go
+  plymouth)
+
+
+mce:
+
+* https://github.com/maemo-leste/mce/pull/45
+ - tklock
+* https://github.com/maemo-leste/mce/pull/17
+- iio proximity
+* https://github.com/maemo-leste/mce/pull/48
+
+- 09c786135279508fe4f92b34f0cd6dbedace3c08
+- rtconf (transparent gconf/gsettings/etc. backend)
+
+- e1cf63dbef9687ee316cbd7f409321dabeed34dc
+- battery guard
+
+
+* mce: less memory usage (significant) through lto, --dynamic-list and build system rewrite
+
+* anbox WIP
+
+* libsdl input problems and window placement problems finally fixed: https://github.com/maemo-leste/bugtracker/issues/413
+
+* https://github.com/maemo-leste/python-conic
+
+* Extra languages: arabic, turkish, slovak, hungarian
+
+* pulseaudio setup van nemo, n900 call modules, audio policies (tbd)
+
+* Load alarm mce module: https://github.com/maemo-leste/mce/pull/46
+
+* XDG env vars https://github.com/maemo-leste/bugtracker/issues/426#event-4195845653
+
+* hildon-desktop shortcuts for d4: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
+
+# device specific
+
+## n900
+
+ Unlock n900 device with lock code:
+
+ * https://github.com/maemo-leste/bugtracker/issues/343
+ * https://github.com/maemo-leste/bugtracker/issues/495
+
+## droid4
+
+* leste-config droid4/bionic no longer messes up touch screen rotation
+* d4 has fuse now? https://github.com/maemo-leste/bugtracker/issues/463
+* libinput on mapphone (& pine?)
+- hildon keyboard via shortcuts (missing on n900)
+
+
+## droid3
+- the port
+
+## pinephone (maybe pinetab)
+- libinput on mapphone (& pine?)
+- hildon keyboard via shortcuts (missing on n900)
+
+
+## community showcase
+
+- translations (weblate, imported all mr0 cssu translations)
+https://hosted.weblate.org/projects/maemo-leste/#information
+
+- android chroot
+  https://github.com/diejuse/chroot_Maemo-leste_on_Android
+  https://www.youtube.com/watch?v=OqFHivcPIRM
+  https://www.youtube.com/watch?v=kipuT0VXzC4
+
+- scummvm fixed https://github.com/maemo-leste/bugtracker/issues/353
+
+- new extras:
+	- wifi-switcher
+	- gpxsee
+	- qshot
+	- modrana
+	- cloudgps
+	- maep
+	- gpsrecorder
+	- braek
+
+* wiki updates, Package infobox, https://leste.maemo.org/Extras/ScummVM
+  https://leste.maemo.org/index.php?title=Template:Infobox_Package&action=edit
+
