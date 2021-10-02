@@ -1,14 +1,29 @@
 # general
 
  - charge-mode
+   - not installed by default rn, works on mapphones, n900 (at least)
 
  - fbkeyboard
+   - only implemented for bionic rn (because we have multiple boot entrys on on mapphones atm)
+   - image: http://uvos.xyz/maserati/screenshots/bionickeyboard.jpg
 
+ - him improvments can type into plain x11 windows but only english chars
+   - demonstration video on bionic http://uvos.xyz/maserati/videos/IMGP0534.m4v
 
  - dnsmasq in libicd-network-ipv4
 
 
  - gps interfaces
+
+
+ - hildon desktop has propper support for roating input devices
+   - replaces mostly mapphone specific hack we had before
+   - leste-config droid4/bionic no longer messes up touch screen rotation
+
+ - switch to libinput on everything except n900 and f1
+
+ - modest, sphone, ngi....
+
 
 hildon-startup-progress:
 
@@ -26,16 +41,24 @@ mce:
 
 - 09c786135279508fe4f92b34f0cd6dbedace3c08
 - rtconf (transparent gconf/gsettings/etc. backend)
+   - gconf and plain ini is ready gsettings is wip
 
 - e1cf63dbef9687ee316cbd7f409321dabeed34dc
 - battery guard
 
+- Load alarm mce module: https://github.com/maemo-leste/mce/pull/46
 
-* mce: less memory usage (significant) through lto, --dynamic-list and build system rewrite
+* mce: less memory usage (significant) through build system rewrite (dynamic linking of modules)
+ - about 400K for perspective
+ - lto still causes issues with upower/tklock module so its not in leste
+
+
+- mce power generic
+
 
 * anbox WIP
 
-* libsdl input problems and window placement problems finally fixed: https://github.com/maemo-leste/bugtracker/issues/413
+* libsdl-1.2 input problems and window placement problems finally fixed: https://github.com/maemo-leste/bugtracker/issues/413
 
 * https://github.com/maemo-leste/python-conic
 
@@ -43,11 +66,12 @@ mce:
 
 * pulseaudio setup van nemo, n900 call modules, audio policies (tbd)
 
-* Load alarm mce module: https://github.com/maemo-leste/mce/pull/46
 
 * XDG env vars https://github.com/maemo-leste/bugtracker/issues/426#event-4195845653
 
-* hildon-desktop shortcuts for d4: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
+* hildon-desktop shortcuts for mapphones/pp: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
+   - video: http://uvos.xyz/maserati/videos/ts-buttons-demonstration.mp4
+
 
 # device specific
 
@@ -60,18 +84,21 @@ mce:
 
 ## droid4
 
-* leste-config droid4/bionic no longer messes up touch screen rotation
-* d4 has fuse now? https://github.com/maemo-leste/bugtracker/issues/463
-* libinput on mapphone (& pine?)
-- hildon keyboard via shortcuts (missing on n900)
+- mapphone has fuse now? https://github.com/maemo-leste/bugtracker/issues/463 (not newsworthy?)
+- better power managment (significant) due to mce f25e8f20562a358d3df37c14e5d7b8639ec869c8
+- hildon keyboard via shortcuts (search) (missing on n900? by design!)
 
 
 ## droid3
 - the port
 
+## f1
+- the port
+- we need someone with this device to maintain it!
+
+
 ## pinephone (maybe pinetab)
-- libinput on mapphone (& pine?)
-- hildon keyboard via shortcuts (missing on n900)
+- hildon keyboard via shortcuts (vol up) (missing on n900)
 
 
 ## community showcase
@@ -98,4 +125,20 @@ https://hosted.weblate.org/projects/maemo-leste/#information
 
 * wiki updates, Package infobox, https://leste.maemo.org/Extras/ScummVM
   https://leste.maemo.org/index.php?title=Template:Infobox_Package&action=edit
+
+
+SORTME:
+
+* https://github.com/maemo-leste/bugtracker/issues/539
+https://github.com/maemo-leste/bugtracker/issues/355 (Droid 4: USB OTG Works only with a Powered Y-cable, and crashes when
+
+https://github.com/maemo-leste/bugtracker/issues/441 (Status applet doesn't render well in 16bit X)
+https://github.com/maemo-leste/bugtracker/issues/435 (Hildon desktop not starting after battery depletion on Droid 4)
+https://github.com/maemo-leste/bugtracker/issues/410 (mce: switch from dpms to drm blanking)
+ttps://github.com/maemo-leste/bugtracker/issues/35 (N900: Look at libinput at some point for TS)
+https://github.com/maemo-leste/bugtracker/issues/505 (Feature Request:  Way to get to console when gui fails to start.)
+
+
+modest
+
 
