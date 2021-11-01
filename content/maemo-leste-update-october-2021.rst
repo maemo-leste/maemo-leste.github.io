@@ -15,7 +15,7 @@ Here are a few highlights:
 * `sphone`_ call interface;
 * `modest`_ (mail client);
 * `GPS interfaces`_;
-* support for `Tor and Wireguard`_;
+* support for `Tor, Wireguard and OpenVPN`_;
 * many `mce`_ improvements;
 * `Funding update`_;
 * `Motorola Droid 3 (XT862)`_ port;
@@ -24,71 +24,199 @@ Here are a few highlights:
 * our plan for sms and `conversations`_;
 
 
+Funding update
+==============
+
+Since our `NGI funding announcement <{filename}/ngi-funding-april-2021.rst>`_
+we've been working hard on finishing the milestones as proposed. The `Tor,
+Wireguard and OpenVPN`_ integration is finished and available in the extras
+repositories.
+
+Following the successful completion of this milestone, the
+`DAPSI <https://dapsi.ngi.eu>`_ project has let us know that Maemo Leste has
+successfully moved into the second phase of the funding!
+
+This is great news, and means that we will hopefully be able to deliver on the
+next milestones of the funding soon, including:
+
+* "Conversations" UI, using Telepathy to support various protocols (SMS, IRC,
+  XMPP, Matrix, GNU Jami aka ring, Signal)
+* Implementation of some of the above protocols in Telepathy
+* Improve the Maemo sharing libraries
+
+
 Core Software additions and changes
 ===================================
+
+TODO
 
 
 modest
 ------
 
+modest, the Maemo mail client has be
+<https://github.com/maemo-leste/bugtracker/issues/207>`_.
+It relies on `tinymail <https://github.com/maemo-leste/tinymail>`_ and `gtkhtml3
+<https://github.com/maemo-leste/gtkhtml3>`_.
+
+
+We will later on port modest to a
+newer HTML rendering framework.
+
+.. image:: /images/modest-1.jpg
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/modest-2.jpg
+  :height: 324px
+  :width: 576px
+
+
+
 
 GPS interfaces
 --------------
 
-* modrana in extras
-  https://wiki.maemo.org/ModRana
-* https://leste.maemo.org/Extras/maep
+We've been continuing our work on the GPS stack and liblocation, packaging
+various GPS interfaces and fixings bugs as we find them.
 
-Tor and Wireguard
------------------
+Currently, there are at least four interfaces in our repositories, they've also
+gotten their own pages on the wiki:
+
+* https://leste.maemo.org/Extras/modrana (more info: https://wiki.maemo.org/ModRana)
+* https://leste.maemo.org/Extras/maep
+* https://leste.maemo.org/Extras/cloudgps
+* https://leste.maemo.org/Extras/gpsrecorder
+
+Exporting the GPS logs from gpsrecorder or maep also works fine, as we have
+shared in `this cycling tweet
+<https://twitter.com/maemoleste/status/1389277775664721923>`_.
+
+Tor, Wireguard and OpenVPN
+--------------------------
+
+Tor
+~~~
+
+* https://leste.maemo.org/Tor
+* https://github.com/maemo-leste/libicd-tor
+
+.. image:: /images/tor-check.png
+  :height: 324px
+  :width: 576px
+
+
+Wireguard
+~~~~~~~~~
+
+* https://leste.maemo.org/Wireguard
+* https://github.com/maemo-leste/libicd-wireguard
+
+.. image:: /images/wg-show.png
+  :height: 324px
+  :width: 576px
+
+
+OpenVPN
+~~~~~~~
+
+* https://github.com/maemo-leste/libicd-openvpn
+
+TODO
+
+connui providers
+~~~~~~~~~~~~~~~~
+
+Maemo Fremantle supported a feature that wasn't really used much, which were the
+`ICD2 service providers
+<http://maemo.org/api_refs/5.0/5.0-final/icd2/group__icd__srv__provider.html>`_,
+which are a way to add connection "plugins" to specific connections. The example
+provided was a plugin to disable network logon pages and (automatically) deal
+with those. We have extended this ICD2 implementation to support Tor, Wireguard
+and OpenVPN.
+
+Since there wasn't too much documentation how this integrated with the rest of
+the system, we developed `libicd-provider-dummy
+<https://github.com/maemo-leste/libicd-provider-dummy/>`_ to explore how the
+rest of the system interacts with service providers. For example, service
+providers can change the icon of the network in the status area, they can add
+additional icons in the connection dialogs and network status, and also provide
+customisation of the network names.
+
+Below is an example of an IAP being configured to use Wireguard service
+provider - this means it will always connect to Wireguard when connecting to the
+IAP, and if connecting to Wireguard fails, the network connection will be
+severed.
+
+.. image:: /images/wireguard-provider.png
+  :height: 324px
+  :width: 576px
+
+
+resolvconf
+~~~~~~~~~~
+
+Due to the way `wg-quick` from the Wireguard tools worked, we also had to
+overhaul our DNS scripts. We initially imported them from Maemo Leste, but
+recently upgraded them to use `resolvconf
+<https://github.com/maemo-leste/libicd-network-ipv4/pull/3>`_ (issue `#583
+<https://github.com/maemo-leste/bugtracker/issues/583>`_).
 
 
 connui
 ------
 
-
-* Providers
-
-* https://github.com/maemo-leste/bugtracker/issues/539
+Previously, the connection dialogs on Maemo Leste would malfunction if they
+invoked programmatically (`#539
+<https://github.com/maemo-leste/bugtracker/issues/539>`_), this problem has been
+solved now.
 
 mce
 ---
 
-* less memory usage (significant) through lto, --dynamic-list and build system rewrite
+**uvos** has been consistently working on improving `mce` and a lot has changed:
 
-* https://github.com/maemo-leste/mce/pull/45
-* https://github.com/maemo-leste/mce/pull/17
-* https://github.com/maemo-leste/mce/pull/48
-* https://github.com/maemo-leste/mce/pull/45
-* tklock
-* https://github.com/maemo-leste/mce/pull/17
-* iio proximity
-* https://github.com/maemo-leste/mce/pull/48
-
-- 09c786135279508fe4f92b34f0cd6dbedace3c08
-- rtconf (transparent gconf/gsettings/etc. backend)
-   - gconf and plain ini is ready gsettings is wip
-
-- e1cf63dbef9687ee316cbd7f409321dabeed34dc
-- battery guard
-
-- Load alarm mce module: https://github.com/maemo-leste/mce/pull/46
-
-* less memory usage (significant) through build system rewrite (dynamic linking of modules):
-
- - about 400K for perspective
- - lto still causes issues with upower/tklock module so its not in leste
-
-- mce power generic
-
-- https://github.com/maemo-leste/bugtracker/issues/410 (mce: switch from dpms to drm blanking)
+* mce uses (about 400kB) less memory by using link time optimisations (LTO),
+  `--dynamic-list` and a build system rewrite (`from plain Makefile to cmake
+  <https://github.com/maemo-leste/mce/pull/50>`_).
+  LTO is not in use on Leste yet, as it still causes some problems with upower
+  and tklock.
+* Proximity sensor module based on the `iio system <https://github.com/maemo-leste/mce/pull/17>`_
+* Legacy display module is `dropped
+  <https://github.com/maemo-leste/mce/pull/48>`_
+* The `alarm` module is now loaded (`PR #46 <https://github.com/maemo-leste/mce/pull/46>`_)
+* `rtconf <https://github.com/maemo-leste/mce/pull/49>`_ support has been added,
+  allowing for using different backends, to make it easier to drop gconf
+  support. Alternative backend types are `ini` files and `gsettings`.
+* `battery-guard <https://github.com/maemo-leste/mce/pull/43>`_ module was added
+* `power-generic <https://github.com/maemo-leste/mce/pull/47>`_ module that
+  allows mce to operate in adsence of dsme.
 
 
-new mce interfaces
+Additionally, mce now supports some more dbus interfaces for changing various
+settings, which were previously changed through gconf directly, which made for
+some awkward architecture:
 
 * https://github.com/maemo-leste/profiled/pull/2
 * https://github.com/maemo-leste/osso-applet-display/pull/1
 * https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2
+
+Profiles control panel applet
+-----------------------------
+
+
+Some fixes, renamed
+https://github.com/maemo-leste/bugtracker/issues/569
+
+Wireless
+--------
+
+`Hidden access points are now supported <https://github.com/maemo-leste/bugtracker/issues/489>`_ in what turned out to be long and painful process of debugging problems in `connui-internet <https://github.com/maemo-leste/connui-internet/commit/181b42acf295ca32812ad6330e36c556d90cb3cb>`_, `wpasupplicant <https://github.com/maemo-leste/bugtracker/issues/489#issuecomment-881039662>`_ itself and the `N900 linux kernel <https://github.com/maemo-leste/n9xx-linux/commit/a242bd68f75cf9d68935aaa6f32fa05f3e4d62e9>`_.
+
+
+The network scanning dialog would sometimes render scanning results with a
+(long) delay, this is now fixed (issue `#342 <https://github.com/maemo-leste/bugtracker/issues/342>`_).
+
 
 hildon-input-method
 -------------------
@@ -114,6 +242,17 @@ https://github.com/maemo-leste/bugtracker/issues/435 (Hildon desktop not startin
 Audio support
 -------------
 
+One of the many tricky parts of a mobile operating system is the audio routing.
+For example, when one receives an incoming phone call, any music that is playing
+should stop, and the ringtone sound should be heard. When a headphone is plugged
+in during a call, one would expect the audio to switch from earpiece to
+headphone, but, when a mediaplayer is playing music, unplugged the headphones
+should perhaps not necessarily lead to music being played on the speakers, as
+one might disturb others - so different outputs need their own volume control,
+which needs to be saved somewhere, and so forth.
+
+
+
 - of course had some audio working, but this is about policies and better
   integration
 - built on sailfish/mer
@@ -133,10 +272,8 @@ Audio support
 osso-xterm
 ----------
 
-* open links
-* volume up/down change terminal size
-
-https://github.com/maemo-leste/bugtracker/issues/385
+osso-xterm now opens links in the default browser, and the volume keys should
+`change the font size on the Droid 4 and similar devices <https://github.com/maemo-leste/bugtracker/issues/385>`_.
 
 
 sphone
@@ -206,13 +343,12 @@ New Extras packages
 
 - new extras:
 	- wifi-switcher
-	- gpxsee
 	- qshot
-	- modrana
-	- cloudgps
-	- maep
-	- gpsrecorder
-	- braek
+	- modrana https://leste.maemo.org/Extras/modrana
+	- cloudgps https://leste.maemo.org/Extras/cloudgps
+	- maep https://leste.maemo.org/Extras/maep
+	- gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder
+	- braek https://leste.maemo.org/Extras/braek
 
 
 
@@ -286,6 +422,7 @@ Motorola Droid 4
 - hildon-desktop shortcuts for mapphones/pp: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
    - video: http://uvos.xyz/maserati/videos/ts-buttons-demonstration.mp4
 
+* headphone plug detection
 
 https://github.com/maemo-leste/bugtracker/issues/355 (Droid 4: USB OTG Works only with a Powered Y-cable, and crashes when
 
@@ -297,6 +434,8 @@ Nokia N900
 
  * https://github.com/maemo-leste/bugtracker/issues/343
  * https://github.com/maemo-leste/bugtracker/issues/495
+
+* fixes for non-wext wireless
 
 
 Pinephone
@@ -311,11 +450,6 @@ Pinephone
 ## f1
 - the port
 - we need someone with this device to maintain it!
-
-
-
-Funding update
-==============
 
 
 
