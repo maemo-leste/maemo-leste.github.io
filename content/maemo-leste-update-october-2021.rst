@@ -310,7 +310,7 @@ one of the many tricky parts of a mobile operating system is the audio routing.
 For example, when one receives an incoming phone call, any music that is playing
 should stop, and the ringtone sound should be heard. When a headphone is plugged
 in during a call, one would expect the audio to switch from earpiece to
-headphone, but, when a mediaplayer is playing music, unplugged the headphones
+headphone, but, when a mediaplayer is playing music, unplugging the headphones
 should perhaps not necessarily lead to music being played on the speakers, as
 one might disturb others - so different outputs need their own volume control,
 which needs to be saved somewhere, and so forth.
@@ -388,44 +388,61 @@ In concrete steps:
 
 1. Strip `yappari <https://github.com/agamez/yappari>`_ of all Whatsapp code, and
    re-use the GUI as conversations UI frontend - a lot will change, but the
-   general UI is pretty usable
+   general UI is pretty usable;
 2. Add support for `RTCOM
    <https://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Architecture/RTCOM>`_
    using `rtcom-eventlogger
    <http://maemo.org/api_refs/5.0/5.0-final/eventlogger/>`_ and other plugins
-   that might be required.
-3. Add a simple telepathy plugin (telepathy-ring for sms most likely)
-4. Modify the UI to support multiple protocols the way we want to
-5. Look into user interfaces to modify telepathy protocol parameters
-6. Add more telepathy protocols
+   that might be required;
+3. Add a simple telepathy plugin (telepathy-ring for sms most likely);
+4. Modify the UI to support multiple protocols the way we want to;
+5. Look into user interfaces to modify telepathy protocol parameters;
+6. Add more telepathy protocols;
 
+Below is a low-resolution screenshot of what Yappari looks like on Maemo
+Fremantle - **it is not a screenshot of our current conversations application**.
 
+.. image:: images/yappari.jpg
 
-fbkeyboard and charge-mode
---------------------------
-
-- fbkeyboard
-
-   - only implemented for bionic rn (because we have multiple boot entrys on on mapphones atm)
-   - image: http://uvos.xyz/maserati/screenshots/bionickeyboard.jpg
-
-
-* charge-mode
-  - not installed by default rn, works on mapphones, n900 (at least)
 
 recovery boot option
 --------------------
 
-https://github.com/maemo-leste/image-builder/pull/8
-https://github.com/maemo-leste/bugtracker/issues/505
+We now feature a recovery boot option for various devices, see `issue #505
+<https://github.com/maemo-leste/bugtracker/issues/505>`_ and `image-builder pull
+request 8 <https://github.com/maemo-leste/image-builder/pull/8>`_. This is not
+yet available for the Pinephone and N900, but it is for the Droid 3, Droid 4
+and Droid Bionic.
+
+
+fbkeyboard
+----------
+
+The Maemo Leste emergency rescue boot mode now features a framebuffer
+keyboard, our modified version of it `can be found in the fbkeyboard repository
+<https://github.com/maemo-leste/fbkeyboard>`_.
+
+fbkeyboard is not available when the device has a hardware keyboard.
+
+.. image:: images/bionicfbkeyboard.jpg
+  :height: 489px
+  :width: 652px
+
+
+charge-mode
+-----------
+
+* charge-mode
+  - not installed by default rn, works on mapphones, n900 (at least)
+
 
 osso-systemui-devlock
 ---------------------
 
-* osso-systemui-devlock in beowulf-devel, allows devices with lock code set to
-  boot:
-  https://github.com/maemo-leste/bugtracker/issues/495
-  https://github.com/maemo-leste/bugtracker/issues/343
+If your Nokia N900 had a lock code set, Maemo Leste would get stuck somewhere
+during booting with a black screen. This has now been solved, see `issue #495
+<https://github.com/maemo-leste/bugtracker/issues/495>`_ and `issue #343
+<https://github.com/maemo-leste/bugtracker/issues/343>`_.
 
 
 Additional Software changes
@@ -488,11 +505,20 @@ todo: call for help on adding wiki pages for each extras package
 Languages and Translations
 --------------------------
 
-* Extra languages: arabic, turkish, slovak, hungarian
-* TODO: translation service that we use
+We have imported additional community translations:
 
-- translations (weblate, imported all mr0 cssu translations)
-  https://hosted.weblate.org/projects/maemo-leste/#information
+* Arabic
+* Turkish
+* Slovak
+* Hungarian
+
+And we have drastically changed how we get translations to the Maemo Leste
+devices - we now use the awesome `weblate.org` translation interface, making it
+easy to change or submit translations, automatically creating Github pull
+requests in the process.
+
+Check out `Maemo Leste on Weblate.org
+<https://hosted.weblate.org/projects/maemo-leste/#information>`_.
 
 
 Leste on Android via chroot
@@ -511,51 +537,90 @@ Hardware & Drivers
 Motorola Droid 3 (XT862)
 ------------------------
 
-TODO: new device port
+This is a new device port (codename ``solana``) - it's still in the early
+stages, but a lot of things already just work, enough for us to boast about it:
 
-https://leste.maemo.org/Motorola_Droid_3
+* Support for kexecboot using `clown-boot`_
+* X11 and 3D
+* Audio
+* Wireless
+ 
+The following still needs work:
 
-- the port, status
-- photos
+* Brightness control does not work - the screen always has maximum brightness
+* Keyboard backlight doesn't seem to work yet
+* The modem doesn't work yet - it shows up on USB, but the interrupts aren't configured properly.
+* 3D shows some frame lag / misdrawing, perhaps the powervr clock needs adjusting
+* Touchscreen buttons do not work yet (the ones on the side)
+* Persistent kernel log store (pstore) does not work yet
+* We might be able to free up 3MB more - we need to see if we can use 512MB ram instead of 509MB
+* The keyboard layout in Leste is not faithful to the icons on the keyboard, but rather mostly mimic droid 4
 
-Does not work:
+More information on the `Droid 3 wiki page <https://leste.maemo.org/Motorola_Droid_3>`_.
 
 
+.. image:: images/droid3-photo.jpg
+  :height: 500px
+  :width: 500px
 
-* Brightness control (screen is always max brightness)
-* Keyboard backlight
-* Modem interrupts, it is visible on USB but other communication with it doesn't work
-* pstore (needs figuring out what the reserved memory is on Android)
-* See if we can use 512MB ram instead of 509MB (see dts)
-* 3d shows some frame lag / misdrawing, so probably powervr clock needs adjusting
-* touchscreen buttons do not work yet
-* keyboard layout in Leste is not faithful to the icons on the keyboard, but rather mostly mimic droid 4
 
+clown-boot
+~~~~~~~~~~
+
+``clown-boot`` is the name for a method devised by **uvos** that uses a
+double-kexec approach to load the kexecboot bootloader, and then the Maemo Leste
+linux kernel. It was initially created for the Bionic device, but we've re-used
+the approach for the Motorola Droid 3. We've decided to clean up the code a bit
+and distributed it over three different repositories for reproducibility:
+
+* Kernel modules for the Android stock kernel: https://github.com/maemo-leste/clown-boot-kexec
+* Mainline-based kernel that is loaded from Android and loads kexecboot: https://github.com/maemo-leste/clown-boot-kernel
+* Code used to kexec to kexecboot on Android: https://github.com/maemo-leste/clown-boot
+
+The older code for clown-boot on the Droid 3 `can be found here
+<https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana>`_.
 
 Motorola Droid 4
 ----------------
 
-- mapphone has fuse now? https://github.com/maemo-leste/bugtracker/issues/463 (not newsworthy?)
-- better power managment (significant) due to mce f25e8f20562a358d3df37c14e5d7b8639ec869c8
-- hildon keyboard via shortcuts (search) (missing on n900? by design!)
-- hildon-desktop shortcuts for d4: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
-- hildon-desktop shortcuts for mapphones/pp: https://github.com/maemo-leste/leste-config/pull/15#event-4194966432
-   - video: http://uvos.xyz/maserati/videos/ts-buttons-demonstration.mp4
+The Motorola Droid 4 should have significantly better power management, due to a
+``quircks-mapphone`` module introduced in MCE, which will deal with silencing
+the modem signal strength updates when the display is off and also deal with a
+(current) power management problem in the modem usb interface that keeps the
+modem awake even when there is no data to read. See `this commit
+<https://github.com/maemo-leste/mce/commit/f25e8f20562a358d3df37c14e5d7b8639ec869c8>`_
+for the code, and `this leste-config pull request
+<https://github.com/maemo-leste/leste-config/pull/25/commits/b01dccd4ffb5e34dda058e231dcf64ee0712b7bb>`_
+for the addition of the module.
 
-* headphone plug detection
+The touch screen buttons now provide specific features:
 
-https://github.com/maemo-leste/bugtracker/issues/355 (Droid 4: USB OTG Works only with a Powered Y-cable, and crashes when
+* The **search** button raises the virtual keyboard, regardless of the
+  application (see `hildon-input-method`_ improvements)
+* The **back** button will either close a window or go back a stacked window
+* The **home** window will switch to either the window expose view, or the
+  application launcher view
+* The **hamburger** button (three lines) will activate the hildon-specific
+  context menu of applications if they support it
+
+.. raw:: html
+
+    <video controls height="480px" width="640px">
+    <source src="images/ts-buttons-demonstration.webm" type="video/webm">
+    </video>
+
+Some of these features are also added to the pinephone hardware buttons.
+
+
+TODO: headphone plug detection?
 
 
 Nokia N900
 ----------
 
- Unlock n900 device with lock code:
-
- * https://github.com/maemo-leste/bugtracker/issues/343
- * https://github.com/maemo-leste/bugtracker/issues/495
-
-* fixes for non-wext wireless
+As mentioned in `osso-systemui-devlock`_, unlocking devices at boot should now
+work. We are now also using the `nl80211` interface, as opposed to the `wext`
+interface.
 
 
 Pinephone
