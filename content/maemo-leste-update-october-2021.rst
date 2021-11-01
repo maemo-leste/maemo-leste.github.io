@@ -364,7 +364,8 @@ address book
 ------------
 
 We're still working on fully implementing the Maemo Fremantle address book and
-contacts framework (osso-abook), but we've made a lot of progress.
+contacts framework (osso-abook), but we've made a lot of progress - it should be
+ready pretty soon.
 
 
 .. image:: images/osso-abook-newcontact.png
