@@ -20,7 +20,7 @@ Here are a few highlights:
 * `Funding update`_;
 * `Motorola Droid 3 (XT862)`_ port;
 * `Audio support`_ progress;
-* `addressbook`_ progress;
+* `address book`_ progress;
 * our plan for sms and `conversations`_;
 
 
@@ -48,14 +48,14 @@ next milestones of the funding soon, including:
 Core Software additions and changes
 ===================================
 
-TODO
-
+There were lots of improvements in the networking stack, as well as to many of
+the core daemons, this section aims to give a comprehensive overview of all the
+changes.
 
 modest
 ------
 
-modest, the Maemo mail client has be
-<https://github.com/maemo-leste/bugtracker/issues/207>`_.
+modest, the Maemo mail client `has been brought to Maemo Leste <https://github.com/maemo-leste/bugtracker/issues/207>`_.
 It relies on `tinymail <https://github.com/maemo-leste/tinymail>`_ and `gtkhtml3
 <https://github.com/maemo-leste/gtkhtml3>`_.
 
@@ -98,8 +98,19 @@ Tor, Wireguard and OpenVPN
 Tor
 ~~~
 
-* https://leste.maemo.org/Tor
-* https://github.com/maemo-leste/libicd-tor
+Tor `The Onion Router <https://www.torproject.org/>`_ is software that provides
+anonymous communication (over the Internet). We've integrated it in Maemo
+Leste's connectivity framework and user interface.
+
+There is a `Tor wiki page <https://leste.maemo.org/Tor>`_ with more screenshots
+and some examples on how to use it. Most of the source code is in the
+`libicd-tor <https://github.com/maemo-leste/libicd-tor>`_ repository.
+
+Probably the most simple way to use this code is to install it from the package
+manager, restart the device and configuring Tor to "Enable Transparent
+proxying", which will cause all the traffic of the device to be transmitted over
+Tor. The screenshot below shows a Droid 4 with Tor with transparent proxying
+enabled.
 
 .. image:: /images/tor-check.png
   :height: 324px
@@ -109,8 +120,18 @@ Tor
 Wireguard
 ~~~~~~~~~
 
-* https://leste.maemo.org/Wireguard
-* https://github.com/maemo-leste/libicd-wireguard
+Wireguard is a relatively new and simple communication protocol that implements
+an encrypted Virtual Private Network (VPN). There are many use cases, but a few
+examples are adding your phone to a Wireguard network that makes it possible to
+access your LAN from wherever you are, give your device a public IPv4 address,
+or otherwise tunnel traffic via another machine.
+
+There is a `Wireguard wiki page <https://leste.maemo.org/Wireguard>`_ with more screenshots
+and some examples on how to use it. Most of the source code is in the
+`libicd-wireguard <https://github.com/maemo-leste/libicd-wireguard>`_ repository.
+
+The screenshow below shows a Droid 4 with Wireguard enabled over wifi, and some
+interface statistics using ``wg show``.
 
 .. image:: /images/wg-show.png
   :height: 324px
@@ -120,9 +141,9 @@ Wireguard
 OpenVPN
 ~~~~~~~
 
-* https://github.com/maemo-leste/libicd-openvpn
-
 TODO
+
+* https://github.com/maemo-leste/libicd-openvpn
 
 connui providers
 ~~~~~~~~~~~~~~~~
@@ -143,12 +164,22 @@ providers can change the icon of the network in the status area, they can add
 additional icons in the connection dialogs and network status, and also provide
 customisation of the network names.
 
+The code written to support providers in the connui interfaces can
+be found here in this `connui-internet pull request
+<https://github.com/maemo-leste/connui-internet/pull/2/>`_ and this
+`connui-common pull request
+<https://github.com/maemo-leste/connui-common/pull/1>`_.
+
 Below is an example of an IAP being configured to use Wireguard service
 provider - this means it will always connect to Wireguard when connecting to the
 IAP, and if connecting to Wireguard fails, the network connection will be
 severed.
 
 .. image:: /images/wireguard-provider.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/wireguard-provider-cfg.png
   :height: 324px
   :width: 576px
 
@@ -160,7 +191,8 @@ Due to the way `wg-quick` from the Wireguard tools worked, we also had to
 overhaul our DNS scripts. We initially imported them from Maemo Leste, but
 recently upgraded them to use `resolvconf
 <https://github.com/maemo-leste/libicd-network-ipv4/pull/3>`_ (issue `#583
-<https://github.com/maemo-leste/bugtracker/issues/583>`_).
+<https://github.com/maemo-leste/bugtracker/issues/583>`_), making our setup more
+robust.
 
 
 connui
@@ -171,12 +203,13 @@ invoked programmatically (`#539
 <https://github.com/maemo-leste/bugtracker/issues/539>`_), this problem has been
 solved now.
 
+
 mce
 ---
 
 **uvos** has been consistently working on improving `mce` and a lot has changed:
 
-* mce uses (about 400kB) less memory by using link time optimisations (LTO),
+* mce uses less memory (about 400kB) by using link time optimisations (LTO),
   `--dynamic-list` and a build system rewrite (`from plain Makefile to cmake
   <https://github.com/maemo-leste/mce/pull/50>`_).
   LTO is not in use on Leste yet, as it still causes some problems with upower
@@ -201,9 +234,11 @@ some awkward architecture:
 * https://github.com/maemo-leste/osso-applet-display/pull/1
 * https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2
 
+
 Profiles control panel applet
 -----------------------------
 
+TODO
 
 Some fixes, renamed
 https://github.com/maemo-leste/bugtracker/issues/569
@@ -221,28 +256,57 @@ The network scanning dialog would sometimes render scanning results with a
 hildon-input-method
 -------------------
 
-- him improvments can type into plain x11 windows but only english chars
-  - demonstration video on bionic http://uvos.xyz/maserati/videos/IMGP0534.m4v
+hildon-input-method recently got some improvements where it can insert
+characters into windows that do not explicitly support hildon input method (like
+gtk2). The virtual keyboard can be summoned using dbus and can insert (currently
+only) english characters into plain X11 windows. See the video below showing how
+it works in Firefox (the touch screen button is used to summon the virtual
+keyboard).
 
-- plans for at-spi
+.. raw:: html
+
+    <video controls height="480px" width="640px">
+    <source src="images/him-dbus.webm" type="video/webm">
+    </video>
+
+
+In the future, we plan to use the `at-spi
+<https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/>`_ accessibility
+interface to make the hildon-input-method integration more complete and
+universal.
+
 
 hildon-desktop
 --------------
 
- - hildon desktop has propper support for roating input devices
-   - replaces mostly mapphone specific hack we had before
-   - leste-config droid4/bionic no longer messes up touch screen rotation
+Since our last update, hildon-desktop has supported rotating the devices screen
+(and adjust the touch input accordingly to match the screen orientation). With
+this update, we've improved how that is implemented exactly to make it more
+robust. For example, upon certain updates the touch input would reset to the
+native orientation, which could be quite confusing. All of this is solved now by
+making this work directly in hildon-desktop, rather than other scripts that act
+on dbus signals.
 
 
-* XDG env vars https://github.com/maemo-leste/bugtracker/issues/426#event-4195845653
+Maemo also sets more ``XDG_*`` environment variables now to ensure that Hildon
+applications behave properly, and show the right directories, see `issue #426 <https://github.com/maemo-leste/bugtracker/issues/426>`_.
 
-https://github.com/maemo-leste/bugtracker/issues/435 (Hildon desktop not starting after battery depletion on Droid 4)
+In some rare cases, hildon-desktop would not boot if the battery is very low,
+this is fixed now, see `issue #435 <https://github.com/maemo-leste/bugtracker/issues/435>`_.
+
+
+osso-xterm
+----------
+
+osso-xterm now opens links in the default browser, and the volume keys should
+`change the font size on the Droid 4 and similar devices <https://github.com/maemo-leste/bugtracker/issues/385>`_.
 
 
 Audio support
 -------------
 
-One of the many tricky parts of a mobile operating system is the audio routing.
+Maemo Leste has supported basic audio output since the very first release, but
+one of the many tricky parts of a mobile operating system is the audio routing.
 For example, when one receives an incoming phone call, any music that is playing
 should stop, and the ringtone sound should be heard. When a headphone is plugged
 in during a call, one would expect the audio to switch from earpiece to
@@ -251,13 +315,10 @@ should perhaps not necessarily lead to music being played on the speakers, as
 one might disturb others - so different outputs need their own volume control,
 which needs to be saved somewhere, and so forth.
 
-
-
-- of course had some audio working, but this is about policies and better
-  integration
-- built on sailfish/mer
-
-* pulseaudio setup van nemo, n900 call modules, audio policies (tbd)
+Many of these problems were solved in Maemo Fremantle, and much of that work
+made it into Sailfish OS (Mer Project), so we've gone full circle and have
+started packaging their work for Maemo. Here is a non-exhaustive list of
+packages that we have ported and packaged:
 
 * https://github.com/maemo-leste/ohm
 * https://github.com/maemo-leste/libdres-ohm
@@ -268,24 +329,75 @@ which needs to be saved somewhere, and so forth.
 * https://github.com/maemo-leste/pulseaudio-modules-nemo
 * https://github.com/maemo-leste/pulseaudio-module-cmtspeech-n9xx
 
+These modules should help us with the audio policy routing, but also contain
+device-specific support modules, for example in the case of the N900, where the
+packages should help routing audio to and from the modem during phone calls.
 
-osso-xterm
-----------
-
-osso-xterm now opens links in the default browser, and the volume keys should
-`change the font size on the Droid 4 and similar devices <https://github.com/maemo-leste/bugtracker/issues/385>`_.
+More work remains to be done to integrate this on our devices, since audio
+policies are somewhat complex and many of the components aren't well known to
+us.
 
 
 sphone
 ------
 
+`sphone <https://github.com/maemo-leste/sphone>`_ is a ofono GUI based on gtk,
+which `uvos` has been modernising and improving a bunch, aiming to make it
+modular with optional hildon/maemo support. In other words: it's a program that
+allows you to make phone calls on Maemo Leste, at least theoretically.
 
-addressbook
------------
+The integration in Maemo Leste is still very much a work in progress, as is
+sphone, but it's already working to some degree, as can be seen in this video:
+
+.. raw:: html
+
+    <video controls height="360px" width="640px">
+    <source src="/images/maemo-leste-sphone.webm" type="video/webm">
+    </video>
+
+Integration with the Maemo address book (and other address books) is also being
+worked on.
+
+todo: something about it only being in -devel or not
+
+address book
+------------
+
+We're still working on fully implementing the Maemo Fremantle address book and
+contacts framework (osso-abook), but we've made a lot of progress.
+
+
+.. image:: images/osso-abook-newcontact.png
+  :height: 281px
+  :width: 484px
 
 
 conversations
 -------------
+
+There is not a lot to report on this subject yet, besides what was mentioned in
+the `Funding update`_.
+
+We aim to have the Conversations UI be a frontend for many Telepathy protocols
+(SMS just being one of them), using the existing (Maemo Fremantle) rtcom (Real
+Time Communication) framework. The widget set that we will use will likely be
+Qt, and we will likely using an existing Maemo application and strip out
+everything we don't need, and then add the parts we want.
+
+In concrete steps:
+
+1. Strip `yappari <https://github.com/agamez/yappari>`_ of all Whatsapp code, and
+   re-use the GUI as conversations UI frontend - a lot will change, but the
+   general UI is pretty usable
+2. Add support for `RTCOM
+   <https://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Architecture/RTCOM>`_
+   using `rtcom-eventlogger
+   <http://maemo.org/api_refs/5.0/5.0-final/eventlogger/>`_ and other plugins
+   that might be required.
+3. Add a simple telepathy plugin (telepathy-ring for sms most likely)
+4. Modify the UI to support multiple protocols the way we want to
+5. Look into user interfaces to modify telepathy protocol parameters
+6. Add more telepathy protocols
 
 
 
@@ -322,21 +434,27 @@ Additional Software changes
 libsdl input
 ------------
 
-* libsdl-1.2 input problems and window placement problems finally fixed:
-  https://github.com/maemo-leste/bugtracker/issues/413
+The libsdl video and input problems we were seeing before have finally been fixed, see `issue #413 <https://github.com/maemo-leste/bugtracker/issues/413>`_.
+This is great since it also makes many other applications more usable, for
+example `cloudgps` . So the (full screen) window placement should now work fine,
+and both keyboard and mouse input should just work.
 
 
 Python bindings
 ---------------
 
-* https://github.com/maemo-leste/python-conic
-
+We have added python bindings for `libconic`, the hildon connection management
+library, see `python-conic <https://github.com/maemo-leste/python-conic>`_.
 
 
 ScummVM
 -------
 
-- scummvm fixed https://github.com/maemo-leste/bugtracker/issues/353
+ScummVM was broken since our migration to Devuan Beowulf, but rebasing on a
+newer released fixed the problem, and now `ScummVM works again <https://github.com/maemo-leste/bugtracker/issues/353>`_.
+
+There is also a ScummVM wiki entry now, with various tips and tricks:
+https://leste.maemo.org/Extras/ScummVM
 
 New Extras packages
 -------------------
@@ -357,6 +475,8 @@ Community updates
 
 Wiki updates
 ------------
+
+todo: call for help on adding wiki pages for each extras package
 
 * Extras pages, package infobox
 
