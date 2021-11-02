@@ -1,5 +1,496 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-05-22T10:41:00+02:00</updated><entry><title>Maemo Leste - IRC channel migration</title><link href="https://maemo-leste.github.io/maemo-leste-irc-channel-migration.html" rel="alternate"></link><published>2021-05-22T10:41:00+02:00</published><updated>2021-05-22T10:41:00+02:00</updated><author><name>Ivan Jelincic</name></author><id>tag:maemo-leste.github.io,2021-05-22:/maemo-leste-irc-channel-migration.html</id><summary type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-10-28T00:00:00+02:00</updated><subtitle></subtitle><entry><title>Maemo Leste - Fifteenth Update: Januari - October 2021</title><link href="https://maemo-leste.github.io/maemo-leste-fifteenth-update-januari-october-2021.html" rel="alternate"></link><published>2021-10-28T00:00:00+02:00</published><updated>2021-10-28T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-10-28:/maemo-leste-fifteenth-update-januari-october-2021.html</id><summary type="html">&lt;p&gt;The long overdue update is finally here, it's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html"&gt;last
+update&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are a few highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#sphone"&gt;sphone&lt;/a&gt; call interface;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#modest"&gt;modest&lt;/a&gt; (mail client);&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#gps-interfaces"&gt;GPS interfaces&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;support for &lt;a class="reference internal" href="#tor-wireguard-and-openvpn"&gt;Tor, Wireguard and OpenVPN&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;many &lt;a class="reference internal" href="#mce"&gt;mce&lt;/a&gt; improvements;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#funding-update"&gt;Funding update&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#motorola-droid-3-xt862"&gt;Motorola Droid 3 (XT862)&lt;/a&gt; port;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#audio-support"&gt;Audio support&lt;/a&gt; progress;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#address-book"&gt;address book&lt;/a&gt; progress …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;The long overdue update is finally here, it's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html"&gt;last
+update&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are a few highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#sphone"&gt;sphone&lt;/a&gt; call interface;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#modest"&gt;modest&lt;/a&gt; (mail client);&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#gps-interfaces"&gt;GPS interfaces&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;support for &lt;a class="reference internal" href="#tor-wireguard-and-openvpn"&gt;Tor, Wireguard and OpenVPN&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;many &lt;a class="reference internal" href="#mce"&gt;mce&lt;/a&gt; improvements;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#funding-update"&gt;Funding update&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#motorola-droid-3-xt862"&gt;Motorola Droid 3 (XT862)&lt;/a&gt; port;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#audio-support"&gt;Audio support&lt;/a&gt; progress;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#address-book"&gt;address book&lt;/a&gt; progress;&lt;/li&gt;
+&lt;li&gt;our plan for sms and &lt;a class="reference internal" href="#conversations"&gt;conversations&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="funding-update"&gt;
+&lt;h2&gt;Funding update&lt;/h2&gt;
+&lt;p&gt;Since our &lt;a class="reference external" href="https://maemo-leste.github.io/funding-from-ngi-eu.html"&gt;NGI funding announcement&lt;/a&gt;
+we've been working hard on finishing the milestones as proposed. The &lt;a class="reference internal" href="#tor-wireguard-and-openvpn"&gt;Tor,
+Wireguard and OpenVPN&lt;/a&gt; integration is finished and available in the extras
+repositories.&lt;/p&gt;
+&lt;p&gt;Following the successful completion of this milestone, the
+&lt;a class="reference external" href="https://dapsi.ngi.eu"&gt;DAPSI&lt;/a&gt; project has let us know that Maemo Leste has
+successfully moved into the second phase of the funding!&lt;/p&gt;
+&lt;p&gt;This is great news, and means that we will hopefully be able to deliver on the
+next milestones of the funding soon, including:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&amp;quot;Conversations&amp;quot; UI, using Telepathy to support various protocols (SMS, IRC,
+XMPP, Matrix, GNU Jami aka ring, Signal)&lt;/li&gt;
+&lt;li&gt;Implementation of some of the above protocols in Telepathy&lt;/li&gt;
+&lt;li&gt;Improve the Maemo sharing libraries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="core-software-additions-and-changes"&gt;
+&lt;h2&gt;Core Software additions and changes&lt;/h2&gt;
+&lt;p&gt;There were lots of improvements in the networking stack, as well as to many of
+the core daemons, this section aims to give a comprehensive overview of all the
+changes.&lt;/p&gt;
+&lt;div class="section" id="modest"&gt;
+&lt;h3&gt;modest&lt;/h3&gt;
+&lt;p&gt;modest, the Maemo mail client &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/207"&gt;has been brought to Maemo Leste&lt;/a&gt;.
+It relies on &lt;a class="reference external" href="https://github.com/maemo-leste/tinymail"&gt;tinymail&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/gtkhtml3"&gt;gtkhtml3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will later on port modest to a
+newer HTML rendering framework.&lt;/p&gt;
+&lt;img alt="" src="/images/modest-1.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/modest-2.jpg" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gps-interfaces"&gt;
+&lt;h3&gt;GPS interfaces&lt;/h3&gt;
+&lt;p&gt;We've been continuing our work on the GPS stack and liblocation, packaging
+various GPS interfaces and fixings bugs as we find them.&lt;/p&gt;
+&lt;p&gt;Currently, there are at least four interfaces in our repositories, they've also
+gotten their own pages on the wiki:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://leste.maemo.org/Extras/modrana"&gt;https://leste.maemo.org/Extras/modrana&lt;/a&gt; (more info: &lt;a class="reference external" href="https://wiki.maemo.org/ModRana"&gt;https://wiki.maemo.org/ModRana&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://leste.maemo.org/Extras/maep"&gt;https://leste.maemo.org/Extras/maep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://leste.maemo.org/Extras/cloudgps"&gt;https://leste.maemo.org/Extras/cloudgps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://leste.maemo.org/Extras/gpsrecorder"&gt;https://leste.maemo.org/Extras/gpsrecorder&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exporting the GPS logs from gpsrecorder or maep also works fine, as we have
+shared in &lt;a class="reference external" href="https://twitter.com/maemoleste/status/1389277775664721923"&gt;this cycling tweet&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tor-wireguard-and-openvpn"&gt;
+&lt;h3&gt;Tor, Wireguard and OpenVPN&lt;/h3&gt;
+&lt;div class="section" id="tor"&gt;
+&lt;h4&gt;Tor&lt;/h4&gt;
+&lt;p&gt;Tor &lt;a class="reference external" href="https://www.torproject.org/"&gt;The Onion Router&lt;/a&gt; is software that provides
+anonymous communication (over the Internet). We've integrated it in Maemo
+Leste's connectivity framework and user interface.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a class="reference external" href="https://leste.maemo.org/Tor"&gt;Tor wiki page&lt;/a&gt; with more screenshots
+and some examples on how to use it. Most of the source code is in the
+&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-tor"&gt;libicd-tor&lt;/a&gt; repository.&lt;/p&gt;
+&lt;p&gt;Probably the most simple way to use this code is to install it from the package
+manager, restart the device and configuring Tor to &amp;quot;Enable Transparent
+proxying&amp;quot;, which will cause all the traffic of the device to be transmitted over
+Tor. The screenshot below shows a Droid 4 with Tor with transparent proxying
+enabled.&lt;/p&gt;
+&lt;img alt="" src="/images/tor-check.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wireguard"&gt;
+&lt;h4&gt;Wireguard&lt;/h4&gt;
+&lt;p&gt;Wireguard is a relatively new and simple communication protocol that implements
+an encrypted Virtual Private Network (VPN). There are many use cases, but a few
+examples are adding your phone to a Wireguard network that makes it possible to
+access your LAN from wherever you are, give your device a public IPv4 address,
+or otherwise tunnel traffic via another machine.&lt;/p&gt;
+&lt;p&gt;There is a &lt;a class="reference external" href="https://leste.maemo.org/Wireguard"&gt;Wireguard wiki page&lt;/a&gt; with more screenshots
+and some examples on how to use it. Most of the source code is in the
+&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-wireguard"&gt;libicd-wireguard&lt;/a&gt; repository.&lt;/p&gt;
+&lt;p&gt;The screenshow below shows a Droid 4 with Wireguard enabled over wifi, and some
+interface statistics using &lt;tt class="docutils literal"&gt;wg show&lt;/tt&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/wg-show.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="openvpn"&gt;
+&lt;h4&gt;OpenVPN&lt;/h4&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-openvpn"&gt;https://github.com/maemo-leste/libicd-openvpn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="connui-providers"&gt;
+&lt;h4&gt;connui providers&lt;/h4&gt;
+&lt;p&gt;Maemo Fremantle supported a feature that wasn't really used much, which were the
+&lt;a class="reference external" href="http://maemo.org/api_refs/5.0/5.0-final/icd2/group__icd__srv__provider.html"&gt;ICD2 service providers&lt;/a&gt;,
+which are a way to add connection &amp;quot;plugins&amp;quot; to specific connections. The example
+provided was a plugin to disable network logon pages and (automatically) deal
+with those. We have extended this ICD2 implementation to support Tor, Wireguard
+and OpenVPN.&lt;/p&gt;
+&lt;p&gt;Since there wasn't too much documentation how this integrated with the rest of
+the system, we developed &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-provider-dummy/"&gt;libicd-provider-dummy&lt;/a&gt; to explore how the
+rest of the system interacts with service providers. For example, service
+providers can change the icon of the network in the status area, they can add
+additional icons in the connection dialogs and network status, and also provide
+customisation of the network names.&lt;/p&gt;
+&lt;p&gt;The code written to support providers in the connui interfaces can
+be found here in this &lt;a class="reference external" href="https://github.com/maemo-leste/connui-internet/pull/2/"&gt;connui-internet pull request&lt;/a&gt; and this
+&lt;a class="reference external" href="https://github.com/maemo-leste/connui-common/pull/1"&gt;connui-common pull request&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Below is an example of an IAP being configured to use Wireguard service
+provider - this means it will always connect to Wireguard when connecting to the
+IAP, and if connecting to Wireguard fails, the network connection will be
+severed.&lt;/p&gt;
+&lt;img alt="" src="/images/wireguard-provider.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/wireguard-provider-cfg.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="resolvconf"&gt;
+&lt;h4&gt;resolvconf&lt;/h4&gt;
+&lt;p&gt;Due to the way &lt;cite&gt;wg-quick&lt;/cite&gt; from the Wireguard tools worked, we also had to
+overhaul our DNS scripts. We initially imported them from Maemo Leste, but
+recently upgraded them to use &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/3"&gt;resolvconf&lt;/a&gt; (issue &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/583"&gt;#583&lt;/a&gt;), making our setup more
+robust.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="connui"&gt;
+&lt;h3&gt;connui&lt;/h3&gt;
+&lt;p&gt;Previously, the connection dialogs on Maemo Leste would malfunction if they
+invoked programmatically (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/539"&gt;#539&lt;/a&gt;), this problem has been
+solved now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mce"&gt;
+&lt;h3&gt;mce&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;uvos&lt;/strong&gt; has been consistently working on improving &lt;cite&gt;mce&lt;/cite&gt; and a lot has changed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;mce uses less memory (about 400kB) by using link time optimisations (LTO),
+&lt;cite&gt;--dynamic-list&lt;/cite&gt; and a build system rewrite (&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/50"&gt;from plain Makefile to cmake&lt;/a&gt;).
+LTO is not in use on Leste yet, as it still causes some problems with upower
+and tklock.&lt;/li&gt;
+&lt;li&gt;Proximity sensor module based on the &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/17"&gt;iio system&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Legacy display module is &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/48"&gt;dropped&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;cite&gt;alarm&lt;/cite&gt; module is now loaded (&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/46"&gt;PR #46&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/49"&gt;rtconf&lt;/a&gt; support has been added,
+allowing for using different backends, to make it easier to drop gconf
+support. Alternative backend types are &lt;cite&gt;ini&lt;/cite&gt; files and &lt;cite&gt;gsettings&lt;/cite&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/43"&gt;battery-guard&lt;/a&gt; module was added&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/47"&gt;power-generic&lt;/a&gt; module that
+allows mce to operate in absence of dsme.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additionally, mce now supports some more dbus interfaces for changing various
+settings, which were previously changed through gconf directly, which made for
+some awkward architecture:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/profiled/pull/2"&gt;https://github.com/maemo-leste/profiled/pull/2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/osso-applet-display/pull/1"&gt;https://github.com/maemo-leste/osso-applet-display/pull/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2"&gt;https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="profiles-control-panel-applet"&gt;
+&lt;h3&gt;Profiles control panel applet&lt;/h3&gt;
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;p&gt;Some fixes, renamed
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/569"&gt;https://github.com/maemo-leste/bugtracker/issues/569&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wireless"&gt;
+&lt;h3&gt;Wireless&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/489"&gt;Hidden access points are now supported&lt;/a&gt; in what turned out to be long and painful process of debugging problems in &lt;a class="reference external" href="https://github.com/maemo-leste/connui-internet/commit/181b42acf295ca32812ad6330e36c556d90cb3cb"&gt;connui-internet&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/489#issuecomment-881039662"&gt;wpasupplicant&lt;/a&gt; itself and the &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/commit/a242bd68f75cf9d68935aaa6f32fa05f3e4d62e9"&gt;N900 linux kernel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The network scanning dialog would sometimes render scanning results with a
+(long) delay, this is now fixed (issue &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/342"&gt;#342&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-input-method"&gt;
+&lt;h3&gt;hildon-input-method&lt;/h3&gt;
+&lt;p&gt;hildon-input-method recently got some improvements where it can insert
+characters into windows that do not explicitly support hildon input method (like
+gtk2). The virtual keyboard can be summoned using dbus and can insert (currently
+only) english characters into plain X11 windows. See the video below showing how
+it works in Firefox (the touch screen button is used to summon the virtual
+keyboard).&lt;/p&gt;
+&lt;video controls height="480px" width="640px"&gt;
+&lt;source src="images/him-dbus.webm" type="video/webm"&gt;
+&lt;/video&gt;&lt;p&gt;In the future, we plan to use the &lt;a class="reference external" href="https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/"&gt;at-spi&lt;/a&gt; accessibility
+interface to make the hildon-input-method integration more complete and
+universal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-desktop"&gt;
+&lt;h3&gt;hildon-desktop&lt;/h3&gt;
+&lt;p&gt;Since our last update, hildon-desktop has supported rotating the devices screen
+(and adjust the touch input accordingly to match the screen orientation). With
+this update, we've improved how that is implemented exactly to make it more
+robust. For example, upon certain updates the touch input would reset to the
+native orientation, which could be quite confusing. All of this is solved now by
+making this work directly in hildon-desktop, rather than other scripts that act
+on dbus signals.&lt;/p&gt;
+&lt;p&gt;Maemo also sets more &lt;tt class="docutils literal"&gt;XDG_*&lt;/tt&gt; environment variables now to ensure that Hildon
+applications behave properly, and show the right directories, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/426"&gt;issue #426&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In some rare cases, hildon-desktop would not boot if the battery is very low,
+this is fixed now, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/435"&gt;issue #435&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="osso-xterm"&gt;
+&lt;h3&gt;osso-xterm&lt;/h3&gt;
+&lt;p&gt;osso-xterm now opens links in the default browser, and the volume keys should
+&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/385"&gt;change the font size on the Droid 4 and similar devices&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="audio-support"&gt;
+&lt;h3&gt;Audio support&lt;/h3&gt;
+&lt;p&gt;Maemo Leste has supported basic audio output since the very first release, but
+one of the many tricky parts of a mobile operating system is the audio routing.
+For example, when one receives an incoming phone call, any music that is playing
+should stop, and the ringtone sound should be heard. When a headphone is plugged
+in during a call, one would expect the audio to switch from earpiece to
+headphone, but, when a mediaplayer is playing music, unplugging the headphones
+should perhaps not necessarily lead to music being played on the speakers, as
+one might disturb others - so different outputs need their own volume control,
+which needs to be saved somewhere, and so forth.&lt;/p&gt;
+&lt;p&gt;Many of these problems were solved in Maemo Fremantle, and much of that work
+made it into Sailfish OS (Mer Project), so we've gone full circle and have
+started packaging their work for Maemo. Here is a non-exhaustive list of
+packages that we have ported and packaged:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/ohm"&gt;https://github.com/maemo-leste/ohm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libdres-ohm"&gt;https://github.com/maemo-leste/libdres-ohm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libtrace-ohm"&gt;https://github.com/maemo-leste/libtrace-ohm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/ohm-plugins-misc"&gt;https://github.com/maemo-leste/ohm-plugins-misc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/pulse-core"&gt;https://github.com/maemo-leste/pulse-core&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/pulseaudio-policy-enforcement"&gt;https://github.com/maemo-leste/pulseaudio-policy-enforcement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/pulseaudio-modules-nemo"&gt;https://github.com/maemo-leste/pulseaudio-modules-nemo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/pulseaudio-module-cmtspeech-n9xx"&gt;https://github.com/maemo-leste/pulseaudio-module-cmtspeech-n9xx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These modules should help us with the audio policy routing, but also contain
+device-specific support modules, for example in the case of the N900, where the
+packages should help routing audio to and from the modem during phone calls.&lt;/p&gt;
+&lt;p&gt;More work remains to be done to integrate this on our devices, since audio
+policies are somewhat complex and many of the components aren't well known to
+us.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sphone"&gt;
+&lt;h3&gt;sphone&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/sphone"&gt;sphone is a ofono GUI&lt;/a&gt; based on gtk,
+which &lt;cite&gt;uvos&lt;/cite&gt; has been modernising and improving a bunch, aiming to make it
+modular with optional hildon/maemo support. In other words: it's a program that
+allows you to make phone calls on Maemo Leste, at least theoretically.&lt;/p&gt;
+&lt;p&gt;The integration in Maemo Leste is still very much a work in progress, as is
+sphone, but it's already working to some degree, as can be seen in this video:&lt;/p&gt;
+&lt;video controls height="360px" width="640px"&gt;
+&lt;source src="/images/maemo-leste-sphone.webm" type="video/webm"&gt;
+&lt;/video&gt;&lt;p&gt;Integration with the Maemo address book (and other address books) is also being
+worked on. Here's a screenshot of the interface is portrait mode:&lt;/p&gt;
+&lt;img alt="" src="/images/sphone-dialer.png" style="width: 324px; height: 576px;" /&gt;
+&lt;p&gt;The application is only available in the &lt;strong&gt;-devel&lt;/strong&gt; repositories.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="address-book"&gt;
+&lt;h3&gt;address book&lt;/h3&gt;
+&lt;p&gt;We're still working on fully implementing the Maemo Fremantle address book and
+contacts framework (osso-abook), but we've made a lot of progress - it should be
+ready pretty soon.&lt;/p&gt;
+&lt;img alt="" src="images/osso-abook-newcontact.png" style="width: 484px; height: 281px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversations"&gt;
+&lt;h3&gt;conversations&lt;/h3&gt;
+&lt;p&gt;There is not a lot to report on this subject yet, besides what was mentioned in
+the &lt;a class="reference internal" href="#funding-update"&gt;Funding update&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We aim to have the Conversations UI be a frontend for many Telepathy protocols
+(SMS just being one of them), using the existing (Maemo Fremantle) rtcom (Real
+Time Communication) framework. The widget set that we will use will likely be
+Qt, and we will likely using an existing Maemo application and strip out
+everything we don't need, and then add the parts we want.&lt;/p&gt;
+&lt;p&gt;In concrete steps:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Strip &lt;a class="reference external" href="https://github.com/agamez/yappari"&gt;yappari&lt;/a&gt; of all Whatsapp code, and
+re-use the GUI as conversations UI frontend - a lot will change, but the
+general UI is pretty usable;&lt;/li&gt;
+&lt;li&gt;Add support for &lt;a class="reference external" href="https://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Architecture/RTCOM"&gt;RTCOM&lt;/a&gt;
+using &lt;a class="reference external" href="http://maemo.org/api_refs/5.0/5.0-final/eventlogger/"&gt;rtcom-eventlogger&lt;/a&gt; and other plugins
+that might be required;&lt;/li&gt;
+&lt;li&gt;Add a simple telepathy plugin (telepathy-ring for sms most likely);&lt;/li&gt;
+&lt;li&gt;Modify the UI to support multiple protocols the way we want to;&lt;/li&gt;
+&lt;li&gt;Look into user interfaces to modify telepathy protocol parameters;&lt;/li&gt;
+&lt;li&gt;Add more telepathy protocols;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Below is a low-resolution screenshot of what Yappari looks like on Maemo
+Fremantle - &lt;strong&gt;it is not a screenshot of our current conversations application&lt;/strong&gt;.&lt;/p&gt;
+&lt;img alt="" src="images/yappari.jpg" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recovery-boot-option"&gt;
+&lt;h3&gt;recovery boot option&lt;/h3&gt;
+&lt;p&gt;We now feature a recovery boot option for various devices, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/505"&gt;issue #505&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/pull/8"&gt;image-builder pull
+request 8&lt;/a&gt;. This is not
+yet available for the Pinephone and N900, but it is for the Droid 3, Droid 4
+and Droid Bionic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="fbkeyboard"&gt;
+&lt;h3&gt;fbkeyboard&lt;/h3&gt;
+&lt;p&gt;The Maemo Leste emergency rescue boot mode now features a framebuffer
+keyboard, our modified version of it &lt;a class="reference external" href="https://github.com/maemo-leste/fbkeyboard"&gt;can be found in the fbkeyboard repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;fbkeyboard is not available when the device has a hardware keyboard.&lt;/p&gt;
+&lt;img alt="" src="images/bionicfbkeyboard.jpg" style="width: 489px; height: 652px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="osso-systemui-devlock"&gt;
+&lt;h3&gt;osso-systemui-devlock&lt;/h3&gt;
+&lt;p&gt;If your Nokia N900 had a lock code set, Maemo Leste would get stuck somewhere
+during booting with a black screen. This has now been solved, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/495"&gt;issue #495&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/343"&gt;issue #343&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="additional-software-changes"&gt;
+&lt;h2&gt;Additional Software changes&lt;/h2&gt;
+&lt;div class="section" id="libsdl-input"&gt;
+&lt;h3&gt;libsdl input&lt;/h3&gt;
+&lt;p&gt;The libsdl video and input problems we were seeing before have finally been fixed, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/413"&gt;issue #413&lt;/a&gt;.
+This is great since it also makes many other applications more usable, for
+example &lt;cite&gt;cloudgps&lt;/cite&gt; . So the (full screen) window placement should now work fine,
+and both keyboard and mouse input should just work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="python-bindings"&gt;
+&lt;h3&gt;Python bindings&lt;/h3&gt;
+&lt;p&gt;We have added python bindings for &lt;cite&gt;libconic&lt;/cite&gt;, the hildon connection management
+library, see &lt;a class="reference external" href="https://github.com/maemo-leste/python-conic"&gt;python-conic&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="scummvm"&gt;
+&lt;h3&gt;ScummVM&lt;/h3&gt;
+&lt;p&gt;ScummVM was broken since our migration to Devuan Beowulf, but rebasing on a
+newer released fixed the problem, and now &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/353"&gt;ScummVM works again&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is also a ScummVM wiki entry now, with various tips and tricks:
+&lt;a class="reference external" href="https://leste.maemo.org/Extras/ScummVM"&gt;https://leste.maemo.org/Extras/ScummVM&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-extras-packages"&gt;
+&lt;h3&gt;New Extras packages&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;new extras:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;wifi-switcher&lt;/li&gt;
+&lt;li&gt;qshot&lt;/li&gt;
+&lt;li&gt;modrana &lt;a class="reference external" href="https://leste.maemo.org/Extras/modrana"&gt;https://leste.maemo.org/Extras/modrana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;cloudgps &lt;a class="reference external" href="https://leste.maemo.org/Extras/cloudgps"&gt;https://leste.maemo.org/Extras/cloudgps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;maep &lt;a class="reference external" href="https://leste.maemo.org/Extras/maep"&gt;https://leste.maemo.org/Extras/maep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gpsrecorder: &lt;a class="reference external" href="https://leste.maemo.org/Extras/gpsrecorder"&gt;https://leste.maemo.org/Extras/gpsrecorder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;braek &lt;a class="reference external" href="https://leste.maemo.org/Extras/braek"&gt;https://leste.maemo.org/Extras/braek&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community-updates"&gt;
+&lt;h2&gt;Community updates&lt;/h2&gt;
+&lt;div class="section" id="wiki-updates"&gt;
+&lt;h3&gt;Wiki updates&lt;/h3&gt;
+&lt;p&gt;todo: call for help on adding wiki pages for each extras package&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Extras pages, package infobox&lt;/li&gt;
+&lt;li&gt;Device infobox&lt;/li&gt;
+&lt;li&gt;wiki updates, Package infobox, &lt;a class="reference external" href="https://leste.maemo.org/Extras/ScummVM"&gt;https://leste.maemo.org/Extras/ScummVM&lt;/a&gt;
+&lt;a class="reference external" href="https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;amp;action=edit"&gt;https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;amp;action=edit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="languages-and-translations"&gt;
+&lt;h3&gt;Languages and Translations&lt;/h3&gt;
+&lt;p&gt;We have imported additional community translations:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Arabic&lt;/li&gt;
+&lt;li&gt;Turkish&lt;/li&gt;
+&lt;li&gt;Slovak&lt;/li&gt;
+&lt;li&gt;Hungarian&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And we have drastically changed how we get translations to the Maemo Leste
+devices - we now use the awesome &lt;cite&gt;weblate.org&lt;/cite&gt; translation interface, making it
+easy to change or submit translations, automatically creating Github pull
+requests in the process.&lt;/p&gt;
+&lt;p&gt;Check out &lt;a class="reference external" href="https://hosted.weblate.org/projects/maemo-leste/#information"&gt;Maemo Leste on Weblate.org&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="leste-on-android-via-chroot"&gt;
+&lt;h3&gt;Leste on Android via chroot&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;android chroot
+&lt;a class="reference external" href="https://github.com/diejuse/chroot_Maemo-leste_on_Android"&gt;https://github.com/diejuse/chroot_Maemo-leste_on_Android&lt;/a&gt;
+&lt;a class="reference external" href="https://www.youtube.com/watch?v=OqFHivcPIRM"&gt;https://www.youtube.com/watch?v=OqFHivcPIRM&lt;/a&gt;
+&lt;a class="reference external" href="https://www.youtube.com/watch?v=kipuT0VXzC4"&gt;https://www.youtube.com/watch?v=kipuT0VXzC4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hardware-drivers"&gt;
+&lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
+&lt;div class="section" id="motorola-droid-3-xt862"&gt;
+&lt;h3&gt;Motorola Droid 3 (XT862)&lt;/h3&gt;
+&lt;p&gt;This is a new device port (codename &lt;tt class="docutils literal"&gt;solana&lt;/tt&gt;) - it's still in the early
+stages, but a lot of things already just work, enough for us to boast about it:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Support for kexecboot using &lt;a class="reference internal" href="#clown-boot"&gt;clown-boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;X11 and 3D&lt;/li&gt;
+&lt;li&gt;Audio&lt;/li&gt;
+&lt;li&gt;Wireless&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following still needs work:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Brightness control does not work - the screen always has maximum brightness&lt;/li&gt;
+&lt;li&gt;Keyboard backlight doesn't seem to work yet&lt;/li&gt;
+&lt;li&gt;The modem doesn't work yet - it shows up on USB, but the interrupts aren't configured properly.&lt;/li&gt;
+&lt;li&gt;3D shows some frame lag / misdrawing, perhaps the powervr clock needs adjusting&lt;/li&gt;
+&lt;li&gt;Touchscreen buttons do not work yet (the ones on the side)&lt;/li&gt;
+&lt;li&gt;Persistent kernel log store (pstore) does not work yet&lt;/li&gt;
+&lt;li&gt;We might be able to free up 3MB more - we need to see if we can use 512MB ram instead of 509MB&lt;/li&gt;
+&lt;li&gt;The keyboard layout in Leste is not faithful to the icons on the keyboard, but rather mostly mimic droid 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More information on the &lt;a class="reference external" href="https://leste.maemo.org/Motorola_Droid_3"&gt;Droid 3 wiki page&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="images/droid3-photo.jpg" style="width: 500px; height: 500px;" /&gt;
+&lt;div class="section" id="clown-boot"&gt;
+&lt;h4&gt;clown-boot&lt;/h4&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;clown-boot&lt;/span&gt;&lt;/tt&gt; is the name for a method devised by &lt;strong&gt;uvos&lt;/strong&gt; that uses a
+double-kexec approach to load the kexecboot bootloader, and then the Maemo Leste
+linux kernel. It was initially created for the Bionic device, but we've re-used
+the approach for the Motorola Droid 3. We've decided to clean up the code a bit
+and distributed it over three different repositories for reproducibility:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Kernel modules for the Android stock kernel: &lt;a class="reference external" href="https://github.com/maemo-leste/clown-boot-kexec"&gt;https://github.com/maemo-leste/clown-boot-kexec&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mainline-based kernel that is loaded from Android and loads kexecboot: &lt;a class="reference external" href="https://github.com/maemo-leste/clown-boot-kernel"&gt;https://github.com/maemo-leste/clown-boot-kernel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Code used to kexec to kexecboot on Android: &lt;a class="reference external" href="https://github.com/maemo-leste/clown-boot"&gt;https://github.com/maemo-leste/clown-boot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The older code for clown-boot on the Droid 3 &lt;a class="reference external" href="https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana"&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-4"&gt;
+&lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
+&lt;p&gt;The Motorola Droid 4 should have significantly better power management, due to a
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;quircks-mapphone&lt;/span&gt;&lt;/tt&gt; module introduced in MCE, which will deal with silencing
+the modem signal strength updates when the display is off and also deal with a
+(current) power management problem in the modem usb interface that keeps the
+modem awake even when there is no data to read. See &lt;a class="reference external" href="https://github.com/maemo-leste/mce/commit/f25e8f20562a358d3df37c14e5d7b8639ec869c8"&gt;this commit&lt;/a&gt;
+for the code, and &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/pull/25/commits/b01dccd4ffb5e34dda058e231dcf64ee0712b7bb"&gt;this leste-config pull request&lt;/a&gt;
+for the addition of the module.&lt;/p&gt;
+&lt;p&gt;The touch screen buttons now provide specific features:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The &lt;strong&gt;search&lt;/strong&gt; button raises the virtual keyboard, regardless of the
+application (see &lt;a class="reference internal" href="#hildon-input-method"&gt;hildon-input-method&lt;/a&gt; improvements)&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;back&lt;/strong&gt; button will either close a window or go back a stacked window&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;home&lt;/strong&gt; window will switch to either the window expose view, or the
+application launcher view&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;hamburger&lt;/strong&gt; button (three lines) will activate the hildon-specific
+context menu of applications if they support it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;video controls height="480px" width="640px"&gt;
+&lt;source src="images/ts-buttons-demonstration.webm" type="video/webm"&gt;
+&lt;/video&gt;&lt;p&gt;Some of these features are also added to the pinephone hardware buttons.&lt;/p&gt;
+&lt;p&gt;TODO: headphone plug detection?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;As mentioned in &lt;a class="reference internal" href="#osso-systemui-devlock"&gt;osso-systemui-devlock&lt;/a&gt;, unlocking devices at boot should now
+work. We are now also using the &lt;cite&gt;nl80211&lt;/cite&gt; interface, as opposed to the &lt;cite&gt;wext&lt;/cite&gt;
+interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone"&gt;
+&lt;h3&gt;Pinephone&lt;/h3&gt;
+&lt;p&gt;## pinephone (maybe pinetab)
+- hildon keyboard via shortcuts (vol up) (missing on n900)&lt;/p&gt;
+&lt;p&gt;## f1
+- the port
+- we need someone with this device to maintain it!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you have questions, are interested in specifics, or helping out, or wish to
+have a specific package ported, please see our bugtracker.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We have several Nokia N900 and Motorola Droid 4 and Bionic units available to
+interested developers&lt;/strong&gt;, so if you are interested in helping out but have
+trouble acquiring a device, let us know.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="todo"></category></entry><entry><title>Maemo Leste - IRC channel migration</title><link href="https://maemo-leste.github.io/maemo-leste-irc-channel-migration.html" rel="alternate"></link><published>2021-05-22T10:41:00+02:00</published><updated>2021-05-22T10:41:00+02:00</updated><author><name>Ivan Jelincic</name></author><id>tag:maemo-leste.github.io,2021-05-22:/maemo-leste-irc-channel-migration.html</id><summary type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
 the Freenode IRC network, we've decided to move our channel to the new,
 community-maintained &lt;a class="reference external" href="https://libera.chat"&gt;Libera.chat IRC network&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We have hopefully updated all our previous writings, and wiki entries,
