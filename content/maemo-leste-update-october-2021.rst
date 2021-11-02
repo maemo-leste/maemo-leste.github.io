@@ -188,7 +188,7 @@ severed.
 resolvconf
 ~~~~~~~~~~
 
-Due to the way `wg-quick` from the Wireguard tools worked, we also had to
+Due to the way ``wg-quick`` from the Wireguard tools worked, we also had to
 overhaul our DNS scripts. We initially imported them from Maemo Leste, but
 recently upgraded them to use `resolvconf
 <https://github.com/maemo-leste/libicd-network-ipv4/pull/3>`_ (issue `#583
@@ -208,7 +208,7 @@ solved now.
 mce
 ---
 
-**uvos** has been consistently working on improving `mce` and a lot has changed:
+**uvos** has been consistently working on improving ``mce`` and a lot has changed:
 
 * mce uses less memory (about 400kB) by using link time optimisations (LTO),
   `--dynamic-list` and a build system rewrite (`from plain Makefile to cmake
@@ -475,17 +475,13 @@ newer released fixed the problem, and now `ScummVM works again <https://github.c
 There is also a ScummVM wiki entry now, with various tips and tricks:
 https://leste.maemo.org/Extras/ScummVM
 
-.. New Extras packages
-.. -------------------
-.. 
-.. - new extras:
-.. 	- wifi-switcher
-.. 	- qshot
-.. 	- modrana https://leste.maemo.org/Extras/modrana
-.. 	- cloudgps https://leste.maemo.org/Extras/cloudgps
-.. 	- maep https://leste.maemo.org/Extras/maep
-.. 	- gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder
-.. 	- braek https://leste.maemo.org/Extras/braek
+New Extras packages
+-------------------
+
+Several new extras package have been added, here's a list of a few of them:
+
+- wifi-switcher
+- qshot
 
 
 
@@ -596,8 +592,8 @@ and distributed it over three different repositories for reproducibility:
 The older code for clown-boot on the Droid 3 `can be found here
 <https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana>`_.
 
-Motorola Droid 4
-----------------
+Motorola Droid 4 and Droid Bionic
+---------------------------------
 
 The Motorola Droid 4 should have significantly better power management, due to a
 ``quircks-mapphone`` module introduced in MCE, which will deal with silencing
@@ -640,18 +636,14 @@ work. We are now also using the `nl80211` interface, as opposed to the `wext`
 interface.
 
 
-.. Pinephone
-.. ---------
-.. 
-.. ## pinephone (maybe pinetab)
-.. - hildon keyboard via shortcuts (vol up) (missing on n900)
-.. 
-.. 
-.. 
-.. 
-.. ## f1
-.. - the port
-.. - we need someone with this device to maintain it!
+Pinephone
+---------
+
+Launching the virtual keyboard is now supported in any X11 window, as mentioned
+in the `hildon-input-method`_ section, the key to activate it is the volume up
+key. Once we have the 3D situation on the N900 and Droid devices under control,
+we will start looking at fixing the 3D rendering problems that seems to occur on
+the pinephone occasionally.
 
 
 

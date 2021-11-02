@@ -56,6 +56,7 @@ After our `initial blog post
 we have posted (almost) monthly updates of our efforts and
 progress. Reverse-chronological, they are:
 
+* `January - October 2021 <{filename}/maemo-leste-update-october-2021.rst>`_
 * `IRC channel migration <{filename}/irc-migration.rst>`_
 * `Funding from NGI EU <{filename}/ngi-funding-april-2021.rst>`_
 * `July - December 2020 <{filename}/maemo-leste-update-december-2020.rst>`_
