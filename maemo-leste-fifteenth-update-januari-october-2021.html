@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="The long overdue update is finally here, it&#39;s been a while since our last update. Here are a few highlights: sphone call interface; modest (mail client); GPS interfaces; support for Tor, Wireguard...">
-        <meta name="keywords" content="todo">
+        <meta name="keywords" content="calls, dapsi, gps, icd, mail, mce, modest, openvpn, solana, sphone, tor, wireguard">
         <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
 
         <title>Maemo Leste - Fifteenth Update: Januari - October 2021 - Maemo Leste</title>
@@ -70,7 +70,7 @@
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
                           <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
-<a href="https://maemo-leste.github.io/tag/todo.html">todo</a>                      </p>
+<a href="https://maemo-leste.github.io/tag/calls.html">calls</a>, <a href="https://maemo-leste.github.io/tag/dapsi.html">dapsi</a>, <a href="https://maemo-leste.github.io/tag/gps.html">gps</a>, <a href="https://maemo-leste.github.io/tag/icd.html">icd</a>, <a href="https://maemo-leste.github.io/tag/mail.html">mail</a>, <a href="https://maemo-leste.github.io/tag/mce.html">mce</a>, <a href="https://maemo-leste.github.io/tag/modest.html">modest</a>, <a href="https://maemo-leste.github.io/tag/openvpn.html">openvpn</a>, <a href="https://maemo-leste.github.io/tag/solana.html">solana</a>, <a href="https://maemo-leste.github.io/tag/sphone.html">sphone</a>, <a href="https://maemo-leste.github.io/tag/tor.html">tor</a>, <a href="https://maemo-leste.github.io/tag/wireguard.html">wireguard</a>                      </p>
                   </div>
               </div>
         </div>
@@ -179,10 +179,9 @@ interface statistics using <tt class="docutils literal">wg show</tt>.</p>
 </div>
 <div class="section" id="openvpn">
 <h4>OpenVPN</h4>
-<p>TODO</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/maemo-leste/libicd-openvpn">https://github.com/maemo-leste/libicd-openvpn</a></li>
-</ul>
+<p>The OpenVPN applet and ICD2 plugin is also available, but hasn't seen quite as
+much testing as the <a class="reference internal" href="#tor">Tor</a> and <a class="reference internal" href="#wireguard">Wireguard</a> plugins.</p>
+<p>The source can be found here: <a class="reference external" href="https://github.com/maemo-leste/libicd-openvpn">https://github.com/maemo-leste/libicd-openvpn</a></p>
 </div>
 <div class="section" id="connui-providers">
 <h4>connui providers</h4>
@@ -238,7 +237,9 @@ allowing for using different backends, to make it easier to drop gconf
 support. Alternative backend types are <cite>ini</cite> files and <cite>gsettings</cite>.</li>
 <li><a class="reference external" href="https://github.com/maemo-leste/mce/pull/43">battery-guard</a> module was added</li>
 <li><a class="reference external" href="https://github.com/maemo-leste/mce/pull/47">power-generic</a> module that
-allows mce to operate in absence of dsme.</li>
+allows mce to operate in absence of dsme. In combination with the new
+<cite>lock-generic</cite> module, one can use xdg-screensaver instead of the
+hildon-specific lock screen.</li>
 </ul>
 <p>Additionally, mce now supports some more dbus interfaces for changing various
 settings, which were previously changed through gconf directly, which made for
@@ -248,12 +249,13 @@ some awkward architecture:</p>
 <li><a class="reference external" href="https://github.com/maemo-leste/osso-applet-display/pull/1">https://github.com/maemo-leste/osso-applet-display/pull/1</a></li>
 <li><a class="reference external" href="https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2">https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2</a></li>
 </ul>
-</div>
-<div class="section" id="profiles-control-panel-applet">
-<h3>Profiles control panel applet</h3>
-<p>TODO</p>
-<p>Some fixes, renamed
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/569">https://github.com/maemo-leste/bugtracker/issues/569</a></p>
+<!-- Profiles control panel applet -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!--  -->
+<!-- TODO -->
+<!--  -->
+<!-- Some fixes, renamed -->
+<!-- https://github.com/maemo-leste/bugtracker/issues/569 -->
 </div>
 <div class="section" id="wireless">
 <h3>Wireless</h3>
@@ -414,38 +416,28 @@ library, see <a class="reference external" href="https://github.com/maemo-leste/
 newer released fixed the problem, and now <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/353">ScummVM works again</a>.</p>
 <p>There is also a ScummVM wiki entry now, with various tips and tricks:
 <a class="reference external" href="https://leste.maemo.org/Extras/ScummVM">https://leste.maemo.org/Extras/ScummVM</a></p>
-</div>
-<div class="section" id="new-extras-packages">
-<h3>New Extras packages</h3>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>new extras:</dt>
-<dd><ul class="first last">
-<li>wifi-switcher</li>
-<li>qshot</li>
-<li>modrana <a class="reference external" href="https://leste.maemo.org/Extras/modrana">https://leste.maemo.org/Extras/modrana</a></li>
-<li>cloudgps <a class="reference external" href="https://leste.maemo.org/Extras/cloudgps">https://leste.maemo.org/Extras/cloudgps</a></li>
-<li>maep <a class="reference external" href="https://leste.maemo.org/Extras/maep">https://leste.maemo.org/Extras/maep</a></li>
-<li>gpsrecorder: <a class="reference external" href="https://leste.maemo.org/Extras/gpsrecorder">https://leste.maemo.org/Extras/gpsrecorder</a></li>
-<li>braek <a class="reference external" href="https://leste.maemo.org/Extras/braek">https://leste.maemo.org/Extras/braek</a></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
+<!-- New Extras packages -->
+<!-- - - - - - - - - - - - - - - - - - - - -->
+<!--  -->
+<!-- - new extras: -->
+<!-- - wifi-switcher -->
+<!-- - qshot -->
+<!-- - modrana https://leste.maemo.org/Extras/modrana -->
+<!-- - cloudgps https://leste.maemo.org/Extras/cloudgps -->
+<!-- - maep https://leste.maemo.org/Extras/maep -->
+<!-- - gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder -->
+<!-- - braek https://leste.maemo.org/Extras/braek -->
 </div>
 </div>
 <div class="section" id="community-updates">
 <h2>Community updates</h2>
 <div class="section" id="wiki-updates">
 <h3>Wiki updates</h3>
-<p>todo: call for help on adding wiki pages for each extras package</p>
-<ul class="simple">
-<li>Extras pages, package infobox</li>
-<li>Device infobox</li>
-<li>wiki updates, Package infobox, <a class="reference external" href="https://leste.maemo.org/Extras/ScummVM">https://leste.maemo.org/Extras/ScummVM</a>
-<a class="reference external" href="https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;action=edit">https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;action=edit</a></li>
-</ul>
+<p>We have added wiki pages for various <tt class="docutils literal">Extras</tt> packages, you can find them
+under the <a class="reference external" href="https://leste.maemo.org/Category:Extras">Category:Extras</a> page.</p>
+<p>There is now also a package <cite>Infobox</cite> template to make it easy to add a page for
+a package - if you're a maintainer of a package, please consider making a wiki
+page entry for it!</p>
 </div>
 <div class="section" id="languages-and-translations">
 <h3>Languages and Translations</h3>
@@ -464,13 +456,14 @@ requests in the process.</p>
 </div>
 <div class="section" id="leste-on-android-via-chroot">
 <h3>Leste on Android via chroot</h3>
-<ul class="simple">
-<li>android chroot
-<a class="reference external" href="https://github.com/diejuse/chroot_Maemo-leste_on_Android">https://github.com/diejuse/chroot_Maemo-leste_on_Android</a>
-<a class="reference external" href="https://www.youtube.com/watch?v=OqFHivcPIRM">https://www.youtube.com/watch?v=OqFHivcPIRM</a>
-<a class="reference external" href="https://www.youtube.com/watch?v=kipuT0VXzC4">https://www.youtube.com/watch?v=kipuT0VXzC4</a></li>
-</ul>
-</div>
+<p><tt class="docutils literal">diejuse</tt> has been experimenting with running Maemo Leste in a chroot on
+Android, and <a class="reference external" href="https://github.com/diejuse/chroot_Maemo-leste_on_Android">he has documented the process here</a>.</p>
+<p>Here are two videos of it in action:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OqFHivcPIRM"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/kipuT0VXzC4"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen></iframe></div>
 </div>
 <div class="section" id="hardware-drivers">
 <h2>Hardware &amp; Drivers</h2>
@@ -534,21 +527,26 @@ context menu of applications if they support it</li>
 <video controls height="480px" width="640px">
 <source src="images/ts-buttons-demonstration.webm" type="video/webm">
 </video><p>Some of these features are also added to the pinephone hardware buttons.</p>
-<p>TODO: headphone plug detection?</p>
+<p>Finally, <tt class="docutils literal">uvos</tt> has been working on headphone plugin detection, which will
+make it into our development kernel soon.</p>
 </div>
 <div class="section" id="nokia-n900">
 <h3>Nokia N900</h3>
 <p>As mentioned in <a class="reference internal" href="#osso-systemui-devlock">osso-systemui-devlock</a>, unlocking devices at boot should now
 work. We are now also using the <cite>nl80211</cite> interface, as opposed to the <cite>wext</cite>
 interface.</p>
-</div>
-<div class="section" id="pinephone">
-<h3>Pinephone</h3>
-<p>## pinephone (maybe pinetab)
-- hildon keyboard via shortcuts (vol up) (missing on n900)</p>
-<p>## f1
-- the port
-- we need someone with this device to maintain it!</p>
+<!-- Pinephone -->
+<!-- - - - - - - - - - -->
+<!--  -->
+<!-- ## pinephone (maybe pinetab) -->
+<!-- - hildon keyboard via shortcuts (vol up) (missing on n900) -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ## f1 -->
+<!-- - the port -->
+<!-- - we need someone with this device to maintain it! -->
 </div>
 </div>
 <div class="section" id="interested">

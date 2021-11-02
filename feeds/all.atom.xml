@@ -106,10 +106,9 @@ interface statistics using &lt;tt class="docutils literal"&gt;wg show&lt;/tt&gt;
 &lt;/div&gt;
 &lt;div class="section" id="openvpn"&gt;
 &lt;h4&gt;OpenVPN&lt;/h4&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-openvpn"&gt;https://github.com/maemo-leste/libicd-openvpn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The OpenVPN applet and ICD2 plugin is also available, but hasn't seen quite as
+much testing as the &lt;a class="reference internal" href="#tor"&gt;Tor&lt;/a&gt; and &lt;a class="reference internal" href="#wireguard"&gt;Wireguard&lt;/a&gt; plugins.&lt;/p&gt;
+&lt;p&gt;The source can be found here: &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-openvpn"&gt;https://github.com/maemo-leste/libicd-openvpn&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="connui-providers"&gt;
 &lt;h4&gt;connui providers&lt;/h4&gt;
@@ -165,7 +164,9 @@ allowing for using different backends, to make it easier to drop gconf
 support. Alternative backend types are &lt;cite&gt;ini&lt;/cite&gt; files and &lt;cite&gt;gsettings&lt;/cite&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/43"&gt;battery-guard&lt;/a&gt; module was added&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/47"&gt;power-generic&lt;/a&gt; module that
-allows mce to operate in absence of dsme.&lt;/li&gt;
+allows mce to operate in absence of dsme. In combination with the new
+&lt;cite&gt;lock-generic&lt;/cite&gt; module, one can use xdg-screensaver instead of the
+hildon-specific lock screen.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Additionally, mce now supports some more dbus interfaces for changing various
 settings, which were previously changed through gconf directly, which made for
@@ -175,12 +176,13 @@ some awkward architecture:&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/osso-applet-display/pull/1"&gt;https://github.com/maemo-leste/osso-applet-display/pull/1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2"&gt;https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="profiles-control-panel-applet"&gt;
-&lt;h3&gt;Profiles control panel applet&lt;/h3&gt;
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;p&gt;Some fixes, renamed
-&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/569"&gt;https://github.com/maemo-leste/bugtracker/issues/569&lt;/a&gt;&lt;/p&gt;
+&lt;!-- Profiles control panel applet --&gt;
+&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;
+&lt;!--  --&gt;
+&lt;!-- TODO --&gt;
+&lt;!--  --&gt;
+&lt;!-- Some fixes, renamed --&gt;
+&lt;!-- https://github.com/maemo-leste/bugtracker/issues/569 --&gt;
 &lt;/div&gt;
 &lt;div class="section" id="wireless"&gt;
 &lt;h3&gt;Wireless&lt;/h3&gt;
@@ -341,38 +343,28 @@ library, see &lt;a class="reference external" href="https://github.com/maemo-les
 newer released fixed the problem, and now &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/353"&gt;ScummVM works again&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;There is also a ScummVM wiki entry now, with various tips and tricks:
 &lt;a class="reference external" href="https://leste.maemo.org/Extras/ScummVM"&gt;https://leste.maemo.org/Extras/ScummVM&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="new-extras-packages"&gt;
-&lt;h3&gt;New Extras packages&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;dl class="first docutils"&gt;
-&lt;dt&gt;new extras:&lt;/dt&gt;
-&lt;dd&gt;&lt;ul class="first last"&gt;
-&lt;li&gt;wifi-switcher&lt;/li&gt;
-&lt;li&gt;qshot&lt;/li&gt;
-&lt;li&gt;modrana &lt;a class="reference external" href="https://leste.maemo.org/Extras/modrana"&gt;https://leste.maemo.org/Extras/modrana&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;cloudgps &lt;a class="reference external" href="https://leste.maemo.org/Extras/cloudgps"&gt;https://leste.maemo.org/Extras/cloudgps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;maep &lt;a class="reference external" href="https://leste.maemo.org/Extras/maep"&gt;https://leste.maemo.org/Extras/maep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;gpsrecorder: &lt;a class="reference external" href="https://leste.maemo.org/Extras/gpsrecorder"&gt;https://leste.maemo.org/Extras/gpsrecorder&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;braek &lt;a class="reference external" href="https://leste.maemo.org/Extras/braek"&gt;https://leste.maemo.org/Extras/braek&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;!-- New Extras packages --&gt;
+&lt;!-- - - - - - - - - - - - - - - - - - - - --&gt;
+&lt;!--  --&gt;
+&lt;!-- - new extras: --&gt;
+&lt;!-- - wifi-switcher --&gt;
+&lt;!-- - qshot --&gt;
+&lt;!-- - modrana https://leste.maemo.org/Extras/modrana --&gt;
+&lt;!-- - cloudgps https://leste.maemo.org/Extras/cloudgps --&gt;
+&lt;!-- - maep https://leste.maemo.org/Extras/maep --&gt;
+&lt;!-- - gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder --&gt;
+&lt;!-- - braek https://leste.maemo.org/Extras/braek --&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="community-updates"&gt;
 &lt;h2&gt;Community updates&lt;/h2&gt;
 &lt;div class="section" id="wiki-updates"&gt;
 &lt;h3&gt;Wiki updates&lt;/h3&gt;
-&lt;p&gt;todo: call for help on adding wiki pages for each extras package&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Extras pages, package infobox&lt;/li&gt;
-&lt;li&gt;Device infobox&lt;/li&gt;
-&lt;li&gt;wiki updates, Package infobox, &lt;a class="reference external" href="https://leste.maemo.org/Extras/ScummVM"&gt;https://leste.maemo.org/Extras/ScummVM&lt;/a&gt;
-&lt;a class="reference external" href="https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;amp;action=edit"&gt;https://leste.maemo.org/index.php?title=Template:Infobox_Package&amp;amp;action=edit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;We have added wiki pages for various &lt;tt class="docutils literal"&gt;Extras&lt;/tt&gt; packages, you can find them
+under the &lt;a class="reference external" href="https://leste.maemo.org/Category:Extras"&gt;Category:Extras&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;There is now also a package &lt;cite&gt;Infobox&lt;/cite&gt; template to make it easy to add a page for
+a package - if you're a maintainer of a package, please consider making a wiki
+page entry for it!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="languages-and-translations"&gt;
 &lt;h3&gt;Languages and Translations&lt;/h3&gt;
@@ -391,13 +383,14 @@ requests in the process.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="leste-on-android-via-chroot"&gt;
 &lt;h3&gt;Leste on Android via chroot&lt;/h3&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;android chroot
-&lt;a class="reference external" href="https://github.com/diejuse/chroot_Maemo-leste_on_Android"&gt;https://github.com/diejuse/chroot_Maemo-leste_on_Android&lt;/a&gt;
-&lt;a class="reference external" href="https://www.youtube.com/watch?v=OqFHivcPIRM"&gt;https://www.youtube.com/watch?v=OqFHivcPIRM&lt;/a&gt;
-&lt;a class="reference external" href="https://www.youtube.com/watch?v=kipuT0VXzC4"&gt;https://www.youtube.com/watch?v=kipuT0VXzC4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;diejuse&lt;/tt&gt; has been experimenting with running Maemo Leste in a chroot on
+Android, and &lt;a class="reference external" href="https://github.com/diejuse/chroot_Maemo-leste_on_Android"&gt;he has documented the process here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are two videos of it in action:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/OqFHivcPIRM"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/kipuT0VXzC4"
+ ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="hardware-drivers"&gt;
 &lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
@@ -461,21 +454,26 @@ context menu of applications if they support it&lt;/li&gt;
 &lt;video controls height="480px" width="640px"&gt;
 &lt;source src="images/ts-buttons-demonstration.webm" type="video/webm"&gt;
 &lt;/video&gt;&lt;p&gt;Some of these features are also added to the pinephone hardware buttons.&lt;/p&gt;
-&lt;p&gt;TODO: headphone plug detection?&lt;/p&gt;
+&lt;p&gt;Finally, &lt;tt class="docutils literal"&gt;uvos&lt;/tt&gt; has been working on headphone plugin detection, which will
+make it into our development kernel soon.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="nokia-n900"&gt;
 &lt;h3&gt;Nokia N900&lt;/h3&gt;
 &lt;p&gt;As mentioned in &lt;a class="reference internal" href="#osso-systemui-devlock"&gt;osso-systemui-devlock&lt;/a&gt;, unlocking devices at boot should now
 work. We are now also using the &lt;cite&gt;nl80211&lt;/cite&gt; interface, as opposed to the &lt;cite&gt;wext&lt;/cite&gt;
 interface.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="pinephone"&gt;
-&lt;h3&gt;Pinephone&lt;/h3&gt;
-&lt;p&gt;## pinephone (maybe pinetab)
-- hildon keyboard via shortcuts (vol up) (missing on n900)&lt;/p&gt;
-&lt;p&gt;## f1
-- the port
-- we need someone with this device to maintain it!&lt;/p&gt;
+&lt;!-- Pinephone --&gt;
+&lt;!-- - - - - - - - - - --&gt;
+&lt;!--  --&gt;
+&lt;!-- ## pinephone (maybe pinetab) --&gt;
+&lt;!-- - hildon keyboard via shortcuts (vol up) (missing on n900) --&gt;
+&lt;!--  --&gt;
+&lt;!--  --&gt;
+&lt;!--  --&gt;
+&lt;!--  --&gt;
+&lt;!-- ## f1 --&gt;
+&lt;!-- - the port --&gt;
+&lt;!-- - we need someone with this device to maintain it! --&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="interested"&gt;
@@ -490,7 +488,7 @@ up to date, ask questions and/or help out. Another great way to get in touch is
 to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="news"></category><category term="todo"></category></entry><entry><title>Maemo Leste - IRC channel migration</title><link href="https://maemo-leste.github.io/maemo-leste-irc-channel-migration.html" rel="alternate"></link><published>2021-05-22T10:41:00+02:00</published><updated>2021-05-22T10:41:00+02:00</updated><author><name>Ivan Jelincic</name></author><id>tag:maemo-leste.github.io,2021-05-22:/maemo-leste-irc-channel-migration.html</id><summary type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
+</content><category term="news"></category><category term="sphone"></category><category term="modest"></category><category term="mail"></category><category term="calls"></category><category term="dapsi"></category><category term="gps"></category><category term="tor"></category><category term="wireguard"></category><category term="openvpn"></category><category term="icd"></category><category term="mce"></category><category term="solana"></category></entry><entry><title>Maemo Leste - IRC channel migration</title><link href="https://maemo-leste.github.io/maemo-leste-irc-channel-migration.html" rel="alternate"></link><published>2021-05-22T10:41:00+02:00</published><updated>2021-05-22T10:41:00+02:00</updated><author><name>Ivan Jelincic</name></author><id>tag:maemo-leste.github.io,2021-05-22:/maemo-leste-irc-channel-migration.html</id><summary type="html">&lt;p&gt;Due to the recent events that have happened with FOSS communities and
 the Freenode IRC network, we've decided to move our channel to the new,
 community-maintained &lt;a class="reference external" href="https://libera.chat"&gt;Libera.chat IRC network&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We have hopefully updated all our previous writings, and wiki entries,
