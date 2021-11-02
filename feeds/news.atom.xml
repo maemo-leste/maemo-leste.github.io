@@ -136,7 +136,7 @@ severed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="resolvconf"&gt;
 &lt;h4&gt;resolvconf&lt;/h4&gt;
-&lt;p&gt;Due to the way &lt;cite&gt;wg-quick&lt;/cite&gt; from the Wireguard tools worked, we also had to
+&lt;p&gt;Due to the way &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;wg-quick&lt;/span&gt;&lt;/tt&gt; from the Wireguard tools worked, we also had to
 overhaul our DNS scripts. We initially imported them from Maemo Leste, but
 recently upgraded them to use &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/3"&gt;resolvconf&lt;/a&gt; (issue &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/583"&gt;#583&lt;/a&gt;), making our setup more
 robust.&lt;/p&gt;
@@ -150,7 +150,7 @@ solved now.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="mce"&gt;
 &lt;h3&gt;mce&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;uvos&lt;/strong&gt; has been consistently working on improving &lt;cite&gt;mce&lt;/cite&gt; and a lot has changed:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;uvos&lt;/strong&gt; has been consistently working on improving &lt;tt class="docutils literal"&gt;mce&lt;/tt&gt; and a lot has changed:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;mce uses less memory (about 400kB) by using link time optimisations (LTO),
 &lt;cite&gt;--dynamic-list&lt;/cite&gt; and a build system rewrite (&lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/50"&gt;from plain Makefile to cmake&lt;/a&gt;).
@@ -343,17 +343,14 @@ library, see &lt;a class="reference external" href="https://github.com/maemo-les
 newer released fixed the problem, and now &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/353"&gt;ScummVM works again&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;There is also a ScummVM wiki entry now, with various tips and tricks:
 &lt;a class="reference external" href="https://leste.maemo.org/Extras/ScummVM"&gt;https://leste.maemo.org/Extras/ScummVM&lt;/a&gt;&lt;/p&gt;
-&lt;!-- New Extras packages --&gt;
-&lt;!-- - - - - - - - - - - - - - - - - - - - --&gt;
-&lt;!--  --&gt;
-&lt;!-- - new extras: --&gt;
-&lt;!-- - wifi-switcher --&gt;
-&lt;!-- - qshot --&gt;
-&lt;!-- - modrana https://leste.maemo.org/Extras/modrana --&gt;
-&lt;!-- - cloudgps https://leste.maemo.org/Extras/cloudgps --&gt;
-&lt;!-- - maep https://leste.maemo.org/Extras/maep --&gt;
-&lt;!-- - gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder --&gt;
-&lt;!-- - braek https://leste.maemo.org/Extras/braek --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-extras-packages"&gt;
+&lt;h3&gt;New Extras packages&lt;/h3&gt;
+&lt;p&gt;Several new extras package have been added, here's a list of a few of them:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;wifi-switcher&lt;/li&gt;
+&lt;li&gt;qshot&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="community-updates"&gt;
@@ -432,8 +429,8 @@ and distributed it over three different repositories for reproducibility:&lt;/p&
 &lt;p&gt;The older code for clown-boot on the Droid 3 &lt;a class="reference external" href="https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana"&gt;can be found here&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="motorola-droid-4"&gt;
-&lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
+&lt;div class="section" id="motorola-droid-4-and-droid-bionic"&gt;
+&lt;h3&gt;Motorola Droid 4 and Droid Bionic&lt;/h3&gt;
 &lt;p&gt;The Motorola Droid 4 should have significantly better power management, due to a
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;quircks-mapphone&lt;/span&gt;&lt;/tt&gt; module introduced in MCE, which will deal with silencing
 the modem signal strength updates when the display is off and also deal with a
@@ -462,18 +459,14 @@ make it into our development kernel soon.&lt;/p&gt;
 &lt;p&gt;As mentioned in &lt;a class="reference internal" href="#osso-systemui-devlock"&gt;osso-systemui-devlock&lt;/a&gt;, unlocking devices at boot should now
 work. We are now also using the &lt;cite&gt;nl80211&lt;/cite&gt; interface, as opposed to the &lt;cite&gt;wext&lt;/cite&gt;
 interface.&lt;/p&gt;
-&lt;!-- Pinephone --&gt;
-&lt;!-- - - - - - - - - - --&gt;
-&lt;!--  --&gt;
-&lt;!-- ## pinephone (maybe pinetab) --&gt;
-&lt;!-- - hildon keyboard via shortcuts (vol up) (missing on n900) --&gt;
-&lt;!--  --&gt;
-&lt;!--  --&gt;
-&lt;!--  --&gt;
-&lt;!--  --&gt;
-&lt;!-- ## f1 --&gt;
-&lt;!-- - the port --&gt;
-&lt;!-- - we need someone with this device to maintain it! --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone"&gt;
+&lt;h3&gt;Pinephone&lt;/h3&gt;
+&lt;p&gt;Launching the virtual keyboard is now supported in any X11 window, as mentioned
+in the &lt;a class="reference internal" href="#hildon-input-method"&gt;hildon-input-method&lt;/a&gt; section, the key to activate it is the volume up
+key. Once we have the 3D situation on the N900 and Droid devices under control,
+we will start looking at fixing the 3D rendering problems that seems to occur on
+the pinephone occasionally.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="interested"&gt;

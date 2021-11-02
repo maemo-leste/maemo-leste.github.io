@@ -209,7 +209,7 @@ severed.</p>
 </div>
 <div class="section" id="resolvconf">
 <h4>resolvconf</h4>
-<p>Due to the way <cite>wg-quick</cite> from the Wireguard tools worked, we also had to
+<p>Due to the way <tt class="docutils literal"><span class="pre">wg-quick</span></tt> from the Wireguard tools worked, we also had to
 overhaul our DNS scripts. We initially imported them from Maemo Leste, but
 recently upgraded them to use <a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/3">resolvconf</a> (issue <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/583">#583</a>), making our setup more
 robust.</p>
@@ -223,7 +223,7 @@ solved now.</p>
 </div>
 <div class="section" id="mce">
 <h3>mce</h3>
-<p><strong>uvos</strong> has been consistently working on improving <cite>mce</cite> and a lot has changed:</p>
+<p><strong>uvos</strong> has been consistently working on improving <tt class="docutils literal">mce</tt> and a lot has changed:</p>
 <ul class="simple">
 <li>mce uses less memory (about 400kB) by using link time optimisations (LTO),
 <cite>--dynamic-list</cite> and a build system rewrite (<a class="reference external" href="https://github.com/maemo-leste/mce/pull/50">from plain Makefile to cmake</a>).
@@ -416,17 +416,14 @@ library, see <a class="reference external" href="https://github.com/maemo-leste/
 newer released fixed the problem, and now <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/353">ScummVM works again</a>.</p>
 <p>There is also a ScummVM wiki entry now, with various tips and tricks:
 <a class="reference external" href="https://leste.maemo.org/Extras/ScummVM">https://leste.maemo.org/Extras/ScummVM</a></p>
-<!-- New Extras packages -->
-<!-- - - - - - - - - - - - - - - - - - - - -->
-<!--  -->
-<!-- - new extras: -->
-<!-- - wifi-switcher -->
-<!-- - qshot -->
-<!-- - modrana https://leste.maemo.org/Extras/modrana -->
-<!-- - cloudgps https://leste.maemo.org/Extras/cloudgps -->
-<!-- - maep https://leste.maemo.org/Extras/maep -->
-<!-- - gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder -->
-<!-- - braek https://leste.maemo.org/Extras/braek -->
+</div>
+<div class="section" id="new-extras-packages">
+<h3>New Extras packages</h3>
+<p>Several new extras package have been added, here's a list of a few of them:</p>
+<ul class="simple">
+<li>wifi-switcher</li>
+<li>qshot</li>
+</ul>
 </div>
 </div>
 <div class="section" id="community-updates">
@@ -505,8 +502,8 @@ and distributed it over three different repositories for reproducibility:</p>
 <p>The older code for clown-boot on the Droid 3 <a class="reference external" href="https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana">can be found here</a>.</p>
 </div>
 </div>
-<div class="section" id="motorola-droid-4">
-<h3>Motorola Droid 4</h3>
+<div class="section" id="motorola-droid-4-and-droid-bionic">
+<h3>Motorola Droid 4 and Droid Bionic</h3>
 <p>The Motorola Droid 4 should have significantly better power management, due to a
 <tt class="docutils literal"><span class="pre">quircks-mapphone</span></tt> module introduced in MCE, which will deal with silencing
 the modem signal strength updates when the display is off and also deal with a
@@ -535,18 +532,14 @@ make it into our development kernel soon.</p>
 <p>As mentioned in <a class="reference internal" href="#osso-systemui-devlock">osso-systemui-devlock</a>, unlocking devices at boot should now
 work. We are now also using the <cite>nl80211</cite> interface, as opposed to the <cite>wext</cite>
 interface.</p>
-<!-- Pinephone -->
-<!-- - - - - - - - - - -->
-<!--  -->
-<!-- ## pinephone (maybe pinetab) -->
-<!-- - hildon keyboard via shortcuts (vol up) (missing on n900) -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- ## f1 -->
-<!-- - the port -->
-<!-- - we need someone with this device to maintain it! -->
+</div>
+<div class="section" id="pinephone">
+<h3>Pinephone</h3>
+<p>Launching the virtual keyboard is now supported in any X11 window, as mentioned
+in the <a class="reference internal" href="#hildon-input-method">hildon-input-method</a> section, the key to activate it is the volume up
+key. Once we have the 3D situation on the N900 and Droid devices under control,
+we will start looking at fixing the 3D rendering problems that seems to occur on
+the pinephone occasionally.</p>
 </div>
 </div>
 <div class="section" id="interested">
