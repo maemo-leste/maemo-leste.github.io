@@ -1,5 +1,5 @@
-Maemo Leste - Fifteenth Update: January 2021
-############################################
+Maemo Leste - Fifteenth Update: Januari - October 2021
+######################################################
 
 :Category: news
 :tags: todo
@@ -223,7 +223,7 @@ mce
   support. Alternative backend types are `ini` files and `gsettings`.
 * `battery-guard <https://github.com/maemo-leste/mce/pull/43>`_ module was added
 * `power-generic <https://github.com/maemo-leste/mce/pull/47>`_ module that
-  allows mce to operate in adsence of dsme.
+  allows mce to operate in absence of dsme.
 
 
 Additionally, mce now supports some more dbus interfaces for changing various
@@ -341,7 +341,7 @@ us.
 sphone
 ------
 
-`sphone <https://github.com/maemo-leste/sphone>`_ is a ofono GUI based on gtk,
+`sphone is a ofono GUI <https://github.com/maemo-leste/sphone>`_ based on gtk,
 which `uvos` has been modernising and improving a bunch, aiming to make it
 modular with optional hildon/maemo support. In other words: it's a program that
 allows you to make phone calls on Maemo Leste, at least theoretically.
@@ -356,9 +356,14 @@ sphone, but it's already working to some degree, as can be seen in this video:
     </video>
 
 Integration with the Maemo address book (and other address books) is also being
-worked on.
+worked on. Here's a screenshot of the interface is portrait mode:
 
-todo: something about it only being in -devel or not
+.. image:: /images/sphone-dialer.png
+  :height: 576px
+  :width: 324px
+
+
+The application is only available in the **-devel** repositories.
 
 address book
 ------------
@@ -426,15 +431,8 @@ keyboard, our modified version of it `can be found in the fbkeyboard repository
 fbkeyboard is not available when the device has a hardware keyboard.
 
 .. image:: images/bionicfbkeyboard.jpg
-  :height: 489px
-  :width: 652px
-
-
-charge-mode
------------
-
-* charge-mode
-  - not installed by default rn, works on mapphones, n900 (at least)
+  :height: 652px
+  :width: 489px
 
 
 osso-systemui-devlock
