@@ -2,7 +2,7 @@ Maemo Leste - Fifteenth Update: Januari - October 2021
 ######################################################
 
 :Category: news
-:tags: todo
+:tags: sphone, modest, mail, calls, dapsi, gps, tor, wireguard, openvpn, icd, mce, solana
 :authors: Merlijn Wajer, Ivan Jelincic
 :date: 2021-10-28 00:00
 
@@ -141,9 +141,10 @@ interface statistics using ``wg show``.
 OpenVPN
 ~~~~~~~
 
-TODO
+The OpenVPN applet and ICD2 plugin is also available, but hasn't seen quite as
+much testing as the `Tor`_ and `Wireguard`_ plugins.
 
-* https://github.com/maemo-leste/libicd-openvpn
+The source can be found here: https://github.com/maemo-leste/libicd-openvpn
 
 connui providers
 ~~~~~~~~~~~~~~~~
@@ -223,7 +224,9 @@ mce
   support. Alternative backend types are `ini` files and `gsettings`.
 * `battery-guard <https://github.com/maemo-leste/mce/pull/43>`_ module was added
 * `power-generic <https://github.com/maemo-leste/mce/pull/47>`_ module that
-  allows mce to operate in absence of dsme.
+  allows mce to operate in absence of dsme. In combination with the new
+  `lock-generic` module, one can use xdg-screensaver instead of the
+  hildon-specific lock screen.
 
 
 Additionally, mce now supports some more dbus interfaces for changing various
@@ -235,13 +238,13 @@ some awkward architecture:
 * https://github.com/maemo-leste-extras/simple-brightness-applet/pull/2
 
 
-Profiles control panel applet
------------------------------
-
-TODO
-
-Some fixes, renamed
-https://github.com/maemo-leste/bugtracker/issues/569
+.. Profiles control panel applet
+.. -----------------------------
+.. 
+.. TODO
+.. 
+.. Some fixes, renamed
+.. https://github.com/maemo-leste/bugtracker/issues/569
 
 Wireless
 --------
@@ -472,17 +475,17 @@ newer released fixed the problem, and now `ScummVM works again <https://github.c
 There is also a ScummVM wiki entry now, with various tips and tricks:
 https://leste.maemo.org/Extras/ScummVM
 
-New Extras packages
--------------------
-
-- new extras:
-	- wifi-switcher
-	- qshot
-	- modrana https://leste.maemo.org/Extras/modrana
-	- cloudgps https://leste.maemo.org/Extras/cloudgps
-	- maep https://leste.maemo.org/Extras/maep
-	- gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder
-	- braek https://leste.maemo.org/Extras/braek
+.. New Extras packages
+.. -------------------
+.. 
+.. - new extras:
+.. 	- wifi-switcher
+.. 	- qshot
+.. 	- modrana https://leste.maemo.org/Extras/modrana
+.. 	- cloudgps https://leste.maemo.org/Extras/cloudgps
+.. 	- maep https://leste.maemo.org/Extras/maep
+.. 	- gpsrecorder: https://leste.maemo.org/Extras/gpsrecorder
+.. 	- braek https://leste.maemo.org/Extras/braek
 
 
 
@@ -492,14 +495,13 @@ Community updates
 Wiki updates
 ------------
 
-todo: call for help on adding wiki pages for each extras package
+We have added wiki pages for various ``Extras`` packages, you can find them
+under the `Category:Extras <https://leste.maemo.org/Category:Extras>`_ page.
 
-* Extras pages, package infobox
+There is now also a package `Infobox` template to make it easy to add a page for
+a package - if you're a maintainer of a package, please consider making a wiki
+page entry for it!
 
-* Device infobox
-
-* wiki updates, Package infobox, https://leste.maemo.org/Extras/ScummVM
-  https://leste.maemo.org/index.php?title=Template:Infobox_Package&action=edit
 
 Languages and Translations
 --------------------------
@@ -523,10 +525,25 @@ Check out `Maemo Leste on Weblate.org
 Leste on Android via chroot
 ---------------------------
 
-- android chroot
-  https://github.com/diejuse/chroot_Maemo-leste_on_Android
-  https://www.youtube.com/watch?v=OqFHivcPIRM
-  https://www.youtube.com/watch?v=kipuT0VXzC4
+``diejuse`` has been experimenting with running Maemo Leste in a chroot on
+Android, and `he has documented the process here
+<https://github.com/diejuse/chroot_Maemo-leste_on_Android>`_.
+
+
+Here are two videos of it in action:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OqFHivcPIRM"
+     ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
+
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kipuT0VXzC4"
+     ;rameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture" allowfullscreen></iframe>
 
 
 Hardware & Drivers
@@ -611,7 +628,8 @@ The touch screen buttons now provide specific features:
 Some of these features are also added to the pinephone hardware buttons.
 
 
-TODO: headphone plug detection?
+Finally, ``uvos`` has been working on headphone plugin detection, which will
+make it into our development kernel soon.
 
 
 Nokia N900
@@ -622,18 +640,18 @@ work. We are now also using the `nl80211` interface, as opposed to the `wext`
 interface.
 
 
-Pinephone
----------
-
-## pinephone (maybe pinetab)
-- hildon keyboard via shortcuts (vol up) (missing on n900)
-
-
-
-
-## f1
-- the port
-- we need someone with this device to maintain it!
+.. Pinephone
+.. ---------
+.. 
+.. ## pinephone (maybe pinetab)
+.. - hildon keyboard via shortcuts (vol up) (missing on n900)
+.. 
+.. 
+.. 
+.. 
+.. ## f1
+.. - the port
+.. - we need someone with this device to maintain it!
 
 
 
