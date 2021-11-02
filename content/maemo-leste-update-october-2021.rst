@@ -475,15 +475,6 @@ newer released fixed the problem, and now `ScummVM works again <https://github.c
 There is also a ScummVM wiki entry now, with various tips and tricks:
 https://leste.maemo.org/Extras/ScummVM
 
-New Extras packages
--------------------
-
-Several new extras package have been added, here's a list of a few of them:
-
-- wifi-switcher
-- qshot
-
-
 
 Community updates
 =================
