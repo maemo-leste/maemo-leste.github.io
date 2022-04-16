@@ -28,7 +28,7 @@ Images and upgrading
 ====================
 
 We are still very actively developing Maemo Leste, so many things remain in
-flux. As a result, you might have to occassionally have to update using ``apt
+flux. As a result, you might have to occassionally update using ``apt
 dist-upgrade`` as opposed to just ``apt upgrade`` - this is especially true for
 this update. Alternatively you can just install the latest images.
 
@@ -98,7 +98,7 @@ double buffering
 <https://github.com/maemo-leste-upstream-forks/clutter-0.8/commit/13903d341009266d0bfa19806e74625a16ab552a>`_,
 even though they in fact were.
 
-Once that was fixed, another problem was surfaced, regarding the preservation of
+Once that was fixed, another problem surfaced, regarding the preservation of
 EGL buffers in Mesa. Clutter relies on the fact that the buffers are preserved,
 `but didn't actually request that support
 <https://github.com/maemo-leste-upstream-forks/clutter-0.8/commit/6f753308446ff833d8c2713357cdc97d94dcb15b>`_.
@@ -117,7 +117,7 @@ Nokia N900
 ----------
 
 The Nokia N900 was stuck on Linux 5.1 for quite a long time in Maemo Leste,
-because of the aforementioned graphics drivers trouble, which have now finally
+because of the aforementioned graphics driver troubles, which have now finally
 been resolved. As such we set forth to move to the latest Linux kernel only to
 found that the support was once again quite broken. More precisely:
 
@@ -184,7 +184,7 @@ Droid 3 images
 ~~~~~~~~~~~~~~
 
 After reporting on the Droid 3 port in the previous update, we are now also
-offering images for the Droid 3. It's a neat device, much like the Droid 3,
+offering images for the Droid 3. It's a neat device, much like the Droid 4,
 feels more sturdy, but comes with less RAM. We still have more issues to work on
 for the Droid 3 port, though - in particular there is still a common problem
 where the Droid 3 freezes and resets.
@@ -210,7 +210,7 @@ faster screen lock and unlock (see `mce PR #52
 
 Below is a screenshot from a Motorola Droid 4 with a used battery, showing that
 it has two days of online time left. Keep in mind that this means the device
-would online all the time - this is not about suspend to ram time (which is not
+would be online all the time - this is not about suspend to ram time (which is not
 necessary on OMAP4). Similar time estimates can be expected on the Droid 3 and
 the Bionic, and there are still things to improve upon. OMAP4 does not yet
 support ``OFF`` mode, but when it does we suspect we will see further power
@@ -416,7 +416,7 @@ virtual keyboard
 ----------------
 
 The virtual keyboard has a mode where it only shows special keys - this had
-silently been broken but has since been fixed again.
+silently been broken but has since been fixed.
 
 
 maemo-launcher
@@ -452,7 +452,7 @@ this `libmatchbox PR #8 <https://github.com/maemo-leste/libmatchbox2/pull/8>`_.
 Volume applet
 -------------
 
-It is now possible to change the volume of the headphone or speakers (depending
+It is now possible to change the volume of the headphones or speakers (depending
 on what is active) using the volume buttons. `maemo-statusmenu-volume pull
 request #1 <https://github.com/maemo-leste/maemo-statusmenu-volume/pull/1>`_ and
 the follow up `pull request #2
@@ -472,7 +472,7 @@ Additional Software changes
 ofono
 -----
 
-The ofono for all our supported devices has been updated to a more recent
+The ofono version for all our supported devices has been updated to a more recent
 release - ofono 1.34. We've additionally also merged in some more patches for
 better pinephone support (see `issue #597
 <https://github.com/maemo-leste/bugtracker/issues/597>`_ and `issue #598
@@ -496,7 +496,7 @@ some Maemo patches that were missing. This is now fixed, see `issue #582
 themes on images
 ----------------
 
-At some point, loading themes was broken on our of our image builds (`see issue
+At some point, loading themes was broken on our 32bit image builds (`see issue
 #599 <https://github.com/maemo-leste/bugtracker/issues/599>`_ for what that
 looks like), but this has since been fixed. The problem turned out to be a
 problem in QEMU where `readdir()` would fail for a 32 bit guest on a 64 host. We
@@ -519,7 +519,7 @@ We have improved the pulseaudio setup on the devices, in particular:
 System log (rsyslog) configuration changes
 ------------------------------------------
 
-The latest ``leste-config`` separate out the logging so that it is easier to
+The latest ``leste-config`` separates out the logging so that it is easier to
 track down problems by reviewing the logs. Some daemons got their own log files
 in ``/var/log/maemo``, like ``icd2``, ``mce``, ``ofono``, ``dsme``, and so on.
 See `issue #588 for some more details <https://github.com/maemo-leste/bugtracker/issues/588>`_.
@@ -542,7 +542,7 @@ devices running Maemo Leste would not be able to resolve any addresses over DNS,
 as no server was available.
 
 We have decided to default to `9.9.9.9` (aka "Quad9") is nothing else is
-available. In future we might replace this by just running a recursive DNS
+available. In the future we might replace this by just running a recursive DNS
 resolver on the device itself. See `this commit on libicd-network-ipv4
 <https://github.com/maemo-leste/libicd-network-ipv4/commit/49afd837bf5a7764c0cc59854aad2b01175088a4>`_
 for some more information. **We also very much welcome feedback** regarding
@@ -586,7 +586,7 @@ Community and supporting software updates
 =========================================
 
 
-keyring and jenkins updates
+keyring and Jenkins updates
 ---------------------------
 
 Our key for the "extras" repository silently expired (not the first time), but
@@ -597,8 +597,8 @@ and are working on adding a Honeycomb LX2 machine for fast ARM package builds.
 Mediawiki theme
 ---------------
 
-IRC user ``ashley`` contributed a forward-port of the old Maemo mediawiki theme as an selectable
-theme on our wiki, `and you can preview it here
+IRC user ``ashley`` contributed a forward-port of the old Maemo mediawiki theme
+as a selectable theme on our wiki, `and you can preview it here
 <https://leste.maemo.org/index.php?title=Tor&useskin=maemo>`_. If you like the
 theme, you can make it the default from the preferences in mediawiki. See `issue
 #590 <https://github.com/maemo-leste/bugtracker/issues/590>`_ for some more
@@ -619,10 +619,10 @@ TODO
 Interested?
 ===========
 
-If you have questions, are interested in specifics, or helping out, or wish to
+If you have questions, are interested in specifics or helping out, or wish to
 have a specific package ported, please see our bugtracker.
 
-**We have several Nokia N900 and Motorola Droid 4 and Bionic units available to
+**We have several Nokia N900 and Motorola Droid 4 and Bionic units available for
 interested developers**, so if you are interested in helping out but have
 trouble acquiring a device, let us know.
 
