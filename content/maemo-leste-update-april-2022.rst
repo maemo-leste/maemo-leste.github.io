@@ -121,8 +121,9 @@ because of the aforementioned graphics drivers trouble, which have now finally
 been resolved. As such we set forth to move to the latest Linux kernel only to
 found that the support was once again quite broken. More precisely:
 
-* `wifi was broken <https://github.com/maemo-leste/droid4-linux/commit/fa7c9a0d1cecf00579b7388f64393ea26c9433d5>`_;
-   (`see issue #572 <https://github.com/maemo-leste/bugtracker/issues/572>`_)
+* `Wifi was broken <https://github.com/maemo-leste/droid4-linux/commit/fa7c9a0d1cecf00579b7388f64393ea26c9433d5>`_
+  (`see issue #572 <https://github.com/maemo-leste/bugtracker/issues/572>`_)
+
 * `LEDs were broken
   <https://github.com/maemo-leste/droid4-linux/commit/4f9a153a44cb4a4d34e265e451da507b64e042cd>`_
   (also `device tree work was required)
