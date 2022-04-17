@@ -2,27 +2,29 @@ Maemo Leste - Sixteenth Update: November and December 2021, January - April 2022
 ################################################################################
 
 :Category: news
-:tags: todo
+:tags: telepathy, conversations, contacts, addressbook, powervr, graphics, mesa,
+       pinephone, droid4, droid3, n900, linux
 :authors: Merlijn Wajer
-:date: 2022-02-02 00:00
+:date: 2022-04-16 09:00
 
 The long overdue update is finally here, and it's our biggest update yet.
 (Also check out our `previous update  <{filename}/maemo-leste-update-october-2021.rst>`_ in case you missed it).
 
-These past few months have been heavily about stability and bug fixing, as well
-as the major features like the communication and phone aspects of Maemo Leste.
+These past few months have been heavily about stability and bug fixing, but
+there are some cool additions and improvements to our userspace as well, in
+particular to the communication and phone aspects of Maemo Leste.
 
 Here are a few highlights:
 
 * improved performance and stability for graphics drivers for OMAP / PowerVR based devices such as Nokia
   N900 and the Motorola Droid 3, Motorola Droid 4 and Motorola Bionic;
-* todo: salutem for updates
 * graphics rendering problems on the Pinephone and Pinetab are all fixed;
 * Nokia N900 kernel support is now based on 5.15 instead of 5.1 fixing many
   regressions along the way;
-* updates on the  conversations application, phone call support and the
+* addition of the Maemo contacts application and contacts library
+* updates on the conversations application, phone call support and the
   telepathy framework and user interfaces;
-* 2-3 day battery life for the supported Motorola Droid devices.
+* 2-3 day battery life for the supported Motorola Droid devices
 
 Images and upgrading
 ====================
@@ -30,7 +32,8 @@ Images and upgrading
 We are still very actively developing Maemo Leste, so many things remain in
 flux. As a result, you might have to occassionally update using ``apt
 dist-upgrade`` as opposed to just ``apt upgrade`` - this is especially true for
-this update. Alternatively you can just install the latest images.
+this update. Alternatively you can just install the latest images if things do
+break.
 
 In the past, sometimes Maemo Leste upgrades would cause unexpected reboots,
 breaking the system, we've tried to now solve those problems by `preventing
@@ -202,7 +205,9 @@ has been introduced, introducing additional power saving mechanisms. For
 example, it will cause the modem not to report on signal strength if the device
 screen is turned off, which prevents waking up ofono, and then D-Bus, and then
 programs that listen for ofono on D-Bus. The module also turns off the secondary
-CPU to prevent additional wakeups (`issue #594 <https://github.com/maemo-leste/bugtracker/issues/594>`_).
+CPU to prevent additional wakeups (`issue #594
+<https://github.com/maemo-leste/bugtracker/issues/594>`_), but only if the
+screen is turned off.
 
 ``freemangordon`` improved the responsiveness of the module somewhat, leading to
 faster screen lock and unlock (see `mce PR #52
@@ -226,7 +231,8 @@ Pinephone
 ---------
 
 ``rafael2k`` has helped getting our PinePhone support into much better shape. We
-now ship a 5.15-based kernel fixing up the modem support and audio during phone calls.
+now ship a 5.15-based kernel fixing up the modem support and audio during phone
+calls.
 
 We now also have a package for `PinePhone bluetooth firmware
 <https://github.com/maemo-leste/bugtracker/issues/327>`_. Combined with the
@@ -261,7 +267,8 @@ email client (`modest`) has already integrated support for the address book.
   :width: 576px
 
 The screenshot above shows the contact overview from the main "Contacts"
-application - applications can also embed this view or use it as a dialog.
+application - applications can also embed this view or use it as a dialog. All
+the contacts imported from a Nokia N900 that has been in use for over 10 years.
 
 .. image:: /images/contacts-myinformation.png
   :height: 324px
@@ -293,13 +300,14 @@ conversations
 -------------
 
 We've been working on an open source replacement for the Conversations
-application. The `replacement is written in Qt5 and QML
-<https://github.com/maemo-leste/conversations>`_, and can currently read
-and show the rtcom communications database, but has only limited addressbook
-integration.  We have had some luck integrating Telepathy, and both sending and
-receiving SMS/IRC/XMPP messages works, but the code is not yet available in the
-package repositories, as there are still some bugs to solve when using multiple
-Telepathy accounts.
+application, with many of the core components written by a newcomer - ``dsc``.
+The `replacement is written in Qt5 and QML
+<https://github.com/maemo-leste/conversations>`_, and can currently read and
+show the rtcom communications database, but has only limited addressbook
+integration. We have had some luck integrating Telepathy, and both sending and
+receiving SMS/IRC/XMPP messages works (including logging the messages to the
+RTcom database), but the code is not yet available in the package repositories,
+as there are still some bugs to solve when using multiple Telepathy accounts.
 
 For it to fully work, more work is also required for the Telepathy integration
 in other parts of the system, in particular we need to get some of the other
@@ -628,6 +636,15 @@ From a stability standpoint, there are some bugs to be investigated still, in
 particular for the ofono support of the Droid series that we support. There are
 also some things to improve further for 2D/3D support, but it's looking much
 better than before.
+
+This year we also hope to the new Devuan chimaera (Debian bullseye) release,
+further modernising our codebase and building on top of the latest and greatest
+that the free software community has to offer.
+
+Finally, we're slowly but surely getting all our of userland in place, while
+still heavily working on device support for the devices we support. Once
+userland is more or less complete, it will probably get much easier to port
+Maemo Leste to other (potentially newer) devices, so look forward to that too.
 
 
 Interested?
