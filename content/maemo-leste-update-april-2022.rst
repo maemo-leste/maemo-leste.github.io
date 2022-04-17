@@ -315,6 +315,8 @@ The following still needs to be fixed up or outright implemented:
 * Support for multiple accounts (this should in theory work, but we have to
   debug how we use Telepathy Qt here)
 * Various UI improvements to clearly separate the different protocols
+* Better support for system themes, some of the assets are currently
+  semi-hardcoded in the QML files
 
 Nevertheless - here are some screenshots of the current application.
 
@@ -368,16 +370,11 @@ soon have working communications for many protocols. At that point, we'll add
 more plugins for ``rtcom-accounts-ui`` to support more protocols.
 
 The last piece of this work will be getting ``rtcom-presence-ui`` into shape,
-which adds presence and 
+which adds presence and also (we believe) managing the online status of the
+Telepathy accounts of the user.
 
-
-The relevant repositories are here:
-
-* https://github.com/maemo-leste/libaccounts
-* https://github.com/maemo-leste/rtcom-accounts-ui
-* https://github.com/maemo-leste/rtcom-accounts-plugin-gtalk
-* https://github.com/maemo-leste/rtcom-accounts-ui-client
-
+These screenshots show the control panel applet in action (and no, we didn't forget
+to remove the email address or name):
 
 .. image:: /images/rtcom-accounts-list.png
   :height: 324px
@@ -392,15 +389,21 @@ The relevant repositories are here:
   :width: 576px
 
 
+The relevant repositories are here:
+
+* https://github.com/maemo-leste/libaccounts
+* https://github.com/maemo-leste/rtcom-accounts-ui
+* https://github.com/maemo-leste/rtcom-accounts-plugin-gtalk
+* https://github.com/maemo-leste/rtcom-accounts-ui-client
+
 sphone
 ------
 
 The sphone dialer application has gained basic support for the Maemo address
-book, and it can also write text and call events to the RTCom database.
-
-.. .. image:: /images/sphone-dialer-2.png
-..   :width: 324px
-..   :height: 576px
+book, and it can also write text and call events to the RTCom database. This
+means that all incoming messages and calls are being logged (that's a good
+thing) -- in the future other applications (like conversations) will likely deal
+with the logging of incoming messages, though.
 
 .. image:: /images/sphone-contacts.png
   :height: 324px
@@ -410,20 +413,30 @@ book, and it can also write text and call events to the RTCom database.
 charging-mode
 -------------
 
-TODO: new: charging mode
+Our latest images (and also upgraded devices) now ship with a feature called
+"charge mode", which will boot to a special charging-only mode when the phone
+starts with a usb cable providing power. This was created (based on existing
+software) by ``uvos``, and here is a video he made to show off the work:
 
-virtual keyboard
+.. raw:: html
+
+    <video controls height="480px" width="720px">
+    <source src="images/charge-mode.webm" type="video/webm">
+    </video>
+
+
+Virtual keyboard
 ----------------
 
 The virtual keyboard has a mode where it only shows special keys - this had
 silently been broken but has since been fixed.
-
 
 maemo-launcher
 --------------
 
 maemo-launcher has seen some fixes with regards to resolving symlinks that are
 multiple levels deep, see `issue #484 <https://github.com/maemo-leste/bugtracker/issues/484>`_.
+This helps selecting alternative default terminal applications.
 
 hildon-desktop
 --------------
@@ -493,7 +506,7 @@ some Maemo patches that were missing. This is now fixed, see `issue #582
 .. 
 .. * libicd-network-wpasupplicant segfault fix when net->type NULL
 
-themes on images
+Themes on images
 ----------------
 
 At some point, loading themes was broken on our 32bit image builds (`see issue
@@ -504,7 +517,7 @@ worked around this problem by adding an additional image building machine that
 is 32 bit.
 
 
-pulseaudio configuration
+Pulseaudio configuration
 ------------------------
 
 We have improved the pulseaudio setup on the devices, in particular:
@@ -577,16 +590,12 @@ specific features.
   :height: 324px
   :width: 576px
 
-salutem
--------
-
-TODO
 
 Community and supporting software updates
 =========================================
 
 
-keyring and Jenkins updates
+Keyring and Jenkins updates
 ---------------------------
 
 Our key for the "extras" repository silently expired (not the first time), but
@@ -608,12 +617,17 @@ information.
 What's next
 ===========
 
-TODO
+Getting Telepathy support for conversations fully worked out together with the
+RTCom applications will be an amazing thing for our mobile operating system.
+Once that is working well, we can start adding support for more protocols (we're
+working on a Telepathy signal plugin using signald), and perhaps also fix up
+telepathy-hazy, which allows running many Pidgin (libpurple) protocols inside
+Telepathy.
 
-- conversations more, group chat support
-- telepathy uis rtcom
-- addressbook completion
-- ofono mapphone support
+From a stability standpoint, there are some bugs to be investigated still, in
+particular for the ofono support of the Droid series that we support. There are
+also some things to improve further for 2D/3D support, but it's looking much
+better than before.
 
 
 Interested?
@@ -622,9 +636,9 @@ Interested?
 If you have questions, are interested in specifics or helping out, or wish to
 have a specific package ported, please see our bugtracker.
 
-**We have several Nokia N900 and Motorola Droid 4 and Bionic units available for
-interested developers**, so if you are interested in helping out but have
-trouble acquiring a device, let us know.
+**We have several Nokia N900 and Motorola Droid 3, Droid 4 and Bionic units
+available for interested developers**, so if you are interested in helping out
+but have trouble acquiring a device, let us know.
 
 Please also join our `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay
