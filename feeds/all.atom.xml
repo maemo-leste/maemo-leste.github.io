@@ -1,5 +1,465 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2021-10-28T00:00:00+02:00</updated><subtitle></subtitle><entry><title>Maemo Leste - Fifteenth Update: Januari - October 2021</title><link href="https://maemo-leste.github.io/maemo-leste-fifteenth-update-januari-october-2021.html" rel="alternate"></link><published>2021-10-28T00:00:00+02:00</published><updated>2021-10-28T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-10-28:/maemo-leste-fifteenth-update-januari-october-2021.html</id><summary type="html">&lt;p&gt;The long overdue update is finally here, it's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html"&gt;last
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2022-04-16T09:00:00+02:00</updated><entry><title>Maemo Leste - Sixteenth Update: November and December 2021, January - April 2022</title><link href="https://maemo-leste.github.io/maemo-leste-sixteenth-update-november-and-december-2021-january-april-2022.html" rel="alternate"></link><published>2022-04-16T09:00:00+02:00</published><updated>2022-04-16T09:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2022-04-16:/maemo-leste-sixteenth-update-november-and-december-2021-january-april-2022.html</id><summary type="html">&lt;p&gt;The long overdue update is finally here, and it's our biggest update yet.
+(Also check out our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifteenth-update-januari-october-2021.html"&gt;previous update&lt;/a&gt; in case you missed it).&lt;/p&gt;
+&lt;p&gt;These past few months have been heavily about stability and bug fixing, but
+there are some cool additions and improvements to our userspace as well, in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The long overdue update is finally here, and it's our biggest update yet.
+(Also check out our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fifteenth-update-januari-october-2021.html"&gt;previous update&lt;/a&gt; in case you missed it).&lt;/p&gt;
+&lt;p&gt;These past few months have been heavily about stability and bug fixing, but
+there are some cool additions and improvements to our userspace as well, in
+particular to the communication and phone aspects of Maemo Leste.&lt;/p&gt;
+&lt;p&gt;Here are a few highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;improved performance and stability for graphics drivers for OMAP / PowerVR based devices such as Nokia
+N900 and the Motorola Droid 3, Motorola Droid 4 and Motorola Bionic;&lt;/li&gt;
+&lt;li&gt;graphics rendering problems on the Pinephone and Pinetab are all fixed;&lt;/li&gt;
+&lt;li&gt;Nokia N900 kernel support is now based on 5.15 instead of 5.1 fixing many
+regressions along the way;&lt;/li&gt;
+&lt;li&gt;addition of the Maemo contacts application and contacts library&lt;/li&gt;
+&lt;li&gt;updates on the conversations application, phone call support and the
+telepathy framework and user interfaces;&lt;/li&gt;
+&lt;li&gt;2-3 day battery life for the supported Motorola Droid devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="images-and-upgrading"&gt;
+&lt;h2&gt;Images and upgrading&lt;/h2&gt;
+&lt;p&gt;We are still very actively developing Maemo Leste, so many things remain in
+flux. As a result, you might have to occassionally update using &lt;tt class="docutils literal"&gt;apt
+&lt;span class="pre"&gt;dist-upgrade&lt;/span&gt;&lt;/tt&gt; as opposed to just &lt;tt class="docutils literal"&gt;apt upgrade&lt;/tt&gt; - this is especially true for
+this update. Alternatively you can just install the latest images if things do
+break.&lt;/p&gt;
+&lt;p&gt;In the past, sometimes Maemo Leste upgrades would cause unexpected reboots,
+breaking the system, we've tried to now solve those problems by &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/blob/master/leste-config-common/usr/sbin/policy-rc.d.leste"&gt;preventing
+certain packages from restarting&lt;/a&gt;.
+Additionally, the presence of the &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/blob/master/leste-config-common/etc/no_lg_reboots.leste"&gt;/etc/no_lg_reboots&lt;/a&gt;
+file will prevent the system from rebooting in cases where services do crash
+repeatedly.&lt;/p&gt;
+&lt;div class="section" id="new-images"&gt;
+&lt;h3&gt;New images&lt;/h3&gt;
+&lt;p&gt;We spin new images weekly, but for this blog post have checked that all of the
+supported devices (&lt;tt class="docutils literal"&gt;n900&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;droid3&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;droid4&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;bionic&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;pinephone&lt;/tt&gt;)
+boot fine. &lt;a class="reference external" href="https://maedevu.maemo.org/images/"&gt;You can find the images here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hardware-drivers"&gt;
+&lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
+&lt;div class="section" id="omap-and-powervr-drivers"&gt;
+&lt;h3&gt;OMAP and PowerVR drivers&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; has been working really hard together with some other Maemo
+Leste developers to move to the latest PowerVR drivers available - both in
+kernel and userspace. In addition to that, there is now &lt;strong&gt;2D EXA&lt;/strong&gt; acceleration
+in X using the PowerVR drivers as well. This has been a multi-year effort by
+many people, and it's finally here, bringing all devices to the latest Linux
+kernels.&lt;/p&gt;
+&lt;p&gt;This involved integrating and &lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/mesa/commits/maemo/beowulf"&gt;improving on the chromium os PowerVR mesa driver&lt;/a&gt;
+(which also brought all the devices up to a newer mesa version - &lt;tt class="docutils literal"&gt;21.2.5&lt;/tt&gt;),
+fixing up the &lt;a class="reference external" href="https://github.com/maemo-leste/xf86-video-omap/commits/master"&gt;xf86-video-omap&lt;/a&gt; driver to
+support EXA and fix up its buffer management, rotation support, as well as many
+fixes to the kernel, here are just a few:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/067976f0afd4a65bf32a3f450ee42f508a1b0612"&gt;https://github.com/maemo-leste/droid4-linux/commit/067976f0afd4a65bf32a3f450ee42f508a1b0612&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/7708a2ab996360826fa085374ca794cfd034cc4b"&gt;https://github.com/maemo-leste/droid4-linux/commit/7708a2ab996360826fa085374ca794cfd034cc4b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/f56836db3ec4210c5cfaf40fa721a6e21cd7730e"&gt;https://github.com/maemo-leste/droid4-linux/commit/f56836db3ec4210c5cfaf40fa721a6e21cd7730e&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition to all of that impressive work, we're also hoping to finally enable
+the &lt;strong&gt;tear free&lt;/strong&gt; operation of the Droid 4 display.&lt;/p&gt;
+&lt;p&gt;The driver also improves stability and fixes various crashes in the previous
+drivers. The driver is available immediately for the Nokia N900, Motorola
+Droid 3, Motorola Droid 4 and Droid Bionic.&lt;/p&gt;
+&lt;p&gt;The Nokia N900 won't support rotation yet, but at least it will &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/578"&gt;no longer
+segfault&lt;/a&gt; - we know what
+needs to be done to support rotation, and it's in the works.&lt;/p&gt;
+&lt;p&gt;Some more background information can be found in &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/524"&gt;issue #524&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone-mesa-and-clutter"&gt;
+&lt;h3&gt;Pinephone, Mesa and Clutter&lt;/h3&gt;
+&lt;p&gt;Maemo Leste on the Pinephone suffered from various graphical glitches, but these
+have now all finally been resolved. There were various problems to resolve, the
+first one was in clutter, &lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/clutter-0.8/commit/13903d341009266d0bfa19806e74625a16ab552a"&gt;which assumed that the display drivers were not using
+double buffering&lt;/a&gt;,
+even though they in fact were.&lt;/p&gt;
+&lt;p&gt;Once that was fixed, another problem surfaced, regarding the preservation of
+EGL buffers in Mesa. Clutter relies on the fact that the buffers are preserved,
+&lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/clutter-0.8/commit/6f753308446ff833d8c2713357cdc97d94dcb15b"&gt;but didn't actually request that support&lt;/a&gt;.
+However, requesting the support was not enough, because Mesa doesn't (always)
+implement the feature, for which we &lt;a class="reference external" href="https://gitlab.freedesktop.org/mesa/mesa/-/issues/5800"&gt;filed this report&lt;/a&gt; at mesa.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;enunes&lt;/tt&gt; was particularly instrumental in helping working around the problem.
+providing us with a &lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/mesa/commit/dde856128e67b0d3760cd3b8fa95c4c1463168bd"&gt;minimal stop-gap patch&lt;/a&gt;
+to add support for this feature to mesa while we improve clutter further to
+switch to buffer age extensions, rather than relying on this feature being
+available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;The Nokia N900 was stuck on Linux 5.1 for quite a long time in Maemo Leste,
+because of the aforementioned graphics driver troubles, which have now finally
+been resolved. As such we set forth to move to the latest Linux kernel only to
+found that the support was once again quite broken. More precisely:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/fa7c9a0d1cecf00579b7388f64393ea26c9433d5"&gt;Wifi was broken&lt;/a&gt;
+(&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/572"&gt;see issue #572&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/4f9a153a44cb4a4d34e265e451da507b64e042cd"&gt;LEDs were broken&lt;/a&gt;
+(also &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/af2872bfcd6eb527b227b79fddbf6927952c9f86"&gt;device tree work was required)&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;OFF mode was never being hit again &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/b119ddd34750b1a9e2d66745912a2fe9479b85fe"&gt;due to memory compaction&lt;/a&gt;
+and &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/a42cb7d0afcde0d4c1dfdfbb6f5eb33597387481"&gt;thermal driver changes&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;The &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/2c7e4a1ac8ec1f908927793e893566aac3dcb9df"&gt;N900 modem driver would panic and reset the device upon usage&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/083a17e41a4a9b44ac37de26e5ac357289248e6b"&gt;Automatically turning on OFF mode caused race conditions during boot that causes resets&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After spending a week bisecting to find all the various problems, various
+fixes have already made it mainline, but other breakage still needs more
+investigate before we can send a fix upstream, but at least our kernel carries
+the necessary fixes and reverts.&lt;/p&gt;
+&lt;p&gt;We've also unified the Droid 4 and N900 kernel, so all this work can now be
+found here (the repository will be renamed to &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;omap-linux&lt;/span&gt;&lt;/tt&gt; in due time):&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commits/wip/n900/maemo-5.15-cleaned-up"&gt;https://github.com/maemo-leste/droid4-linux/commits/wip/n900/maemo-5.15-cleaned-up&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As part of the kernel unification, we also created &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-kernel-config"&gt;maemo-kernel-config&lt;/a&gt; to create kernel images
+that are N900 u-boot compatible.&lt;/p&gt;
+&lt;p&gt;We're also still working on further Nokia N900 power management improvements, to
+this end we have created the &lt;a class="reference external" href="https://github.com/maemo-leste/n900-pm"&gt;n900-pm script&lt;/a&gt;, and have starting improving power
+management of various drivers (touchscreen work &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/fbe57fb618ffefaed2526acfc3d53b8a8a6fcc79"&gt;to use runtime pm&lt;/a&gt;
+and to &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/1fb2c44148536463875bb1d4bbb35c617d7b72e7"&gt;disable irqs upon suspend&lt;/a&gt;
+already help some), but there are more drivers that need to be worked on.&lt;/p&gt;
+&lt;p&gt;This &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/545"&gt;long github issue&lt;/a&gt;
+details some of the things we went through to get the N900 back in shape.&lt;/p&gt;
+&lt;p&gt;As of writing, we now run the N900 on Linux 5.15 (see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/587"&gt;issue #587&lt;/a&gt;), and will soon switch to 5.16
+or 5.17 in our development channel(s).&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://twitter.com/maemoleste/status/1469852192848941058"&gt;We also tweeted about this work&lt;/a&gt; in what turned out
+to be our most popular tweet so far.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-3-droid-4-bionic"&gt;
+&lt;h3&gt;Motorola Droid 3, Droid 4, Bionic&lt;/h3&gt;
+&lt;div class="section" id="headphone-plug-events"&gt;
+&lt;h4&gt;Headphone plug events&lt;/h4&gt;
+&lt;p&gt;The Droid 4 (and other mapphones) now support detecting the (un)plugging of a
+headphone, to ensure that audio is routed properly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="droid-3-images"&gt;
+&lt;h4&gt;Droid 3 images&lt;/h4&gt;
+&lt;p&gt;After reporting on the Droid 3 port in the previous update, we are now also
+offering images for the Droid 3. It's a neat device, much like the Droid 4,
+feels more sturdy, but comes with less RAM. We still have more issues to work on
+for the Droid 3 port, though - in particular there is still a common problem
+where the Droid 3 freezes and resets.&lt;/p&gt;
+&lt;p&gt;The latest Droid 3 image can be found here - keep in mind that a special
+clownboot kexec bootloader setup is still required (&lt;a class="reference external" href="https://github.com/MerlijnWajer/bionic-clown-boot/tree/solana"&gt;see the instructions here&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="power-management"&gt;
+&lt;h4&gt;Power management&lt;/h4&gt;
+&lt;p&gt;A new mce module called &lt;a class="reference external" href="https://github.com/maemo-leste/mce/commit/f25e8f20562a358d3df37c14e5d7b8639ec869c8"&gt;quirks-mapphone&lt;/a&gt;
+has been introduced, introducing additional power saving mechanisms. For
+example, it will cause the modem not to report on signal strength if the device
+screen is turned off, which prevents waking up ofono, and then D-Bus, and then
+programs that listen for ofono on D-Bus. The module also turns off the secondary
+CPU to prevent additional wakeups (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/594"&gt;issue #594&lt;/a&gt;), but only if the
+screen is turned off.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; improved the responsiveness of the module somewhat, leading to
+faster screen lock and unlock (see &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/52/files"&gt;mce PR #52&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Below is a screenshot from a Motorola Droid 4 with a used battery, showing that
+it has two days of online time left. Keep in mind that this means the device
+would be online all the time - this is not about suspend to ram time (which is not
+necessary on OMAP4). Similar time estimates can be expected on the Droid 3 and
+the Bionic, and there are still things to improve upon. OMAP4 does not yet
+support &lt;tt class="docutils literal"&gt;OFF&lt;/tt&gt; mode, but when it does we suspect we will see further power
+savings.  One audio clock also isn't always gated yet, once we figure out why
+that is the case, we could save a few more milliwatts.&lt;/p&gt;
+&lt;img alt="" src="/images/droid4-2days.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone"&gt;
+&lt;h3&gt;Pinephone&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;rafael2k&lt;/tt&gt; has helped getting our PinePhone support into much better shape. We
+now ship a 5.15-based kernel fixing up the modem support and audio during phone
+calls.&lt;/p&gt;
+&lt;p&gt;We now also have a package for &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/327"&gt;PinePhone bluetooth firmware&lt;/a&gt;. Combined with the
+graphics updates mentioned in &lt;a class="reference internal" href="#pinephone-mesa-and-clutter"&gt;Pinephone, Mesa and Clutter&lt;/a&gt; and supported for
+the &lt;a class="reference external" href="https://github.com/maemo-leste/pine64-kernel/pull/2"&gt;light and proximity sensor&lt;/a&gt;, the Pinephone is in
+good shape - better than it has ever been on Maemo Leste.&lt;/p&gt;
+&lt;p&gt;Last but definitely not least, our newer PinePhone kernel images also support
+the hardware keyboard case for the PinePhone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="core-software-additions-and-changes"&gt;
+&lt;h2&gt;Core Software additions and changes&lt;/h2&gt;
+&lt;div class="section" id="osso-abook-addressbook"&gt;
+&lt;h3&gt;osso-abook (addressbook)&lt;/h3&gt;
+&lt;p&gt;After many months of hard work (maybe even years),
+the &lt;a class="reference external" href="https://github.com/maemo-leste/osso-abook/"&gt;Maemo addressbook library&lt;/a&gt; is now
+ready and the &lt;a class="reference external" href="https://github.com/maemo-leste/osso-addressbook"&gt;Contacts user interface&lt;/a&gt; based on the library is also
+shaping up nicely.&lt;/p&gt;
+&lt;p&gt;Importing contacts from a Fremantle Nokia N900 works, and synchronising them
+with remote servers using syncevolution has also been reported to work. The
+email client (&lt;cite&gt;modest&lt;/cite&gt;) has already integrated support for the address book.&lt;/p&gt;
+&lt;img alt="" src="/images/contacts.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The screenshot above shows the contact overview from the main &amp;quot;Contacts&amp;quot;
+application - applications can also embed this view or use it as a dialog. All
+the contacts imported from a Nokia N900 that has been in use for over 10 years.&lt;/p&gt;
+&lt;img alt="" src="/images/contacts-myinformation.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;This is the screen of the personal information of the user of the device.&lt;/p&gt;
+&lt;img alt="" src="/images/contacts-settings.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Some of the contact settings are not fully implemented yet - for example, we
+don't support video calling yet, but at least the setting is there.&lt;/p&gt;
+&lt;img alt="" src="/images/contacts-options.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;This screenshot shows the context menu of the contacts application in the
+overview window.&lt;/p&gt;
+&lt;img alt="" src="/images/contacts-newcontact.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Creating new contacts is also possible!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversations"&gt;
+&lt;h3&gt;conversations&lt;/h3&gt;
+&lt;p&gt;We've been working on an open source replacement for the Conversations
+application, with many of the core components written by a newcomer - &lt;tt class="docutils literal"&gt;dsc&lt;/tt&gt;.
+The &lt;a class="reference external" href="https://github.com/maemo-leste/conversations"&gt;replacement is written in Qt5 and QML&lt;/a&gt;, and can currently read and
+show the rtcom communications database, but has only limited addressbook
+integration. We have had some luck integrating Telepathy, and both sending and
+receiving SMS/IRC/XMPP messages works (including logging the messages to the
+RTcom database), but the code is not yet available in the package repositories,
+as there are still some bugs to solve when using multiple Telepathy accounts.&lt;/p&gt;
+&lt;p&gt;For it to fully work, more work is also required for the Telepathy integration
+in other parts of the system, in particular we need to get some of the other
+RTCom components in place. &lt;a class="reference external" href="https://leste.maemo.org/User:Wizzup/Telepathy"&gt;This wiki page&lt;/a&gt; contains some notes on the
+various components, but it hasn't been kept up to date with the latest
+developments yet.&lt;/p&gt;
+&lt;p&gt;The following still needs to be fixed up or outright implemented:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Support for starting a new chat with a potentially unknown contact&lt;/li&gt;
+&lt;li&gt;Support for multi-person chat rooms&lt;/li&gt;
+&lt;li&gt;Support for multiple accounts (this should in theory work, but we have to
+debug how we use Telepathy Qt here)&lt;/li&gt;
+&lt;li&gt;Various UI improvements to clearly separate the different protocols&lt;/li&gt;
+&lt;li&gt;Better support for system themes, some of the assets are currently
+semi-hardcoded in the QML files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nevertheless - here are some screenshots of the current application.&lt;/p&gt;
+&lt;p&gt;The screenshot below shows the recent messages overview, scrolling in this
+screen is also very smooth.&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-overview.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The settings in Conversations are currently limited to switching between the
+built-in themes and changing the text scaling.&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-settings.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The chat view of a specific conversation typically looks something like this&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-dapsi-message-view-landscape.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;and it works in portrait mode, too!&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-dapsi-message-view.png" style="width: 324px; height: 576px;" /&gt;
+&lt;!-- .. image:: /images/conversations-dapsi-message-view-irssitheme.png --&gt;
+&lt;!-- :width: 324px --&gt;
+&lt;!-- :height: 576px --&gt;
+&lt;p&gt;And of course, we just have to show off the irssi theme...&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-dapsi-message-view-irssitheme-landscape.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rtcom-accounts-ui"&gt;
+&lt;h3&gt;rtcom-accounts-ui&lt;/h3&gt;
+&lt;p&gt;The user interface to configure communication accounts is &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;rtcom-accounts-ui&lt;/span&gt;&lt;/tt&gt;,
+which &lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; has also been working on. Currently there is already a
+control panel plugin, which allows configuring a XMPP account. We will be
+integrating this into conversations Telepathy support, at which point we should
+soon have working communications for many protocols. At that point, we'll add
+more plugins for &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;rtcom-accounts-ui&lt;/span&gt;&lt;/tt&gt; to support more protocols.&lt;/p&gt;
+&lt;p&gt;The last piece of this work will be getting &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;rtcom-presence-ui&lt;/span&gt;&lt;/tt&gt; into shape,
+which adds presence and also (we believe) managing the online status of the
+Telepathy accounts of the user.&lt;/p&gt;
+&lt;p&gt;These screenshots show the control panel applet in action (and no, we didn't forget
+to remove the email address or name):&lt;/p&gt;
+&lt;img alt="" src="/images/rtcom-accounts-list.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/rtcom-account-edit.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/rtcom-account-advanced.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The relevant repositories are here:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/libaccounts"&gt;https://github.com/maemo-leste/libaccounts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/rtcom-accounts-ui"&gt;https://github.com/maemo-leste/rtcom-accounts-ui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/rtcom-accounts-plugin-gtalk"&gt;https://github.com/maemo-leste/rtcom-accounts-plugin-gtalk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/rtcom-accounts-ui-client"&gt;https://github.com/maemo-leste/rtcom-accounts-ui-client&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sphone"&gt;
+&lt;h3&gt;sphone&lt;/h3&gt;
+&lt;p&gt;The sphone dialer application has gained basic support for the Maemo address
+book, and it can also write text and call events to the RTCom database. This
+means that all incoming messages and calls are being logged (that's a good
+thing) -- in the future other applications (like conversations) will likely deal
+with the logging of incoming messages, though.&lt;/p&gt;
+&lt;img alt="" src="/images/sphone-contacts.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="charging-mode"&gt;
+&lt;h3&gt;charging-mode&lt;/h3&gt;
+&lt;p&gt;Our latest images (and also upgraded devices) now ship with a feature called
+&amp;quot;charge mode&amp;quot;, which will boot to a special charging-only mode when the phone
+starts with a usb cable providing power. This was created (based on existing
+software) by &lt;tt class="docutils literal"&gt;uvos&lt;/tt&gt;, and here is a video he made to show off the work:&lt;/p&gt;
+&lt;video controls height="480px" width="720px"&gt;
+&lt;source src="images/charge-mode.webm" type="video/webm"&gt;
+&lt;/video&gt;&lt;/div&gt;
+&lt;div class="section" id="virtual-keyboard"&gt;
+&lt;h3&gt;Virtual keyboard&lt;/h3&gt;
+&lt;p&gt;The virtual keyboard has a mode where it only shows special keys - this had
+silently been broken but has since been fixed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="maemo-launcher"&gt;
+&lt;h3&gt;maemo-launcher&lt;/h3&gt;
+&lt;p&gt;maemo-launcher has seen some fixes with regards to resolving symlinks that are
+multiple levels deep, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/484"&gt;issue #484&lt;/a&gt;.
+This helps selecting alternative default terminal applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-desktop"&gt;
+&lt;h3&gt;hildon-desktop&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;uvos&lt;/tt&gt; fixed a particularly interesting bug in hildon-desktop where scrolling
+the applications would immediately stop scrolling when the touch event ended
+(i.e. the user stopped touching the touch screen), this was ultimately related
+to a time overflow, and since &lt;tt class="docutils literal"&gt;Fri May 15 02:09:25 2015 UTC&lt;/tt&gt; the scroll
+events were no longer smooth. See &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/17"&gt;PR 17&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;hildon-desktop also now &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/pull/18"&gt;quotes commands send to the terminal emulator&lt;/a&gt;, ensuring that the
+commands get through correctly.&lt;/p&gt;
+&lt;p&gt;libhildondesktop will now also (re)load applications and widget applets upon
+install, &lt;a class="reference external" href="https://github.com/maemo-leste/libhildondesktop/commit/b672af1a60fadbf0453befb908ebf4fc74312b8d"&gt;fixed in this commit&lt;/a&gt;,
+for some more information, one can also check out &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/459"&gt;issue 459&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;GTK 3 and higher applications now render properly in fullscreen mode, see
+this &lt;a class="reference external" href="https://github.com/maemo-leste/libmatchbox2/pull/8"&gt;libmatchbox PR #8&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="volume-applet"&gt;
+&lt;h3&gt;Volume applet&lt;/h3&gt;
+&lt;p&gt;It is now possible to change the volume of the headphones or speakers (depending
+on what is active) using the volume buttons. &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/pull/1"&gt;maemo-statusmenu-volume pull
+request #1&lt;/a&gt; and
+the follow up &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/pull/2"&gt;pull request #2&lt;/a&gt; made this
+possible.&lt;/p&gt;
+&lt;img alt="" src="/images/volume-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="additional-software-changes"&gt;
+&lt;h2&gt;Additional Software changes&lt;/h2&gt;
+&lt;div class="section" id="ofono"&gt;
+&lt;h3&gt;ofono&lt;/h3&gt;
+&lt;p&gt;The ofono version for all our supported devices has been updated to a more recent
+release - ofono 1.34. We've additionally also merged in some more patches for
+better pinephone support (see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/597"&gt;issue #597&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/598"&gt;issue #598&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Having all devices on the same ofono package also helps with maintainability!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="gtk2"&gt;
+&lt;h3&gt;gtk2&lt;/h3&gt;
+&lt;p&gt;Our Gtk2 sliders weren't as repsonsive to touch input as they should be, due to
+some Maemo patches that were missing. This is now fixed, see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/582"&gt;issue #582&lt;/a&gt; for more info.&lt;/p&gt;
+&lt;!-- libicd-network-wpasupplicant --&gt;
+&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;
+&lt;!--  --&gt;
+&lt;!-- * libicd-network-wpasupplicant segfault fix when net-&gt;type NULL --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="themes-on-images"&gt;
+&lt;h3&gt;Themes on images&lt;/h3&gt;
+&lt;p&gt;At some point, loading themes was broken on our 32bit image builds (&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/599"&gt;see issue
+#599&lt;/a&gt; for what that
+looks like), but this has since been fixed. The problem turned out to be a
+problem in QEMU where &lt;cite&gt;readdir()&lt;/cite&gt; would fail for a 32 bit guest on a 64 host. We
+worked around this problem by adding an additional image building machine that
+is 32 bit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pulseaudio-configuration"&gt;
+&lt;h3&gt;Pulseaudio configuration&lt;/h3&gt;
+&lt;p&gt;We have improved the pulseaudio setup on the devices, in particular:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;We now set the correct default audio sink on the Pinephone&lt;/li&gt;
+&lt;li&gt;All devices should not automatically switch upon headphone plug or unplug
+events, using the switch on port module&lt;/li&gt;
+&lt;li&gt;We have added the ability to add arbitrary other config files in
+the &lt;tt class="docutils literal"&gt;/etc/pulse/leste.pa.d&lt;/tt&gt; directory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="system-log-rsyslog-configuration-changes"&gt;
+&lt;h3&gt;System log (rsyslog) configuration changes&lt;/h3&gt;
+&lt;p&gt;The latest &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;leste-config&lt;/span&gt;&lt;/tt&gt; separates out the logging so that it is easier to
+track down problems by reviewing the logs. Some daemons got their own log files
+in &lt;tt class="docutils literal"&gt;/var/log/maemo&lt;/tt&gt;, like &lt;tt class="docutils literal"&gt;icd2&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;mce&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;ofono&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;dsme&lt;/tt&gt;, and so on.
+See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/588"&gt;issue #588 for some more details&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="debugfs-entries-in-fstab"&gt;
+&lt;h3&gt;Debugfs entries in fstab&lt;/h3&gt;
+&lt;p&gt;Upon installation of the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;leste-config&lt;/span&gt;&lt;/tt&gt; package, the install scripts will
+check if &lt;tt class="docutils literal"&gt;debugfs&lt;/tt&gt; is present in &lt;tt class="docutils literal"&gt;/etc/fstab&lt;/tt&gt;, and if not, it will add a
+line to mount it. This will not remain the case forever (as it can potentially
+lead to more security issues), but various kernel power management tweaks are
+only available through &lt;tt class="docutils literal"&gt;debugfs&lt;/tt&gt;, so for now we have to keep it mounted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="default-dns-server-is-none-is-provided"&gt;
+&lt;h3&gt;Default DNS server is none is provided&lt;/h3&gt;
+&lt;p&gt;In some rare cases where a network does not provide a DNS server over DHCP,
+devices running Maemo Leste would not be able to resolve any addresses over DNS,
+as no server was available.&lt;/p&gt;
+&lt;p&gt;We have decided to default to &lt;cite&gt;9.9.9.9&lt;/cite&gt; (aka &amp;quot;Quad9&amp;quot;) is nothing else is
+available. In the future we might replace this by just running a recursive DNS
+resolver on the device itself. See &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/commit/49afd837bf5a7764c0cc59854aad2b01175088a4"&gt;this commit on libicd-network-ipv4&lt;/a&gt;
+for some more information. &lt;strong&gt;We also very much welcome feedback&lt;/strong&gt; regarding
+alternative or better default DNS servers - we have simply tried to make a
+decision based on privacy and availability.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="libsdl1-environment-variables-and-enabling-glesv1-in-mesa"&gt;
+&lt;h3&gt;libsdl1 environment variables and enabling GLESv1 in mesa&lt;/h3&gt;
+&lt;p&gt;For some reason, Debian no longer enabled OpenGLES 1.0 in the Mesa builds. We
+have changed that in our Mesa build, once again enabling GLESv1.&lt;/p&gt;
+&lt;p&gt;Additionally, we have added some enviroment variables that make SDL prefer EGL
+over GLX, as that is generally better supported on our devices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cssu-features-configuration-editor"&gt;
+&lt;h3&gt;CSSU Features Configuration Editor&lt;/h3&gt;
+&lt;p&gt;We have ported the &lt;a class="reference external" href="http://wiki.maemo.org/CSSU_Features_Configuration_Editor"&gt;CSSU features program&lt;/a&gt; from Maemo
+Fremantle's CSSU.  This tools allows customising various parts of hildon-desktop
+and animations in the environment in general. The port is still work in
+progress, as some of the original user interface design files seemingly were not
+included in the source package (and yes there is a small menu key &lt;cite&gt;Main&lt;/cite&gt; in the
+top right that shouldn't be there :-)).&lt;/p&gt;
+&lt;p&gt;The port is somewhat noteworthy since it's a Python Qt5 package using hildon
+specific features.&lt;/p&gt;
+&lt;img alt="" src="/images/cssufeatures.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community-and-supporting-software-updates"&gt;
+&lt;h2&gt;Community and supporting software updates&lt;/h2&gt;
+&lt;div class="section" id="keyring-and-jenkins-updates"&gt;
+&lt;h3&gt;Keyring and Jenkins updates&lt;/h3&gt;
+&lt;p&gt;Our key for the &amp;quot;extras&amp;quot; repository silently expired (not the first time), but
+now we had an easier way to providing updates, by just updating our keyring
+package. We have also upgraded our Jenkins instance to the latest version(s),
+and are working on adding a Honeycomb LX2 machine for fast ARM package builds.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mediawiki-theme"&gt;
+&lt;h3&gt;Mediawiki theme&lt;/h3&gt;
+&lt;p&gt;IRC user &lt;tt class="docutils literal"&gt;ashley&lt;/tt&gt; contributed a forward-port of the old Maemo mediawiki theme
+as a selectable theme on our wiki, &lt;a class="reference external" href="https://leste.maemo.org/index.php?title=Tor&amp;amp;useskin=maemo"&gt;and you can preview it here&lt;/a&gt;. If you like the
+theme, you can make it the default from the preferences in mediawiki. See &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/590"&gt;issue
+#590&lt;/a&gt; for some more
+information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-s-next"&gt;
+&lt;h2&gt;What's next&lt;/h2&gt;
+&lt;p&gt;Getting Telepathy support for conversations fully worked out together with the
+RTCom applications will be an amazing thing for our mobile operating system.
+Once that is working well, we can start adding support for more protocols (we're
+working on a Telepathy signal plugin using signald), and perhaps also fix up
+telepathy-hazy, which allows running many Pidgin (libpurple) protocols inside
+Telepathy.&lt;/p&gt;
+&lt;p&gt;From a stability standpoint, there are some bugs to be investigated still, in
+particular for the ofono support of the Droid series that we support. There are
+also some things to improve further for 2D/3D support, but it's looking much
+better than before.&lt;/p&gt;
+&lt;p&gt;This year we also hope to the new Devuan chimaera (Debian bullseye) release,
+further modernising our codebase and building on top of the latest and greatest
+that the free software community has to offer.&lt;/p&gt;
+&lt;p&gt;Finally, we're slowly but surely getting all our of userland in place, while
+still heavily working on device support for the devices we support. Once
+userland is more or less complete, it will probably get much easier to port
+Maemo Leste to other (potentially newer) devices, so look forward to that too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We have several Nokia N900 and Motorola Droid 3, Droid 4 and Bionic units
+available for interested developers&lt;/strong&gt;, so if you are interested in helping out
+but have trouble acquiring a device, let us know.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join us!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="telepathy"></category><category term="conversations"></category><category term="contacts"></category><category term="addressbook"></category><category term="powervr"></category><category term="graphics"></category><category term="mesa"></category><category term="pinephone"></category><category term="droid4"></category><category term="droid3"></category><category term="n900"></category><category term="linux"></category></entry><entry><title>Maemo Leste - Fifteenth Update: Januari - October 2021</title><link href="https://maemo-leste.github.io/maemo-leste-fifteenth-update-januari-october-2021.html" rel="alternate"></link><published>2021-10-28T00:00:00+02:00</published><updated>2021-10-28T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2021-10-28:/maemo-leste-fifteenth-update-januari-october-2021.html</id><summary type="html">&lt;p&gt;The long overdue update is finally here, it's been a while since our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-fourteenth-update-july-august-september-october-november-december-2020.html"&gt;last
 update&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here are a few highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
