@@ -531,7 +531,7 @@ Pulseaudio configuration
 We have improved the pulseaudio setup on the devices, in particular:
 
 * We now set the correct default audio sink on the Pinephone
-* All devices should not automatically switch upon headphone plug or unplug
+* All devices should now automatically switch upon headphone plug or unplug
   events, using the switch on port module
 * We have added the ability to add arbitrary other config files in
   the ``/etc/pulse/leste.pa.d`` directory.
@@ -637,9 +637,9 @@ particular for the ofono support of the Droid series that we support. There are
 also some things to improve further for 2D/3D support, but it's looking much
 better than before.
 
-This year we also hope to the new Devuan chimaera (Debian bullseye) release,
-further modernising our codebase and building on top of the latest and greatest
-that the free software community has to offer.
+This year we also hope to switch to the new Devuan chimaera (Debian bullseye)
+release, further modernising our codebase and building on top of the latest and
+greatest that the free software community has to offer.
 
 Finally, we're slowly but surely getting all our of userland in place, while
 still heavily working on device support for the devices we support. Once
