@@ -6,12 +6,12 @@ Maemo Leste - New Year update: May 2022 - January 2023
        sphone, pinephone, performance, mesa, bullseye,
        chimaera, funding, droid4
 :authors: Merlijn Wajer
-:date: 2023-01-11 21:00
+:date: 2023-01-12 18:00
 
 First of all, happy new year to everyone following along.
 
 This is probably our last blog post before our Beta release. This latest update
-focusses heavily on cellular software and drivers as well as other communication
+focuses heavily on cellular software and drivers as well as other communication
 features, but there's also a healthy amount of bugfixes and performance
 improvements mixed in.
 
@@ -38,7 +38,7 @@ Devuan accidentally `let their signing key expire
 to us in the past as well). This meant that any devuan (and thus, Maemo Leste)
 user would no longer get updates from the Devuan repositories unless they
 manually took some action. Our packages were unaffected, so we have just
-imported their ``devuan-keyring`` package in our repository, so by simply
+imported the ``devuan-keyring`` package in our repository. By simply
 updating and upgrading twice, you should be all set again.
 
 
@@ -57,7 +57,7 @@ effort in a few key areas:
   <https://github.com/maemo-leste/bugtracker/issues/644>`_: we're looking to move
   to Devuan Chimaera
   (Debian bullseye) in the next month, bringing in the latest and greatest
-  software and packages. This involves porting Maemo software to new compilers,
+  software packages. This involves porting Maemo software to new compilers,
   frameworks, and so on.
 
 * `Supporting more devices
@@ -92,26 +92,26 @@ Hardware & Drivers
 Pinephone
 ---------
 
-The Pinephone support has greatly been improved with the help of ``freemangordon``
-on the graphics side and ``rafael2k`` on the kernel and camera side, who is our
-pinephone kernel maintainer.
+Pinephone support has been greatly improved with the help of ``freemangordon``
+on the graphics side and ``rafael2k`` on the kernel and camera side.
+``rafael2k`` is our pinephone kernel maintainer.
 
-TODO: cover these PRs
-* https://github.com/maemo-leste/pine64-kernel/pull/4 (new kernel, camera fixes)
-
-https://github.com/maemo-leste/pine64-kernel/pull/5 (add v4l support for pp)
-https://github.com/maemo-leste/pine64-kernel/pull/6 (fixes)
-
-* https://github.com/maemo-leste/pine64-kernel/pull/8 (usb gadget built in)
-
-https://github.com/maemo-leste/pine64-kernel/pull/9 (configfs)
+The pinephone kernel will move to Linux 6.1 for Chimaera.
+`pine64-kernel PR #4 <https://github.com/maemo-leste/pine64-kernel/pull/4>`_
+added a newer kernel and initial camera support, `pine64-kernel PR #5
+<https://github.com/maemo-leste/pine64-kernel/pull/5>`_ then added v4l support,
+`pine64-kernel PR #6 <https://github.com/maemo-leste/pine64-kernel/pull/6>`_
+added some more fixes. `pine64-kernel PR #8
+<https://github.com/maemo-leste/pine64-kernel/pull/8>`_ and `pine64-kernel PR #9
+<https://github.com/maemo-leste/pine64-kernel/pull/9>`_ made the usbnet work
+again.
 
 
 Graphics
 ~~~~~~~~
 
 In one of our previous updates we had mentioned we fixed the graphics corruption
-bug at the expensive of some performance. We have since fixed the problem
+bug at the expense of some performance. We have since fixed the problem
 properly in clutter by `adding support for the buffer age extension
 <https://github.com/maemo-leste-upstream-forks/clutter-0.8/pull/2>`_) and now
 the performance is once again great. There are still some issues to be tackled:
@@ -121,26 +121,24 @@ glamor.
 We believe users may find Maemo Leste in portrait mode one of the most snappy
 experiences they might have seen yet on the pinephone.
 
-TODO: Make a video of this in action.
+.. raw:: html
 
-TODO: also show portrait mode browsing?
+    <video controls height="480px" width="720px">
+    <source src="images/pp-leste.mp4" type="video/mp4">
+    </video>
+
 
 Camera
 ~~~~~~
 
-TODO: libcamera imported, working for rear camera, front camera on pp still work
-in progress, will probably use camera app from piggz
+We have imported `libcamera
+<https://github.com/maemo-leste-upstream-forks/libcamera>`_ and the `ov5640
+firmware <https://github.com/maemo-leste/firmware-ov5640>`_ thanks to the work
+of ``rafael2k``, who is also working on packaging a V4L-based camera application
+which is also used on Sailfish, called `Harbour Advanced Camera
+<https://github.com/piggz/harbour-advanced-camera>`_ - so we might soon have a
+(default) camera application.
 
-..
-    23:32 < rafael2k> Wizzup: we can definitely say we have camera on the works
-    23:32 < rafael2k> https://github.com/rafael2k/megapixels/tree/gtk3
-    23:33 < rafael2k> I made packages from this branch to Maemo ^
-    23:33 < rafael2k> they work... kind of... the interface is not ok, the picture is rotated...
-    23:35 < rafael2k> that picture is from this old gtk3 version
-
-
-https://github.com/maemo-leste/firmware-ov5640
-https://github.com/maemo-leste-upstream-forks/libcamera
 
 Mapphones (Droid 4, Bionic, etc) and Nokia N900
 -----------------------------------------------
@@ -152,13 +150,13 @@ Modem
 ~~~~~
 
 The modem support has been greatly improved by ``freemangordon``, to the point
-where all known bugs now seem to be fixed. In the past, calls to the modem would
-sometimes time out and simply not happen, which would lead to all kinds of
+where all known bugs seem to be fixed. In the past, calls to the modem would
+sometimes time out or simply not happen, which would lead to all kinds of
 problems. It would also take a long time for the modem to show up, and sometimes
 required restarting ofono, which would also occasionally crash. All of these
-problems are now solved. Issues like `issue #445
+problems are now resolved. Issues like `issue #445
 <https://github.com/maemo-leste/bugtracker/issues/445>`_ and `issue #530
-<https://github.com/maemo-leste/bugtracker/issues/530>`_ are now solved. The
+<https://github.com/maemo-leste/bugtracker/issues/530>`_ are now resolved. The
 commits can be found in this `ofono branch
 <https://github.com/maemo-leste-upstream-forks/ofono/commits/maemo-ofono>`_, and
 kernel commits `64655c0c
@@ -169,21 +167,20 @@ and `1b2a0860
 <https://github.com/maemo-leste/droid4-linux/commit/1b2a0860cd17c5ea5d3bf16119945f1dcc46ed8f>`_
 are also required.
 
-Some intermediate development kernels broke the modem on the Nokia N900 - this
-has since been fixed, but remained broken for quite some time - apologies the
-inconvenience caused by this.
-
 The kernel now also contains some workarounds, which, combined with the latest
-sphone, make **calls work with headphones, earpiece and speakers**.
+sphone, **making calls work with headphones, earpiece and speakers on the
+mapphones and Pinephone**.
 
-.. TODO: also mention nokia modem woes
 
+Some intermediate development kernels broke the modem on the Nokia N900 - this
+has since been fixed, but remained broken for quite some time - apologies for the
+inconvenience caused by this.
 
 Graphics
 ~~~~~~~~
 
 The X11 (DDX) driver now supports Xv video acceleration, which (as the name
-implies) helps with playing videos.
+implies) accelerates the playing of videos.
 
 The driver now also implements a cache for buffer objects, which drastically
 improves the scrolling speed in various applications that do not use 3D
@@ -193,13 +190,18 @@ There are also some fixes for some crashes and memory leaks that were occuring
 before, all of the commits can be found in the `xf86-video-omap github repo
 <https://github.com/maemo-leste/xf86-video-omap/commits/master>`_.
 
-.. TODO We have also rebased the PowerVR patches on top of Mesa 21.2.5.
+
+Previously it wasn't possible to use GLES1 due to Debian disabling it by
+default (?), but we have now fixed this in our mesa package, see `issue #606
+<https://github.com/maemo-leste/bugtracker/issues/606>`_.
 
 Miscellaneous
 ~~~~~~~~~~~~~
 
 We now use the IIO drivers for the accelerometer rather than the input device
-based driver (see `droid4-linux PR #3 <https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial I/O subsystem) is a better fit for the accelerometer, and we already support this.
+based driver (see `droid4-linux PR #3
+<https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial I/O
+) subsystem is a better fit for the accelerometer, and we already support this.
 
 
 In the past we had reverted some commits to the Linux kernel that caused
@@ -250,7 +252,7 @@ The video below shows this in action:
 Device porting
 ==============
 
-As of this news post, we now have Maemo Leste booting on a Razr XT910 device
+As of this news post, we have Maemo Leste booting on a Razr XT910 device
 `after some Linux kernel changes by uvos and tmlind
 <https://github.com/maemo-leste/droid4-linux/commits/maemo-6.1>`_ - but the
 display doesn't fully refresh properly yet, most other things seem to work,
@@ -287,7 +289,7 @@ rtcom (real time communication) framework
 The rtcom framework now allows setting up not just IRC and XMPP accounts, but
 also `SIP (internet telephony) accounts
 <https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f>`_,
-and during our testing we were even able to utilitise the `slack-libpurple
+and during our testing we were even able to utilise the `slack-libpurple
 <https://github.com/dylex/slack-libpurple>`_ - but this is not currently
 packaged or well tested.
 
@@ -324,9 +326,31 @@ On top of that, we figured out how to have rudimentary multi-user and group chat
 in Telepathy in conversations, but this is not yet available for testing for the
 general public.
 
-The phone application also has seen various improvements, for example, after a
+The phone application also has seen various improvements. For example, after a
 call is finished, the window doesn't disappear immediately, but rather stays
 around for a few seconds so that the user can understand what happened.
+
+slack
+~~~~~
+
+Using `slack-libpurple <https://github.com/dylex/slack-libpurple>`_ in
+``telepathy-haze`` (a telepathy connection manager that can load
+libpurple/pidgin plugins), we got Slack to work, at least in a very basic
+fashion, on Maemo Leste. We were able to send direct messages to folks,
+including ourselves:
+
+.. image:: /images/slack-conversations.png
+  :height: 324px
+  :width: 576px
+
+Here is the other side of that conversation (in the browser):
+
+.. image:: /images/laptop-slack.png
+
+
+The ``telepathy-haze`` processes using about 8MB of RAM, which is a nice change
+from the many gigabytes that Slack typically uses in a browser tab.
+
 
 cellulard
 ---------
@@ -334,16 +358,26 @@ cellulard
 A new daemon was introduced to our mobile operating system, called
 `cellulard <https://github.com/maemo-leste/cellulard>`_. It's main task is to
 deal with the modem on a high level: it will for example power and online the
-modem via ofono on startup, or offline the modem in case the flight mode is
+modem via ofono on startup, or offline the modem in case flight mode is
 switched on.
 
 This was necessary because nothing else configures the modem, but also to ensure
 that we would be able to show SIM PIN entry dialogs on start of the device, as
-there was currently simply no program putting the modem in the right state. If
+there was previously no program putting the modem in the right state. If
 no PIN is required and flight mode is not on, the modem will just be put in the
 online mode upon start of the device.
 
 As a result, flight mode now also works as intended.
+
+maemo-ringtones
+---------------
+
+The ``maemo-ringtones`` package that we used to import from Fremantle contained
+some wrong paths and configuration files, which ``rafael2k`` has fixed in
+`maemo-ringtones PR #1
+<https://github.com/maemo-leste-assets/maemo-ringtones/pull/1>`_. This makes it
+so that in the near future the new images will actually use a ringtone out of
+the box (i.e. without any changes required by the user) when being called.
 
 alarms
 ------
@@ -362,8 +396,6 @@ also had to perform the same gstreamer work for the `Qt gst 1.0 code
   :width: 324px
 
 
-
-
 calendar
 --------
 
@@ -377,7 +409,7 @@ notifications
 
 `hildon-home PR #2 <https://github.com/maemo-leste/hildon-home/pull/2>`_
 provides a more up to date and compatible implementation of notifications as
-defined by freedeskt.org's ``org.freedesktop.Notifications`` DBUS specification.
+defined by freedesktop.org's ``org.freedesktop.Notifications`` DBUS specification.
 
 
 input for gtk3
@@ -443,14 +475,15 @@ button was being pressed
   :height: 324px
   :width: 576px
 
+There are also updates to the `Bulgarian translation <https://github.com/maemo-leste/hildon-application-manager/pull/2>`_.
 
 
 qtwebbrowser
 ------------
 
-In Chimaera, we have built a custom `qtwebengine` build to ensure that the
-`qtwebbrowser` can use 3D acceleration (unfortuntely `qtwebengine` has a
-hardcoded list of Qt platforms that it supports, so we had to add `"maemo"` to
+In Chimaera, we have built a custom ``qtwebengine`` build to ensure that the
+``qtwebbrowser`` can use 3D acceleration (unfortunately ``qtwebengine`` has a
+hardcoded list of Qt platforms that it supports, so we had to add ``"maemo"`` to
 this list). As a result, the browser is now much more snappy. Additionally, the
 browser now also `supports portrait mode in Chimaera
 <https://github.com/maemo-leste-extras/qtwebbrowser/commit/4704f8f793044cdf920a408cae4397fa8b0f2415>`_.
@@ -462,26 +495,13 @@ to interact with.
   :width: 324px
 
 
+osso-xterm
+----------
 
+``osso-xterm`` `now opens the browser
+<https://github.com/maemo-leste/bugtracker/issues/23>`_ when a link is touched /
+clicked upon.
 
-TODO:
-
-Maybe fixed a while ago:
-
-* https://github.com/maemo-leste/bugtracker/issues/606 (Mapphones: Creating GLES1 contexts appears impossible #606 )
-
-* new mce release
-
-* https://github.com/maemo-leste/hildon-application-manager/pull/2 (Bulgarian translation #2)
-
-
-
-* https://github.com/maemo-leste/bugtracker/issues/23 (osso-xterm browser
-  integration,
-  https://github.com/maemo-leste/libhildonmime/commit/59590121e8bf04084b40509b7822ed03e5dfd79d)
-
-
-* https://github.com/maemo-leste-assets/maemo-ringtones/pull/1 - ringtone fixes for default installs
 
 
 Chimaera porting
@@ -505,6 +525,10 @@ powered on the modem by default.
 
 The main remaining challenge for supporting Chimaera fully is supporting elogind
 compatible sessions, which we hope to finish in one or two weeks.
+
+.. We also had to increase the default `disk size for images
+.. <https://github.com/maemo-leste/bugtracker/issues/625>`_.
+
 
 Progress can be tracked in `issue #644
 <https://github.com/maemo-leste/bugtracker/issues/644>`_ and `pkgweb
@@ -542,14 +566,14 @@ stand:
 
 .. image:: /images/openfest-2022-1.jpg
   :height: 375px
-  :width: 666px 
+  :width: 666px
 
 Here is the tablet that ``freemangordon`` has made Leste work on (there are
 dd'able images online at the moment):
 
 .. image:: /images/openfest-2022-2.jpg
   :height: 375px
-  :width: 666px 
+  :width: 666px
 
 This is an OLIMEX LIME2 (Allwinner A20) board with a resistice 7" screen
 (800x480px) in a `LCD Metal Frame
@@ -599,41 +623,94 @@ selling anything and currently consists of 8 founding members.
 Jenkins
 -------
 
-Our Jenkins CI (Continious Integration) setup, which we use to build all the
-packages for Maemo Leste was running into problems where it's hard disk was
+Our Jenkins CI (Continuous Integration) setup, which we use to build all the
+packages for Maemo Leste was running into problems where its hard disk was
 filled up. We realised that **every single build we ever did was saved to
 disk**, which was causing it to full up. Going forward, only the last three
-successfull builds of each package are now being saved.
+successful builds of each package are now saved.
+
+Themes
+------
+
+We've been looking at using AI to upscaling some of the background images of our
+themes using Real-ESRGAN. Most of themes were developed only for the Nokia N900,
+with a screen resolution of 800x480 - this makes many of the theme backgrounds
+looks a little ugly on the larger devices that we have. We've made pretty good
+progress with this, and hopefully in the next few weeks we'll push out a few
+'upscaled' themes that genuinelly look better on higher resolution screens.
+
+The work on the beta theme can be examined `in this directory
+<https://wizzup.org/dirlist/maemo-leste/theme-upsample/beta/>`_.
+
+Tor Hidden Service
+------------------
+
+Maemo Leste now has a Tor hidden service for its package repository. The URL
+is: http://maemopkgove3kc2xxzyuk26j3ict6qzbqi3govge3s6h5aokr2uo6eqd.onion
+
+See `issue #570 <https://github.com/maemo-leste/bugtracker/issues/570>`_ for a
+list that also includes the Devuan hidden service URL.
+Users will have to install ``apt-transport-tor`` for this to work.
+
+
+Lapdock
+-------
+
+``Blago`` received a Motorola Lapdock and he managed to hook the Motorola
+Droid 4 up to it. Here is a frontal view:
+
+.. image:: /images/lapdock-front-view.jpg
+  :height: 439px
+  :width: 585px
+
+A view from the side, with the Motorola Droid 4 being visible in the back:
+
+.. image:: /images/lapdock-side-view.jpg
+  :height: 439px
+  :width: 585px
+
+Another view, but of the back of the lapdock:
+
+.. image:: /images/lapdock-back-view.jpg
+  :height: 439px
+  :width: 585px
+
+``Blago`` is still working on turning all of this into a package, but we will
+eventually have suppor for lapdocks (and other external displays, since this
+just attached to the HDMI port on the phone).
 
 
 Extra packages
 --------------
 
-Many new extras pkgs::
+``norayr`` has contributed various new packages:
 
-    'msid'
-    'shermans-aquarium-maemo'
-    'live-wallpaper'
-    'mstardict'
-
-* new package: http://maemo.org/packages/view/mstardict/ - also wiki page
-
-.. TODO: more extra packages
-
-
-* https://github.com/maemo-leste/bugtracker/issues/570 (Also serve Maemo Leste
-  packages over Tor HS)
-  http://maemopkgove3kc2xxzyuk26j3ict6qzbqi3govge3s6h5aokr2uo6eqd.onion
-
-* blago's lapdock photos
+* `msid <https://github.com/maemo-leste-extras/msid/>`_ - a sid player for the
+  Maemo platform;
+* `live-wallpaper <https://github.com/maemo-leste-extras/live-wallpaper>`_
+  support;
+* `shermans-aquarium-maemo
+  <https://github.com/maemo-leste-extras/shermans-aquarium-maemo>`_, for a nice
+  live aquarium background on your phone;
+* `mstardict <https://github.com/maemo-leste-extras/mstardict>`_ - a frontend
+  for star dict dictionary files. Also check out the `wiki page here
+  <https://leste.maemo.org/Extras/MStarDict>`_;
+* `easylist <https://github.com/maemo-leste-extras/easylist>`_ - an application
+  to manage lists of notes.
 
 
-* TODO: testing offline machine learning translation
-  12:41 <sndr> "currently testing offline translations"
-  12:41 <sndr> misschien nog wat buzz words erbij
-  12:42 <sndr> 'neural machine translation'
 
+translation gui
+---------------
 
+``sanderfoobar`` is working on an **offline** machine-based (neural network)
+translation tool, with both command line and user interface, for Maemo. It is
+based on the same models and code that are used by `Firefox Translations
+<https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/>`_ - he
+hopes to present this work in some shape in the next few weeks. Currently it can
+translate a sentence in under a second from and to various European
+languages. The project welcomes any projects that provide these cool features
+without relying on cloud services.
 
 What's next
 ===========
@@ -648,7 +725,8 @@ For this to be achieved, a few tasks will still need to be completed:
 
 * Finish our Chimaera port;
 * Support Telepathy in sphone so that the phone calls are managed using
-  ``telepathy-ring`` instead of directly with ``ofono``;
+  ``telepathy-ring`` instead of directly with ``ofono`` - this will also help
+  bring SIP and XMPP calls closer to working;
 * Support messaging new contacts from conversations;
 * Support incoming message notifications with conversations;
 
@@ -661,33 +739,16 @@ have a specific package ported, please see our bugtracker.
 
 **We have several Nokia N900 and Motorola Droid 3, Droid 4 and Bionic units
 available for interested developers**, so if you are interested in helping out
-but have trouble acquiring a device, let us know.
+but have trouble acquiring a device, let us know...
+
+.. image:: /images/massdroid.jpg
+  :height: 375px
+  :width: 666px
+
 
 Please also join our `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay
 up to date, ask questions and/or help out. Another great way to get in touch is
 to join the `IRC channel <https://leste.maemo.org/IRC_channel>`_.
 
-If you like our work and want to see it continue, join us!
-
-
-
-
-SORTME
-======
-
-
-.. * https://github.com/maemo-leste/bugtracker/issues/620 (pulse noise/echo cancel.)
-
-
-* https://github.com/maemo-leste/ke-recv/pull/4
-
-* https://github.com/maemo-leste/hildon-usb-gadgets/pull/1
-
-* scale clock-ui background better so it looks OK
-
-* https://github.com/maemo-leste/bugtracker/issues/625 (increase the disk size of the vm images)
-
-* slack-libpurple + haze on d4?
-
-* todo: mention documentation work
+If you like our work and want to see it continue, join our effort!
