@@ -236,7 +236,7 @@ After that, the car would connect to the device. From this point on, the
     pactl load-module module-bluetooth-discover
 
 Then, just running `mpris-proxy` will cause the car to detect any media player
-that supports `mpris`, for example `mpd` wit `mpdris2` installed. Furthermore,
+that supports `mpris`, for example `mpd` with `mpdris2` installed. Furthermore,
 `ofono` and `bluez` will now also collaborate and handle calls correctly -
 making it possible to accept phone calls from your car!
 
