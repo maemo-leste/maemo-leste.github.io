@@ -353,6 +353,11 @@ Here is the other side of that conversation (in the browser):
 
 .. image:: /images/laptop-slack.png
 
+And here is an overview of the recent communications (names removed):
+
+.. image:: /images/slack-overview.png
+  :height: 324px
+  :width: 576px
 
 The ``telepathy-haze`` processes use about 8MB of RAM, which is a nice change
 from the many gigabytes that Slack typically uses in a browser tab.
