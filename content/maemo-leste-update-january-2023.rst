@@ -394,8 +394,8 @@ alarms
 ------
 
 Alarms now work well. Before, alarms could be set, but they wouldn't actually
-vibrate the phone and play sounds, but this all fixed now. To achieve this, we
-had to fix problems in our `gst 1.0 port in the notify plugin
+vibrate the phone and play sounds, but this is all fixed now. To achieve this,
+we had to fix problems in our `gst 1.0 port in the notify plugin
 <https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/1>`_ and `fix a
 crash <https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/2>`_. We
 also had to perform the same gstreamer work for the `Qt gst 1.0 code
@@ -449,7 +449,7 @@ mobile data improvements
 The ``libicd-network-ofono`` package (for mobile data) has seen a lot of
 improvements, see `all the commits from September
 18th <https://github.com/maemo-leste/libicd-network-ofono/commits/master>`_
-- makng it now a quite usable plugin.
+- making it now a quite usable plugin.
 
 DHCP for mobile data has been fixed now (see `libicd-network-ipv4 PR #4
 <https://github.com/maemo-leste/libicd-network-ipv4/pull/4>`_, and one of the
