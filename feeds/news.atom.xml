@@ -280,8 +280,8 @@ the box (i.e. without any changes required by the user) when being called.&lt;/p
 &lt;div class="section" id="alarms"&gt;
 &lt;h3&gt;alarms&lt;/h3&gt;
 &lt;p&gt;Alarms now work well. Before, alarms could be set, but they wouldn't actually
-vibrate the phone and play sounds, but this all fixed now. To achieve this, we
-had to fix problems in our &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/1"&gt;gst 1.0 port in the notify plugin&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/2"&gt;fix a
+vibrate the phone and play sounds, but this is all fixed now. To achieve this,
+we had to fix problems in our &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/1"&gt;gst 1.0 port in the notify plugin&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/2"&gt;fix a
 crash&lt;/a&gt;. We
 also had to perform the same gstreamer work for the &lt;a class="reference external" href="https://github.com/maemo-leste/clock-ui/pull/1"&gt;Qt gst 1.0 code&lt;/a&gt;.&lt;/p&gt;
 &lt;img alt="" src="/images/alarm-clock-portrait.png" style="width: 324px; height: 576px;" /&gt;
@@ -315,7 +315,7 @@ touch screen events)&lt;/p&gt;
 &lt;p&gt;The &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;libicd-network-ofono&lt;/span&gt;&lt;/tt&gt; package (for mobile data) has seen a lot of
 improvements, see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/commits/master"&gt;all the commits from September
 18th&lt;/a&gt;
-- makng it now a quite usable plugin.&lt;/p&gt;
+- making it now a quite usable plugin.&lt;/p&gt;
 &lt;p&gt;DHCP for mobile data has been fixed now (see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/4"&gt;libicd-network-ipv4 PR #4&lt;/a&gt;, and one of the
 shell scripts is now also more &lt;tt class="docutils literal"&gt;sh&lt;/tt&gt; compliant (see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/6"&gt;libicd-network-ipv4 PR #6&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
