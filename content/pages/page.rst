@@ -4,9 +4,6 @@ Maemo Leste
 :URL:
 :save_as: index.html
 
-.. image:: /images/logo.png
-    :width: 125
-    :height: 177
 
 Welcome to the Maemo Leste website! Maemo Leste continues the legacy of
 `Maemo <http://maemo.org>`_. We aim to provide a free and open source
@@ -56,6 +53,7 @@ After our `initial blog post
 we have posted (almost) monthly updates of our efforts and
 progress. Reverse-chronological, they are:
 
+* `New Year update 2023 <{filename}/maemo-leste-update-january-2023.rst>`_
 * `November 2021 - April 2022 <{filename}/maemo-leste-update-april-2022.rst>`_
 * `January - October 2021 <{filename}/maemo-leste-update-october-2021.rst>`_
 * `IRC channel migration <{filename}/irc-migration.rst>`_
