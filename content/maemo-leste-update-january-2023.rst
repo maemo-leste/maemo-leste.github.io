@@ -153,10 +153,10 @@ where all known bugs seem to be fixed. In the past, calls to the modem would
 sometimes time out or simply not happen, which would lead to all kinds of
 problems. It would also take a long time for the modem to show up, and sometimes
 required restarting ofono, which would also occasionally crash. All of these
-problems are now resolved. Issues like `issue #445
+problems are now resolved. `Issue #445
 <https://github.com/maemo-leste/bugtracker/issues/445>`_ and `issue #530
-<https://github.com/maemo-leste/bugtracker/issues/530>`_ are now resolved. The
-commits can be found in this `ofono branch
+<https://github.com/maemo-leste/bugtracker/issues/530>`_ describing those
+problems are thus now resolved. The commits can be found in this `ofono branch
 <https://github.com/maemo-leste-upstream-forks/ofono/commits/maemo-ofono>`_, and
 kernel commits `64655c0c
 <https://github.com/maemo-leste/droid4-linux/commit/64655c0c2e6498658072a4aeac3539a418397f19>`_,
@@ -166,9 +166,9 @@ and `1b2a0860
 <https://github.com/maemo-leste/droid4-linux/commit/1b2a0860cd17c5ea5d3bf16119945f1dcc46ed8f>`_
 are also required.
 
-The kernel now also contains some workarounds, which, combined with the latest
-sphone, **make calls work with headphones, earpiece and speakers on the
-mapphones and Pinephone**.
+The latest kernel also contains a commit to work around the kernel suspending
+the audio in a call, which combined with the latest sphone, **make calls work
+with headphones, earpiece and speakers on the mapphones and Pinephone**.
 
 
 Some intermediate development kernels `broke the modem on the N900, causing the
@@ -421,8 +421,8 @@ defined by freedesktop.org's ``org.freedesktop.Notifications`` DBUS specificatio
 input for gtk3
 --------------
 
-Thanks to the work of ``freemangordon``, we now support a the Hildon virtual
-keybord in Gtk 3 (`issue #537
+Thanks to the work of ``freemangordon``, we now support the Hildon virtual
+keyboard in Gtk 3 (`issue #537
 <https://github.com/maemo-leste/bugtracker/issues/537>`_) - this is great news
 in particular for devices that lack a hardware keyboard, such as the pinephone
 and the Droid bionic. In addition, this also allows for switching keyboard
@@ -591,7 +591,7 @@ This device was actually quite cool, since it was able to send SMSes and make
 phone calls, just without the audio routing that one would usually expect from a
 phone call (the USB LTE module doesn't allow for this). As such, it was
 basically a Maemo Leste tablet that can make phone calls. Various attendees used
-the device to call itself and see if it indeed worked.
+the device to call themself and noticed that indeed worked.
 
 In this photo, it is showing a Jabber chat in Conversations.
 
