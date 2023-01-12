@@ -11,7 +11,7 @@ Maemo Leste - New Year update: May 2022 - January 2023
 First of all, happy new year to everyone following along.
 
 This is probably our last blog post before our Beta release. This latest update
-focusses heavily on cellular software and drivers as well as other communication
+focuses heavily on cellular software and drivers, as well as other communication
 features, but there's also a healthy amount of bugfixes and performance
 improvements mixed in.
 
@@ -38,7 +38,7 @@ Devuan accidentally `let their signing key expire
 to us in the past as well). This meant that any devuan (and thus, Maemo Leste)
 user would no longer get updates from the Devuan repositories unless they
 manually took some action. Our packages were unaffected, so we have just
-imported their ``devuan-keyring`` package in our repository, so by simply
+imported the ``devuan-keyring`` package in our repository. By simply
 updating and upgrading twice, you should be all set again.
 
 
@@ -57,7 +57,7 @@ effort in a few key areas:
   <https://github.com/maemo-leste/bugtracker/issues/644>`_: we're looking to move
   to Devuan Chimaera
   (Debian bullseye) in the next month, bringing in the latest and greatest
-  software and packages. This involves porting Maemo software to new compilers,
+  software packages. This involves porting Maemo software to new compilers,
   frameworks, and so on.
 
 * `Supporting more devices
@@ -92,8 +92,8 @@ Hardware & Drivers
 Pinephone
 ---------
 
-The Pinephone support has greatly been improved with the help of ``freemangordon``
-on the graphics side and ``rafael2k`` on the kernel and camera side, who is our
+Pinephone support has been greatly improved with the help of ``freemangordon``
+on the graphics side and ``rafael2k`` on the kernel and camera side. ``rafael2k`` is our
 pinephone kernel maintainer.
 
 TODO: cover these PRs
@@ -111,7 +111,7 @@ Graphics
 ~~~~~~~~
 
 In one of our previous updates we had mentioned we fixed the graphics corruption
-bug at the expensive of some performance. We have since fixed the problem
+bug at the expense of some performance. We have since fixed the problem
 properly in clutter by `adding support for the buffer age extension
 <https://github.com/maemo-leste-upstream-forks/clutter-0.8/pull/2>`_) and now
 the performance is once again great. There are still some issues to be tackled:
@@ -152,13 +152,13 @@ Modem
 ~~~~~
 
 The modem support has been greatly improved by ``freemangordon``, to the point
-where all known bugs now seem to be fixed. In the past, calls to the modem would
-sometimes time out and simply not happen, which would lead to all kinds of
+where all known bugs seem to be fixed. In the past, calls to the modem would
+sometimes time out or simply not happen, which would lead to all kinds of
 problems. It would also take a long time for the modem to show up, and sometimes
 required restarting ofono, which would also occasionally crash. All of these
-problems are now solved. Issues like `issue #445
+problems are now resolved. Issues like `issue #445
 <https://github.com/maemo-leste/bugtracker/issues/445>`_ and `issue #530
-<https://github.com/maemo-leste/bugtracker/issues/530>`_ are now solved. The
+<https://github.com/maemo-leste/bugtracker/issues/530>`_ are now resolved. The
 commits can be found in this `ofono branch
 <https://github.com/maemo-leste-upstream-forks/ofono/commits/maemo-ofono>`_, and
 kernel commits `64655c0c
@@ -170,7 +170,7 @@ and `1b2a0860
 are also required.
 
 Some intermediate development kernels broke the modem on the Nokia N900 - this
-has since been fixed, but remained broken for quite some time - apologies the
+has since been fixed, but remained broken for quite some time - apologies for the
 inconvenience caused by this.
 
 The kernel now also contains some workarounds, which, combined with the latest
@@ -199,7 +199,7 @@ Miscellaneous
 ~~~~~~~~~~~~~
 
 We now use the IIO drivers for the accelerometer rather than the input device
-based driver (see `droid4-linux PR #3 <https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial I/O subsystem) is a better fit for the accelerometer, and we already support this.
+based driver (see `droid4-linux PR #3 <https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial I/O) subsystem is a better fit for the accelerometer, and we already support this.
 
 
 In the past we had reverted some commits to the Linux kernel that caused
@@ -250,7 +250,7 @@ The video below shows this in action:
 Device porting
 ==============
 
-As of this news post, we now have Maemo Leste booting on a Razr XT910 device
+As of this news post, we have Maemo Leste booting on a Razr XT910 device
 `after some Linux kernel changes by uvos and tmlind
 <https://github.com/maemo-leste/droid4-linux/commits/maemo-6.1>`_ - but the
 display doesn't fully refresh properly yet, most other things seem to work,
@@ -287,7 +287,7 @@ rtcom (real time communication) framework
 The rtcom framework now allows setting up not just IRC and XMPP accounts, but
 also `SIP (internet telephony) accounts
 <https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f>`_,
-and during our testing we were even able to utilitise the `slack-libpurple
+and during our testing, we were even able to utilise the `slack-libpurple
 <https://github.com/dylex/slack-libpurple>`_ - but this is not currently
 packaged or well tested.
 
@@ -324,7 +324,7 @@ On top of that, we figured out how to have rudimentary multi-user and group chat
 in Telepathy in conversations, but this is not yet available for testing for the
 general public.
 
-The phone application also has seen various improvements, for example, after a
+The phone application also has seen various improvements. For example, after a
 call is finished, the window doesn't disappear immediately, but rather stays
 around for a few seconds so that the user can understand what happened.
 
@@ -334,12 +334,12 @@ cellulard
 A new daemon was introduced to our mobile operating system, called
 `cellulard <https://github.com/maemo-leste/cellulard>`_. It's main task is to
 deal with the modem on a high level: it will for example power and online the
-modem via ofono on startup, or offline the modem in case the flight mode is
+modem via ofono on startup, or offline the modem in case flight mode is
 switched on.
 
 This was necessary because nothing else configures the modem, but also to ensure
 that we would be able to show SIM PIN entry dialogs on start of the device, as
-there was currently simply no program putting the modem in the right state. If
+there was previously no program putting the modem in the right state. If
 no PIN is required and flight mode is not on, the modem will just be put in the
 online mode upon start of the device.
 
@@ -377,13 +377,13 @@ notifications
 
 `hildon-home PR #2 <https://github.com/maemo-leste/hildon-home/pull/2>`_
 provides a more up to date and compatible implementation of notifications as
-defined by freedeskt.org's ``org.freedesktop.Notifications`` DBUS specification.
+defined by freedesktop.org's ``org.freedesktop.Notifications`` DBUS specification.
 
 
 input for gtk3
 --------------
 
-Thanks to the work of ``freemangordon``, we now support a the Hildon virtual
+Thanks to the work of ``freemangordon``, we now support the Hildon virtual
 keybord in Gtk 3 (`issue #537
 <https://github.com/maemo-leste/bugtracker/issues/537>`_) - this is great news
 in particular for devices that lack a hardware keyboard, such as the pinephone
@@ -449,7 +449,7 @@ qtwebbrowser
 ------------
 
 In Chimaera, we have built a custom `qtwebengine` build to ensure that the
-`qtwebbrowser` can use 3D acceleration (unfortuntely `qtwebengine` has a
+`qtwebbrowser` can use 3D acceleration (unfortunately `qtwebengine` has a
 hardcoded list of Qt platforms that it supports, so we had to add `"maemo"` to
 this list). As a result, the browser is now much more snappy. Additionally, the
 browser now also `supports portrait mode in Chimaera
@@ -599,11 +599,11 @@ selling anything and currently consists of 8 founding members.
 Jenkins
 -------
 
-Our Jenkins CI (Continious Integration) setup, which we use to build all the
-packages for Maemo Leste was running into problems where it's hard disk was
+Our Jenkins CI (Continuous Integration) setup, which we use to build all the
+packages for Maemo Leste was running into problems where its hard disk was
 filled up. We realised that **every single build we ever did was saved to
 disk**, which was causing it to full up. Going forward, only the last three
-successfull builds of each package are now being saved.
+successful builds of each package are now saved.
 
 
 Extra packages
