@@ -35,10 +35,10 @@ Images and upgrading
 
 Devuan accidentally `let their signing key expire
 <https://dev1galaxy.org/viewtopic.php?id=5213>`_ (something which has happened
-to us in the past as well). This meant that any devuan (and thus, Maemo Leste)
+to us in the past as well). This meant that any Devuan (and thus, Maemo Leste)
 user would no longer get updates from the Devuan repositories unless they
 manually took some action. Our packages were unaffected, so we have just
-imported the ``devuan-keyring`` package in our repository. By simply
+imported the ``devuan-keyring`` package into our repository. By simply
 updating and upgrading twice, you should be all set again.
 
 
@@ -50,7 +50,7 @@ Funding
 =======
 
 Back in August 2022 we applied for funding in the "NGI0 Entrust" fund of NLNet,
-and they have approved our proposal, which focusses on improving our mobile
+and they have approved our proposal, which focuses on improving our mobile
 effort in a few key areas:
 
 * `Moving to the new Debian release
@@ -113,12 +113,11 @@ Graphics
 In one of our previous updates we had mentioned we fixed the graphics corruption
 bug at the expense of some performance. We have since fixed the problem
 properly in clutter by `adding support for the buffer age extension
-<https://github.com/maemo-leste-upstream-forks/clutter-0.8/pull/2>`_) and now
+<https://github.com/maemo-leste-upstream-forks/clutter-0.8/pull/2>`_ and now
 the performance is once again great. There are still some issues to be tackled:
-portrait is much more snappy than landscape mode, hitting some slow path in
-glamor.
+landscape mode is not as snappy as portrait, hitting some slow path in glamor.
 
-We believe users may find Maemo Leste in portrait mode one of the most snappy
+We believe users may find Maemo Leste in portrait mode one of the snappiest
 experiences they might have seen yet on the pinephone.
 
 .. raw:: html
@@ -168,13 +167,15 @@ and `1b2a0860
 are also required.
 
 The kernel now also contains some workarounds, which, combined with the latest
-sphone, **making calls work with headphones, earpiece and speakers on the
+sphone, **make calls work with headphones, earpiece and speakers on the
 mapphones and Pinephone**.
 
 
-Some intermediate development kernels broke the modem on the Nokia N900 - this
-has since been fixed, but remained broken for quite some time - apologies for the
-inconvenience caused by this.
+Some intermediate development kernels `broke the modem on the N900, causing the
+device to bootloop
+<https://github.com/maemo-leste/bugtracker/issues/681#issuecomment-1337958216>`_
+- this remained broken for quite some time, but has since been fixed -
+apologies for the inconvenience caused by this.
 
 Graphics
 ~~~~~~~~
@@ -187,7 +188,7 @@ improves the scrolling speed in various applications that do not use 3D
 rendering, see `xf86-video-omap PR #1 <https://github.com/maemo-leste/xf86-video-omap/pull/1>`_.
 
 There are also some fixes for some crashes and memory leaks that were occuring
-before, all of the commits can be found in the `xf86-video-omap github repo
+before. All of the commits can be found in the `xf86-video-omap github repo
 <https://github.com/maemo-leste/xf86-video-omap/commits/master>`_.
 
 
@@ -198,11 +199,16 @@ default (?), but we have now fixed this in our mesa package, see `issue #606
 Miscellaneous
 ~~~~~~~~~~~~~
 
-We now use the IIO drivers for the accelerometer rather than the input device
-based driver (see `droid4-linux PR #3
-<https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial I/O
-) subsystem is a better fit for the accelerometer, and we already support this.
+We now use the IIO driver for the accelerometer on the Nokia N900, rather than
+the input device based driver (see `droid4-linux PR #3
+<https://github.com/maemo-leste/droid4-linux/pull/3>`_ - the IIO (Industrial
+I/O) subsystem is a better fit for the accelerometer, and we already support
+this.
 
+Additionally, the N900 could no longer use USB networking and more importantly,
+`could no longer charge because it did not detect when connected to a charger
+<https://github.com/maemo-leste/bugtracker/issues/681#issuecomment-1341835131>`_.
+This was also fixed in the kernel.
 
 In the past we had reverted some commits to the Linux kernel that caused
 dramatic power consumption, but now this is no longer necessary as the interval
@@ -230,7 +236,7 @@ The ``Class`` value in ``/etc/bluetooth/main.conf`` has to be set to ``0x005a020
 which will make devices recognize your device as an actual phone.  If you don't
 do this, some devices (like cars) won't even "see" your device.
 
-After that, the car would connect to the device. From this point on, the
+After that, the car would connect to the device. From this point on,
 `module-bluetooth-discover` had to be loaded in pulseaudio if not already::
 
     pactl load-module module-bluetooth-discover
@@ -255,7 +261,7 @@ Device porting
 As of this news post, we have Maemo Leste booting on a Razr XT910 device
 `after some Linux kernel changes by uvos and tmlind
 <https://github.com/maemo-leste/droid4-linux/commits/maemo-6.1>`_ - but the
-display doesn't fully refresh properly yet, most other things seem to work,
+display doesn't fully refresh properly yet. Most other things seem to work,
 though, see `leste-config PR #33
 <https://github.com/maemo-leste/leste-config/pull/33>`_ and `leste-config PR #34
 <https://github.com/maemo-leste/leste-config/pull/34>`_.
@@ -286,15 +292,8 @@ Core Software additions and changes
 rtcom (real time communication) framework
 -----------------------------------------
 
-The rtcom framework now allows setting up not just IRC and XMPP accounts, but
-also `SIP (internet telephony) accounts
-<https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f>`_,
-and during our testing we were even able to utilise the `slack-libpurple
-<https://github.com/dylex/slack-libpurple>`_ - but this is not currently
-packaged or well tested.
-
 The `"presence" UI <https://github.com/maemo-leste/rtcom-presence-ui>`_ is now
-also ready, allowing one to change their presence from status menu.
+ready, allowing one to change their presence from status menu.
 
 Note the green circle in the status area:
 
@@ -330,6 +329,13 @@ The phone application also has seen various improvements. For example, after a
 call is finished, the window doesn't disappear immediately, but rather stays
 around for a few seconds so that the user can understand what happened.
 
+The rtcom framework now allows setting up not just IRC and XMPP accounts, but
+also `SIP (internet telephony) accounts
+<https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f>`_,
+and during our testing we were even able to utilise `slack-libpurple
+<https://github.com/dylex/slack-libpurple>`_ - but this is not currently
+packaged or well tested.
+
 slack
 ~~~~~
 
@@ -348,7 +354,7 @@ Here is the other side of that conversation (in the browser):
 .. image:: /images/laptop-slack.png
 
 
-The ``telepathy-haze`` processes using about 8MB of RAM, which is a nice change
+The ``telepathy-haze`` processes use about 8MB of RAM, which is a nice change
 from the many gigabytes that Slack typically uses in a browser tab.
 
 
@@ -356,10 +362,10 @@ cellulard
 ---------
 
 A new daemon was introduced to our mobile operating system, called
-`cellulard <https://github.com/maemo-leste/cellulard>`_. It's main task is to
-deal with the modem on a high level: it will for example power and online the
+`cellulard <https://github.com/maemo-leste/cellulard>`_. Its main task is to
+deal with the modem on a high level: it will, for example power and online the
 modem via ofono on startup, or offline the modem in case flight mode is
-switched on.
+selected.
 
 This was necessary because nothing else configures the modem, but also to ensure
 that we would be able to show SIM PIN entry dialogs on start of the device, as
@@ -386,7 +392,7 @@ Alarms now work well. Before, alarms could be set, but they wouldn't actually
 vibrate the phone and play sounds, but this all fixed now. To achieve this, we
 had to fix problems in our `gst 1.0 port in the notify plugin
 <https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/1>`_ and `fix a
-crash <https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/2>`_, we
+crash <https://github.com/maemo-leste/hildon-plugins-notify-sv/pull/2>`_. We
 also had to perform the same gstreamer work for the `Qt gst 1.0 code
 <https://github.com/maemo-leste/clock-ui/pull/1>`_.
 
@@ -481,10 +487,10 @@ There are also updates to the `Bulgarian translation <https://github.com/maemo-l
 qtwebbrowser
 ------------
 
-In Chimaera, we have built a custom ``qtwebengine`` build to ensure that the
+In Chimaera, we have a custom ``qtwebengine`` build to ensure that 
 ``qtwebbrowser`` can use 3D acceleration (unfortunately ``qtwebengine`` has a
 hardcoded list of Qt platforms that it supports, so we had to add ``"maemo"`` to
-this list). As a result, the browser is now much more snappy. Additionally, the
+this list). As a result, the browser is now much snappier. Additionally, the
 browser now also `supports portrait mode in Chimaera
 <https://github.com/maemo-leste-extras/qtwebbrowser/commit/4704f8f793044cdf920a408cae4397fa8b0f2415>`_.
 We'll be working on further integrating the browser in Maemo so that it's easier
@@ -545,19 +551,20 @@ Community and supporting software updates
 OpenFest 2022
 -------------
 
-Maemo Leste had a presence on the open and free software conference in Sofia,
+Maemo Leste had a presence at the open and free software conference in Sofia,
 Bulgaria, in October of 2022. ``Wizzup`` `gave a talk on Sunday
 <https://www.youtube.com/watch?v=I2qnjBZ-Scg>`_, and we also had a very well
-attended stand during both days of the conference. Here we were showing
-off various devices that Maemo Leste runs on:
+visited stand during both days of the conference. Here we were showing
+off various devices that Maemo Leste runs on (anticlockwise from bottom left):
 
-* Motorola Droid 4
-* Motorola Bionic
-* Pinephone
 * Allwinner LIME20 tablet in a metal enclosure with wifi and a LTE modem attached over
   USB
+* Motorola Bionic
+* Motorola Droid 4
+* Pinephone
 * Raspberry pi with a HDMI/USB touchscreen attached
 * Allwinner A33 tablet
+* Two more Droid 4
 
 The Nokia N900 was missing from the stand as we forgot to bring one.
 
@@ -575,7 +582,7 @@ dd'able images online at the moment):
   :height: 375px
   :width: 666px
 
-This is an OLIMEX LIME2 (Allwinner A20) board with a resistice 7" screen
+Below is an OLIMEX LIME2 (Allwinner A20) board with a resistive 7" screen
 (800x480px) in a `LCD Metal Frame
 <https://www.olimex.com/Products/OLinuXino/LCD/LCD7-METAL-FRAME/>`_ box, with
 both a USB wifi dongle and an OLIMEX `USB LTE module
@@ -586,7 +593,7 @@ phone call (the USB LTE module doesn't allow for this). As such, it was
 basically a Maemo Leste tablet that can make phone calls. Various attendees used
 the device to call itself and see if it indeed worked.
 
-In this photo, it is showing a Jabber chat on Conversations.
+In this photo, it is showing a Jabber chat in Conversations.
 
 .. image:: /images/openfest-2022-3.jpg
   :height: 375px
@@ -611,7 +618,7 @@ something to share in a month or two.
 Legal entity: Association
 -------------------------
 
-Maemo Leste now is a (registered non profit in the public interest) association
+Maemo Leste is now a registered non profit association in the public interest
 in the country of Bulgaria (`see the registration here
 <https://portal.registryagency.bg/CR/en/Reports/ActiveConditionTabResult?uic=206961328>`_).
 This makes it easier to purchase and send hardware to interested developers and
@@ -626,18 +633,18 @@ Jenkins
 Our Jenkins CI (Continuous Integration) setup, which we use to build all the
 packages for Maemo Leste was running into problems where its hard disk was
 filled up. We realised that **every single build we ever did was saved to
-disk**, which was causing it to full up. Going forward, only the last three
+disk**, which was causing it to fill up. Going forward, only the last three
 successful builds of each package are now saved.
 
 Themes
 ------
 
-We've been looking at using AI to upscaling some of the background images of our
+We've been looking at using AI to upscale some of the background images of our
 themes using Real-ESRGAN. Most of themes were developed only for the Nokia N900,
 with a screen resolution of 800x480 - this makes many of the theme backgrounds
 looks a little ugly on the larger devices that we have. We've made pretty good
 progress with this, and hopefully in the next few weeks we'll push out a few
-'upscaled' themes that genuinelly look better on higher resolution screens.
+'upscaled' themes that genuinely look better on higher resolution screens.
 
 The work on the beta theme can be examined `in this directory
 <https://wizzup.org/dirlist/maemo-leste/theme-upsample/beta/>`_.
@@ -676,7 +683,7 @@ Another view, but of the back of the lapdock:
   :width: 585px
 
 ``Blago`` is still working on turning all of this into a package, but we will
-eventually have suppor for lapdocks (and other external displays, since this
+eventually have support for lapdocks (and other external displays, since this
 just attached to the HDMI port on the phone).
 
 
@@ -716,18 +723,18 @@ What's next
 ===========
 
 The author of this news post has made it a personal goal to switch from his
-Nokia N900 Fremantle phone to a Maemo Leste Droid 4 phone at
+Nokia N900 Fremantle phone to a Maemo Leste Droid 4 phone on
 February 1st, 2023 - exactly five years after the first Maemo Leste post. At
-this point, his contacts and messages will be imported onto the Droid 4 and the
+that point, his contacts and messages will be imported onto the Droid 4 and the
 SIM will be moved.
 
 For this to be achieved, a few tasks will still need to be completed:
 
 * Finish our Chimaera port;
-* Support Telepathy in sphone so that the phone calls are managed using
+* Support Telepathy in sphone so that phone calls are managed using
   ``telepathy-ring`` instead of directly with ``ofono`` - this will also help
-  bring SIP and XMPP calls closer to working;
-* Support messaging new contacts from conversations;
+  bring SIP and XMPP calls closer to working state;
+* Support messaging contacts from conversations;
 * Support incoming message notifications with conversations;
 
 
@@ -737,7 +744,7 @@ Interested?
 If you have questions, are interested in specifics or helping out, or wish to
 have a specific package ported, please see our bugtracker.
 
-**We have several Nokia N900 and Motorola Droid 3, Droid 4 and Bionic units
+**We have several Nokia N900, Motorola Droid 3, Droid 4 and Bionic units
 available for interested developers**, so if you are interested in helping out
 but have trouble acquiring a device, let us know...
 
