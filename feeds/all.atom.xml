@@ -1,31 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2023-02-01T21:00:00+01:00</updated><entry><title>Maemo Leste - Five year aniversary and Chimaera release</title><link href="https://maemo-leste.github.io/maemo-leste-five-year-aniversary-and-chimaera-release.html" rel="alternate"></link><published>2023-02-01T21:00:00+01:00</published><updated>2023-02-01T21:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-02-01:/maemo-leste-five-year-aniversary-and-chimaera-release.html</id><summary type="html">&lt;p&gt;chimaera:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;elogind&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/24"&gt;https://github.com/maemo-leste/bugtracker/milestone/24&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;image-builder:
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7"&gt;https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403"&gt;https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0"&gt;https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3"&gt;https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3"&gt;https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/083cbfabffcdad4383117a28964775e156f2947b"&gt;https://github.com/maemo-leste/image-builder …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;chimaera:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;elogind&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/24"&gt;https://github.com/maemo-leste/bugtracker/milestone/24&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;image-builder:
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7"&gt;https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403"&gt;https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0"&gt;https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3"&gt;https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3"&gt;https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/083cbfabffcdad4383117a28964775e156f2947b"&gt;https://github.com/maemo-leste/image-builder/commit/083cbfabffcdad4383117a28964775e156f2947b&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;todo: pa 14 update, leste-config ucm updates for both it working at all and
-for headphone plug detection
-&lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/1d08e6cbaa4eb18d07fc7a29423ac0db1e98d536"&gt;https://github.com/maemo-leste/leste-config/commit/1d08e6cbaa4eb18d07fc7a29423ac0db1e98d536&lt;/a&gt;
-&lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/4b8851518d8d523065dc1bb12df8d368de9d0af2"&gt;https://github.com/maemo-leste/leste-config/commit/4b8851518d8d523065dc1bb12df8d368de9d0af2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content><category term="news"></category><category term="todo"></category></entry><entry><title>Maemo Leste - New Year update: May 2022 - January 2023</title><link href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html" rel="alternate"></link><published>2023-01-12T18:00:00+01:00</published><updated>2023-01-12T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-01-12:/maemo-leste-new-year-update-may-2022-january-2023.html</id><summary type="html">&lt;p&gt;First of all, happy new year to everyone following along.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2023-01-12T18:00:00+01:00</updated><entry><title>Maemo Leste - New Year update: May 2022 - January 2023</title><link href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html" rel="alternate"></link><published>2023-01-12T18:00:00+01:00</published><updated>2023-01-12T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-01-12:/maemo-leste-new-year-update-may-2022-january-2023.html</id><summary type="html">&lt;p&gt;First of all, happy new year to everyone following along.&lt;/p&gt;
 &lt;p&gt;This is probably our last blog post before our Beta release. This latest update
 focuses heavily on cellular software and drivers as well as other communication
 features, but there's also a healthy amount of bugfixes and performance
@@ -317,7 +291,7 @@ improvements, see &lt;a class="reference external" href="https://github.com/maem
 18th&lt;/a&gt;
 - making it now a quite usable plugin.&lt;/p&gt;
 &lt;p&gt;DHCP for mobile data has been fixed now (see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/4"&gt;libicd-network-ipv4 PR #4&lt;/a&gt;, and one of the
-shell scripts is now also more &lt;tt class="docutils literal"&gt;sh&lt;/tt&gt; compliant (see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/6"&gt;libicd-network-ipv4 PR #6&lt;/a&gt;&lt;/p&gt;
+shell scripts is now also more &lt;tt class="docutils literal"&gt;sh&lt;/tt&gt; compliant (see &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/6"&gt;libicd-network-ipv4 PR #6&lt;/a&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="additional-software-changes"&gt;
@@ -404,7 +378,7 @@ USB&lt;/li&gt;
 stand:&lt;/p&gt;
 &lt;img alt="" src="/images/openfest-2022-1.jpg" style="width: 666px; height: 375px;" /&gt;
 &lt;p&gt;Here is the tablet that &lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; has made Leste work on (there are
-dd'able images online at the moment):&lt;/p&gt;
+no dd'able images online at the moment):&lt;/p&gt;
 &lt;img alt="" src="/images/openfest-2022-2.jpg" style="width: 666px; height: 375px;" /&gt;
 &lt;p&gt;Below is an OLIMEX LIME2 (Allwinner A20) board with a resistive 7&amp;quot; screen
 (800x480px) in a &lt;a class="reference external" href="https://www.olimex.com/Products/OLinuXino/LCD/LCD7-METAL-FRAME/"&gt;LCD Metal Frame&lt;/a&gt; box, with
