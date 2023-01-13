@@ -454,7 +454,7 @@ improvements, see `all the commits from September
 DHCP for mobile data has been fixed now (see `libicd-network-ipv4 PR #4
 <https://github.com/maemo-leste/libicd-network-ipv4/pull/4>`_, and one of the
 shell scripts is now also more ``sh`` compliant (see `libicd-network-ipv4 PR #6
-<https://github.com/maemo-leste/libicd-network-ipv4/pull/6>`_
+<https://github.com/maemo-leste/libicd-network-ipv4/pull/6>`_).
 
 
 Additional Software changes
@@ -581,7 +581,7 @@ stand:
   :width: 666px
 
 Here is the tablet that ``freemangordon`` has made Leste work on (there are
-dd'able images online at the moment):
+no dd'able images online at the moment):
 
 .. image:: /images/openfest-2022-2.jpg
   :height: 375px
@@ -602,14 +602,14 @@ In this photo, it is showing a Jabber chat in Conversations.
 
 .. image:: /images/openfest-2022-3.jpg
   :height: 375px
-  :width: 666px 
+  :width: 666px
 
 We also had some cool propaganda stickers made for the conference, which were
 quite popular.
 
 .. image:: /images/openfest-2022-4.jpg
   :height: 375px
-  :width: 666px 
+  :width: 666px
 
 
 Documentation
