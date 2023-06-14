@@ -555,14 +555,14 @@ lead to more security issues), but various kernel power management tweaks are
 only available through ``debugfs``, so for now we have to keep it mounted.
 
 
-Default DNS server is none is provided
+Default DNS server if none is provided
 --------------------------------------
 
 In some rare cases where a network does not provide a DNS server over DHCP,
 devices running Maemo Leste would not be able to resolve any addresses over DNS,
 as no server was available.
 
-We have decided to default to `9.9.9.9` (aka "Quad9") is nothing else is
+We have decided to default to `9.9.9.9` (aka "Quad9") if nothing else is
 available. In the future we might replace this by just running a recursive DNS
 resolver on the device itself. See `this commit on libicd-network-ipv4
 <https://github.com/maemo-leste/libicd-network-ipv4/commit/49afd837bf5a7764c0cc59854aad2b01175088a4>`_
