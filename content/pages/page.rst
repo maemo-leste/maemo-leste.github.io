@@ -53,6 +53,7 @@ After our `initial blog post
 we have posted (almost) monthly updates of our efforts and
 progress. Reverse-chronological, they are:
 
+* `Five year anniversary: Chimaera release <{filename}/maemo-leste-chimaera-5-year-anniversary.rst>`_
 * `New Year update 2023 <{filename}/maemo-leste-update-january-2023.rst>`_
 * `November 2021 - April 2022 <{filename}/maemo-leste-update-april-2022.rst>`_
 * `January - October 2021 <{filename}/maemo-leste-update-october-2021.rst>`_
