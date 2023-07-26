@@ -8,7 +8,7 @@ Maemo Leste - Five year anniversary and Chimaera release
 
 We're back with another overdue update, marking our five year anniversary as
 well as the official Chimaera release. Apart from the upgrade to Chimeara /
-Bullseye (from Beowulf / Buster) here are some other highlights:
+Bullseye (from Beowulf / Buster), here are some other highlights:
 
 * Modem and cellular data enabled by default on various devices;
 * Support for elogind login sessions;
@@ -18,7 +18,7 @@ Bullseye (from Beowulf / Buster) here are some other highlights:
 * Work has started on the user manual / user guide;
 * Developers now have Nokia N900 phone calls working, but some integration and
   bug fixing still remains;
-* Telepathy-based voice calls are soon coming to sphone;
+* Telepathy-based voice calls are coming soon to sphone;
 
 (Also check out our `previous update
 <{filename}/maemo-leste-update-january-2023.rst>`_ in case you missed it).
@@ -28,11 +28,11 @@ Devuan Chimaera (Debian Bullseye)
 =================================
 
 The upgrade to Devuan Chimaera (Debian Bullseye) has been a long time coming,
-but it is finally here. We had been testing Maemo Lested based on Chimaera for
+but it is finally here. We had been testing Maemo Leste based on Chimaera for
 half a year already, but with this blog post the release (and switchover) is
 official. The `Chimaera milestone ticket
 <https://github.com/maemo-leste/bugtracker/milestone/24>`_ lists all the
-packages that were rebuilt any any of the changes made to them.
+packages that were rebuilt and any of the changes made to them.
 
 The upgrade brings new Linux kernels to various devices (6.1.x for the
 Droid 4, Droid Bionic, Nokia N900 and Pinephone), as well as a switch to elogind
@@ -40,13 +40,13 @@ sessions. This was required for staying compatible with modern software, which
 now often require some form of login session manager in order to function
 properly (or at all).
 
-Most of the support devices will now also have their modem activated and
-software to make phone calls and use mobile data present on the device,
+Most of the supported devices will now also have their modem activated, as well 
+as having software to make phone calls and use mobile data present on the device,
 providing a much more phone-like experience out of the box.
 
 In fact, the more recent Chimaera images should allow users to make working
 phone calls on the Pinephone, Motorola Droid 4, Motorola Bionic out of the box.
-Even on the Nokia N900 calls are now working, but the still require some manual
+Even on the Nokia N900 calls are now working, but they still require some manual
 work after the device has started. The author of this news post has been using
 his Droid 4 as a daily driver for over half a year now.
 
@@ -71,7 +71,7 @@ Upgrading
 
 Users can perform a ``dist-upgrade`` from their Beowulf install to Chimaera, but
 the process isn't well supported at this point, and we instead recommend
-users to instead install a latest image. However, if one prefers to perform a
+users to install a latest image. However, if one prefers to perform a
 dist-upgrade, please ensure that your beowulf installation is up to date before
 attempting to dist-upgrade to chimaera. This sequence of commands might get you
 through the upgrade::
@@ -85,13 +85,13 @@ through the upgrade::
 
 But again, this is not recommended for novice users. However, **this can be done
 entirely 'live' on the phone, while keeping the UI enabled**. Even after the
-upgrade is complete, you can still use the phone to an extend - but you really
+upgrade is complete, you can still use the phone to an extent - but you really
 ought to reboot when it's done.
 
 elogind and Xorg
 ----------------
 
-Xorg now runs as the ``user`` user, and no longer as ``root``, as past of the
+Xorg now runs as the ``user`` user, and no longer as ``root``, as part of the
 switch to (e)logind.
 
 Initially the switch caused trouble because it was no longer possible to ensure
@@ -99,7 +99,7 @@ that both elogind and Xorg would close all the file descriptors to the input
 devices, keeping the input devices awake. However, a new kernel mechanism was
 introduced (the ``inhibited`` property) to suspend input devices regardless of
 whether they are kept open (see this `mce PR
-<https://github.com/maemo-leste/mce/pull/58>`_). Ironically, Maemo had support
+<https://github.com/maemo-leste/mce/pull/58>`_) or not. Ironically, Maemo had support
 for that previously (in the form of a ``disable`` property in sysfs), but this
 was removed by the upstream kernel because it was deemed an unclean mechanism,
 only to re-implement it again, years later.
@@ -135,13 +135,13 @@ for more details.
 qtwebengine
 -----------
 
-Qt Webengine unfortunately has a hardcoded list of Qt platform plugins that it
-will attempt to use 3D acceleration on, so we have currently had to patch qt web
-engine to ensure that is also uses 3D acceleration on the Maemo platform plugin.
+Unfortunately Qt Webengine has a hardcoded list of Qt platform plugins that it
+will attempt to use 3D acceleration on, so we have had to patch qt web engine
+to ensure that it also uses 3D acceleration on the Maemo platform plugin.
 
 See `this patch to qtwebengine
 <https://github.com/maemo-leste-upstream-forks/qtwebengine/commit/c1fbfce8d8ea6c89f65fb8c884d506a39f717049>`_
-for more info, as a result many browsers will now run much more smoothly on Maemo Leste.
+for more info. As a result many browsers will now run much more smoothly on Maemo Leste.
 
 
 syncevolution
@@ -155,8 +155,8 @@ Hardware & Drivers
 Pinephone
 ---------
 
-On the Pinephone, the Pinhole/Shutter camera application should now let users take
-pictures on our pinephone. See this `wiki page
+On the Pinephone, the Pinhole/Shutter camera application should now let users
+take pictures. See this `wiki page
 <https://leste.maemo.org/PinePhone#How_to_take_a_picture>`_ for more
 information.
 
@@ -168,7 +168,7 @@ The Nokia N900 has seen a lot of love from the community members. The power
 management has improved a bunch (while not yet hitting the actual low power OMAP
 modes), and a good battery will give one at least a day of uptime.
 
-`Blacklisting some modules <https://github.com/maemo-leste/leste-config/commit/f0de824b14ccf9070efae90d6dcb97b097ecb325>`_ and `setting proper parameters on the battery module <https://github.com/maemo-leste/leste-config/commit/7dd372bf75b016c02a7acc13ddae928e722d2339>`_ has significantly improved the battery life.
+`Blacklisting some modules <https://github.com/maemo-leste/leste-config/commit/f0de824b14ccf9070efae90d6dcb97b097ecb325>`_ and `setting proper parameters on the 1-wire module <https://github.com/maemo-leste/leste-config/commit/7dd372bf75b016c02a7acc13ddae928e722d2339>`_ has significantly improved the battery life.
 
 The FM transmitter module has also been enabled in the kernel, as well as some
 additional features for the ``iotop`` program to work properly (see `issue #706
@@ -176,20 +176,22 @@ additional features for the ``iotop`` program to work properly (see `issue #706
 <https://github.com/maemo-leste/bugtracker/issues/703>`_.
 
 User ``sicelo`` has improved the `capacity evaluation of the battery
-<https://github.com/maemo-leste/n900-pm/pull/1>`_ in the ``n900-pm`` script.
+<https://github.com/torvalds/linux/commit/68fdbe090c362e8be23890a7333d156e18c27781>`_
+in the upstream kernel, which permits `simplifying
+<https://github.com/maemo-leste/n900-pm/pull/1>`_ the ``n900-pm`` script.
 
 User ``arno II`` has contributed a UCM2 file for the Nokia N900, thereby much
 improving the audio situation on the Nokia N900. He has reported that it can
-also be used for phone calls when a few other pieces are integrated - the
-earpiece doesn't work yet - but users would be able to use both the speakers or
-headphones for calls, though.
+also be used for phone calls when a few other pieces are integrated. The
+earpiece doesn't work yet, but users should be able to use both the speakers or
+headphones for calls.
 
 The modem still needs to be loaded in a certain way for audio calls to work, and
 the necessary changes for the ``cmtspeech`` package and ``pulseaudio``
-configuration changes are still under development.
+configuration are still under development.
 
-For the next update, users ought to expect that phone calls will work normally
-and properly.
+For the next update, users can expect that phone calls will work normally and
+properly.
 
 
 Volume control
@@ -203,8 +205,10 @@ device, see `maemo-statusmenu-volume PR #4
 `maemo-statusmenu-volume issue #3
 <https://github.com/maemo-leste/maemo-statusmenu-volume/issues/3>`_.
 
-With the N900 having received a UCM2 file, the volume applet also works on the
-Nokia N900:
+With the `volume keys remapped
+<https://github.com/maemo-leste/droid4-linux/commit/0e2611e5c6c952eded5e737189da219a8c2e1f48>`_,
+and having received a UCM2 file, the volume applet now also works on the Nokia
+N900:
 
 .. image:: /images/n900-volume-applet.png
   :height: 324px
@@ -219,9 +223,9 @@ Core Software additions and changes
 mafw / (Open) Media Player
 --------------------------
 
-We've been working on making Open Media Player (OMP) and it's dependencies work
+We've been working on making Open Media Player (OMP) and its dependencies work
 on Maemo Leste. At this point, the internet radio player works, and work is
-underway to also be able to play files from the file system as well - this
+underway to also be able to play files from the file system as well. This
 involves porting mafw-tracker-source to the newer GNOME APIs and
 ``freemangordon`` has started working on this.
 
@@ -289,7 +293,7 @@ Telepathy
 ---------
 
 `Work is underway <https://github.com/maemo-leste/sphone/pull/4>`_ to add a
-Telepathy module to our sphone application, this would then allow making regular
+Telepathy module to our sphone application. This would then allow making regular
 phone calls through Telepathy - as well as XMPP and SIP phone calls. The current
 work can already be used to make phone calls, but for outgoing calls the
 "privacy" bit is unconditionally being set, which means that the receiving
@@ -369,7 +373,7 @@ Since this browser extension is open-source, ``dsc`` wondered if he could port
 this translation engine to Maemo Leste for use as a standalone GUI application
 for quality **offline** translation. This meant porting and packaging the
 underlying machine learning technologies for low-powered ARM devices (like the
-Droid 4) which turned out to be a challenging, but not impossible.
+Droid 4) which turned out to be a challenging, but not impossible task.
 
 .. ![https://plak.infrapuin.nl/selif/22275ry4.jpg](https://plak.infrapuin.nl/selif/22275ry4.jpg)
 
@@ -385,8 +389,8 @@ Then end result is a responsive GUI that offers quick translations.
 
 
 Maemo translate is now available from the repository as `maemo-translate`. In
-addition, checkout the individual language packs in the Hildon application
-manager or via `apt search maemo-translate-data`
+addition, check out the individual language packs in the Hildon Application
+Manager or via `apt search maemo-translate-data`
 
 .. image:: /images/ham-translate-data.png
   :height: 576px
