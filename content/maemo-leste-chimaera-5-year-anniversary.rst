@@ -10,15 +10,16 @@ We're back with another overdue update, marking our five year anniversary as
 well as the official Chimaera release. Apart from the upgrade to Chimeara /
 Bullseye (from Beowulf / Buster), here are some other highlights:
 
+* Work has started on the user manual / user guide;
+* Continued work on supporting more devices;
+* Telepathy-based (VoIP and XMPP) voice calls are soon coming to sphone;
 * Modem and cellular data enabled by default on various devices;
 * Support for elogind login sessions;
 * Various quality of life fixes such as Qt theming improvements;
 * Better power management on the Nokia N900;
 * Camera application for the Pinephone, additional firmware;
-* Work has started on the user manual / user guide;
 * Developers now have Nokia N900 phone calls working, but some integration and
   bug fixing still remains;
-* Telepathy-based voice calls are coming soon to sphone;
 
 (Also check out our `previous update
 <{filename}/maemo-leste-update-january-2023.rst>`_ in case you missed it).
@@ -107,6 +108,8 @@ only to re-implement it again, years later.
 We also have some policy kit integration now, through the `policykit-1-hildon
 <https://github.com/maemo-leste/policykit-1-hildon>`_ package.
 
+DSME also saw some minor changes to be `compatible with a login session <929cde639a74cecde58d1fdf86316daa51ea1e27>`_.
+
 
 Pulseaudio
 ----------
@@ -120,6 +123,7 @@ in commit `1d08e6cb
 <https://github.com/maemo-leste/leste-config/commit/1d08e6cbaa4eb18d07fc7a29423ac0db1e98d536>`_
 and commit `4b885151
 <https://github.com/maemo-leste/leste-config/commit/4b8851518d8d523065dc1bb12df8d368de9d0af2>`_
+
 
 
 CPU flags
@@ -147,7 +151,14 @@ for more info. As a result many browsers will now run much more smoothly on Maem
 syncevolution
 -------------
 
-TODO: currently broken (!)
+The one regression we still have to figure out is syncevolution - as of writing the
+package doesn't seem to work with its Maemo backends. Syncevolution went through
+a major release, so we still have to figure out what exactly is broken.
+
+We did port the Maemo Telepathy Backend to the new syncevolution version (to
+have contacts integration), in commits `b96f28389
+<https://github.com/maemo-leste/eds-backend-telepathy/commit/b96f28389554f2a1d39d6b8eeef3bd1a66e701fc>`_,
+`e77bd8fae <https://github.com/maemo-leste/eds-backend-telepathy/commit/e77bd8faec35947582d6009f4675e7aafe5b7e30>`_, `334b80cfc <https://github.com/maemo-leste/eds-backend-telepathy/commit/334b80cfcd072c5ab7eb7607decfb855b57b7643>`_ and `5be241157 <https://github.com/maemo-leste/eds-backend-telepathy/commit/5be241157c3c344b80ca39e75b63d4c22a282cbf>`_.
 
 Hardware & Drivers
 ==================
@@ -282,11 +293,11 @@ Notifications
 -------------
 
 Maemo now implements more of the XDG specification for notification patterns
-such as the vibration property.
-
-TODO: which pkg/repo?
-libnotify changes (vibrate on general patterns)
-
+such as the vibration property, but also in general notification ought to be
+supported in a (much) better fashion. Previously not all XDG categories were
+supported, but now many more are. This changes were added to
+`hildon-plugins-notify-sv
+<https://github.com/maemo-leste/hildon-plugins-notify-sv>`_ version ``0.64``.
 
 
 Telepathy
@@ -323,6 +334,51 @@ place for it yet, but the `manual can be found here <http://maemo-leste-manual.m
 The `source code for the manual
 <https://gitlab.com/motionlibre1/maemo-leste-user-handbook>`_ is also available.
 
+Cornel-Florentin, who has worked on the documentation extensively has described
+the approach below:
+
+*"What we planned to do was first of all to have quite explanatory instructions
+about how to navigate through the OS's interface, since most people nowadays are
+pretty much used to the navigation concepts of Android and Apple devices. And
+since Maemo Leste's interface is different, we thought that this would be the
+most important aspect about improving user experience, and expectations.*
+
+*Another important aspect of user friendliness is customization, to make users
+feel more like home, and this was also prioritized.*
+
+*To make it very clear to understand all the above mentioned aspects, and not
+only, almost every detail was accompanied by many screenshots, which actually is
+what took a big part of the time required writing this manual.*
+
+*Besides, what also helps to to adjusting users' expectations is a section
+dedicated to the known bugs, or elements which don't work as expected. Many
+items here most likely will be short-lived, as they will be solved during the
+following development stages, but mentioning them is very important, for the
+reasons given above.*
+
+*Another important part, before starting  writing, was to think about its
+structure, in order to have it work as a reference too, and so to fit both
+beginners and more experienced users. This was reworked and rethought a number
+of times, as progressing, obviously also requiring a serious amount of time. And
+it's not final, since it might still be modified in the future. It's the living
+part of the manual, and the under development state of Maemo Leste, which keep
+it transforming.*
+
+*Having a good structure allows linking and crosslinking different parts,
+sections and subsections, enabling packing the documentation in a more compact
+form, which is easier to follow, grasp, modify and add to in the future. Finding
+and jumping to the section you're looking for is also much easier this way.*
+
+*Another structurally beneficial thing is having a glossary of technical terms,
+so that again, advanced users to not have to crawl through text, skipping
+trivial information, while at the same time beginners to not feel lost.*
+
+*The manual is still work in progress, but by following the provided links you
+can check the already completed parts, which are already considered to be done,
+but which will still be revised at least one more time before they will go into
+a final state. Any suggestions and corrections are welcome, so that we can
+integrate them in the revised versions."*
+
 
 Community and supporting software updates
 =========================================
@@ -331,16 +387,22 @@ Community and supporting software updates
 DORS/CLUC 2023
 --------------
 
-* TODO: Talk
-* TODO: Stand
+Maemo Leste gave a talk at DORS/CLUC. There doesn't seem to be a recording
+online yet, but one can look at the `PDF of the presentation
+<https://wizzup.org/maemo-leste-dors-cluc-2023.pdf>`_ - there isn't any
+particular news in the presentation though - the aim was to raise awareness.
+
+We also had a stand and showed off Maemo Leste hardware to various folks.
+
 
 Extra packages
 --------------
 
-new extra packages:
-
-* harbour-amazfish with dependency: nemo-qml-plugin-dbus
-* mstardict?
+Various new packages were added by the community. Some are described in this at
+length, others like `MStarDict <https://leste.maemo.org/Extras/MStarDict>`_ have
+a wiki page that explain how they work. `harbour-amazfish
+<https://github.com/maemo-leste-extras/harbour-amazfish>`_ was ported over from
+SailfishOS.
 
 
 Maemo Weather
@@ -417,20 +479,6 @@ screenshots of what it looks like:
 .. image:: /images/win7-3.png
   :height: 324px
   :width: 576px
-
-
-
-TODO
-====
-
-* dsme updates
-* mce updates
-* hildon-base 1.14+m7 (> 1.10+m7.1 )
-* hildon-meta 2.5+m7 (> 2.3+m7 )
-* maemo-system-services 0.6.10-0+m7 (> 0.6.9-0+m7.1 )
-* osso-af-startup 1.81.13+m7 (> 1.81.12+m7 )
-* https://bugzilla.mozilla.org/show_bug.cgi?id=1812016
-
 
 
 
