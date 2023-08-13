@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="We&#39;re back with another overdue update, marking our five year anniversary as well as the official Chimaera release. Apart from the upgrade to Chimeara / Bullseye (from Beowulf / Buster), here are...">
+        <meta name="keywords" content="calls, chimaera, mediaplayer, n900, qt5, rtcom">
+        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+
+        <title>Maemo Leste - Five year anniversary and Chimaera release - Maemo Leste</title>
+
+        <!-- Stylesheets -->
+        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
+        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
+        <!-- /Stylesheets -->
+
+        <!-- RSS Feeds -->
+        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
+        <link href="https://maemo-leste.github.io/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Categories Atom Feed" />
+        <!-- /RSS Feeds -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+    <div class="header-container gradient">
+
+            <!-- Static navbar -->
+            <div class="container">
+                <div class="header-nav">
+                    <div class="header-logo">
+                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small_w.png" alt="logo">Maemo Leste</a>
+                    </div>
+                    <div class="nav pull-right">
+                                <a href="https://maemo-leste.github.io/categories.html">News</a>
+                                <a href="https://maedevu.maemo.org/pkgweb/">Packages</a>
+                                <a href="https://leste.maemo.org">Wiki</a>
+                                <a href="https://maedevu.maemo.org/images/">Download</a>
+                                <a href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
+                        <!--
+                            <a  href="https://maemo-leste.github.io/">Maemo Leste</a>
+                            <a  href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <!-- /Static navbar -->
+
+            <!-- Header -->
+    <!-- Header -->
+    <div class="container header-wrapper">
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="header-content">
+                      <h1 class="header-title">Maemo Leste - Five year anniversary and Chimaera release</h1>
+                      <p class="header-date"> <a href="https://maemo-leste.github.io/author/merlijn-wajer.html">Merlijn Wajer</a>, Wed 19 July 2023,  <a href="https://maemo-leste.github.io/category/news.html">News</a></p>
+                      <div class="header-underline"></div>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="https://maemo-leste.github.io/tag/calls.html">calls</a>, <a href="https://maemo-leste.github.io/tag/chimaera.html">chimaera</a>, <a href="https://maemo-leste.github.io/tag/mediaplayer.html">mediaplayer</a>, <a href="https://maemo-leste.github.io/tag/n900.html">n900</a>, <a href="https://maemo-leste.github.io/tag/qt5.html">qt5</a>, <a href="https://maemo-leste.github.io/tag/rtcom.html">rtcom</a>                      </p>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- /Header -->
+            <!-- /Header -->
+
+        </div>
+        <!-- /Header -->
+
+
+        <!-- Content -->
+    <div class="container content">
+        <p>We're back with another overdue update, marking our five year anniversary as
+well as the official Chimaera release. Apart from the upgrade to Chimeara /
+Bullseye (from Beowulf / Buster), here are some other highlights:</p>
+<ul class="simple">
+<li>Work has started on the user manual / user guide;</li>
+<li>Continued work on supporting more devices;</li>
+<li>Telepathy-based (VoIP and XMPP) voice calls are soon coming to sphone;</li>
+<li>Modem and cellular data enabled by default on various devices;</li>
+<li>Support for elogind login sessions;</li>
+<li>Various quality of life fixes such as Qt theming improvements;</li>
+<li>Better power management on the Nokia N900;</li>
+<li>Camera application for the Pinephone, additional firmware;</li>
+<li>Developers now have Nokia N900 phone calls working, but some integration and
+bug fixing still remains;</li>
+</ul>
+<p>(Also check out our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html">previous update</a> in case you missed it).</p>
+<div class="section" id="devuan-chimaera-debian-bullseye">
+<h2>Devuan Chimaera (Debian Bullseye)</h2>
+<p>The upgrade to Devuan Chimaera (Debian Bullseye) has been a long time coming,
+but it is finally here. We had been testing Maemo Leste based on Chimaera for
+half a year already, but with this blog post the release (and switchover) is
+official. The <a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/24">Chimaera milestone ticket</a> lists all the
+packages that were rebuilt and any of the changes made to them.</p>
+<p>The upgrade brings new Linux kernels to various devices (6.1.x for the
+Droid 4, Droid Bionic, Nokia N900 and Pinephone), as well as a switch to elogind
+sessions. This was required for staying compatible with modern software, which
+now often require some form of login session manager in order to function
+properly (or at all).</p>
+<p>Most of the supported devices will now also have their modem activated, as well
+as having software to make phone calls and use mobile data present on the device,
+providing a much more phone-like experience out of the box.</p>
+<p>In fact, the more recent Chimaera images should allow users to make working
+phone calls on the Pinephone, Motorola Droid 4, Motorola Bionic out of the box.
+Even on the Nokia N900 calls are now working, but they still require some manual
+work after the device has started. The author of this news post has been using
+his Droid 4 as a daily driver for over half a year now.</p>
+<p>The image builder can now build Chimaera images, see the following commits
+(<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7">ed150008c</a>,
+<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403">e7a672f9</a>,
+<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0">8f2dee26</a>,
+<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3">c5ed472f</a>,
+<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3">3438cadb</a>,
+<a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/083cbfabffcdad4383117a28964775e156f2947b">083cbfab</a>).</p>
+<p>Additionally, the image builder base operating system has also been upgraded to
+Chimaera.</p>
+<div class="section" id="upgrading">
+<h3>Upgrading</h3>
+<p>Users can perform a <tt class="docutils literal"><span class="pre">dist-upgrade</span></tt> from their Beowulf install to Chimaera, but
+the process isn't well supported at this point, and we instead recommend
+users to install a latest image. However, if one prefers to perform a
+dist-upgrade, please ensure that your beowulf installation is up to date before
+attempting to dist-upgrade to chimaera. This sequence of commands might get you
+through the upgrade:</p>
+<pre class="literal-block">
+apt dist-upgrade -o APT::Force-LoopBreak=true
+dpkg-reconfigure --force gconf2
+dpkg-reconfigure --force libgconf-2-4:armhf
+apt --fix-broken install
+apt dist-upgrade -o APT::Force-LoopBreak=true
+</pre>
+<p>But again, this is not recommended for novice users. However, <strong>this can be done
+entirely 'live' on the phone, while keeping the UI enabled</strong>. Even after the
+upgrade is complete, you can still use the phone to an extent - but you really
+ought to reboot when it's done.</p>
+</div>
+<div class="section" id="elogind-and-xorg">
+<h3>elogind and Xorg</h3>
+<p>Xorg now runs as the <tt class="docutils literal">user</tt> user, and no longer as <tt class="docutils literal">root</tt>, as part of the
+switch to (e)logind.</p>
+<p>Initially the switch caused trouble because it was no longer possible to ensure
+that both elogind and Xorg would close all the file descriptors to the input
+devices, keeping the input devices awake. However, a new kernel mechanism was
+introduced (the <tt class="docutils literal">inhibited</tt> property) to suspend input devices regardless of
+whether they are kept open (see this <a class="reference external" href="https://github.com/maemo-leste/mce/pull/58">mce PR</a>) or not. Ironically, Maemo had support
+for that previously (in the form of a <tt class="docutils literal">disable</tt> property in sysfs), but this
+was removed by the upstream kernel because it was deemed an unclean mechanism,
+only to re-implement it again, years later.</p>
+<p>We also have some policy kit integration now, through the <a class="reference external" href="https://github.com/maemo-leste/policykit-1-hildon">policykit-1-hildon</a> package.</p>
+<p>DSME also saw some minor changes to be <a class="reference external" href="929cde639a74cecde58d1fdf86316daa51ea1e27">compatible with a login session</a>.</p>
+</div>
+<div class="section" id="pulseaudio">
+<h3>Pulseaudio</h3>
+<p>The new Pulseaudio in Chimaera had significantly reworked their UCM2 support,
+and as result our <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/685">audio setup was completely broken</a>.
+We took a deep dive and figured out what the problem was, only to find out that
+the headphone plug detection was also broken. These problems have now been fixed
+in commit <a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/1d08e6cbaa4eb18d07fc7a29423ac0db1e98d536">1d08e6cb</a>
+and commit <a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/4b8851518d8d523065dc1bb12df8d368de9d0af2">4b885151</a></p>
+</div>
+<div class="section" id="cpu-flags">
+<h3>CPU flags</h3>
+<p>We now also build packages in the Maemo repositories with NEON and Thumb2.
+Most packages in Debian are already using Thumb2, but not all make use of NEON.
+See issue <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/691">#691</a> and the
+jenkins-integration commits <a class="reference external" href="https://github.com/maemo-leste/jenkins-integration/commit/bf2ce8c3423ec12c13f086d1acf64959b073bfaf">bf2ce8c3</a> and <a class="reference external" href="https://github.com/maemo-leste/jenkins-integration/commit/75a8e3fbff361653c0fd01ff1db136b40ec62b80">75a8e3fb</a>
+for more details.</p>
+</div>
+<div class="section" id="qtwebengine">
+<h3>qtwebengine</h3>
+<p>Unfortunately Qt Webengine has a hardcoded list of Qt platform plugins that it
+will attempt to use 3D acceleration on, so we have had to patch qt web engine
+to ensure that it also uses 3D acceleration on the Maemo platform plugin.</p>
+<p>See <a class="reference external" href="https://github.com/maemo-leste-upstream-forks/qtwebengine/commit/c1fbfce8d8ea6c89f65fb8c884d506a39f717049">this patch to qtwebengine</a>
+for more info. As a result many browsers will now run much more smoothly on Maemo Leste.</p>
+</div>
+<div class="section" id="syncevolution">
+<h3>syncevolution</h3>
+<p>The one regression we still have to figure out is syncevolution - as of writing the
+package doesn't seem to work with its Maemo backends. Syncevolution went through
+a major release, so we still have to figure out what exactly is broken.</p>
+<p>We did port the Maemo Telepathy Backend to the new syncevolution version (to
+have contacts integration), in commits <a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/b96f28389554f2a1d39d6b8eeef3bd1a66e701fc">b96f28389</a>,
+<a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/e77bd8faec35947582d6009f4675e7aafe5b7e30">e77bd8fae</a>, <a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/334b80cfcd072c5ab7eb7607decfb855b57b7643">334b80cfc</a> and <a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/5be241157c3c344b80ca39e75b63d4c22a282cbf">5be241157</a>.</p>
+</div>
+</div>
+<div class="section" id="hardware-drivers">
+<h2>Hardware &amp; Drivers</h2>
+<div class="section" id="pinephone">
+<h3>Pinephone</h3>
+<p>On the Pinephone, the Pinhole/Shutter camera application should now let users
+take pictures. See this <a class="reference external" href="https://leste.maemo.org/PinePhone#How_to_take_a_picture">wiki page</a> for more
+information.</p>
+</div>
+<div class="section" id="nokia-n900">
+<h3>Nokia N900</h3>
+<p>The Nokia N900 has seen a lot of love from the community members. The power
+management has improved a bunch (while not yet hitting the actual low power OMAP
+modes), and a good battery will give one at least a day of uptime.</p>
+<p><a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/f0de824b14ccf9070efae90d6dcb97b097ecb325">Blacklisting some modules</a> and <a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/7dd372bf75b016c02a7acc13ddae928e722d2339">setting proper parameters on the 1-wire module</a> has significantly improved the battery life.</p>
+<p>The FM transmitter module has also been enabled in the kernel, as well as some
+additional features for the <tt class="docutils literal">iotop</tt> program to work properly (see <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/706">issue #706</a> and <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/703">issue #703</a>.</p>
+<p>User <tt class="docutils literal">sicelo</tt> has improved the <a class="reference external" href="https://github.com/torvalds/linux/commit/68fdbe090c362e8be23890a7333d156e18c27781">capacity evaluation of the battery</a>
+in the upstream kernel, which permits <a class="reference external" href="https://github.com/maemo-leste/n900-pm/pull/1">simplifying</a> the <tt class="docutils literal"><span class="pre">n900-pm</span></tt> script.</p>
+<p>User <tt class="docutils literal">arno II</tt> has contributed a UCM2 file for the Nokia N900, thereby much
+improving the audio situation on the Nokia N900. He has reported that it can
+also be used for phone calls when a few other pieces are integrated. The
+earpiece doesn't work yet, but users should be able to use both the speakers or
+headphones for calls.</p>
+<p>The modem still needs to be loaded in a certain way for audio calls to work, and
+the necessary changes for the <tt class="docutils literal">cmtspeech</tt> package and <tt class="docutils literal">pulseaudio</tt>
+configuration are still under development.</p>
+<p>For the next update, users can expect that phone calls will work normally and
+properly.</p>
+</div>
+<div class="section" id="volume-control">
+<h3>Volume control</h3>
+<p>The volume applet has been improved to ensure that it now also <a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/615">works on the
+Pinephone</a>. The right
+audio sinks are now detected automatically, rather than being hardcoded per
+device, see <a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/pull/4">maemo-statusmenu-volume PR #4</a> and
+<a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/issues/3">maemo-statusmenu-volume issue #3</a>.</p>
+<p>With the <a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/0e2611e5c6c952eded5e737189da219a8c2e1f48">volume keys remapped</a>,
+and having received a UCM2 file, the volume applet now also works on the Nokia
+N900:</p>
+<img alt="" src="/images/n900-volume-applet.png" style="width: 576px; height: 324px;" />
+</div>
+</div>
+<div class="section" id="core-software-additions-and-changes">
+<h2>Core Software additions and changes</h2>
+<div class="section" id="mafw-open-media-player">
+<h3>mafw / (Open) Media Player</h3>
+<p>We've been working on making Open Media Player (OMP) and its dependencies work
+on Maemo Leste. At this point, the internet radio player works, and work is
+underway to also be able to play files from the file system as well. This
+involves porting mafw-tracker-source to the newer GNOME APIs and
+<tt class="docutils literal">freemangordon</tt> has started working on this.</p>
+<p>This is what the media player looks like when started:</p>
+<img alt="" src="/images/omp-start.png" style="width: 576px; height: 324px;" />
+<p>Listening to a radio stream:</p>
+<img alt="" src="/images/omp-radio.png" style="width: 576px; height: 324px;" />
+<p>Showing the details of a radio stream:</p>
+<img alt="" src="/images/omp-radio-details.png" style="width: 576px; height: 324px;" />
+<p>Adding a new radio stream:</p>
+<img alt="" src="/images/omp-add-baroque.png" style="width: 576px; height: 324px;" />
+<p>Portrait mode:</p>
+<img alt="" src="/images/omp-portrait.png" style="width: 324px; height: 576px;" />
+<p>Open Media Player is now available for installation from the Hildon Application
+Manager.</p>
+</div>
+<div class="section" id="qt-5-styling">
+<h3>Qt 5 styling</h3>
+<p>Some of the Qt5 styling problems that were present on Maemo Leste in the past
+have now been solved.</p>
+<p>One of the problems was that some applications had (white) backgrounds that didn't
+fit with the theme (this was particularly present in the clock application).
+Another problem was that text wouldn't always contrast well with the background
+- for example black text on a dark gray background.</p>
+<p>Various widgets should now also <a class="reference external" href="https://github.com/maemo-leste/qtstyleplugins/commit/83aca5c8f2f69f5815307ebac0a65a9be5522d19">support scrolling by default</a>.</p>
+</div>
+<div class="section" id="notifications">
+<h3>Notifications</h3>
+<p>Maemo now implements more of the XDG specification for notification patterns
+such as the vibration property, but also in general notification ought to be
+supported in a (much) better fashion. Previously not all XDG categories were
+supported, but now many more are. This changes were added to
+<a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv">hildon-plugins-notify-sv</a> version <tt class="docutils literal">0.64</tt>.</p>
+</div>
+<div class="section" id="telepathy">
+<h3>Telepathy</h3>
+<p><a class="reference external" href="https://github.com/maemo-leste/sphone/pull/4">Work is underway</a> to add a
+Telepathy module to our sphone application. This would then allow making regular
+phone calls through Telepathy - as well as XMPP and SIP phone calls. The current
+work can already be used to make phone calls, but for outgoing calls the
+&quot;privacy&quot; bit is unconditionally being set, which means that the receiving
+caller won't be able to see your phone number. XMPP and SIP phone calls start,
+but the audio isn't being routed properly yet.</p>
+<p>Having sphone use Telepathy is important, because then we can finally start
+sending and receiving SMS messages from the Conversations application.</p>
+<p>This work will be completed by the next news post.</p>
+<p>Meanwhile, enjoy a screenshot showing SIP messages being exchanged between two
+Maemo Leste users using Conversations.</p>
+<img alt="" src="/images/sip-messages-conversations.png" style="width: 576px; height: 324px;" />
+</div>
+</div>
+<div class="section" id="documentation-user-manual">
+<h2>Documentation: User Manual</h2>
+<p>As part of the funding, we have been working on improving our documentation and
+created a user manual. It is still being worked on and we haven't decided on a
+place for it yet, but the <a class="reference external" href="http://maemo-leste-manual.motionlibre.org/">manual can be found here</a>.</p>
+<p>The <a class="reference external" href="https://gitlab.com/motionlibre1/maemo-leste-user-handbook">source code for the manual</a> is also available.</p>
+<p>Cornel-Florentin, who has worked on the documentation extensively has described
+the approach below:</p>
+<p><em>&quot;What we planned to do was first of all to have quite explanatory instructions
+about how to navigate through the OS's interface, since most people nowadays are
+pretty much used to the navigation concepts of Android and Apple devices. And
+since Maemo Leste's interface is different, we thought that this would be the
+most important aspect about improving user experience, and expectations.</em></p>
+<p><em>Another important aspect of user friendliness is customization, to make users
+feel more like home, and this was also prioritized.</em></p>
+<p><em>To make it very clear to understand all the above mentioned aspects, and not
+only, almost every detail was accompanied by many screenshots, which actually is
+what took a big part of the time required writing this manual.</em></p>
+<p><em>Besides, what also helps to to adjusting users' expectations is a section
+dedicated to the known bugs, or elements which don't work as expected. Many
+items here most likely will be short-lived, as they will be solved during the
+following development stages, but mentioning them is very important, for the
+reasons given above.</em></p>
+<p><em>Another important part, before starting  writing, was to think about its
+structure, in order to have it work as a reference too, and so to fit both
+beginners and more experienced users. This was reworked and rethought a number
+of times, as progressing, obviously also requiring a serious amount of time. And
+it's not final, since it might still be modified in the future. It's the living
+part of the manual, and the under development state of Maemo Leste, which keep
+it transforming.</em></p>
+<p><em>Having a good structure allows linking and crosslinking different parts,
+sections and subsections, enabling packing the documentation in a more compact
+form, which is easier to follow, grasp, modify and add to in the future. Finding
+and jumping to the section you're looking for is also much easier this way.</em></p>
+<p><em>Another structurally beneficial thing is having a glossary of technical terms,
+so that again, advanced users to not have to crawl through text, skipping
+trivial information, while at the same time beginners to not feel lost.</em></p>
+<p><em>The manual is still work in progress, but by following the provided links you
+can check the already completed parts, which are already considered to be done,
+but which will still be revised at least one more time before they will go into
+a final state. Any suggestions and corrections are welcome, so that we can
+integrate them in the revised versions.&quot;</em></p>
+</div>
+<div class="section" id="community-and-supporting-software-updates">
+<h2>Community and supporting software updates</h2>
+<div class="section" id="dors-cluc-2023">
+<h3>DORS/CLUC 2023</h3>
+<p>Maemo Leste gave a talk at DORS/CLUC. There doesn't seem to be a recording
+online yet, but one can look at the <a class="reference external" href="https://wizzup.org/maemo-leste-dors-cluc-2023.pdf">PDF of the presentation</a> - there isn't any
+particular news in the presentation though - the aim was to raise awareness.</p>
+<p>We also had a stand and showed off Maemo Leste hardware to various folks.</p>
+</div>
+<div class="section" id="extra-packages">
+<h3>Extra packages</h3>
+<p>Various new packages were added by the community. Some are described in this at
+length, others like <a class="reference external" href="https://leste.maemo.org/Extras/MStarDict">MStarDict</a> have
+a wiki page that explain how they work. <a class="reference external" href="https://github.com/maemo-leste-extras/harbour-amazfish">harbour-amazfish</a> was ported over from
+SailfishOS.</p>
+<div class="section" id="maemo-weather">
+<h4>Maemo Weather</h4>
+<p><tt class="docutils literal">dsc</tt> has built a weather application in Qt called <a class="reference external" href="https://github.com/maemo-leste-extras/NOMWeather">NOMWeather</a>. It looks great and is very
+usable - you can find some screenshots of the application below.</p>
+<img alt="" src="/images/maemo-weather-korcula.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/maemo-weather-korcula-wind.png" style="width: 576px; height: 324px;" />
+</div>
+<div class="section" id="maemo-offline-translate">
+<h4>Maemo (Offline) Translate</h4>
+<p>Mozilla recently created a browser extension called
+<a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/">firefox-translations</a>
+which translates webpages from one language to another <em>without</em> using a
+third-party service. The translation happens locally, in the browser, via
+language models created using machine-learning.</p>
+<p>Since this browser extension is open-source, <tt class="docutils literal">dsc</tt> wondered if he could port
+this translation engine to Maemo Leste for use as a standalone GUI application
+for quality <strong>offline</strong> translation. This meant porting and packaging the
+underlying machine learning technologies for low-powered ARM devices (like the
+Droid 4) which turned out to be a challenging, but not impossible task.</p>
+<!-- ![https://plak.infrapuin.nl/selif/22275ry4.jpg](https://plak.infrapuin.nl/selif/22275ry4.jpg) -->
+<p>Then end result is a responsive GUI that offers quick translations.</p>
+<img alt="" src="/images/maemo-translate-enbg.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/maemo-translate-deen.png" style="width: 576px; height: 324px;" />
+<p>Maemo translate is now available from the repository as <cite>maemo-translate</cite>. In
+addition, check out the individual language packs in the Hildon Application
+Manager or via <cite>apt search maemo-translate-data</cite></p>
+<img alt="" src="/images/ham-translate-data.png" style="width: 324px; height: 576px;" />
+</div>
+<div class="section" id="windows-7-theme">
+<h4>Windows 7 theme</h4>
+<p>We have ported the old <a class="reference external" href="http://maemo.org/packages/view/windows7-theme/">Maemo Windows 7 theme</a> - see the <a class="reference external" href="https://github.com/maemo-leste-extras/windows7-theme">windows7-theme</a> extras repository for
+the source. It can now be installed on your Maemo Leste devices. Find below some
+screenshots of what it looks like:</p>
+<img alt="" src="/images/win7-1.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/win7-2.png" style="width: 576px; height: 324px;" />
+<img alt="" src="/images/win7-3.png" style="width: 576px; height: 324px;" />
+</div>
+</div>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.</p>
+<p><strong>We have several Nokia N900, Motorola Droid 3, Droid 4, Bionic and RAZR units
+available for interested developers</strong>, so if you are interested in helping out
+but have trouble acquiring a device, let us know.</p>
+<!-- .. image:: /images/massdroid.jpg -->
+<!-- :height: 375px -->
+<!-- :width: 666px -->
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join our effort!</p>
+</div>
+
+
+
+        
+    </div>
+        <!-- /Content --> 
+
+        <!-- Footer -->
+        <div class="footer gradient-2">
+            <div class="container footer-container">
+                <div class="row text-center">
+                        <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
+                        <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
+                        <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="80"></a>&nbsp;&nbsp;
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+                        </ul>
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://twitter.com/maemoleste" target="_blank">Twitter</a></li>
+                            <li><a href="https://github.com/maemo-leste" target="_blank">Github</a></li>
+                            <li><a href="/feeds/all.atom.xml" target="_blank">Atom Feed</a></li>
+                        </ul>
+                        <div class="footer-title"></div>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+                            <li><a href="https://maedevu.maemo.org/pkgweb/" target="_blank">Maemo Leste Packages</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Footer -->
+    </body>
+</html>

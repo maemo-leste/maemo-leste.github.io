@@ -363,40 +363,40 @@ so you can integrate this gps information into your application.</p>
 <a class="reference external" href="https://github.com/maemo-leste/python-location">liblocation Python bindings</a>
 are now also available, here is an example:</p>
 <pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">location</span>
-<span class="kn">import</span> <span class="nn">gobject</span>
+<span class="kn">import</span> <span class="nn">location</span><span class="w">
+</span><span class="kn">import</span> <span class="nn">gobject</span><span class="w">
 
-<span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="s2">&quot;location error: </span><span class="si">%d</span><span class="s2">... quitting&quot;</span> <span class="o">%</span> <span class="n">error</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span><span class="w">
+</span>    <span class="nb">print</span> <span class="s2">&quot;location error: </span><span class="si">%d</span><span class="s2">... quitting&quot;</span> <span class="o">%</span> <span class="n">error</span><span class="w">
+</span>    <span class="n">data</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span><span class="w">
 
-<span class="k">def</span> <span class="nf">on_changed</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">location</span><span class="o">.</span><span class="n">GPS_DEVICE_LATLONG_SET</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lat = </span><span class="si">%f</span><span class="s2">, long = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</span><span class="k">def</span> <span class="nf">on_changed</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span><span class="w">
+</span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span><span class="w">
+</span>        <span class="k">return</span><span class="w">
+</span>    <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">:</span><span class="w">
+</span>        <span class="k">if</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">location</span><span class="o">.</span><span class="n">GPS_DEVICE_LATLONG_SET</span><span class="p">:</span><span class="w">
+</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lat = </span><span class="si">%f</span><span class="s2">, long = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">device</span><span class="o">.</span><span class="n">fix</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span><span class="w">
 
-<span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span class="k">def</span> <span class="nf">on_stop</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span><span class="w">
+</span>    <span class="n">data</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span><span class="w">
 
-<span class="k">def</span> <span class="nf">start_location</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-    <span class="k">return</span> <span class="kc">False</span>
+</span><span class="k">def</span> <span class="nf">start_location</span><span class="p">(</span><span class="n">data</span><span class="p">):</span><span class="w">
+</span>    <span class="n">data</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="w">
+</span>    <span class="k">return</span> <span class="kc">False</span><span class="w">
 
-<span class="n">loop</span> <span class="o">=</span> <span class="n">gobject</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
-<span class="n">control</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">GPSDControl</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span>
-<span class="n">device</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">GPSDevice</span><span class="p">()</span>
-<span class="n">control</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="n">preferred_method</span><span class="o">=</span><span class="n">location</span><span class="o">.</span><span class="n">METHOD_USER_SELECTED</span><span class="p">,</span>
-                       <span class="n">preferred_interval</span><span class="o">=</span><span class="n">location</span><span class="o">.</span><span class="n">INTERVAL_DEFAULT</span><span class="p">)</span>
+</span><span class="n">loop</span> <span class="o">=</span> <span class="n">gobject</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span><span class="w">
+</span><span class="n">control</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">GPSDControl</span><span class="o">.</span><span class="n">get_default</span><span class="p">()</span><span class="w">
+</span><span class="n">device</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">GPSDevice</span><span class="p">()</span><span class="w">
+</span><span class="n">control</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="n">preferred_method</span><span class="o">=</span><span class="n">location</span><span class="o">.</span><span class="n">METHOD_USER_SELECTED</span><span class="p">,</span><span class="w">
+</span>                       <span class="n">preferred_interval</span><span class="o">=</span><span class="n">location</span><span class="o">.</span><span class="n">INTERVAL_DEFAULT</span><span class="p">)</span><span class="w">
 
-<span class="n">control</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;error-verbose&quot;</span><span class="p">,</span> <span class="n">on_error</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span>
-<span class="n">device</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span> <span class="n">on_changed</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
-<span class="n">control</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;gpsd-stopped&quot;</span><span class="p">,</span> <span class="n">on_stop</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span>
+</span><span class="n">control</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;error-verbose&quot;</span><span class="p">,</span> <span class="n">on_error</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span><span class="w">
+</span><span class="n">device</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span> <span class="n">on_changed</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span><span class="w">
+</span><span class="n">control</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;gpsd-stopped&quot;</span><span class="p">,</span> <span class="n">on_stop</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span><span class="w">
 
-<span class="n">gobject</span><span class="o">.</span><span class="n">idle_add</span><span class="p">(</span><span class="n">start_location</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
+</span><span class="n">gobject</span><span class="o">.</span><span class="n">idle_add</span><span class="p">(</span><span class="n">start_location</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span><span class="w">
 
-<span class="n">loop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span><span class="n">loop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre>
 <p>Documentation on the Python APIs can be found here:</p>
 <ul class="simple">

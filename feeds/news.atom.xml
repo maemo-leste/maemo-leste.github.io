@@ -1,5 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2023-01-12T18:00:00+01:00</updated><entry><title>Maemo Leste - New Year update: May 2022 - January 2023</title><link href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html" rel="alternate"></link><published>2023-01-12T18:00:00+01:00</published><updated>2023-01-12T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-01-12:/maemo-leste-new-year-update-may-2022-january-2023.html</id><summary type="html">&lt;p&gt;First of all, happy new year to everyone following along.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2023-07-19T21:00:00+02:00</updated><entry><title>Maemo Leste - Five year anniversary and Chimaera release</title><link href="https://maemo-leste.github.io/maemo-leste-five-year-anniversary-and-chimaera-release.html" rel="alternate"></link><published>2023-07-19T21:00:00+02:00</published><updated>2023-07-19T21:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-07-19:/maemo-leste-five-year-anniversary-and-chimaera-release.html</id><summary type="html">&lt;p&gt;We're back with another overdue update, marking our five year anniversary as
+well as the official Chimaera release. Apart from the upgrade to Chimeara /
+Bullseye (from Beowulf / Buster), here are some other highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Work has started on the user manual / user guide;&lt;/li&gt;
+&lt;li&gt;Continued work on supporting more devices;&lt;/li&gt;
+&lt;li&gt;Telepathy-based (VoIP …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;We're back with another overdue update, marking our five year anniversary as
+well as the official Chimaera release. Apart from the upgrade to Chimeara /
+Bullseye (from Beowulf / Buster), here are some other highlights:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Work has started on the user manual / user guide;&lt;/li&gt;
+&lt;li&gt;Continued work on supporting more devices;&lt;/li&gt;
+&lt;li&gt;Telepathy-based (VoIP and XMPP) voice calls are soon coming to sphone;&lt;/li&gt;
+&lt;li&gt;Modem and cellular data enabled by default on various devices;&lt;/li&gt;
+&lt;li&gt;Support for elogind login sessions;&lt;/li&gt;
+&lt;li&gt;Various quality of life fixes such as Qt theming improvements;&lt;/li&gt;
+&lt;li&gt;Better power management on the Nokia N900;&lt;/li&gt;
+&lt;li&gt;Camera application for the Pinephone, additional firmware;&lt;/li&gt;
+&lt;li&gt;Developers now have Nokia N900 phone calls working, but some integration and
+bug fixing still remains;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Also check out our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html"&gt;previous update&lt;/a&gt; in case you missed it).&lt;/p&gt;
+&lt;div class="section" id="devuan-chimaera-debian-bullseye"&gt;
+&lt;h2&gt;Devuan Chimaera (Debian Bullseye)&lt;/h2&gt;
+&lt;p&gt;The upgrade to Devuan Chimaera (Debian Bullseye) has been a long time coming,
+but it is finally here. We had been testing Maemo Leste based on Chimaera for
+half a year already, but with this blog post the release (and switchover) is
+official. The &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/milestone/24"&gt;Chimaera milestone ticket&lt;/a&gt; lists all the
+packages that were rebuilt and any of the changes made to them.&lt;/p&gt;
+&lt;p&gt;The upgrade brings new Linux kernels to various devices (6.1.x for the
+Droid 4, Droid Bionic, Nokia N900 and Pinephone), as well as a switch to elogind
+sessions. This was required for staying compatible with modern software, which
+now often require some form of login session manager in order to function
+properly (or at all).&lt;/p&gt;
+&lt;p&gt;Most of the supported devices will now also have their modem activated, as well
+as having software to make phone calls and use mobile data present on the device,
+providing a much more phone-like experience out of the box.&lt;/p&gt;
+&lt;p&gt;In fact, the more recent Chimaera images should allow users to make working
+phone calls on the Pinephone, Motorola Droid 4, Motorola Bionic out of the box.
+Even on the Nokia N900 calls are now working, but they still require some manual
+work after the device has started. The author of this news post has been using
+his Droid 4 as a daily driver for over half a year now.&lt;/p&gt;
+&lt;p&gt;The image builder can now build Chimaera images, see the following commits
+(&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/ed150008c1981550e9673ebd9bb19cb28770d3c7"&gt;ed150008c&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/e7a672f9cb9bf46c427576a077bd365a96a5d403"&gt;e7a672f9&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/8f2dee2640e53ffec8c328f343c339ddf153a2c0"&gt;8f2dee26&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/c5ed472f5b2e585c5412ceb12c4f1f6e6ebf4ed3"&gt;c5ed472f&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/3438cadb2e84269f337749f87a0da21b260663b3"&gt;3438cadb&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/083cbfabffcdad4383117a28964775e156f2947b"&gt;083cbfab&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Additionally, the image builder base operating system has also been upgraded to
+Chimaera.&lt;/p&gt;
+&lt;div class="section" id="upgrading"&gt;
+&lt;h3&gt;Upgrading&lt;/h3&gt;
+&lt;p&gt;Users can perform a &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;dist-upgrade&lt;/span&gt;&lt;/tt&gt; from their Beowulf install to Chimaera, but
+the process isn't well supported at this point, and we instead recommend
+users to install a latest image. However, if one prefers to perform a
+dist-upgrade, please ensure that your beowulf installation is up to date before
+attempting to dist-upgrade to chimaera. This sequence of commands might get you
+through the upgrade:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+apt dist-upgrade -o APT::Force-LoopBreak=true
+dpkg-reconfigure --force gconf2
+dpkg-reconfigure --force libgconf-2-4:armhf
+apt --fix-broken install
+apt dist-upgrade -o APT::Force-LoopBreak=true
+&lt;/pre&gt;
+&lt;p&gt;But again, this is not recommended for novice users. However, &lt;strong&gt;this can be done
+entirely 'live' on the phone, while keeping the UI enabled&lt;/strong&gt;. Even after the
+upgrade is complete, you can still use the phone to an extent - but you really
+ought to reboot when it's done.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="elogind-and-xorg"&gt;
+&lt;h3&gt;elogind and Xorg&lt;/h3&gt;
+&lt;p&gt;Xorg now runs as the &lt;tt class="docutils literal"&gt;user&lt;/tt&gt; user, and no longer as &lt;tt class="docutils literal"&gt;root&lt;/tt&gt;, as part of the
+switch to (e)logind.&lt;/p&gt;
+&lt;p&gt;Initially the switch caused trouble because it was no longer possible to ensure
+that both elogind and Xorg would close all the file descriptors to the input
+devices, keeping the input devices awake. However, a new kernel mechanism was
+introduced (the &lt;tt class="docutils literal"&gt;inhibited&lt;/tt&gt; property) to suspend input devices regardless of
+whether they are kept open (see this &lt;a class="reference external" href="https://github.com/maemo-leste/mce/pull/58"&gt;mce PR&lt;/a&gt;) or not. Ironically, Maemo had support
+for that previously (in the form of a &lt;tt class="docutils literal"&gt;disable&lt;/tt&gt; property in sysfs), but this
+was removed by the upstream kernel because it was deemed an unclean mechanism,
+only to re-implement it again, years later.&lt;/p&gt;
+&lt;p&gt;We also have some policy kit integration now, through the &lt;a class="reference external" href="https://github.com/maemo-leste/policykit-1-hildon"&gt;policykit-1-hildon&lt;/a&gt; package.&lt;/p&gt;
+&lt;p&gt;DSME also saw some minor changes to be &lt;a class="reference external" href="929cde639a74cecde58d1fdf86316daa51ea1e27"&gt;compatible with a login session&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pulseaudio"&gt;
+&lt;h3&gt;Pulseaudio&lt;/h3&gt;
+&lt;p&gt;The new Pulseaudio in Chimaera had significantly reworked their UCM2 support,
+and as result our &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/685"&gt;audio setup was completely broken&lt;/a&gt;.
+We took a deep dive and figured out what the problem was, only to find out that
+the headphone plug detection was also broken. These problems have now been fixed
+in commit &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/1d08e6cbaa4eb18d07fc7a29423ac0db1e98d536"&gt;1d08e6cb&lt;/a&gt;
+and commit &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/4b8851518d8d523065dc1bb12df8d368de9d0af2"&gt;4b885151&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cpu-flags"&gt;
+&lt;h3&gt;CPU flags&lt;/h3&gt;
+&lt;p&gt;We now also build packages in the Maemo repositories with NEON and Thumb2.
+Most packages in Debian are already using Thumb2, but not all make use of NEON.
+See issue &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/691"&gt;#691&lt;/a&gt; and the
+jenkins-integration commits &lt;a class="reference external" href="https://github.com/maemo-leste/jenkins-integration/commit/bf2ce8c3423ec12c13f086d1acf64959b073bfaf"&gt;bf2ce8c3&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/jenkins-integration/commit/75a8e3fbff361653c0fd01ff1db136b40ec62b80"&gt;75a8e3fb&lt;/a&gt;
+for more details.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qtwebengine"&gt;
+&lt;h3&gt;qtwebengine&lt;/h3&gt;
+&lt;p&gt;Unfortunately Qt Webengine has a hardcoded list of Qt platform plugins that it
+will attempt to use 3D acceleration on, so we have had to patch qt web engine
+to ensure that it also uses 3D acceleration on the Maemo platform plugin.&lt;/p&gt;
+&lt;p&gt;See &lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/qtwebengine/commit/c1fbfce8d8ea6c89f65fb8c884d506a39f717049"&gt;this patch to qtwebengine&lt;/a&gt;
+for more info. As a result many browsers will now run much more smoothly on Maemo Leste.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="syncevolution"&gt;
+&lt;h3&gt;syncevolution&lt;/h3&gt;
+&lt;p&gt;The one regression we still have to figure out is syncevolution - as of writing the
+package doesn't seem to work with its Maemo backends. Syncevolution went through
+a major release, so we still have to figure out what exactly is broken.&lt;/p&gt;
+&lt;p&gt;We did port the Maemo Telepathy Backend to the new syncevolution version (to
+have contacts integration), in commits &lt;a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/b96f28389554f2a1d39d6b8eeef3bd1a66e701fc"&gt;b96f28389&lt;/a&gt;,
+&lt;a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/e77bd8faec35947582d6009f4675e7aafe5b7e30"&gt;e77bd8fae&lt;/a&gt;, &lt;a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/334b80cfcd072c5ab7eb7607decfb855b57b7643"&gt;334b80cfc&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/eds-backend-telepathy/commit/5be241157c3c344b80ca39e75b63d4c22a282cbf"&gt;5be241157&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hardware-drivers"&gt;
+&lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
+&lt;div class="section" id="pinephone"&gt;
+&lt;h3&gt;Pinephone&lt;/h3&gt;
+&lt;p&gt;On the Pinephone, the Pinhole/Shutter camera application should now let users
+take pictures. See this &lt;a class="reference external" href="https://leste.maemo.org/PinePhone#How_to_take_a_picture"&gt;wiki page&lt;/a&gt; for more
+information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;The Nokia N900 has seen a lot of love from the community members. The power
+management has improved a bunch (while not yet hitting the actual low power OMAP
+modes), and a good battery will give one at least a day of uptime.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/f0de824b14ccf9070efae90d6dcb97b097ecb325"&gt;Blacklisting some modules&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/7dd372bf75b016c02a7acc13ddae928e722d2339"&gt;setting proper parameters on the 1-wire module&lt;/a&gt; has significantly improved the battery life.&lt;/p&gt;
+&lt;p&gt;The FM transmitter module has also been enabled in the kernel, as well as some
+additional features for the &lt;tt class="docutils literal"&gt;iotop&lt;/tt&gt; program to work properly (see &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/706"&gt;issue #706&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/703"&gt;issue #703&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;User &lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; has improved the &lt;a class="reference external" href="https://github.com/torvalds/linux/commit/68fdbe090c362e8be23890a7333d156e18c27781"&gt;capacity evaluation of the battery&lt;/a&gt;
+in the upstream kernel, which permits &lt;a class="reference external" href="https://github.com/maemo-leste/n900-pm/pull/1"&gt;simplifying&lt;/a&gt; the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;n900-pm&lt;/span&gt;&lt;/tt&gt; script.&lt;/p&gt;
+&lt;p&gt;User &lt;tt class="docutils literal"&gt;arno II&lt;/tt&gt; has contributed a UCM2 file for the Nokia N900, thereby much
+improving the audio situation on the Nokia N900. He has reported that it can
+also be used for phone calls when a few other pieces are integrated. The
+earpiece doesn't work yet, but users should be able to use both the speakers or
+headphones for calls.&lt;/p&gt;
+&lt;p&gt;The modem still needs to be loaded in a certain way for audio calls to work, and
+the necessary changes for the &lt;tt class="docutils literal"&gt;cmtspeech&lt;/tt&gt; package and &lt;tt class="docutils literal"&gt;pulseaudio&lt;/tt&gt;
+configuration are still under development.&lt;/p&gt;
+&lt;p&gt;For the next update, users can expect that phone calls will work normally and
+properly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="volume-control"&gt;
+&lt;h3&gt;Volume control&lt;/h3&gt;
+&lt;p&gt;The volume applet has been improved to ensure that it now also &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/615"&gt;works on the
+Pinephone&lt;/a&gt;. The right
+audio sinks are now detected automatically, rather than being hardcoded per
+device, see &lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/pull/4"&gt;maemo-statusmenu-volume PR #4&lt;/a&gt; and
+&lt;a class="reference external" href="https://github.com/maemo-leste/maemo-statusmenu-volume/issues/3"&gt;maemo-statusmenu-volume issue #3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With the &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/0e2611e5c6c952eded5e737189da219a8c2e1f48"&gt;volume keys remapped&lt;/a&gt;,
+and having received a UCM2 file, the volume applet now also works on the Nokia
+N900:&lt;/p&gt;
+&lt;img alt="" src="/images/n900-volume-applet.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="core-software-additions-and-changes"&gt;
+&lt;h2&gt;Core Software additions and changes&lt;/h2&gt;
+&lt;div class="section" id="mafw-open-media-player"&gt;
+&lt;h3&gt;mafw / (Open) Media Player&lt;/h3&gt;
+&lt;p&gt;We've been working on making Open Media Player (OMP) and its dependencies work
+on Maemo Leste. At this point, the internet radio player works, and work is
+underway to also be able to play files from the file system as well. This
+involves porting mafw-tracker-source to the newer GNOME APIs and
+&lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; has started working on this.&lt;/p&gt;
+&lt;p&gt;This is what the media player looks like when started:&lt;/p&gt;
+&lt;img alt="" src="/images/omp-start.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Listening to a radio stream:&lt;/p&gt;
+&lt;img alt="" src="/images/omp-radio.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Showing the details of a radio stream:&lt;/p&gt;
+&lt;img alt="" src="/images/omp-radio-details.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Adding a new radio stream:&lt;/p&gt;
+&lt;img alt="" src="/images/omp-add-baroque.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Portrait mode:&lt;/p&gt;
+&lt;img alt="" src="/images/omp-portrait.png" style="width: 324px; height: 576px;" /&gt;
+&lt;p&gt;Open Media Player is now available for installation from the Hildon Application
+Manager.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt-5-styling"&gt;
+&lt;h3&gt;Qt 5 styling&lt;/h3&gt;
+&lt;p&gt;Some of the Qt5 styling problems that were present on Maemo Leste in the past
+have now been solved.&lt;/p&gt;
+&lt;p&gt;One of the problems was that some applications had (white) backgrounds that didn't
+fit with the theme (this was particularly present in the clock application).
+Another problem was that text wouldn't always contrast well with the background
+- for example black text on a dark gray background.&lt;/p&gt;
+&lt;p&gt;Various widgets should now also &lt;a class="reference external" href="https://github.com/maemo-leste/qtstyleplugins/commit/83aca5c8f2f69f5815307ebac0a65a9be5522d19"&gt;support scrolling by default&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notifications"&gt;
+&lt;h3&gt;Notifications&lt;/h3&gt;
+&lt;p&gt;Maemo now implements more of the XDG specification for notification patterns
+such as the vibration property, but also in general notification ought to be
+supported in a (much) better fashion. Previously not all XDG categories were
+supported, but now many more are. This changes were added to
+&lt;a class="reference external" href="https://github.com/maemo-leste/hildon-plugins-notify-sv"&gt;hildon-plugins-notify-sv&lt;/a&gt; version &lt;tt class="docutils literal"&gt;0.64&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="telepathy"&gt;
+&lt;h3&gt;Telepathy&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/sphone/pull/4"&gt;Work is underway&lt;/a&gt; to add a
+Telepathy module to our sphone application. This would then allow making regular
+phone calls through Telepathy - as well as XMPP and SIP phone calls. The current
+work can already be used to make phone calls, but for outgoing calls the
+&amp;quot;privacy&amp;quot; bit is unconditionally being set, which means that the receiving
+caller won't be able to see your phone number. XMPP and SIP phone calls start,
+but the audio isn't being routed properly yet.&lt;/p&gt;
+&lt;p&gt;Having sphone use Telepathy is important, because then we can finally start
+sending and receiving SMS messages from the Conversations application.&lt;/p&gt;
+&lt;p&gt;This work will be completed by the next news post.&lt;/p&gt;
+&lt;p&gt;Meanwhile, enjoy a screenshot showing SIP messages being exchanged between two
+Maemo Leste users using Conversations.&lt;/p&gt;
+&lt;img alt="" src="/images/sip-messages-conversations.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="documentation-user-manual"&gt;
+&lt;h2&gt;Documentation: User Manual&lt;/h2&gt;
+&lt;p&gt;As part of the funding, we have been working on improving our documentation and
+created a user manual. It is still being worked on and we haven't decided on a
+place for it yet, but the &lt;a class="reference external" href="http://maemo-leste-manual.motionlibre.org/"&gt;manual can be found here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://gitlab.com/motionlibre1/maemo-leste-user-handbook"&gt;source code for the manual&lt;/a&gt; is also available.&lt;/p&gt;
+&lt;p&gt;Cornel-Florentin, who has worked on the documentation extensively has described
+the approach below:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;What we planned to do was first of all to have quite explanatory instructions
+about how to navigate through the OS's interface, since most people nowadays are
+pretty much used to the navigation concepts of Android and Apple devices. And
+since Maemo Leste's interface is different, we thought that this would be the
+most important aspect about improving user experience, and expectations.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Another important aspect of user friendliness is customization, to make users
+feel more like home, and this was also prioritized.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;To make it very clear to understand all the above mentioned aspects, and not
+only, almost every detail was accompanied by many screenshots, which actually is
+what took a big part of the time required writing this manual.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Besides, what also helps to to adjusting users' expectations is a section
+dedicated to the known bugs, or elements which don't work as expected. Many
+items here most likely will be short-lived, as they will be solved during the
+following development stages, but mentioning them is very important, for the
+reasons given above.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Another important part, before starting  writing, was to think about its
+structure, in order to have it work as a reference too, and so to fit both
+beginners and more experienced users. This was reworked and rethought a number
+of times, as progressing, obviously also requiring a serious amount of time. And
+it's not final, since it might still be modified in the future. It's the living
+part of the manual, and the under development state of Maemo Leste, which keep
+it transforming.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Having a good structure allows linking and crosslinking different parts,
+sections and subsections, enabling packing the documentation in a more compact
+form, which is easier to follow, grasp, modify and add to in the future. Finding
+and jumping to the section you're looking for is also much easier this way.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Another structurally beneficial thing is having a glossary of technical terms,
+so that again, advanced users to not have to crawl through text, skipping
+trivial information, while at the same time beginners to not feel lost.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The manual is still work in progress, but by following the provided links you
+can check the already completed parts, which are already considered to be done,
+but which will still be revised at least one more time before they will go into
+a final state. Any suggestions and corrections are welcome, so that we can
+integrate them in the revised versions.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community-and-supporting-software-updates"&gt;
+&lt;h2&gt;Community and supporting software updates&lt;/h2&gt;
+&lt;div class="section" id="dors-cluc-2023"&gt;
+&lt;h3&gt;DORS/CLUC 2023&lt;/h3&gt;
+&lt;p&gt;Maemo Leste gave a talk at DORS/CLUC. There doesn't seem to be a recording
+online yet, but one can look at the &lt;a class="reference external" href="https://wizzup.org/maemo-leste-dors-cluc-2023.pdf"&gt;PDF of the presentation&lt;/a&gt; - there isn't any
+particular news in the presentation though - the aim was to raise awareness.&lt;/p&gt;
+&lt;p&gt;We also had a stand and showed off Maemo Leste hardware to various folks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="extra-packages"&gt;
+&lt;h3&gt;Extra packages&lt;/h3&gt;
+&lt;p&gt;Various new packages were added by the community. Some are described in this at
+length, others like &lt;a class="reference external" href="https://leste.maemo.org/Extras/MStarDict"&gt;MStarDict&lt;/a&gt; have
+a wiki page that explain how they work. &lt;a class="reference external" href="https://github.com/maemo-leste-extras/harbour-amazfish"&gt;harbour-amazfish&lt;/a&gt; was ported over from
+SailfishOS.&lt;/p&gt;
+&lt;div class="section" id="maemo-weather"&gt;
+&lt;h4&gt;Maemo Weather&lt;/h4&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;dsc&lt;/tt&gt; has built a weather application in Qt called &lt;a class="reference external" href="https://github.com/maemo-leste-extras/NOMWeather"&gt;NOMWeather&lt;/a&gt;. It looks great and is very
+usable - you can find some screenshots of the application below.&lt;/p&gt;
+&lt;img alt="" src="/images/maemo-weather-korcula.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/maemo-weather-korcula-wind.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="maemo-offline-translate"&gt;
+&lt;h4&gt;Maemo (Offline) Translate&lt;/h4&gt;
+&lt;p&gt;Mozilla recently created a browser extension called
+&lt;a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/"&gt;firefox-translations&lt;/a&gt;
+which translates webpages from one language to another &lt;em&gt;without&lt;/em&gt; using a
+third-party service. The translation happens locally, in the browser, via
+language models created using machine-learning.&lt;/p&gt;
+&lt;p&gt;Since this browser extension is open-source, &lt;tt class="docutils literal"&gt;dsc&lt;/tt&gt; wondered if he could port
+this translation engine to Maemo Leste for use as a standalone GUI application
+for quality &lt;strong&gt;offline&lt;/strong&gt; translation. This meant porting and packaging the
+underlying machine learning technologies for low-powered ARM devices (like the
+Droid 4) which turned out to be a challenging, but not impossible task.&lt;/p&gt;
+&lt;!-- ![https://plak.infrapuin.nl/selif/22275ry4.jpg](https://plak.infrapuin.nl/selif/22275ry4.jpg) --&gt;
+&lt;p&gt;Then end result is a responsive GUI that offers quick translations.&lt;/p&gt;
+&lt;img alt="" src="/images/maemo-translate-enbg.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/maemo-translate-deen.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;Maemo translate is now available from the repository as &lt;cite&gt;maemo-translate&lt;/cite&gt;. In
+addition, check out the individual language packs in the Hildon Application
+Manager or via &lt;cite&gt;apt search maemo-translate-data&lt;/cite&gt;&lt;/p&gt;
+&lt;img alt="" src="/images/ham-translate-data.png" style="width: 324px; height: 576px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="windows-7-theme"&gt;
+&lt;h4&gt;Windows 7 theme&lt;/h4&gt;
+&lt;p&gt;We have ported the old &lt;a class="reference external" href="http://maemo.org/packages/view/windows7-theme/"&gt;Maemo Windows 7 theme&lt;/a&gt; - see the &lt;a class="reference external" href="https://github.com/maemo-leste-extras/windows7-theme"&gt;windows7-theme&lt;/a&gt; extras repository for
+the source. It can now be installed on your Maemo Leste devices. Find below some
+screenshots of what it looks like:&lt;/p&gt;
+&lt;img alt="" src="/images/win7-1.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/win7-2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;img alt="" src="/images/win7-3.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;We have several Nokia N900, Motorola Droid 3, Droid 4, Bionic and RAZR units
+available for interested developers&lt;/strong&gt;, so if you are interested in helping out
+but have trouble acquiring a device, let us know.&lt;/p&gt;
+&lt;!-- .. image:: /images/massdroid.jpg --&gt;
+&lt;!-- :height: 375px --&gt;
+&lt;!-- :width: 666px --&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join our effort!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="chimaera"></category><category term="mediaplayer"></category><category term="rtcom"></category><category term="calls"></category><category term="n900"></category><category term="qt5"></category></entry><entry><title>Maemo Leste - New Year update: May 2022 - January 2023</title><link href="https://maemo-leste.github.io/maemo-leste-new-year-update-may-2022-january-2023.html" rel="alternate"></link><published>2023-01-12T18:00:00+01:00</published><updated>2023-01-12T18:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2023-01-12:/maemo-leste-new-year-update-may-2022-january-2023.html</id><summary type="html">&lt;p&gt;First of all, happy new year to everyone following along.&lt;/p&gt;
 &lt;p&gt;This is probably our last blog post before our Beta release. This latest update
 focuses heavily on cellular software and drivers as well as other communication
 features, but there's also a healthy amount of bugfixes and performance
@@ -116,7 +448,7 @@ device to bootloop&lt;/a&gt;
 - this remained broken for quite some time, but has since been fixed -
 apologies for the inconvenience caused by this.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id1"&gt;
+&lt;div class="section" id="graphics-1"&gt;
 &lt;h4&gt;Graphics&lt;/h4&gt;
 &lt;p&gt;The X11 (DDX) driver now supports Xv video acceleration, which (as the name
 implies) accelerates the playing of videos.&lt;/p&gt;
@@ -884,12 +1216,12 @@ line to mount it. This will not remain the case forever (as it can potentially
 lead to more security issues), but various kernel power management tweaks are
 only available through &lt;tt class="docutils literal"&gt;debugfs&lt;/tt&gt;, so for now we have to keep it mounted.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="default-dns-server-is-none-is-provided"&gt;
-&lt;h3&gt;Default DNS server is none is provided&lt;/h3&gt;
+&lt;div class="section" id="default-dns-server-if-none-is-provided"&gt;
+&lt;h3&gt;Default DNS server if none is provided&lt;/h3&gt;
 &lt;p&gt;In some rare cases where a network does not provide a DNS server over DHCP,
 devices running Maemo Leste would not be able to resolve any addresses over DNS,
 as no server was available.&lt;/p&gt;
-&lt;p&gt;We have decided to default to &lt;cite&gt;9.9.9.9&lt;/cite&gt; (aka &amp;quot;Quad9&amp;quot;) is nothing else is
+&lt;p&gt;We have decided to default to &lt;cite&gt;9.9.9.9&lt;/cite&gt; (aka &amp;quot;Quad9&amp;quot;) if nothing else is
 available. In the future we might replace this by just running a recursive DNS
 resolver on the device itself. See &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/commit/49afd837bf5a7764c0cc59854aad2b01175088a4"&gt;this commit on libicd-network-ipv4&lt;/a&gt;
 for some more information. &lt;strong&gt;We also very much welcome feedback&lt;/strong&gt; regarding
@@ -1772,40 +2104,40 @@ so you can integrate this gps information into your application.&lt;/p&gt;
 &lt;a class="reference external" href="https://github.com/maemo-leste/python-location"&gt;liblocation Python bindings&lt;/a&gt;
 are now also available, here is an example:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;location&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;gobject&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;location&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;gobject&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;location error: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;... quitting&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;
-    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;location error: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;... quitting&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_changed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPS_DEVICE_LATLONG_SET&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;lat = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;, long = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_changed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;        &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPS_DEVICE_LATLONG_SET&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;lat = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;, long = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_stop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quit&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;start_location&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;start_location&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="n"&gt;loop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gobject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MainLoop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;control&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPSDControl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPSDevice&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_properties&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;preferred_method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;METHOD_USER_SELECTED&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                       &lt;span class="n"&gt;preferred_interval&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;INTERVAL_DEFAULT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gobject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MainLoop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPSDControl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GPSDevice&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_properties&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;preferred_method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;METHOD_USER_SELECTED&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;                       &lt;span class="n"&gt;preferred_interval&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;location&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;INTERVAL_DEFAULT&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;error-verbose&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;changed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_changed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gpsd-stopped&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_stop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;error-verbose&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_error&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="n"&gt;device&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;changed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_changed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gpsd-stopped&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;on_stop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="n"&gt;gobject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;idle_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start_location&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span class="n"&gt;gobject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;idle_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start_location&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;control&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
 
-&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Documentation on the Python APIs can be found here:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -4514,7 +4846,7 @@ on the Nokia N900 using Linux 5.0:&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/85"&gt;Not possible to shutdown the system (N900)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id2"&gt;
+&lt;div class="section" id="lookenpeepers-1"&gt;
 &lt;h4&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Blinkenlights"&gt;lookenpeepers&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;The LED patterns on the Nokia N900 should now also work just like Fremantle, see
 &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/186"&gt;#186&lt;/a&gt;.&lt;/p&gt;
@@ -5369,20 +5701,20 @@ FOSDEM, together with the people from &lt;a class="reference external" href="htt
 &lt;h3&gt;PineTab, PinePhone?&lt;/h3&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.pine64.org/"&gt;Pine64&lt;/a&gt; has announced that they are going to
 produce an Allwinner tablet and an Allwinner phone. They are planning to
-provide details before or at &lt;a class="reference internal" href="#fosdem-2019"&gt;FOSDEM 2019&lt;/a&gt; &lt;a class="footnote-reference" href="#id3" id="id1"&gt;[1]&lt;/a&gt; &lt;a class="footnote-reference" href="#id4" id="id2"&gt;[2]&lt;/a&gt;. An Allwinner phone will
+provide details before or at &lt;a class="reference internal" href="#fosdem-2019"&gt;FOSDEM 2019&lt;/a&gt; &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[1]&lt;/a&gt; &lt;a class="footnote-reference" href="#footnote-2" id="footnote-reference-2"&gt;[2]&lt;/a&gt;. An Allwinner phone will
 hopefully be quite well supported by mainline, since most of the components have
 drivers in mainline now - perhaps even the Lima driver will be usable on time.&lt;/p&gt;
 &lt;p&gt;We have reached out to Pine64, and they have kindly agreed to send development kits our way!&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id3" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://itsfoss.com/pinebook-kde-smartphone/"&gt;https://itsfoss.com/pinebook-kde-smartphone/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://itsfoss.com/pinebook-kde-smartphone/"&gt;https://itsfoss.com/pinebook-kde-smartphone/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html"&gt;https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html"&gt;https://www.notebookcheck.net/Pine64-maker-of-cheap-Linux-laptops-may-be-making-a-cheap-Linux-phone.346011.0.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
@@ -6109,12 +6441,12 @@ the transition a natural one.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-have-we-done-so-far"&gt;
 &lt;h2&gt;What have we done so far?&lt;/h2&gt;
-&lt;p&gt;We have set up a Jenkins instance &lt;a class="footnote-reference" href="#id4" id="id1"&gt;[*]&lt;/a&gt; that is used to build any packages that we
+&lt;p&gt;We have set up a Jenkins instance &lt;a class="footnote-reference" href="#footnote-1" id="footnote-reference-1"&gt;[*]&lt;/a&gt; that is used to build any packages that we
 have created, ported or imported from Fremantle and the Community SSU.
 Currently, this Jenkins instance still builds for both jessie and stretch, but
 we plan to turn off the jessie builds soon. All of the imported packages are
 hosted on our Github project space: &lt;a class="reference external" href="https://github.com/maemo-leste/"&gt;https://github.com/maemo-leste/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;We have working &lt;a class="footnote-reference" href="#id5" id="id2"&gt;[†]&lt;/a&gt; 3D acceleration on the N900 on the latest &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip"&gt;Linux kernel&lt;/a&gt; (with minimal
+&lt;p&gt;We have working &lt;a class="footnote-reference" href="#footnote-2" id="footnote-reference-2"&gt;[†]&lt;/a&gt; 3D acceleration on the N900 on the latest &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-linux/tree/pvr-wip"&gt;Linux kernel&lt;/a&gt; (with minimal
 patches) and a &lt;a class="reference external" href="https://github.com/maemo-leste/n9xx-xf86-video-fbdev-sgx"&gt;forward-ported X driver&lt;/a&gt;, this does still
 require userspace blobs, which are packaged in the &lt;cite&gt;n900&lt;/cite&gt; component of our
 repository.&lt;/p&gt;
@@ -6132,19 +6464,19 @@ has already been done by the Community SSU folks). Maemo &lt;cite&gt;Fremantle&l
 now unmaintained &lt;cite&gt;upstart&lt;/cite&gt;, which has been replaced with the actively maintained
 &lt;cite&gt;OpenRC&lt;/cite&gt;. We have also replaced &lt;cite&gt;hald&lt;/cite&gt; with &lt;cite&gt;eudev&lt;/cite&gt; (udev) (and related packages
 such as &lt;cite&gt;upower&lt;/cite&gt;), and adjusted the Maemo software to deal with these.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-1" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[*]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Our package build infrastructure glue scripts can be found at
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[*]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Our package build infrastructure glue scripts can be found at
 &lt;a class="reference external" href="https://github.com/maemo-leste/jenkins-integration"&gt;https://github.com/maemo-leste/jenkins-integration&lt;/a&gt;. Packages are (re)built on
 demand, depending on whether new code is pushed. Package builds have a specific
 workflow and versioning explained more in-depth here: &amp;lt;url to jenkins page&amp;gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;table class="docutils footnote" frame="void" id="footnote-2" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[†]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Albeit currently somewhat slower than we'd like, but it is usable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[†]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Albeit currently somewhat slower than we'd like, but it is usable&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
