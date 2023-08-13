@@ -4,7 +4,7 @@ Maemo Leste - Five year anniversary and Chimaera release
 :Category: news
 :tags: chimaera, mediaplayer, rtcom, calls, n900, qt5
 :authors: Merlijn Wajer
-:date: 2023-07-19 21:00
+:date: 2023-08-13 23:30
 
 We're back with another overdue update, marking our five year anniversary as
 well as the official Chimaera release. Apart from the upgrade to Chimeara /
