@@ -408,7 +408,7 @@ SailfishOS.
 Maemo Weather
 ~~~~~~~~~~~~~
 
-``dsc`` has built a weather application in Qt called `NOMWeather
+``Sander (dsc)`` has built a weather application in Qt called `NOMWeather
 <https://github.com/maemo-leste-extras/NOMWeather>`_. It looks great and is very
 usable - you can find some screenshots of the application below.
 
@@ -431,7 +431,7 @@ which translates webpages from one language to another *without* using a
 third-party service. The translation happens locally, in the browser, via
 language models created using machine-learning.
 
-Since this browser extension is open-source, ``dsc`` wondered if he could port
+Since this browser extension is open-source, ``Sander (dsc)`` wondered if he could port
 this translation engine to Maemo Leste for use as a standalone GUI application
 for quality **offline** translation. This meant porting and packaging the
 underlying machine learning technologies for low-powered ARM devices (like the
@@ -439,7 +439,7 @@ Droid 4) which turned out to be a challenging, but not impossible task.
 
 .. ![https://plak.infrapuin.nl/selif/22275ry4.jpg](https://plak.infrapuin.nl/selif/22275ry4.jpg)
 
-Then end result is a responsive GUI that offers quick translations.
+The end result is a responsive GUI that offers quick translations.
 
 .. image:: /images/maemo-translate-enbg.png
   :height: 324px
