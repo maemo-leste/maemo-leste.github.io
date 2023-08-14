@@ -279,7 +279,7 @@ a wiki page that explain how they work. &lt;a class="reference external" href="h
 SailfishOS.&lt;/p&gt;
 &lt;div class="section" id="maemo-weather"&gt;
 &lt;h4&gt;Maemo Weather&lt;/h4&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;dsc&lt;/tt&gt; has built a weather application in Qt called &lt;a class="reference external" href="https://github.com/maemo-leste-extras/NOMWeather"&gt;NOMWeather&lt;/a&gt;. It looks great and is very
+&lt;p&gt;&lt;tt class="docutils literal"&gt;Sander (dsc)&lt;/tt&gt; has built a weather application in Qt called &lt;a class="reference external" href="https://github.com/maemo-leste-extras/NOMWeather"&gt;NOMWeather&lt;/a&gt;. It looks great and is very
 usable - you can find some screenshots of the application below.&lt;/p&gt;
 &lt;img alt="" src="/images/maemo-weather-korcula.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/maemo-weather-korcula-wind.png" style="width: 576px; height: 324px;" /&gt;
@@ -291,13 +291,13 @@ usable - you can find some screenshots of the application below.&lt;/p&gt;
 which translates webpages from one language to another &lt;em&gt;without&lt;/em&gt; using a
 third-party service. The translation happens locally, in the browser, via
 language models created using machine-learning.&lt;/p&gt;
-&lt;p&gt;Since this browser extension is open-source, &lt;tt class="docutils literal"&gt;dsc&lt;/tt&gt; wondered if he could port
+&lt;p&gt;Since this browser extension is open-source, &lt;tt class="docutils literal"&gt;Sander (dsc)&lt;/tt&gt; wondered if he could port
 this translation engine to Maemo Leste for use as a standalone GUI application
 for quality &lt;strong&gt;offline&lt;/strong&gt; translation. This meant porting and packaging the
 underlying machine learning technologies for low-powered ARM devices (like the
 Droid 4) which turned out to be a challenging, but not impossible task.&lt;/p&gt;
 &lt;!-- ![https://plak.infrapuin.nl/selif/22275ry4.jpg](https://plak.infrapuin.nl/selif/22275ry4.jpg) --&gt;
-&lt;p&gt;Then end result is a responsive GUI that offers quick translations.&lt;/p&gt;
+&lt;p&gt;The end result is a responsive GUI that offers quick translations.&lt;/p&gt;
 &lt;img alt="" src="/images/maemo-translate-enbg.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/maemo-translate-deen.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;Maemo translate is now available from the repository as &lt;cite&gt;maemo-translate&lt;/cite&gt;. In
