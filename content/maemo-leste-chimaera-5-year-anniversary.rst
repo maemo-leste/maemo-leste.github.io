@@ -108,7 +108,7 @@ only to re-implement it again, years later.
 We also have some policy kit integration now, through the `policykit-1-hildon
 <https://github.com/maemo-leste/policykit-1-hildon>`_ package.
 
-DSME also saw some minor changes to be `compatible with a login session <929cde639a74cecde58d1fdf86316daa51ea1e27>`_.
+DSME also saw some minor changes to be `compatible with a login session <https://github.com/maemo-leste/dsme/commit/929cde639a74cecde58d1fdf86316daa51ea1e27>`_.
 
 
 Pulseaudio
