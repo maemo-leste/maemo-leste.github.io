@@ -194,10 +194,14 @@ the following protocol to varying degrees: XMPP, Matrix, SIP, IRC, Telegram,
 Facebook, Slack and Discord. Most of these protocols also have a corresponding
 accounts plugin to configure them.
 
+.. image:: /images/ham-accounts.png
+  :height: 324px
+  :width: 576px
+
 telepathy-haze (pidgin/libpurple)
 ---------------------------------
 
-The telepathy-haze connection manager can load Pidgn/libpurple plugins, which
+The telepathy-haze connection manager can load Pidgin/libpurple plugins, which
 allows us to use Pidgin plugins from Maemo Leste's contacts and conversations
 applications. This thus allows us to use libpurple plugins for which no 'native'
 telepathy connection managers exist.
