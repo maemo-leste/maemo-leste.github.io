@@ -48,14 +48,14 @@ the application launcher by `calculating the saturation in the shader just once
 Connectivity
 ------------
 
-The cellular data code has improved in particular in the provisioning (`commit 920429ad <https://github.com/maemo-leste/libicd-network-ofono/commit/920429ada67a8ffe7a5384169a8a9ab3c28fa5a8>`_ and `commit ffa7b91c <https://github.com/maemo-leste/libicd-network-ofono/commit/ffa7b91ce39fd9e35fbf8db715ff>`_) and
+The cellular data code has improved in particular in the provisioning (`commit 920429ad <https://github.com/maemo-leste/libicd-network-ofono/commit/920429ada67a8ffe7a5384169a8a9ab3c28fa5a8>`_ and `commit ffa7b91c <https://github.com/maemo-leste/libicd-network-ofono/commit/ffa7b91ce39fd9e35fbf8db715ff>`_ which fix `issue
+#555 <https://github.com/maemo-leste/bugtracker/issues/555>`_ and `issue
+#585 <https://github.com/maemo-leste/bugtracker/issues/585>`_),
 `handling a missing gateway
-<https://github.com/maemo-leste/libicd-network-ofono/pull/1>`_ (fixing `issue
-#555 <https://github.com/maemo-leste/bugtracker/issues/555>`_ and fixing `issue
-#585 <https://github.com/maemo-leste/bugtracker/issues/585>`_) and `moving the
+<https://github.com/maemo-leste/libicd-network-ofono/pull/1>`_ and `moving the
 stack to use iproute 2 <https://github.com/maemo-leste/libicd-network-ipv4/pull/7>`_.
 
-The libicd-network-wpasupplicant now properly updates the wireless signal
+``libicd-network-wpasupplicant`` now properly updates the wireless signal
 strength with `libicd-network-wpasupplicant pull request #2 <https://github.com/maemo-leste/libicd-network-wpasupplicant/pull/2>`_.
 
 TODO: * wpa supplicant hostapd werkt weer met backports (alleen met kernel 6.1...)
@@ -65,6 +65,8 @@ Audio and Call Audio
 
 The call audio has improved a bunch both for all the mapphones and the Nokia
 N900. We have also made some general audio improvements.
+
+Pulseaudio was switched from running as a system daemon to a user daemon ... (TO COMPLETE)
 
 Regular audio would sometimes stop working after a phone call was made using the
 device, this has now been resolved by `reducing the shared memory of each
@@ -83,9 +85,11 @@ express that before.). For more details check the following commits:
 `commit 4246f219 <https://github.com/maemo-leste/droid4-linux/commit/4246f219e152042d83fb008103904ebd827ec0cb>`_,
 `commit 8a0687ee <https://github.com/maemo-leste/droid4-linux/commit/8a0687ee846b311d9aca2f0065d3a34750c0b3e2>`_.
 
-On the Nokia N900 side, call audio has also been greatly improved thanks to work
-by ``arno11``, with `support for headsets
-<https://github.com/maemo-leste/leste-config/pull/48>`_, `8000Mhz audio
+On the Nokia N900 side, voice calls were finally integrated, and call audio has
+also been incrementally improved thanks to work by ``arno11``, with `support for headsets
+<https://github.com/maemo-leste/leste-config/pull/48>`_, `support for the earpiece
+<https://github.com/maemo-leste/leste-config/commit/11f11dac690ee752900f144ecff809a8991d14c3>`_,
+which is connected on a completely separate part of the N900's codec, `8000Hz audio
 <https://github.com/maemo-leste/libcmtspeechdata/pull/6>`_, `better resampling
 <https://github.com/maemo-leste/leste-config/pull/39>`_ and `setting the proper
 group for the cmt_speech node
@@ -106,9 +110,13 @@ around by making the `cpufreq device tree platform device built in
 (as opposed to a kernel module).
 
 
-We have also updated our battery applet to trim to list of `blacklisted drivers
-<https://github.com/maemo-leste/status-area-applet-battery/pull/7/>`_, since
-this is no longer necessary.
+Maemo Fremantle supported the feature where you could silence audible
+notifications such as incoming calls, or alarms, by turning the device face-down.
+This feature is now supported in Maemo Leste as well, through 
+https://github.com/maemo-leste/mce/pull/61, https://github.com/maemo-leste/mce/pull/62,
+and https://github.com/maemo-leste-upstream-forks/iio-sensor-proxy/pull/2. The
+face-down reporting feature has also been submitted to upstream ``iio-sensor-proxy``
+and could be used for other Linux mobile distros in future.
 
 
 Devices
@@ -119,11 +127,8 @@ Nokia N900
 ----------
 
 
-* https://github.com/maemo-leste/leste-config/pull/45
-  blacklist unneeded power supplies
-
-* https://github.com/maemo-leste/leste-config/pull/37
-  (earpiece too loud n900)
+* https://github.com/maemo-leste-upstream-forks/ofono/pull/4
+  (ofono: alternative reporting for operator name)
 
 * https://github.com/maemo-leste/leste-config/pull/38
   (faster transitions)
@@ -145,12 +150,13 @@ Nokia N900
 * n900 swap for 6.6 https://github.com/maemo-leste/leste-config/commit/2c0ccb6ba62b8d397052862721a4f54e5b1b3e78
 
 
-* https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/384
 * https://github.com/maemo-leste/droid4-linux/pull/11
-  detect face down for n900 (kernel and iio sensor proxy)
+  correct the accelerometer orientation in order to correctly report face down/up
 
 * https://github.com/maemo-leste/bugtracker/issues/167#issuecomment-2213497891
-  n900 battery never reaches fully full state (fixed now)
+  n900 battery icon never reaches fully full state and charging LED behavior,
+  fixed in ``mce`` and `kernel patches <https://github.com/maemo-leste/droid4-linux/pull/9/commits>`_
+  that are now integrated in mainline
 
 * https://github.com/maemo-leste/droid4-linux/pull/6#event-10733941151
   n900 frequencies
@@ -158,13 +164,18 @@ Nokia N900
 
 * https://github.com/maemo-leste/bugtracker/issues/134#issuecomment-1868381250
   https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/375
-  n900 proximity
+  n900 proximity support has been added to ``iio-sensor-proxy`` upstream
+
+Pinephone
+---------
+
+* https://github.com/maemo-leste/leste-config/pull/37
+  (earpiece too loud)
+
 
 Mapphones
 ---------
 
-
-* https://github.com/maemo-leste-upstream-forks/ofono/pull/4
 
 * https://github.com/maemo-leste-upstream-forks/ofono/pull/2
   fix droid4 clir options being swapped
@@ -183,7 +194,7 @@ New devices
 
 * hildon-meta-core vs hildon-meta
 
-
+* Purism Librem5 wip ... (TODO: include picture of first run)
 
 Telepathy & Communications
 ==========================
