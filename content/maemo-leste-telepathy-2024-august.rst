@@ -178,16 +178,19 @@ the N900. The necessary patches will have landed in Linux 6.8, so when we move
 to the next Linux LTS kernel we will have working infra red.
 
 We've also fixed ensured that the microphone works for regular (non-call) audio
-in `leste-config PR #51 <https://github.com/maemo-leste/leste-config/pull/51>`_
-and ensured that the earpiece in calls isn't too loud in `leste-config PR #37
-<https://github.com/maemo-leste/leste-config/pull/37>`_.
+in `leste-config PR #51 <https://github.com/maemo-leste/leste-config/pull/51>`_.
+
 
 .. * n900 swap for 6.6 https://github.com/maemo-leste/leste-config/commit/2c0ccb6ba62b8d397052862721a4f54e5b1b3e78
 
 
-.. Pinephone
-.. ---------
+Pinephone
+---------
 
+We ensured that the earpiece in calls isn't too loud in `leste-config PR #37
+<https://github.com/maemo-leste/leste-config/pull/37>`_.
+
+TODO: more text
 
 Mapphones
 ---------
@@ -226,8 +229,8 @@ xyboard tablets
 * mention wiki pages
 
 
-Purism
-------
+Librem5
+-------
 
 * Purism Librem5 wip ... (TODO: include picture of first run)
 
@@ -245,6 +248,20 @@ accounts plugin to configure them.
 .. image:: /images/ham-accounts.png
   :height: 324px
   :width: 576px
+
+And the different accounts can be used to group contacts in the Contacts
+application:
+
+.. image:: /images/osso-abook-groups.png
+  :height: 324px
+  :width: 576px
+
+An overview of some of the currently online accounts:
+
+.. image:: /images/accounts-slack-matrix-telegram.png
+  :height: 324px
+  :width: 576px
+
 
 telepathy-haze (pidgin/libpurple)
 ---------------------------------
@@ -279,7 +296,13 @@ have packaged the `libpurple Slack plugin
 `support for buddy icons
 <https://github.com/maemo-leste-upstream-forks/slack-libpurple/commit/49e4fc3abd66b97fe889565f204e465cb478a495>`_.
 
-TODO: screenshots
+.. image:: /images/osso-abook-groups-slack-contacts.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/accounts-slack-rtcom-plugin.png
+  :height: 324px
+  :width: 576px
 
 facebook
 ~~~~~~~~
@@ -309,7 +332,9 @@ However, after the account has been setup, the integration works quite well and
 will fetch new messages for the device upon connecting and has working address
 book integration.
 
-TODO: screenshots
+.. image:: /images/accounts-telegram-rtcom-plugin.png
+  :height: 324px
+  :width: 576px
 
 discord
 ~~~~~~~
@@ -322,8 +347,6 @@ for Discord, and there is a UI to configure it called
 chats seem to work, but Discord's additional IP-based protections make using it
 still a little difficult: one needs to log into the web version of discord on
 the same IP, and then logging in will work.
-
-TODO: screenshots
 
 telepathy-tank (Matrix)
 -----------------------
@@ -352,13 +375,17 @@ which we had to make some changes to rtcom-accounts-ui `to not treat the @ sign
 as username/host separation and `separate out the server name showing
 <https://github.com/maemo-leste/rtcom-accounts-ui/commit/3f1f29fc95b113020c1e33fe3babdb462b753597>`_.
 
-https://github.com/maemo-leste-upstream-forks/telepathy-tank/tree/maemo/chimaera-devel
-
 Below is a screenshot of a 1:1 E2EE chat within Conversations, via a recent version of `libQuotient
 <https://github.com/quotient-im/libQuotient>`_. which uses `libolm
 <https://github.com/maemo-leste-upstream-forks/olm>`_.
 
 .. image:: /images/tank-conversations.png
+  :width: 576px
+
+And here is a group chat in action:
+
+.. image:: /images/conversations-matrix-groupchat.png
+  :height: 324px
   :width: 576px
 
 telepathy-rakia
@@ -454,7 +481,14 @@ open media player and has also received many changes (`too many to list here
 <https://github.com/maemo-leste/mafw-tracker-source/commits/master/>`_), but the
 most important improvements are improve tracker ordering and better performance.
 
-TODO: screenshot of openmediaplayer with music
+.. image:: /images/omp-start-screen.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/omp-play-music.png
+  :height: 324px
+  :width: 576px
+
 
 In particular, the gnome-tracker which is used to index your files (and identify
 them as songs) recieved a lot of stability fixes and speed improvements. In some
@@ -470,6 +504,11 @@ has `decreased the power usage
 by ensuring the the UI will not update when the screen is off (previously, the
 UI would only stop updating if the screen was locked - but the screen can be off
 and not locked).
+
+.. image:: /images/omp-play-music-car-view.png
+  :height: 324px
+  :width: 576px
+
 
 Contacts
 ========
@@ -521,8 +560,18 @@ We are also hosting an `online version of the userguide
 <https://maedevu.maemo.org/docs/userguide/html/>`_, but it might lag
 behind a little on the most recent version.
 
-TODO: screenshot on jib
-TODO: screenshot on nokia n900
+.. image:: /images/user-guide-jib.png
+  :width: 324px
+  :height: 576px
+
+.. image:: /images/user-guide-jib-status.png
+  :width: 324px
+  :height: 576px
+
+
+.. image:: /images/user-guide-n900-dillo-language.png
+  :height: 324px
+  :width: 576px
 
 Browser
 =======
@@ -557,7 +606,20 @@ in the top level menu navigation, which means that instead of having all actions
 of menus and submenus thrown into a single pile, one can now navigate submenus
 of complex applications quite naturally. Menu bars are also automatically hidden
 in Maemo which further improves the default experience of non-native Maemo
-applications.
+applications, see for example Qt5 Designer:
+
+.. image:: /images/qt-menu-nested-designer.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qt-menu-nested-designer-file.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/qt-menu-nested-designer-help.png
+  :height: 324px
+  :width: 576px
+
 
 The 'downward arrow' menu indicator is now also `properly rendered
 <https://github.com/maemo-leste/qt-platform-maemo/pull/2>`_ in Qt programs,
@@ -682,7 +744,14 @@ DrNokSnes, the SNES emulator is now working and packaged - thanks to ``arno11``.
 This has been a very long time coming (over four years) - see `issue #331
 <https://github.com/maemo-leste/bugtracker/issues/331>`_ for some history.
 
-TODO screenshot
+.. image:: /images/droid4-drnoksnes.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/droid4-drnoksnes-play.png
+  :height: 324px
+  :width: 576px
+
 
 .. * https://github.com/maemo-leste-extras/bugtracker/issues/38
 ..   songrec
