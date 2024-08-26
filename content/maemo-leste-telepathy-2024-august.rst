@@ -328,23 +328,22 @@ TODO: screenshots
 telepathy-tank (Matrix)
 -----------------------
 
-We have improved upon the `telepathy-tank
+``Sander`` worked on improving the `telepathy-tank
 <https://github.com/maemo-leste-upstream-forks/telepathy-tank>`_ Matrix
 connection manager, which uses `libQuotient
 <https://github.com/quotient-im/libQuotient>`_.
 
-We have added the following:
+The following has been added:
 
-* Support for creating, joining and leaving rooms
+* Support for creating, joining and leaving Matrix rooms (both 1:1 *and* groupchat)
 * Detecting the room name and detecting if other devices leave the room
 * Support for end to end encrypted chats (previously messages would just not be
   received at all)
 
-
-We are working on getting the code tidied up and the changes upstreamed. The
-Matrix contacts do not show up in the address book just yet - we're investigating
-why this would be the case, it might be a problem in our address book rather
-than in the Telepathy connection manager implementation.
+While these added features are stable, we are still working on getting the code tidied
+up and the changes upstreamed. For example, the Matrix contacts do not show up in the address book
+just yet - we're investigating why this would be the case, it might be a problem in our
+address book rather than in the Telepathy connection manager implementation.
 
 We have also created a `UI to configure a Matrix account
 <https://github.com/maemo-leste-extras/rtcom-accounts-plugin-matrix/>`_, for
@@ -355,8 +354,12 @@ as username/host separation and `separate out the server name showing
 
 https://github.com/maemo-leste-upstream-forks/telepathy-tank/tree/maemo/chimaera-devel
 
-TODO screenshots
+Below is a screenshot of a 1:1 E2EE chat within Conversations, via a recent version of `libQuotient
+<https://github.com/quotient-im/libQuotient>`_. which uses `libolm
+<https://github.com/maemo-leste-upstream-forks/olm>`_.
 
+.. image:: /images/tank-conversations.png
+  :width: 576px
 
 telepathy-rakia
 ---------------
@@ -387,19 +390,20 @@ Conversations has seen significant improvements since our last news update,
 amongst other things:
 
 * support for sending and receiving SMSes now that the `sphone voicecall manager
-  module was merged <https://github.com/maemo-leste/sphone/pull/4>`_;
-* multi window support;
+  module was merged <https://github.com/maemo-leste/sphone/pull/4>`_
+* multi window support
 * working (persistent) notifications, including on the lock screen;
 * support for 'chat state' which will help connection managers determine when a
-  message has been seen;
-* support for group chats including auto-joining channels;
-* drastically lowered memory usage;
-* `full text search in all your messages
-  <https://github.com/maemo-leste/conversations/issues/8>`_;
-* initial address book integration;
-* refactory of the telepathy client side code;
-* the ability to clear and delete chats;
-* the ability to `export chats <https://github.com/maemo-leste/conversations/issues/3>`_;
+  message has been seen
+* support for group chats including auto-joining channels
+* drastically lowered memory usage (35 MB idle memory on the overview screen, 45MB with a chat window opened)
+* `fast, full text search in all your messages
+  <https://github.com/maemo-leste/conversations/issues/8>`_
+* initial address book integration
+* a large refactor of the telepathy client side code
+* the ability to clear and delete chats
+* the ability to `export chats <https://github.com/maemo-leste/conversations/issues/3>`_
+* various graphical changes in favor of user-experience
 
 The main missing feature right now is the ability to start a **new** chat
 directly from conversations: `composing a new message
@@ -407,10 +411,10 @@ directly from conversations: `composing a new message
 go through the address book and start sending a message from there. We are aware
 that this is a severe limitation (especially for SMSes) and will address this shortly.
 
-
 TODO: screenshot of lock screen with notitifications
-TODO: screenshot of search
 
+.. image:: /images/conversations-search.png
+  :width: 576px
 
 sphone
 ------
@@ -523,16 +527,26 @@ TODO: screenshot on nokia n900
 Browser
 =======
 
-``dsc`` has been putting a lot work into making a decent default browser for
+``Sander`` has been putting a lot work into making a decent default browser for
 Maemo Leste (except for on the Nokia N900, where we default to Dillo). Jib now
 also sports:
 
 * support for portrait mode;
 * `support for ad blocking
   <https://github.com/maemo-leste-extras/jib/issues/7>`_ (lists based on uBlockOrigin)
-* support for file:/// support;
+* support \file:/// to access local files;
+* handle argv[1] to handle URL open's initiated by XDG or Hildon
+* various graphical changes in favor of user-experience
 
-TODO: screenshot
+The jib browser has been made specifically for devices with limited CPU, and memory capabilities.
+
+.. image:: /images/jib-metabar.png
+  :height: 230px
+  :width: 420px
+
+.. image:: /images/jib-settings.png
+  :height: 320px
+  :width: 300px
 
 Gtk / Qt
 ========
@@ -612,7 +626,6 @@ deployed, and with the help of some automation this has now been done for the
 Some of our own core applications do not yet support localisation (like
 `Conversations`_, but we aim to add that soon).
 
-
 Extra packages
 ==============
 
@@ -645,7 +658,12 @@ This adds offline translation support for the following languages:
 * Vietnamese
 
 Each of these languages can be installed separately. One can also use the
-meta package to install all of the languages.
+meta package to install all of the languages. 
+
+Note that in addition to using the `Maemo Translation GUI
+<https://github.com/maemo-leste-extras/maemo-translate>`_, translations can be done programatically by 
+linking against `libkotki
+<https://github.com/maemo-leste-extras/kotki/tree/7c9db3bd3bfe1c9e3602811b3734d6d2f215e012?tab=readme-ov-file#c>`_.
 
 OTP
 ---
@@ -686,21 +704,20 @@ achieve most of our funding goals (but not all).  The NGI also invited us to a w
 We're very thankful to NGI and NLNet for the opportunity.
 
 
-Apology for the delayed update
-==============================
+Delayed news update
+===================
 
-Finally, we would like to apologise for the lack of news updates. For those who
-don't follow the day-to-day activities of the project it might have seen like
-the project development has halted, but this couldn't be further from the truth.
+For those who don't follow day-to-day activities of the project, it may appear as
+if development has halted - at least judging from the frequency of news updates. Rest assured, this
+couldn't be further from the truth. Development has progressed to the 
+point of Leste becoming production-ready, supporting many features one reasonably expects
+from a mobile device.
 
-The main reason for the lack of news updates is that writing these posts takes a
-lot time and it is not a task that is easily handed off as it requires extensive
-understanding of all the different components of Maemo and keeping track of all
-the changes that go in. On top of that, the other thing that typically delays
-these news posts is a desire for the updates to be substantial ("Let's just add
-a few more features and *then* we'll make a new post"), which in turn kept
-pushing the news post forward.
-
+Writing news updates just takes time, and is unfortunately not a task that is easily 
+delegated. In our case, it requires understanding of systems engineering which is highly 
+technical in nature. Thus, we'll sometimes delay news updates in favor of having 
+something substantial to present, and other times we're simply too busy hacking away 
+on the next cool feature.
 
 Interested?
 ===========
@@ -723,4 +740,5 @@ up to date, ask questions and/or help out. Another great way to get in touch is
 to join the `IRC channel <https://leste.maemo.org/IRC_channel>`_.
 
 If you like our work and want to see it continue, join our effort!
+
 
