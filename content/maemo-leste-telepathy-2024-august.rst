@@ -1,5 +1,5 @@
-Maemo Leste - 2024 update
-#########################
+Maemo Leste - 2024 Telepathy
+############################
 
 :Category: news
 :tags: chimaera, mediaplayer, rtcom, calls, n900, qt5, tablet, mz617, razr, xt912, xt910
@@ -58,7 +58,9 @@ stack to use iproute 2 <https://github.com/maemo-leste/libicd-network-ipv4/pull/
 ``libicd-network-wpasupplicant`` now properly updates the wireless signal
 strength with `libicd-network-wpasupplicant pull request #2 <https://github.com/maemo-leste/libicd-network-wpasupplicant/pull/2>`_.
 
-TODO: * wpa supplicant hostapd werkt weer met backports (alleen met kernel 6.1...)
+We have also packaged the latest wpa_supplicant version, which would allow using
+hostapd for mobile hotspots, but unfortunately this doesn't work currently with
+Linux 6.6, only with Linux 6.1.
 
 Audio and Call Audio
 --------------------
@@ -96,6 +98,7 @@ group for the cmt_speech node
 <https://github.com/maemo-leste/leste-config/pull/41>`_. In addition, further
 N900 call quality audio improvements were made to libcmtspeechdata in
 `libcmtspeechdata PR #1 <https://github.com/maemo-leste/libcmtspeechdata/pull/1>`_,
+`libcmtspeechdata PR #2 <https://github.com/maemo-leste/libcmtspeechdata/pull/2>`_,
 `libcmtspeechdata PR #4 <https://github.com/maemo-leste/libcmtspeechdata/pull/4>`_
 and `libcmtspeechdata PR #5 <https://github.com/maemo-leste/libcmtspeechdata/pull/5>`_.
 
@@ -112,7 +115,7 @@ around by making the `cpufreq device tree platform device built in
 
 Maemo Fremantle supported the feature where you could silence audible
 notifications such as incoming calls, or alarms, by turning the device face-down.
-This feature is now supported in Maemo Leste as well, through 
+This feature is now supported in Maemo Leste as well, through
 https://github.com/maemo-leste/mce/pull/61, https://github.com/maemo-leste/mce/pull/62,
 and https://github.com/maemo-leste-upstream-forks/iio-sensor-proxy/pull/2. The
 face-down reporting feature has also been submitted to upstream ``iio-sensor-proxy``
@@ -126,75 +129,108 @@ Devices
 Nokia N900
 ----------
 
+We have been working hard on improving the performance on the Nokia N900 and
+``sicelo`` and ``arno11`` in particular have contributed many fixes.
 
-* https://github.com/maemo-leste-upstream-forks/ofono/pull/4
-  (ofono: alternative reporting for operator name)
-
-* https://github.com/maemo-leste/leste-config/pull/38
-  (faster transitions)
-
-* https://github.com/maemo-leste/leste-config/pull/44
-  16bpp by default
-
-* n900 perf improvements
-  https://github.com/maemo-leste/bugtracker/issues/737
-
-* n900 IR (droid4-linux commits, pierogi)
-
-* https://github.com/maemo-leste/libcmtspeechdata/pull/2
-
-* https://github.com/maemo-leste/gps-nokia-n900/pull/1
-  and https://github.com/maemo-leste/gps-nokia-n900/pull/2
+The N900 now runs in `16bit Xorg mode
+<https://github.com/maemo-leste/leste-config/pull/44>`_ to improve the
+performance of the X server. `Turbo mode and overclock frequencies
+<https://github.com/maemo-leste/droid4-linux/pull/6>`_ have been
+added as well, allowing for a much more smooth experience. We're still trying to
+find the best scheduler, as the default ondemand scheduler doesn't perform
+particularly well when it comes to having a responsive device.
 
 
-* n900 swap for 6.6 https://github.com/maemo-leste/leste-config/commit/2c0ccb6ba62b8d397052862721a4f54e5b1b3e78
+We've also been toying with `tweaking the default hildon transitions file
+<https://github.com/maemo-leste/leste-config/pull/50>`_ which
+controls what the window manager transitions look like, which effects are used
+and so on. In particular we're trying to see what the best settings will be for
+a responsive device. In the process we've also been further improving the
+performance of hildon-desktop.
+
+``sicelo`` has added support for Nokia N900's ofono to fetch `extra details about
+the operator
+<https://github.com/maemo-leste-upstream-forks/ofono/pull/4>`_, such as the
+name. He has also fixed the issue where the N900 battery icon never hit the
+`fully charged state
+<https://github.com/maemo-leste/bugtracker/issues/167>`_, which affects both the
+status icon as well as the LED behaviour. This is now fixed in mce and the
+kernel in `droid4-linux PR #9
+<https://github.com/maemo-leste/droid4-linux/pull/9/commits>`_ that are now also
+in mainline linux.
+
+``sicelo`` has also fixed a potential crash in `gps-nokia-n900 PR #1
+<https://github.com/maemo-leste/gps-nokia-n900/pull/1>`_ and also ensured that
+the GPS date is correct since the epoch rollover in 2019 in `gps-nokia-n900 PR
+#2 <https://github.com/maemo-leste/gps-nokia-n900/pull/2>`_.
+
+Furthermore, ``sicelo`` has also added support for the `N900 'switch-type'
+promity sensor in iio-sensor-proxy
+<https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/375>`_.
+To top it off, he has also corrected the accelerometer orientation to correctly
+report face up and face down in see `droid-linux PR #4
+<https://github.com/maemo-leste/droid4-linux/pull/11>`_.
+
+``arno11`` and ``freemangordon`` have also been working on infra red support,
+have been ensuring that the Linux kernel wide is working and reportedly have
+the `pierogi GUI <https://github.com/maemo-leste-extras/pierogi>`_ working on
+the N900. The necessary patches will have landed in Linux 6.8, so when we move
+to the next Linux LTS kernel we will have working infra red.
+
+We've also fixed ensured that the microphone works for regular (non-call) audio
+in `leste-config PR #51 <https://github.com/maemo-leste/leste-config/pull/51>`_
+and ensured that the earpiece in calls isn't too loud in `leste-config PR #37
+<https://github.com/maemo-leste/leste-config/pull/37>`_.
+
+.. * n900 swap for 6.6 https://github.com/maemo-leste/leste-config/commit/2c0ccb6ba62b8d397052862721a4f54e5b1b3e78
 
 
-* https://github.com/maemo-leste/droid4-linux/pull/11
-  correct the accelerometer orientation in order to correctly report face down/up
-
-* https://github.com/maemo-leste/bugtracker/issues/167#issuecomment-2213497891
-  n900 battery icon never reaches fully full state and charging LED behavior,
-  fixed in ``mce`` and `kernel patches <https://github.com/maemo-leste/droid4-linux/pull/9/commits>`_
-  that are now integrated in mainline
-
-* https://github.com/maemo-leste/droid4-linux/pull/6#event-10733941151
-  n900 frequencies
-
-
-* https://github.com/maemo-leste/bugtracker/issues/134#issuecomment-1868381250
-  https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/375
-  n900 proximity support has been added to ``iio-sensor-proxy`` upstream
-
-Pinephone
----------
-
-* https://github.com/maemo-leste/leste-config/pull/37
-  (earpiece too loud)
+.. Pinephone
+.. ---------
 
 
 Mapphones
 ---------
 
-
-* https://github.com/maemo-leste-upstream-forks/ofono/pull/2
-  fix droid4 clir options being swapped
+Most of the improvments to the mapphones have been in the form of making the
+audio calls work better and fixing the graphical glitches as well as by adding
+new mapphone devices. One other change however is fixing the 'hidden caller id'
+feature being inverted (so when one would request to be hidden it wouldn't be,
+and vice versa) - this was solved in `maemo-leste-upstream-forks/ofono PR #12
+<https://github.com/maemo-leste-upstream-forks/ofono/pull/2>`_.
 
 
 New devices
 -----------
 
+We have added image for a lot of new devices, the Motorola *RAZR XT910 and XT912*,
+the Motorola *Atrix 2* and the XYBoard *MZ609/MZ617* **tablet**.
+
+RAZR XT910 / XT912
+------------------
+
 * xt912/xt910 images
 
-* mz616 / mz617 woo (also mz609?)
-
+Atrix 2
+-------
 * atrix2 wip
 
+
+xyboard tablets
+---------------
+
+* mz616 / mz617 woo (also mz609?)
 * smaller / tiny images for mz617
 
 * hildon-meta-core vs hildon-meta
 
+
+Purism
+------
+
 * Purism Librem5 wip ... (TODO: include picture of first run)
+
+TODO sicelo photos
 
 Telepathy & Communications
 ==========================
@@ -247,165 +283,277 @@ TODO: screenshots
 facebook
 ~~~~~~~~
 
-https://github.com/maemo-leste-extras/purple-facebook
-https://github.com/maemo-leste-extras/rtcom-accounts-plugin-facebook
+``freemangordon`` has been working on getting a plugin working for facebook, it
+uses `purple-facebook <https://github.com/maemo-leste-extras/purple-facebook>`_
+through `telepathy-haze (pidgin/libpurple)`_
+and there is a `UI to configure the FB account <https://github.com/maemo-leste-extras/rtcom-accounts-plugin-facebook>`_.
 
-* purple-facebook plugin for maemo/tp and conversations
-  https://github.com/maemo-leste/rtcom-accounts-ui/commit/9284bfa96b65b0a74283fc645d9e38969cd3213d
-  https://github.com/maemo-leste-extras/purple-facebook
-  https://github.com/maemo-leste-extras/rtcom-accounts-plugin-facebook
+Getting this to work required some additional work on `rtcom-accounts-ui
+<https://github.com/maemo-leste/rtcom-accounts-ui/commit/9284bfa96b65b0a74283fc645d9e38969cd3213d>`_,
+but things otherwise reportedly have been working well.
 
 TODO: screenshots
 
 telegram
 ~~~~~~~~
 
-https://github.com/maemo-leste-upstream-forks/tdlib-purple
-https://github.com/maemo-leste-extras/rtcom-accounts-plugin-telegram
-setup not easy yet
+``Wizzup`` got Telegram working using `telepathy-haze (pidgin/libpurple)`_,
+although the `setup instructions are currently yet somewhat involved
+<https://github.com/maemo-leste/bugtracker/issues/716>`_.
+The `tdlib-purple <https://github.com/maemo-leste-upstream-forks/tdlib-purple>`_
+is being used and there is a UI to manage the account called
+`rtcom-accounts-plugin-telegram <https://github.com/maemo-leste-extras/rtcom-accounts-plugin-telegram>`_.
 
-* telegram plugin, build tdlib met -O1
-  ook al rtcom-accounts-plugin-telegram, maar bepaalde dingen missen nog
+However, after the account has been setup, the integration works quite well and
+will fetch new messages for the device upon connecting and has working address
+book integration.
 
 TODO: screenshots
 
 discord
 ~~~~~~~
 
-https://github.com/maemo-leste-upstream-forks/purple-discord
-https://github.com/maemo-leste-extras/rtcom-accounts-plugin-discord
-ip based auth annoying
+``Wizzup`` also got the `purple-discord
+<https://github.com/maemo-leste-upstream-forks/purple-discord>`_ plugin working
+for Discord, and there is a UI to configure it called
+`rtcom-accounts-plugin-discord
+<https://github.com/maemo-leste-extras/rtcom-accounts-plugin-discord>`_. Basic
+chats seem to work, but Discord's additional IP-based protections make using it
+still a little difficult: one needs to log into the web version of discord on
+the same IP, and then logging in will work.
 
 TODO: screenshots
 
 telepathy-tank (Matrix)
 -----------------------
 
+We have improved upon the `telepathy-tank
+<https://github.com/maemo-leste-upstream-forks/telepathy-tank>`_ Matrix
+connection manager, which uses `libQuotient
+<https://github.com/quotient-im/libQuotient>`_.
+
+We have added the following:
+
+* Support for creating, joining and leaving rooms
+* Detecting the room name and detecting if other devices leave the room
+* Support for end to end encrypted chats (previously messages would just not be
+  received at all)
+
+
+We are working on getting the code tidied up and the changes upstreamed. The
+Matrix contacts do not show up in the address book just yet - we're investigating
+why this would be the case, it might be a problem in our address book rather
+than in the Telepathy connection manager implementation.
+
+We have also created a `UI to configure a Matrix account
+<https://github.com/maemo-leste-extras/rtcom-accounts-plugin-matrix/>`_, for
+which we had to make some changes to rtcom-accounts-ui `to not treat the @ sign
+<https://github.com/maemo-leste/rtcom-accounts-ui/commit/0511c57cbac98d7d19b7dfe27549e834dfeefea3>`_
+as username/host separation and `separate out the server name showing
+<https://github.com/maemo-leste/rtcom-accounts-ui/commit/3f1f29fc95b113020c1e33fe3babdb462b753597>`_.
+
 https://github.com/maemo-leste-upstream-forks/telepathy-tank/tree/maemo/chimaera-devel
 
-* matrix plugin
-
-  rtcom-accounts-ui 0511c57cbac98d7d19b7dfe27549e834dfeefea3
-  3f1f29fc95b113020c1e33fe3babdb462b753597
-  b21b04e351a88a8e743b623b52f180bf4b343342
-
-  PLUS
-
-  https://github.com/maemo-leste-extras/rtcom-accounts-plugin-matrix/
+TODO screenshots
 
 
 telepathy-rakia
 ---------------
 
-rtcom ui
+Adding SIP accounts in Maemo is now possible using the provided account setup
+dialog `added to the base rtcom-accounts-plugins
+<https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f>`_. which solves `issue #657 <https://github.com/maemo-leste/bugtracker/issues/657>`_.
 
-* https://github.com/maemo-leste/bugtracker/issues/657 (ui for voip)
-  https://github.com/maemo-leste/rtcom-accounts-plugins/commit/c545748d0b8862c6e1fb3a536418a0acced7f85f
+Using such an account it is now possible to send SIP messages when supported and
+one can also receive and make SIP phone calls with working audio.
 
+TODO screenshots
 
-conversations
+telepathy-ring
+--------------
+
+telepathy-ring, the ofono (regular calls) connection manager has been added to
+our list of upstream forks to ensure that the right mission-control plugin gets
+installed, which in turns makes sure that the telepathy-ring account is online
+even when there is no internet (since cellular calls work fine without
+internet). This setting is controlled by the 'always_dispatch' bit in Telepathy,
+and it took us quite a while to figure out how this was supposed to work.
+
+Conversations
 -------------
 
-* tp-ring fork, tp ring always_dispatch bit...
+Conversations has seen significant improvements since our last news update,
+amongst other things:
 
-* sphone tp module merged https://github.com/maemo-leste/sphone/pull/4#event-11576916217
+* support for sending and receiving SMSes now that the `sphone voicecall manager
+  module was merged <https://github.com/maemo-leste/sphone/pull/4>`_;
+* multi window support;
+* working (persistent) notifications, including on the lock screen;
+* support for 'chat state' which will help connection managers determine when a
+  message has been seen;
+* support for group chats including auto-joining channels;
+* drastically lowered memory usage;
+* `full text search in all your messages
+  <https://github.com/maemo-leste/conversations/issues/8>`_;
+* initial address book integration;
+* refactory of the telepathy client side code;
+* the ability to clear and delete chats;
+* the ability to `export chats <https://github.com/maemo-leste/conversations/issues/3>`_;
 
-* conversations memory usage fixes
-  conversations set chat state
-* conversations: multi window, notifications, ...
+The main missing feature right now is the ability to start a **new** chat
+directly from conversations: `composing a new message
+<https://github.com/maemo-leste/conversations/issues/10>`_. Currently one has to
+go through the address book and start sending a message from there. We are aware
+that this is a severe limitation (especially for SMSes) and will address this shortly.
 
-* https://github.com/maemo-leste/conversations/issues/10#issuecomment-1793677214
-* https://github.com/maemo-leste/conversations/issues/3#issuecomment-1793430593
-* https://github.com/maemo-leste/conversations/issues/8#event-10862367065
-* https://github.com/maemo-leste/conversations/pull/14#event-10772868467
 
-* conversations notifications, lock screen notifications, etc
-
-* conversations telepathy chat state
-
+TODO: screenshot of lock screen with notitifications
+TODO: screenshot of search
 
 
 sphone
 ------
 
-* https://github.com/maemo-leste/sphone/pull/8
-  various vcm fixes for sphone
+The biggest addition to sphone has been the addition of the `voicecall-manager
+plugin <https://github.com/maemo-leste/sphone/pull/8>`_ which makes sphone
+support audio calls using the Telepathy framework (orchestated by by `Sailfish
+OS voicecall daemon
+<https://github.com/maemo-leste-upstream-forks/voicecall/>`_). The reason that
+this addition is huge is because this allows us to switch SMS and calls over the
+Telepathy (which means that `Conversations`_ can now handle SMses) and also
+because it allows us to make SIP and XMPP audio calls using the Telepathy framework.
 
-* https://github.com/maemo-leste/sphone/pull/6#event-10594544989
-  add vcard field
+``uvos`` has contributed various core sphone changes to support the
+voicecall-manager and has most recently worked on enabling DTMF support within
+sphone. ``freemangordon`` has made sure that the ``vcard-field`` `gets stored in
+the events database
+<https://github.com/maemo-leste/sphone/pull/6#event-10594544989>`_.
 
-* https://github.com/maemo-leste/sphone/pull/5#event-10583909747
-  add landscape option
-
+The option to make `phone calls in landscape mode
+<https://github.com/maemo-leste/sphone/pull/5>`_ has also been added to accomodate
+the Nokia N900, which currently doesn't support portrait mode screen rotation.
 
 Media
 =====
 
-* https://github.com/maemo-leste-extras/openmediaplayer/blob/master/debian/changelog
-* maemo-leste-upstream-forks/tracker-miners for upstream fix
-* gnome tracker fts corruption fix
-  https://github.com/maemo-leste-upstream-forks/tracker-miners
-  https://github.com/maemo-leste-upstream-forks/tracker/commit/db6e3b5fe439cafc288d313e55697d6128212067
-  https://github.com/maemo-leste-upstream-forks/tracker/commit/88bb88a2e5a45cdf0cb5346e04f389922b42d022
+In our previous post we introduced the Maemo Open Media Player. This updates
+brings a lot of improvements to the media player, in particular when it comes to
+performance and stability. However, the single biggest change is that open media
+player will now actually find and play music stores on your device (instead of
+just internet radio streams), this was achieved by a significant to port
+``mafw-tracker-source`` to newer frameworks.
 
-  https://github.com/maemo-leste/mafw-tracker-source/commit/523c6aa767fa3f6268ba9a2fad9ea177abd13220
+`mafw-tracker-source <https://github.com/maemo-leste/mafw-tracker-source>`_ is
+the component that then uses gnome-tracker to deliver the files as input to the
+open media player and has also received many changes (`too many to list here
+<https://github.com/maemo-leste/mafw-tracker-source/commits/master/>`_), but the
+most important improvements are improve tracker ordering and better performance.
+
+TODO: screenshot of openmediaplayer with music
+
+In particular, the gnome-tracker which is used to index your files (and identify
+them as songs) recieved a lot of stability fixes and speed improvements. In some
+cases, fixes were never backported. The most common occurance was that tracker
+wouldn't ever actually complete and start up indexing things all over again.
+
+In particular, `these
+<https://github.com/maemo-leste-upstream-forks/tracker-miners/commit/0ac3ba4e88b38d2d006286a34cf6c72da9311409>`_ `three <https://github.com/maemo-leste-upstream-forks/tracker/commit/db6e3b5fe439cafc288d313e55697d6128212067>`_ `commits <https://github.com/maemo-leste-upstream-forks/tracker/commit/88bb88a2e5a45cdf0cb5346e04f389922b42d022>`_ were all essential to the stability.
+
+``uvos`` has fixed the 'car view' screen (this was broken previously) and
+has `decreased the power usage
+<https://github.com/maemo-leste-extras/openmediaplayer/commit/009194ced182ede5b732c0feecf4230b8c0c99a5>`_
+by ensuring the the UI will not update when the screen is off (previously, the
+UI would only stop updating if the screen was locked - but the screen can be off
+and not locked).
 
 Contacts
 ========
 
-* voicecall voicecall.client and osso-addressbook change for StreamedMedia
-  channel type instead of Call1 channel type
+The Contacts (address book) program has received a lot of bugfixes, including a
+fix for the issue where many online contacts would show as `"No Name"
+<https://github.com/maemo-leste/osso-abook/commit/37f15bdaeabda4bad43eda042df471cc7c45c14a>`_. 
+The `action time
+<https://github.com/maemo-leste/osso-abook/commit/121f50e2e13096344f8983c1b74622d9fac8fceb>`_
+of specific actions (like starting a message or a call) has also been fixed and
+`protocol-based identification also received a fix
+<https://github.com/maemo-leste/osso-abook/commit/b9f699fbd4ecb446b0a53d8e6b966432ef771938>`_.
 
+The address book will now also properly show the ability to perform an audio or
+video call to a XMPP contact if they are online and added as a contact - this
+required a `fix to eds-backend-telepathy
+<https://github.com/maemo-leste/eds-backend-telepathy/commit/78e47143060efe736ea0414ccebe6e73a188aa00>`_
+as well as `a fix to the address book
+<https://github.com/maemo-leste/osso-abook/commit/4a3c44606f194ee5e00df45b53ea9a748b34bf9f>`_.
 
-* "No name" bug for some contacts
-  https://github.com/maemo-leste/osso-abook/commit/37f15bdaeabda4bad43eda042df471cc7c45c14a
-  https://github.com/maemo-leste/osso-abook/commit/b9f699fbd4ecb446b0a53d8e6b966432ef771938
-  https://github.com/maemo-leste/osso-abook/commit/121f50e2e13096344f8983c1b74622d9fac8fceb
+Furthermore, when initiating a call from the address book, the program will now
+use the right `Telepathy request
+<https://github.com/maemo-leste/osso-abook/commit/56f3e48b44475c09620703cbd8170c952877d2fa>`_
+so that sphone and the voicecall manager program will actually act on the
+request to start a phone call.
 
-* 18:09 < freemangordon> Wizzup: https://github.com/maemo-leste/osso-abook/commit/8189df5237c5ac89ca05e44d3e20ad856b7a2f24
+``uvos`` also tried to extend the usability of the address book to try to use
+hildon-mime to figure out what program to use if there are no telepathy accounts
+available - see `osso-abook PR #2
+<https://github.com/maemo-leste/osso-abook/pull/2>`_ and `libhildonmime PR #5
+<https://github.com/maemo-leste/libhildonmime/pull/5>`_.
 
-* https://github.com/maemo-leste/osso-abook/pull/2
+.. * 18:09 < freemangordon> Wizzup: https://github.com/maemo-leste/osso-abook/commit/8189df5237c5ac89ca05e44d3e20ad856b7a2f24
 
 Documentation
 =============
 
-* user guide werkt nu (yay)
-* maemo-user-guide package https://github.com/maemo-leste/maemo-user-guide
-  also update hildon-desktop user-guide.desktop file
-* https://maedevu.maemo.org/docs/userguide/html/
+Cornel-Florentin has continually been working on the Maemo Leste user guide and
+has added sections on the settings (which is really big chapter!) and contacts
+(contains a lot of Telepathy work) application as well as on email, application
+manager and most recently the navigation section.
 
+We have now also packaged the `maemo-user-guide
+<https://github.com/maemo-leste/maemo-user-guide>`_ and if you click the "User
+Guide" icon, the user guide will now open on the device in a browser - and no
+internet connection is required to read it.
+
+We are also hosting an `online version of the userguide
+<https://maedevu.maemo.org/docs/userguide/html/>`_, but it might lag
+behind a little on the most recent version.
+
+TODO: screenshot on jib
+TODO: screenshot on nokia n900
 
 Browser
 =======
 
+``dsc`` has been putting a lot work into making a decent default browser for
+Maemo Leste (except for on the Nokia N900, where we default to Dillo). Jib now
+also sports:
 
-* jib default browser (en op n900?)
-* jib file:/// support
-* jib portrait mode
+* support for portrait mode;
+* `support for ad blocking
+  <https://github.com/maemo-leste-extras/jib/issues/7>`_ (lists based on uBlockOrigin)
+* support for file:/// support;
 
-* qt-platform-maemo: support submenus
-  also icons
-
-* https://github.com/maemo-leste-extras/jib/issues/7#issuecomment-2225177154
-  jib adblock
-
-* n900 default browser = dillo
+TODO: screenshot
 
 Gtk / Qt
 ========
 
-* qt-platform-maemo: support submenus
-  also icons
+The Maemo Qt module now `supports submenus
+<https://github.com/maemo-leste/qt-platform-maemo/commit/c9c5591b60c9ef858aeb6162db87e51818c71592>`_
+in the top level menu navigation, which means that instead of having all actions
+of menus and submenus thrown into a single pile, one can now navigate submenus
+of complex applications quite naturally. Menu bars are also automatically hidden
+in Maemo which further improves the default experience of non-native Maemo
+applications.
 
-* https://github.com/maemo-leste/qt-platform-maemo/commit/80cd89f24828f8c44935b5c6c4587b978ca4689c
-* https://github.com/maemo-leste/qt-platform-maemo/commit/4ea6b1526909141557b7489fbf935cc3c3572488
+The 'downward arrow' menu indicator is now also `properly rendered
+<https://github.com/maemo-leste/qt-platform-maemo/pull/2>`_ in Qt programs,
+which solves `issue #466 <https://github.com/maemo-leste/bugtracker/issues/466>`_.
 
-* https://github.com/maemo-leste/qt-platform-maemo/pull/2
+We have also fixed the stacked window handling in `commit 80cd89f <https://github.com/maemo-leste/qt-platform-maemo/commit/80cd89f24828f8c44935b5c6c4587b978ca4689c>`_ and `commit 4ea6b1526 <https://github.com/maemo-leste/qt-platform-maemo/commit/4ea6b1526909141557b7489fbf935cc3c3572488>`_.
+in our Qt plugin.
 
-* https://github.com/maemo-leste/bugtracker/issues/693 (qt theme colours)
-
-* https://github.com/maemo-leste/bugtracker/issues/466
-  qt menu arrow
+``freemangordon`` has also fixed some of the visual glitches in our qt theme,
+which solves `issue #693
+<https://github.com/maemo-leste/bugtracker/issues/693>`_.
 
 Hildon
 ======
@@ -482,6 +630,24 @@ SORTME
 * interview (maybe leave out)
   https://ngi.eu/ngi-interviews/interview-with-merlijn-wajer-maemo-leste-ngi-assure-beneficiary/
 
+
+* TODO: Add the various nlnet issues on github and mark them as done
+
+
+Apology for the delayed update
+==============================
+
+Finally, we would like to apologise for the lack of news updates. For those who
+don't follow the day-to-day activities of the project it might have seen like
+the project development has halted, but this couldn't be further from the truth.
+
+The main reason for the lack of news updates is that writing these posts takes a
+lot time and it is not a task that is easily handed off as it requires extensive
+understanding of all the different components of Maemo and keeping track of all
+the changes that go in. On top of that, the other thing that typically delays
+these news posts is a desire for the updates to be substantial ("Let's just add
+a few more features and *then* we'll make a new post"), which in turn kept
+pushing the news post forward.
 
 
 Interested?
