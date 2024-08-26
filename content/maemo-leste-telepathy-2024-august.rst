@@ -213,7 +213,8 @@ RAZR XT910 / XT912
 
 Atrix 2
 -------
-* atrix2 wip
+
+* atrix2 dts/config/images
 
 
 xyboard tablets
@@ -221,8 +222,8 @@ xyboard tablets
 
 * mz616 / mz617 woo (also mz609?)
 * smaller / tiny images for mz617
-
 * hildon-meta-core vs hildon-meta
+* mention wiki pages
 
 
 Purism
@@ -558,80 +559,131 @@ which solves `issue #693
 Hildon
 ======
 
-* https://github.com/maemo-leste/hildon-desktop/pull/23
-  resture menu and submenu editing in hildon-desktop program list
+For a while, it was not possible to edit the order of applications in launcher
+menu of hildon-desktop - this has been broken ever since the addition of the
+Debian submenu. This has now been addressed in `hildon-desktop PR #23
+<https://github.com/maemo-leste/hildon-desktop/pull/23>`_.
 
-* https://github.com/maemo-leste/hildon-status-menu/pull/4
-  allow wider icons for status area so that we can display multiple icons
+hildon-desktop now also supports multiple shortcuts for a single action which
+solves `issue #528 <https://github.com/maemo-leste/bugtracker/issues/528>`_.
 
-* https://github.com/maemo-leste/libhildonmime/pull/5
-  add actions for xdg-open
+The hildon-status-menu now allows for multiple icons per status menu plugin,
+implemented in `hildon-status-menu PR #4
+<https://github.com/maemo-leste/hildon-status-menu/pull/4>`_. This allows us to
+render multiple icons for example for when a device has multiple sim cards or
+has multiple batteries.
 
-* https://github.com/maemo-leste/bugtracker/issues/528#event-10800457332
-  add multiple shortcuts per function/action
+`libhildonmime PR #5 <https://github.com/maemo-leste/libhildonmime/pull/5>`_
+extends libhildonmime to properly fallback to xdg-open.
 
-* https://github.com/maemo-leste/osso-xterm/pull/4#event-10538895255
-  setting to disabe volume resizing
+The terminal application now also has a setting to disable changing the font
+when the volume keys are pressed, see `osso-xterm PR #4
+<https://github.com/maemo-leste/osso-xterm/pull/4>`_.
 
-* dsme systemd reboot updates (logind, niet systemd?)
+DSME, the device state management entity has gained support for using `elogind
+to restart or shutdown the device
+<https://github.com/maemo-leste/dsme/commit/c6aa4ef1cb4d9ea8334ed23b6bebb975a523c0bf>`_
+so that the action is coordinated more effectively to the rest of the system.
 
 Synchronisation
 ===============
 
-* https://github.com/maemo-leste/syncevolution/commit/14bf3f262d39748ced70a6460bd1bd25053a40a4
-* https://github.com/maemo-leste/syncevolution/commit/5911df262b473946077b0355bcf660153089b828
-  https://gitlab.freedesktop.org/SyncEvolution/syncevolution
+Since the migration to Chimaera, synchronising contacts and address books was
+seemingly broken. Embarassingly, it turned out that yours truly forgot to
+`enable building
+<https://github.com/maemo-leste/syncevolution/commit/14bf3f262d39748ced70a6460bd1bd25053a40a4>`_
+the Maemo backend of syncevolution with the migration, and once the backend was
+flipped on and `a few compilation errors were fixed
+<https://github.com/maemo-leste/syncevolution/commit/149b3db06d02dd3a020b745039df4e4b8b5548b6>`_
+synchronisation once again started working.
 
+If you haven't set up synchronisation, check out the `Sync
+<https://leste.maemo.org/Sync>`_ page on the wiki.
 
-Translations
-============
+Translations and localisation
+=============================
 
-* weblate translation changes (everything, like 50+ repos)
-  https://github.com/maemo-leste-extras/maemo-translate-data
+Since Maemo Leste has been on weblate to crowdsource translations of the
+operation system many users had actually contributed translations. However,
+manual labour was still involved in getting the new translations built and
+deployed, and with the help of some automation this has now been done for the
+50+ translation reposities that all saw contributions.
 
-  https://github.com/maemo-leste-extras/maemo-translate-data/commit/ff97e527568e4167e28299e9ea501bc74deb729d
-  https://github.com/maemo-leste-extras/maemo-translate-data/commit/399d55d72e6cbc05ab3023eec2354ece214638f8
+Some of our own core applications do not yet support localisation (like
+`Conversations`_, but we aim to add that soon).
 
 
 Extra packages
 ==============
 
+Maemo (Offline) Translate
+-------------------------
+
+Maemo Translate now supports additional languages with this
+`maemo-translate-data commit
+<https://github.com/maemo-leste-extras/maemo-translate-data/commit/ff97e527568e4167e28299e9ea501bc74deb729d>`_ - importing the latest models from `firefox-translation-models <https://github.com/mozilla/firefox-translations-models>`_.
+
+We also created a script to `automatically make a new release
+<https://github.com/maemo-leste-extras/maemo-translate-data/commit/399d55d72e6cbc05ab3023eec2354ece214638f8>`_ based on
+firefox-translation-models should we want to do a new release.
+
+This adds offline translation support for the following languages:
+
+* Danish
+* Greek
+* Finnish
+* Croatian
+* Hungarian
+* Indonesian
+* Lithuanian
+* Latvian
+* Romanian
+* Slovak
+* Slovenian
+* Serbian
+* Turkish
+* Vietnamese
+
+Each of these languages can be installed separately. One can also use the
+meta package to install all of the languages.
+
 OTP
 ---
 
-* https://github.com/maemo-leste-extras/maeotp/pull/7
-
-works for github, gitlab, etc, etc
-
-Maemo Translations
-------------------
-
-* TODO: new maemo translate data packs, based on firefox-translate models
+The Maemo "OTP" program (perhaps to be renamed Maemo Authenticator in the
+future) now `supports the more common base32 and hex encoded keys
+<https://github.com/maemo-leste-extras/maeotp/pull/7>`_. This allows
+one to use the OTP program for 2 factory authentication with most services:
+Github, Gitlab, and Pypi for example.
 
 
+DrNokSnes
+---------
 
-* https://github.com/maemo-leste-extras/bugtracker/issues/38
-  songrec
+DrNokSnes, the SNES emulator is now working and packaged - thanks to ``arno11``.
+This has been a very long time coming (over four years) - see `issue #331
+<https://github.com/maemo-leste/bugtracker/issues/331>`_ for some history.
 
-* https://github.com/maemo-leste-extras/bugtracker/issues/39
-  hextool
+TODO screenshot
 
-* https://github.com/maemo-leste-extras/bugtracker/issues/40
-  comics daily package
-
-* https://github.com/maemo-leste/bugtracker/issues/331
-  drnoksnes works!
-
-SORTME
-======
-
-* TODO: mention onion service
-
-* interview (maybe leave out)
-  https://ngi.eu/ngi-interviews/interview-with-merlijn-wajer-maemo-leste-ngi-assure-beneficiary/
+.. * https://github.com/maemo-leste-extras/bugtracker/issues/38
+..   songrec
+.. 
+.. * https://github.com/maemo-leste-extras/bugtracker/issues/39
+..   hextool
+.. 
+.. * https://github.com/maemo-leste-extras/bugtracker/issues/40
+..   comics daily package
 
 
-* TODO: Add the various nlnet issues on github and mark them as done
+NGI Assure: NLnet Funding
+=========================
+
+The NGI Assure that we applied to is finishing at the end of August, and we have
+achieve most of our funding goals (but not all).  The NGI also invited us to a written interview, which can be `read here on ngi.eu
+<https://ngi.eu/ngi-interviews/interview-with-merlijn-wajer-maemo-leste-ngi-assure-beneficiary/>`_.
+
+We're very thankful to NGI and NLNet for the opportunity.
 
 
 Apology for the delayed update
