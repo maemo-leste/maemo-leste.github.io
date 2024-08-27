@@ -188,9 +188,9 @@ Pinephone
 ---------
 
 We ensured that the earpiece in calls isn't too loud in `leste-config PR #37
-<https://github.com/maemo-leste/leste-config/pull/37>`_.
-
-TODO: more text
+<https://github.com/maemo-leste/leste-config/pull/37>`_. Otherwise, there
+haven't been that many updates to the Pinephone this time around -- but it works
+well for phone calls, SMS, and such.
 
 Mapphones
 ---------
@@ -212,28 +212,123 @@ the Motorola *Atrix 2* and the XYBoard *MZ609/MZ617* **tablet**.
 RAZR XT910 / XT912
 ------------------
 
-TODO
+We now support the Motorola RAZR XT910 and XT912. Most features should just work
+and the battery life is pretty decent. There is still a screen corruption bug that
+we have to investigate.
 
-* xt912/xt910 images
+The relevant `arm-sdk change
+<https://github.com/maemo-leste/arm-sdk/commit/ae9f3c25d269a1521c670373a3a6fd88cdb14f11>`_
+can be found here and the `hildon-meta change
+<https://github.com/maemo-leste/hildon-meta/commit/00e744a25d8e2da0aafa81087a2d71561184233e>`_
+can be found here. The kernel changes are more complicated and spread out over
+several commits, so we would encourage interested users to look directly at our
+`maemo-6.6.y Linux branch
+<https://github.com/maemo-leste/droid4-linux/tree/maemo-6.6.y>`_.
+
+Download the `XT912 images
+<https://maedevu.maemo.org/images/xt912/>`_ and `XT910 images
+<https://maedevu.maemo.org/images/xt910/>`_ now and give it a try if you own a
+device!
+
+Droid 3
+-------
+
+`Droid 3 images <https://maedevu.maemo.org/images/droid3/>`_ are now available.
+See the `Droid 3 wiki page <https://leste.maemo.org/Motorola_Droid_3>`_ for more
+information. There seems to be some instability when the GPU is clocked too
+high, so we're looking into lowering the GPU clock speed and voltage to see if
+that will get rid of the instability problems.
 
 Atrix 2
 -------
 
-TODO
+`Atrix 2 images <https://maedevu.maemo.org/images/bionic/>`_ are now available
+in the form of Bionic images - there is a lot of overlap between the two phones
+which means that these images should mostly just work.
 
-* atrix2 dts/config/images
+The Atrix 2 seems to be the AT&T version of the Bionic (which used the Verizon
+network). The modem seems to be on SPI instead of USB, which provides additional
+challenges.
+
+We will provide more specialised images (and a wiki page with instructions) in
+the near future. Make sure to downgrade to this `Android
+(InlineFlashing_Edison_67.21.125_CFC_P3_APBP.xml.zip) release
+<https://maedevu.maemo.org/images/atrix2/>`_ before flashing bionic-clown-boot,
+and change the installation script to store the installation not on the
+``/sdcard`` but on ``/data/clown`` (and create said directory). If you're
+worried you might make a mistake - just wait for the wiki page to surface in the
+coming weeks!
+
+.. image:: /images/atrix2-1.jpg
+  :height: 375px
+  :width: 666px
+
+.. image:: /images/atrix2-2.jpg
+  :height: 375px
+  :width: 666px
 
 
 xyboard tablets
 ---------------
 
-TODO
+One of the more exciting device ports is the MZ608/MZ609/MZ615/MZ616/MZ617 (or
+just commonly known as xoom2/xyboard tablets) port. Most of these tablets do not
+come with a micro SD card slot, which posed some additional challenges to us,
+since most of our device installs have always been to (micro) SD cards.
 
-* mz616 / mz617 woo (also mz609?)
-* smaller / tiny images for mz617
-* hildon-meta-core vs hildon-meta
-* mention wiki pages
+The xyboard tablets come in different variants with either 16GB of storage of
+32GB of storage. However, there is no way to flash Maemo Leste directly to the
+data partition, so one has to install the right version of the droid4-kexecboot
+and then flash the special **mz617-tiny-bootstrap** image to a flashable
+partition (like ``cdrom``) which will then boot to a minimal Maemo. Using this
+minimal Maemo, one can then flash (using rsync) the Leste image root partition
+to the /data/ partition. The process is rather involved, but a wiki page will
+follow this news announcement in the coming weeks with detailed installation
+instructions.
 
+The tiny image was created specifically for the xyboard tablet and this required
+quite some changes. We introduced a new meta package called `hildon-meta-core
+<https://github.com/maemo-leste/hildon-meta/commit/657045b6d5e5a50c7566dd6232663a9ca5c1163e>`_
+which contained only the bare minimal required for Maemo Leste to function. We
+then `trimmed it some more
+<https://github.com/maemo-leste/hildon-meta/commit/f49d49bdcbd8b2ac46c341a0039597d799e76a9f>`_
+to further reduce the required disk space.
+
+Then we added a special flag to the image-builder to `build tiny images
+<https://github.com/maemo-leste/image-builder/commit/566a74d48b6fb19c9545322f4052072428022f76>`_
+which will remove manual pages and other unnecessary files that are hard to
+prune otherwise and set `only one locale
+<https://github.com/maemo-leste/image-builder/commit/34a747a1b55631403b66a3f538601f6b89b5909c>`_.
+The end result is that we end up with an image that is about ~700MB, which fits
+in one of the smaller but flashable partitions of Android on the xyboards.
+
+We course also `added a meta package
+<https://github.com/maemo-leste/hildon-meta/commit/10123d888eac654e6374f45b04accc383e942a98>`_.
+
+It is worth noting that if one **bricks the MZ617** it will be very hard to
+recover, since we have not been able to find the right files that allow us to
+flash all partitions - so beware.
+
+In general, the device port works well - it is really fun to Maemo on a real
+tablet. There are still improvements to made to the power management as the
+device does not idle correctly yet. Once the device idles correctly we believe
+we should multiple-days uptime without problems.
+
+.. image:: /images/xyboard-1.jpg
+  :height: 375px
+  :width: 666px
+
+.. image:: /images/xyboard-2.jpg
+  :height: 375px
+  :width: 666px
+
+.. image:: /images/xyboard-3.jpg
+  :height: 375px
+  :width: 666px
+
+.. image:: /images/xyboard-4.jpg
+  :height: 375px
+  :width: 666px
 
 Librem5
 -------
