@@ -238,6 +238,9 @@ information. There seems to be some instability when the GPU is clocked too
 high, so we're looking into lowering the GPU clock speed and voltage to see if
 that will get rid of the instability problems.
 
+The ``solana`` branch of `this bionic-clown-boot fork
+<https://github.com/MerlijnWajer/bionic-clown-boot>`_ works for the Droid 3.
+
 Atrix 2
 ~~~~~~~
 
@@ -676,8 +679,6 @@ available - see `osso-abook PR #2
 <https://github.com/maemo-leste/osso-abook/pull/2>`_ and `libhildonmime PR #5
 <https://github.com/maemo-leste/libhildonmime/pull/5>`_.
 
-.. * 18:09 < freemangordon> Wizzup: https://github.com/maemo-leste/osso-abook/commit/8189df5237c5ac89ca05e44d3e20ad856b7a2f24
-
 Documentation
 =============
 
@@ -888,15 +889,6 @@ This has been a very long time coming (over four years) - see `issue #331
   :width: 576px
 
 
-.. * https://github.com/maemo-leste-extras/bugtracker/issues/38
-..   songrec
-.. 
-.. * https://github.com/maemo-leste-extras/bugtracker/issues/39
-..   hextool
-.. 
-.. * https://github.com/maemo-leste-extras/bugtracker/issues/40
-..   comics daily package
-
 
 NGI Assure: NLnet Funding
 =========================
@@ -932,11 +924,6 @@ have a specific package ported, please see our bugtracker.
 **We have several Nokia N900, Motorola Droid 3, Droid 4, Bionic and RAZR units
 available for interested developers**, so if you are interested in helping out
 but have trouble acquiring a device, let us know.
-
-.. .. image:: /images/massdroid.jpg
-..   :height: 375px
-..   :width: 666px
-
 
 Please also join our `mailing list
 <https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste>`_ to stay
