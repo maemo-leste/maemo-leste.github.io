@@ -32,16 +32,16 @@ been fixed in &lt;a class="reference external" href="https://github.com/maemo-le
 &lt;p&gt;Additionally, we have improved the 16-bit mode of xf86-video-omap so that the xv
 video scaling works properly. This is helpful because the Nokia N900 uses 16 bit
 Xorg. We've also improved the &lt;a class="reference external" href="https://github.com/maemo-leste/xf86-video-omap/commit/4e5aead5403f4c9e594fc9c1e3b9ac5afae182ad"&gt;compositing&lt;/a&gt; as well as &lt;a class="reference external" href="https://github.com/maemo-leste/xf86-video-omap/commit/92eb692c2d1f8b743b7b56c88616f0f2e41b822d"&gt;two&lt;/a&gt; &lt;a class="reference external" href="https://github.com/maemo-leste/xf86-video-omap/commit/ace9cda2a22a4b032ff82cc6761485945fffd55c"&gt;other&lt;/a&gt; stability fixes.&lt;/p&gt;
-&lt;p&gt;hildon-desktop (the Maemo window manager) also has a 30% speed improvements in
+&lt;p&gt;hildon-desktop (the Maemo window manager) also has a 30% speed improvement in
 the application launcher by &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-desktop/commit/51b5a4b0cbe046bfc7cd5d4b028676344ad92bb8"&gt;calculating the saturation in the shader just once&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="connectivity"&gt;
 &lt;h3&gt;Connectivity&lt;/h3&gt;
-&lt;p&gt;The cellular data code has improved in particular in the provisioning (&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/commit/920429ada67a8ffe7a5384169a8a9ab3c28fa5a8"&gt;commit 920429ad&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/commit/ffa7b91ce39fd9e35fbf8db715ff"&gt;commit ffa7b91c&lt;/a&gt; which fix &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/555"&gt;issue
+&lt;p&gt;The cellular data code has improved, particularly in the provisioning (&lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/commit/920429ada67a8ffe7a5384169a8a9ab3c28fa5a8"&gt;commit 920429ad&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/commit/ffa7b91ce39fd9e35fbf8db715ff"&gt;commit ffa7b91c&lt;/a&gt; which fix &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/555"&gt;issue
 #555&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/585"&gt;issue
 #585&lt;/a&gt;),
 &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ofono/pull/1"&gt;handling a missing gateway&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-ipv4/pull/7"&gt;moving the
-stack to use iproute 2&lt;/a&gt;.&lt;/p&gt;
+stack to use iproute2&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;libicd-network-wpasupplicant&lt;/span&gt;&lt;/tt&gt; now properly updates the wireless signal
 strength with &lt;a class="reference external" href="https://github.com/maemo-leste/libicd-network-wpasupplicant/pull/2"&gt;libicd-network-wpasupplicant pull request #2&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We have also packaged the latest wpa_supplicant version, which would allow using
@@ -52,13 +52,14 @@ Linux 6.6, only with Linux 6.1.&lt;/p&gt;
 &lt;h3&gt;Audio and Call Audio&lt;/h3&gt;
 &lt;p&gt;The call audio has improved a bunch both for all the mapphones and the Nokia
 N900. We have also made some general audio improvements.&lt;/p&gt;
-&lt;p&gt;Pulseaudio was switched from running as a system daemon to a user daemon ... (TO COMPLETE)&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/maemo-audio/commit/ecbae1b12cfdfe10b3e144536a1294e534b266c1"&gt;Pulseaudio was switched to a user daemon&lt;/a&gt;
+instead of a system daemon, as recommended by pulseaudio upstream.&lt;/p&gt;
 &lt;p&gt;Regular audio would sometimes stop working after a phone call was made using the
 device, this has now been resolved by &lt;a class="reference external" href="https://github.com/maemo-leste/leste-config/commit/1febfa7d6f7373150afad5785103734f99439ab4"&gt;reducing the shared memory of each
 pulseaudio connection&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;On the mapphone devices the call audio has become a lot more stable by fixing
-some of the hacks we've had in the kernel previously using the new
-&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;audio-graph-card2&lt;/span&gt;&lt;/tt&gt; in the kernel which allows defining audio routes in a way
+&lt;p&gt;On the mapphone devices the call audio has become a lot more stable by removing
+some of the hacks we've had in the kernel previously and using the new
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;audio-graph-card2&lt;/span&gt;&lt;/tt&gt; framework in the kernel, which allows defining audio routes in a way
 that we couldn't before. (The Droid 4 and other devices rely on cpcap to manage
 the audio routes and requires not active ALSA connection, and we could not
 express that before.). For more details check the following commits:
@@ -79,7 +80,7 @@ and &lt;a class="reference external" href="https://github.com/maemo-leste/libcmt
 &lt;/div&gt;
 &lt;div class="section" id="miscellaneous-updates"&gt;
 &lt;h3&gt;Miscellaneous updates&lt;/h3&gt;
-&lt;p&gt;After moving to Linux 6.6, the cpu frequency options disappeared, we traced it
+&lt;p&gt;After moving to Linux 6.6, the cpu frequency options disappeared. We traced it
 down to a regression which we have reported upstream and temporarily worked
 around by making the &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/commit/20d360a9da5a5450117ca9bcae436352c1e81bd6"&gt;cpufreq device tree platform device built in&lt;/a&gt;
 (as opposed to a kernel module).&lt;/p&gt;
@@ -112,16 +113,16 @@ performance of hildon-desktop.&lt;/p&gt;
 the operator&lt;/a&gt;, such as the
 name. He has also fixed the issue where the N900 battery icon never hit the
 &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/167"&gt;fully charged state&lt;/a&gt;, which affects both the
-status icon as well as the LED behaviour. This is now fixed in mce and the
-kernel in &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/pull/9/commits"&gt;droid4-linux PR #9&lt;/a&gt; that are now also
-in mainline linux.&lt;/p&gt;
+status icon as well as the LED behaviour. This is now fixed in mce and our
+kernel in &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/pull/9/commits"&gt;droid4-linux PR #9&lt;/a&gt;, and are already
+upstreamed to mainline linux.&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; has also fixed a potential crash in &lt;a class="reference external" href="https://github.com/maemo-leste/gps-nokia-n900/pull/1"&gt;gps-nokia-n900 PR #1&lt;/a&gt; and also ensured that
 the GPS date is correct since the epoch rollover in 2019 in &lt;a class="reference external" href="https://github.com/maemo-leste/gps-nokia-n900/pull/2"&gt;gps-nokia-n900 PR
 #2&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Furthermore, &lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; has also added support for the &lt;a class="reference external" href="https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/-/merge_requests/375"&gt;N900 'switch-type'
-promity sensor in iio-sensor-proxy&lt;/a&gt;.
+proximity sensor in iio-sensor-proxy&lt;/a&gt;.
 To top it off, he has also corrected the accelerometer orientation to correctly
-report face up and face down in see &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/pull/11"&gt;droid-linux PR #4&lt;/a&gt;.&lt;/p&gt;
+report face up and face down in &lt;a class="reference external" href="https://github.com/maemo-leste/droid4-linux/pull/11"&gt;droid-linux PR #4&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;arno11&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;freemangordon&lt;/tt&gt; have also been working on infra red support,
 have been ensuring that the Linux kernel wide is working and reportedly have
 the &lt;a class="reference external" href="https://github.com/maemo-leste-extras/pierogi"&gt;pierogi GUI&lt;/a&gt; working on
@@ -147,7 +148,7 @@ and vice versa) - this was solved in &lt;a class="reference external" href="http
 &lt;/div&gt;
 &lt;div class="section" id="new-devices"&gt;
 &lt;h3&gt;New devices&lt;/h3&gt;
-&lt;p&gt;We have added image for a lot of new devices, the Motorola &lt;em&gt;RAZR XT910 and XT912&lt;/em&gt;,
+&lt;p&gt;We have added images for a lot of new devices, the Motorola &lt;em&gt;RAZR XT910 and XT912&lt;/em&gt;,
 the Motorola &lt;em&gt;Atrix 2&lt;/em&gt; and the XYBoard &lt;em&gt;MZ609/MZ617&lt;/em&gt; &lt;strong&gt;tablet&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="section" id="razr-xt910-xt912"&gt;
 &lt;h4&gt;RAZR XT910 / XT912&lt;/h4&gt;
@@ -214,14 +215,14 @@ which will remove manual pages and other unnecessary files that are hard to
 prune otherwise and set &lt;a class="reference external" href="https://github.com/maemo-leste/image-builder/commit/34a747a1b55631403b66a3f538601f6b89b5909c"&gt;only one locale&lt;/a&gt;.
 The end result is that we end up with an image that is about ~700MB, which fits
 in one of the smaller but flashable partitions of Android on the xyboards.&lt;/p&gt;
-&lt;p&gt;We course also &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-meta/commit/10123d888eac654e6374f45b04accc383e942a98"&gt;added a meta package&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We, of course, also &lt;a class="reference external" href="https://github.com/maemo-leste/hildon-meta/commit/10123d888eac654e6374f45b04accc383e942a98"&gt;added a meta package&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It is worth noting that if one &lt;strong&gt;bricks the MZ617&lt;/strong&gt; it will be very hard to
 recover, since we have not been able to find the right files that allow us to
 flash all partitions - so beware.&lt;/p&gt;
-&lt;p&gt;In general, the device port works well - it is really fun to Maemo on a real
-tablet. There are still improvements to made to the power management as the
+&lt;p&gt;In general, the device port works well - it is really fun to run Maemo on a real
+tablet. There are still improvements to be made to the power management as the
 device does not idle correctly yet. Once the device idles correctly we believe
-we should multiple-days uptime without problems.&lt;/p&gt;
+we should get multiple-days uptime without problems.&lt;/p&gt;
 &lt;img alt="" src="/images/xyboard-1.jpg" style="width: 666px; height: 375px;" /&gt;
 &lt;img alt="" src="/images/xyboard-2.jpg" style="width: 666px; height: 375px;" /&gt;
 &lt;img alt="" src="/images/xyboard-3.jpg" style="width: 666px; height: 375px;" /&gt;
@@ -240,7 +241,7 @@ shared an initial photo with us:&lt;/p&gt;
 &lt;h2&gt;Telepathy &amp;amp; Communications&lt;/h2&gt;
 &lt;p&gt;The biggest update this time around is to our Telepathy-based communication
 stack with the addition of various features and protocols. We currently support
-the following protocol to varying degrees: XMPP, Matrix, SIP, IRC, Telegram,
+the following protocols to varying degrees: XMPP, Matrix, SIP, IRC, Telegram,
 Facebook, Slack and Discord. Most of these protocols also have a corresponding
 accounts plugin to configure them.&lt;/p&gt;
 &lt;img alt="" src="/images/ham-accounts.png" style="width: 576px; height: 324px;" /&gt;
@@ -286,7 +287,7 @@ but things otherwise reportedly have been working well.&lt;/p&gt;
 &lt;div class="section" id="telegram"&gt;
 &lt;h4&gt;telegram&lt;/h4&gt;
 &lt;p&gt;&lt;tt class="docutils literal"&gt;Wizzup&lt;/tt&gt; got Telegram working using &lt;a class="reference internal" href="#telepathy-haze-pidgin-libpurple"&gt;telepathy-haze (pidgin/libpurple)&lt;/a&gt;,
-although the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/716"&gt;setup instructions are currently yet somewhat involved&lt;/a&gt;.
+although the &lt;a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues/716"&gt;setup instructions are currently somewhat involved&lt;/a&gt;.
 The &lt;a class="reference external" href="https://github.com/maemo-leste-upstream-forks/tdlib-purple"&gt;tdlib-purple&lt;/a&gt;
 is being used and there is a UI to manage the account called
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/rtcom-accounts-plugin-telegram"&gt;rtcom-accounts-plugin-telegram&lt;/a&gt;.&lt;/p&gt;
@@ -403,13 +404,13 @@ the Nokia N900, which currently doesn't support portrait mode screen rotation.&l
 &lt;p&gt;In our previous post we introduced the Maemo Open Media Player. This updates
 brings a lot of improvements to the media player, in particular when it comes to
 performance and stability. However, the single biggest change is that open media
-player will now actually find and play music stores on your device (instead of
-just internet radio streams), this was achieved by a significant to port
+player will now actually find and play music stored on your device (instead of
+just internet radio streams). This was achieved by a significant porting of
 &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;mafw-tracker-source&lt;/span&gt;&lt;/tt&gt; to newer frameworks.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/maemo-leste/mafw-tracker-source"&gt;mafw-tracker-source&lt;/a&gt; is
 the component that then uses gnome-tracker to deliver the files as input to the
 open media player and has also received many changes (&lt;a class="reference external" href="https://github.com/maemo-leste/mafw-tracker-source/commits/master/"&gt;too many to list here&lt;/a&gt;), but the
-most important improvements are improve tracker ordering and better performance.&lt;/p&gt;
+most important improvements are improved tracker ordering and better performance.&lt;/p&gt;
 &lt;img alt="" src="/images/omp-start-screen.png" style="width: 576px; height: 324px;" /&gt;
 &lt;img alt="" src="/images/omp-play-music.png" style="width: 576px; height: 324px;" /&gt;
 &lt;p&gt;In particular, the gnome-tracker which is used to index your files (and identify
@@ -524,7 +525,7 @@ synchronisation once again started working.&lt;/p&gt;
 &lt;div class="section" id="translations-and-localisation"&gt;
 &lt;h2&gt;Translations and localisation&lt;/h2&gt;
 &lt;p&gt;Since Maemo Leste has been on weblate to crowdsource translations of the
-operation system many users had actually contributed translations. However,
+operating system, many users had actually contributed translations. However,
 manual labour was still involved in getting the new translations built and
 deployed, and with the help of some automation this has now been done for the
 50+ translation repositories that all saw contributions.&lt;/p&gt;
@@ -537,7 +538,7 @@ deployed, and with the help of some automation this has now been done for the
 &lt;h3&gt;Maemo (Offline) Translate&lt;/h3&gt;
 &lt;p&gt;Maemo Translate now supports additional languages with this
 &lt;a class="reference external" href="https://github.com/maemo-leste-extras/maemo-translate-data/commit/ff97e527568e4167e28299e9ea501bc74deb729d"&gt;maemo-translate-data commit&lt;/a&gt; - importing the latest models from &lt;a class="reference external" href="https://github.com/mozilla/firefox-translations-models"&gt;firefox-translation-models&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We also created a script to &lt;a class="reference external" href="https://github.com/maemo-leste-extras/maemo-translate-data/commit/399d55d72e6cbc05ab3023eec2354ece214638f8"&gt;automatically make a new release&lt;/a&gt; based on
+&lt;p&gt;We also created a script to &lt;a class="reference external" href="https://github.com/maemo-leste-extras/maemo-translate-data/commit/399d55d72e6cbc05ab3023eec2354ece214638f8"&gt;automatically make new releases&lt;/a&gt; based on
 firefox-translation-models should we want to do a new release.&lt;/p&gt;
 &lt;p&gt;This adds offline translation support for the following languages:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -565,7 +566,7 @@ linking against &lt;a class="reference external" href="https://github.com/maemo-
 &lt;h3&gt;OTP&lt;/h3&gt;
 &lt;p&gt;The Maemo &amp;quot;OTP&amp;quot; program (perhaps to be renamed Maemo Authenticator in the
 future) now &lt;a class="reference external" href="https://github.com/maemo-leste-extras/maeotp/pull/7"&gt;supports the more common base32 and hex encoded keys&lt;/a&gt;. This allows
-one to use the OTP program for 2 factory authentication with most services:
+one to use the OTP program for 2-factor authentication with most services:
 Github, Gitlab, and Pypi for example.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="drnoksnes"&gt;
@@ -579,7 +580,7 @@ This has been a very long time coming (over four years) - see &lt;a class="refer
 &lt;div class="section" id="ngi-assure-nlnet-funding"&gt;
 &lt;h2&gt;NGI Assure: NLnet Funding&lt;/h2&gt;
 &lt;p&gt;The NGI Assure that we applied to is finishing at the end of August, and we have
-achieve most of our funding goals (but not all).  The NGI also invited us to a written interview, which can be &lt;a class="reference external" href="https://ngi.eu/ngi-interviews/interview-with-merlijn-wajer-maemo-leste-ngi-assure-beneficiary/"&gt;read here on ngi.eu&lt;/a&gt;.&lt;/p&gt;
+achieved most of our funding goals (but not all).  The NGI also invited us to a written interview, which can be &lt;a class="reference external" href="https://ngi.eu/ngi-interviews/interview-with-merlijn-wajer-maemo-leste-ngi-assure-beneficiary/"&gt;read here on ngi.eu&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We're very thankful to NGI and NLNet for the opportunity.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="delayed-news-update"&gt;
