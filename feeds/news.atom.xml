@@ -340,7 +340,6 @@ dialog &lt;a class="reference external" href="https://github.com/maemo-leste/rtc
 &lt;p&gt;Using such an account it is now possible to send SIP messages when supported and
 one can also receive and make SIP phone calls with working audio.&lt;/p&gt;
 &lt;img alt="" src="/images/osso-abook-sip-message-call.png" style="width: 576px; height: 324px;" /&gt;
-&lt;img alt="" src="/images/osso-abook-xmpp-call.png" style="width: 576px; height: 324px;" /&gt;
 &lt;/div&gt;
 &lt;div class="section" id="telepathy-ring"&gt;
 &lt;h3&gt;telepathy-ring&lt;/h3&gt;
