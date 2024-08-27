@@ -520,10 +520,6 @@ one can also receive and make SIP phone calls with working audio.
   :height: 324px
   :width: 576px
 
-.. image:: /images/osso-abook-xmpp-call.png
-  :height: 324px
-  :width: 576px
-
 
 telepathy-ring
 --------------
