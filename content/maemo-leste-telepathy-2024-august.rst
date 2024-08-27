@@ -195,7 +195,7 @@ TODO: more text
 Mapphones
 ---------
 
-Most of the improvments to the mapphones have been in the form of making the
+Most of the improvements to the mapphones have been in the form of making the
 audio calls work better and fixing the graphical glitches as well as by adding
 new mapphone devices. One other change however is fixing the 'hidden caller id'
 feature being inverted (so when one would request to be hidden it wouldn't be,
@@ -238,9 +238,14 @@ TODO
 Librem5
 -------
 
-* Purism Librem5 wip ... (TODO: include picture of first run)
+``sicelo`` has been working on making Maemo Leste run on the Librem5 and has
+shared an initial photo with us:
 
-TODO sicelo photos
+.. image:: /images/librem-initial.jpg
+  :height: 375px
+  :width: 500px
+
+More to come later!
 
 Telepathy & Communications
 ==========================
@@ -480,7 +485,7 @@ sphone
 
 The biggest addition to sphone has been the addition of the `voicecall-manager
 plugin <https://github.com/maemo-leste/sphone/pull/8>`_ which makes sphone
-support audio calls using the Telepathy framework (orchestated by by `Sailfish
+support audio calls using the Telepathy framework (orchestrated by `Sailfish
 OS voicecall daemon
 <https://github.com/maemo-leste-upstream-forks/voicecall/>`_). The reason that
 this addition is huge is because this allows us to switch SMS and calls over the
@@ -494,7 +499,7 @@ the events database
 <https://github.com/maemo-leste/sphone/pull/6#event-10594544989>`_.
 
 The option to make `phone calls in landscape mode
-<https://github.com/maemo-leste/sphone/pull/5>`_ has also been added to accomodate
+<https://github.com/maemo-leste/sphone/pull/5>`_ has also been added to accommodate
 the Nokia N900, which currently doesn't support portrait mode screen rotation.
 
 Media
@@ -523,8 +528,8 @@ most important improvements are improve tracker ordering and better performance.
 
 
 In particular, the gnome-tracker which is used to index your files (and identify
-them as songs) recieved a lot of stability fixes and speed improvements. In some
-cases, fixes were never backported. The most common occurance was that tracker
+them as songs) received a lot of stability fixes and speed improvements. In some
+cases, fixes were never backported. The most common occurrence was that tracker
 wouldn't ever actually complete and start up indexing things all over again.
 
 In particular, `these
@@ -615,9 +620,8 @@ also sports:
 * support for portrait mode;
 * `support for ad blocking
   <https://github.com/maemo-leste-extras/jib/issues/7>`_ (lists based on uBlockOrigin)
-* support \file:/// to access local files;
-* handle argv[1] to handle URL open's initiated by XDG or Hildon
-* various graphical changes in favor of user-experience
+* support `file:///` to access local files;
+* handle command line arguments to handle XDG or Hildon opening a URL;
 
 The jib browser has been made specifically for devices with limited CPU, and memory capabilities.
 
@@ -715,7 +719,7 @@ Since Maemo Leste has been on weblate to crowdsource translations of the
 operation system many users had actually contributed translations. However,
 manual labour was still involved in getting the new translations built and
 deployed, and with the help of some automation this has now been done for the
-50+ translation reposities that all saw contributions.
+50+ translation repositories that all saw contributions.
 
 Some of our own core applications do not yet support localisation (like
 `Conversations`_, but we aim to add that soon).
@@ -755,7 +759,7 @@ Each of these languages can be installed separately. One can also use the
 meta package to install all of the languages. 
 
 Note that in addition to using the `Maemo Translation GUI
-<https://github.com/maemo-leste-extras/maemo-translate>`_, translations can be done programatically by 
+<https://github.com/maemo-leste-extras/maemo-translate>`_, translations can be done programmatically by 
 linking against `libkotki
 <https://github.com/maemo-leste-extras/kotki/tree/7c9db3bd3bfe1c9e3602811b3734d6d2f215e012?tab=readme-ov-file#c>`_.
 
