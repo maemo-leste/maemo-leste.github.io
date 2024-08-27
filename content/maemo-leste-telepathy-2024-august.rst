@@ -1,10 +1,10 @@
-Maemo Leste - 2024 Telepathy
-############################
+Maemo Leste - 2024 Telepathy update
+###################################
 
 :Category: news
 :tags: chimaera, mediaplayer, rtcom, calls, n900, qt5, tablet, mz617, razr, xt912, xt910
 :authors: Merlijn Wajer
-:date: 2024-08-15 23:30
+:date: 2024-08-27 00:00
 
 It's been a good while since our last update, but not for the lack of changes -
 indeed, we've been busy bees. Some of the highlights:
@@ -177,11 +177,9 @@ the `pierogi GUI <https://github.com/maemo-leste-extras/pierogi>`_ working on
 the N900. The necessary patches will have landed in Linux 6.8, so when we move
 to the next Linux LTS kernel we will have working infra red.
 
-We've also fixed ensured that the microphone works for regular (non-call) audio
+We've also ensured that the microphone works for regular (non-call) audio
 in `leste-config PR #51 <https://github.com/maemo-leste/leste-config/pull/51>`_.
 
-
-.. * n900 swap for 6.6 https://github.com/maemo-leste/leste-config/commit/2c0ccb6ba62b8d397052862721a4f54e5b1b3e78
 
 
 Pinephone
@@ -190,7 +188,8 @@ Pinephone
 We ensured that the earpiece in calls isn't too loud in `leste-config PR #37
 <https://github.com/maemo-leste/leste-config/pull/37>`_. Otherwise, there
 haven't been that many updates to the Pinephone this time around -- but it works
-well for phone calls, SMS, and such.
+well for phone calls and SMS, runs pretty stable and is fun to use with the
+physical keyboard.
 
 Mapphones
 ---------
@@ -210,7 +209,7 @@ We have added image for a lot of new devices, the Motorola *RAZR XT910 and XT912
 the Motorola *Atrix 2* and the XYBoard *MZ609/MZ617* **tablet**.
 
 RAZR XT910 / XT912
-------------------
+~~~~~~~~~~~~~~~~~~
 
 We now support the Motorola RAZR XT910 and XT912. Most features should just work
 and the battery life is pretty decent. There is still a screen corruption bug that
@@ -231,7 +230,7 @@ Download the `XT912 images
 device!
 
 Droid 3
--------
+~~~~~~~
 
 `Droid 3 images <https://maedevu.maemo.org/images/droid3/>`_ are now available.
 See the `Droid 3 wiki page <https://leste.maemo.org/Motorola_Droid_3>`_ for more
@@ -240,7 +239,7 @@ high, so we're looking into lowering the GPU clock speed and voltage to see if
 that will get rid of the instability problems.
 
 Atrix 2
--------
+~~~~~~~
 
 `Atrix 2 images <https://maedevu.maemo.org/images/bionic/>`_ are now available
 in the form of Bionic images - there is a lot of overlap between the two phones
@@ -269,7 +268,7 @@ coming weeks!
 
 
 xyboard tablets
----------------
+~~~~~~~~~~~~~~~
 
 One of the more exciting device ports is the MZ608/MZ609/MZ615/MZ616/MZ617 (or
 just commonly known as xoom2/xyboard tablets) port. Most of these tablets do not
@@ -331,7 +330,7 @@ we should multiple-days uptime without problems.
   :width: 666px
 
 Librem5
--------
+~~~~~~~
 
 ``sicelo`` has been working on making Maemo Leste run on the Librem5 and has
 shared an initial photo with us:
@@ -480,6 +479,10 @@ up and the changes upstreamed. For example, the Matrix contacts do not show up i
 just yet - we're investigating why this would be the case, it might be a problem in our
 address book rather than in the Telepathy connection manager implementation.
 
+The code can be found in the `groupchat-e2e
+<https://github.com/maemo-leste-upstream-forks/telepathy-tank/tree/groupchat-e2e>`_
+branch.
+
 We have also created a `UI to configure a Matrix account
 <https://github.com/maemo-leste-extras/rtcom-accounts-plugin-matrix/>`_, for
 which we had to make some changes to rtcom-accounts-ui `to not treat the @ sign
@@ -537,20 +540,20 @@ Conversations has seen significant improvements since our last news update,
 amongst other things:
 
 * support for sending and receiving SMSes now that the `sphone voicecall manager
-  module was merged <https://github.com/maemo-leste/sphone/pull/4>`_
-* multi window support
+  module was merged <https://github.com/maemo-leste/sphone/pull/4>`_;
+* multi window support;
 * working (persistent) notifications, including on the lock screen;
 * support for 'chat state' which will help connection managers determine when a
-  message has been seen
-* support for group chats including auto-joining channels
-* drastically lowered memory usage (35 MB idle memory on the overview screen, 45MB with a chat window opened)
+  message has been seen;
+* support for group chats including auto-joining channels;
+* drastically lowered memory usage (35 MB idle memory on the overview screen, 45MB with a chat window opened);
 * `fast, full text search in all your messages
-  <https://github.com/maemo-leste/conversations/issues/8>`_
-* initial address book integration
-* a large refactor of the telepathy client side code
-* the ability to clear and delete chats
-* the ability to `export chats <https://github.com/maemo-leste/conversations/issues/3>`_
-* various graphical changes in favor of user-experience
+  <https://github.com/maemo-leste/conversations/issues/8>`_;
+* initial address book integration;
+* a large refactor of the telepathy client side code;
+* the ability to clear and delete chats;
+* the ability to `export chats <https://github.com/maemo-leste/conversations/issues/3>`_;
+* various graphical changes to improve the user-experience;
 
 The main missing feature right now is the ability to start a **new** chat
 directly from conversations: `composing a new message
@@ -716,6 +719,7 @@ also sports:
 * `support for ad blocking
   <https://github.com/maemo-leste-extras/jib/issues/7>`_ (lists based on uBlockOrigin)
 * support `file:///` to access local files;
+* various graphical changes to improve the user-experience;
 * handle command line arguments to handle XDG or Hildon opening a URL;
 
 The jib browser has been made specifically for devices with limited CPU, and memory capabilities.
