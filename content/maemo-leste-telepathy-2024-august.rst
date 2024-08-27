@@ -212,16 +212,22 @@ the Motorola *Atrix 2* and the XYBoard *MZ609/MZ617* **tablet**.
 RAZR XT910 / XT912
 ------------------
 
+TODO
+
 * xt912/xt910 images
 
 Atrix 2
 -------
+
+TODO
 
 * atrix2 dts/config/images
 
 
 xyboard tablets
 ---------------
+
+TODO
 
 * mz616 / mz617 woo (also mz609?)
 * smaller / tiny images for mz617
@@ -316,8 +322,6 @@ Getting this to work required some additional work on `rtcom-accounts-ui
 <https://github.com/maemo-leste/rtcom-accounts-ui/commit/9284bfa96b65b0a74283fc645d9e38969cd3213d>`_,
 but things otherwise reportedly have been working well.
 
-TODO: screenshots
-
 telegram
 ~~~~~~~~
 
@@ -331,6 +335,14 @@ is being used and there is a UI to manage the account called
 However, after the account has been setup, the integration works quite well and
 will fetch new messages for the device upon connecting and has working address
 book integration.
+
+List of Telegram contacts with avatars:
+
+.. image:: /images/osso-abook-groups-telegram-contacts.png
+  :height: 324px
+  :width: 576px
+
+Account configuration UI:
 
 .. image:: /images/accounts-telegram-rtcom-plugin.png
   :height: 324px
@@ -398,7 +410,14 @@ dialog `added to the base rtcom-accounts-plugins
 Using such an account it is now possible to send SIP messages when supported and
 one can also receive and make SIP phone calls with working audio.
 
-TODO screenshots
+.. image:: /images/osso-abook-sip-message-call.png
+  :height: 324px
+  :width: 576px
+
+.. image:: /images/osso-abook-xmpp-call.png
+  :height: 324px
+  :width: 576px
+
 
 telepathy-ring
 --------------
@@ -409,6 +428,7 @@ installed, which in turns makes sure that the telepathy-ring account is online
 even when there is no internet (since cellular calls work fine without
 internet). This setting is controlled by the 'always_dispatch' bit in Telepathy,
 and it took us quite a while to figure out how this was supposed to work.
+
 
 Conversations
 -------------
@@ -438,7 +458,19 @@ directly from conversations: `composing a new message
 go through the address book and start sending a message from there. We are aware
 that this is a severe limitation (especially for SMSes) and will address this shortly.
 
-TODO: screenshot of lock screen with notitifications
+Notification on the lock screen:
+
+.. image:: /images/lockscreen-notification.png
+  :height: 324px
+  :width: 576px
+
+Notification for a new message when the screen in active:
+
+.. image:: /images/conversations-notification.png
+  :height: 324px
+  :width: 576px
+
+Database-wide search:
 
 .. image:: /images/conversations-search.png
   :width: 576px
@@ -590,12 +622,12 @@ also sports:
 The jib browser has been made specifically for devices with limited CPU, and memory capabilities.
 
 .. image:: /images/jib-metabar.png
-  :height: 230px
-  :width: 420px
+  :height: 324px
+  :width: 576px
 
 .. image:: /images/jib-settings.png
-  :height: 320px
-  :width: 300px
+  :width: 324px
+  :height: 576px
 
 Gtk / Qt
 ========
