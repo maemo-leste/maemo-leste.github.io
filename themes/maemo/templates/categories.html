@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid container-article-jumbo jumbo d-none">
+        <a id="header_href" href="#">
+        <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 mb-3" style="height:200px;background-image: url(https://godotwebview.com/images/intro.png);">
+        </div>
+        </a>
+    </div>
+
+    <div class="container-fluid container-article pb-5 mt-4 pt-3">
+        <h2 id="header_title" class="display-6 pt-2 mb-1 stylized">Categories</h2>
+
+        <div class="row mt-3">
+            <div class="col-md-12 article_content">
+                <ul>
+                    {% for cat, articles in categories|sort %}
+                        <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a> ({{ articles|count }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

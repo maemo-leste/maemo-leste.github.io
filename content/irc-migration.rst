@@ -5,6 +5,7 @@ Maemo Leste - IRC channel migration
 :tags: community, irc
 :date: 2021-05-22 10:41
 :authors: Ivan Jelincic
+:image: /images/rain.jpg
 
 Due to the recent events that have happened with FOSS communities and
 the Freenode IRC network, we've decided to move our channel to the new,

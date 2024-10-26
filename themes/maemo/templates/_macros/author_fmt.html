@@ -1,0 +1,10 @@
+{% macro author_fmt(member) -%}
+    {% if member is mapping %}
+        {% set firstname = member.firstname %}
+        {% set lastname = member.lastname %}
+        {% set nickname = member.nickname %}
+        {{ firstname }} ‘<a href="../author/{{ nickname }}.html">{{ nickname }}</a>’ {{ lastname }}
+    {% else %}
+        {{ member }}
+    {% endif %}
+{%- endmacro %}

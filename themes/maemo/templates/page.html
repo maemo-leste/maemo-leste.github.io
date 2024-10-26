@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title|capitalize }}{% endblock %}
+{% block description %}{% endblock %}
+
+{% block seo %}
+<meta property="og:title" content="{{ page.title|capitalize }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta itemprop="url" content="{{ SITEURL }}/{{ page.url }}"/>
+{% if page.image %}
+<meta property="og:image" content="{{ page.image }}" />
+<meta name="twitter:image" content="{{ page.image }}" />
+<meta itemprop="image" content="{{ page.image }}">
+{% elif META_IMAGE %}
+<meta property="og:image" content="{{ META_IMAGE }}" />
+<meta property="og:image:type" content="{{ META_IMAGE_TYPE }}" />
+<meta name="twitter:image" content="{{ META_IMAGE }}" />
+<meta itemprop="image" content="{{ SITEURL }}/{{ META_IMAGE }}"/>
+{% endif %}
+{% if page.summary %}
+<meta property="og:description" content="{{ page.summary|striptags }}" />
+<meta name="twitter:description" content="{{ page.summary|striptags }}" />
+<meta itemprop="description" content="{{ page.summary|striptags }}"/>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% if page.image %}
+  <div class="container-fluid container-article-jumbo jumbo">
+    <a id="header_href" href="#">
+    <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 mb-3" style="{% if page.image_size == "small" %}height:200px;{% endif %}background-image: url({{ page.image }});">
+    </div>
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="container-fluid container-article pb-2 mt-4">
+    {% if page.title %}
+    <h2 id="header_title" class="display-6 pt-2 mb-1 mt-3 stylized">{{ page.title }}</h2>
+    {% endif %}
+
+    {% if not page.url %}
+    <div class="row mt-4 mb-4">
+  
+      <div class="col-md-4 mt-1 text-center">
+        <img class="img-fluid" height="400px" width="340px" src="/images/d4.png"/>
+      </div>
+      <div class="col-md-8 mt-3 article_content">
+        <h1 class="mb-0 pb-0" style="font-size:4rem;line-height: 4.2rem; width:80%;">A <span style="color:#356689">FOSS</span> Linux distribution for mobile devices</h1>
+
+        <p class="mt-4">
+        Maemo Leste continues the legacy of
+        <a href="https://en.wikipedia.org/wiki/Maemo">Maemo</a>. We aim to provide a free and open source
+        Maemo experience on mobile phones and tablets like the Nokia N900,
+        Motorola Droid 4, Motorola Bionic, Pinephone, Pinetab, Allwinner
+        tablets and more!
+        </p>
+
+        <div class="row pb-1 mt-2 mb-4">
+          <div class="col-md-9">
+  
+                <a style="padding-right:12px;" class="btn btn-article btn-sm btn-primary" href="https://maedevu.maemo.org/images/" role="button">
+                  <img width="32px" height="32px" src="/images/download.svg"> 
+                  <span style="vertical-align: middle;">Download now</span>
+                </a>
+  
+          </div>
+      </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if page.description %}
+    <p id="header_summary" class="mb-2 text-muted">
+      {{ page.description }}
+    </p>
+    {% endif %}
+
+    <div class="row mt-3">
+      <div class="col-md-12 article_content {% if page.url %}article_page{% endif %}">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -5,6 +5,7 @@ Funding from NGI EU
 :tags: ngi, maemo, europe, funding
 :authors: Merlijn Wajer, Ivan Jelincic
 :date: 2021-04-24 12:00
+:image: /images/ngi.jpg
 
 A couple of months ago we were made aware of the `DAPSI
 <https://dapsi.ngi.eu>`_ project by our dear Michiel of `NLnet

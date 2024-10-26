@@ -7,7 +7,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-THEME = 'themes/nest'
+THEME = 'themes/maemo'
 NEST_HEADER_LOGO = '/images/logo_small_w.png'
 MENUITEMS = [
     ('News', '/categories.html'),
@@ -45,6 +45,10 @@ SOCIAL = (
     ('Github', 'https://github.com/maemo-leste'),
     ('Atom Feed', '/feeds/all.atom.xml'),
 )
+
+JINJA_ENVIRONMENT = {
+    "extensions": ["jinja2.ext.loopcontrols"]
+}
 
 DEFAULT_PAGINATION = 100
 
