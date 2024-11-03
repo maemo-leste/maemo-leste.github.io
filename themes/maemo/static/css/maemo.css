@@ -189,7 +189,10 @@ h2.stylized::after, .article_page h2::after {
 }
 
 .article_content pre {
-    margin-bottom: 0 !important;
+    background: #efefef;
+    padding: 12px;
+    padding-left: 16px;
+    margin-bottom: 16px;
 }
 
 .article_content .highlight {
