@@ -1,91 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Welcome to the Maemo Leste website! Maemo Leste continues the legacy of Maemo. We aim to provide a free and open source Maemo experience on mobile phones and tablets like the Nokia N900, Motorola...">
-        <meta name="keywords" content="">
-        <link rel="icon" href="https://maemo-leste.github.io/favicon.ico">
+<!doctype html>
+<!--
+▄ •▄ ▄▄▄        ▄ •▄ ▄▄▄ .▄▄▄▄▄
+█▌▄▌▪▀▄ █·▪     █▌▄▌▪▀▄.▀·•██
+▐▀▀▄·▐▀▀▄  ▄█▀▄ ▐▀▀▄·▐▀▀▪▄ ▐█.▪
+▐█.█▌▐█•█▌▐█▌.▐▌▐█.█▌▐█▄▄▌ ▐█▌·
+·▀  ▀.▀  ▀ ▀█▄▀▪·▀  ▀ ▀▀▀  ▀▀▀
+-->
+<html lang="en" data-bs-theme="dark">
+<head>
+  <title></title>
 
-        <title>Maemo Leste - Maemo Leste</title>
+  <meta charset="utf-8" />
+  <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Cousine' media='all' />
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Inconsolata' media='all' />
 
-        <!-- Stylesheets -->
-        <link href="https://maemo-leste.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://maemo-leste.github.io/theme/css/fonts.css" rel="stylesheet">
-        <link href="https://maemo-leste.github.io/theme/css/nest.css" rel="stylesheet">
-        <link href="https://maemo-leste.github.io/theme/css/pygment.css" rel="stylesheet">
-        <!-- /Stylesheets -->
+  <link rel="icon" type="image/x-icon" href="/theme/img/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- RSS Feeds -->
-        <link href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Maemo Leste Full Atom Feed" />
-        <!-- /RSS Feeds -->
+  <link rel='stylesheet' href="https://maemo-leste.github.io/theme/css/pygment.css" media='all' />
+  <script src="https://maemo-leste.github.io/theme/js/jquery-1.11.2.min.js"></script>
+  <script src="https://maemo-leste.github.io/theme/js/jquery.color-2.1.2.min.js"></script>
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.css"/>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <link rel="stylesheet" href="/theme/css/maemo.css">
+  <script src="/theme/js/index.js"></script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <!-- Header -->
-    <div class="header-container gradient">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
 
-            <!-- Static navbar -->
-            <div class="container">
-                <div class="header-nav">
-                    <div class="header-logo">
-                        <a class="pull-left" href="https://maemo-leste.github.io/"><img class="mr20" src="https://maemo-leste.github.io/images/logo_small_w.png" alt="logo">Maemo Leste</a>
-                    </div>
-                    <div class="nav pull-right">
-                                <a href="https://maemo-leste.github.io/categories.html">News</a>
-                                <a href="https://maedevu.maemo.org/pkgweb/">Packages</a>
-                                <a href="https://leste.maemo.org">Wiki</a>
-                                <a href="https://maedevu.maemo.org/images/">Download</a>
-                                <a href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
-                        <!--
-                            <a  class="active" href="https://maemo-leste.github.io/">Maemo Leste</a>
-                            <a  href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
-                        -->
-                    </div>
-                </div>
-            </div>
-            <!-- /Static navbar -->
+    <a class="navbar-brand" href="https://maemo-leste.github.io/">
+      <img src="/images/logo_small_w2.png" class="me-2" height="28" alt="Kroket Logo" loading="lazy"/>
+      <span style="margin-top:4px;">Maemo Leste</span>
+    </a>
 
-            <!-- Header -->
-    <div class="container header-wrapper">
-        <div class="row">
-              <div class="col-lg-12">
-                  <div class="header-content">
-                      <h1 class="header-title text-uppercase">Maemo Leste</h1>
-                      <div class="header-underline"></div>
-                  </div>
-              </div>
-        </div>
+    <style>
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 46px;
+        text-decoration: none;
+      }
+    </style>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://maemo-leste.github.io/category/news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/images/">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/pkgweb/">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://leste.maemo.org/">Wiki</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/images/">Download</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
+        </li>
+      </ul>
     </div>
-            <!-- /Header -->
-
-        </div>
-        <!-- /Header -->
+  </div>
+</nav>
 
 
-        <!-- Content -->
-    <div class="container content">
-        <p>Welcome to the Maemo Leste website! Maemo Leste continues the legacy of
-<a class="reference external" href="http://maemo.org">Maemo</a>. We aim to provide a free and open source
-Maemo experience on mobile phones and tablets like the Nokia N900,
-Motorola Droid 4, Motorola Bionic, Pinephone, Pinetab, Allwinner
-tablets and more!</p>
-<p>Feel free to join us on <a class="reference external" href="ircs://irc.libera.chat/#maemo-leste">irc.libera.chat</a>
-<strong>#maemo-leste</strong> and also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a>
-if you are interested.</p>
-<p>We are also active on <a class="reference external" href="https://twitter.com/maemoleste">Twitter</a>.</p>
-<p>Maemo Leste is based on Devuan Beowulf (Debian Buster) and all the
+  <div class="container-fluid container-article pb-2 mt-4">
+
+    <div class="row mt-4 mb-4">
+  
+      <div class="col-md-4 mt-1 text-center">
+        <img class="img-fluid" height="400px" width="340px" src="/images/d4.png"/>
+      </div>
+      <div class="col-md-8 mt-3 article_content">
+        <h1 class="mb-0 pb-0" style="font-size:4rem;line-height: 4.2rem; width:80%;">A <span style="color:#356689">FOSS</span> Linux distribution for mobile devices</h1>
+
+        <p class="mt-4">
+        Maemo Leste continues the legacy of
+        <a href="https://en.wikipedia.org/wiki/Maemo">Maemo</a>. We aim to provide a free and open source
+        Maemo experience on mobile phones and tablets like the Nokia N900,
+        Motorola Droid 4, Motorola Bionic, Pinephone, Pinetab, Allwinner
+        tablets and more!
+        </p>
+
+        <div class="row pb-1 mt-2 mb-4">
+          <div class="col-md-9">
+  
+                <a style="padding-right:12px;" class="btn btn-article btn-sm btn-primary" href="https://maedevu.maemo.org/images/" role="button">
+                  <img width="32px" height="32px" src="/images/download.svg"> 
+                  <span style="vertical-align: middle;">Download now</span>
+                </a>
+  
+          </div>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+      <div class="col-md-12 article_content ">
+        <div class="section" id="debian-based">
+<h2>Debian based</h2>
+<p>Maemo Leste is based on Devuan Beowulf (Debian Buster) and all
 supported devices ship with recent mainline Linux kernels.</p>
 <p>The project is almost usable as a daily driver for your device. We are
 currently in the development phase and we are actively searching for
@@ -94,8 +127,55 @@ developers. For some devices, we have development images available
 <a class="reference external" href="https://leste.maemo.org/Motorola_Droid_4">Motorola Droid 4</a>, and
 the <a class="reference external" href="https://leste.maemo.org/PinePhone">PinePhone</a>. There is also
 a 64bit <a class="reference external" href="https://leste.maemo.org/Virtual_Machine">virtual machine</a>
-you can use to try out Maemo Leste. For an impression, see some of our
+you can use to try out Maemo Leste.</p>
+<p>For an impression, see some of our
 <a class="reference external" href="https://maemo-leste.github.io/pages/screenshots.html">screenshots</a>.</p>
+</div>
+<div class="section" id="goals">
+<h2>Goals</h2>
+<div class="row mt-4 mb-4">
+    <div class="col-md-6">
+        <div class="panel-homepage p-4">
+            <h2 class="panel-header" style="font-size: 1.6rem;">Device freedom</h2>
+            <span>
+            We provide a truly open-source alternative for mobile devices. This includes reverse engineering closed-source drivers, ensuring that users have full control over their devices.
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel-homepage p-4">
+            <h2 class="panel-header" style="font-size: 1.6rem;">Compatibility</h2>
+            <span>
+            Maintaining compatibility with software developed for previous Maemo platforms, particularly Maemo 5 (Fremantle), is a priority for Maemo Leste.
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 mb-4">
+    <div class="col-md-6">
+        <div class="panel-homepage p-4">
+            <h2 class="panel-header" style="font-size: 1.6rem;">Modernization</h2>
+            <span>
+            We modernize the Maemo ecosystem by updating its underlying software stack while retaining the original Maemo user experience.
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel-homepage p-4">
+            <h2 class="panel-header" style="font-size: 1.6rem;">Hardware support</h2>
+            <span>
+            Expanding hardware support is a major goal, allowing Leste to run on various mobile devices and single-board computers.
+            </span>
+        </div>
+    </div>
+</div></div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>For a general usage introduction, it is useful to check out
+<a class="reference external" href="https://leste.maemo.org/Getting_Started">https://leste.maemo.org/Getting_Started</a></p>
 <p>So far we have set up repositories for our packages, which support
 <cite>amd64</cite>, <cite>armhf</cite>, and <cite>arm64</cite> architectures. We have FOSS replacements
 for all included and previously closed Maemo packages (and we have
@@ -103,11 +183,43 @@ no closed packages in use), further building on the Maemo community
 efforts to replace all closed bits with open source software.</p>
 <p>Installation guides are provided per device. For open
 tasks and issues, please see our Github bugtracker:
-<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues">https://github.com/maemo-leste/bugtracker/issues</a></p>
-<p>For a general usage introduction, it might be useful to check out
-<a class="reference external" href="https://leste.maemo.org/Getting_Started">https://leste.maemo.org/Getting_Started</a></p>
+<a class="reference external" href="https://github.com/maemo-leste/bugtracker/issues">maemo-leste/bugtracker/issues</a></p>
+<p>Software status is documented here: <a class="reference external" href="https://leste.maemo.org/Status">https://leste.maemo.org/Status</a> .
+A proper overview of the current (Maemo) software state will be
+provided soon.</p>
+</div>
+<div class="section" id="supported-devices">
+<h2>Supported devices</h2>
 <p>You can find wiki pages of our supported devices on
 <a class="reference external" href="https://leste.maemo.org/Category:Device">https://leste.maemo.org/Category:Device</a></p>
+</div>
+<div class="section" id="contribute">
+<h2>Contribute</h2>
+<p>Our community gathers on IRC and the mailing list where we collaborate on development. Come and say hi! We have several Nokia N900, Motorola Droid 3, Droid 4, Bionic and RAZR units available for developers, so if you are interested in helping out but have trouble acquiring a device, let us know.</p>
+<div class="row pb-1 mt-4 mb-4">
+    <div class="col-md-9">
+
+          <a class="btn btn-article btn-sm btn-primary" href="https://libera.chat/" role="button">
+            <img style="margin-right: 4px;" width="32px" height="32px" src="/images/irc.png"> #maemo-leste
+          </a>
+
+          <a class="btn btn-article btn-sm btn-primary" href="https://x.com/maemoleste" role="button">
+            <img style="margin-right: 4px;" width="32px" height="32px" src="/images/X_logo_2023_original.svg"> @maemoleste
+          </a>
+
+          <a class="btn btn-article btn-sm btn-primary" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste" role="button">
+            <img style="margin-right: 4px;" width="32px" height="32px" src="/images/mail.svg"> mailing list
+          </a>
+
+    </div>
+</div></div>
+<div class="section" id="talks">
+<h2>Talks</h2>
+<p>On various open source software conferences, we also did talks about
+Maemo Leste, and they're listed on <a class="reference external" href="https://leste.maemo.org/Talks">https://leste.maemo.org/Talks</a></p>
+</div>
+<div class="section" id="news">
+<h2>News</h2>
 <p>After our <a class="reference external" href="https://maemo-leste.github.io/maemo-leste-standing-on-the-shoulders-of-giants.html">initial blog post</a>,
 we have posted (almost) monthly updates of our efforts and
 progress. Reverse-chronological, they are:</p>
@@ -136,43 +248,72 @@ progress. Reverse-chronological, they are:</p>
 <li><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-second-update-april-2018.html">April 2018</a></li>
 <li><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-first-update-march-2018.html">March 2018</a></li>
 </ul>
-<p>On various open source software conferences, we also did talks about
-Maemo Leste, and they're listed on <a class="reference external" href="https://leste.maemo.org/Talks">https://leste.maemo.org/Talks</a></p>
-<p>Software status is documented here: <a class="reference external" href="https://leste.maemo.org/Status">https://leste.maemo.org/Status</a> .
-A proper overview of the current (Maemo) software state will be
-provided soon.</p>
-<p>If you like our work and want to see it continue, join us!</p>
-<p>❤️</p>
+<br>
+If you like our work and want to see it continue, join us!
+<br>
+<br><p>❤️</p>
+</div>
 
+      </div>
     </div>
-        <!-- /Content --> 
+  </div>
 
-        <!-- Footer -->
-        <div class="footer gradient-2">
-            <div class="container footer-container">
-                <div class="row text-center">
-                        <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
-                        <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
-                        <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="80"></a>&nbsp;&nbsp;
-                        <div class="footer-title"></div>
-                        <ul class="list-unstyled">
-                            <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
-                        </ul>
-                        <div class="footer-title"></div>
-                        <ul class="list-unstyled">
-                            <li><a href="https://twitter.com/maemoleste" target="_blank">Twitter</a></li>
-                            <li><a href="https://github.com/maemo-leste" target="_blank">Github</a></li>
-                            <li><a href="/feeds/all.atom.xml" target="_blank">Atom Feed</a></li>
-                        </ul>
-                        <div class="footer-title"></div>
-                        <ul class="list-unstyled">
-                            <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
-                            <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
-                            <li><a href="https://maedevu.maemo.org/pkgweb/" target="_blank">Maemo Leste Packages</a></li>
-                        </ul>
-                </div>
-            </div>
+
+<footer class="page-footer font-small blue-grey lighten-5 mt-5">
+  <style>
+    footer a {
+      width: inherit !important;
+    }
+  </style>
+    <!-- Footer -->
+    <div class="footer gradient-2">
+      <div class="container footer-container">
+        <div class="col-md-12">
+          <div style="width: 100%" class="mb-2 mt-2">
+            <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="100"></a>&nbsp;&nbsp;
+          </div>
+
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+          </ul>
+
+          <div class="row">
+
+          <div class="col-md-3">
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://twitter.com/maemoleste" target="_blank">Twitter</a></li>
+              <li><a href="https://github.com/maemo-leste" target="_blank">Github</a></li>
+              <li><a href="/feeds/all.atom.xml" target="_blank">Atom Feed</a></li>
+          </ul>
+          </div>
+
+          <div class="col-md-3">
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://github.com/maemo-leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+              <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+              <li><a href="https://maedevu.maemo.org/pkgweb/" target="_blank">Maemo Leste Packages</a></li>
+          </ul>
+          </div>
+          </div>
         </div>
-        <!-- /Footer -->
-    </body>
+          <!-- <div class="row text-center">
+                  <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="80"></a>&nbsp;&nbsp;
+          </div>
+          <div class="row text-center"></div>
+
+          </div>
+        -->
+      </div>
+  </div>
+  <!-- /Footer -->
+</footer>
+</body>
+
 </html>
