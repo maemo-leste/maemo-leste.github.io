@@ -4,9 +4,6 @@ Screenshots
 
 For up to date software status, please look see https://leste.maemo.org/Status
 
-Screenshots
------------
-
 Scanning for wireless, connected to WPA-EAP network *spacenet*:
 
 .. image:: /images/n900-libicd-wpasupplicant-spacenet.png
@@ -73,7 +70,7 @@ USB OTG
 
 
 Action Photos
--------------
+~~~~~~~~~~~~~
 
 A33 Allwinner Twister Tablet:
 
@@ -83,7 +80,7 @@ A33 Allwinner Twister Tablet:
 
 
 Logo
-----
+~~~~
 
 .. image:: /images/logo.png
     :width: 250

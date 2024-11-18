@@ -1,0 +1,16 @@
+<header>
+    <div class="meta">
+        <a href="{{SITEURL}}/{{article.category.url}}">{{ article.category }}</a>
+    </div>
+    <div class="title">
+        <small>[{{article.cat}}]</small>
+        <a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+    </div>
+
+    <div class="description">
+        {% import "_macros/author_fmt.html" as author_fmt %}
+        {% set author = "spotless" %}
+
+        TEST
+    </div>
+</header>

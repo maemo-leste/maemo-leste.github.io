@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.jumbotron {
+  height: 180px;
+  background-position-y: 0;
+  background-repeat: repeat;
+  padding-top: 0.6em !important;
+}
+
+.kroket-info {
+    margin-top: 2.5rem;
+}
+
+.jumbotron #header_title {
+  font-size: 2.7rem;
+}
+
+.jumbotron .container {
+  width: 90%;
+  max-width: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .jumbotron {
+    height: auto;
+    background-position-y: 0;
+    background-repeat: repeat;
+    padding-top: 0 !important;
+  }
+
+  #homepage_jumbo {
+      background: white;
+  }
+
+  #homepage_jumbo div.jumbo_img, #homepage_jumbo .header-row .col-md-3 {
+      display: none !important;
+  }
+
+  #homepage_jumbo .header-row .col-md-9 {
+      width: 100%;
+  }
+
+  .jumbotron .container {
+      width: 90%;
+      max-width: 90%;
+      border-bottom-right-radius: 0;
+  }
+
+  .jumbotron #header_title {
+      font-size: 1.6em;
+      padding-top: .75rem !important;
+      padding-left: 0.1em !important;
+      margin-bottom: 0.5em !important;
+  }
+
+  .jumbotron #header_summary {
+      font-size: 1.0em;
+      padding-left: 0.1em !important;
+      margin-bottom: 1.0em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .kroket-info {
+      margin-top: 0;
+  }
+
+  .article_list_container img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+}
+#homepage_jumbo div.jumbo_img {
+  height: 100%;
+
+  background-size: cover;
+  width: 100%;
+  display: inline-block;
+}
+
+#homepage_jumbo {
+    background: #333639;
+
+    display: inline-table;
+    width: 100%;
+}
+
+#homepage_jumbo div {
+  color: #e5e5e5 !important;
+}
+
+.article_list_container img {
+    border-radius: 8px;
+}
+
+a {
+  color: #1e5572;
+  text-decoration: none;
+}
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #1e5572;
+}
+
+.snippet_list_container .table th {
+  padding-left: 0;
+}
+
+.btn-article img {
+  margin-right: 2px;
+}
+
+#header_title {
+  margin-right: 12px;
+  color: #f3f3f3 !important;
+}
+
+.jumbotron #header_summary {
+  color: #e5e5e5 !important;
+  font-size: 1.4em;
+}
+
+.jumbotron .btn-primary {
+  border-color: #1e5572 !important;
+  font-size: 1.2rem;
+}
+
+.jumbotron .btn {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.showcase img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+  }
+</style>
+
+<div class="container-fluid jumbo">
+  <div id="homepage_jumbo" class="jumbotron jumbo-3 jumbotron-fluid pt-5 mb-3">
+    <div class="container">
+      <div class="row header-row">
+      <div class="col-md-3 d-none" style="padding: 0;">
+        <div class="jumbo_img"></div>
+      </div>
+      <div class="col-md-12">
+        <h1 id="header_title" class="ps-3 pt-2 mb-1 noto-sans-jp-bold">godot-webvieww</h1>
+        <p id="header_summary" class="ps-3 mb-3 text-muted">
+          <span class="title">The HTML rendering engine for Godot</span>
+
+          <div class="ps-3 mb-2 mt-4" style="font-size:1.2rem; font-weight: bold">Download the demo</div>
+          <div class="ps-3 mb-2 btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-article btn-sm btn-primary" href="/pages/downloads/" role="button">
+              <img width="24px" src="/images/ms.svg"/>
+              Windows
+            </a>
+
+            <a class="btn btn-article btn-sm btn-primary" href="/pages/downloads/" role="button">
+              <img width="24px" src="/images/macos.svg"/>
+              MacOS
+            </a>
+
+            <a class="btn btn-article btn-sm btn-primary" href="/pages/downloads/" role="button">
+              <img width="24px" src="/images/tux.svg"/>
+              Linux
+            </a>
+          </div>
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.article_list_container .mt-5 {
+    margin-top: 1.2rem !important;
+}
+.article_list_container h2 {
+    font-size: 1.2em;
+}
+.article_list_container .mt-5:first-child {
+    margin-top: 0.5rem !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .article_list_container h2 {
+      margin-top: 0.75rem !important;
+  }
+
+  .article_list_container .mt-5 {
+      margin-bottom: 2.5rem;
+  }
+}
+
+div[data-id=homepage] .panel {
+  background: #333639;
+  border-radius: 12px;
+  color: white;
+  min-height: 192px;
+  font-size: 1.2rem;
+  padding-left:12px;
+}
+
+div[data-id=homepage] .features li {
+  font-size: 1.4rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+div[data-id=homepage] a, div[data-id=homepage] a:visited {
+  text-decoration: underline;
+  color: white;
+}
+
+div.features a, div.features a:visited {
+  text-decoration: underline;
+  color: white;
+}
+
+div[data-id=homepage] .panel h1.panel-header{
+  font-size: 2.6rem;
+}
+
+div[data-id=homepage] ul, div[data-id=homepage] li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+div[data-id=homepage] .panel h3, div[data-id=homepage] .panel h2, div[data-id=homepage] .panel h1 {
+  color: white;
+}
+</style>
+
+<div data-id="homepage" class="container-fluid pt-3 pb-5 container-content">
+  <!-- <div class="row">
+    <div class="col-md-12 m-0 p-0">
+      <img style="width:100%" src="/images/weeee.png"/>
+    </div>
+  </div> -->
+
+  <div class="row mt-1 mb-2">
+    <div class="col-md-12 mb-4">
+      <h1 class="mb-0 pb-0" style="font-size:4.5rem">Render <span style="color:#aabcf5">WEB CONTENT</span> at a fluid 60fps</h1>
+      <h3 class="mt-0 pt-0">introducing a performant webview for Godot 4</h3>
+    </div>
+
+    <div class="col-md-12 mt-4">
+      <video style="width:100%" autoplay loop muted>
+        <source src="/videos/2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video> 
+      <center>
+      a <a href="https://www.shadertoy.com/view/Xds3zN">shadertoy</a> rendered at 4K on a MeshInstance3D plane inside Godot 4.4
+      </center>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="panel p-4">
+        <h2 class="panel-header">native browser</h2>
+        <span>
+          This webview uses <a href="https://www.qt.io/">Qt</a> to render Chromium to a texture, resulting in a smooth 
+          presentation that immediately responds to user interaction.
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel p-4">
+        <h2 class="panel-header">Supported platforms</h2>
+        <span>
+          Windows, MacOS, Linux. <br> Vulkan, Metal. 
+          <br><br>
+          See: <a href="/pages/downloads/">Downloads</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="panel p-4" style="min-height:180px;">
+        <h2 class="panel-header">Easy installation</h2>
+        <span>
+          Distributed as a GDExtension, unpacking/extracting the addon is all that is required.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel p-4" style="min-height:180px;">
+        <h2 class="panel-header">Extensive API</h2>
+        <span>
+          Programmatically control the webview via a well-documented API; browser navigation, user agent, page zoom, change resolution, scrollbar visibility, and more.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-1 mb-2 mt-5">
+    <div class="col-md-12 mb-4">
+      <h1 class="mb-0 pb-0" style="font-size:4.5rem">the <span style="color:#aabcf5">webview</span> node</h1>
+    </div>
+    
+    <div class="col-md-12">
+      <img style="width:100%" src="/images/typical_ubuntu.png"/>
+    </div>
+  </div>
+
+  <div class="row mt-5 features">
+    <div class="col-md-12 mb-2">
+      <h1>Features</h1>
+      <ul>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Visit any website without stutter/lag</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Load by URL, string, or from the Godot resource system (i.e <code>res://assets/index.html</code>)</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Create (or destroy) multiple webviews, at runtime</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Texture(s) stay on the GPU, no pixel copying</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Apply the texture to any mesh via <code>StandardMaterial3D</code> or fullscreen with <code>TextureRect</code></li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Transparency</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Forward keyboard events, sequences, mouse movements, and clicks</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Call JavaScript from GDScript<b>*</b></li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Register and trigger GDScript signals from JavaScript<b>*</b></li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Hardware accelerated</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Configurable persistant storage (cookies, cache)</li>
+        <li><img width="16px" src="/theme/img/right-arrow2.svg"/> Sound 🔊</li>
+      </ul>
+      <p class="mt-3">
+        <small>* being worked on, coming soon</small>
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-5 showcase">
+    <div class="col-md-12 mb-2">
+      <h1>Showcase</h1>
+
+      <div class="row">
+        <div class="col-md-3 col-lg-3">
+          <div class="card my-3">
+              <a href="/videos/rgb8a.mp4">
+                <img style="width:100%" src="/images/rgba8_play.png" class="card-image-top" alt="thumbnail">
+              </a>
+
+              <div class="card-body">
+                  <h3 class="card-title">Transparency</h3>
+                  <p class="card-text">RGBA8 texture rendered at 4k. Transparency is achieved via CSS.</p>
+                  <div style="font-size:14px !important;"><b>Ubuntu 22.04</b> <span style="float:right">Vulkan, amd64</span></div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+          <div class="card my-3">
+              <a href="/videos/keyboard_and_mouse.mp4">
+                <img style="width:100%" src="/images/keyboard_play.png" class="card-image-top" alt="thumbnail">
+              </a>
+
+              <div class="card-body">
+                  <h3 class="card-title">Mouse & Keyboard</h3>
+                  <p class="card-text">Forwarding mouse & keyboard events.</p>
+                  <div style="font-size:14px !important;"><b>Ubuntu 22.04</b> <span style="float:right">Vulkan, amd64</span></div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+          <div class="card my-3">
+              <a href="/videos/spam.mp4">
+                <img style="width:100%" src="/images/multiple_play.png" class="card-image-top" alt="thumbnail">
+              </a>
+
+              <div class="card-body">
+                  <h3 class="card-title">Stress test</h3>
+                  <p class="card-text">20 webviews each rendered at 2k with a variety of websites.</p>
+                  <div style="font-size:14px !important;"><b>Windows 10</b> <span style="float:right">Vulkan, amd64</span></div>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+          <div class="card my-3">
+              <a href="/videos/quick.mp4">
+                <img style="width:100%" src="/images/quick_play.png" class="card-image-top" alt="thumbnail">
+              </a>
+
+              <div class="card-body">
+                  <h3 class="card-title">QtQuick</h3>
+                  <p class="card-text">Rendering a <a href="https://en.wikipedia.org/wiki/QML#Basic_syntax">QtQuick (QML)</a> scene. </p>
+                  <div style="font-size:14px !important;"><b>Mac M1 mini</b> <span style="float:right">Metal, arm64</span></div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 mb-4" data-id="benefits">
+    <div class="col-md-12">
+      <div class="panel p-5" style="min-height:100px;">
+        <h1 class="panel-header mb-5">Benefits</h1>
+        
+        <style>
+          .panel-pop-gradient {
+            background: linear-gradient(-45deg, rgb(2, 0, 36) 0%, rgb(27,27,27) 35%, rgb(7, 7, 7) 100%) !important;
+          }
+        </style>
+
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="panel p-4 panel-pop-gradient">
+              <img class="mb-4" src="/theme/img/code-square.svg"/>
+              <h2 class="panel-header mb-4">Web frameworks</h2>
+              <p>
+                Leverage existing web frameworks like React, VueJS for UI.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="panel p-4 panel-pop-gradient">
+              <img class="mb-4" src="/theme/img/clock.svg"/>
+              <h2 class="panel-header mb-4">Fast development cycle</h2>
+              <p>
+                Creating UI components with Godot is generally time consuming, and 
+                requires specific knowledge.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel p-4 panel-pop-gradient">
+              <img class="mb-4" src="/theme/img/accessibility.svg"/>
+              <h2 class="panel-header mb-4">Accessible</h2>
+              <p>
+                HTML is straightforward technology - easy to work with.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="panel p-4 panel-pop-gradient">
+              <h2 class="panel-header mb-4">Existing tools</h2>
+              <p>
+                Use established tools for web development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4 mb-2">
+    <div class="col-md-12 mb-4 mt-4">
+      <h1 class="mb-0 pb-0" style="font-size:4.5rem">try the <span style="color:#aabcf5">demo</span></h1>
+
+      <a style="text-decoration: none; font-size:1.2rem;" class="btn btn-article btn btn-primary mt-3" href="/pages/downloads/" role="button">
+        Get started
+      </a>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</div>
+{% endblock %}

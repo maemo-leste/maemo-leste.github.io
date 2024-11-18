@@ -1,0 +1,5 @@
+pelican[Markdown]
+requests
+python-dateutil
+jinja2>=3.0.1
+beautifulsoup4

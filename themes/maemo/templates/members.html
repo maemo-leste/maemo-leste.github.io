@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ SHORT_SITENAME }} - Members{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<article class="page">
+    <header>
+        <div class="title">
+            <a href="{{ SITEURL }}/members.html" title="w0w">
+                Members
+            </a>
+        </div>
+    </header>
+    <div class="entry-content">
+        <ul>
+            {% for member in MEMBERS %}
+                <li>
+                    <strong>{{ member.dino.title() }}</strong>:
+                    {% import "_macros/author_fmt.html" as author_fmt %}
+                    {{ author_fmt.author_fmt(member) }}
+
+                    {% if member.aliases %}
+                        <small>(<span class="caps">A.K.A </span>{{ ", ".join(member.aliases) }})</li></small>
+                    {% endif %}
+            {% endfor %}
+        </ul>
+
+        <br><br>
+        <img src="{{ SITEURL }}/images/dinos.png">
+        </div>
+</article>
+{% endblock %}

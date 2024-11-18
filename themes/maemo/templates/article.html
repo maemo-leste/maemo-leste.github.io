@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}
+{% block head %}
+    {{ super() }}
+    {% for keyword in article.keywords %}
+        <meta name="keywords" contents="{{keyword}}" />
+    {% endfor %}
+
+    {% for description in article.description %}
+        <meta name="description" contents="{{description}}" />
+    {% endfor %}
+
+    {% for tag in article.tags %}
+        <meta name="tags" contents="{{tag}}" />
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+
+{% if article.image %}
+{% set img = article.image %}
+{% else %}
+{% set img = "/images/d4table.jpg" %}
+{% endif %}
+<div class="container-fluid container-article-jumbo container-article-page-image jumbo">
+  <a id="header_href" href="#">
+  <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 img-fluid" style="background-image: url({{ img }});">
+  </div>
+  </a>
+</div>
+
+<div class="container-fluid container-article pb-2">
+  <h2 id="header_title" class="display-6 pt-3 mb-1">{{ article.title }} {{article.test}}</h2>
+
+  <div class="mb-3 article_tags">
+    {% if article.tags %}
+      {% for t in article.tags %}
+      <a href="{{t.url}}">
+        <span class="badge badge-primary badge-tag">{{ t }}</span>
+      </a>
+      {% endfor %}
+    {% endif %}
+    <small>{% if article.tags %} <span style="margin-left:4px;margin-right:4px;">|</span> {% endif %}
+      {{ article.date.strftime('%Y-%m-%d') }}
+    </small>
+  </div>
+
+  <div class="row d-none m-0 p-0">
+    <div class="col-md-12">
+      {% if article.image_info is defined %}
+        <small style="float:right" class="text-muted">{{ article.image_info }}</small>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-12 article_content article_page mt-2">
+      {{ article.content }}
+    </div>
+    <div class="col-md-12 text-muted">
+      <span class="d-block">{{article.author}}</span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

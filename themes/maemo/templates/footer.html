@@ -1,0 +1,67 @@
+<footer class="page-footer font-small blue-grey lighten-5 mt-5">
+  <style>
+    footer a {
+      width: inherit !important;
+    }
+  </style>
+    <!-- Footer -->
+    <div class="footer gradient-2">
+      <div class="container footer-container">
+        <div class="col-md-12">
+          <div style="width: 100%" class="mb-2 mt-2">
+            <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="100"></a>&nbsp;&nbsp;
+          </div>
+
+          <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div>
+          <ul class="list-unstyled">
+              {% for title, link in NEST_SITEMAP_MENU %}
+              <li><a href="{{ SITEURL }}{{ link }}">{{ title }}</a></li>
+              {% endfor %}
+              {% if FEED_ALL_ATOM %}
+              <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate">{{ NEST_SITEMAP_ATOM_LINK }}</a></li>
+              {% endif %}
+              {% if FEED_ALL_RSS %}
+              <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">{{ NEST_SITEMAP_RSS_LINK }}</a></li>
+              {% endif %}
+          </ul>
+
+          <div class="row">
+
+          <div class="col-md-3">
+          {% if SOCIAL %}
+          <div class="footer-title">{{ NEST_SOCIAL_COLUMN_TITLE }}</div>
+          <ul class="list-unstyled">
+              {% for name, link in SOCIAL %}
+              <li><a href="{{ link }}" target="_blank">{{name}}</a></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+          </div>
+
+          <div class="col-md-3">
+          {% if LINKS %}
+          <div class="footer-title">{{ NEST_LINKS_COLUMN_TITLE }}</div>
+          <ul class="list-unstyled">
+              {% for name, link in LINKS %}
+              <li><a href="{{ link }}" target="_blank">{{name}}</a></li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+          </div>
+          </div>
+        </div>
+          <!-- <div class="row text-center">
+                  <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="80"></a>&nbsp;&nbsp;
+          </div>
+          <div class="row text-center"></div>
+
+          </div>
+        -->
+      </div>
+  </div>
+  <!-- /Footer -->
+</footer>
