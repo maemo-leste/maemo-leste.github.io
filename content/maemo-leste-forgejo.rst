@@ -4,7 +4,7 @@ Maemo Leste - Forgejo migration
 :Category: news
 :tags: forgejo, github
 :authors: Merlijn Wajer
-:date: 2024-08-27 00:00
+:date: 2025-06-22 00:00
 
 With the next release of Maemo Leste imminent, we have some additional
 information to share: we have moved all of our repositories from Github to
