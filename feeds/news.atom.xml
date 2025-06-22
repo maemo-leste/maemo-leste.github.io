@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2024-08-27T00:00:00+02:00</updated><entry><title>Maemo Leste - 2024 Telepathy update</title><link href="https://maemo-leste.github.io/maemo-leste-2024-telepathy-update.html" rel="alternate"></link><published>2024-08-27T00:00:00+02:00</published><updated>2024-08-27T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2024-08-27:/maemo-leste-2024-telepathy-update.html</id><summary type="html">&lt;p&gt;It's been a good while since our last update, but not for the lack of changes -
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2025-06-22T00:00:00+02:00</updated><entry><title>Maemo Leste - Forgejo migration</title><link href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html" rel="alternate"></link><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-06-22:/maemo-leste-forgejo-migration.html</id><summary type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
+information to share: we have moved all of our repositories from Github to
+Forgejo, self hosted on &lt;a class="reference external" href="https://git.maemo.org"&gt;https://git.maemo.org&lt;/a&gt;. Our website
+(&lt;a class="reference external" href="https://maemo-leste.github.io"&gt;https://maemo-leste.github.io&lt;/a&gt;) will remain hosted on Github for now.&lt;/p&gt;
+&lt;p&gt;This article will discuss …&lt;/p&gt;</summary><content type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
+information to share: we have moved all of our repositories from Github to
+Forgejo, self hosted on &lt;a class="reference external" href="https://git.maemo.org"&gt;https://git.maemo.org&lt;/a&gt;. Our website
+(&lt;a class="reference external" href="https://maemo-leste.github.io"&gt;https://maemo-leste.github.io&lt;/a&gt;) will remain hosted on Github for now.&lt;/p&gt;
+&lt;p&gt;This article will discuss the changes and the motivations that lead to this
+migration.&lt;/p&gt;
+&lt;div class="section" id="github-values-and-forgejo"&gt;
+&lt;h2&gt;Github, values and Forgejo&lt;/h2&gt;
+&lt;p&gt;Maemo Leste as a project initially used Github for our code hosting. We chose
+to host our code there because we believed that the 'network effect' of Github
+would lower the barriers for contributions from outsiders.&lt;/p&gt;
+&lt;p&gt;Since then, years have passed and we're not sure if this 'network effect' really
+is that visible and important to us. Github is not open source, not
+self-hostable and owned by big corporations - none of these points align with
+our values. Additionally, making backups of our project on Github is a bit of a
+pain.&lt;/p&gt;
+&lt;p&gt;We don't know if we can rely on Github in the long term, so we have always
+kept backups of our project, but Github doesn't make this very easy.&lt;/p&gt;
+&lt;p&gt;We've also been trying to switch from our &lt;a class="reference external" href="https://phoenix.maemo.org"&gt;Jenkins instance&lt;/a&gt; to something more modern - and Github actions
+aren't something we want to trust to build our software, for the same reason
+that we don't host most of our content on the cloud.&lt;/p&gt;
+&lt;p&gt;So we set out to find an alternative and we ended up choosing Forgejo.&lt;/p&gt;
+&lt;div class="section" id="forgejo"&gt;
+&lt;h3&gt;Forgejo&lt;/h3&gt;
+&lt;p&gt;Forgejo offers just about everything that we want: it is open source and self
+hosted with minimal resource requirements. Their values and goals align with
+ours more so &lt;a class="reference external" href="https://forgejo.org/compare/"&gt;than the alternatives&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Forgejo also has a great migration path with support for importing repositories
+from Github (including issues, milestones, open and closed pull requests) as
+well as an API that makes it easy to automate the tasks.&lt;/p&gt;
+&lt;p&gt;Furthermore, we are planning to try out &lt;a class="reference external" href="https://forgejo.org/docs/latest/user/actions/"&gt;Forgejo Actions&lt;/a&gt; as an alternative method to
+build our packages and additionally offer continous integration services to our
+developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="status"&gt;
+&lt;h3&gt;Status&lt;/h3&gt;
+&lt;p&gt;Our instance is live at &lt;a class="reference external" href="https://git.maemo.org"&gt;https://git.maemo.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We've currently migrated all our repositories from Github to Forgejo - and our
+Forgejo is set up to push an changes to Forgejo back to Github for the
+forseeable future.&lt;/p&gt;
+&lt;p&gt;All our packages now pull in sources from our Forgejo rather than from Github.&lt;/p&gt;
+&lt;p&gt;Account creation and login is facilitated by Oauth2 - allowing previous Github
+users to easily migrate. Accounts free from Github can also be requested, but
+public registration is disabled to limit the potential for abuse.&lt;/p&gt;
+&lt;p&gt;Forgejo is also configured with full text code search and we're actively
+&lt;a class="reference external" href="https://codeberg.org/forgejo/forgejo/pulls/8106"&gt;contributing to Forgejo&lt;/a&gt; to further enhance this functionality.&lt;/p&gt;
+&lt;p&gt;Weblate integration is still lacking, as we have not figured out how to use the
+hosted weblate instance to communicate directly with our Forgejo instance. We
+are working on addressing this. In the meantime we will not pull in new
+translations.&lt;/p&gt;
+&lt;p&gt;Happy hacking!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="forgejo"></category><category term="github"></category></entry><entry><title>Maemo Leste - 2024 Telepathy update</title><link href="https://maemo-leste.github.io/maemo-leste-2024-telepathy-update.html" rel="alternate"></link><published>2024-08-27T00:00:00+02:00</published><updated>2024-08-27T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2024-08-27:/maemo-leste-2024-telepathy-update.html</id><summary type="html">&lt;p&gt;It's been a good while since our last update, but not for the lack of changes -
 indeed, we've been busy bees. Some of the highlights:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Big communication (Telepathy) upgrade;&lt;/li&gt;

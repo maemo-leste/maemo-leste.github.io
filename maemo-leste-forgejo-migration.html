@@ -8,7 +8,7 @@
 -->
 <html lang="en" data-bs-theme="dark">
 <head>
-  <title>Categories</title>
+      <title>Maemo Leste - Maemo Leste - Forgejo migration</title>
 
   <meta charset="utf-8" />
   <meta content='width=device-width, initial-scale=1.0' name='viewport' />
@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="/theme/css/maemo.css">
   <script src="/theme/js/index.js"></script>
 
+
+
+
+        <meta name="tags" contents="forgejo" />
+        <meta name="tags" contents="github" />
 </head>
 
 <body>
@@ -81,24 +86,95 @@
   </div>
 </nav>
 
-    <div class="container-fluid container-article-jumbo jumbo d-none">
-        <a id="header_href" href="#">
-        <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 mb-3" style="height:200px;background-image: url(https://godotwebview.com/images/intro.png);">
-        </div>
-        </a>
-    </div>
+<div class="container-fluid container-article-jumbo container-article-page-image jumbo">
+  <a id="header_href" href="#">
+  <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 img-fluid" style="background-image: url(/images/d4table.jpg);">
+  </div>
+  </a>
+</div>
 
-    <div class="container-fluid container-article pb-5 mt-4 pt-3">
-        <h2 id="header_title" class="display-6 pt-2 mb-1 stylized">Categories</h2>
+<div class="container-fluid container-article pb-2">
+  <h2 id="header_title" class="display-6 pt-3 mb-1">Maemo Leste - Forgejo migration </h2>
 
-        <div class="row mt-3">
-            <div class="col-md-12 article_content">
-                <ul>
-                        <li><a href="https://maemo-leste.github.io/category/news.html">news</a> (26)</li>
-                </ul>
-            </div>
-        </div>
+  <div class="mb-3 article_tags">
+      <a href="tag/forgejo.html">
+        <span class="badge badge-primary badge-tag">forgejo</span>
+      </a>
+      <a href="tag/github.html">
+        <span class="badge badge-primary badge-tag">github</span>
+      </a>
+    <small> <span style="margin-left:4px;margin-right:4px;">|</span>       2025-06-22
+    </small>
+  </div>
+
+  <div class="row d-none m-0 p-0">
+    <div class="col-md-12">
     </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-12 article_content article_page mt-2">
+      <p>With the next release of Maemo Leste imminent, we have some additional
+information to share: we have moved all of our repositories from Github to
+Forgejo, self hosted on <a class="reference external" href="https://git.maemo.org">https://git.maemo.org</a>. Our website
+(<a class="reference external" href="https://maemo-leste.github.io">https://maemo-leste.github.io</a>) will remain hosted on Github for now.</p>
+<p>This article will discuss the changes and the motivations that lead to this
+migration.</p>
+<div class="section" id="github-values-and-forgejo">
+<h2>Github, values and Forgejo</h2>
+<p>Maemo Leste as a project initially used Github for our code hosting. We chose
+to host our code there because we believed that the 'network effect' of Github
+would lower the barriers for contributions from outsiders.</p>
+<p>Since then, years have passed and we're not sure if this 'network effect' really
+is that visible and important to us. Github is not open source, not
+self-hostable and owned by big corporations - none of these points align with
+our values. Additionally, making backups of our project on Github is a bit of a
+pain.</p>
+<p>We don't know if we can rely on Github in the long term, so we have always
+kept backups of our project, but Github doesn't make this very easy.</p>
+<p>We've also been trying to switch from our <a class="reference external" href="https://phoenix.maemo.org">Jenkins instance</a> to something more modern - and Github actions
+aren't something we want to trust to build our software, for the same reason
+that we don't host most of our content on the cloud.</p>
+<p>So we set out to find an alternative and we ended up choosing Forgejo.</p>
+<div class="section" id="forgejo">
+<h3>Forgejo</h3>
+<p>Forgejo offers just about everything that we want: it is open source and self
+hosted with minimal resource requirements. Their values and goals align with
+ours more so <a class="reference external" href="https://forgejo.org/compare/">than the alternatives</a>.</p>
+<p>Forgejo also has a great migration path with support for importing repositories
+from Github (including issues, milestones, open and closed pull requests) as
+well as an API that makes it easy to automate the tasks.</p>
+<p>Furthermore, we are planning to try out <a class="reference external" href="https://forgejo.org/docs/latest/user/actions/">Forgejo Actions</a> as an alternative method to
+build our packages and additionally offer continous integration services to our
+developers.</p>
+</div>
+<div class="section" id="status">
+<h3>Status</h3>
+<p>Our instance is live at <a class="reference external" href="https://git.maemo.org">https://git.maemo.org</a></p>
+<p>We've currently migrated all our repositories from Github to Forgejo - and our
+Forgejo is set up to push an changes to Forgejo back to Github for the
+forseeable future.</p>
+<p>All our packages now pull in sources from our Forgejo rather than from Github.</p>
+<p>Account creation and login is facilitated by Oauth2 - allowing previous Github
+users to easily migrate. Accounts free from Github can also be requested, but
+public registration is disabled to limit the potential for abuse.</p>
+<p>Forgejo is also configured with full text code search and we're actively
+<a class="reference external" href="https://codeberg.org/forgejo/forgejo/pulls/8106">contributing to Forgejo</a> to further enhance this functionality.</p>
+<p>Weblate integration is still lacking, as we have not figured out how to use the
+hosted weblate instance to communicate directly with our Forgejo instance. We
+are working on addressing this. In the meantime we will not pull in new
+translations.</p>
+<p>Happy hacking!</p>
+</div>
+</div>
+
+    </div>
+    <div class="col-md-12 text-muted">
+      <span class="d-block">Merlijn Wajer</span>
+    </div>
+  </div>
+</div>
+
 
 <footer class="page-footer font-small blue-grey lighten-5 mt-5">
   <style>
