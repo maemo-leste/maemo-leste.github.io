@@ -136,6 +136,7 @@ After our `initial blog post
 we have posted (almost) monthly updates of our efforts and
 progress. Reverse-chronological, they are:
 
+* `Migration from Github to Forgejo <{filename}/maemo-leste-forgejo.rst>`_
 * `2024 Telepathy update <{filename}/maemo-leste-telepathy-2024-august.rst>`_
 * `Five year anniversary: Chimaera release <{filename}/maemo-leste-chimaera-5-year-anniversary.rst>`_
 * `New Year update 2023 <{filename}/maemo-leste-update-january-2023.rst>`_
