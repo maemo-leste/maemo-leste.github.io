@@ -5,7 +5,7 @@
 Debian based
 ============
 
-Maemo Leste is based on Devuan Beowulf (Debian Buster) and all
+Maemo Leste is based on Devuan Daedalus (Debian Bookworm) and all
 supported devices ship with recent mainline Linux kernels.
 
 The project is almost usable as a daily driver for your device. We are
