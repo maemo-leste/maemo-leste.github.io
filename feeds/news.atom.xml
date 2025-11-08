@@ -231,9 +231,11 @@ pkgconfig, and CMake config for other Qt apps to consume.&lt;/p&gt;
 &lt;h4&gt;qt6-style-maemo&lt;/h4&gt;
 &lt;p&gt;This plugin deals with how Qt applications look. For example, when this plugin
 is active, a &lt;cite&gt;QButton&lt;/cite&gt; is replaced by a GTK button at runtime. It does so by
-painting GTK widgets into Qt widgets. This plugin also handles spacing, size
-hints, and color palettes. Due to Qt plugin infrastructure changes, this was
-somewhat time consuming to migrate, see &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/"&gt;qt6-style-maemo&lt;/a&gt;.&lt;/p&gt;
+painting GTK widgets off screen and use that to figure out what the Qt widgets
+should look like.
+This plugin also handles spacing, size hints, and color palettes. Due to Qt
+plugin infrastructure changes, this was somewhat time consuming to migrate, see
+&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/"&gt;qt6-style-maemo&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sphone"&gt;
