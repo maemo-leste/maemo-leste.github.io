@@ -1,5 +1,562 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2025-06-22T00:00:00+02:00</updated><entry><title>Maemo Leste - Forgejo migration</title><link href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html" rel="alternate"></link><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-06-22:/maemo-leste-forgejo-migration.html</id><summary type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2025-11-08T23:00:00+01:00</updated><entry><title>Maemo Leste - 2025 Daedalus release</title><link href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html" rel="alternate"></link><published>2025-11-08T23:00:00+01:00</published><updated>2025-11-08T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-11-08:/maemo-leste-2025-daedalus-release.html</id><summary type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
+the meantime. We've:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;released Maemo Leste for Devuan Daedalus (Debian Bookworm);&lt;/li&gt;
+&lt;li&gt;received funding from NLnet (through the &lt;tt class="docutils literal"&gt;NGI0 Commons Fund&lt;/tt&gt;)&lt;/li&gt;
+&lt;li&gt;added support for Qt6;&lt;/li&gt;
+&lt;li&gt;added more extras packages;&lt;/li&gt;
+&lt;li&gt;improved the chat and browser application significantly …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
+the meantime. We've:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;released Maemo Leste for Devuan Daedalus (Debian Bookworm);&lt;/li&gt;
+&lt;li&gt;received funding from NLnet (through the &lt;tt class="docutils literal"&gt;NGI0 Commons Fund&lt;/tt&gt;)&lt;/li&gt;
+&lt;li&gt;added support for Qt6;&lt;/li&gt;
+&lt;li&gt;added more extras packages;&lt;/li&gt;
+&lt;li&gt;improved the chat and browser application significantly;&lt;/li&gt;
+&lt;li&gt;added a CI/CD to our Forgejo instance;&lt;/li&gt;
+&lt;li&gt;improved the Nokia N900 support;&lt;/li&gt;
+&lt;li&gt;improved ofono (modem) support for the mapphones (Motorola Droids) and Nokia N900&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and much more...&lt;/p&gt;
+&lt;div class="section" id="funding"&gt;
+&lt;h2&gt;Funding&lt;/h2&gt;
+&lt;p&gt;Maemo Leste &lt;a class="reference external" href="https://nlnet.nl/project/MaemoLeste-AppArmour/"&gt;has received funding from NLNet&lt;/a&gt; as part of the &lt;tt class="docutils literal"&gt;NGI0 Commons
+Fund&lt;/tt&gt; to continue improving our system!&lt;/p&gt;
+&lt;p&gt;In particular, the following tasks have received funding:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/41?state=all"&gt;Conversations improvements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/751"&gt;Porting extras packages to Daedalus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/42?state=all"&gt;Support Qt6 next to Qt5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/43?state=all"&gt;Forgejo CI/CD with extras integration in particular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/37?state=all"&gt;Porting Maemo Leste to Excalibur/Trixie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/39?state=all"&gt;AppArmor support in Maemo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/38?state=all"&gt;Integrate and switch to Geoclue in Maemo Leste&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/40?state=all"&gt;Port Maemo Leste to additional devices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="daedalus"&gt;
+&lt;h2&gt;Daedalus&lt;/h2&gt;
+&lt;p&gt;We ported Maemo Leste to Devuan Daedalus (Debian bookworm) some time ago (see &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/751"&gt;issue
+#571&lt;/a&gt;) and silently
+switched our images over to this release. At the time we were caught up
+on Debian stable, but as of writing of this post, Debian bookworm is now old
+stable again. One of our priorities is to switch to Devuan Excalibur (Debian
+Trixie) soon, so that we are on Debian stable.&lt;/p&gt;
+&lt;p&gt;It has taken us while but we are slowly catching up to the Debian release
+cycles - these things take time because we have to port our packages to newer
+libraries and code, and when we started Maemo Leste we were targetting a
+distribution that was then already olstable.&lt;/p&gt;
+&lt;p&gt;As part of the upgrade to Daedalus, we:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ported our media application framework &lt;a class="reference external" href="https://git.maemo.org/leste/mafw-tracker-source/commit/c0e38e4eb46e2aa2492bfedb983956bb50c4b79d"&gt;to use Tracker 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rebased our Xorg patches on the debian xorg&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/dependency-resolver"&gt;wrote a piece of software&lt;/a&gt;
+to figure out in what order to build our packages in
+Jenkins, as this historically has been somewhat of a challenge&lt;/li&gt;
+&lt;li&gt;Decreased the number of upstream software that we had to fork, as our patches
+made it upstream in some cases&lt;/li&gt;
+&lt;li&gt;migrate away from python2 in &lt;a class="reference external" href="https://git.maemo.org/leste/maemo-system-services/commit/4fc8f17d9dfb55eacc573be856054f18e3e08961"&gt;icd2 module management&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Switched to a newer upstream upower version which contains &lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/upower/commit/1df483b7608fcdd8e69b9968fe85b42a112cab18"&gt;most of our patches&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The actual set of changes is much larger and can be seen in &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/751"&gt;issue #571&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="jenkins-and-versioning"&gt;
+&lt;h3&gt;Jenkins and Versioning&lt;/h3&gt;
+&lt;p&gt;When we first made the &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; release, we made a mistake in how we version
+the packages, normally our packages end in something like: &lt;tt class="docutils literal"&gt;+4m7&lt;/tt&gt; - which means
+&amp;quot;distribution release 4,  Maemo 7&amp;quot;. In the &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; case, the &lt;tt class="docutils literal"&gt;4&lt;/tt&gt; felloff.
+Unfortunately in Debian packaging versioning this means that the &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt;
+versions without this one-digit prefix always take precendence over the packages
+with this additional prefix. In an attempt to make dist-upgrading possible, we &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/commit/4c4de8c405f3ce5a10e35d1d16b5f76de9f7215e"&gt;added a file
+to apt.preferences.d&lt;/a&gt; that gives the packages &lt;tt class="docutils literal"&gt;daedalus&lt;/tt&gt; release repository a
+higher priority than the &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; ones. We &lt;a class="reference external" href="https://git.maemo.org/leste/jenkins-integration/commit/8e6c21127e46c9975ab985dab699f50b3dc50027"&gt;also fixed the problem in Jenkins&lt;/a&gt;
+although this doesn't really matter at this point, as the chimaera versions are
+already problematic.&lt;/p&gt;
+&lt;p&gt;This &lt;a class="reference external" href="https://git.maemo.org/leste/jenkins-integration/commit/9802ed8e969ac209f2358d1f04683556423fb5eb"&gt;commit to jenkins-integration&lt;/a&gt;
+adds the proper versioning for Daedalus and we also fixed some IRC integration
+script for packages that are only built for one architecture in &lt;a class="reference external" href="https://git.maemo.org/leste/jenkins-integration/commit/b00ad4d9070861413fcc5f915272ebd58157dd4f"&gt;commit b00ad4d9&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dist-upgrading"&gt;
+&lt;h3&gt;dist-upgrading&lt;/h3&gt;
+&lt;p&gt;As always, installing a &lt;tt class="docutils literal"&gt;daedalus&lt;/tt&gt; image is the easiest way to get up to date,
+but it is possible to dist-upgrade from &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; to &lt;tt class="docutils literal"&gt;daedalus&lt;/tt&gt;, but one has to
+ensure that the repositories in &lt;tt class="docutils literal"&gt;/etc/apt/sources.list&lt;/tt&gt; and
+&lt;tt class="docutils literal"&gt;/etc/apt/sources.list.d/*&lt;/tt&gt; have their &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; references removed. Make sure
+you're fully up to date on &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt; first.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="core"&gt;
+&lt;h2&gt;Core&lt;/h2&gt;
+&lt;p&gt;Various core applications and daemons have seen improvements and fixes.&lt;/p&gt;
+&lt;div class="section" id="browser-jib"&gt;
+&lt;h3&gt;Browser (jib)&lt;/h3&gt;
+&lt;p&gt;Jib now has full-support for the virtual keyboard, so that this browser is also usable
+from devices with no hardware keyboard. In addition, we've improved the built-in
+adblocker, so it does not block benign resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="calendar"&gt;
+&lt;h3&gt;Calendar&lt;/h3&gt;
+&lt;p&gt;We've fixed the vertical alignment in the month display for the calendar, see
+&lt;a class="reference external" href="https://git.maemo.org/leste/qalendar/pulls/1"&gt;qalendar/pulls/1&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/qalendar-vertical-alignment.png" style="width: 531px; height: 407px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ntp"&gt;
+&lt;h3&gt;ntp&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; made it such that we when we fetch the time over NTP, we also
+synchronise it to our hardware clock, see &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/61"&gt;leste-config/pulls/61&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversations"&gt;
+&lt;h3&gt;Conversations&lt;/h3&gt;
+&lt;p&gt;Conversations has received a lot of attention - bringing you new, and exciting
+features for our Daedalus release.&lt;/p&gt;
+&lt;div class="section" id="maemo-fi-cation"&gt;
+&lt;h4&gt;Maemo-fi-cation&lt;/h4&gt;
+&lt;p&gt;Conversations now uses more UI components (and paradigms) from Fremantle.&lt;/p&gt;
+&lt;p&gt;The settings and about page were moved to a popup.&lt;/p&gt;
+&lt;img alt="" src="/images/conv_settings.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;We are now also using a dialog for the contact picker (Compose new message).&lt;/p&gt;
+&lt;p&gt;The maemo-fi-cation of our UI is still on-going, and will be expanded with more
+Maemo components in the future.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="improved-tableview"&gt;
+&lt;h4&gt;Improved tableview&lt;/h4&gt;
+&lt;p&gt;We have various places where messages are listed: the overview (the first screen), search window, and the groupchat
+memberlist window. Code-wise, we are now using the same table everywhere.&lt;/p&gt;
+&lt;p&gt;In addition, we improved this table's sorting, avatar/presence visualization, , and made table updates more performant.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ux-improvements"&gt;
+&lt;h4&gt;UX improvements&lt;/h4&gt;
+&lt;p&gt;When writing a long message, the input box now dynamically grows according to input.&lt;/p&gt;
+&lt;img alt="" src="/images/conv_expand.png" style="width: 576px; height: 324px;" /&gt;
+&lt;p&gt;The QML interface has been reworked to be more responsive. This was already
+the case, but there was still the occasional clipping bug.&lt;/p&gt;
+&lt;p&gt;In portrait, everything now properly scales, and adjusts:&lt;/p&gt;
+&lt;img alt="" src="/images/conv_responsive.png" style="width: 324px; height: 576px;" /&gt;
+&lt;p&gt;Some other improvements related to the chat window are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Improved 'bottom pinning' on incoming messages&lt;/li&gt;
+&lt;li&gt;Support key combination shift+enter to introduce a newline whilst 'auto-send on ENTER' is enabled&lt;/li&gt;
+&lt;li&gt;Set focus directly after sending a message&lt;/li&gt;
+&lt;li&gt;Optional shader for chat bubble backgrounds, similar to a well-known chat application&lt;/li&gt;
+&lt;li&gt;Optional shader for the background: matrix falling rain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="" src="/images/conv_matrix.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="slim-mode"&gt;
+&lt;h4&gt;Slim mode&lt;/h4&gt;
+&lt;p&gt;Conversations is designed to run on low-powered devices, with possibly old(er) hardware. As such,
+conversations is written in C++, and leverages various tricks to keep memory usage low, and performance fast.&lt;/p&gt;
+&lt;p&gt;While the regular QML interface is already minimal in terms of resource usage, we have introduced 'slim'
+mode for a minimalistic, alternative QtWidgets based interface. This can be enabled in the settings.&lt;/p&gt;
+&lt;p&gt;Since Conversation's core logic was already separate from presentation, supporting this alternative interface
+required minimal changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="attachments"&gt;
+&lt;h4&gt;Attachments&lt;/h4&gt;
+&lt;p&gt;We now parse incoming and outgoing links, and render these links depending on their
+content type. In the case of XMPP, when someone sends a picture - this is generally just a
+link to a &lt;tt class="docutils literal"&gt;.jpg&lt;/tt&gt;. Conversations now renders them inline.&lt;/p&gt;
+&lt;p&gt;Additionally there is also an image viewer that supports gestures like panning,
+and zooming to further inspect incoming media.&lt;/p&gt;
+&lt;p&gt;By default, this feature is off for privacy reasons (as to prevent auto-visiting
+weblinks sent by a counterparty), but can
+be turned on in the settings.&lt;/p&gt;
+&lt;img alt="" src="/images/conv_attachment2.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="address-book-integration"&gt;
+&lt;h4&gt;Address book integration&lt;/h4&gt;
+&lt;p&gt;Our initial address book integration introduced features like avatars and
+display names. We've now expanded this to also support 'master contacts'.&lt;/p&gt;
+&lt;p&gt;Master contacts unify contacts from multiple sources such as XMPP, Matrix, and
+SMS into a single contact.&lt;/p&gt;
+&lt;p&gt;By keeping contact management (osso-abook) and messaging (Conversations)
+separate, Maemo ensures that the address book integrates across the entire
+system. This allows applications to share a consistent, unified view of contacts
+while keeping the messaging layer focused on communication.&lt;/p&gt;
+&lt;p&gt;Additionally, the code responsible for interacting with the address book has
+seen major improvements, resulting in better performance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="channel-member-list"&gt;
+&lt;h4&gt;Channel member list&lt;/h4&gt;
+&lt;p&gt;Groupchats now expose a memberlist, from which you can start a private
+conversation with a contact.&lt;/p&gt;
+&lt;img alt="" src="/images/conv_memberlist.png" style="width: 324px; height: 576px;" /&gt;
+&lt;p&gt;Since the memberlist could be quite long, it has the ability to filter for
+specific names.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt5"&gt;
+&lt;h3&gt;Qt5&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;Sander&lt;/tt&gt; has made it so that the Hildon Input Method (HIM) now works well in
+Qt, which means that devices without keyboard have access to a usable virtual
+keyboard. This work can be found in &lt;a class="reference external" href="https://git.maemo.org/leste/qt-input-maemo"&gt;leste/qt-input-maemo&lt;/a&gt; and is very exciting.&lt;/p&gt;
+&lt;p&gt;Additionally, the qt menu is now always shown properly (see &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/563"&gt;issue #563&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt6-platform-plugins"&gt;
+&lt;h3&gt;Qt6 platform plugins&lt;/h3&gt;
+&lt;p&gt;Leste has various Qt plugins to make Qt applications integrate with the
+operating system. These change the look, and behavior of Qt applications, and
+make them more suitable for e.g. touchscreen devices.&lt;/p&gt;
+&lt;p&gt;Qt6 is the new Qt version, so the various plugins needed a migration to this new
+version.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Each had their qmake converted to CMake, in order for better integration with existing IDEs&lt;/li&gt;
+&lt;li&gt;Each are now separate repositories to make development more focussed, and accessible&lt;/li&gt;
+&lt;li&gt;Each now have a Qt GUI example application - handy for testing any changes made to the plugin in question&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are happy to report Qt6 applications now also integrate into Maemo, just like
+our Qt5 applications do.&lt;/p&gt;
+&lt;div class="section" id="qt6-input-maemo"&gt;
+&lt;h4&gt;qt6-input-maemo&lt;/h4&gt;
+&lt;p&gt;This the keyboard integration, including the virtual keyboard. Since our Qt5
+version was already using modern Qt (having been ported from Qt4 only recently),
+minimal changes where needed to get this working on Qt6, see &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-input-maemo"&gt;qt6-input-maemo&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt6-qpa-maemo"&gt;
+&lt;h4&gt;qt6-qpa-maemo&lt;/h4&gt;
+&lt;p&gt;This plugin is responsible for integrating with xcb/x11, and offers glx (opengl)
+and egl (opengles) backends for hardware acceleration. It also deals with things
+like drag &amp;amp; drop, and clipboard. Porting this was somewhat challenging due to Qt
+plugin infrastructure changes, as well as debugging hardware acceleration on the
+various devices we support, see &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-qpa-maemo/"&gt;qt6-qpa-maemo&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt6-maemo-widgets"&gt;
+&lt;h4&gt;qt6-maemo-widgets&lt;/h4&gt;
+&lt;p&gt;This plugin provides additional Maemo components (widgets) for Qt, like
+&lt;cite&gt;QMaemo5InformationBox&lt;/cite&gt;, &lt;cite&gt;QMaemo5DatePickSelector&lt;/cite&gt;, see &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets"&gt;qt6-maemo-widgets&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Previously part of the plugin, this is now a shared library that produces a
+pkgconfig, and CMake config for other Qt apps to consume.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt6-style-maemo"&gt;
+&lt;h4&gt;qt6-style-maemo&lt;/h4&gt;
+&lt;p&gt;This plugin deals with how Qt applications look. For example, when this plugin
+is active, a &lt;cite&gt;QButton&lt;/cite&gt; is replaced by a GTK button at runtime. It does so by
+painting GTK widgets into Qt widgets. This plugin also handles spacing, size
+hints, and color palettes. Due to Qt plugin infrastructure changes, this was
+somewhat time consuming to migrate, see &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/"&gt;qt6-style-maemo&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sphone"&gt;
+&lt;h3&gt;sphone&lt;/h3&gt;
+&lt;p&gt;Our dialer software has also seen some improvements:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The default ringtones are now ogg files (&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/767"&gt;issue #767&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;There is a more clear indication when a call has ended (&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/727"&gt;issue #727&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="osso-xterm"&gt;
+&lt;h3&gt;osso-xterm&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;thp&lt;/tt&gt; contributed a bunch of changes to the terminal application:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm/pulls/5"&gt;osso-xterm/pulls/5&lt;/a&gt; tidies up
+the preference UI. As mentioned in the pull request:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Preview prominently visible at the top&lt;/li&gt;
+&lt;li&gt;Font selection hidden behind a button/dialog&lt;/li&gt;
+&lt;li&gt;Color scheme presets (Black-on-white, White-on-black, ...)&lt;/li&gt;
+&lt;li&gt;Custom color scheme with working preview buttons&lt;/li&gt;
+&lt;li&gt;Use color picker from Hildon Extras&lt;/li&gt;
+&lt;li&gt;Remove &amp;quot;Reverse&amp;quot; option (it just swaps fg/bg color)&lt;/li&gt;
+&lt;li&gt;Make scrollback a picker instead of a text field&lt;/li&gt;
+&lt;li&gt;Make it clearer what the hardware keys option does&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm/pulls/6"&gt;osso-xterm/pulls/6&lt;/a&gt; removes some obsolete code and &lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm/pulls/7shlibdepsusage"&gt;osso-xterm/pulls/7&lt;/a&gt; fixes a typo in the debian control file.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm/pulls/8"&gt;osso-xterm/pulls/8&lt;/a&gt;
+re-organises the toolbar buttons and moves the fullscreen button all the way to
+the right, which is more consistent with other Maemo applications.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm/pulls/9"&gt;osso-xterm/pulls/9&lt;/a&gt; fixes
+behaviour where menu buttons would sometimes move around, by placing the &amp;quot;Copy&amp;quot;
+and &amp;quot;Paste&amp;quot; buttons after the &amp;quot;Reset&amp;quot; and &amp;quot;Reset and Clear&amp;quot; buttons.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="connui-cellular"&gt;
+&lt;h3&gt;connui-cellular&lt;/h3&gt;
+&lt;p&gt;We have made it such that the icons for 2.5G and 3.5G now show up correctly, see &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/745"&gt;issue 745&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste/connui-cellular/pulls/3"&gt;connui-cellular/pulls/3&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hildon-input-method"&gt;
+&lt;h3&gt;hildon input method&lt;/h3&gt;
+&lt;p&gt;User &lt;tt class="docutils literal"&gt;thp&lt;/tt&gt; has improving the settings for the hildon input method in
+&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-input-method-plugins/pulls/5"&gt;hildon-input-method-plugins/pulls/5&lt;/a&gt; by making it
+possible to configure the hardware key long press action: so that one can either
+have keys repeat or change the key to the special symbol of said key.&lt;/p&gt;
+&lt;div class="section" id="theming-for-programs-started-over-ssh"&gt;
+&lt;h4&gt;Theming for programs started over ssh&lt;/h4&gt;
+&lt;p&gt;In &lt;a class="reference external" href="https://git.maemo.org/leste/osso-af-startup/issues/3"&gt;osso-af-startup/issues/3&lt;/a&gt; user &lt;tt class="docutils literal"&gt;thp&lt;/tt&gt; documented
+why the theming did not work well when starting programs over &lt;tt class="docutils literal"&gt;ssh&lt;/tt&gt;, and this
+has now been fixed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hardware-drivers"&gt;
+&lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;The Nokia N900 has seen a fair number of changes:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;the proximity sensor is now exposed over IIO, see &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/134"&gt;issue #134&lt;/a&gt; and
+&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-meta-core/pulls/1"&gt;hildon-meta-core/pulls/1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The headset microphone has been added in the HiFi profile, see
+&lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/51"&gt;leste-config/pulls/51&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The module blacklist has been updated, see &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/58"&gt;leste-config/pulls/58&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The wifi mac address is now properly read from libcal, see
+&lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/56"&gt;leste-config/pulls/56&lt;/a&gt;
+and &lt;a class="reference external" href="https://git.maemo.org/leste/wl1251-cal/pulls/1"&gt;wl1251-cal/pulls/1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="motorola-droid-4"&gt;
+&lt;h3&gt;Motorola Droid 4&lt;/h3&gt;
+&lt;p&gt;The mapphones (Motorola Droid 4, Motorola Bionic, Motorola Droid RAZR, Motorola
+Droid 3, Motorola Atrix 2, various xoom/xyboard tablets), received significant
+improvements. In particular, the cellular stack (in the form of ofono) has seen
+various improvements, improving the stability of the cellular stack and reducing
+the amount of custom code by &lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/ofono/commit/058db24b7201ce7f087d5c4ea38937d28d52c999"&gt;migrating to QMI from custom AT commands&lt;/a&gt;
+and moving to ofono 2.12.&lt;/p&gt;
+&lt;p&gt;In &lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/droid4-linux/pulls/12"&gt;droid4-linux/pulls/12&lt;/a&gt; and
+&lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/droid4-linux/pulls/13"&gt;droid4-linux/pulls/13&lt;/a&gt; &lt;tt class="docutils literal"&gt;uvos&lt;/tt&gt;
+and &lt;tt class="docutils literal"&gt;sicelo&lt;/tt&gt; improved the bq2415x charger event reporting from the kernel to
+userspace.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pinephone"&gt;
+&lt;h3&gt;Pinephone&lt;/h3&gt;
+&lt;p&gt;Display brightness now correctly adjusts according to the user
+setting. Previously, devices with large ranges of brightness values (like the
+Pinephone) did not quite work well with our existing brightness adjusting logic.&lt;/p&gt;
+&lt;p&gt;We're also working on updating our pinephone kernel to a more recent version
+with better support, performance and power management user &lt;tt class="docutils literal"&gt;norayr&lt;/tt&gt; has been
+working on this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mz617-tablet"&gt;
+&lt;h3&gt;MZ617 tablet&lt;/h3&gt;
+&lt;p&gt;The Motorola MZ617 tablet also saw improvements to its audio in &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/54"&gt;leste-config/pulls/54&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/55"&gt;leste-config/pulls/55&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="extras"&gt;
+&lt;h2&gt;Extras&lt;/h2&gt;
+&lt;div class="section" id="hamsterfiler"&gt;
+&lt;h3&gt;hamsterfiler&lt;/h3&gt;
+&lt;p&gt;Hamsterfiler, a file browser, now adjusts to varying resolutions, making the
+interface more responsive.&lt;/p&gt;
+&lt;img alt="" src="/images/hamsterfiler.png" style="width: 324px; height: 576px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="crazyparking"&gt;
+&lt;h3&gt;crazyparking&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;thp&lt;/tt&gt; helped us bring crazyparking to Leste - a top-down puzzle game that challenges
+players to navigate interesting parking scenarios.&lt;/p&gt;
+&lt;img alt="" src="/images/parking.png" style="width: 576px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="forgejo"&gt;
+&lt;h2&gt;Forgejo&lt;/h2&gt;
+&lt;p&gt;We &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html"&gt;migrated away from Github to Forgejo&lt;/a&gt; and now run our own Git forge on
+&lt;tt class="docutils literal"&gt;git.maemo.org&lt;/tt&gt;. This in turn has made it easier for us customise our Git
+forge.&lt;/p&gt;
+&lt;div class="section" id="code-search"&gt;
+&lt;h3&gt;Code search&lt;/h3&gt;
+&lt;p&gt;Full text code search is enabled on &lt;tt class="docutils literal"&gt;git.maemo.org&lt;/tt&gt;, which makes it very easy to
+quickly search our entire codebase.&lt;/p&gt;
+&lt;p&gt;We have been working with the Forgejo developers to add the option to enable and
+disable the code indexer per repository, as we want to avoid indexing our
+various Linux repositories, you can track this work on &lt;a class="reference external" href="https://codeberg.org/forgejo/forgejo/pulls/8106"&gt;forgejo/pulls/8106&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="translations-with-weblate"&gt;
+&lt;h3&gt;Translations with weblate&lt;/h3&gt;
+&lt;p&gt;Pushing updates from weblate to our &lt;tt class="docutils literal"&gt;l10n&lt;/tt&gt; repositories was broken after the
+migration from Forgejo to Github - this has now been resolved with translations
+being pushed directly to our &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;git.maemo.org/leste-translations&lt;/span&gt;&lt;/tt&gt; repositories.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="continous-integration"&gt;
+&lt;h3&gt;Continous integration&lt;/h3&gt;
+&lt;p&gt;Historically Maemo Leste has used Jenkins for all its package building, which
+has been a bit complex to manage permissions on and add packages to. So we have
+been working on adding a CI system using Forgejo which allows us to
+automatically.  The Forgejo CI system is similar to 'Github Actions', and we
+currently:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;build a package for every commit that gets pushed;&lt;/li&gt;
+&lt;li&gt;deploy extras packages to the &lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;extras-testing&lt;/a&gt; repository on Forgejo. This
+repository is present on the devices but disabled by default.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As a result, community members can now push out updates of their own software
+more easily - and even automatically to the &lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;extras-testing&lt;/a&gt; repository. The
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;extras-testing&lt;/a&gt; repository is available in the Hildon Application Manager, but
+disabled by default.&lt;/p&gt;
+&lt;p&gt;We have set up runners for &lt;tt class="docutils literal"&gt;amd64&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;armhf&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;arm64&lt;/tt&gt;, so these runners
+are all available to the CI/CD. Below is an example page of actions ran on the
+&lt;tt class="docutils literal"&gt;maemo/daedalus&lt;/tt&gt; branch, which will build packages automatically for the
+daedalus testing repository.&lt;/p&gt;
+&lt;img alt="" src="/images/actions.png" /&gt;
+&lt;p&gt;The screenshot below shows the build status of various packages on the &lt;a class="reference external" href="https://git.maemo.org/org/leste-extras/dashboard"&gt;Forgejo
+extras dashboard&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/issue-897-screenshot.png" /&gt;
+&lt;div class="section" id="workflows"&gt;
+&lt;h4&gt;Workflows&lt;/h4&gt;
+&lt;p&gt;The CI mentioned just above is powered by our newly developed
+&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/forgejo-workflows"&gt;leste-cicd/forgejo-workflows&lt;/a&gt; repository, which
+contains two actions:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/forgejo-workflows/src/branch/master/.forgejo/workflows/maemo-entry.yml"&gt;maemo-entry.yml&lt;/a&gt;: a resuable action which builds a package for each
+architecture and uploads them if they are in &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;leste-extras&lt;/span&gt;&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/forgejo-workflows/src/branch/master/maemo-build/action.yml"&gt;maemo-build/action.yml&lt;/a&gt;: composite action that builds a package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The uploading of the packages into our Forgejo extras debian registry is done
+using our custom &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/include-artifact"&gt;leste-cicd/include-artifact&lt;/a&gt; action.&lt;/p&gt;
+&lt;p&gt;Further details on the extras workflow can be found in &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/798"&gt;issue #798&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="container-base-images"&gt;
+&lt;h4&gt;Container base images&lt;/h4&gt;
+&lt;p&gt;Forgejo actions typically suggest using a specific runner, which come
+preinstalled with Node.js and a bunch of other programs. We opted instead to build
+our own base devuan images with our &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/devuan-base-containers"&gt;leste-cicd/devuan-base-containers&lt;/a&gt; repository. We've
+built images for &lt;tt class="docutils literal"&gt;chimaera&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;daedalus&lt;/tt&gt; and the freshly released &lt;tt class="docutils literal"&gt;excalibur&lt;/tt&gt;
+release.&lt;/p&gt;
+&lt;img alt="" src="/images/leste-cicd-container-registry.png" /&gt;
+&lt;p&gt;Certain Forgejo actions normally require Node.js, but we decided not to leverage
+that and instead using a Forgejo action written in shell, see
+&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/checkout-action-nojs"&gt;leste-cicd/checkout-action-nojs&lt;/a&gt; (forked
+from &lt;a class="reference external" href="https://github.com/taiki-e/checkout-action"&gt;taiki-e/checkout-action&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We created a custom action that uploads artifacts without requiring Node.js in
+this repository: &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/upload-artifact-nojs"&gt;leste-cicd/upload-artifact-nojs&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="future-work"&gt;
+&lt;h4&gt;Future work&lt;/h4&gt;
+&lt;p&gt;We will continue to develop our CI/CD system to make it easier to contribute to
+Maemo Leste. In particular, we're looking to:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ensure that our CI/CD deals better with packages that are meant only to be
+built for a specific architecture&lt;/li&gt;
+&lt;li&gt;contribute to Forgejo to make it easier for other projects to set up similar
+CI/CD setups&lt;/li&gt;
+&lt;li&gt;ensure our CI/CD build-on-commit coverage extends to all our core packages&lt;/li&gt;
+&lt;li&gt;we can build device images in our CI/CD as opposed to in Jenkins by leveraging
+debos&lt;/li&gt;
+&lt;li&gt;Provide better integration with our Weblate translation setup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bugtracker-issues"&gt;
+&lt;h3&gt;Bugtracker / issues&lt;/h3&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;Sander&lt;/tt&gt; utilised a &lt;a class="reference external" href="https://git.maemo.org/sanderfoobar/LesteIssueLabels#mass-label-leste-bugtracker-issues"&gt;local LLM&lt;/a&gt;
+to tag all of the issues in our bugtracker.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="website-redesign"&gt;
+&lt;h2&gt;Website redesign&lt;/h2&gt;
+&lt;p&gt;Our website has a fresh new look. The homepage is now clean, concise, and
+clearly communicates our mission: provide a FOSS Linux distribution for mobile
+devices.&lt;/p&gt;
+&lt;p&gt;We've kept it lightweight, no fancy CMS, no cookies, just statically generated
+content.&lt;/p&gt;
+&lt;p&gt;See &lt;a class="reference external" href="https://git.maemo.org/leste/maemo-leste.github.io/pulls/23"&gt;maemo-leste.github.io/pulls/23&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="image-building"&gt;
+&lt;h2&gt;Image building&lt;/h2&gt;
+&lt;div class="section" id="debos"&gt;
+&lt;h3&gt;Debos&lt;/h3&gt;
+&lt;p&gt;We're looking to modernise our image building process to make it easier to port
+Maemo Leste to other devices. &lt;tt class="docutils literal"&gt;erebion&lt;/tt&gt; has made a start on utiling the debos
+recipies as used to Mobian and adopting them for Maemo. We've been building on
+his work and almost have bootable images for the Droid 4, which would be a great
+milestone. The current changeset can be found in &lt;a class="reference external" href="https://git.maemo.org/MerlijnWajer/mobian-recipes"&gt;MerlijnWajer/mobian-recipes&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="raspberry-pi-images"&gt;
+&lt;h3&gt;Raspberry Pi images&lt;/h3&gt;
+&lt;p&gt;We're working in getting the Raspberry Pi images to build again. Currently minor
+manual modifications are required to get the latest raspberry images to boot, as
+documented in &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/758"&gt;issue #758&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-s-next"&gt;
+&lt;h2&gt;What's next&lt;/h2&gt;
+&lt;p&gt;Devuan recently released their version of Debian Trixie coined &lt;a class="reference external" href="https://www.devuan.org/os/announce/excalibur-release-announce-2025-11-02"&gt;Excalibur&lt;/a&gt; and
+we are looking to rebase Maemo Leste onto this release soon. Moving to Excalibur
+will probably mean we will move to Qt6 and towards Pipewire - away from
+Pulseaudio.&lt;/p&gt;
+&lt;p&gt;Adding support for more devices is something we're also aiming to do soon - both
+in terms of developer single board computers (like the Raspberry Pi and Olimex
+OLinuXino devices) as well as actual phones and tablets. The developer single
+board computers will make it easier for folks to develop and contribute (phones
+do not always make for nice development devices)&lt;/p&gt;
+&lt;p&gt;We're also looking to seriously improve our developer documentation - how to
+port and/or contribute packages, how to port Maemo Leste to new devices, how to
+debug problems and so forth.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join our effort!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="daedalus"></category><category term="forgejo"></category></entry><entry><title>A deep dive into building Maemo Leste packages on Forgejo</title><link href="https://maemo-leste.github.io/a-deep-dive-into-building-maemo-leste-packages-on-forgejo.html" rel="alternate"></link><published>2025-07-29T00:00:00+02:00</published><updated>2025-07-29T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-07-29:/a-deep-dive-into-building-maemo-leste-packages-on-forgejo.html</id><summary type="html">&lt;p&gt;labels = for arch and default images
+jobs.*.container.image = for chimaera/daedalus/excalibur, etc&lt;/p&gt;
+&lt;p&gt;misschien is er met strategy en matrix nog iets te doen&lt;/p&gt;
+&lt;p&gt;01:35 &amp;lt;Wizzup&amp;gt; ik denk dat we idd wel onze eigen docker registry willen uiteindelijk
+01:40 &amp;lt;Wizzup&amp;gt; om een paar redenen:
+01:41 &amp;lt;Wizzup …&lt;/p&gt;</summary><content type="html">&lt;p&gt;labels = for arch and default images
+jobs.*.container.image = for chimaera/daedalus/excalibur, etc&lt;/p&gt;
+&lt;p&gt;misschien is er met strategy en matrix nog iets te doen&lt;/p&gt;
+&lt;p&gt;01:35 &amp;lt;Wizzup&amp;gt; ik denk dat we idd wel onze eigen docker registry willen uiteindelijk
+01:40 &amp;lt;Wizzup&amp;gt; om een paar redenen:
+01:41 &amp;lt;Wizzup&amp;gt; we willen armhf, arm64 en amd64 images die allemaal hetzelfde hebben
+01:41 &amp;lt;Wizzup&amp;gt; we willen images die onze repos er ook in hebben
+01:41 &amp;lt;Wizzup&amp;gt; we willen images die ook onze verschillende cpu flags en andere flags aan hebben&lt;/p&gt;
+&lt;p&gt;git clone &lt;a class="reference external" href="https://code.forgejo.org/forgejo/runner"&gt;https://code.forgejo.org/forgejo/runner&lt;/a&gt;
+GOOS=linux GOARCH=arm make&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Idee:&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;Forgejo experimental repository, die ook onze stable en devel repository pulled,
+en dan kunnen we met een tooltje forgejo pkgs importeren in onze main repo.
+Moeten we alleen de versie selection fixen, maar dat kan best redelijk
+gedaan worden volgens mij.&lt;/p&gt;
+&lt;p class="last"&gt;&lt;a class="reference external" href="https://forgejo.org/docs/v1.20/user/packages/debian/"&gt;https://forgejo.org/docs/v1.20/user/packages/debian/&lt;/a&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages"&gt;https://git.maemo.org/leste-cicd/-/packages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Docker base images:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.devuan.org/paddy-hack/container-images"&gt;https://git.devuan.org/paddy-hack/container-images&lt;/a&gt;
+&lt;a class="reference external" href="https://docs.docker.com/build/building/base-images/#create-a-full-image-using-tar"&gt;https://docs.docker.com/build/building/base-images/#create-a-full-image-using-tar&lt;/a&gt;
+&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/container/"&gt;https://forgejo.org/docs/latest/user/packages/container/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SEE &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/devuan-base-containers"&gt;https://git.maemo.org/leste-cicd/devuan-base-containers&lt;/a&gt; FOR DEBOOTSTRAP AND DOCKER&lt;/p&gt;
+&lt;p&gt;RESULT: &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages"&gt;https://git.maemo.org/leste-cicd/-/packages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;En dan hebben we een base-base, die kunnen we dan aanpassen met onze
+changes in een Dockerfile:
+* dpkg-buildflags
+* onze repos
+* onze repo key
+* etc&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;en die dan gebruiken voor bouwen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Secrets management:&lt;/dt&gt;
+&lt;dd&gt;&lt;a class="reference external" href="https://forgejo.org/docs/v1.21/user/actions/#secrets"&gt;https://forgejo.org/docs/v1.21/user/actions/#secrets&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry"&gt;https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry&lt;/a&gt;
+&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry"&gt;https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry&lt;/a&gt;&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Forgejo issues:&lt;/dt&gt;
+&lt;dd&gt;&lt;a class="reference external" href="https://codeberg.org/forgejo/forgejo/issues/8780"&gt;https://codeberg.org/forgejo/forgejo/issues/8780&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Does not need node (yay)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/taiki-e/checkout-action"&gt;https://github.com/taiki-e/checkout-action&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/MerlijnWajer/upload-artifact/"&gt;https://git.maemo.org/MerlijnWajer/upload-artifact/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages/container/daedalus-maemo-amd64/latest"&gt;https://git.maemo.org/leste-cicd/-/packages/container/daedalus-maemo-amd64/latest&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;https://git.maemo.org/leste-extras/-/packages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://wizzup.org/protected-branches.png"&gt;https://wizzup.org/protected-branches.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/org/leste-extras/teams/extras-team"&gt;https://git.maemo.org/org/leste-extras/teams/extras-team&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Template repos
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/template"&gt;https://git.maemo.org/leste-extras/template&lt;/a&gt;&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;TODO:&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;lowered polling rates in the runner&lt;/p&gt;
+&lt;p class="last"&gt;Maybe re-enable cache when we have versioned our composite actions&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+</content><category term="news"></category><category term="forgejo"></category><category term="maemo"></category><category term="leste"></category><category term="build"></category><category term="integration"></category></entry><entry><title>Maemo Leste - Forgejo migration</title><link href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html" rel="alternate"></link><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-06-22:/maemo-leste-forgejo-migration.html</id><summary type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
 information to share: we have moved all of our repositories from Github to
 Forgejo, self hosted on &lt;a class="reference external" href="https://git.maemo.org"&gt;https://git.maemo.org&lt;/a&gt;. Our website
 (&lt;a class="reference external" href="https://maemo-leste.github.io"&gt;https://maemo-leste.github.io&lt;/a&gt;) will remain hosted on Github for now.&lt;/p&gt;
