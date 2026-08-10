@@ -1,5 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2025-11-08T23:00:00+01:00</updated><entry><title>Maemo Leste - 2025 Daedalus release</title><link href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html" rel="alternate"></link><published>2025-11-08T23:00:00+01:00</published><updated>2025-11-08T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-11-08:/maemo-leste-2025-daedalus-release.html</id><summary type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste - news</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/news.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2026-04-01T17:28:00+02:00</updated><entry><title>Maemo Leste - OS Image Generation with Forgejo CI</title><link href="https://maemo-leste.github.io/maemo-leste-os-image-generation-with-forgejo-ci.html" rel="alternate"></link><published>2026-04-01T17:28:00+02:00</published><updated>2026-04-01T17:28:00+02:00</updated><author><name>Sander Ferdinand</name></author><id>tag:maemo-leste.github.io,2026-04-01:/maemo-leste-os-image-generation-with-forgejo-ci.html</id><summary type="html">&lt;p&gt;Since adopting Forgejo for development, much of our workflow has shifted toward a more automated approach. This transition has been covered in earlier posts:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html"&gt;https://maemo-leste.github.io/maemo-leste-forgejo-migration.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have now moved OS image generation into Forgejo as well, using a Debian …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Since adopting Forgejo for development, much of our workflow has shifted toward a more automated approach. This transition has been covered in earlier posts:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html"&gt;https://maemo-leste.github.io/maemo-leste-forgejo-migration.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We have now moved OS image generation into Forgejo as well, using a Debian tool called &lt;a class="reference external" href="https://github.com/go-debos/debos"&gt;debos&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Previously, image generation relied on a collection of &lt;a class="reference external" href="https://git.maemo.org/leste/image-builder"&gt;Zsh scripts&lt;/a&gt;. While functional, this setup could be improved upon, as introducing new devices, or modifying existing images, or producing images was more time consuming than neccesary.&lt;/p&gt;
+&lt;div class="section" id="debos-1"&gt;
+&lt;h2&gt;Debos&lt;/h2&gt;
+&lt;p&gt;In favor of maintainability, we investigated a tool called debos for creating custom Debian-based OS images declaratively using YAML. In our case, each device (or device family) could maintain its own set of YAML build recipes. After some experimentation, we concluded that debos is flexible, allows for clearer organization of device-specific files, and thus easier customization of our images.&lt;/p&gt;
+&lt;p&gt;Under the hood, our use of debos summarized:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;debos starts a virtual machine using QEMU&lt;/li&gt;
+&lt;li&gt;debos handles the chroot, and uses &lt;a class="reference external" href="https://wiki.debian.org/Debootstrap"&gt;debootstrap&lt;/a&gt; for base filesystem creation&lt;/li&gt;
+&lt;li&gt;debos installs packages, configuration files, and applies overlays&lt;/li&gt;
+&lt;li&gt;debos produces an &lt;tt class="docutils literal"&gt;.img&lt;/tt&gt;, ready to be &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;'d&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To re-iterate; this is all defined in YAML.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="forgejo-ci"&gt;
+&lt;h2&gt;Forgejo CI&lt;/h2&gt;
+&lt;p&gt;After migrating a few devices to this new debos setup, we integrated debos into Forgejo's CI/CD pipelines. Previously, generating an image for a single device could take up to 3 hours. With the new build infrastructure, we are now able to create images for 13 devices in 2 hours total, whilst not requiring any action on our end.&lt;/p&gt;
+&lt;p&gt;Build-time improved because the build process was restructured into two stages:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Root filesystem (rootfs) generation&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;built once, and reused across multiple devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;dl class="first docutils"&gt;
+&lt;dt&gt;Device-specific image (imagefs) generation&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last"&gt;
+&lt;li&gt;layer additional packages and configuration on top of this shared base&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This ultimately produces build artifacts that can be downloaded through the Forgejo web-interface.&lt;/p&gt;
+&lt;p&gt;In addition, it is a scheduled task - images are generated every week.&lt;/p&gt;
+&lt;img alt="" src="/images/debos_output.jpg" style="width: 720px; height: 443px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="image-customization"&gt;
+&lt;h2&gt;Image customization&lt;/h2&gt;
+&lt;p&gt;Debos provides the flexibility to easily support all kinds of device-specific needs. For example, we have build recipes dedicated to disk layouts (MBR/GPT) with the option to configure for various partition setups: formats, sizes, offsets, and also easily assigning mount flags to those partitions (e.g. &lt;tt class="docutils literal"&gt;noatime&lt;/tt&gt;).&lt;/p&gt;
+&lt;p&gt;This means that supporting future devices has now become easier, as e.g. disk needs are defined through debos options (&lt;tt class="docutils literal"&gt;bootstart=4MiB&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;partitiontable=mbr&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;rootstart=128MiB&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;partitionbootformat=ext2&lt;/tt&gt;).&lt;/p&gt;
+&lt;p&gt;The customization on a per-device basis that may be needed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Some devices require specific packages to be present (drivers, configuration)&lt;/li&gt;
+&lt;li&gt;Some devices require a specific kernel (still mainline, but we may require extra kernel config options, depending on the device)&lt;/li&gt;
+&lt;li&gt;Some devices require u-boot to be inserted at the start of the image&lt;/li&gt;
+&lt;li&gt;Some devices require a specific disk layout&lt;/li&gt;
+&lt;li&gt;Some devices require certain DTBs (device tree blobs) to be loaded during boot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="current-devices"&gt;
+&lt;h2&gt;Current devices&lt;/h2&gt;
+&lt;p&gt;As for the devices themselves, we've added 3 new Olimex devices, fixed others (those that did not see a release in a while), and improved existing devices (Raspberry Pi / Pinephone).&lt;/p&gt;
+&lt;p&gt;As of writing, Forgejo generates images for:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Motorola Droid4&lt;/li&gt;
+&lt;li&gt;Motorola Droid3&lt;/li&gt;
+&lt;li&gt;Motorola Bionic&lt;/li&gt;
+&lt;li&gt;Motorola XT910&lt;/li&gt;
+&lt;li&gt;Motorola XT912&lt;/li&gt;
+&lt;li&gt;Motorola MZ617&lt;/li&gt;
+&lt;li&gt;Nokia N900&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 3/4/5&lt;/li&gt;
+&lt;li&gt;Olimex A64-OLinuXino&lt;/li&gt;
+&lt;li&gt;Olimex A64-OLinuXino w/ eMMC&lt;/li&gt;
+&lt;li&gt;Olimex A20-OLinuXino-LIME2&lt;/li&gt;
+&lt;li&gt;Pinephone&lt;/li&gt;
+&lt;li&gt;Development VM (x86_64)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="additional-devices"&gt;
+&lt;h2&gt;Additional devices&lt;/h2&gt;
+&lt;p&gt;The build system has additional debos build configuration(s) in-place for 30+ more devices (e.g. Rockchip based devices), however, we do not generate images for them as it may give the impression these are well-supported. That said, if you have a device that is not supported, feel free to ask on our &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues"&gt;bugtracker&lt;/a&gt; (or IRC channel) for details on how to get started - perhaps we already have a configuration for your device.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="repository"&gt;
+&lt;h2&gt;Repository&lt;/h2&gt;
+&lt;p&gt;The repository exists over at &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/debos-leste"&gt;https://git.maemo.org/leste-cicd/debos-leste&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Within this repository, you will find &lt;tt class="docutils literal"&gt;build.sh&lt;/tt&gt;, which serves as an user-friendly utility for invoking debos. Use this bash script to generate an image locally.&lt;/p&gt;
+&lt;p&gt;Forgejo's CI does not use &lt;tt class="docutils literal"&gt;build.sh&lt;/tt&gt; - instead it uses debos directly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="future-work"&gt;
+&lt;h2&gt;Future work&lt;/h2&gt;
+&lt;p&gt;We are looking into &lt;a class="reference external" href="https://github.com/libhybris/libhybris"&gt;libhybris&lt;/a&gt; as a way to expand Maemo Leste support to additional devices. Libhybris enables running a Linux userspace on top of certain Android-based hardware by reusing existing Android drivers. Further details will be covered in future blog posts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="interested"&gt;
+&lt;h2&gt;Interested?&lt;/h2&gt;
+&lt;p&gt;If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.&lt;/p&gt;
+&lt;p&gt;Please also join our &lt;a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste"&gt;mailing list&lt;/a&gt; to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you like our work and want to see it continue, join our effort!&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="news"></category><category term="excalibur"></category><category term="forgejo"></category></entry><entry><title>Maemo Leste - 2025 Daedalus release</title><link href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html" rel="alternate"></link><published>2025-11-08T23:00:00+01:00</published><updated>2025-11-08T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-11-08:/maemo-leste-2025-daedalus-release.html</id><summary type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
 the meantime. We've:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;released Maemo Leste for Devuan Daedalus (Debian Bookworm);&lt;/li&gt;
@@ -489,76 +595,7 @@ up to date, ask questions and/or help out. Another great way to get in touch is
 to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you like our work and want to see it continue, join our effort!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="news"></category><category term="daedalus"></category><category term="forgejo"></category></entry><entry><title>A deep dive into building Maemo Leste packages on Forgejo</title><link href="https://maemo-leste.github.io/a-deep-dive-into-building-maemo-leste-packages-on-forgejo.html" rel="alternate"></link><published>2025-07-29T00:00:00+02:00</published><updated>2025-07-29T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-07-29:/a-deep-dive-into-building-maemo-leste-packages-on-forgejo.html</id><summary type="html">&lt;p&gt;labels = for arch and default images
-jobs.*.container.image = for chimaera/daedalus/excalibur, etc&lt;/p&gt;
-&lt;p&gt;misschien is er met strategy en matrix nog iets te doen&lt;/p&gt;
-&lt;p&gt;01:35 &amp;lt;Wizzup&amp;gt; ik denk dat we idd wel onze eigen docker registry willen uiteindelijk
-01:40 &amp;lt;Wizzup&amp;gt; om een paar redenen:
-01:41 &amp;lt;Wizzup …&lt;/p&gt;</summary><content type="html">&lt;p&gt;labels = for arch and default images
-jobs.*.container.image = for chimaera/daedalus/excalibur, etc&lt;/p&gt;
-&lt;p&gt;misschien is er met strategy en matrix nog iets te doen&lt;/p&gt;
-&lt;p&gt;01:35 &amp;lt;Wizzup&amp;gt; ik denk dat we idd wel onze eigen docker registry willen uiteindelijk
-01:40 &amp;lt;Wizzup&amp;gt; om een paar redenen:
-01:41 &amp;lt;Wizzup&amp;gt; we willen armhf, arm64 en amd64 images die allemaal hetzelfde hebben
-01:41 &amp;lt;Wizzup&amp;gt; we willen images die onze repos er ook in hebben
-01:41 &amp;lt;Wizzup&amp;gt; we willen images die ook onze verschillende cpu flags en andere flags aan hebben&lt;/p&gt;
-&lt;p&gt;git clone &lt;a class="reference external" href="https://code.forgejo.org/forgejo/runner"&gt;https://code.forgejo.org/forgejo/runner&lt;/a&gt;
-GOOS=linux GOARCH=arm make&lt;/p&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;Idee:&lt;/dt&gt;
-&lt;dd&gt;&lt;p class="first"&gt;Forgejo experimental repository, die ook onze stable en devel repository pulled,
-en dan kunnen we met een tooltje forgejo pkgs importeren in onze main repo.
-Moeten we alleen de versie selection fixen, maar dat kan best redelijk
-gedaan worden volgens mij.&lt;/p&gt;
-&lt;p class="last"&gt;&lt;a class="reference external" href="https://forgejo.org/docs/v1.20/user/packages/debian/"&gt;https://forgejo.org/docs/v1.20/user/packages/debian/&lt;/a&gt;&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages"&gt;https://git.maemo.org/leste-cicd/-/packages&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Docker base images:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.devuan.org/paddy-hack/container-images"&gt;https://git.devuan.org/paddy-hack/container-images&lt;/a&gt;
-&lt;a class="reference external" href="https://docs.docker.com/build/building/base-images/#create-a-full-image-using-tar"&gt;https://docs.docker.com/build/building/base-images/#create-a-full-image-using-tar&lt;/a&gt;
-&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/container/"&gt;https://forgejo.org/docs/latest/user/packages/container/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;SEE &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/devuan-base-containers"&gt;https://git.maemo.org/leste-cicd/devuan-base-containers&lt;/a&gt; FOR DEBOOTSTRAP AND DOCKER&lt;/p&gt;
-&lt;p&gt;RESULT: &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages"&gt;https://git.maemo.org/leste-cicd/-/packages&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;En dan hebben we een base-base, die kunnen we dan aanpassen met onze
-changes in een Dockerfile:
-* dpkg-buildflags
-* onze repos
-* onze repo key
-* etc&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;en die dan gebruiken voor bouwen&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;Secrets management:&lt;/dt&gt;
-&lt;dd&gt;&lt;a class="reference external" href="https://forgejo.org/docs/v1.21/user/actions/#secrets"&gt;https://forgejo.org/docs/v1.21/user/actions/#secrets&lt;/a&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry"&gt;https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry&lt;/a&gt;
-&lt;a class="reference external" href="https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry"&gt;https://forgejo.org/docs/latest/user/packages/debian/#configuring-the-package-registry&lt;/a&gt;&lt;/p&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;Forgejo issues:&lt;/dt&gt;
-&lt;dd&gt;&lt;a class="reference external" href="https://codeberg.org/forgejo/forgejo/issues/8780"&gt;https://codeberg.org/forgejo/forgejo/issues/8780&lt;/a&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;Does not need node (yay)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/taiki-e/checkout-action"&gt;https://github.com/taiki-e/checkout-action&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/MerlijnWajer/upload-artifact/"&gt;https://git.maemo.org/MerlijnWajer/upload-artifact/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/-/packages/container/daedalus-maemo-amd64/latest"&gt;https://git.maemo.org/leste-cicd/-/packages/container/daedalus-maemo-amd64/latest&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;https://git.maemo.org/leste-extras/-/packages&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://wizzup.org/protected-branches.png"&gt;https://wizzup.org/protected-branches.png&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/org/leste-extras/teams/extras-team"&gt;https://git.maemo.org/org/leste-extras/teams/extras-team&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Template repos
-&lt;a class="reference external" href="https://git.maemo.org/leste-extras/template"&gt;https://git.maemo.org/leste-extras/template&lt;/a&gt;&lt;/p&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;TODO:&lt;/dt&gt;
-&lt;dd&gt;&lt;p class="first"&gt;lowered polling rates in the runner&lt;/p&gt;
-&lt;p class="last"&gt;Maybe re-enable cache when we have versioned our composite actions&lt;/p&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-</content><category term="news"></category><category term="forgejo"></category><category term="maemo"></category><category term="leste"></category><category term="build"></category><category term="integration"></category></entry><entry><title>Maemo Leste - Forgejo migration</title><link href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html" rel="alternate"></link><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-06-22:/maemo-leste-forgejo-migration.html</id><summary type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
+</content><category term="news"></category><category term="daedalus"></category><category term="forgejo"></category></entry><entry><title>Maemo Leste - Forgejo migration</title><link href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html" rel="alternate"></link><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-06-22:/maemo-leste-forgejo-migration.html</id><summary type="html">&lt;p&gt;With the next release of Maemo Leste imminent, we have some additional
 information to share: we have moved all of our repositories from Github to
 Forgejo, self hosted on &lt;a class="reference external" href="https://git.maemo.org"&gt;https://git.maemo.org&lt;/a&gt;. Our website
 (&lt;a class="reference external" href="https://maemo-leste.github.io"&gt;https://maemo-leste.github.io&lt;/a&gt;) will remain hosted on Github for now.&lt;/p&gt;
