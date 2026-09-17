@@ -1,0 +1,284 @@
+<!doctype html>
+<!--
+▄ •▄ ▄▄▄        ▄ •▄ ▄▄▄ .▄▄▄▄▄
+█▌▄▌▪▀▄ █·▪     █▌▄▌▪▀▄.▀·•██
+▐▀▀▄·▐▀▀▄  ▄█▀▄ ▐▀▀▄·▐▀▀▪▄ ▐█.▪
+▐█.█▌▐█•█▌▐█▌.▐▌▐█.█▌▐█▄▄▌ ▐█▌·
+·▀  ▀.▀  ▀ ▀█▄▀▪·▀  ▀ ▀▀▀  ▀▀▀
+-->
+<html lang="en" data-bs-theme="dark">
+<head>
+      <title>Maemo Leste - Maemo Leste - OS Image Generation with Forgejo CI</title>
+
+  <meta charset="utf-8" />
+  <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Cousine' media='all' />
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Inconsolata' media='all' />
+
+  <link rel="icon" type="image/x-icon" href="/theme/img/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel='stylesheet' href="https://maemo-leste.github.io/theme/css/pygment.css" media='all' />
+  <script src="https://maemo-leste.github.io/theme/js/jquery-1.11.2.min.js"></script>
+  <script src="https://maemo-leste.github.io/theme/js/jquery.color-2.1.2.min.js"></script>
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="/theme/css/maemo.css">
+  <script src="/theme/js/index.js"></script>
+
+
+
+
+        <meta name="tags" contents="excalibur" />
+        <meta name="tags" contents="forgejo" />
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="https://maemo-leste.github.io/">
+      <img src="/images/logo_small_w2.png" class="me-2" height="28" alt="Kroket Logo" loading="lazy"/>
+      <span style="margin-top:4px;">Maemo Leste</span>
+    </a>
+
+    <style>
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 46px;
+        text-decoration: none;
+      }
+    </style>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://maemo-leste.github.io/category/news.html">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/images/">Downloads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/pkgweb/">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://leste.maemo.org/">Wiki</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maedevu.maemo.org/images/">Download</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://maemo-leste.github.io/pages/screenshots.html">Screenshots</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid container-article-jumbo container-article-page-image jumbo">
+  <a id="header_href" href="#">
+  <div class="jumbotron jumbo-3 jumbotron-fluid pt-5 img-fluid" style="background-image: url(/images/d4table.jpg);">
+  </div>
+  </a>
+</div>
+
+<div class="container-fluid container-article pb-2">
+  <h2 id="header_title" class="display-6 pt-3 mb-1">Maemo Leste - OS Image Generation with Forgejo CI </h2>
+
+  <div class="mb-3 article_tags">
+      <a href="tag/excalibur.html">
+        <span class="badge badge-primary badge-tag">excalibur</span>
+      </a>
+      <a href="tag/forgejo.html">
+        <span class="badge badge-primary badge-tag">forgejo</span>
+      </a>
+    <small> <span style="margin-left:4px;margin-right:4px;">|</span>       2026-04-01
+    </small>
+  </div>
+
+  <div class="row d-none m-0 p-0">
+    <div class="col-md-12">
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-12 article_content article_page mt-2">
+      <p>Since adopting Forgejo for development, much of our workflow has shifted toward a more automated approach. This transition has been covered in earlier posts:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html">https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html</a></li>
+<li><a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html">https://maemo-leste.github.io/maemo-leste-forgejo-migration.html</a></li>
+</ul>
+<p>We have now moved OS image generation into Forgejo as well, using a Debian tool called <a class="reference external" href="https://github.com/go-debos/debos">debos</a>.</p>
+<p>Previously, image generation relied on a collection of <a class="reference external" href="https://git.maemo.org/leste/image-builder">Zsh scripts</a>. While functional, this setup could be improved upon, as introducing new devices, or modifying existing images, or producing images was more time consuming than neccesary.</p>
+<div class="section" id="debos-1">
+<h2>Debos</h2>
+<p>In favor of maintainability, we investigated a tool called debos for creating custom Debian-based OS images declaratively using YAML. In our case, each device (or device family) could maintain its own set of YAML build recipes. After some experimentation, we concluded that debos is flexible, allows for clearer organization of device-specific files, and thus easier customization of our images.</p>
+<p>Under the hood, our use of debos summarized:</p>
+<ol class="arabic simple">
+<li>debos starts a virtual machine using QEMU</li>
+<li>debos handles the chroot, and uses <a class="reference external" href="https://wiki.debian.org/Debootstrap">debootstrap</a> for base filesystem creation</li>
+<li>debos installs packages, configuration files, and applies overlays</li>
+<li>debos produces an <tt class="docutils literal">.img</tt>, ready to be <tt class="docutils literal">dd</tt>'d</li>
+</ol>
+<p>To re-iterate; this is all defined in YAML.</p>
+</div>
+<div class="section" id="forgejo-ci">
+<h2>Forgejo CI</h2>
+<p>After migrating a few devices to this new debos setup, we integrated debos into Forgejo's CI/CD pipelines. Previously, generating an image for a single device could take up to 3 hours. With the new build infrastructure, we are now able to create images for 13 devices in 2 hours total, whilst not requiring any action on our end.</p>
+<p>Build-time improved because the build process was restructured into two stages:</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Root filesystem (rootfs) generation</dt>
+<dd><ul class="first last">
+<li>built once, and reused across multiple devices</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Device-specific image (imagefs) generation</dt>
+<dd><ul class="first last">
+<li>layer additional packages and configuration on top of this shared base</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>This ultimately produces build artifacts that can be downloaded through the Forgejo web-interface.</p>
+<p>In addition, it is a scheduled task - images are generated every week.</p>
+<img alt="" src="/images/debos_output.jpg" style="width: 720px; height: 443px;" />
+</div>
+<div class="section" id="image-customization">
+<h2>Image customization</h2>
+<p>Debos provides the flexibility to easily support all kinds of device-specific needs. For example, we have build recipes dedicated to disk layouts (MBR/GPT) with the option to configure for various partition setups: formats, sizes, offsets, and also easily assigning mount flags to those partitions (e.g. <tt class="docutils literal">noatime</tt>).</p>
+<p>This means that supporting future devices has now become easier, as e.g. disk needs are defined through debos options (<tt class="docutils literal">bootstart=4MiB</tt>, <tt class="docutils literal">partitiontable=mbr</tt>, <tt class="docutils literal">rootstart=128MiB</tt>, <tt class="docutils literal">partitionbootformat=ext2</tt>).</p>
+<p>The customization on a per-device basis that may be needed:</p>
+<ul class="simple">
+<li>Some devices require specific packages to be present (drivers, configuration)</li>
+<li>Some devices require a specific kernel (still mainline, but we may require extra kernel config options, depending on the device)</li>
+<li>Some devices require u-boot to be inserted at the start of the image</li>
+<li>Some devices require a specific disk layout</li>
+<li>Some devices require certain DTBs (device tree blobs) to be loaded during boot</li>
+</ul>
+</div>
+<div class="section" id="current-devices">
+<h2>Current devices</h2>
+<p>As for the devices themselves, we've added 3 new Olimex devices, fixed others (those that did not see a release in a while), and improved existing devices (Raspberry Pi / Pinephone).</p>
+<p>As of writing, Forgejo generates images for:</p>
+<ul class="simple">
+<li>Motorola Droid4</li>
+<li>Motorola Droid3</li>
+<li>Motorola Bionic</li>
+<li>Motorola XT910</li>
+<li>Motorola XT912</li>
+<li>Motorola MZ617</li>
+<li>Nokia N900</li>
+<li>Raspberry Pi 3/4/5</li>
+<li>Olimex A64-OLinuXino</li>
+<li>Olimex A64-OLinuXino w/ eMMC</li>
+<li>Olimex A20-OLinuXino-LIME2</li>
+<li>Pinephone</li>
+<li>Development VM (x86_64)</li>
+</ul>
+</div>
+<div class="section" id="additional-devices">
+<h2>Additional devices</h2>
+<p>The build system has additional debos build configuration(s) in-place for 30+ more devices (e.g. Rockchip based devices), however, we do not generate images for them as it may give the impression these are well-supported. That said, if you have a device that is not supported, feel free to ask on our <a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues">bugtracker</a> (or IRC channel) for details on how to get started - perhaps we already have a configuration for your device.</p>
+</div>
+<div class="section" id="repository">
+<h2>Repository</h2>
+<p>The repository exists over at <a class="reference external" href="https://git.maemo.org/leste-cicd/debos-leste">https://git.maemo.org/leste-cicd/debos-leste</a></p>
+<p>Within this repository, you will find <tt class="docutils literal">build.sh</tt>, which serves as an user-friendly utility for invoking debos. Use this bash script to generate an image locally.</p>
+<p>Forgejo's CI does not use <tt class="docutils literal">build.sh</tt> - instead it uses debos directly.</p>
+</div>
+<div class="section" id="future-work">
+<h2>Future work</h2>
+<p>We are looking into <a class="reference external" href="https://github.com/libhybris/libhybris">libhybris</a> as a way to expand Maemo Leste support to additional devices. Libhybris enables running a Linux userspace on top of certain Android-based hardware by reusing existing Android drivers. Further details will be covered in future blog posts.</p>
+</div>
+<div class="section" id="interested">
+<h2>Interested?</h2>
+<p>If you have questions, are interested in specifics or helping out, or wish to
+have a specific package ported, please see our bugtracker.</p>
+<p>Please also join our <a class="reference external" href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/maemo-leste">mailing list</a> to stay
+up to date, ask questions and/or help out. Another great way to get in touch is
+to join the <a class="reference external" href="https://leste.maemo.org/IRC_channel">IRC channel</a>.</p>
+<p>If you like our work and want to see it continue, join our effort!</p>
+</div>
+
+    </div>
+    <div class="col-md-12 text-muted">
+      <span class="d-block">Sander Ferdinand</span>
+    </div>
+  </div>
+</div>
+
+
+<footer class="page-footer font-small blue-grey lighten-5 mt-5">
+  <style>
+    footer a {
+      width: inherit !important;
+    }
+  </style>
+    <!-- Footer -->
+    <div class="footer gradient-2">
+      <div class="container footer-container">
+        <div class="col-md-12">
+          <div style="width: 100%" class="mb-2 mt-2">
+            <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="100"></a>&nbsp;&nbsp;&nbsp;
+            <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="100"></a>&nbsp;&nbsp;
+          </div>
+
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://maemo-leste.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"></a></li>
+          </ul>
+
+          <div class="row">
+
+          <div class="col-md-3">
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://x.com/maemoleste" target="_blank">Twitter</a></li>
+              <li><a href="https://git.maemo.org/leste" target="_blank">Git</a></li>
+              <li><a href="/feeds/all.atom.xml" target="_blank">Atom Feed</a></li>
+          </ul>
+          </div>
+
+          <div class="col-md-3">
+          <div class="footer-title"></div>
+          <ul class="list-unstyled">
+              <li><a href="https://git.maemo.org/leste/bugtracker/issues" target="_blank">Maemo Leste Bugtracker</a></li>
+              <li><a href="https://leste.maemo.org" target="_blank">Maemo Leste Wiki</a></li>
+              <li><a href="https://maedevu.maemo.org/pkgweb/" target="_blank">Maemo Leste Packages</a></li>
+          </ul>
+          </div>
+          </div>
+        </div>
+          <!-- <div class="row text-center">
+                  <a href="http://ec.europa.eu/index_en.htm"><img src="/images/eu.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://www.ngi.eu"><img src="/images/ngi.png" width="80"></a>&nbsp;&nbsp;
+                  <a href="https://nlnet.nl"><img src="/images/nlnet-w.svg" width="80"></a>&nbsp;&nbsp;
+          </div>
+          <div class="row text-center"></div>
+
+          </div>
+        -->
+      </div>
+  </div>
+  <!-- /Footer -->
+</footer>
+</body>
+
+</html>
