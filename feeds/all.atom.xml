@@ -1,100 +1,645 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2026-04-01T17:28:00+02:00</updated><entry><title>Maemo Leste - OS Image Generation with Forgejo CI</title><link href="https://maemo-leste.github.io/maemo-leste-os-image-generation-with-forgejo-ci.html" rel="alternate"></link><published>2026-04-01T17:28:00+02:00</published><updated>2026-04-01T17:28:00+02:00</updated><author><name>Sander Ferdinand</name></author><id>tag:maemo-leste.github.io,2026-04-01:/maemo-leste-os-image-generation-with-forgejo-ci.html</id><summary type="html">&lt;p&gt;Since adopting Forgejo for development, much of our workflow has shifted toward a more automated approach. This transition has been covered in earlier posts:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Maemo Leste</title><link href="https://maemo-leste.github.io/" rel="alternate"></link><link href="https://maemo-leste.github.io/feeds/all.atom.xml" rel="self"></link><id>https://maemo-leste.github.io/</id><updated>2026-08-14T23:00:00+02:00</updated><entry><title>Maemo Leste - 2026 Excalibur release</title><link href="https://maemo-leste.github.io/maemo-leste-2026-excalibur-release.html" rel="alternate"></link><published>2026-08-14T23:00:00+02:00</published><updated>2026-08-14T23:00:00+02:00</updated><author><name>Sander Ferdinand and Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2026-08-14:/maemo-leste-2026-excalibur-release.html</id><summary type="html">&lt;p&gt;We are excited to bring you a new release of Maemo Leste: 'Devuan Excalibur'
+(Debian Trixie). That means we have finally caught up with the Debian release
+cycles. We used to be on 'oldoldstable', and now we're on stable. We're also
+already eyeing Debian Forky (currently scheduled to be released …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We are excited to bring you a new release of Maemo Leste: 'Devuan Excalibur'
+(Debian Trixie). That means we have finally caught up with the Debian release
+cycles. We used to be on 'oldoldstable', and now we're on stable. We're also
+already eyeing Debian Forky (currently scheduled to be released a year from now)
+to ensure that we'll be ready for it when it is released as stable.&lt;/p&gt;
+&lt;p&gt;We have some exciting new developments for the Excalibur release:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html"&gt;https://maemo-leste.github.io/maemo-leste-forgejo-migration.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support for more devices;&lt;/li&gt;
+&lt;li&gt;Revamped our image building system;&lt;/li&gt;
+&lt;li&gt;Added support for DTMF in the phone application;&lt;/li&gt;
+&lt;li&gt;Moved to a newer Linux kernel;&lt;/li&gt;
+&lt;li&gt;Ported our Qt modules from Qt5 to Qt6;&lt;/li&gt;
+&lt;li&gt;Improved and introduced new Telepathy connection managers;&lt;/li&gt;
+&lt;li&gt;Improved our Forgejo CI/CD instance;&lt;/li&gt;
+&lt;li&gt;Switched to Pipewire (from Pulseaudio);&lt;/li&gt;
+&lt;li&gt;Ported various additional packages from Fremantle;&lt;/li&gt;
+&lt;li&gt;Made various improvements to our audio stack and sphone to accommodate the;
+newer UCM2 parsing;&lt;/li&gt;
+&lt;li&gt;Decreased the number of upstream software that we had to fork, as our patches
+made it upstream in some cases;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We have now moved OS image generation into Forgejo as well, using a Debian …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Since adopting Forgejo for development, much of our workflow has shifted toward a more automated approach. This transition has been covered in earlier posts:&lt;/p&gt;
+&lt;div class="section" id="excalibur"&gt;
+&lt;h2&gt;Excalibur&lt;/h2&gt;
+&lt;p&gt;A release like this one consists of a large set of changes that are not very
+exciting to read about but that have to happen anyway, such as:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-forgejo-migration.html"&gt;https://maemo-leste.github.io/maemo-leste-forgejo-migration.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;tt class="docutils literal"&gt;time_t&lt;/tt&gt; is now 64 bit wide on 32 bit systems, which is a change that
+affects everything that stores or prints a timestamp, such as &lt;a class="reference external" href="https://git.maemo.org/leste/clockd/commit/6b8bb3a8f5f01a0cd719da0aeb8380864e109959"&gt;clockd&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-home/commit/1e5c97825840e65f003088c69be43d8327546796"&gt;hildon-home&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/rtcom-eventlogger-ui/commit/f441895d4102856f105a61eb0022754ea89dca87"&gt;rtcom-eventlogger-ui&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-desktop/commit/878140892555de8766828bb246f9e3905fc93544"&gt;hildon-desktop&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/dsme/commit/a6b89c4a01374fef7cbe62a1334d913c6b10bf73"&gt;dsme&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/iphbd/commit/1cd5eb765f1ecdcaa01561db7bc2fe33754b289e"&gt;iphbd&lt;/a&gt;
+and &lt;a class="reference external" href="https://git.maemo.org/leste/location-daemon/commit/5a821b487225f139aa684a16c19999cb0698325e"&gt;location-daemon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;gconf paths were updated for the newer gconf in Trixie&lt;/li&gt;
+&lt;li&gt;library and control
+panel plugin install paths were fixed in a fair number of
+packages, such as &lt;a class="reference external" href="https://git.maemo.org/leste/connui-cellular/commit/dfbb75399284fea2a6d489f86bb58a8b6c752608"&gt;connui-cellular&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/connui-internet/commit/6f138256fa3b5e029603f1cb1b10eb6c3ac93206"&gt;connui-internet&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/osso-applet-textinput/commit/0b32f803ace8a21f99652a24ea6227d2c6b27b87"&gt;osso-applet-textinput&lt;/a&gt;
+and &lt;a class="reference external" href="https://git.maemo.org/leste/maemo-security-certman-applet/commit/61d28005f27fc050613942d36ef58440fea25dd3"&gt;maemo-security-certman-applet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;debian packaging modernisation (debhelper compat bumps), &lt;tt class="docutils literal"&gt;t64&lt;/tt&gt; (the same 64
+bit time transition, but for library package names)&lt;/li&gt;
+&lt;li&gt;fixing compilation errors/warnings with gcc 14.&lt;/li&gt;
+&lt;li&gt;some packages did not generate man pages&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We have now moved OS image generation into Forgejo as well, using a Debian tool called &lt;a class="reference external" href="https://github.com/go-debos/debos"&gt;debos&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Previously, image generation relied on a collection of &lt;a class="reference external" href="https://git.maemo.org/leste/image-builder"&gt;Zsh scripts&lt;/a&gt;. While functional, this setup could be improved upon, as introducing new devices, or modifying existing images, or producing images was more time consuming than neccesary.&lt;/p&gt;
-&lt;div class="section" id="debos-1"&gt;
-&lt;h2&gt;Debos&lt;/h2&gt;
-&lt;p&gt;In favor of maintainability, we investigated a tool called debos for creating custom Debian-based OS images declaratively using YAML. In our case, each device (or device family) could maintain its own set of YAML build recipes. After some experimentation, we concluded that debos is flexible, allows for clearer organization of device-specific files, and thus easier customization of our images.&lt;/p&gt;
-&lt;p&gt;Under the hood, our use of debos summarized:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;debos starts a virtual machine using QEMU&lt;/li&gt;
-&lt;li&gt;debos handles the chroot, and uses &lt;a class="reference external" href="https://wiki.debian.org/Debootstrap"&gt;debootstrap&lt;/a&gt; for base filesystem creation&lt;/li&gt;
-&lt;li&gt;debos installs packages, configuration files, and applies overlays&lt;/li&gt;
-&lt;li&gt;debos produces an &lt;tt class="docutils literal"&gt;.img&lt;/tt&gt;, ready to be &lt;tt class="docutils literal"&gt;dd&lt;/tt&gt;'d&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To re-iterate; this is all defined in YAML.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="forgejo-ci"&gt;
-&lt;h2&gt;Forgejo CI&lt;/h2&gt;
-&lt;p&gt;After migrating a few devices to this new debos setup, we integrated debos into Forgejo's CI/CD pipelines. Previously, generating an image for a single device could take up to 3 hours. With the new build infrastructure, we are now able to create images for 13 devices in 2 hours total, whilst not requiring any action on our end.&lt;/p&gt;
-&lt;p&gt;Build-time improved because the build process was restructured into two stages:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;&lt;dl class="first docutils"&gt;
-&lt;dt&gt;Root filesystem (rootfs) generation&lt;/dt&gt;
-&lt;dd&gt;&lt;ul class="first last"&gt;
-&lt;li&gt;built once, and reused across multiple devices&lt;/li&gt;
+&lt;div class="section" id="nlnet-funding-progress"&gt;
+&lt;h2&gt;NLNet Funding Progress&lt;/h2&gt;
+&lt;p&gt;We previously announced that Maemo Leste &lt;a class="reference external" href="https://nlnet.nl/project/MaemoLeste-AppArmour/"&gt;received funding from NLNet&lt;/a&gt; as part of the &lt;tt class="docutils literal"&gt;NGI0 Commons
+Fund&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;We have completed the following tasks:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/41?state=all"&gt;Conversations improvements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues/751"&gt;Porting extras packages to Daedalus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/42?state=all"&gt;Support Qt6 next to Qt5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/43?state=all"&gt;Forgejo CI/CD with extras integration in particular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/37?state=all"&gt;Porting Maemo Leste to Excalibur/Trixie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/40?state=all"&gt;Port Maemo Leste to additional devices&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;dl class="first docutils"&gt;
-&lt;dt&gt;Device-specific image (imagefs) generation&lt;/dt&gt;
-&lt;dd&gt;&lt;ul class="first last"&gt;
-&lt;li&gt;layer additional packages and configuration on top of this shared base&lt;/li&gt;
+&lt;p&gt;And the following tasks remain:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/39?state=all"&gt;AppArmor support in Maemo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/milestone/38?state=all"&gt;Integrate and switch to Geoclue in Maemo Leste&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This ultimately produces build artifacts that can be downloaded through the Forgejo web-interface.&lt;/p&gt;
-&lt;p&gt;In addition, it is a scheduled task - images are generated every week.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="forgejo"&gt;
+&lt;h2&gt;Forgejo&lt;/h2&gt;
+&lt;div class="section" id="continuous-integration"&gt;
+&lt;h3&gt;Continuous integration&lt;/h3&gt;
+&lt;p&gt;In our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;previous release&lt;/a&gt;
+we introduced Forgejo CI, which builds packages for &lt;a class="reference external" href="https://git.maemo.org/leste-extras"&gt;leste-extras&lt;/a&gt; and uploads them to the &lt;a class="reference external" href="https://git.maemo.org/leste-extras/-/packages"&gt;extras-testing&lt;/a&gt; repository. That setup has now
+been extended to most of our packages: nearly every repository in &lt;a class="reference external" href="https://git.maemo.org/leste"&gt;leste&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste-extras"&gt;leste-extras&lt;/a&gt; builds on every push, for &lt;tt class="docutils literal"&gt;amd64&lt;/tt&gt;,
+&lt;tt class="docutils literal"&gt;armhf&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;arm64&lt;/tt&gt;, using the shared workflows in
+&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/forgejo-workflows"&gt;leste-cicd/forgejo-workflows&lt;/a&gt;. Our device images are
+built there as well, which we will touch on this in a follow up post.&lt;/p&gt;
+&lt;p&gt;Forgejo starts building and testing automatically when a repository receives a
+new git commit (or MR). Ultimately, such build artifacts will get published on
+our live (testing) &lt;tt class="docutils literal"&gt;deb&lt;/tt&gt; mirror, but for now we still use Jenkins for actual
+publishing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="jenkins"&gt;
+&lt;h3&gt;Jenkins&lt;/h3&gt;
+&lt;p&gt;Jenkins is our legacy build system, and it is still what produces the packages
+in our main repositories. It has not been abandoned. In the meantime: the python2
+jobs were &lt;a class="reference external" href="https://git.maemo.org/leste/jenkins-integration/commit/45514a31c81c01691a0c0c3e7f69a48b4703a125"&gt;removed&lt;/a&gt;,
+the &lt;tt class="docutils literal"&gt;.forgejo&lt;/tt&gt; directory is &lt;a class="reference external" href="https://git.maemo.org/leste/jenkins-integration/commit/0c5c135a5fcd02ba50995b0e19d08141a077a1a3"&gt;excluded from the source packages&lt;/a&gt;
+it builds, and our &lt;a class="reference external" href="https://git.maemo.org/leste/dependency-resolver/commit/8f46e1daf8819b4f04fbf4bc1e313f22c0dcd337"&gt;dependency-resolver&lt;/a&gt;
+- the tool that figures out in what order our packages have to be built - now
+takes its job list straight from the Jenkins configuration instead of a
+hand-maintained list.&lt;/p&gt;
+&lt;p&gt;As previously mentioned, the plan is for the Forgejo CI to eventually take over
+from Jenkins entirely.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="keyrings"&gt;
+&lt;h3&gt;Keyrings&lt;/h3&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://git.maemo.org/leste/maemo-keyring"&gt;extras keyring&lt;/a&gt; had its
+expiry date extended and its signatures fixed, and the &lt;a class="reference external" href="https://git.maemo.org/leste/devuan-keyring/commit/0b6b28dd3a712c181dc651a5674d06caa0aaf983"&gt;devuan keyring&lt;/a&gt;
+package now carries the Excalibur keyrings.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="image-building-via-debos"&gt;
+&lt;h3&gt;Image building via debos&lt;/h3&gt;
+&lt;p&gt;In our &lt;a class="reference external" href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html"&gt;previous release post&lt;/a&gt; we mentioned that
+modernising our image building process was still on our to-do list - this has
+now happened. We replaced our old image builder - a collection of Zsh scripts -
+with &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/debos-leste"&gt;debos-leste&lt;/a&gt;, which builds
+Devuan based OS images declaratively from YAML recipes. The work builds on the
+work done by Mobian and their mobian-recipes.&lt;/p&gt;
 &lt;img alt="" src="/images/debos_output.jpg" style="width: 720px; height: 443px;" /&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-cicd/debos-leste"&gt;debos-leste&lt;/a&gt; is integrated into
+our Forgejo CI. For more details, see our post on &lt;a class="reference external" href="{filename}/maemo-leste-excalibur-forgejo-images.rst"&gt;image generation in Forgejo&lt;/a&gt;. In short, debos-leste
+produces 15 Maemo Leste device images in 2 hours, which is &lt;em&gt;a lot&lt;/em&gt; faster than
+our previous image building setup.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="image-customization"&gt;
-&lt;h2&gt;Image customization&lt;/h2&gt;
-&lt;p&gt;Debos provides the flexibility to easily support all kinds of device-specific needs. For example, we have build recipes dedicated to disk layouts (MBR/GPT) with the option to configure for various partition setups: formats, sizes, offsets, and also easily assigning mount flags to those partitions (e.g. &lt;tt class="docutils literal"&gt;noatime&lt;/tt&gt;).&lt;/p&gt;
-&lt;p&gt;This means that supporting future devices has now become easier, as e.g. disk needs are defined through debos options (&lt;tt class="docutils literal"&gt;bootstart=4MiB&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;partitiontable=mbr&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;rootstart=128MiB&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;partitionbootformat=ext2&lt;/tt&gt;).&lt;/p&gt;
-&lt;p&gt;The customization on a per-device basis that may be needed:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="core"&gt;
+&lt;h2&gt;Core&lt;/h2&gt;
+&lt;div class="section" id="sphone"&gt;
+&lt;h3&gt;sphone&lt;/h3&gt;
+&lt;p&gt;Sphone, our dialer, has seen some improvements.&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Some devices require specific packages to be present (drivers, configuration)&lt;/li&gt;
-&lt;li&gt;Some devices require a specific kernel (still mainline, but we may require extra kernel config options, depending on the device)&lt;/li&gt;
-&lt;li&gt;Some devices require u-boot to be inserted at the start of the image&lt;/li&gt;
-&lt;li&gt;Some devices require a specific disk layout&lt;/li&gt;
-&lt;li&gt;Some devices require certain DTBs (device tree blobs) to be loaded during boot&lt;/li&gt;
+&lt;li&gt;DTMF (the tones you send in a phone call to interact with an IVR menu) is now
+supported in the &lt;a class="reference external" href="https://git.maemo.org/leste/sphone/commit/d514d6f2fdbb5c771c46c628c4971c9600a85f98"&gt;core&lt;/a&gt;,
+the &lt;a class="reference external" href="https://git.maemo.org/leste/sphone/commit/056c503818ae525630241e85a2e82fc199b87e8b"&gt;GTK2 user interface&lt;/a&gt;
+and the &lt;a class="reference external" href="https://git.maemo.org/leste/sphone/commit/05b59defb22afa740045c4df0da5fea856b39fea"&gt;voicecall-manager backend&lt;/a&gt;,
+and is &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/commit/d22460eec8ccb3a5e49c411cfa48fe1243789048"&gt;enabled by default&lt;/a&gt;
+(&lt;a class="reference external" href="https://git.maemo.org/uvos"&gt;uvos&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;audio routing was reworked for PulseAudio 17 and Pipewire (&lt;a class="reference external" href="https://git.maemo.org/leste/sphone/pulls/15"&gt;sphone/pulls/15&lt;/a&gt;): the profile is &lt;a class="reference external" href="https://git.maemo.org/leste/sphone/commit/8d19496d467ecae43e3afb79e34f3c9bb90520c2"&gt;selected by
+port roles&lt;/a&gt;
+for the newer alsa-ucm, with a &lt;a class="reference external" href="https://git.maemo.org/leste/sphone/commit/d0d5be0e2fae01b5aa4e548267f4f7d05a66004d"&gt;tiered fallback&lt;/a&gt;
+for devices that do not offer the profile we ask for.&lt;/li&gt;
+&lt;li&gt;stale datapipe values no longer make audio routing act on outdated
+information (&lt;a class="reference external" href="https://git.maemo.org/leste/sphone/pulls/17"&gt;sphone/pulls/17&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;voice calls from Telepathy connection managers are handled
+(&lt;a class="reference external" href="https://git.maemo.org/leste/sphone/pulls/20"&gt;sphone/pulls/20&lt;/a&gt;), so an XMPP
+call rings, and can be answered and hung up like any other sphone call.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- TODO: screenshot of the DTMF dialer during a call --&gt;
+&lt;img alt="" src="/images/sphone-dtmf-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversations"&gt;
+&lt;h3&gt;Conversations&lt;/h3&gt;
+&lt;p&gt;Conversations was ported to Qt6 and has received some performance updates.
+(&lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/67589c466107dea99df75405a102886e804b5930"&gt;#67589c&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/5ae55e7c450d662a57524a86c5db0674bee0b818"&gt;#5ae55&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/4de0bdcc5888e433c9f6cc64abc3b875b6f14a9a"&gt;#4de0b&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/c4b814fb034687ee4efce6b4d897a961eb822f0a"&gt;#c4b81&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Around 60 commits went in since last release, mostly fixes related to the Qt5 -&amp;gt;
+Qt6 switch, support for our new Matrix and XMPP connection managers (see below),
+and support for emojis.&lt;/p&gt;
+&lt;div class="section" id="emojis"&gt;
+&lt;h4&gt;Emojis&lt;/h4&gt;
+&lt;p&gt;Conversations now renders &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/f8797726fb9d13d9fd625171dac45d61c8e850f9"&gt;colored emojis&lt;/a&gt;
+in the chat window and the overview, and you can also &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/60a225f95c9b35ca4c8c7d62d43ac2fdc6861dda"&gt;send them&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/emojis.png" style="width: 456px; height: 324px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="other-changes"&gt;
+&lt;h4&gt;Other changes&lt;/h4&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Conversations is now a &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/42d24b0e69f2119d349bf66099f56c9f6e1dfe78"&gt;D-Bus activatable Telepathy client&lt;/a&gt;,
+which means Mission Control can start it to handle an incoming channel instead
+of dropping the channel when Conversations happens to not be running&lt;/li&gt;
+&lt;li&gt;the chat window title now &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/1913ad050a75eb1fda1c580da77670f6f233fa80"&gt;reflects the account state&lt;/a&gt;
+by appending &lt;em&gt;(account disabled)&lt;/em&gt; or &lt;em&gt;(offline)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;a &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/aa0259af26c545bb46f753390de67dc6801e822c"&gt;wrong remote uid&lt;/a&gt;
+on XMPP carbon scrollback was fixed&lt;/li&gt;
+&lt;li&gt;downloads &lt;a class="reference external" href="https://git.maemo.org/leste/conversations/commit/797a49e00cb93af8b84ca736dd8acd9b511ec66f"&gt;moved to the XDG application data directory&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="current-devices"&gt;
-&lt;h2&gt;Current devices&lt;/h2&gt;
-&lt;p&gt;As for the devices themselves, we've added 3 new Olimex devices, fixed others (those that did not see a release in a while), and improved existing devices (Raspberry Pi / Pinephone).&lt;/p&gt;
-&lt;p&gt;As of writing, Forgejo generates images for:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="qt6-platform-plugins"&gt;
+&lt;h3&gt;Qt6 platform plugins&lt;/h3&gt;
+&lt;p&gt;Maemo Leste integrates with Qt to provide an unified UI experience so that GTK and Qt applications 'look like Maemo'. These Qt platform plugins are now also available on Qt6.&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Motorola Droid4&lt;/li&gt;
-&lt;li&gt;Motorola Droid3&lt;/li&gt;
-&lt;li&gt;Motorola Bionic&lt;/li&gt;
-&lt;li&gt;Motorola XT910&lt;/li&gt;
-&lt;li&gt;Motorola XT912&lt;/li&gt;
-&lt;li&gt;Motorola MZ617&lt;/li&gt;
-&lt;li&gt;Nokia N900&lt;/li&gt;
-&lt;li&gt;Raspberry Pi 3/4/5&lt;/li&gt;
-&lt;li&gt;Olimex A64-OLinuXino&lt;/li&gt;
-&lt;li&gt;Olimex A64-OLinuXino w/ eMMC&lt;/li&gt;
-&lt;li&gt;Olimex A20-OLinuXino-LIME2&lt;/li&gt;
-&lt;li&gt;Pinephone&lt;/li&gt;
-&lt;li&gt;Development VM (x86_64)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets"&gt;qt6-maemo-widgets&lt;/a&gt; is now
+fully ported: &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets/commit/d8a101f3b2cdeb33381fa30b472b0a66696be278"&gt;QMaemo5ValueButton&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets/commit/28ec81f93cdd3476a9f27710a60e890c01679108"&gt;QMaemo5DatePickSelector&lt;/a&gt;
+and &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets/commit/520d46b364462df244028c78aceee05a9497c213"&gt;QMaemo5TimePickSelector&lt;/a&gt;
+were added, &lt;tt class="docutils literal"&gt;QMaemo5ListPickSelector&lt;/tt&gt; was fixed, and it &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-maemo-widgets/commit/eebe4e375c808d8e4a6fd364e8b29ccc9a9ac404"&gt;installs its CMake
+configuration properly&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-qpa-maemo"&gt;qt6-qpa-maemo&lt;/a&gt; now &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-qpa-maemo/commit/b85ff67dcbf1b98135c8986d7575c117c9c40e62"&gt;supports Qt
+6.5 and newer&lt;/a&gt;,
+its native painting &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-qpa-maemo/commit/91148fd40464fb2de98aad8b01c6c37f43e43467"&gt;works with and without xrender&lt;/a&gt;,
+and a &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-qpa-maemo/commit/61a80ae5d0f801e6903f0709dca587bc3610e374"&gt;FORCE_GLES environment variable&lt;/a&gt;
+forces a client application to use OpenGL ES&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo"&gt;qt6-style-maemo&lt;/a&gt; received a
+&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/commit/05a7681ac02cfa0cba787c7ec0aaf18321980328"&gt;vendored QStyleHelper&lt;/a&gt;,
+a &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/commit/2712f91a5a3756fe04f65b721d7e50cdfa1c3b3c"&gt;pango to QFont weight fix&lt;/a&gt;
+and a &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-style-maemo/commit/c07e2cd842bb36ef4bfd4d9349edce9cfdded2c6"&gt;maemo5 QML module stub&lt;/a&gt;
+so QtQuick Controls fall back to the Basic style&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/qt6-input-maemo"&gt;qt6-input-maemo&lt;/a&gt; &lt;a class="reference external" href="https://git.maemo.org/leste/qt6-input-maemo/commit/65ea19f3a2307116cf653656e483864555ccd907"&gt;finds its
+plugin path via qmake6&lt;/a&gt;,
+so it installs in the right place.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="applications-on-qt6"&gt;
+&lt;h4&gt;Applications on Qt6&lt;/h4&gt;
+&lt;p&gt;Some Qt applications are moving from Qt5 to Qt6: &lt;a class="reference external" href="https://git.maemo.org/leste-extras/NOMWeather"&gt;nomweather&lt;/a&gt;  is Qt6
+now, as well as &lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemo-translate/commit/6ebb05a7d6c199b18c2c6ae93dd04d60085ae03c"&gt;maemo-translate&lt;/a&gt;
+(and now also &lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemo-translate/commit/6ebb05a7d6c199b18c2c6ae93dd04d60085ae03c"&gt;supports both screen orientations&lt;/a&gt;). The Qt6 branch also exists for the &lt;a class="reference external" href="https://git.maemo.org/leste-extras/jib/src/branch/qt6"&gt;webbrowser Jib&lt;/a&gt;, but is not merged yet.&lt;/p&gt;
+&lt;img alt="" src="/images/nomweather-qt6-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mce"&gt;
+&lt;h3&gt;mce&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/mce"&gt;mce&lt;/a&gt; takes care of the things your phone does
+by itself: turning the screen on and off, dimming it, reacting to the power
+button, noticing that you hold the phone against your ear during a call,
+blinking the notification LED and keeping an eye on the battery.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;D-Bus handler list changes are now &lt;a class="reference external" href="https://git.maemo.org/leste/mce/commit/b48b461f692b72f967cf17fffbb3eea2874247d3"&gt;deferred while a dispatch is in progress&lt;/a&gt;,
+which fixes handlers being added or removed from within a handler
+(&lt;a class="reference external" href="https://git.maemo.org/freemangordon"&gt;freemangordon&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;the power key code was &lt;a class="reference external" href="https://git.maemo.org/leste/mce/commit/39c73c5df414f607b7dec46ed1bead5d6b6eb3a2"&gt;ported to the 64 bit input.h API&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt; made mce &lt;a class="reference external" href="https://git.maemo.org/leste/mce/pulls/71"&gt;ignore proximity switch events&lt;/a&gt; - some devices report proximity as
+a switch, which confused the existing handling.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/uvos"&gt;uvos&lt;/a&gt; fixed the battery state being reported as
+&lt;em&gt;ok&lt;/em&gt; while upower said &lt;em&gt;full&lt;/em&gt;, see &lt;a class="reference external" href="https://git.maemo.org/leste/mce/commit/f870baf0e1f8b76f4ee414a2ad2607c4f67f4db0"&gt;commit f870baf0&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On the configuration side, &lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt; added
+&lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/70"&gt;proximity sensor support for the N900&lt;/a&gt; and made the &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/80"&gt;power
+off LED shine until the device actually turns off&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="additional-devices"&gt;
-&lt;h2&gt;Additional devices&lt;/h2&gt;
-&lt;p&gt;The build system has additional debos build configuration(s) in-place for 30+ more devices (e.g. Rockchip based devices), however, we do not generate images for them as it may give the impression these are well-supported. That said, if you have a device that is not supported, feel free to ask on our &lt;a class="reference external" href="https://git.maemo.org/leste/bugtracker/issues"&gt;bugtracker&lt;/a&gt; (or IRC channel) for details on how to get started - perhaps we already have a configuration for your device.&lt;/p&gt;
+&lt;div class="section" id="hildon"&gt;
+&lt;h3&gt;Hildon&lt;/h3&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://git.maemo.org/leste/hildon-application-manager"&gt;hildon-application-manager&lt;/a&gt; (our GUI to install packages)
+had its apt worker &lt;a class="reference external" href="https://git.maemo.org/leste/hildon-application-manager/commit/ada0539d798771fbbfa03d370d5215484513cdfd"&gt;ported to the newer libapt API&lt;/a&gt;, and the apt worker is
+now &lt;a class="reference external" href="https://git.maemo.org/leste/hildon-application-manager/pulls/5"&gt;niced to 15&lt;/a&gt;
+so that installing packages does not make the rest of the system unresponsive.&lt;/p&gt;
+&lt;img alt="" src="/images/HAM-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;p&gt;Additionally:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-thumbnail"&gt;hildon-thumbnail&lt;/a&gt; had a large
+amount of deprecated glib usage removed (&lt;a class="reference external" href="https://git.maemo.org/freemangordon"&gt;freemangordon&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-meta-core/commit/d1828e2c0a430430a2ea9340caa3ea915fa5ab49"&gt;hildon-meta-core&lt;/a&gt;
+now depends on the SGX mesa build for the OMAP devices.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-usb-gadgets/commit/1436a79976323214703a1770f91a343885b3da98"&gt;hildon-usb-gadgets&lt;/a&gt;
+requests 500 mA from the host, instead of the default.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/policykit-1-hildon/commit/d3c7fa9ae73e4d32a29c152a8a7474b183ada1b9"&gt;policykit-1-hildon&lt;/a&gt;
+switched to mate-polkit.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/libhildon"&gt;libhildon&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-input-method-plugins"&gt;hildon-input-method-plugins&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/osso-xterm"&gt;osso-xterm&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/modest"&gt;modest&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/osso-pdf-viewer"&gt;osso-pdf-viewer&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/osso-calculator-engine"&gt;osso-calculator-engine&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/osso-games-startup"&gt;osso-games-startup&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/profilesx"&gt;profilesx&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste/tinymail"&gt;tinymail&lt;/a&gt; all needed compilation fixes to build
+on Excalibur.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="repository"&gt;
-&lt;h2&gt;Repository&lt;/h2&gt;
-&lt;p&gt;The repository exists over at &lt;a class="reference external" href="https://git.maemo.org/leste-cicd/debos-leste"&gt;https://git.maemo.org/leste-cicd/debos-leste&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Within this repository, you will find &lt;tt class="docutils literal"&gt;build.sh&lt;/tt&gt;, which serves as an user-friendly utility for invoking debos. Use this bash script to generate an image locally.&lt;/p&gt;
-&lt;p&gt;Forgejo's CI does not use &lt;tt class="docutils literal"&gt;build.sh&lt;/tt&gt; - instead it uses debos directly.&lt;/p&gt;
+&lt;div class="section" id="new-hildon-themes"&gt;
+&lt;h3&gt;New Hildon themes&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/hildon-theme-tools"&gt;hildon-theme-tools&lt;/a&gt;, used for building Hildon themes,
+was &lt;a class="reference external" href="https://git.maemo.org/leste/hildon-theme-tools/commit/4860f687cc8752be00673bec03898a4166ba81de"&gt;brought up to date&lt;/a&gt;
+with &lt;a class="reference external" href="https://git.maemo.org/leste/hildon-theme-tools/commit/900bd4d2d5b75862aae3056df15491177b33831b"&gt;modern gdk-pixbuf/glib&lt;/a&gt;,
+which allowed &lt;a class="reference external" href="https://git.maemo.org/claenker"&gt;Claenker&lt;/a&gt; (A local LLM experiment to semi-automatically port software from Maemo Fremantle to Maemo Leste by &lt;a class="reference external" href="https://git.maemo.org/MerlijnWajer"&gt;Merlijn&lt;/a&gt;) to port various themes from Fremantle to Maemo Leste:
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/blue-sky"&gt;blue-sky&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-borg"&gt;borg&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-firststrike"&gt;firststrike&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-goldrush"&gt;goldrush&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-greenrush"&gt;greenrush&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-hitech"&gt;hitech&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-itheme"&gt;itheme&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-meegoturkiye"&gt;meegoturkiye&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-nosto"&gt;nosto&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-plasticberry"&gt;plasticberry&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-purplerush"&gt;purplerush&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-theme-silverrush"&gt;silverrush&lt;/a&gt; and
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemeemo-theme"&gt;maemeemo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Theme porting mostly consisted of modernising the debian packaging, which is
+usually a pretty painstaking task.&lt;/p&gt;
+&lt;p&gt;Enjoy these 13 new themes!&lt;/p&gt;
+&lt;!-- TODO: screenshots of a few of the new themes --&gt;
 &lt;/div&gt;
-&lt;div class="section" id="future-work"&gt;
-&lt;h2&gt;Future work&lt;/h2&gt;
-&lt;p&gt;We are looking into &lt;a class="reference external" href="https://github.com/libhybris/libhybris"&gt;libhybris&lt;/a&gt; as a way to expand Maemo Leste support to additional devices. Libhybris enables running a Linux userspace on top of certain Android-based hardware by reusing existing Android drivers. Further details will be covered in future blog posts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="telepathy"&gt;
+&lt;h2&gt;Telepathy&lt;/h2&gt;
+&lt;p&gt;Telepathy-Qt is now available for Qt6 (&lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/telepathy-qt6"&gt;telepathy-qt6&lt;/a&gt;). In the process, we
+fixed a bug where contacts from tp-qt based connection managers would not show up in
+the addressbook (&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;osso-abook&lt;/span&gt;&lt;/tt&gt;).&lt;/p&gt;
+&lt;p&gt;In addition, &lt;a class="reference external" href="https://git.maemo.org/sanderfoobar"&gt;Sander&lt;/a&gt; created two brand new connection managers: &lt;a class="reference external" href="https://git.maemo.org/leste/telepathy-qxmpp"&gt;telepathy-qxmpp&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/sanderfoobar/telepathy-qmatrix"&gt;telepathy-qmatrix&lt;/a&gt;&lt;/p&gt;
+&lt;div class="section" id="telepathy-qxmpp-1"&gt;
+&lt;h3&gt;telepathy-qxmpp&lt;/h3&gt;
+&lt;p&gt;It features:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;contacts, presence and avatars&lt;/li&gt;
+&lt;li&gt;1:1 chats and group chats&lt;/li&gt;
+&lt;li&gt;E2EE via OMEMO0 &lt;em&gt;and&lt;/em&gt; OMEMO2&lt;/li&gt;
+&lt;li&gt;message history fetching&lt;/li&gt;
+&lt;li&gt;messages that stay in sync between all your devices&lt;/li&gt;
+&lt;li&gt;voice calls !&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;About OMEMO: there are two, incompatible generations of &lt;a class="reference external" href="https://xmpp.org/extensions/xep-0384.html"&gt;OMEMO&lt;/a&gt; - the widely
+deployed &lt;tt class="docutils literal"&gt;eu.siacs.conversations.axolotl&lt;/tt&gt;, and the newer one
+&lt;tt class="docutils literal"&gt;urn:xmpp:omemo:2&lt;/tt&gt;. Clients typically speak only one of them, which
+means that two encrypted-capable clients can still fail to talk
+to each other. As far as we know, &lt;a class="reference external" href="https://git.maemo.org/leste/telepathy-qxmpp"&gt;telepathy-qxmpp&lt;/a&gt; is the first XMPP
+client that can do both, so that communications stays
+encrypted regardless of which client the counterparty happens to use.&lt;/p&gt;
+&lt;p&gt;It also does voice calling, and &lt;tt class="docutils literal"&gt;sphone&lt;/tt&gt; is capable of handling these
+calls, so an XMPP call behaves like any other call on the device. This
+feature is currently in testing, and should arrive very soon.&lt;/p&gt;
+&lt;p&gt;Another nice feature is that messages are kept in sync between multiple devices using &lt;a class="reference external" href="https://git.maemo.org/leste/telepathy-qxmpp/commit/675105a690d8a43cbe0ee65c360b9f62a14bee9e"&gt;Carbons (XEP-0280) and MAM
+(XEP-0313)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="telepathy-qmatrix-1"&gt;
+&lt;h3&gt;telepathy-qmatrix&lt;/h3&gt;
+&lt;p&gt;Built on &lt;a class="reference external" href="https://github.com/quotient-im/libQuotient"&gt;libQuotient&lt;/a&gt;. It replaces &lt;a class="reference external" href="https://git.maemo.org/leste-upstream-forks/telepathy-tank"&gt;telepathy-tank&lt;/a&gt;, which was also built on libQuotient.&lt;/p&gt;
+&lt;p&gt;It features:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;contacts and presence&lt;/li&gt;
+&lt;li&gt;direct chats and rooms&lt;/li&gt;
+&lt;li&gt;typing notifications and read receipts&lt;/li&gt;
+&lt;li&gt;message history fetching&lt;/li&gt;
+&lt;li&gt;E2EE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/sanderfoobar/telepathy-qmatrix"&gt;This connection manager&lt;/a&gt; is currently in testing, and should arrive very soon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hardware-drivers"&gt;
+&lt;h2&gt;Hardware &amp;amp; Drivers&lt;/h2&gt;
+&lt;div class="section" id="new-devices-pixel-3a-oneplus-6t"&gt;
+&lt;h3&gt;New devices: Pixel 3a / OnePlus 6T&lt;/h3&gt;
+&lt;p&gt;Maemo Leste now supports two Qualcomm based phones: the OnePlus 6 and 6T
+(&lt;tt class="docutils literal"&gt;sdm845&lt;/tt&gt;) and the Google Pixel 3a and 3a XL (&lt;tt class="docutils literal"&gt;sdm670&lt;/tt&gt;). Both have
+images that are built by &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;debos-leste&lt;/span&gt;&lt;/tt&gt;. Bluetooth works, wifi works, screen
+rotation works, and calls work. Modem support is in the works.&lt;/p&gt;
+&lt;!-- TODO: screenshots and/or video of hildon-desktop on the Pixel 3a / OnePlus 6T --&gt;
+&lt;!-- TODO: video of the doom3 GPU stress test --&gt;
+&lt;p&gt;These devices run a 6.12 kernel that we package
+(&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;linux-image-6.12-sdm845&lt;/span&gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;linux-image-6.12-sdm670&lt;/span&gt;&lt;/tt&gt;), together
+with some &lt;a class="reference external" href="https://git.maemo.org/leste/qcom-openrc-init"&gt;Qualcomm userspace bits&lt;/a&gt;
+needed to bring the hardware up (start some Qualcomm daemons).&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+Godot 4.6.2 on Google Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/godotg3a.jpeg" style="width: 786px; height: 500px;" /&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/Arno1103"&gt;Arno1103&lt;/a&gt; contributed the &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/76"&gt;alsa UCM configuration for the Pixel 3a&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We don't have instructions yet on how to flash &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;debos-leste&lt;/span&gt;&lt;/tt&gt; produced
+images onto the device, but if you cannot wait, download the images
+from our Forgejo CI, and follow the standard flash instructions of e.g.
+&lt;a class="reference external" href="https://wiki.debian.org/InstallingDebianOn/Google/Pixel3a#Preparing_and_flashing_the_device"&gt;mobian&lt;/a&gt; (fastboot).&lt;/p&gt;
+&lt;p&gt;See also &lt;a class="reference external" href="https://leste.maemo.org/Google_Pixel_3a"&gt;Pixel3a wiki&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+Hildon-Application-Manager on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/HAM-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Chromium on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/chromium-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Pixel3a custom desktop&lt;/blockquote&gt;
+&lt;img alt="" src="/images/desktop-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Kodi on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/kodi-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Launcher on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/launcher-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Launcher in portrait mode&lt;/blockquote&gt;
+&lt;img alt="" src="/images/launcher-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Hamster Filer in portait mode (Pixel3a)&lt;/blockquote&gt;
+&lt;img alt="" src="/images/hamsterfiler-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Sphone in landscape mode on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/sphone-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Modest with Gmail in landscape mode&lt;/blockquote&gt;
+&lt;img alt="" src="/images/modest-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Menu applet in portrait mode&lt;/blockquote&gt;
+&lt;img alt="" src="/images/menu-applet-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Modest in portrait mode&lt;/blockquote&gt;
+&lt;img alt="" src="/images/modest-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Super Tux Kart on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/tuxracer1-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;img alt="" src="/images/tuxracer2-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Conversations menu on Pixel3a&lt;/blockquote&gt;
+&lt;img alt="" src="/images/conversations-menu-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-devices-olimex-a20-a64"&gt;
+&lt;h3&gt;New devices: Olimex A20 &amp;amp; A64&lt;/h3&gt;
+&lt;p&gt;We support 2 new SBCs: &lt;a class="reference external" href="https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/open-source-hardware"&gt;A20-OLinuXino-LIME2&lt;/a&gt; (armhf) and &lt;a class="reference external" href="https://www.olimex.com/Products/OLinuXino/A64/A64-OLinuXino/open-source-hardware"&gt;A64-OLinuXino&lt;/a&gt; (arm64). The schematics of OLinuXino devices are open, run mainline linux, and
+as such are a nice fit for Maemo Leste.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="raspberry-pi-2-3-4"&gt;
+&lt;h3&gt;Raspberry Pi 2/3/4&lt;/h3&gt;
+&lt;p&gt;This is a multi-device image, and is fully operational again; new kernel, and a new boot configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nokia-n900"&gt;
+&lt;h3&gt;Nokia N900&lt;/h3&gt;
+&lt;p&gt;The wifi MAC address of the N900 is stored in the CAL area of the flash, and
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;wl1251-cal&lt;/span&gt;&lt;/tt&gt; is what reads it out and hands it to the driver. &lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt;
+&lt;a class="reference external" href="https://git.maemo.org/leste/wl1251-cal/pulls/2"&gt;improved its boot-time initialization&lt;/a&gt; and removed the dependency on
+the external libcal library, after which &lt;a class="reference external" href="https://git.maemo.org/freemangordon"&gt;freemangordon&lt;/a&gt; &lt;a class="reference external" href="https://git.maemo.org/leste/wl1251-cal/commit/a10e810086a87edc8196ac7e3c7debb88bd768d3"&gt;restored the libcal
+usage&lt;/a&gt;
+and &lt;a class="reference external" href="https://git.maemo.org/leste/wl1251-cal/commit/ed0fcbbed123995b5a327157cdca70a6c7239e0b"&gt;fixed the code around it&lt;/a&gt;
+instead, so that there is only one implementation of this to maintain. The stale
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/etc/modprobe.d/wl1251-blacklist.conf&lt;/span&gt;&lt;/tt&gt; that older installs carried around is
+now &lt;a class="reference external" href="https://git.maemo.org/leste/wl1251-cal/commit/841ce32fea80997e36ba34645270736e851a9ccf"&gt;properly removed&lt;/a&gt;
+on upgrade.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste/libcal"&gt;libcal&lt;/a&gt; itself received a &lt;a class="reference external" href="https://git.maemo.org/leste/libcal/commit/8e8eaed4c632ff28e93a1f42d5e1266c14594e5c"&gt;fix for
+printing off_t&lt;/a&gt;
+regardless of its size, and no longer does &lt;a class="reference external" href="https://git.maemo.org/leste/libcal/commit/d4772020a834f4b78f09c5571014126267c60fac"&gt;arithmetic on void pointers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt; also &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/63"&gt;switched the touchscreen over to libinput&lt;/a&gt; and fixed the &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/75"&gt;UCM device
+priorities and the voicecall speaker&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+Dillo on N900&lt;/blockquote&gt;
+&lt;img alt="" src="/images/dillo-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Custom Hildon desktop&lt;/blockquote&gt;
+&lt;img alt="" src="/images/desktop-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Modest with Gmail&lt;/blockquote&gt;
+&lt;img alt="" src="/images/modest-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Sphone dialer&lt;/blockquote&gt;
+&lt;img alt="" src="/images/sphone-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Telegram-desktop&lt;/blockquote&gt;
+&lt;img alt="" src="/images/telegram-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Conversations with slim mode&lt;/blockquote&gt;
+&lt;img alt="" src="/images/conversations-slim-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="audio"&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/Arno1103"&gt;Arno1103&lt;/a&gt; did a round of audio work that benefits the N900 in
+particular: the &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/64"&gt;headset ADC mic&lt;/a&gt; was fixed, internal and
+external microphones are now &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/65"&gt;two separate devices&lt;/a&gt;, and &lt;a class="reference external" href="https://git.maemo.org/leste/leste-config/pulls/67"&gt;mixers were added
+and adjusted&lt;/a&gt; to improve
+volume amplification.&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;profiled&lt;/tt&gt; no longer &lt;a class="reference external" href="https://git.maemo.org/leste/profiled/pulls/3"&gt;lists aac files&lt;/a&gt; as possible ringtones in the
+settings, which was confusing because they would not actually play.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="extras"&gt;
+&lt;h2&gt;Extras&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras"&gt;leste-extras&lt;/a&gt; grew considerably this
+release (than it did for Daedalus); new software was ported from Fremantle
+and various other places, and packages that were non-operational in daedalus
+were fixed.&lt;/p&gt;
+&lt;div class="section" id="maemo-recorder"&gt;
+&lt;h3&gt;maemo-recorder&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemo-recorder"&gt;maemo-recorder&lt;/a&gt; was ported
+from Fremantle and is available in Maemo Leste for the first time. Next to the
+port itself it gained a dictaphone mode (recordings are saved automatically with
+a timestamped filename), Opus as a recording format, and buttons to delete the
+last recording.&lt;/p&gt;
+&lt;!-- orecchiette --&gt;
+&lt;!-- - - - - - - - - - - - --&gt;
+&lt;!--  --&gt;
+&lt;!-- Edit: is this working? --&gt;
+&lt;!--  --&gt;
+&lt;!-- `orecchiette &lt;https://git.maemo.org/leste-extras/orecchiette&gt;`_ records from the microphone (voice notes), from what is being --&gt;
+&lt;!-- played back (for example the FM radio), or from both at the same time - which is --&gt;
+&lt;!-- to say, phone calls. --&gt;
+&lt;!--  --&gt;
+&lt;!-- It was ported to Maemo Leste, which meant porting the application from --&gt;
+&lt;!-- `Qt4 to Qt5 --&gt;
+&lt;!-- &lt;https://git.maemo.org/leste-extras/orecchiette/commit/fb5e7035fc2fcb20ca3d6bdb9a22fd2ccb9706c4&gt;`_, --&gt;
+&lt;!-- from `GStreamer 0.10 to GStreamer 1.0 --&gt;
+&lt;!-- &lt;https://git.maemo.org/leste-extras/orecchiette/commit/87f0059c0f725ec3b4119cc404f9593a5040a92a&gt;`_, --&gt;
+&lt;!-- and updating the `D-Bus/BlueZ API usage --&gt;
+&lt;!-- &lt;https://git.maemo.org/leste-extras/orecchiette/commit/a1acdf6d498e60dc22d4bfc7be6ef3f0ae8b6192&gt;`_ --&gt;
+&lt;!-- for the Bluetooth hands-free support. --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="coolkbd"&gt;
+&lt;h3&gt;coolkbd&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/coolkbd"&gt;coolkbd&lt;/a&gt;, packaged for Maemo Leste
+by &lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt;, is a small on-screen keyboard
+written in C directly on top of Xlib. It ships English, Russian, Armenian and
+function key layouts, scales for portrait and landscape, and supports long press
+for alternative characters.&lt;/p&gt;
+&lt;p&gt;It is an alternative to the Hildon input method.
+&lt;a class="reference external" href="https://git.maemo.org/Arno1103"&gt;Arno1103&lt;/a&gt; contributed &lt;a class="reference external" href="https://git.maemo.org/leste-extras/coolkbd/commit/320523d66a473f8a88422f6f5b247faeb29588d3"&gt;new default key colours&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste-extras/coolkbd/commit/194eb909c3b47972f3501da32304701c802f1f9a"&gt;new gamepad layout&lt;/a&gt;.&lt;/p&gt;
+&lt;img alt="" src="/images/conversations-landscape-coolkbd-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;img alt="" src="/images/conversations-portrait-coolkbd-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cloudgps"&gt;
+&lt;h3&gt;cloudgps&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/cloudgps"&gt;cloudgps&lt;/a&gt; is a smooth OpenGL ES
+tile map and navigation application, originally written for the N900 by Damian
+Waradzyn. &lt;strong&gt;cloudgps can now be used for step-by-step navigation.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/Arno1103"&gt;Arno1103&lt;/a&gt; did most of the work: &lt;a class="reference external" href="https://git.maemo.org/leste-extras/cloudgps/commit/3eea7f84a9058ce6751df660fbfdb0af3fc6efff"&gt;OSRM instruction parsing and box
+sizes&lt;/a&gt;
+were fixed, routes now show &lt;a class="reference external" href="https://git.maemo.org/leste-extras/cloudgps/commit/6b3c4c4c48466fe2a227498aa6d685f72683861a"&gt;street names, road references and a duration&lt;/a&gt;,
+tile downloading moved into a thread, and a number of crashes were fixed -
+including &lt;a class="reference external" href="https://git.maemo.org/leste-extras/cloudgps/pulls/7"&gt;the segfault that broke turn-by-turn navigation&lt;/a&gt; and one when pressing a
+key belonging to an obsolete 3D buildings feature. &lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt; &lt;a class="reference external" href="https://git.maemo.org/leste-extras/cloudgps/pulls/4"&gt;switched its battery
+reporting to UPower&lt;/a&gt; and made it fetch its
+tiles over HTTPS.&lt;/p&gt;
+&lt;img alt="" src="/images/cloudgps-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;img alt="" src="/images/cloudgps-landscape-pixel3a.png" style="width: 972px; height: 486px;" /&gt;
+&lt;img alt="" src="/images/cloudgps-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="nomweather-home-widget"&gt;
+&lt;h3&gt;nomweather-home-widget&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/nomweather-home-widget"&gt;nomweather-home-widget&lt;/a&gt;
+is a brand new hildon-desktop home widget, written in GTK by &lt;a class="reference external" href="https://git.maemo.org/sanderfoobar"&gt;Sander&lt;/a&gt;, that
+shows the weather on the Hildon desktop. It shares some code and functionality with &lt;a class="reference external" href="https://git.maemo.org/leste-extras/NOMWeather"&gt;NOMWeather&lt;/a&gt;, the standalone weather GUI application.&lt;/p&gt;
+&lt;p&gt;You can tap the widget to &lt;a class="reference external" href="https://git.maemo.org/leste-extras/nomweather-home-widget/commit/2b631ca09cddafcd43cdb4fe2b4a0b21ecd451f6"&gt;cycle through the forecast&lt;/a&gt;,
+and it &lt;a class="reference external" href="https://git.maemo.org/leste-extras/nomweather-home-widget/commit/6e8c7e3de55ea1706861bb560589b9d579a6dab0"&gt;picks up changes made in the NOMWeather application&lt;/a&gt;
+(such as a different location) immediately. Being a widget that runs all day,
+some attention went into it not leaking memory and into &lt;a class="reference external" href="https://git.maemo.org/leste-extras/nomweather-home-widget/commit/91fcb04292241f9042d6bd418a85c2f1c530b300"&gt;dealing with Hildon
+hiding and showing it&lt;/a&gt;
+on rotation or when the screen turns off.&lt;/p&gt;
+&lt;img alt="" src="/images/nomweather-home.png" style="width: 772px; height: 436px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="live-wallpaper"&gt;
+&lt;h3&gt;live-wallpaper&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/live-wallpaper"&gt;live-wallpaper&lt;/a&gt; shows an
+animated wallpaper that changes with the time of day. It did not work in our
+Daedalus release, and it does again now: it was &lt;a class="reference external" href="https://git.maemo.org/leste-extras/live-wallpaper/commit/3c6346e5db098fd79aee55dbf7e3ffda00ecd39e"&gt;ported to Excalibur&lt;/a&gt;
+and its &lt;a class="reference external" href="https://git.maemo.org/leste-extras/live-wallpaper/commit/75a43ec11aa365c4c6368a5f53c9b6976024653b"&gt;gcc 14 compilation errors&lt;/a&gt;
+were fixed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="comics-daily"&gt;
+&lt;h3&gt;comics-daily&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/comics-daily"&gt;comics-daily&lt;/a&gt; by &lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt; is a web comic reader.&lt;/p&gt;
+&lt;p&gt;It &lt;a class="reference external" href="https://git.maemo.org/leste-extras/comics-daily/commit/289d46b976e366a70c922f89bf782a46f9ac7a60"&gt;switched from scraping to RSS&lt;/a&gt;, and got &lt;a class="reference external" href="https://git.maemo.org/leste-extras/comics-daily/commit/97d0683e565fca14281bc19f677a9468229f04e1"&gt;better scaling support&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- TODO: screenshot of comics-daily --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="barev-purple"&gt;
+&lt;h3&gt;barev-purple&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/barev-purple"&gt;barev-purple&lt;/a&gt; by &lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt; is a libpurple plugin for serverless, peer to
+peer chat over the &lt;a class="reference external" href="https://yggdrasil-network.github.io/"&gt;Yggdrasil&lt;/a&gt; network.
+It is a fork of Pidgin's Bonjour protocol that addresses peers manually, so no
+mDNS or Avahi is involved. Maemo Leste uses it through telepathy-haze, which
+means the chats show up in Conversations, and accounts are created from the
+regular accounts dialog through &lt;a class="reference external" href="https://git.maemo.org/leste-extras/rtcom-accounts-plugin-barev"&gt;rtcom-accounts-plugin-barev&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;New this release:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;avatars (XEP-0153);&lt;/li&gt;
+&lt;li&gt;typing notifications;&lt;/li&gt;
+&lt;li&gt;XMPP pings (XEP-0199), to detect dead connections;&lt;/li&gt;
+&lt;li&gt;static presence statuses;&lt;/li&gt;
+&lt;li&gt;a persistent contacts file, which survives a reconnect;&lt;/li&gt;
+&lt;li&gt;a pending message queue for contacts that are offline;&lt;/li&gt;
+&lt;li&gt;file transfer;&lt;/li&gt;
+&lt;li&gt;a lot of fixes around contact matching and identity - buddies are matched
+against the address their stream actually comes from, bare nicknames are
+matched by localpart, and an impersonation guard was added.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tomar"&gt;
+&lt;h3&gt;tomar&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/tomar"&gt;tomar&lt;/a&gt; (տոմար) by &lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt; is a new RSS/Atom reader, written in Free Pascal
+without any dependencies.&lt;/p&gt;
+&lt;p&gt;Paste the URL of a YouTube profile and tomar finds the feed and subscribes to
+it, after which videos can be watched with mpv in two resolutions - so you can
+follow a channel without opening a browser.&lt;/p&gt;
+&lt;p&gt;It was made usable on a phone as well: long press acts as a right click in the
+tree view, the tree view is tap friendly, font and splitter sizes suit small
+screens, and rotation is handled.&lt;/p&gt;
+&lt;!-- TODO: screenshot of tomar --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="chromatika"&gt;
+&lt;h3&gt;chromatika&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/chromatika"&gt;chromatika&lt;/a&gt;, also by &lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt;, is a new image editor that applies film LUTs
+(HALD CLUTs) to your photos.&lt;/p&gt;
+&lt;!-- TODO: screenshot of chromatika --&gt;
+&lt;/div&gt;
+&lt;div class="section" id="lagrange"&gt;
+&lt;h3&gt;lagrange&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/lagrange"&gt;lagrange&lt;/a&gt; is skyjake's client
+for &lt;a class="reference external" href="https://geminiprotocol.net/"&gt;Geminispace&lt;/a&gt; - a browser for the Gemini
+protocol, with tabs, bookmarks, identities (TLS client certificates), inline
+images and audio playback.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/norayr"&gt;norayr&lt;/a&gt; updated the packaging for Excalibur, fixed the icon, and got the
+desktop file right so that it launches with OpenGL ES - which is what makes it
+usable on our devices.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pcsx-rearmed"&gt;
+&lt;h3&gt;pcsx_rearmed&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/pcsx_rearmed"&gt;pcsx_rearmed&lt;/a&gt;, notaz'
+PlayStation emulator for ARM devices, was fixed up for Excalibur by
+&lt;a class="reference external" href="https://git.maemo.org/Arno1103"&gt;Arno1103&lt;/a&gt;: the &lt;tt class="docutils literal"&gt;t64&lt;/tt&gt; library dependencies were corrected, a compilation
+error and a wrong libpng dependency were fixed, and the old Github workflows
+were replaced by a Forgejo one - so it now builds on our own CI, for armhf and
+arm64.&lt;/p&gt;
+&lt;img alt="" src="/images/pcsx-tekken3-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="kotki"&gt;
+&lt;h3&gt;kotki&lt;/h3&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/kotki"&gt;kotki&lt;/a&gt; is our offline translation
+tool - it does machine translation locally on the device, without sending your
+text anywhere. It now has &lt;a class="reference external" href="https://git.maemo.org/leste-extras/kotki/commit/f59d72aa9382d2d430547f52940ac35868b11c11"&gt;runtime support for arm64&lt;/a&gt;,
+so it can be used on devices such as the Pixel 3a.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="and-more"&gt;
+&lt;h3&gt;And more&lt;/h3&gt;
+&lt;p&gt;A lot of other packages were ported to Excalibur, or updated on their
+&lt;tt class="docutils literal"&gt;maemo/excalibur&lt;/tt&gt; branch:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/9x9-sudoku"&gt;9x9-sudoku&lt;/a&gt; received a
+CMake build, Hildon menu and startup fixes;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/binaryclock-plugin"&gt;binaryclock-plugin&lt;/a&gt;
+was ported to C and switched to CMake;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/cpumem-applet"&gt;cpumem-applet&lt;/a&gt; draws its
+bars correctly now (&lt;a class="reference external" href="https://git.maemo.org/sicelo"&gt;sicelo&lt;/a&gt;);&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/evilplumber"&gt;evilplumber&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/fsudoku"&gt;fsudoku&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste-extras/maetronome"&gt;maetronome&lt;/a&gt; were brought over from
+Fremantle (fsudoku from Qt4 to Qt5, with the hardcoded 480x800
+dimensions removed so they scale to the screen);&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemo-gpt"&gt;maemo-gpt&lt;/a&gt; can now be pointed
+at a custom OpenAI compatible API server and model, so it can be used with a
+locally hosted model;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/maeotp"&gt;maeotp&lt;/a&gt; switched to libcotp for
+HOTP/TOTP and migrates pre-0.3.0 keys to base32 on load;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://git.maemo.org/leste-extras/dillo"&gt;dillo&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/leafpad"&gt;leafpad&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/mstardict"&gt;mstardict&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/msid"&gt;msid&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/photolightmeter"&gt;photolightmeter&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/mihphoto"&gt;mihphoto&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/openmediaplayer"&gt;openmediaplayer&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/qshot"&gt;qshot&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/qsigstoped"&gt;qsigstoped&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/gpsrecorder"&gt;gpsrecorder&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/desktop-cmd-exec"&gt;desktop-cmd-exec&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/hildon-temperature-widget"&gt;hildon-temperature-widget&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/sync-time-now-widget"&gt;sync-time-now-widget&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/maemo-kodi-remote"&gt;maemo-kodi-remote&lt;/a&gt;,
+&lt;a class="reference external" href="https://git.maemo.org/leste-extras/jib"&gt;jib&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/brainparty"&gt;brainparty&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/osso-mahjong"&gt;osso-mahjong&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/drnoksnes"&gt;drnoksnes&lt;/a&gt;, &lt;a class="reference external" href="https://git.maemo.org/leste-extras/picodrive"&gt;picodrive&lt;/a&gt; and &lt;a class="reference external" href="https://git.maemo.org/leste-extras/scummvm"&gt;scummvm&lt;/a&gt; all build on Excalibur.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="pull-quote"&gt;
+Virtua Racing 32X on N900&lt;/blockquote&gt;
+&lt;img alt="" src="/images/picodrive-32X-vr-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Sonic 2 on N900&lt;/blockquote&gt;
+&lt;img alt="" src="/images/picodrive-sonic2-n900.png" style="width: 600px; height: 360px;" /&gt;
+&lt;blockquote class="pull-quote"&gt;
+Sonic 2 on Pixel3a XL&lt;/blockquote&gt;
+&lt;img alt="" src="/images/picodrive-portrait-pixel3a.png" style="width: 486px; height: 972px;" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-s-next"&gt;
+&lt;h2&gt;What's next&lt;/h2&gt;
+&lt;p&gt;Debian Forky is scheduled to be released about a year from now, and since we are
+finally on stable we would very much like to stay there - so we will start
+looking at Forky well before it is released. For this release we will have to
+evaluate if we migrate our stack to GTK3 and how to deal with the various
+remaining porting aspects.&lt;/p&gt;
+&lt;p&gt;Other things on our list:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;support for more devices - both phones and single board computers;&lt;/li&gt;
+&lt;li&gt;better support for the mapphones - we're working on various new drivers and
+driver fixes for the mapphone family;&lt;/li&gt;
+&lt;li&gt;moving away from gconf and towards gsettings;&lt;/li&gt;
+&lt;li&gt;AppArmor profiles for our applications;&lt;/li&gt;
+&lt;li&gt;automatically publishing the images our CI builds on our download mirror.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="interested"&gt;
 &lt;h2&gt;Interested?&lt;/h2&gt;
@@ -105,7 +650,7 @@ up to date, ask questions and/or help out. Another great way to get in touch is
 to join the &lt;a class="reference external" href="https://leste.maemo.org/IRC_channel"&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you like our work and want to see it continue, join our effort!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="news"></category><category term="excalibur"></category><category term="forgejo"></category></entry><entry><title>Maemo Leste - 2025 Daedalus release</title><link href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html" rel="alternate"></link><published>2025-11-08T23:00:00+01:00</published><updated>2025-11-08T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-11-08:/maemo-leste-2025-daedalus-release.html</id><summary type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
+</content><category term="news"></category><category term="excalibur"></category><category term="forgejo"></category><category term="qt6"></category><category term="xmpp"></category></entry><entry><title>Maemo Leste - 2025 Daedalus release</title><link href="https://maemo-leste.github.io/maemo-leste-2025-daedalus-release.html" rel="alternate"></link><published>2025-11-08T23:00:00+01:00</published><updated>2025-11-08T23:00:00+01:00</updated><author><name>Merlijn Wajer</name></author><id>tag:maemo-leste.github.io,2025-11-08:/maemo-leste-2025-daedalus-release.html</id><summary type="html">&lt;p&gt;It's been way too long since our last update, but many things have changed in
 the meantime. We've:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;released Maemo Leste for Devuan Daedalus (Debian Bookworm);&lt;/li&gt;
